@@ -1,0 +1,142 @@
+html {
+    font-size: 100%;
+    background-color: #fff;
+    color: #000;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+header {
+    background-color: #242021;
+    color: #fff;
+    font-size: .5rem;
+    text-transform: uppercase;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+header h1 {
+    height: 50px;
+    justify-items: left;;
+    margin-left: 50px;
+}
+
+header a {
+    height: 90px;
+    text-align: right;
+}
+
+header img {
+    margin-right: 80px;
+    height: 50%;
+}
+
+nav {
+    padding: 1rem 0 1rem 0;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    justify-items: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    background-color: #bb4430;
+    color: #000;
+    border: 1px solid #bb4430;
+    padding: 1rem 4rem 1rem 4rem;
+}
+
+nav ul li a {
+    background-color: #bb4430;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #bb4430;
+    color: #000;
+    font-weight: bold;
+}
+
+nav ul li:nth-child(even) {
+    background-color: #f3dfa2;
+    color: #000;
+    border: 1px solid #f3dfa2;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav ul li:nth-child(even) a {
+    background-color: #f3dfa2;
+    color: #000;
+    text-decoration: none;
+}
+
+nav ul li:nth-child(2) a:hover {
+    background-color: #f3dfa2;
+    color: #fff;
+    text-decoration: none;
+}
+
+.wrapper {
+    background-color: #7ebdc2;
+}
+
+#primary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    padding: 0 1rem 0 1rem;
+}
+
+#main_article {
+    padding: 0 1rem 0 1rem;
+}
+
+figure {
+    padding: 1rem 1rem 0 1rem;
+}
+
+figure img {
+    max-width: 100%;
+    border-radius: 50px;
+}
+
+figcaption {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+figcaption a {
+    background-color: #7ebdc2;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#secondary {
+    background-color: #fff;
+    color: #000;
+    padding: 1rem 5rem 1rem 2rem;
+}
+
+footer {
+    display: flex;
+    background-color: #242021;
+    color: #fff;
+    padding: 0.8rem 0 0 2rem;
+}

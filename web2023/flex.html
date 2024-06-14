@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flex Example</title>
+        <style>
+            html {
+                font-size: 100%;
+            }
+
+            header {
+                border-bottom: 10px dotted blue;
+            }
+
+            section {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            p {
+                border: 1px solid black;
+                font-size: 2rem;
+                width: 8rem;
+                height: 8rem;
+                padding: 10rem;
+            }
+
+            p:nth-child(odd) {
+                background-color: black;
+                color: white;
+            }
+
+            p:nth-child(even) {
+                background-color: blue;
+                color: red;
+            }
+
+            footer {
+                border-top: 10px dotted blue;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header><h1>This is a title</h1></header>
+
+        <section class="main">
+            <p>Box 1</p>
+            <p>Box 2</p>
+            <p>Box 3</p>
+            <p>Box 4</p>
+            <p>Box 5</p>
+            <p>Box 6</p>
+        </section>
+
+        <footer><h2>This is a footer</h2></footer>
+    </body>
+
+</html>

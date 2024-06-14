@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Grid Example</title>
+        <style>
+            html {
+                font-size: 100%;
+            }
+
+            header {
+                border-bottom: 10px dashed orange;
+                text-align: center;
+            }
+
+            nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            nav ul li {
+                list-style-type: none;
+                padding: 25px;
+                border: 5px solid purple;
+            }
+
+            article {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                max-width: 1200px;
+                margin: 0 auto;
+                gap: 10px;
+            }
+
+            .card {
+                border: 1px solid gray;
+                border-radius: 25px;
+                box-shadow: 5px 5px 5px black;
+                padding: 2rem;
+            }
+
+            .card:nth-child(odd) {
+                background-color: purple;
+                color: white;
+            }
+
+            .card:nth-child(even) {
+                background-color: orange;
+                color: black;
+            }
+
+            .card:nth-child(6) {
+                background-image: url('images/walkway.png');
+                color: white;
+            }
+
+            footer {
+                margin: 1rem auto;
+                border-top: 10px dashed orange;
+                border-bottom: 10px dashed orange;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header><h1>This is a header</h1></header>
+
+        <nav>
+            <ul>
+                <li>Link 1</li>
+                <li>Link 2</li>
+                <li>Link 3</li>
+                <li>Link 4</li>
+                <li>Link 5</li>
+                <li>Link 6</li>
+                <li>Link 7</li>
+                <li>Link 8</li>
+                <li>Link 9</li>
+            </ul>
+        </nav>
+
+        <article>
+            <section class="card">
+                <h2>Title 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.</p>
+            </section>
+            <section class="card">
+                <h2>Title 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.</p>
+            </section>
+            <section class="card">
+                <h2>Title 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.</p>
+            </section>
+            <section class="card">
+                <h2>Title 4</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.</p>
+            </section>
+            <section class="card">
+                <h2>Title 5</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.</p>
+            </section>
+            <section class="card">
+                <h2>Title 6</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.</p>
+            </section>
+        </article>
+
+        <footer><h2>This is a footer</h2></footer>
+    </body>
+</html>

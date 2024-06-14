@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Creating Forms in HTML5</title>
+
+    <style>
+
+    .bold {
+      font-weight: bold;
+    }
+
+    hr {
+      margin: 30px 0 30px 0;
+    }
+
+
+    a {
+      color: blue;
+    }
+
+    a:visited {
+      color: blue;
+    }
+
+    a:hover {
+      color: red;
+    }
+
+    .basicform label {
+      background-color: yellow;
+      color: blue;
+      font-weight: bold;
+      font-family: sans-serif;
+      }
+
+    .basicform input {
+      display: flex;
+      font-size: 100%;
+      width: 250px;
+      border: 2px solid blue;
+      background-color: pink;
+      color: black;
+      }
+
+      .basicbutton button {
+        border-radius: 5%;
+        box-shadow: 10px 5px 5px red;
+      }
+
+      textarea {
+        background-color: green;
+        color: black;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <h1>Creating Forms</h1>
+
+    <p>Some documentation on creating forms:</p>
+
+    <ul>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form">Creating forms</a>
+      </li>
+      <li>
+        <a href="https://www.w3schools.com/html/html_forms.asp">Form attributes, elements, types</a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Styling_web_forms">Styling forms</a>
+      </li>
+      <li>
+        <a href="https://www.diffen.com/difference/GET-vs-POST-HTTP-Requests">GET and POST methods</a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form">The &lt;form&gt; tag</a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">The &lt;input&gt; tag</a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label">The &lt;label&gt; tag</a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label">The &lt;legend&gt; tag</a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset">The &lt;fieldset&gt; tag</a>
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea">The &lt;textarea&gt; tag</a>
+      </li>
+    </ul>
+
+
+    <h2>Attributes for key form and related elements</h2>
+
+    <hr>
+    <p>Attributes for the &lt;form&gt; element:</p>
+    <dl>
+      <dt><span class="bold">action</span></dt>
+      <dd>The <span class="bold">action</span> attribute
+        holds a URL as a value and initiates
+        some script, like PHP.</dd>
+
+      <dt><span class="bold">method</span></dt>
+      <dd>The <span class="bold">method</span> attribute
+        declares the type of HTTP request (GET or POST).</dd>
+    </dl>
+
+    <hr>
+    <p>Attributes for the &lt;label&gt; element:</p>
+    <dl>
+      <dt><span class="bold">for</span></dt>
+      <dd>The <span class="bold">for</span> attribute
+        functions like an <span class="bold">id</span>
+        attribute.</dd>
+    </dl>
+
+    <hr>
+    <p>Attributes for the &lt;input&gt; element</p>
+    <dl>
+      <dt><span class="bold">label</span></dt>
+      <dd>The <span class="bold">type</span> attribute
+        specifies the type of input.<br>
+        The <span class="bold">name</span> attribute
+        specifies the name of the input.<br>
+        The <span class="bold">required</span> attribute
+        specifies that this field is required.</dd>
+    </dl>
+    <hr>
+
+    <h2>Basic text entry</h2>
+
+    <p>The value for the
+    <span class="bold">for</span> attribute
+    in the <span class="bold">label</span>
+    element must be equal to the corresponding
+    value of the <span class="bold">id</span>
+    attribute in the
+    <span class="bold">input</span> element.</p>
+
+    <p>The value for the
+    <span class="bold">name</span> attribute in the
+    <span class="bold">input</span> names the form and
+    is useful in scripting.</p>
+
+    <form action="#" method="post" class="basicform">
+        <label for="name">Enter your name: </label>
+        <input type="text" name="bio" id="name" required>
+        <br>
+        <label for="email">Enter your email address: </label>
+        <input type="text" name="bio" id="email" required>
+        <br>
+        <input type="submit" value="Subscribe!">
+    </form>
+    <hr>
+
+    <h2>Create a button</h2>
+
+    <form action="#" method="get" class="basicbutton">
+        <button type="button" name="buttonlike">Click if you like buttons.</button>
+    </form>
+    <hr>
+
+    <h2>Create a datalist</h2>
+
+    <form action="#" method="get">
+        <label for="myOS">What is your favorite OS?</label>
+        <input list="OS" id="myOS" name="myOS">
+        <datalist id="OS">
+          <option value="GNU/Linux"></option>
+          <option value="Linux"></option>
+          <option value="BSD"></option>
+          <option value="Windows"></option>
+          <option value="macOS"></option>
+        </datalist>
+    </form>
+    <hr>
+
+    <h2>Pre-defined list of options</h2>
+
+    <form action="#" method="get">
+      <label for="home-structure">What kind of house would you like to have?</label>
+      <select id="home-structure" name="home-structure">
+        <option value="">--Please choose an option--</option>
+        <option value="castle">Castle</option>
+        <option value="tree house">Tree House</option>
+        <option value="tiny home">Tiny Home</option>
+      </select>
+    </form>
+    <hr>
+
+    <h2>Legend and Fieldset</h2>
+
+    <form action="#" method="get">
+      <fieldset>
+
+        <legend>Choose your favorite technology: </legend>
+
+        <input type="radio" id="pencil" name="favtech" value="Pencil">
+        <label for="pencil">Pencil</label><br>
+
+        <input type="radio" id="smartphone" name="favtech" value="Smartphone">
+        <label for="smartphone">Smartphone</label><br>
+
+        <input type="radio" id="ERM" name="favtech" value="ERM">
+        <label for="ERM">ERM Device</label>
+
+      </fieldset>
+    </form>
+    <hr>
+
+    <h2>Text area</h2>
+
+    <form action="#" method="post">
+      <label for="thoughts">What are you thinking about ICT nowadays?</label>
+      <textarea name="ICT" id="thoughts" rows="5" cols="100">Enter here:</textarea>
+    </form>
+
+  </body>
+</html>

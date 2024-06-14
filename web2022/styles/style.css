@@ -1,0 +1,144 @@
+/* This is a comment; the browser will ignore comments */
+/* The comments below help explain the declarations */
+
+html {
+  font-size: 100%; /* sets a default font-size; useful for rem values */
+  background-color: #ffffff; /* makes the default background white */
+  color: #000000; /* makes the default text black */
+}
+
+body {
+  padding: 0; /* padding and margin set to zero expand the body to the edges of the browser */
+  margin: 0;
+  font-family: arial, sans-serif; /* sets the default font-family for all body */
+}
+
+header {
+  display: grid; /* defines the layout as grid; only applies to header */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* makes responsive */
+  justify-items: end; /* flushes items in header to the right */
+  height: 3.5rem; /* sets the height of the header */
+  padding-top: 0.8rem; /* generates space around the header */
+  background-color: #242021;
+  color: #fff;
+  font-size: .5rem; /* this would result 1/2 of the 100% set in the html root selector above */
+  text-transform: uppercase;
+}
+
+header img {
+  height: 25%;
+}
+
+nav {
+  padding: 1rem 0 1rem 0;
+}
+
+
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  justify-items: center;
+  list-style-type: none; /* removes the list bullets */
+}
+
+nav ul li {
+  background-color: #bb4430;
+  color: #000000;
+  border: 1px solid #bb4430; /* creates a 1px solid border with #bb4430 as the color */
+  padding: 1rem 4rem 1rem 4rem; /* TBH, there's some argument about using rem/em
+  for non-font properties. you could try using pixels (px) to play around with this */
+  font-weight: bold;
+}
+
+nav ul li a {
+  background-color: #bb4430;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none; /* I use this to remove underlines from hyperlinks.
+  I would not advise removing hyperlinks for regular links, though. They help
+  accessibility */
+}
+
+nav ul li a:hover {
+  background-color: #bb4430;
+  color: #000000;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+nav ul li:nth-child(2) { /* nth-child() is used for selecting patterns in items */
+  background-color: #f3dfa2;
+  color: #000000;
+  border: 1px solid #f3dfa2;
+  padding: 1rem 4rem 1rem 4rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav ul li:nth-child(2) a {
+  background-color: #f3dfa2;
+  color: #000000;
+  text-decoration: none;
+}
+
+nav ul li:nth-child(2) a:hover {
+  background-color: #f3dfa2;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.wrapper {
+  background-color: #7ebdc2;
+  color: #000000;
+  margin: 0 2rem 0 2rem;
+}
+
+#primary {
+  display: grid; /* setting grid for the #primary area only */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  padding: 0 0 1rem 2rem;
+}
+
+#main_article {
+  padding: 0 1rem 0 1rem;
+}
+
+figure {
+  padding: 1rem 1rem 0 1rem;
+}
+
+figure img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 0.80rem;
+}
+
+figcaption a {
+  background-color: #7ebdc2;
+  color: #000000;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+#secondary {
+  background: #ffffff;
+  color: #000000;
+  padding: 1rem 0 1rem 2rem;
+}
+
+#sub_article {
+  padding: 2rem;
+}
+
+footer {
+  display: flex;
+  background-color: #242021;
+  color: #fff;
+  padding: 0.8rem 0 0 2rem;
+}

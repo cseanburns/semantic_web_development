@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Images in HTML5</title>
+    <style>
+
+    .image-style {
+      border: 10px solid #e75680;
+      box-shadow: 10px 10px;
+      /*border: 10px solid #000000;*/
+      /*box-shadow: 15px 15px #e75680;*/
+      /*transform: rotateX(150deg);*/
+      /*transform: rotateY(150deg);*/
+      /*transform: rotateZ(90deg);*/
+    }
+
+    section {
+      /* see:
+      https://www.w3schools.com/css/css3_backgrounds.asp
+      */
+      background-image: url(images/littlesquare.png);
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      }
+
+    </style>
+  </head>
+  <body>
+
+<h1>Playing with Images</h1>
+
+<h2>Basic Image with alt and title attributes</h2>
+
+<p>The basic syntax for adding an image is to use the <code>img</code> element.
+It's also important to add an <code>alt</code> attribute that describes the
+image for screen readers. The <code>title</code> attribute is optional but can
+be used to show a title of the image when a mouse cursor hovers over.</p>
+
+<img src="images/puzzle.png"
+  alt="A picture of a puzzle box"
+  title="A wooden puzzle box">
+
+<h2>Changing the width and height</h2>
+
+<p>We can use the <code>height</code> and <code>width</code> attributes to
+resize an image. However, it's better to change the height and width in a photo
+editor, like Photoshop or Gimp, instead. This is because despite the change
+here, the original file may be large, and it's better to avoid transmitting
+large files over the internet when possible. We don't always know what kind of
+internet connection people may have. Keep files as small as possible.</p>
+
+<p>Changed the height to 71:</p>
+
+<img src="images/puzzle.png"
+  alt="A picture of a puzzle box"
+  title="A wooden puzzle box"
+  height="71">
+
+<p>Changed the height to 142:</p>
+
+<img src="images/puzzle.png"
+  alt="A picture of a puzzle box"
+  title="A wooden puzzle box"
+  height="142">
+
+<p>Changed the width to 84:</p>
+
+<img src="images/puzzle.png"
+  alt="A picture of a puzzle box"
+  title="A wooden puzzle box"
+  width="84">
+
+<p>Changed the width to 252:</p>
+
+<img src="images/puzzle.png"
+  alt="A picture of a puzzle box"
+  title="A wooden puzzle box"
+  width="252">
+
+<h2>Responsive design with image</h2>
+
+<p>Using the above methods to set the size of an image is not altogether
+responsive, either. In order to <a
+href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">
+make an image responsive to different screen sizes</a>, we can use the
+<code>srcset</code> and <code>sizes</code> HTML attributes to list optional
+size images to display depending on screen size. This allows the browser to
+load different size images depending on the size of the screen. This has other
+bandwidth implications. Some people may be on mobile devices, and therefore may
+have slower internet connections. Using a smaller image file will cause the
+smaller image to load first, and therefore, faster on such devices. The
+<code>src</code> attribute is used here as a fallback device, in case
+<code>srcset</code> does not work.</p>
+
+<p>I only list two sizes here, but more could be added to adjust for different
+file and screen sizes.</p>
+
+<img srcset="images/puzzle-252w.png 252w,
+             images/puzzle-504w.png 504w"
+     sizes="(max-width: 504px) 252px, 504px"
+     src="images/puzzle-504w.png"
+     alt="A picture of a puzzle box">
+
+<h2>External images</h2>
+
+<p>As we've already seen, we can source an image file on another site. Be
+careful not to violate copyright when doing so. Here's I source an image file
+from Wikipedia.</p>
+
+<p>We use the <code>figure</code> and <code>figcaption</code> when we want to
+isolate an image as important. We might use these HTML elements in certain
+kinds of documents, like news articles or scholarly papers.</p>
+
+ <figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Neferefre.jpg"
+       alt="A statue of Neferefre Isi, an ancient Egyptian pharaoh of the Fifth
+       Dynasty during the Old Kingdom period"
+       title="A statue of Neferefre Isi, an ancient Egyptian pharaoh of the
+       Fifth Dynasty during the Old Kingdom period">
+<figcaption>Neferefre, Jon Bodsworth, Wikimedia Commons</figcaption>
+</figure>
+
+<h2>Images with Styling</h2>
+
+<p>Here I add a <code>class</code> attribute to the image specify this
+particular image in the HTML and add some styling to it, like a pink border and
+a shadow:</p>
+
+<img
+  class="image-style"
+  alt="A picture of a puzzle box"
+  src="images/puzzle-504w.png"
+  srcset="images/puzzle-252w.png 252w"
+  sizes="(max-width: 504px) 252px, 504px">
+
+<section>
+<h2>Background Images</h2>
+
+<p>Background images can be applied over the background of a particular part of
+a page, like this <code>section</code> here, or to the entire page using the
+<code>body</code> elcodeent.</p>
+
+<p>The code for something like that would look like
+the code below. Note I use <code>url</code> and not <code>src</code> to set the
+file location. The <code>url</code> here is called a <a
+href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Functions">CSS
+reference function</a>, unlike <code>src</code>, which is a HTML attribute. We
+only use <code>src</code> for <a
+href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes">specific
+HTML elements</a> like the <code>img, audio, video</code> elements.</p>
+
+<p>In the example below, I placed file in the bottom right corner, but you can
+do more, including repeating an image or placing it in different locations.
+See: <a href="https://www.w3schools.com/css/css3_backgrounds.asp">CSS3
+Background Image</a>.</p>
+
+<pre>
+<code>
+section {
+  background-image: url(images/littlesquare.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  }
+</code>
+</pre>
+
+</section>
+
+  </body>
+  </html>

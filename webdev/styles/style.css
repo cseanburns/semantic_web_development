@@ -1,0 +1,123 @@
+body {
+  font-family: aria, sans-serif;
+}
+
+h1, h2 {
+  font-family: Georgia, serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1rem;
+  text-transform: lowercase;
+  text-shadow: 4px 4px 4px blue;
+}
+
+p {
+  color: black;
+  background-color: white;
+}
+
+#loremipsum {
+  text-decoration: line-through;
+}
+
+#curabitur {
+  text-decoration: underline;
+}
+
+#sed {
+  text-decoration: overline;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+}
+code {
+  font-family: "Courier New", monospace;
+  font-style: italic;
+  background-color: #b9b5b4;
+  padding: 15px 20px 15px 15px;
+  border: 1.5px solid #000000;
+}
+
+ol {
+  font-size: 1.5rem;
+  list-style-type:  lower-greek;
+  list-style-position: inside;
+}
+
+li {
+  line-height: 2.5;
+}
+
+nav > ol {
+  list-style-type: none;
+  font-family: monospace;
+  padding: 25px;
+}
+
+nav > ol > li {
+  display: inline;
+  font-size: .5em;
+  padding: 10px;
+  margin: 10px;
+}
+
+figcaption {
+  border-top: 1px black solid;
+  padding-top: 2px;
+}
+
+a:hover {
+  background-color: #000000;
+  color: red;
+}
+
+/* Set of code applies primarily to the tables.html page */
+
+caption {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 4px black;
+  padding-bottom: 5px;
+}
+
+thead, tfoot {
+  background-color: #082974;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 5px 10px;
+}
+
+a:visited {
+  color: red;
+}
+
+p::first-letter {
+  font-size: 2rem;
+}
+
+p::selection {
+  background-color: red;
+  color: green;
+}
+
+p:hover::first-line {
+  font-weight: bold;
+}

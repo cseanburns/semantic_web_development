@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Maps</title>
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+
+    <header>
+      <nav>
+        <ul>
+          <li><a href="audio-video.html">Audio Video Demo</a></li>
+          <li><a href="forms.html">Forms Demo</a></li>
+          <li><a href="image-map.html">Image Map Demo</a></li>
+          <li><a href="images.html">Images Demo</a></li>
+          <li><a href="tables.html">Tables Demo</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <h1>Images Maps</h1>
+
+    <img src="images/boxes-labeled.png" alt="Colorful boxes">
+
+    <h2>Mapping our image</h2>
+
+    <map name="boxes">
+
+      <area shape="rect"
+      coords="0, 0, 153, 153"
+      href="https://en.wikipedia.org/wiki/Red"
+      alt="Wikipedia article on the color red"
+      title="Red">
+
+      <area shape="rect"
+      coords="153, 0, 306, 153"
+      href="https://en.wikipedia.org/wiki/Orange_(colour)"
+      alt="Wikipedia article on the color orange"
+      title="Orange">
+
+      <area shape="rect"
+      coords="0, 153, 153, 306"
+      href="https://en.wikipedia.org/wiki/Yellow"
+      alt="Wikipedia article on the color yellow"
+      title="Yellow">
+
+      <area shape="rect"
+      coords="153, 153, 306, 306"
+      href="https://en.wikipedia.org/wiki/Violet_(color)"
+      alt="Wikipedia article on the color violet"
+      title="Violet">
+
+    </map>
+
+    <img usemap="#boxes" src="images/boxes.png" alt="Colorful boxes">
+
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> <!-- this is a comment; it's different than how to add CSS comments -->
+    <!-- this is the <head> section; not to be confused with the <header> section -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Acme Consulting, Inc.</title>
+
+    <script type="application/ld+json">
+    {
+"@context": "https://schema.org/",
+"@type": "TVSeries",
+"name": "Downton Abbey",
+"creator": "Julian Fellowes",
+"author":
+  [
+  "Julian Fellowes",
+  "Shelagh Stephenson",
+  "Tina Pepler"
+  ],
+"actor": [
+  "Hugh Bonneville",
+  "Jessica Brown Findlay",
+  "Laura Carmichael",
+  "Jim Carter",
+  "Brendan Coyle"
+  ],
+"countryOfOrigin": "United Kingdom",
+"inLanguage": "en-gb",
+"numberOfEpisodes": 52,
+"numberOfSeasons": 6
+}
+    </script>
+
+  </head>
+
+  <!-- the <body> element comes immediately after the closing </head> -->
+
+  <body>
+
+    <header> <!-- new section for <header>, which contains <h1>, <a>, and <img> elements -->
+      <h1 id="title">Acme Consulting, Inc.</h1>
+      <a href="index.html">
+        <img src="images/acmelogo.png" alt="The Acme Consulting, Inc. Logo">
+      </a>
+    </header>
+
+    <nav> <!-- new section for <nav>, which contains <ul> and <li> elements -->
+      <ul>
+        <li><a href="product1.html">Product 1</a></li>
+        <li><a href="product2.html">Product 2</a></li>
+        <li><a href="product3.html">Product 3</a></li>
+      </ul>
+    </nav>
+
+    <div class="wrapper"> <!-- the <div> wraps around all elements below except
+      for the <footer> element -->
+
+      <section id="primary"> <!-- this is the first of two <section> elements
+        on this page -->
+
+        <article id="main_article"> <!-- this is the first of two <article>
+          elements on this page. Each <article> element is in its own <section>.
+          In practice, this might be redundant; that is, you can either use
+          an <article> or a <section> element and may not need both. -->
+
+        <h2>Lorem ipsum</h2> <!-- it's good practice to include a <h2> for
+          each <section> or <article> -->
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Mauris consequat tortor lorem, quis finibus purus placerat
+        vitae. Aenean pharetra blandit imperdiet. Sed efficitur,
+        nunc vitae condimentum ullamcorper, sapien leo iaculis
+        ligula, vitae vestibulum urna purus sed erat. Suspendisse
+        nec leo vel libero tristique blandit quis at est. Aliquam
+        aliquam, dui vel ullamcorper faucibus, augue libero tempor
+        odio, tincidunt ornare sapien erat ac sapien. Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Praesent
+        lacinia nibh ut ipsum placerat tempor. Fusce quis vulputate
+        ipsum. Proin nec erat eu lectus accumsan tristique
+        tincidunt eu quam. Aliquam leo metus, aliquam non felis at,
+        dictum iaculis massa. Nam mi ligula, convallis sit amet
+        dolor in, luctus aliquet lorem. Vestibulum consectetur
+        sodales sapien in condimentum. Etiam nec elit purus.
+        Integer eu ullamcorper erat. Aenean aliquet lacus vel neque
+        volutpat, sit amet rhoncus arcu fermentum.</p>
+
+        <p>Phasellus ligula dui, ultrices at mauris congue,
+        accumsan tempus leo. Integer gravida felis at arcu pharetra
+        porta. Phasellus rhoncus magna vitae lorem egestas, et
+        tempor nunc posuere. Nulla sagittis justo sit amet nunc
+        rhoncus venenatis. Aliquam leo metus, aliquam non felis at,
+        dictum iaculis massa. Nam mi ligula, convallis sit amet
+        dolor in, luctus aliquet lorem. Vestibulum consectetur
+        sodales sapien in condimentum. Sed efficitur, nunc vitae
+        condimentum ullamcorper, sapien leo iaculis ligula, vitae
+        vestibulum urna purus sed erat. Suspendisse nec leo vel
+        libero tristique blandit quis at est.</p>
+
+        </article>
+
+        <!-- be sure to use alt and title for images -->
+        <figure id="main_fig">
+          <img src="images/meeting.jpg"
+          alt="Image of people's feet gathered in a circle to meet."
+          title="Image of people's feet gathered in a circle to meet.">
+          <figcaption>
+          <a href="https://www.flickr.com/photos/56218409@N03/20289439705">Photo by Dr. Matthias Ripp</a>
+          </figcaption>
+        </figure>
+
+      </section>
+
+      <section id="secondary">
+
+        <article id="sub_article">
+
+        <h3>Curabitur dignissim</h3>
+
+        <p>Curabitur dignissim nulla neque, sit amet ultricies mi
+        ultrices at. Morbi eget lorem imperdiet, fringilla massa a,
+        placerat magna. Ut sed ligula a massa pharetra viverra.
+        Mauris sodales tincidunt gravida. Cras finibus lacus eget
+        iaculis bibendum. Phasellus ligula dui, ultrices at mauris
+        congue, accumsan tempus leo. Integer gravida felis at arcu
+        pharetra porta. Phasellus rhoncus magna vitae lorem
+        egestas, et tempor nunc posuere. Nulla sagittis justo sit
+        amet nunc rhoncus venenatis. Vivamus ante quam, maximus at
+        lorem eget, porta tristique dui. Nulla non porta elit, quis
+        commodo tortor. Nulla ac eros eu sapien ullamcorper
+        faucibus. Nullam sodales vehicula risus, id malesuada dolor
+        fermentum non. Nulla tempus cursus risus, eu fermentum dui
+        commodo quis.</p>
+
+        </article>
+
+      </section>
+
+    </div> <!-- wrapper -->
+
+    <footer> <!-- the <footer> can contain more than an address, but this
+      is a useful place to include it. -->
+
+      <address>
+        <p>555 Main St.<br>
+          Lexington, KY 40506<br>
+          555-123-4567<br>
+          ceo@acme.inc<br>
+          @acmeinc</p>
+      </address>
+
+    </footer>
+
+    <script src="scripts/main.js"></script>
+
+  </body> <!-- be sure to close the </body> and the </html> elements at the end -->
+</html>

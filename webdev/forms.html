@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Creating Forms in HTML5</title>
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+
+    <header>
+      <nav>
+        <ul>
+          <li><a href="audio-video.html">Audio Video Demo</a></li>
+          <li><a href="forms.html">Forms Demo</a></li>
+          <li><a href="image-map.html">Image Map Demo</a></li>
+          <li><a href="images.html">Images Demo</a></li>
+          <li><a href="tables.html">Tables Demo</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <h1>Creating Forms</h1>
+
+    <h2>Basic text entry</h2>
+
+    <form action="scripts/action.php" method="post">
+        <label for="name">Enter your name: </label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="email">Enter your email address: </label>
+        <input type="text" name="email" id="email" required>
+
+        <input type="submit" value="Subscribe!">
+    </form>
+
+    <h2>Create a button</h2>
+
+    <form action="scripts/action.php" method="get">
+        <button type="button" name="button">Click if you heart buttons.</button>
+    </form>
+
+    <h2>Create a datalist</h2>
+
+    <form action="scripts/action.php" method="get">
+        <label for="myOS">What is your favorite OS?</label>
+        <input list="OS" id="myOS" name="myOS">
+        <datalist id="OS">
+          <option value="GNU/Linux"></option>
+          <option value="Linux"></option>
+          <option value="BSD"></option>
+          <option value="Windows"></option>
+          <option value="macOS"></option>
+        </datalist>
+    </form>
+
+    <h2>Pre-defined list of options</h2>
+
+    <form action="scripts/action.php" method="get">
+      <label for="home-structure">What kind of house would you like to have?</label>
+      <select id="home-structure" name="home-structure">
+        <option value="">--Please choose an option--</option>
+        <option value="castle">Castle</option>
+        <option value="tree house">Tree House</option>
+        <option value="tiny home">Tiny Home</option>
+      </select>
+    </form>
+
+    <h2>Legend and Fieldset</h2>
+
+    <form action="scripts/action.php" method="get">
+      <fieldset>
+        <legend>Choose your favorite technology: </legend>
+        <input type="radio" name="pencil" id="pencil">
+        <label for="pencil">Pencil</label><br/>
+
+        <input type="radio" name="smartphone" id="smartphone">
+        <label for="smartphone">Smartphone</label><br/>
+
+        <input type="radio" name="ERM" id="ERM">
+        <label for="ERM">ERM Device</label>
+      </fieldset>
+    </form>
+
+    <h2>Text area</h2>
+
+    <form action="scripts/action.php" method="post">
+      <label for="thoughts">What are you thinking about ICT nowadays?</label>
+      <textarea name="thoughts" id="thoughts" rows="10" cols="80">Enter here:</textarea>
+    </form>
+
+  </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML and CSS Table Demo</title>
+
+    <!--
+      More on tables at MDN Web Docs:
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced
+    -->
+
+    <style>
+
+      table {
+        border-collapse: collapse;
+      }
+
+      caption {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        text-shadow: 3px 3px 4px black;
+        padding: 5px;
+        background-color: black;
+        color: white;
+      }
+
+      thead, tfoot {
+        background-color: #082974;
+        color: white;
+        font-weight: bold;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+
+      th, td {
+        padding: 5px 10px;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .rowhover:hover {
+        background-color: red;
+        color: white;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <table>
+      <caption>Star Trek or Star Wars</caption>
+      <thead>
+        <tr>
+          <th colspan="5">Attitude</th>
+        </tr>
+        <tr>
+          <td>Films</td>
+          <td>For</td>
+          <td>Undecided</td>
+          <td>Against</td>
+          <td>Row Marginal</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="rowhover">
+          <td>Star Trek</td>
+          <td class="center">92</td>
+          <td class="center">18</td>
+          <td class="center">90</td>
+          <td class="center">200</td>
+        </tr>
+        <tr class="rowhover">
+          <td>Star Wars</td>
+          <td class="center">68</td>
+          <td class="center">22</td>
+          <td class="center">110</td>
+          <td class="center">200</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+         <td>Column Marginal</td>
+         <td class="center">160</td>
+         <td class="center">40</td>
+         <td class="center">200</td>
+         <td class="center">400</td>
+        </tr>
+      </tfoot>
+
+
+    </table>
+
+
+
+
+
+  </body>
+  </html>

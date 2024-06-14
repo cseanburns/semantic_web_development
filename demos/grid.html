@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Demo</title>
+    <style>
+    html {
+      font-size: 100%; /* sets the default size of the font */
+    }
+
+    header {
+      border-bottom: 10px dashed orange;
+    }
+
+    nav ul {
+      display: flex; /* the <nav> uses Flex for layout */
+      flex-wrap: wrap; /* makes the <nav> responsive to different screen sizes */
+    }
+
+    nav ul li {
+      list-style-type: none;
+      padding: 25px;
+      border: 5px solid purple;
+    }
+
+    section {
+      display: grid; /* the <section> uses Grid for layout */
+      grid-template-columns: repeat(3, 1fr); /* this is not responsive to screen
+      sizes; rather it declares that there will be three columns no matter what */
+      gap: 10px; /* sets a space between the elements in <section> */
+      grid-auto-rows: minmax(100px, auto); /* the rows will be at least 100px in height */
+    }
+
+    p {
+     font-size: 2rem;
+     padding: 10rem;
+     border: 1px solid black;
+   }
+
+   p:nth-child(2n) {
+     background: blue;
+     color: white;
+   }
+
+   .one { /* this refers to the <p> class */
+     grid-column: 1 / span 2;
+     grid-row: 1;
+   }
+
+   .two {
+     grid-column: 3;
+     grid-row: 1;
+   }
+
+   .three {
+     grid-column: 1 / span 3;
+     grid-row: 2;
+   }
+
+   .four {
+     grid-column: 1;
+     grid-row: 3;
+    }
+
+    .five {
+      grid-column: 2;
+      grid-row: 3;
+    }
+
+    .six {
+      grid-column: 3;
+      grid-row: 3;
+    }
+
+    footer {
+      border-top: 10px dashed red;
+      border-bottom: 10px dashed red;
+    }
+    </style> <!--- the CSS ends here, and I switch to HTML style commenting -->
+  </head> <!-- note that the </head> ends here. This is all HTML code below -->
+
+  <body>
+
+  <header>
+   <h1>This is a Title</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+      <li>Item 6</li>
+      <li>Item 7</li>
+      <li>Item 8</li>
+      <li>Item 9</li>
+    </ul>
+  </nav>
+
+  <section>
+    <p class="one">Box 1. This is box 1. It's just a box that spans two columns.</p>
+    <p class="two">Box 2</p>
+    <p class="three">Box 3. Box three spans the entire second row. CSS Grid is pretty darn cool. I can use CSS Flex on some sections for my website, and I can use CSS Grid on others. Yay for mixing it up!</p>
+    <p class="four">Box 4</p>
+    <p class="five">Box 5</p>
+    <p class="six">Box 6</p>
+  </section>
+
+  <footer>
+    <h2>This is a Footer</h2>
+  </footer>
+
+  </body>
+</html>

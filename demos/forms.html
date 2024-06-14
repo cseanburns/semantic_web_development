@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Creating Forms in HTML5</title>
+
+    <style>
+
+    .basic-form label {
+      background-color: yellow;
+      color: blue;
+      font-weight: bold;
+      font-family: sans-serif;
+      }
+
+    .basic-form input {
+      display: flex;
+      font-size: 100%;
+      width: 250px;
+      /*height: 200px;*/
+      border: 2px solid blue;
+      background-color: pink;
+      color: black;
+      }
+
+      .basic-button button {
+        border-radius: 5%;
+        box-shadow: 10px 5px 5px red;
+      }
+
+      textarea {
+        background-color: green;
+        color: black;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+  <!-- Some resources on creating forms:
+
+  Creating forms:
+  https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
+
+  See the additional pages on Form attributes, elements, and types:
+  https://www.w3schools.com/html/html_forms.asp
+
+  Styling forms:
+  https://developer.mozilla.org/en-US/docs/Learn/Forms/Styling_web_forms
+
+  Difference between GET and POST methods:
+  https://www.diffen.com/difference/GET-vs-POST-HTTP-Requests
+
+  The <form> tag:
+  https://www.w3schools.com/tags/tag_form.asp
+
+  The <input> tag:
+  https://www.w3schools.com/tags/tag_input.asp
+
+  The <label> tag:
+  https://www.w3schools.com/tags/tag_label.asp
+
+  The <legend> tag:
+  https://www.w3schools.com/tags/tag_legend.asp
+
+  The <fieldset> tag:
+  https://www.w3schools.com/tags/tag_fieldset.asp
+
+  The <textarea> tag:
+  https://www.w3schools.com/tags/tag_textarea.asp
+  -->
+
+    <h1>Creating Forms</h1>
+
+    <h2>Basic text entry</h2>
+
+    <!--
+    For the form element:
+      The 'action' attribute holds a URL as a value and initiates some script, like PHP.
+      The 'method' attribute declares the type of HTTP request.
+
+    For the label element:
+      The 'for' attribute functions like an 'id' attribute.
+
+    For the input element:
+      The 'type' attribute specifies the type of input.
+      The 'name' attribute specifies the name of the input.
+      'required' specifies that this field is required.
+    -->
+
+    <form action="scripts/action.php" method="post" class="basic-form">
+        <label for="name">Enter your name: </label>
+        <input type="text" name="name" id="name" required>
+        <br>
+        <label for="email">Enter your email address: </label>
+        <input type="text" name="email" id="email" required>
+        <br>
+        <input type="submit" value="Subscribe!">
+    </form>
+
+    <h2>Create a button</h2>
+
+    <form action="scripts/action.php" method="get" class="basic-button">
+        <button type="button" name="button">Click if you like buttons.</button>
+    </form>
+
+    <h2>Create a datalist</h2>
+
+    <form action="scripts/action.php" method="get">
+        <label for="myOS">What is your favorite OS?</label>
+        <input list="OS" id="myOS" name="myOS">
+        <datalist id="OS">
+          <option value="GNU/Linux"></option>
+          <option value="Linux"></option>
+          <option value="BSD"></option>
+          <option value="Windows"></option>
+          <option value="macOS"></option>
+        </datalist>
+    </form>
+
+    <h2>Pre-defined list of options</h2>
+
+    <form action="scripts/action.php" method="get">
+      <label for="home-structure">What kind of house would you like to have?</label>
+      <select id="home-structure" name="home-structure">
+        <option value="">--Please choose an option--</option>
+        <option value="castle">Castle</option>
+        <option value="tree house">Tree House</option>
+        <option value="tiny home">Tiny Home</option>
+      </select>
+    </form>
+
+    <h2>Legend and Fieldset</h2>
+
+    <form action="scripts/action.php" method="get">
+      <fieldset>
+        <legend>Choose your favorite technology: </legend>
+        <input type="radio" name="pencil" id="pencil">
+        <label for="pencil">Pencil</label><br/>
+
+        <input type="radio" name="smartphone" id="smartphone">
+        <label for="smartphone">Smartphone</label><br/>
+
+        <input type="radio" name="ERM" id="ERM">
+        <label for="ERM">ERM Device</label>
+      </fieldset>
+    </form>
+
+    <h2>Text area</h2>
+
+    <form action="scripts/action.php" method="post">
+      <label for="thoughts">What are you thinking about ICT nowadays?</label>
+      <textarea name="thoughts" id="thoughts" rows="5" cols="100">Enter here:</textarea>
+    </form>
+
+  </body>
+</html>

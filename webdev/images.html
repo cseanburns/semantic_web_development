@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
+    <title>Working with Images in HTML5</title>
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+
+    <header>
+      <nav>
+        <ol>
+          <li><a href="audio-video.html">Audio Video Demo</a></li>
+          <li><a href="forms.html">Forms Demo</a></li>
+          <li><a href="image-map.html">Image Map Demo</a></li>
+          <li><a href="images.html">Images Demo</a></li>
+          <li><a href="tables.html">Tables Demo</a></li>
+        </ol>
+      </nav>
+    </header>
+
+<h1>Playing with images</h1>
+
+<h2>Basic Image with alt and title attributes</h2>
+
+<img src="images/puzzle.png" alt="A puzzle box"
+ title="A wooden puzzle box">
+
+<h2>Changing the width and height</h2>
+
+<img src="images/puzzle.png" alt="A puzzle box"
+title="A wooden puzzle box" height="142">
+
+<img src="images/puzzle.png" alt="A puzzle box"
+title="A wooden puzzle box" width="252">
+
+<h2>Responsive design with image</h2>
+
+<img src="images/puzzle-504w.png"
+     alt="A puzzle box"
+     srcset="images/puzzle-252w.png 252w"
+     sizes="(max-width: 504px) 252px, 504px">
+
+<h2>External images</h2>
+
+ <figure>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Neferefre.jpg"
+       alt="Neferefre">
+<figcaption>Neferefre, Jon Bodsworth</figcaption>
+</figure>
+
+  </body>
+  </html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flex Demo</title>
+
+    <!--
+    Adding CSS, using the <style> tag, within the <head> section of a HTML
+    document is called using an internal stylesheet. Usually we use an
+    external stylesheet since an external stylesheet can be applied to an
+    entire website. I use an internal stylesheet here for demostration and
+    because I'm only using the CSS below for this single page.
+
+    Note that I use CSS comments and not HTML comments below. This is
+    because these comments are placed after the <style> tag. If I were to
+    add comments after the closing </style> tag below, or before, like
+    here, then I would use HTML comments.
+    -->
+
+    <style>
+
+    html {
+      font-size: 100%; /* sets the default size of the font */
+    }
+
+    header {
+      border-bottom: 10px dotted blue;
+    }
+
+    section {
+      display: flex; /* makes Flex the default layout */
+      gap: 10px;
+      flex-wrap: wrap; /* this makes the section responsive to different
+      screen sizes */
+    }
+
+    p {
+      border: 1px solid black;
+      font-size: 2rem; /* doubles the default size of the font */
+
+      /* There is a difference between Absolute Length Units and Relative
+      Length Units. Units like rem and em are relative to some default
+      unit, like the font-size of a parent element (em) or the font-size of
+      the root <html> element (rem). Using one or the other may result in
+      quite different views of a page. */
+
+      /* Below, I use rem to set the width, height, and padding of the
+      boxes around the <p> elements. If you zoom in and out of the page,
+      both the text and the box will grow relative to the root <html>
+      page. */
+
+      width: 8rem;
+      height: 8rem;
+      padding: 10rem;
+
+      /* However, If you change the units from rem to px, then you fix the
+      size of the boxes. Since the font-size above uses rem, the font will
+      change in size, but the boxex will keep the same dimensions since
+      they are sized with px (pixels). */
+
+      /* To test this, comment out the above width, height, and padding
+      declarations and uncomment the three declarations below. And then
+      switch back and forth after reloading the page and zooming in and
+      out a few times to see the effects. */
+
+      /*
+      width: 120px;
+      height: 120px;
+      padding: 80px;
+      */
+
+      /* To learn more, see:
+      https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
+      */
+
+      }
+
+    p:nth-child(2n) { /* select every second <p> element */
+      background-color: blue;
+      color: white;
+    }
+
+    footer {
+      border-top: 10px dotted green;
+    }
+    </style>
+  </head>
+  <body>
+
+  <header>
+   <h1>This is a Title</h1>
+  </header>
+
+  <section class="main">
+    <p>Box 1.</p>
+    <p>Box 2.</p>
+    <p>Box 3.</p>
+    <p>Box 4.</p>
+    <p>Box 5.</p>
+    <p>Box 6.</p>
+  </section>
+
+  <footer>
+    <h2>This is a Footer</h2>
+  </footer>
+
+  </body>
+</html>

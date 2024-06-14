@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Creating Forms in HTML5</title>
+
+    <style>
+
+    .basic-form label {
+      font-weight: bold;
+      font-family: sans-serif;
+      }
+
+    .basic-form input {
+      display: flex;
+      font-size: 100%;
+      width: 270px;
+      border: 2px solid blue;
+      color: black;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+<!-- See PHP Manual: https://www.php.net/manual/en/intro-whatcando.php -->
+
+    <h1>Creating Forms</h1>
+
+    <h2>Basic text entry</h2>
+
+    <form action="scripts/action.php" method="post" class="basic-form">
+        <label for="name">Enter your name: </label>
+        <input type="text" name="name" id="name" required><br>
+
+        <label for="email">Enter your email address: </label>
+        <input type="email" name="email" id="email" required><br>
+
+        <label for="age">Enter your age: </label>
+        <input type="number" name="age" id="age" min="18" required><br>
+
+        <input type="submit" /></p>
+    </form>
+
+  </body>
+</html>
