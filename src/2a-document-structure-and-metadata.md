@@ -1,1 +1,1 @@
-# Document Structure And Metadata
+# Document Structure and Metadata

@@ -1,1 +1,1 @@
-# Text Styles And Effects
+# Text Styles and Effects

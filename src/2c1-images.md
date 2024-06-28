@@ -1,1 +1,1 @@
-# 2c1 Images
+# Images

@@ -1,1 +1,1 @@
-# Course Wrap Up And Q&A
+# Course Wrap-up and Q&A

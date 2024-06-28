@@ -1,1 +1,1 @@
-# Introduction To JSON-LD And Schema.org
+# Introduction to JSON-LD and Schema.org

@@ -1,1 +1,1 @@
-# Syntax And Selectors
+# Syntax and Selectors

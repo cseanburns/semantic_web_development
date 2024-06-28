@@ -1,1 +1,1 @@
-# 2c Image And Multimedia
+# Image and Multimedia

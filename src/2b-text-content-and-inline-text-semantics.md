@@ -1,1 +1,1 @@
-# 2b Text Content And Inline Text Semantics
+# 2b Text Content and Inline Text Semantics

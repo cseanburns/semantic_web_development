@@ -1,1 +1,1 @@
-# Implementing JSON-LD With Schema.org
+# Implementing JSON-LD with Schema.org
