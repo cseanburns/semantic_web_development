@@ -1,0 +1,1 @@
+# Common Schema Types
