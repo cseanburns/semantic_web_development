@@ -56,3 +56,5 @@
     - [Review of Key Concepts](5a-review-of-key-concepts.md)
     - [Final Project: Implementing a Semantic Web Site](5b-final-project-implementing-a-semantic-web-site.md)
     - [Course Wrap-Up and Q&A](5c-course-wrap-up-and-q-and-a.md)
+- [Appendix A: Syllabus](syllabus.md)
+- [Appendix B: Assignments](assignments.md)

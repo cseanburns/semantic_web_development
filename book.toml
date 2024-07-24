@@ -6,7 +6,7 @@ language = "en"
 src = "src"
 
 [output.html]
-git-repository-url = "https://github.com/cseanburns/systems_librarianship"
+git-repository-url = "https://github.com/cseanburns/semantic_web_development"
 site-url = "https://cseanburns.net/"
 
 [output.html.print]
