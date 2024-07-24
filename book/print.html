@@ -1,0 +1,600 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Semantic Web Development</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="Semantic Web Development with HTML5, CSS3, and JSON-LD">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="p1-introduction-to-semantic-web-development.html"><strong aria-hidden="true">1.</strong> Week 1: Introduction to Semantic Web Development</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="1a-the-semantic-web.html"><strong aria-hidden="true">1.1.</strong> The Semantic Web</a></li><li class="chapter-item expanded "><a href="1b-tools-setup-workflow.html"><strong aria-hidden="true">1.2.</strong> Tools, Setup, and Workflow</a></li><li class="chapter-item expanded "><a href="1c-user-experience-accessibility.html"><strong aria-hidden="true">1.3.</strong> User Experience and Accessibility</a></li></ol></li><li class="chapter-item expanded "><a href="p2-html5-and-the-web.html"><strong aria-hidden="true">2.</strong> Weeks 2-5: HTML5 and The Web</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2a-document-structure-and-metadata.html"><strong aria-hidden="true">2.1.</strong> Week 2: Document Structure and Metadata</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2a1-document-metadata.html"><strong aria-hidden="true">2.1.1.</strong> Document Metadata</a></li><li class="chapter-item expanded "><a href="2a2-semantic-elements.html"><strong aria-hidden="true">2.1.2.</strong> Semantic Elements</a></li><li class="chapter-item expanded "><a href="2a3-html5-best-practices.html"><strong aria-hidden="true">2.1.3.</strong> HTML5 Best Practices</a></li></ol></li><li class="chapter-item expanded "><a href="2b-text-content-and-inline-text-semantics.html"><strong aria-hidden="true">2.2.</strong> Week 3: Text Content and Inline Text Semantics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2b1-text-elements.html"><strong aria-hidden="true">2.2.1.</strong> Text Elements</a></li><li class="chapter-item expanded "><a href="2b2-inline-text-semantics.html"><strong aria-hidden="true">2.2.2.</strong> Inline Text Semantics</a></li><li class="chapter-item expanded "><a href="2b3-lists.html"><strong aria-hidden="true">2.2.3.</strong> Lists</a></li></ol></li><li class="chapter-item expanded "><a href="2c-image-and-multimedia.html"><strong aria-hidden="true">2.3.</strong> Week 4: Image and Multimedia</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2c1-images.html"><strong aria-hidden="true">2.3.1.</strong> Images</a></li><li class="chapter-item expanded "><a href="2c2-multimedia-elements.html"><strong aria-hidden="true">2.3.2.</strong> Multimedia Elements</a></li></ol></li><li class="chapter-item expanded "><a href="2d-tables-and-forms.html"><strong aria-hidden="true">2.4.</strong> Week 5: Tables and Forms</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2d1-table-elements.html"><strong aria-hidden="true">2.4.1.</strong> Table Elements</a></li><li class="chapter-item expanded "><a href="2d2-form-elements.html"><strong aria-hidden="true">2.4.2.</strong> Form Elements</a></li><li class="chapter-item expanded "><a href="2d3-form-validation-accessibility.html"><strong aria-hidden="true">2.4.3.</strong> Form Validation and Accessibility</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="p3-css3-and-web-design.html"><strong aria-hidden="true">3.</strong> Weeks 6-10: CSS3 and Web Design</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3a-css3-and-basic-styling.html"><strong aria-hidden="true">3.1.</strong> Week 6: CSS3 and Basic Styling</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3a1-syntax-and-selectors.html"><strong aria-hidden="true">3.1.1.</strong> Syntax and Selectors</a></li><li class="chapter-item expanded "><a href="3a2-colors-units-measurements.html"><strong aria-hidden="true">3.1.2.</strong> Colors, Units, and Measurements</a></li><li class="chapter-item expanded "><a href="3a3-applying-css-to-html.html"><strong aria-hidden="true">3.1.3.</strong> Applying CSS to HTML</a></li></ol></li><li class="chapter-item expanded "><a href="3b-box-model.html"><strong aria-hidden="true">3.2.</strong> Week 7: Box Model</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3b1-margins-borders-padding.html"><strong aria-hidden="true">3.2.1.</strong> Margins, Borders, Padding</a></li><li class="chapter-item expanded "><a href="3b2-box-sizing.html"><strong aria-hidden="true">3.2.2.</strong> Box-Sizing</a></li><li class="chapter-item expanded "><a href="3b3-display-properties.html"><strong aria-hidden="true">3.2.3.</strong> Display Properties</a></li></ol></li><li class="chapter-item expanded "><a href="3c-typography-and-text-styles.html"><strong aria-hidden="true">3.3.</strong> Week 8: Typography and Text Styles</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3c1-fonts-and-typography.html"><strong aria-hidden="true">3.3.1.</strong> Fonts and Typography</a></li><li class="chapter-item expanded "><a href="3c2-text-styles-and-effects.html"><strong aria-hidden="true">3.3.2.</strong> Text Styles and Effects</a></li></ol></li><li class="chapter-item expanded "><a href="3d-images-multimedia-and-backgrounds.html"><strong aria-hidden="true">3.4.</strong> Week 9: Images, Multimedia, and Backgrounds</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3d1-styling-images-and-multimedia.html"><strong aria-hidden="true">3.4.1.</strong> Styling Images and Multimedia</a></li><li class="chapter-item expanded "><a href="3d2-backgrounds.html"><strong aria-hidden="true">3.4.2.</strong> Backgrounds</a></li></ol></li><li class="chapter-item expanded "><a href="3e-responsive-layouts-with-flexbox-and-grid.html"><strong aria-hidden="true">3.5.</strong> Week 10: Responsive Layouts with Flexbox and Grid</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3e1-flexbox-basics.html"><strong aria-hidden="true">3.5.1.</strong> Flexbox Basics</a></li><li class="chapter-item expanded "><a href="3e2-grid-layout-basics.html"><strong aria-hidden="true">3.5.2.</strong> Grid Layout Basics</a></li><li class="chapter-item expanded "><a href="3e3-media-queries-for-responsive-design.html"><strong aria-hidden="true">3.5.3.</strong> Media Queries for Responsive Design</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="p4-introduction-to-json-ld-and-schema-org.html"><strong aria-hidden="true">4.</strong> Weeks 11-14: Introduction to JSON-LD and Schema.org</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="4a-additional-document-metadata-and-json-basics.html"><strong aria-hidden="true">4.1.</strong> Week 11: Additional Document Metadata and JSON Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="4a1-document-metadata-revisited.html"><strong aria-hidden="true">4.1.1.</strong> Document Metadata Revisited</a></li><li class="chapter-item expanded "><a href="4a2-introduction-to-json.html"><strong aria-hidden="true">4.1.2.</strong> Introduction to JSON</a></li><li class="chapter-item expanded "><a href="4a3-json-syntax-and-data-types.html"><strong aria-hidden="true">4.1.3.</strong> JSON Syntax and Data Types</a></li></ol></li><li class="chapter-item expanded "><a href="4b-schema-org-and-structured-data.html"><strong aria-hidden="true">4.2.</strong> Week 12: Schema.org and Structured Data</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="4b1-overview-of-schema-org.html"><strong aria-hidden="true">4.2.1.</strong> Overview of Schema.org</a></li><li class="chapter-item expanded "><a href="4b2-common-schema-types.html"><strong aria-hidden="true">4.2.2.</strong> Common Schema Types</a></li><li class="chapter-item expanded "><a href="4bc-benefits-of-structured-data.html"><strong aria-hidden="true">4.2.3.</strong> Benefits of Structured Data</a></li></ol></li><li class="chapter-item expanded "><a href="4c-implementing-json-ld-with-schema-org.html"><strong aria-hidden="true">4.3.</strong> Week 13: Implementing JSON-LD with Schema.org</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="4c1-json-ld-syntax-and-integration.html"><strong aria-hidden="true">4.3.1.</strong> JSON-LD Syntax and Integration</a></li><li class="chapter-item expanded "><a href="4c2-examples-of-implementing-json-ld-in-html.html"><strong aria-hidden="true">4.3.2.</strong> Examples of Implementing JSON-LD in HTML</a></li><li class="chapter-item expanded "><a href="4c3-tools-for-testing-and-validating-json-ld.html"><strong aria-hidden="true">4.3.3.</strong> Tools for Testing and Validating JSON-LD</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="p5-conclusion-and-final-project.html"><strong aria-hidden="true">5.</strong> Week 15: Conclusion and Final Project</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="5a-review-of-key-concepts.html"><strong aria-hidden="true">5.1.</strong> Review of Key Concepts</a></li><li class="chapter-item expanded "><a href="5b-final-project-implementing-a-semantic-web-site.html"><strong aria-hidden="true">5.2.</strong> Final Project: Implementing a Semantic Web Site</a></li><li class="chapter-item expanded "><a href="5c-course-wrap-up-and-q-and-a.html"><strong aria-hidden="true">5.3.</strong> Course Wrap-Up and Q&A</a></li></ol></li><li class="chapter-item expanded "><a href="syllabus.html"><strong aria-hidden="true">6.</strong> Appendix A: Syllabus</a></li><li class="chapter-item expanded "><a href="assignments.html"><strong aria-hidden="true">7.</strong> Appendix B: Assignments</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Semantic Web Development</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/cseanburns/semantic_web_development" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction-to-semantic-web-development"><a class="header" href="#introduction-to-semantic-web-development">Introduction to Semantic Web Development</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-semantic-web"><a class="header" href="#the-semantic-web">The Semantic Web</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tools-setup-and-workflow"><a class="header" href="#tools-setup-and-workflow">Tools, Setup, and Workflow</a></h1>
+<h2 id="install-software-for-web-development"><a class="header" href="#install-software-for-web-development">Install Software for Web Development</a></h2>
+<p>Web developers, and other programmers, rely on a suite of applications to conduct their work. Thus, in order to learn how to become web developers, we will need learn how to use some of these applications.</p>
+<p>To learn to use these applications, we need to install them. Hence, our first task this week is to install the software we need to start web development. For this course, we will use the following tools:</p>
+<ul>
+<li>Text editor</li>
+<li>Vector graphics editor</li>
+<li>Version control software</li>
+</ul>
+<p>The tricky part about this week is that I cannot show you how to install this software since the installation process is dependent on the operating system you use. But whether you use Windows, macOS, or Linux (as I do), then you should already know the basics of installing. And fortunately, once these tools are up and running on your systems, then we'll all be in sync and what you'll see on my screen going forward will be what you see on your screen.</p>
+<h3 id="text-editor"><a class="header" href="#text-editor">Text Editor</a></h3>
+<p>Let's start with the most important application: a text editor. Text editors are the bread and butter for programmers, and there's a long history, and even <a href="https://en.wikipedia.org/wiki/Command-line_interface">funny cultural wars</a>, about text editors. Personally, I use the <a href="https://www.vim.org/">Vim</a> editor, which is a <a href="https://en.wikipedia.org/wiki/Command-line_interface">command line</a> editor. Vim can be difficult to learn, and we don't have the time to spend on learning how to use an advanced text editor like Vim (even though it's worth it). Therefore, for this course we can use a GUI (graphical user interface) text editor.</p>
+<p>We use a text editor, and not a <a href="https://en.wikipedia.org/wiki/Word_processor">word processor</a> like Microsoft Word or Google Docs, because when we write any kind of code, the code needs to be saved as <a href="https://en.wikipedia.org/wiki/Plain_text">plain text</a> and not as encoded text. While a word processor application will encode text when a file is saved, text editors allow us to control how text is encoded directly in the file, e.g, by using HTML and CSS. Thus text editors are more powerful in that way.</p>
+<p>Also, text editors these days offer a number of functions that are designed to help us write better programs. And fortunately, many are free and open source software.</p>
+<p>For this course, you will use the free <a href="https://code.visualstudio.com/">VS Code</a> text editor. We'll learn more about how to use VS Code as we progress through the course, but first you need to install it. You are welcome to use another text editor, especially if you are used to working with one and know how to use it. But if you are new to this tool, then I'd encourage you use what I'll use for this course. Plus, all my text editor examples and demos will involve VS Code.</p>
+<p>Download and install VS Code from:</p>
+<ul>
+<li><a href="https://code.visualstudio.com/">VS Code</a></li>
+</ul>
+<h3 id="vector-graphics-editor"><a class="header" href="#vector-graphics-editor">Vector Graphics Editor</a></h3>
+<p>When we begin a web development project, it is a pretty bad idea to just sit down and start coding a website without first thinking about its architecture, how it looks, its design, what it contains, who the audience is or are, and so forth. The good idea is to start with a plan.</p>
+<p>The same is true for any professional who designs anything in this world, like an architect. Imagine having the money to build your own home and then hiring a builder who goes out and just starts assembling a bunch of lumber and pipes and wires with only a vague idea of what they want to accomplish. That would be foolish as well as a waste of money and time. The same is true for any profession that builds or develops anything, and if you want to build a website, then you should start with a plan.</p>
+<p>For this course, for now I mainly want you to think about how the website you will build will look on a desktop/laptop browser and also on mobile. We could easily hand draw this, but in some settings, you will want to share your plans with others, and thus it makes more sense to use a drawing tool in order to share native, digital files with your colleagues or customers.</p>
+<p>Enter Inkscape, a <a href="https://en.wikipedia.org/wiki/Vector_graphics">vector graphics editor</a>. Vector graphics editors are often used to design things like logos because unlike raster-based editors, like Photoshop or Gimp, vector graphics scale to any size and still maintain quality. Adobe Illustrator is a commonly used vector graphics editor, but Inkscape is as advanced as Illustrator and is also free and open source software.</p>
+<p>If you have and are comfortable using a vector graphics editor, like Illustrator, you are free to use that, but for this course, I will use and demonstrate Inkscape.</p>
+<p>Download and install Inkscape:</p>
+<ul>
+<li><a href="https://inkscape.org/">Inkscape</a></li>
+</ul>
+<h3 id="version-control"><a class="header" href="#version-control">Version Control</a></h3>
+<p>Finally, one of other most important tools for actual web development (and for any kind of programming) is version control. Version control is about project management, such as keeping track of your work and the history of our work, and collaboration, such as working with other developers. A number of version control software systems are available, but one of the most popular ones is Git, and we'll use that in this course.</p>
+<p>Version control systems often require a version control repository, which is used to send, store, and share code and other work. We could set up our own Git repository, but for this course, we will use <a href="https://github.com">GitHub</a>.</p>
+<p>I'll show you the basics of using <a href="https://git-scm.com/">Git</a> and GitHub in this course, but for now, we need to download Git and also create an account on GitHub, if you don't already have one.</p>
+<p>First, create an account on GitHub. Use a personal email address and not your UK one when setting up the account:</p>
+<ul>
+<li><a href="https://github.com">GitHub</a></li>
+</ul>
+<p>Second, download and install Git per the instructions for your operating system:</p>
+<p><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Install Git</a></p>
+<h4 id="windows-users"><a class="header" href="#windows-users">WINDOWS USERS</a></h4>
+<p>For Windows users, I advise you follow the instructions in this video and on this page:</p>
+<p><a href="https://www.simplilearn.com/tutorials/git-tutorial/git-installation-on-windows">Git on Windows</a></p>
+<p><strong>NOTE:</strong> Two modifications to the instructions at the above link.</p>
+<p>First, in addition to running the following command in the video:</p>
+<pre><code>git config –global user.name &lt;github_username&gt;
+</code></pre>
+<p>Also run the following command. Use the email address that you used to sign up on GitHub with:</p>
+<pre><code>git config –global user.email &lt;email_address&gt;
+</code></pre>
+<p>Second, in the example video above, the narrator uses the branch "master" to push her commit to GitHub. You will not use that. Instead, you will use the branch "main". So your command will look like:</p>
+<pre><code>git push origin main
+</code></pre>
+<h4 id="macos-users"><a class="header" href="#macos-users">MACOS USERS</a></h4>
+<p>Create an account on GitHub, and then follow the instructions in the <em>macos</em> section here to <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">install git</a>. After that, follow the instructions in the Windows video above to create repo on GitHub that syncs to a local folder on your computer. Be sure to run the <code>git config</code> commands above, too, before creating your local git folder.</p>
+<h3 id="git-github-and-vs-code"><a class="header" href="#git-github-and-vs-code">Git, GitHub, and VS Code</a></h3>
+<p>Git is a free and open source version control system. It is developed and maintained by a community of software developers, but like the Linux kernel, was original written by Linus Torvalds. Since it's creation in 2005, it has become the most widely used version control system for software development and other kinds of coding work.</p>
+<p>The basics of Git are fairly straightforward but can become reasonably complex. It is used for single person or simple projects and multi-person or complex projects. In cases involving multi-person and/or complex projects, Git can be difficult to use (or grasp) because big software projects, with multiple contributors, perhaps from multiple organizations, are complicated and may involve complicated work flows. Our goals for this class are not that ambitious, and so our use of Git will be more straightforward and introductory.</p>
+<p>Whether straightforward or complex, it is important to get a handle on the basics of Git. Once you have the basics down, it becomes much easier to use Git in more advanced ways. We'll cover the basics in a moment, and we'll keep practicing the basics throughout the remainder of the course.</p>
+<p>It is important to recognize that GitHub is not Git. GitHub is a hosting site for projects that use the Git version control system. It does not, however, merely host (store) code and other text that is managed with Git but adds to Git and integrates Git on its web platform and other projects. There are other hosting and service Git providers, such as <a href="https://about.gitlab.com/">GitLab</a>, and self-hosting providers, such as <a href="https://gitea.io/en-us/">Gitea</a>. Any server, e.g., a Linux one, can also serve as a personal or private hosting site.</p>
+<p>VS Code is a text editor developed and maintained by Microsoft, which owns GitHub. Perhaps because of this ownership, as well as the popularity of Git and GitHub, Git and GitHub are integrated into the VS Code text editor. VS Code users can augment the text editor with a variety of community created <a href="https://code.visualstudio.com/docs/editor/extension-marketplace">extensions</a> and <a href="https://vscodethemes.com/">themes</a>, and you're welcome to explore these for your personal use. Many other text editors can be augmented in this way. Personally, my main text editor is Vim, which is also highly customizable, but for the purposes of this class, I will use VS Code, which is easier to learn.</p>
+<h2 id="git-basics"><a class="header" href="#git-basics">Git Basics</a></h2>
+<h3 id="repos"><a class="header" href="#repos">Repos</a></h3>
+<p>The first Git concept to learn is the repository concept. Git uses two kinds of repositories:</p>
+<ul>
+<li>local repository (repo)</li>
+<li>remote repository repo)</li>
+</ul>
+<p>The local repo is a project directory (or folder) on your computer. Henceforth I will use the term directory and not folder since the former term is more commonly used in tech fields. The project directory contains all the project files and any sub-directories for the project.</p>
+<p>The remote repo is where we send, retrieve, or sync the files and directories that are contained in the local repo. We can also retrieve projects from other repos that other people or organizations have created, if those repos are public.</p>
+<p>With Git and GitHub, we can start a project on the local system (i.e., our computers) or start a project by creating a remote repo on GitHub and then copying it to our local system.</p>
+<h3 id="branches"><a class="header" href="#branches">Branches</a></h3>
+<p>The second Git concept to learn is:</p>
+<ul>
+<li>branches</li>
+</ul>
+<p>When you configure a directory on your local system to become a Git project, you create a default branch for your project. For small projects, we might only work in the default branch. The default branch will either be named main or master.</p>
+<p>However, since Git is a version control system, we can create additional branches to test or work on different components of our projects without messing with the main branch. For large or complex projects, we would definitely work and switch among different branches. A large project might be a big website, an software application, or even an operating systems. Working in non-main branches, like a testing branch, allows us to develop components of our project without interfering with the main branch, which might be at a stable version of our project. And then when we are ready, we can merge a testing branch with our main branch, and thus create a new version, or we can delete the testing branch if we don't want to use it.</p>
+<p>We will primarily work with the default, main branch with our projects, but you should read the <a href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell">Git documentation on branches</a>.</p>
+<p>Important note: If we create a new repository on our local machines using Git, the default branch will be called Master. We will reconfigure this, though. However, if we create a new repository on GitHub, the default branch will be called Main. (Git itself will eventually switch to Main as its default branch name in a future update.)</p>
+<p>There is a long history of using terms like master and slave in various technologies, and the technology industry is beginning to come to terms with this and to use more inclusive terms. You can read more about the reasons here:</p>
+<ul>
+<li><a href="https://www.zdnet.com/article/github-to-replace-master-with-main-starting-next-month/">GitHub to replace 'master' with 'main' starting next month</a></li>
+<li><a href="https://www.wired.com/story/tech-confronts-use-labels-master-slave/">Tech Confronts Its Use of the Labels 'Master' and 'Slave'</a></li>
+</ul>
+<h2 id="gitting-started"><a class="header" href="#gitting-started"><em>Gitting</em> Started</a></h2>
+<h3 id="git-configuration"><a class="header" href="#git-configuration">Git Configuration</a></h3>
+<p>Although you have already installed and configured Git on your local machines, I would like to rehash what we have done.</p>
+<p>Before using Git to work with local and remote repos, we configure our local operating system to use Git. We do that by giving Git our name and email address plus some other details. Here we need to be sure to use the same email address that we used to create our accounts on GitHub.</p>
+<p>To get started, open a command shell or terminal on your computer (e.g., CMD.exe on Windows or Terminal.app on macOS) and run the following command. Note the quotes around the name but not around the email address. Use YOUR NAME AND YOUR EMAIL ADDRESS.</p>
+<pre><code>git config --global user.name "Your Name"
+git config --global user.email youremail@example.com
+</code></pre>
+<p>Here are some new configurations to make. First, we can configure Git to use Main as our default branch name and to use VS Code as our default Git editor. Run these two commands as-is, but if you are using a different text editor, then be sure to lookup the appropriate command for that editor:</p>
+<pre><code>git config --global core.editor "code --wait"
+git config --global init.defaultBranch main
+</code></pre>
+<p>For additional details, see the Git documentation on getting started:</p>
+<ul>
+<li><a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup">Getting Started - First-Time Git Setup</a></li>
+</ul>
+<h3 id="git-fork-and-clone"><a class="header" href="#git-fork-and-clone">Git Fork and Clone</a></h3>
+<p>Once we have configured Git to use our information, we can start coding. To help us begin to work on our websites, I have created a repository that we will all use to start. The remote repo is located on my GitHub account and is called cseanburns/web2023, and it contains a basic website template that you can use for your websites. The default index.html file will be the homepage for our site. (For those of you who took my Linux Systems Administration course, you should know why that file is the default home page.)</p>
+<p>You are going to fork that repo to your GitHub account, and then clone the fork to your local system. We only have to do this one time, but this will allow you to use my template for yourselves. Going forward, we will use other Git commands. You can do all of this within VS Code.</p>
+<p>As an example, in the steps that follow, I am going to fork and clone the octocat/Spoon-Knife repo. This is an example repo used to teach people how to fork on GitHub. You don't have to fork and clone this repo, but you should use my demo of it fork and clone my cseanburns/web2023 repo.</p>
+<p>Be sure to configure Git on your system first, as described above. After that, follow these steps.</p>
+<p>Steps to Fork, Clone and then Modify a Repo:</p>
+<ol>
+<li>Visit the Spoon-Knife repo and copy the URL.</li>
+<li>In VS Code, click on the Source Control icon and then click: Clone Repository.</li>
+<li>In the pop box, respond Open to the question, "Would you like to open the cloned repository?"</li>
+<li>Click on index.html to open and make a change and save.</li>
+<li>At the bottom of screen, click on the Synchronize icon and at the prompt, click on Ok.</li>
+<li>Click on the Source Control icon again, and then add Message and click on Commit.</li>
+<li>At the Stage message, click on Yes to stage commit and commit them directly.</li>
+<li>Then click on Sync Changes and click Ok to push.</li>
+</ol>
+<p>Once you've completed the steps for the cseanburns/web2023 repository, you should have the web2023 repository on your computer. These are the local repos for those remote repos.</p>
+<p>Going forward, we will use VS Code to:</p>
+<ol>
+<li>Edit and write HTML, CSS, JSON-LD in our local repo.</li>
+<li>Save the edits and new code.</li>
+<li>Stage the changes so that Git tracks the new changes.</li>
+<li>Commit the changes with a meaningful commit message.</li>
+<li>And push the changes to the remote repo.</li>
+</ol>
+<p>For future reference, here's a nice cheat sheet of <a href="https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html">Git commands</a>. Most of these commands are to be used from the command line (Windows, macOS, or Linux), and so if we explore any command line usage of Git, these will be good to have on hand.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="user-experience-and-accessibility"><a class="header" href="#user-experience-and-accessibility">User Experience and Accessibility</a></h1>
+<h2 id="accessibility"><a class="header" href="#accessibility">Accessibility</a></h2>
+<p><strong>Note:</strong> Readings for this course are linked to in these transcripts. It is important to visit and review the information that are provided at these links.</p>
+<p>Hi Class, this week we're studying general web accessibility and how web semantics helps make sites more accessible. I use the term accessibility as a kind of shorthand: I also include, broadly, things like usability and inclusion.</p>
+<p>One of our readings makes important distinctions among these terms. That is, accessibility has a distinct definition, as well as the terms usability and inclusion. Our reading from <a href="https://www.w3.org/WAI/intro/usable">w3.org</a> defines accessibility as that which:</p>
+<blockquote>
+<p>addresses discriminatory aspects related to equivalent user experience for people with disabilities, including people with age-related impairments. For the web, accessibility means that people with disabilities can perceive, understand, navigate, and interact with websites and tools, and that they can contribute equally without barriers.</p>
+</blockquote>
+<p>And then usability is related to user experience design or UX design. Usability is:</p>
+<blockquote>
+<p>about designing products to be effective, efficient, and satisfying. Specifically, <a href="https://www.iso.org/home.html">ISO (International Organization for Standardization)</a> defines usability as the "extent to which a product can be used by specified users to achieve specified goals effectively, efficiently and with satisfaction in a specified context of use"</p>
+</blockquote>
+<p>Finally, inclusion is referred to as:</p>
+<blockquote>
+<p>Inclusive design, universal design, and design for all involves designing products, such as websites, to be usable by everyone to the greatest extent possible, without the need for adaptation. Inclusion addresses a broad range of issues including access to and quality of hardware, software, and Internet connectivity; computer literacy and skills; economic situation; education; geographic location; and language — as well as age and disability.</p>
+</blockquote>
+<p>Things related to inclusion are pretty broadly defined. This can be related to the responsiveness of a website to various displays, such as mobile phones, and then to the whole ranges of mobile phones that exist, as well as to desktops, laptops, and tablets, and even to smart watches.</p>
+<p>In class, we're going to discuss these issues. You're going to identify some websites and rank and judge these sites according to the principles of accessibility, usability, and inclusion by enabling accessibility mode on your laptop/desktop browser and on your phones.</p>
+<p>It will help to watch a <a href="https://www.youtube.com/watch?v=3f31oufqFSM">short video about accessibility on YouTube</a>, which does a really nice job demonstrating all the above issues.</p>
+<h2 id="semantics-and-accessibility"><a class="header" href="#semantics-and-accessibility">Semantics and Accessibility</a></h2>
+<p>Semantics refers to meaning, or what something means. Humans are pretty good (most of the time) at interpreting meaning, but not computers. For example, you and I know what a person is, but a computer does not, yet despite that, if you search for a person on the web, you will likely get accurate results back. The reason this is successful is because information retrieval algorithms use other methods to figure out to identify what is relevant based on what we search.</p>
+<p>Thus when we talk about semantics and accessibility, we talk about how to make it so that the structure and the content on our websites can be understood by computers. The result of this is better information search and information retrieval, via search engines and artificial intelligence assistants.</p>
+<p>It makes sense then that the meaning of a thing relates to its accessibility. Therefore, one way that we will address accessible web development is through HTML5, which was specifically released to add semantic HTML elements. This helps computer systems (like search engines and screen readers) interpret the meaning of a document's structure better than prior versions of HTML could and provide better accessibility options to people, then, too. Later we'll learn and apply JSON-LD technologies to provide meaning to the content on a page, so that a search technology can have a better understanding of what a webpage is about.</p>
+<h2 id="do-more-with-less"><a class="header" href="#do-more-with-less">Do More with Less</a></h2>
+<p>There is another aspect of HTML and accessibility that we need to consider. You can think of HTML as the least common denominator among the languages that we use to develop websites. That is, at its very basic, a web page can be nothing more than an HTML page since HTML offers elements that are used to structure and provide content to a website. All other scripting additions to a web page primarily work with HTML.</p>
+<p>This means also that sometimes you can do things in JavaScript, PHP, Python, Ruby, etc that you can do just with HTML. One of the goals in meeting accessibility, usability, and inclusion issues is to take advantage of the least common denominator aspect of HTML as much as possible. By this I mean that if you have a choice between a JavaScript (or PHP, Ruby, etc.) solution that will perform some task, and you can do the same thing in HTML, then do it in HTML. As soon as we start to make things more complicated and more sophisticated, then the more likely it becomes that we will break something, and that makes it likely to make a site less accessible, usable, and inclusive.</p>
+<h2 id="the-semantic-structure"><a class="header" href="#the-semantic-structure">The Semantic Structure</a></h2>
+<p>I mentioned this above, but we'll talk about semantics in two ways. We we start creating our sites, we will use HTML5 to add semantics to a web page, and later we will use JSON-LD to add additional semantics that describe the content on a webpage. Some <a href="https://developer.mozilla.org/en-US/docs/Glossary/semantics#Semantics_in_HTML">example semantic HTML5 elements</a> include:</p>
+<ul>
+<li><code>&lt;article&gt;</code></li>
+<li><code>&lt;aside&gt;</code></li>
+<li><code>&lt;figure&gt;</code></li>
+<li><code>&lt;footer&gt;</code></li>
+<li><code>&lt;header&gt;</code></li>
+<li><code>&lt;nav&gt;</code></li>
+<li><code>&lt;section&gt;</code></li>
+<li><code>&lt;summary&gt;</code></li>
+<li><code>&lt;time&gt;</code></li>
+</ul>
+<p>Below are links to two lists of HTML5 elements. You should begin to review them and save or bookmark these pages for constant reference:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTML Elements via Mozilla</a></li>
+<li><a href="https://www.w3.org/TR/2012/WD-html-markup-20121025/elements-by-function.html">HTML Elements via W3</a></li>
+</ul>
+<p>Attempts to provide semantic data were provided for in previous versions of HTML, like XHTML and HTML4, and through hacks that were not all that ideal, such as excessive use of the <div> element, or through scripting languages like JavaScript. However, HTML5's great benefit is that it provides semantic elements directly. For example, the <code>&lt;article&gt;</code> element was created to <a href="https://www.w3.org/TR/2012/WD-html-markup-20121025/article.html#article">describe an article, like a blog entry, on a web page</a>, and the <code>&lt;section&gt;</code> element was created <a href="https://www.w3.org/TR/2012/WD-html-markup-20121025/section.html#section">to delineate a generic section on a web page</a>. By doing that, we provide semantic information not just to the user of the site, or to other developers, but also to machines that parse that website for data and information, such as web crawlers from search engines or to screen readers for people who are visually impaired in some way. These semantic elements also provide text-to-speech advantages. These are a few reasons why HTML5 semantic elements are important. You won't have to memorize all of the elements, but there will be ones that you'll use more often, like the ones that I listed above.</p>
+<p>All right, please watch the video linked to in this transcript and complete the task assigned in the discussion prompt. See you on the board.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="html5-and-the-web"><a class="header" href="#html5-and-the-web">HTML5 and The Web</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="document-structure-and-metadata"><a class="header" href="#document-structure-and-metadata">Document Structure and Metadata</a></h1>
+<p>W3C is the organizing body for managing the HTML standards (among other web related technologies), its specifications, and documentation. The documentation for HTML5 should be constantly referenced throughout this course:</p>
+<ul>
+<li><a href="https://www.w3.org/TR/2011/WD-html5-20110525/spec.html">HTML5 at W3C</a> or the most current draft: https://html.spec.whatwg.org/</li>
+<li>Specifically the section on semantics: https://html.spec.whatwg.org/#semantics</li>
+</ul>
+<p>Another nice reference source is maintained by Mozilla:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML">MDN Web Docs: HTML</a></li>
+</ul>
+<h2 id="the-root-element"><a class="header" href="#the-root-element">The Root Element</a></h2>
+<blockquote>
+<p>The <code>&lt;html&gt;</code> element represents the root of an HTML document (w3org, Root Element section).</p>
+</blockquote>
+<p>This element establishes the root (base) of the document and it follows the <strong>DOCTYPE</strong> (document type) declaration. The <code>&lt;html&gt;</code> element should be accompanied with a language attribute (more on attributes soon).</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+</code></pre>
+<h2 id="document-metadata"><a class="header" href="#document-metadata">Document Metadata</a></h2>
+<blockquote>
+<p>The <code>&lt;head&gt;</code> element contains the document's metadata plus other information (<a href="https://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#document-metadata">w3org, Document Metadata section</a>).</p>
+</blockquote>
+<p>There are five elements that belong to the <code>&lt;head&gt;</code> section. They include:</p>
+<ul>
+<li>the <code>&lt;title&gt;</code> element: states the document's title</li>
+<li>the <code>&lt;base&gt;</code> element: declares the base URL</li>
+<li>the <code>&lt;link&gt;</code> element: establishes links to other resources, such as a CSS stylesheet</li>
+<li>the <code>&lt;meta&gt;</code> element: provides additional metadata</li>
+<li>the <code>&lt;style&gt;</code> element: enables internal styling with CSS</li>
+</ul>
+<h2 id="html-section-elements"><a class="header" href="#html-section-elements">HTML Section Elements</a></h2>
+<p>There are ten main HTML section elements, or elements used to define the sections of an HTML document. These will be some of the main and most often elements that we'll use in our HTML documents. They include:</p>
+<ul>
+<li>the <code>&lt;body&gt;</code> element</li>
+<li>the <code>&lt;section&gt;</code> element</li>
+<li>the <code>&lt;nav&gt;</code> element</li>
+<li>the <code>&lt;article&gt;</code> element</li>
+<li>the <code>&lt;aside&gt;</code> element</li>
+<li>the <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, ..., <code>&lt;h6&gt;</code> elements</li>
+<li>the <code>&lt;hgroup&gt;</code> element</li>
+<li>the <code>&lt;header&gt;</code> element</li>
+<li>the <code>&lt;footer&gt;</code> element</li>
+<li>the <code>&lt;address&gt;</code> element</li>
+</ul>
+<p>See: <a href="https://www.w3.org/TR/2011/WD-html5-20110525/sections.html#sections">HTML Sections</a></p>
+<h2 id="grouping-content-elements"><a class="header" href="#grouping-content-elements">Grouping Content Elements</a></h2>
+<p>The other set of common elements that we'll use quite often are the HTML grouping elements. There are 13 elements categorized as grouping elements. These include:</p>
+<ul>
+<li>the <code>&lt;p&gt;</code> element</li>
+<li>the <code>&lt;hr&gt;</code> element</li>
+<li>the <code>&lt;pre&gt;</code> element</li>
+<li>the <code>&lt;blockquote&gt;</code> element</li>
+<li>the <code>&lt;ol&gt;</code> element</li>
+<li>the <code>&lt;ul&gt;</code> element</li>
+<li>the <code>&lt;li&gt;</code> element</li>
+<li>the <code>&lt;dl&gt;</code> element</li>
+<li>the <code>&lt;dt&gt;</code> element</li>
+<li>the <code>&lt;dd&gt;</code> element</li>
+<li>the <code>&lt;figure&gt;</code> element</li>
+<li>the <code>&lt;figcaption&gt;</code> element</li>
+<li>the <code>&lt;div&gt;</code> element</li>
+</ul>
+<p>Some of these elements must be used together. For example, the <ul> and the <ol> elements are used to create unordered and ordered lists, respectively, and either one must include the <li> element to list the items.</p>
+<p>Likewise, the <code>&lt;dl&gt;</code> element is for starting description/definition lists and will also include the <code>&lt;dt&gt;</code> element for specifying a term in a description/definition list and the <code>&lt;dd&gt;</code> element to provide the description or definition.</p>
+<p>See: <a href="https://www.w3.org/TR/2011/WD-html5-20110525/grouping-content.html#grouping-content">Grouping content</a></p>
+<h2 id="text-level-semantic-elements"><a class="header" href="#text-level-semantic-elements">Text-level Semantic Elements</a></h2>
+<p>There are 27 elements categorized as text-level semantic elements. You can read about the full list at the link below. Here I will only cover a few of the main ones:</p>
+<ul>
+<li>the <code>&lt;a&gt;</code> element</li>
+<li>the <code>&lt;em&gt;</code> element</li>
+<li>the <code>&lt;strong&gt;</code> element</li>
+<li>the <code>&lt;cite&gt;</code> element</li>
+<li>the <code>&lt;abbr&gt;</code> element</li>
+<li>the <code>&lt;time&gt;</code> element</li>
+<li>the <code>&lt;code&gt;</code> element</li>
+<li>the <code>&lt;sub&gt;</code> element</li>
+<li>the <code>&lt;q&gt;</code> element</li>
+<li>the <code>&lt;span&gt;</code> element</li>
+<li>the <code>&lt;br&gt;</code> element</li>
+</ul>
+<p>See: <a href="https://www.w3.org/TR/2011/WD-html5-20110525/text-level-semantics.html#text-level-semantics">Text-level semantics</a></p>
+<h2 id="the-structure-of-an-html-document"><a class="header" href="#the-structure-of-an-html-document">The Structure of an HTML Document</a></h2>
+<p>An HTML document follows a structure that begins with the DOCTYPE and HTML element. The second section is the HEAD section that includes document metadata. This is followed by the BODY section, which contains the content of the document. The content of an HTML document may include the SECTION elements, the GROUPING elements, and the TEXT-LEVEL SEMANTIC elements. A basic document structure might look like this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+	&lt;head&gt;
+		&lt;title&gt;&lt;/title&gt;
+		&lt;link&gt;
+		&lt;meta&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;header&gt;&lt;/header&gt;
+		&lt;nav&gt;&lt;/nav&gt;
+		&lt;section&gt;
+			&lt;h1&gt;&lt;/h1&gt;
+			&lt;p&gt;&lt;/p&gt;
+		&lt;/section&gt;
+		&lt;section&gt;
+			&lt;h2&gt;&lt;/h2&gt;
+			&lt;p&gt;&lt;/p&gt;
+		&lt;/section&gt;
+		&lt;footer&gt;&lt;/footer&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="start-and-end-tags"><a class="header" href="#start-and-end-tags">Start and End Tags</a></h3>
+<p>Most HTML elements will require open and end tags with content between these tags. For example, a <code>&lt;h1&gt;</code> tag is for heading level one content and will end with a closing <code>&lt;/h1&gt;</code> tag, indicated by the forward slash:</p>
+<pre><code>&lt;h1&gt;Title of Paper&lt;/h1&gt;
+</code></pre>
+<p>A few elements do not work like this, but these are used sparingly. For example, most of the elements in the DOCUMENT METADATA section only use an open tag because they only take HTML attributes (next up) and not content:</p>
+<pre><code>&lt;link rel="stylesheet" href="styles/style.css"&gt;
+&lt;meta charset="utf-8"&gt;
+</code></pre>
+<p>The <code>&lt;br&gt;</code> element also does not have a start or an end tag.Because the <code>&lt;br&gt;</code> element inserts a line break, it is used at the point in the text where a line break is needed and not to enclose content. It also includes a foward slash, but the slash is placed after the br. It's useful for breaking lines around addresses or poetry. For example, here are a few lines of The Litany Against Fear from the book Dune:</p>
+<pre><code>&lt;p&gt;I must not fear&lt;br/&gt;
+Fear is the mind-killer&lt;br/&gt;
+I will face my fear&lt;br/&gt;
+</code></pre>
+<h3 id="html-attributes"><a class="header" href="#html-attributes">HTML Attributes</a></h3>
+<p>HTML Attributes are:</p>
+<blockquote>
+<p>additional values that configure the elements or adjust their behavior in various ways to meet the criteria the users want (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes">HTML Attribute Reference, MDN Web Docs</a>).</p>
+</blockquote>
+<p>The syntax to use is:</p>
+<pre><code>&lt;element attribute="value"&gt;
+</code></pre>
+<p>Many attributes are useful for JavaScript programming, but there are a few, essential attributes that are needed for regular HTML markup. These are referred to as global attributes. Some of the main ones include:</p>
+<ul>
+<li>the lang attribute</li>
+<li>the title attribute</li>
+<li>the class attribute</li>
+<li>the id attribute</li>
+<li>the style attribute</li>
+</ul>
+<p>We used the lang attribute to declare the document's language in the <code>&lt;html&gt;</code> root element.</p>
+<pre><code>&lt;html lang="en"&gt;&lt;/html&gt;
+</code></pre>
+<p>We use the title attribute (not the <code>&lt;title&gt;</code> element) to provide a title to objects like figures <code>&lt;figure&gt;</code> and images <code>&lt;img&gt;</code> (but we can title anything really):</p>
+<pre><code>&lt;img title="Title of Image"&gt;photo.jpg&lt;/img&gt;
+</code></pre>
+<p>The class and id attribute are primarily used to identify specific parts of an HTML document and then to style those parts with CSS. The id attribute can be used to create links within the document, like bookmarks or table of contents. It's important to remember that:</p>
+<ul>
+<li>The value for the id attribute can only be used once.</li>
+<li>The value for a class attribute can be repeated.</li>
+</ul>
+<p>The style attribute can be used to insert in-text CSS styling. This will override styling declared in an external stylesheet or styling inserted in the HEAD of the document with the <code>&lt;style&gt;</code> element. E.g.:</p>
+<pre><code>&lt;h1 style="text-transform: uppercase"&gt;This will become uppercase&lt;/h1&gt;
+</code></pre>
+<p>We'll use some other attributes later in the course, but for now, read through the list of <a href="https://www.w3.org/TR/2011/WD-html5-20110525/elements.html#global-attributes">Global Attributes</a> on w3.org for full definitions and examples.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="document-metadata-1"><a class="header" href="#document-metadata-1">Document Metadata</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="semantic-elements"><a class="header" href="#semantic-elements">Semantic Elements</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="html5-best-practices"><a class="header" href="#html5-best-practices">HTML5 Best Practices</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="2b-text-content-and-inline-text-semantics"><a class="header" href="#2b-text-content-and-inline-text-semantics">2b Text Content and Inline Text Semantics</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="text-elements"><a class="header" href="#text-elements">Text Elements</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="inline-text-semantics"><a class="header" href="#inline-text-semantics">Inline Text Semantics</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lists"><a class="header" href="#lists">Lists</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="image-and-multimedia"><a class="header" href="#image-and-multimedia">Image and Multimedia</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="images"><a class="header" href="#images">Images</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="multimedia-elements"><a class="header" href="#multimedia-elements">Multimedia Elements</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tables-and-forms"><a class="header" href="#tables-and-forms">Tables and Forms</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="table-elements"><a class="header" href="#table-elements">Table Elements</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="form-elements"><a class="header" href="#form-elements">Form Elements</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="form-validation-and-accessibility"><a class="header" href="#form-validation-and-accessibility">Form Validation and Accessibility</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="css3-and-web-design"><a class="header" href="#css3-and-web-design">CSS3 and Web Design</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="css3-and-basic-styling"><a class="header" href="#css3-and-basic-styling">CSS3 and Basic Styling</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="syntax-and-selectors"><a class="header" href="#syntax-and-selectors">Syntax and Selectors</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="colors-units-and-measurements"><a class="header" href="#colors-units-and-measurements">Colors, Units, and Measurements</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="applying-css-to-html"><a class="header" href="#applying-css-to-html">Applying CSS to HTML</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-box-model"><a class="header" href="#the-box-model">The Box Model</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="margins-borders-and-padding"><a class="header" href="#margins-borders-and-padding">Margins, Borders, and Padding</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="box-sizing"><a class="header" href="#box-sizing">Box Sizing</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="display-properties"><a class="header" href="#display-properties">Display Properties</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="typography-and-text-styles"><a class="header" href="#typography-and-text-styles">Typography and Text Styles</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="fonts-and-typography"><a class="header" href="#fonts-and-typography">Fonts and Typography</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="text-styles-and-effects"><a class="header" href="#text-styles-and-effects">Text Styles and Effects</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="images-multimedia-and-backgrounds"><a class="header" href="#images-multimedia-and-backgrounds">Images Multimedia and Backgrounds</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="styling-images-and-multimedia"><a class="header" href="#styling-images-and-multimedia">Styling Images and Multimedia</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="backgrounds"><a class="header" href="#backgrounds">Backgrounds</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="responsive-layouts-with-flexbox-and-grid"><a class="header" href="#responsive-layouts-with-flexbox-and-grid">Responsive Layouts with Flexbox and Grid</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="flexbox-basics"><a class="header" href="#flexbox-basics">Flexbox Basics</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="grid-layout-basics"><a class="header" href="#grid-layout-basics">Grid Layout Basics</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="media-queries-for-responsive-design"><a class="header" href="#media-queries-for-responsive-design">Media Queries for Responsive Design</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="introduction-to-json-ld-and-schemaorg"><a class="header" href="#introduction-to-json-ld-and-schemaorg">Introduction to JSON-LD and Schema.org</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="additional-document-metadata-and-json-basics"><a class="header" href="#additional-document-metadata-and-json-basics">Additional Document Metadata and JSON Basics</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="document-metadata-revisited"><a class="header" href="#document-metadata-revisited">Document Metadata Revisited</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="introduction-to-json"><a class="header" href="#introduction-to-json">Introduction to JSON</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="json-syntax-and-data-types"><a class="header" href="#json-syntax-and-data-types">JSON Syntax and Data Types</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="schemaorg-and-structured-data"><a class="header" href="#schemaorg-and-structured-data">Schema.org and Structured Data</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="overview-of-schemaorg"><a class="header" href="#overview-of-schemaorg">Overview of Schema.org</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="common-schema-types"><a class="header" href="#common-schema-types">Common Schema Types</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="benefits-of-structured-data"><a class="header" href="#benefits-of-structured-data">Benefits of Structured Data</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="implementing-json-ld-with-schemaorg"><a class="header" href="#implementing-json-ld-with-schemaorg">Implementing JSON-LD with Schema.org</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="json-ld-syntax-and-integration"><a class="header" href="#json-ld-syntax-and-integration">JSON-LD Syntax and Integration</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="examples-of-implementing-json-ld-in-html"><a class="header" href="#examples-of-implementing-json-ld-in-html">Examples of Implementing JSON-LD in HTML</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tools-for-testing-and-validating-json-ld"><a class="header" href="#tools-for-testing-and-validating-json-ld">Tools for Testing and Validating JSON-LD</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="conclusion-and-final-project"><a class="header" href="#conclusion-and-final-project">Conclusion and Final Project</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="review-of-key-concepts"><a class="header" href="#review-of-key-concepts">Review of Key Concepts</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="final-project-implementing-a-semantic-web-site"><a class="header" href="#final-project-implementing-a-semantic-web-site">Final Project: Implementing a Semantic Web Site</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="course-wrap-up-and-qa"><a class="header" href="#course-wrap-up-and-qa">Course Wrap-up and Q&amp;A</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="syllabus"><a class="header" href="#syllabus">Syllabus</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="assignments"><a class="header" href="#assignments">Assignments</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
