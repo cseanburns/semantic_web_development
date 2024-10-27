@@ -13,7 +13,7 @@
         - [Text Elements](2b1-text-elements.md)
         - [Inline Text Semantics](2b2-inline-text-semantics.md)
         - [Lists](2b3-lists.md)
-    - [Week 4: Image and Multimedia](2c-image-and-multimedia.md)
+    - [Week 4: Images and Multimedia](2c-images-and-multimedia.md)
         - [Images](2c1-images.md)
         - [Multimedia Elements](2c2-multimedia-elements.md)
     - [Week 5: Tables and Forms](2d-tables-and-forms.md)
