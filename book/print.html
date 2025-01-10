@@ -179,17 +179,18 @@
                     <main>
                         <h1 id="introduction-to-semantic-web-development"><a class="header" href="#introduction-to-semantic-web-development">Introduction to Semantic Web Development</a></h1>
 <p>Author: C. Sean Burns<br />
-Date: 2024-07-26<br />
+Date: 2025-01-10<br />
 Email: sean.burns@uky.edu<br />
 Website: <a href="https://cseanburns.net">cseanburns.net</a><br />
 GitHub: <a href="https://github.com/cseanburns">@cseanburns</a></p>
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
 <p>This book will serve as an introduction to semantic web development.
 A more advanced semantic web development course would introduce students to RDFS, SKOS, OWL, SPARQL or more.
-But this book expects undergraduate students who are new to any kind of web development, and will therefore focus on more entry level topics:
-HTML5 and its semantic elements, CSS3, and JSON-LD with schema.org (and perhaps other vocabularies).</p>
+But this book expects undergraduate students who are new to any kind of web development,
+and will therefore focus on more entry level topics:
+HTML5 and its semantic elements, CSS3, and JSON-LD with schema.org.</p>
 <p>This book is a work in progress.
-The goal is to complete an initial draft by January 2025 and then polish it as I teach my spring course on semantic web development.</p>
+The goal is to complete an initial draft between January and May 2025.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-semantic-web"><a class="header" href="#the-semantic-web">The Semantic Web</a></h1>
 <p><em>The Semantic Web</em> is an extension of the current web.
 Whereas the current web was designed for people to <em>read</em>, the semantic web is designed to help machines process, intepret, and reuse data.
@@ -233,7 +234,7 @@ Specifically, in this book, we will learn about:</p>
 <p>There are several important reasons to make data semantic on the web.</p>
 <ol>
 <li>First, semantic data <strong>enhanches searchability</strong>. Recipes are a common example. When you search for a recipe,
-semantic data on recipe web pages search engines understand the ingredients, cooking times, and other factors.</li>
+semantic data on recipe web pages allows search engines to parse the ingredients, cooking times, and other factors on those pages.</li>
 <li>Second, the semantic web enables <strong>data integration</strong>. This is through the use of multiple vocabularies, such as Schema.org,
 but there are other vocabularies that can be used at the same time. This is a common use case in more advanced cases of the semantic web.
 For example, scientific databases can be enhanced with semantic data that integrates data from multiple scientific domains.</li>
@@ -249,7 +250,7 @@ Our tasks will include:</p>
 <ol>
 <li>We will learn how to <strong>structure</strong> web pages using <strong>HTML5</strong> semantic elements. This will make our web content more meaningful and accessible
 to users and machines.</li>
-<li>We will laern how to <strong>style</strong> and <strong>present</strong> our web pages using <strong>CSS3</strong>. Cascading Style Sheets (CSS) help us create visually appealing
+<li>We will learn how to <strong>style</strong> and <strong>present</strong> our web pages using <strong>CSS3</strong>. Cascading Style Sheets (CSS) help us create visually appealing
 webpages and sites but, importantly, keep content separated from presentation.</li>
 <li>We will embed structured, linked data into our webpages using <strong>JSON-LD</strong> and <strong>Schema.org</strong>. This will further enhance our content for machine-readability.</li>
 <li>Finally, throughout this book, we will work on creating a final website using all of these technologies.</li>
@@ -270,16 +271,16 @@ This opens up possibilities for data integration, searchability, and automation.
 <p>The tricky part about this week is that I cannot show you how to install this software since the installation process is dependent on the operating system you use. But whether you use Windows, macOS, or Linux (as I do), then you should already know the basics of installing. And fortunately, once these tools are up and running on your systems, then we'll all be in sync and what you'll see on my screen going forward will be what you see on your screen.</p>
 <h3 id="text-editor"><a class="header" href="#text-editor">Text Editor</a></h3>
 <p>Let's start with the most important application: a text editor. Text editors are the bread and butter for programmers, and there's a long history, and even <a href="https://en.wikipedia.org/wiki/Command-line_interface">funny cultural wars</a>, about text editors. Personally, I use the <a href="https://www.vim.org/">Vim</a> editor, which is a <a href="https://en.wikipedia.org/wiki/Command-line_interface">command line</a> editor. Vim can be difficult to learn, and we don't have the time to spend on learning how to use an advanced text editor like Vim (even though it's worth it). Therefore, for this course we can use a GUI (graphical user interface) text editor.</p>
-<p>We use a text editor, and not a <a href="https://en.wikipedia.org/wiki/Word_processor">word processor</a> like Microsoft Word or Google Docs, because when we write any kind of code, the code needs to be saved as <a href="https://en.wikipedia.org/wiki/Plain_text">plain text</a> and not as encoded text. While a word processor application will encode text when a file is saved, text editors allow us to control how text is encoded directly in the file, e.g, by using HTML and CSS. Thus text editors are more powerful in that way.</p>
+<p>We use a text editor, and not a <a href="https://en.wikipedia.org/wiki/Word_processor">word processor</a> like Microsoft Word or Google Docs, because when we write any kind of code, the code needs to be saved as <a href="https://en.wikipedia.org/wiki/Plain_text">plain text</a> and not as encoded text, which is how word processors save files (e.g., docx versus txt files). While a word processor application will encode text when a file is saved, text editors allow us to control how text is encoded directly in the file, e.g, by using HTML and CSS. Thus text editors are more powerful in that way.</p>
 <p>Also, text editors these days offer a number of functions that are designed to help us write better programs. And fortunately, many are free and open source software.</p>
-<p>For this course, you will use the free <a href="https://code.visualstudio.com/">VS Code</a> text editor. We'll learn more about how to use VS Code as we progress through the course, but first you need to install it. You are welcome to use another text editor, especially if you are used to working with one and know how to use it. But if you are new to this tool, then I'd encourage you use what I'll use for this course. Plus, all my text editor examples and demos will involve VS Code.</p>
+<p>For this course, you can use the free <a href="https://code.visualstudio.com/">VS Code</a> text editor. You are welcome to use another text editor, especially if you are used to working with one and know how to use it.</p>
 <p>Download and install VS Code from:</p>
 <ul>
 <li><a href="https://code.visualstudio.com/">VS Code</a></li>
 </ul>
 <h3 id="vector-graphics-editor"><a class="header" href="#vector-graphics-editor">Vector Graphics Editor</a></h3>
 <p>When we begin a web development project, it is a pretty bad idea to just sit down and start coding a website without first thinking about its architecture, how it looks, its design, what it contains, who the audience is or are, and so forth. The good idea is to start with a plan.</p>
-<p>The same is true for any professional who designs anything in this world, like an architect. Imagine having the money to build your own home and then hiring a builder who goes out and just starts assembling a bunch of lumber and pipes and wires with only a vague idea of what they want to accomplish. That would be foolish as well as a waste of money and time. The same is true for any profession that builds or develops anything, and if you want to build a website, then you should start with a plan.</p>
+<p>The same is true for any professional, like an architect, who designs anything in this world. Imagine having the money to build your own home and then hiring a builder who goes out and just starts assembling a bunch of lumber and pipes and wires with only a vague idea of what they want to accomplish. That would be foolish as well as a waste of money and time. The same is true for any profession that builds or develops anything. If you want to build a website, then you should start with a plan.</p>
 <p>For this course, for now I mainly want you to think about how the website you will build will look on a desktop/laptop browser and also on mobile. We could easily hand draw this, but in some settings, you will want to share your plans with others, and thus it makes more sense to use a drawing tool in order to share native, digital files with your colleagues or customers.</p>
 <p>Enter Inkscape, a <a href="https://en.wikipedia.org/wiki/Vector_graphics">vector graphics editor</a>. Vector graphics editors are often used to design things like logos because unlike raster-based editors, like Photoshop or Gimp, vector graphics scale to any size and still maintain quality. Adobe Illustrator is a commonly used vector graphics editor, but Inkscape is as advanced as Illustrator and is also free and open source software.</p>
 <p>If you have and are comfortable using a vector graphics editor, like Illustrator, you are free to use that, but for this course, I will use and demonstrate Inkscape.</p>
@@ -291,7 +292,7 @@ This opens up possibilities for data integration, searchability, and automation.
 <p>Finally, one of other most important tools for actual web development (and for any kind of programming) is version control. Version control is about project management, such as keeping track of your work and the history of our work, and collaboration, such as working with other developers. A number of version control software systems are available, but one of the most popular ones is Git, and we'll use that in this course.</p>
 <p>Version control systems often require a version control repository, which is used to send, store, and share code and other work. We could set up our own Git repository, but for this course, we will use <a href="https://github.com">GitHub</a>.</p>
 <p>I'll show you the basics of using <a href="https://git-scm.com/">Git</a> and GitHub in this course, but for now, we need to download Git and also create an account on GitHub, if you don't already have one.</p>
-<p>First, create an account on GitHub. Use a personal email address and not your UK one when setting up the account:</p>
+<p>First, create an account on GitHub, if you don't already have an account. Use a personal email address and not your university email (since it's temporary) when setting up the account:</p>
 <ul>
 <li><a href="https://github.com">GitHub</a></li>
 </ul>
@@ -385,10 +386,19 @@ git config --global init.defaultBranch main
 </ol>
 <p>For future reference, here's a nice cheat sheet of <a href="https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html">Git commands</a>. Most of these commands are to be used from the command line (Windows, macOS, or Linux), and so if we explore any command line usage of Git, these will be good to have on hand.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="user-experience-and-accessibility"><a class="header" href="#user-experience-and-accessibility">User Experience and Accessibility</a></h1>
+<p>Have you ever struggled to access a website on your phone or found a poorly designed form impossible to complete?
+These barriers are not just frustrating, but they are also examples of poor accessibility.
+Now, imagine how much more difficult and frustrating this can be when
+using older hardware, having a poor internet connection, or having limited eyesight.
+Accessible web design is considering how to create effective web pages and sites that are accessible as many people as possible,
+despite the devices they have or their physical conditions.</p>
 <h2 id="accessibility"><a class="header" href="#accessibility">Accessibility</a></h2>
-<p><strong>Note:</strong> Readings for this course are linked to in these transcripts. It is important to visit and review the information that are provided at these links.</p>
-<p>Hi Class, this week we're studying general web accessibility and how web semantics helps make sites more accessible. I use the term accessibility as a kind of shorthand: I also include, broadly, things like usability and inclusion.</p>
-<p>One of our readings makes important distinctions among these terms. That is, accessibility has a distinct definition, as well as the terms usability and inclusion. Our reading from <a href="https://www.w3.org/WAI/intro/usable">w3.org</a> defines accessibility as that which:</p>
+<p>In this section, we study general web accessibility and how web semantics helps make sites more accessible.
+I use the term accessibility as a kind of shorthand:
+I also include, broadly, things like usability and inclusion.</p>
+<p>One of our readings makes important distinctions among these terms.
+That is, accessibility has a distinct definition, as well as the terms usability and inclusion.
+Our reading from <a href="https://www.w3.org/WAI/intro/usable">w3.org</a> defines accessibility as that which:</p>
 <blockquote>
 <p>addresses discriminatory aspects related to equivalent user experience for people with disabilities, including people with age-related impairments. For the web, accessibility means that people with disabilities can perceive, understand, navigate, and interact with websites and tools, and that they can contribute equally without barriers.</p>
 </blockquote>
@@ -400,36 +410,100 @@ git config --global init.defaultBranch main
 <blockquote>
 <p>Inclusive design, universal design, and design for all involves designing products, such as websites, to be usable by everyone to the greatest extent possible, without the need for adaptation. Inclusion addresses a broad range of issues including access to and quality of hardware, software, and Internet connectivity; computer literacy and skills; economic situation; education; geographic location; and language — as well as age and disability.</p>
 </blockquote>
-<p>Things related to inclusion are pretty broadly defined. This can be related to the responsiveness of a website to various displays, such as mobile phones, and then to the whole ranges of mobile phones that exist, as well as to desktops, laptops, and tablets, and even to smart watches.</p>
-<p>In class, we're going to discuss these issues. You're going to identify some websites and rank and judge these sites according to the principles of accessibility, usability, and inclusion by enabling accessibility mode on your laptop/desktop browser and on your phones.</p>
-<p>It will help to watch a <a href="https://www.youtube.com/watch?v=3f31oufqFSM">short video about accessibility on YouTube</a>, which does a really nice job demonstrating all the above issues.</p>
+<p>Things related to inclusion are pretty broadly defined.
+This can be related to the responsiveness of a website to various displays, such as mobile phones,
+and then to the whole ranges of mobile phones that exist, as well as to desktops, laptops, and tablets, and even to smart watches.</p>
+<p>We're going to discuss these issues.
+You're going to identify some websites and rank and judge these sites according
+to the principles of accessibility, usability, and inclusion by enabling accessibility mode
+on your laptop/desktop browser and on your phones.</p>
+<p>It will help to watch a <a href="https://www.youtube.com/watch?v=3f31oufqFSM">short video about accessibility on YouTube</a>,
+which does a really nice job demonstrating all the above issues.</p>
 <h2 id="semantics-and-accessibility"><a class="header" href="#semantics-and-accessibility">Semantics and Accessibility</a></h2>
-<p>Semantics refers to meaning, or what something means. Humans are pretty good (most of the time) at interpreting meaning, but not computers. For example, you and I know what a person is, but a computer does not, yet despite that, if you search for a person on the web, you will likely get accurate results back. The reason this is successful is because information retrieval algorithms use other methods to figure out to identify what is relevant based on what we search.</p>
-<p>Thus when we talk about semantics and accessibility, we talk about how to make it so that the structure and the content on our websites can be understood by computers. The result of this is better information search and information retrieval, via search engines and artificial intelligence assistants.</p>
-<p>It makes sense then that the meaning of a thing relates to its accessibility. Therefore, one way that we will address accessible web development is through HTML5, which was specifically released to add semantic HTML elements. This helps computer systems (like search engines and screen readers) interpret the meaning of a document's structure better than prior versions of HTML could and provide better accessibility options to people, then, too. Later we'll learn and apply JSON-LD technologies to provide meaning to the content on a page, so that a search technology can have a better understanding of what a webpage is about.</p>
+<p>Semantics refers to meaning, or what something means.
+Humans are pretty good (most of the time) at interpreting meaning but not computers.
+For example, you and I know what a person is, but a computer does not.
+Yet despite that, if you search for a person on the web, you will likely get accurate results back.
+The reason this is successful is because information retrieval algorithms
+use other methods to figure out to identify what is relevant based on what we search.</p>
+<p>Thus when we talk about semantics and accessibility,
+we talk about how to make it so that the structure and the content on our websites can be understood by computers.
+The result of this is better information search and information retrieval, via search engines and artificial intelligence assistants.</p>
+<p>It makes sense then that the meaning of a thing relates to its accessibility.
+Therefore, one way that we will address accessible web development is through HTML5,
+which was specifically released to add semantic HTML elements.
+This helps computer systems (like search engines and screen readers) interpret the meaning of a document's structure
+better than prior versions of HTML could and provide better accessibility options to people, then, too.
+Later we'll learn and apply JSON-LD technologies to provide meaning to the content on a page,
+so that a search technology can have a better understanding of what a webpage is about.</p>
 <h2 id="do-more-with-less"><a class="header" href="#do-more-with-less">Do More with Less</a></h2>
-<p>There is another aspect of HTML and accessibility that we need to consider. You can think of HTML as the least common denominator among the languages that we use to develop websites. That is, at its very basic, a web page can be nothing more than an HTML page since HTML offers elements that are used to structure and provide content to a website. All other scripting additions to a web page primarily work with HTML.</p>
-<p>This means also that sometimes you can do things in JavaScript, PHP, Python, Ruby, etc that you can do just with HTML. One of the goals in meeting accessibility, usability, and inclusion issues is to take advantage of the least common denominator aspect of HTML as much as possible. By this I mean that if you have a choice between a JavaScript (or PHP, Ruby, etc.) solution that will perform some task, and you can do the same thing in HTML, then do it in HTML. As soon as we start to make things more complicated and more sophisticated, then the more likely it becomes that we will break something, and that makes it likely to make a site less accessible, usable, and inclusive.</p>
+<p>There is another aspect of HTML and accessibility that we need to consider.
+You can think of HTML as the least common denominator among the languages that we use to develop websites.
+That is, a web page can be nothing more than an HTML page since it offers elements that are used to structure and
+provide content to a website.
+All other languages and technologies are additions to a web page that work and build on the HTML.</p>
+<p>One of the goals in meeting accessibility, usability, and inclusion issues
+is thus to take advantage of the least common denominator aspect of HTML as much as possible.
+By this I mean that if you have a choice between a JavaScript (or PHP, Ruby, etc.) solution that will perform some task,
+and you can do the same thing in HTML, then do it in HTML.
+As soon as we start to make things more complicated and more sophisticated,
+then the more likely it becomes that we will break something, and that makes it likely to make a site less accessible, usable, and inclusive.</p>
+<blockquote>
+<p>While using HTML whenever possible is a best practice, there are cases where JavaScript or other languages may be required to achieve specific functionality. For example, it is necessary to use JavaScript (or another language) to create a web app. The key is to ensure that any additional complexity does not create unnecessary barriers to accessibility. Read: <a href="https://www.searchenginejournal.com/googles-javascript-warning-how-it-relates-to-ai-search/536596/">Google's JavaScript Warning &amp; How it Relates to AI Search</a>.</p>
+</blockquote>
 <h2 id="the-semantic-structure"><a class="header" href="#the-semantic-structure">The Semantic Structure</a></h2>
-<p>I mentioned this above, but we'll talk about semantics in two ways. We we start creating our sites, we will use HTML5 to add semantics to a web page, and later we will use JSON-LD to add additional semantics that describe the content on a webpage. Some <a href="https://developer.mozilla.org/en-US/docs/Glossary/semantics#Semantics_in_HTML">example semantic HTML5 elements</a> include:</p>
+<p>I mentioned this above, but we'll talk about semantics in two ways.
+We we start creating our sites, we will use HTML5 to add semantics to a web page,
+and later we will use JSON-LD to add additional semantics that describe the content on a webpage.
+Some <a href="https://developer.mozilla.org/en-US/docs/Glossary/semantics#Semantics_in_HTML">example semantic HTML5 elements</a> include:</p>
 <ul>
-<li><code>&lt;article&gt;</code></li>
-<li><code>&lt;aside&gt;</code></li>
-<li><code>&lt;figure&gt;</code></li>
-<li><code>&lt;footer&gt;</code></li>
-<li><code>&lt;header&gt;</code></li>
-<li><code>&lt;nav&gt;</code></li>
-<li><code>&lt;section&gt;</code></li>
-<li><code>&lt;summary&gt;</code></li>
-<li><code>&lt;time&gt;</code></li>
+<li><code>&lt;article&gt;</code>: "examples include: a forum post, a magazine or newspaper article, or a blog entry"</li>
+<li><code>&lt;aside&gt;</code>: examples include: "sidebars or call-out boxes"</li>
+<li><code>&lt;figure&gt;</code>: examples include: photos, plots, graphs, etc.</li>
+<li><code>&lt;footer&gt;</code>: examples include the footer section of a website or section</li>
+<li><code>&lt;header&gt;</code>: examples include the header section of a website (with title) or section</li>
+<li><code>&lt;nav&gt;</code>: provides navigation links to parts of a webpage or parts of a website</li>
+<li><code>&lt;section&gt;</code>: "represents a generic standalone section" of a webpage</li>
+<li><code>&lt;summary&gt;</code>: "specifies a summary, caption, or legend for a <code>&lt;details&gt;</code> element's disclosure box"</li>
+<li><code>&lt;time&gt;</code>: "represents a period of time</li>
 </ul>
-<p>Below are links to two lists of HTML5 elements. You should begin to review them and save or bookmark these pages for constant reference:</p>
+<p>Below are links to two lists of HTML5 elements.
+You should begin to review them and save or bookmark these pages for constant reference:</p>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">HTML Elements via Mozilla</a></li>
 <li><a href="https://www.w3.org/TR/2012/WD-html-markup-20121025/elements-by-function.html">HTML Elements via W3</a></li>
 </ul>
-<p>Attempts to provide semantic data were provided for in previous versions of HTML, like XHTML and HTML4, and through hacks that were not all that ideal, such as excessive use of the <div> element, or through scripting languages like JavaScript. However, HTML5's great benefit is that it provides semantic elements directly. For example, the <code>&lt;article&gt;</code> element was created to <a href="https://www.w3.org/TR/2012/WD-html-markup-20121025/article.html#article">describe an article, like a blog entry, on a web page</a>, and the <code>&lt;section&gt;</code> element was created <a href="https://www.w3.org/TR/2012/WD-html-markup-20121025/section.html#section">to delineate a generic section on a web page</a>. By doing that, we provide semantic information not just to the user of the site, or to other developers, but also to machines that parse that website for data and information, such as web crawlers from search engines or to screen readers for people who are visually impaired in some way. These semantic elements also provide text-to-speech advantages. These are a few reasons why HTML5 semantic elements are important. You won't have to memorize all of the elements, but there will be ones that you'll use more often, like the ones that I listed above.</p>
-<p>All right, please watch the video linked to in this transcript and complete the task assigned in the discussion prompt. See you on the board.</p>
+<p>Attempts to provide semantic data were provided for in previous versions of HTML, like XHTML and HTML4,
+and through hacks that were not all that ideal, such as excessive use of the <code>&lt;div&gt;</code> element, or through scripting languages like JavaScript.
+That is, in the early days of the web, developers often used (and still do, unfortunately) non-semantic elements
+like <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> to structure content.
+In the very early days, they structured content using tables (e.g., <code>&lt;table&gt;</code>) elements.
+These were sad days because it made it difficult for assistive technologies to interpret content accurately.</p>
+<p>However, these deficits led to the development of semantic HTML in HTML5.
+That is, HTML5's great benefit is that it provides semantic elements directly.
+For example, the <code>&lt;article&gt;</code> element was created to <a href="https://www.w3.org/TR/2012/WD-html-markup-20121025/article.html#article">describe an article, like a blog entry, on a web page</a>,
+and the <code>&lt;section&gt;</code> element was created <a href="https://www.w3.org/TR/2012/WD-html-markup-20121025/section.html#section">to delineate a generic section on a web page</a>.
+The <code>&lt;nav&gt;</code> element is another example of a semantic element.
+This element defines a site's navigation menu and helps both users and search engines quickly understand the structure of a site.
+Screen readers can then provide users with an overview of the site's main sections and thus improve navigation for visually impaired users.</p>
+<p>By using such elements, we provide semantic information not just to the user of the site, or to other developers,
+but also to machines that parse that website for data and information.
+This includes web crawlers from search engines and screen readers for people who are visually impaired in some way.
+These semantic elements also provide text-to-speech advantages.
+These are a few reasons why HTML5 semantic elements are important.
+You won't have to memorize all of the elements, but there will be ones that you'll use more often,
+like the ones that I listed above.</p>
+<h2 id="conclusion-1"><a class="header" href="#conclusion-1">Conclusion</a></h2>
+<p>In summary, web accessibility is more than a technical requirement.
+It is a foundational principle of inclusive design that ensures all users, regardless of ability,
+can access and interact with digital content.
+By understanding the distinctions between accessibility, usability, and inclusion, web developers can create more effective user experiences.
+The semantic features of HTML5 and the use of additional technologies like JSON-LD enhance accessibility by improving how content is
+structured and interpreted by both users and machines.
+Emphasizing simplicity in web development, and prioritizing solutions that use HTML wherever possible,
+reduces barriers and promotes greater inclusivity.
+As we move forward, we should recognize the importance of semantics in web design.
+This will improve search and retrieval processes but also create a more equitable digital space for all users.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="html5-and-the-web"><a class="header" href="#html5-and-the-web">HTML5 and The Web</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="document-structure-and-metadata"><a class="header" href="#document-structure-and-metadata">Document Structure and Metadata</a></h1>
 <p>W3C is the organizing body for managing the HTML standards (among other web related technologies), its specifications, and documentation. The documentation for HTML5 should be constantly referenced throughout this course:</p>

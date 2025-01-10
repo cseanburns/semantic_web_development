@@ -38,7 +38,7 @@ Specifically, in this book, we will learn about:
 There are several important reasons to make data semantic on the web.
 
 1. First, semantic data **enhanches searchability**. Recipes are a common example. When you search for a recipe,
-   semantic data on recipe web pages search engines understand the ingredients, cooking times, and other factors.
+   semantic data on recipe web pages allows search engines to parse the ingredients, cooking times, and other factors on those pages.
 2. Second, the semantic web enables **data integration**. This is through the use of multiple vocabularies, such as Schema.org,
    but there are other vocabularies that can be used at the same time. This is a common use case in more advanced cases of the semantic web.
    For example, scientific databases can be enhanced with semantic data that integrates data from multiple scientific domains.
@@ -55,7 +55,7 @@ Our tasks will include:
 
 1. We will learn how to **structure** web pages using **HTML5** semantic elements. This will make our web content more meaningful and accessible
    to users and machines.
-2. We will laern how to **style** and **present** our web pages using **CSS3**. Cascading Style Sheets (CSS) help us create visually appealing
+2. We will learn how to **style** and **present** our web pages using **CSS3**. Cascading Style Sheets (CSS) help us create visually appealing
    webpages and sites but, importantly, keep content separated from presentation.
 3. We will embed structured, linked data into our webpages using **JSON-LD** and **Schema.org**. This will further enhance our content for machine-readability.
 4. Finally, throughout this book, we will work on creating a final website using all of these technologies.

@@ -16,11 +16,11 @@ The tricky part about this week is that I cannot show you how to install this so
 
 Let's start with the most important application: a text editor. Text editors are the bread and butter for programmers, and there's a long history, and even [funny cultural wars][culture_wars], about text editors. Personally, I use the [Vim][vim] editor, which is a [command line][cli] editor. Vim can be difficult to learn, and we don't have the time to spend on learning how to use an advanced text editor like Vim (even though it's worth it). Therefore, for this course we can use a GUI (graphical user interface) text editor.
 
-We use a text editor, and not a [word processor][word_processor] like Microsoft Word or Google Docs, because when we write any kind of code, the code needs to be saved as [plain text][plaintext] and not as encoded text. While a word processor application will encode text when a file is saved, text editors allow us to control how text is encoded directly in the file, e.g, by using HTML and CSS. Thus text editors are more powerful in that way.
+We use a text editor, and not a [word processor][word_processor] like Microsoft Word or Google Docs, because when we write any kind of code, the code needs to be saved as [plain text][plaintext] and not as encoded text, which is how word processors save files (e.g., docx versus txt files). While a word processor application will encode text when a file is saved, text editors allow us to control how text is encoded directly in the file, e.g, by using HTML and CSS. Thus text editors are more powerful in that way.
 
 Also, text editors these days offer a number of functions that are designed to help us write better programs. And fortunately, many are free and open source software.
 
-For this course, you will use the free [VS Code][vscode] text editor. We'll learn more about how to use VS Code as we progress through the course, but first you need to install it. You are welcome to use another text editor, especially if you are used to working with one and know how to use it. But if you are new to this tool, then I'd encourage you use what I'll use for this course. Plus, all my text editor examples and demos will involve VS Code.
+For this course, you can use the free [VS Code][vscode] text editor. You are welcome to use another text editor, especially if you are used to working with one and know how to use it.
 
 Download and install VS Code from:
 
@@ -30,7 +30,7 @@ Download and install VS Code from:
 
 When we begin a web development project, it is a pretty bad idea to just sit down and start coding a website without first thinking about its architecture, how it looks, its design, what it contains, who the audience is or are, and so forth. The good idea is to start with a plan.
 
-The same is true for any professional who designs anything in this world, like an architect. Imagine having the money to build your own home and then hiring a builder who goes out and just starts assembling a bunch of lumber and pipes and wires with only a vague idea of what they want to accomplish. That would be foolish as well as a waste of money and time. The same is true for any profession that builds or develops anything, and if you want to build a website, then you should start with a plan.
+The same is true for any professional, like an architect, who designs anything in this world. Imagine having the money to build your own home and then hiring a builder who goes out and just starts assembling a bunch of lumber and pipes and wires with only a vague idea of what they want to accomplish. That would be foolish as well as a waste of money and time. The same is true for any profession that builds or develops anything. If you want to build a website, then you should start with a plan.
 
 For this course, for now I mainly want you to think about how the website you will build will look on a desktop/laptop browser and also on mobile. We could easily hand draw this, but in some settings, you will want to share your plans with others, and thus it makes more sense to use a drawing tool in order to share native, digital files with your colleagues or customers.
 
@@ -50,7 +50,7 @@ Version control systems often require a version control repository, which is use
 
 I'll show you the basics of using [Git][git] and GitHub in this course, but for now, we need to download Git and also create an account on GitHub, if you don't already have one.
 
-First, create an account on GitHub. Use a personal email address and not your UK one when setting up the account:
+First, create an account on GitHub, if you don't already have an account. Use a personal email address and not your university email (since it's temporary) when setting up the account:
 
 - [GitHub][github]
 
