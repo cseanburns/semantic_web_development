@@ -15,3 +15,55 @@ Therefore this work focuses on entry level topics: HTML5 and its semantic elemen
 
 This book is a work in progress.
 The goal is to complete an initial draft between January and May 2025.
+
+## How to Use this Book
+
+### Markup
+
+There are two markup styles that I want to bring to your attention:
+
+#### Code Blocks
+
+Text that looks like **code blocks** indicate some kind of command, series of commands, or web code.
+Do not simply copy and paste the code into your terminal or text editor.
+You should practice and type all code yourself.
+
+#### Asides
+
+I occasionally insert **asides** into the text.
+These asides generally contain notes or extra comments about the main content.
+Asides look like this:
+
+> This is an aside.
+> Asides will contain extra information, notes, or comments.
+
+### Theme
+
+At the top of the page is an icon of a paint brush.
+The default theme is darker text on a light background, but you can change the theme per your preferences.
+
+### Search
+
+Next to the paintbrush is an icon of a magnifying glass.
+Use this to search this work.
+
+### Printing
+
+I intend this book to be a live document, and therefore it'll be regularly updated.
+But feel free to print it, if you want.
+You can use the print function to save the entire book as a PDF file.
+See the printer icon at the top right of the screen to get started.
+
+## About This Book
+
+This book works as a live document since I use it for my spring semester Semantic Web Development course.
+I will update the content as I teach it in order to address changes in the technology and to edit for clarity.
+
+This book is not a comprehensive introduction to semantic web development.
+It is designed for an entry level course on these topics.
+It is focused on a select and small range of those topics that have the specific pedagogical aims described above.
+
+I use [mdBook][mdbook] to build [markdown][markdown] source files into this final output.
+
+[markdown]:https://www.markdownguide.org/
+[mdbook]:https://github.com/rust-lang/mdBook
