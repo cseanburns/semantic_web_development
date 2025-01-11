@@ -23,7 +23,7 @@ The more advanced way is to learn how to use semantic web technologies such as:
 - **Knowledge retrieval technologies**
     - [SPARQL][sparql]
 
-However, the above technologies are more focused on underlying data models and for querying those models rather than web*site* development.
+However, the above technologies are more focused on underlying data models and for querying those models rather than website development.
 To focus on web development, in the sense that we want to create actual websites,
 then the semantic web technologies we are interested in are a bit different.
 Specifically, in this book, we will learn about:

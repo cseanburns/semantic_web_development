@@ -4,7 +4,7 @@ Have you ever struggled to access a website on your phone or found a poorly desi
 These barriers are not just frustrating, but they are also examples of poor accessibility.
 Now, imagine how much more difficult and frustrating this can be when
 using older hardware, having a poor internet connection, or having limited eyesight.
-Accessible web design is considering how to create effective web pages and sites that are accessible as many people as possible,
+Accessible web design is considering how to create effective web pages and sites that are accessible to as many people as possible,
 despite the devices they have or their physical conditions.
 
 ## Accessibility
