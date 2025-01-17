@@ -200,7 +200,7 @@ You can read more about the reasons here:
 
 ## Conclusion
 
-Going forward, we will Inkscape to design our websites.
+Going forward, we will use Inkscape to design our websites.
 We will use VS Code with Git and GitHub to:
 
 1. Edit and write HTML, CSS, JSON-LD in our local repo.

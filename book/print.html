@@ -565,7 +565,7 @@ You can read more about the reasons here:</p>
 <li><a href="https://www.wired.com/story/tech-confronts-use-labels-master-slave/">Tech Confronts Its Use of the Labels 'Master' and 'Slave'</a></li>
 </ul>
 <h2 id="conclusion-2"><a class="header" href="#conclusion-2">Conclusion</a></h2>
-<p>Going forward, we will Inkscape to design our websites.
+<p>Going forward, we will use Inkscape to design our websites.
 We will use VS Code with Git and GitHub to:</p>
 <ol>
 <li>Edit and write HTML, CSS, JSON-LD in our local repo.</li>
@@ -577,7 +577,125 @@ We will use VS Code with Git and GitHub to:</p>
 <p>For future reference, here's a nice cheat sheet of <a href="https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html">Git commands</a>.
 Most of these commands are to be used from the command line (Windows, macOS, or Linux),
 and so if we explore any command line usage of Git, these will be good to have on hand.</p>
-<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="html5-and-the-web"><a class="header" href="#html5-and-the-web">HTML5 and The Web</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="designing-with-inkscape"><a class="header" href="#designing-with-inkscape">Designing with Inkscape</a></h2>
+<p>Good website design begins with a solid understanding of layout.
+Layouts determine how information is structured visually and guide users' interactions with your content.
+A well-thought-out layout ensures that a website is aesthetically pleasing and functional, and
+it helps users easily find what they need while enhancing their overall experience.</p>
+<p>Fortunately, there are some common web layout designs, just like there are common building layouts or home layouts.
+This means you do not need to invent anything new and that there is lots to explore
+as you think about the kind of website you want and the kind of content you want to share.
+To get started, review the <a href="https://wordpress.com/blog/2024/11/14/website-layout-examples/#creating-a-website-layout-mockup">11 Website Layout Examples for Every Type of Page</a>.</p>
+<p>Although some of the layouts at the above link might seem complicated,
+you can start by considering two common layout structures: Single Column Layout and Two-Column Layout.</p>
+<p>The single-column layout can also be framed as a multiple row layout.
+This layout is organized by rows with a header top row, navigation second row (or shared with the header row),
+main content third row, and footer as the last row.</p>
+<figure>
+<img src="images/single_column.png"
+alt="Wireframe of example single column layout"
+title="Example Wireframe of a Single Column Layout">
+<figcaption>
+Fig. 1. Example Wireframe of a Single Column Layout
+</figcaption>
+</figure>
+<p>Some layouts may follow the above layout but push the navigation to the side, creating a two column layout,
+with the main content area to the right (usually) or left of the navigation.</p>
+<figure>
+<img src="images/two_column.png"
+alt="Wireframe of example two column layout"
+title="Example Wireframe of a Two Column Layout">
+<figcaption>
+Fig. 2. Example Wireframe of a Two Column Layout
+</figcaption>
+</figure>
+<h3 id="responsive-web-design"><a class="header" href="#responsive-web-design">Responsive Web Design</a></h3>
+<p>One of the biggest challenges in modern web development is designing for multiple screen sizes.
+Websites must work seamless across devices&amp;emdash;from large desktop monitors to small mobile screens.
+This is where <strong>responsive web design</strong> comes into play.
+Responsive design adapts a website's layout to screen size, resolution, and orientation of the device used to access your website.</p>
+<h4 id="why-mobile-matters"><a class="header" href="#why-mobile-matters">Why Mobile Matters</a></h4>
+<p>We need layouts that are usable on large screens, but mobile matters for several reasons:</p>
+<ol>
+<li>Mobile usage trends: Most <a href="https://www.pewresearch.org/internet/fact-sheet/mobile/">Americans have a smartphone</a> and use their smartphone browsers for accessing the web. This trend is growing around the world, too, and around 50% of global website traffic comes from mobile devices. As an example, <a href="https://en.wikipedia.org/wiki/Usage_share_of_operating_systems">nearly half of Wikipedia's visitors</a> are on mobile (iOS and Android). Ignoring mobile users can therefore result in loss of engagement.</li>
+<li>User expectations: Mobile users expect fast-loading, easy-to-navigate sites with content formatted for smaller screens.</li>
+<li>Search engine optimization (SEO): Search engines <a href="https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing">like Google prioritize mobile-friendly websites</a> in their rankings. This is called <strong>mobile-first indexing</strong>.</li>
+</ol>
+<p>When we begin coding our sites using HTML and CSS, we'll have to create code that adapts to both large and small screen sizes.</p>
+<h2 id="prototyping-with-inkscape"><a class="header" href="#prototyping-with-inkscape">Prototyping with Inkscape</a></h2>
+<p>Now that we've covered the importance of layout design and responsiveness,
+let's discuss how to prototype these designs effectively using Inkscape.
+Inkscape is a free, open-source vector graphics editor.
+It's commonly used to create illustrations (such as logos), but it's a fantastic tool for creating website layout prototypes.</p>
+<p>Prototyping is an essential step in the web design process.
+It allows you to experiment with different layouts and identify issues before committing to code.
+With Inkscape, you can create high-quality, scalable designs for large screens and mobile views.</p>
+<h3 id="getting-started-with-inkscape-for-layout-design"><a class="header" href="#getting-started-with-inkscape-for-layout-design">Getting Started with Inkscape for Layout Design</a></h3>
+<h4 id="step-1-setting-up-your-canvas"><a class="header" href="#step-1-setting-up-your-canvas">Step 1: Setting Up Your Canvas</a></h4>
+<ol>
+<li>Open Inkscape and create a new document.</li>
+<li>Adjust the canvas size to match your target screen dimensions.
+<ul>
+<li>Go to File → Document Properties →</li>
+<li>Select Custom size to pixels or <strong>px</strong></li>
+<li>For a regular desktop layout: Set the canvas width to 1440 pixels and height to 900 pixels (or a size relevant to your project).</li>
+<li>For a mobile layout: Use dimensions like 360 pixels wide by 640 pixels tall.</li>
+<li>Close Document Properties and press the number <strong>5</strong> to center canvas in Inskcape</li>
+</ul>
+</li>
+<li>To organize your work:
+<ul>
+<li>Save your desktop sized canvas file as <strong>Desktop_Prototype.svg</strong>.</li>
+<li>Save your mobile sized canvas file as <strong>Mobile_Prototype.svg</strong>.</li>
+</ul>
+</li>
+</ol>
+<h3 id="step-2-creating-a-wireframe"><a class="header" href="#step-2-creating-a-wireframe">Step 2: Creating a Wireframe</a></h3>
+<p>A wireframe is a basic visual guide that represents the skeletal framework of your website.
+It's generally a good idea to know the content that you want to present on a site before you wireframe,
+but since we're in the exploration stage, we will worry about content later.
+When we begin to write CSS but after we have written our HTML, we can revisit and revise our wireframes as needed.</p>
+<p>Here's how to create a wireframe in Inkscape:</p>
+<ol>
+<li>Use the <strong>Rectangle Tool</strong> to define sections such as headers, footers, navigation bars, and content areas.</li>
+<li>Use the <strong>Text Tool</strong> to label each section; e.g., "Header", "Main Content", "Footer".</li>
+<li>Keep the wireframe simple by using grayscale colors to focus on layout without distractions from design details.</li>
+</ol>
+<h3 id="step-3-adding-design-elements"><a class="header" href="#step-3-adding-design-elements">Step 3: Adding Design Elements</a></h3>
+<p>Once the wireframe is complete for your Desktop version, you can refine it by adding design elements.</p>
+<ol>
+<li>Use shapes and gradients to visualize buttons, cards, or other interactive elements.</li>
+<li>Add placeholders for images using rectangles with an <strong>X</strong> through them.</li>
+<li>Experiment with font sizes and text alignment for headings, subheadings, and body content.</li>
+<li>Save as <strong>Desktop_Prototype.svg</strong>.</li>
+</ol>
+<h4 id="adapting-layouts-for-mobile"><a class="header" href="#adapting-layouts-for-mobile">Adapting Layouts for Mobile</a></h4>
+<p>To create a mobile version of your design:</p>
+<ol>
+<li>Duplicate your desktop wireframe and adjust the canvas size to match mobile dimensions.</li>
+<li>Rearrange elements to fit within the narrower viewport:
+<ol>
+<li>Stack sections vertically</li>
+<li>Resize text and images for smaller screens</li>
+</ol>
+</li>
+<li>Ensure touch-friendly design by spacing buttons and interactive elements adequately.</li>
+<li>Save as <strong>Mobile_Prototype.svg</strong>.</li>
+</ol>
+<h3 id="tips-for-effective-prototyping"><a class="header" href="#tips-for-effective-prototyping">Tips for Effective Prototyping</a></h3>
+<ul>
+<li>Keep it simple: Focus on layout and structure during prototyping. Details can be added later.</li>
+<li>Iterate quickly: Experiment with multiple versions to explore different layouts.</li>
+<li>Test early: Share prototypes with peers or users to gather feedback before coding.</li>
+<li>See more tips at <a href="https://wordpress.com/blog/2024/11/14/website-layout-examples/#creating-a-website-layout-mockup">Wireframing your layout</a>.</li>
+</ul>
+<h2 id="closing"><a class="header" href="#closing">Closing</a></h2>
+<p>Designing for both desktop and mobile views is an essential skill in web development.
+Using Inkscape for layout prototyping helps you visualize your designs, test ideas,
+and build responsive websites effectively.
+In the next two chapters, we will explore how to implement these layouts using HTML first and then CSS.
+For now, experiment with Inkscape and create your own prototypes for both desktop and mobile views.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="html5-and-the-web"><a class="header" href="#html5-and-the-web">HTML5 and The Web</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="document-structure-and-metadata"><a class="header" href="#document-structure-and-metadata">Document Structure and Metadata</a></h1>
 <p>W3C is the organizing body for managing the HTML standards (among other web related technologies), its specifications, and documentation. The documentation for HTML5 should be constantly referenced throughout this course:</p>
 <ul>
@@ -730,7 +848,7 @@ I will face my fear&lt;br/&gt;
 <div style="break-before: page; page-break-before: always;"></div><h1 id="document-metadata-1"><a class="header" href="#document-metadata-1">Document Metadata</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="semantic-elements"><a class="header" href="#semantic-elements">Semantic Elements</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="html5-best-practices"><a class="header" href="#html5-best-practices">HTML5 Best Practices</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="2b-text-content-and-inline-text-semantics"><a class="header" href="#2b-text-content-and-inline-text-semantics">2b Text Content and Inline Text Semantics</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="text-content-and-inline-text-semantics"><a class="header" href="#text-content-and-inline-text-semantics">Text Content and Inline Text Semantics</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="text-elements"><a class="header" href="#text-elements">Text Elements</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="inline-text-semantics"><a class="header" href="#inline-text-semantics">Inline Text Semantics</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="lists"><a class="header" href="#lists">Lists</a></h1>
