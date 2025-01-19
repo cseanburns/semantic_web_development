@@ -44,7 +44,7 @@ Fig. 2. Example Wireframe of a Two Column Layout
 ### Responsive Web Design
 
 One of the biggest challenges in modern web development is designing for multiple screen sizes.
-Websites must work seamless across devices&emdash;from large desktop monitors to small mobile screens.
+Websites must work seamlessly across devices&mdash;from large desktop monitors to small mobile screens.
 This is where **responsive web design** comes into play.
 Responsive design adapts a website's layout to screen size, resolution, and orientation of the device used to access your website.
 
