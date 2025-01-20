@@ -1,6 +1,6 @@
 # Semantic Web Development
 
-Working on a textbook for an introductory web development course on the semantic web.
+Working on a textbook for an introductory semantic web development course.
 
 ## To Do
 
