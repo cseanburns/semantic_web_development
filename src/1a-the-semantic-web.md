@@ -30,7 +30,7 @@ Specifically, in this book, we will learn about:
 
 - HTML5, which includes semantic elements.
 - CSS3, which plays an important role in separating content from presentation.
-- JSON-LD (JavaScript Object Notation for Linked Data), which is actually JavaScript agnostic and is used create linked data for machines to parse and generate.
+- JSON-LD (JavaScript Object Notation for Linked Data), which is actually JavaScript agnostic and is used to create linked data for machines to parse and generate.
 - Schema.org, which provides a collection of shared vocabularies (or terms and definitions) to annotate web content.
 
 ## The Use of The Semantic Web
