@@ -1,198 +1,326 @@
 # Document Structure and Metadata
 
-W3C is the organizing body for managing the HTML standards (among other web related technologies), its specifications, and documentation. The documentation for HTML5 should be constantly referenced throughout this course:
+## Introduction
+
+One of the main purposes of HTML is to structure our web documents and our content.
+This purpose means that HTML offers a set of **elements** for this purpose.
+In this section, we will list, describe, and illustrate how to use these elements.
+
+First, as you learn HTML, please refer to the official documentation.
+The documentation is provided by [W3C][w3c],
+which is the organizing body for managing the HTML standards (among other web related technologies),
+its specifications, and documentation.
+The documentation for HTML5 should be constantly referenced throughout this work can be found at the following sources:
 
 - [HTML5 at W3C][html5_w3c] or the most current draft: https://html.spec.whatwg.org/
 - Specifically the section on semantics: https://html.spec.whatwg.org/#semantics
 
-Another nice reference source is maintained by Mozilla:
+Mozilla maintains a solid reference source:
 
-- [MDN Web Docs: HTML][mdnHTML]
+- [MDN Web Docs: HTML][html_mdn]
 
-## The Root Element
+## The Structure of an HTML Document
 
-> The `<html>` element represents the root of an HTML document (w3org, Root Element section).
-
-This element establishes the root (base) of the document and it follows the **DOCTYPE** (document type) declaration. The `<html>` element should be accompanied with a language attribute (more on attributes soon).
+The overall basic structure of an HTML document is fairly simple and straightforward.
+An HTML document begins with the **DOCTYPE** declaration, which declares the document to be HTML.
+This is followed by the **HTML element** `<html>`, which <q>[represents the root of an HTML document][html_w3c]</q>
+The `<html>` element usually contains a **lang** attribute that we use to declare the
+natural language used in the document.
+In our case, that's English, and thus we use `<html lang="en">`.
+The **HEAD** `<head>` section includes the document metadata and follows the HTML root element.
+The **BODY** `<body>` section follows and contains the document's content.
+The very basic structure of an HTML document looks like this:
 
 ```
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+    </head>
+    <body>
+    </body>
+</html>
 ```
 
-## Document Metadata
+You should not that most but not all HTML elements have a start or opening tag and an end or closing tag.
+In the above example, the opening tag `<html>` begins on the second line and ends on the last line with `</html>`.
+It therefore encompasses the `<head>` and `<body>` elements, which themselves will encompass other elements.
 
-> The `<head>` element contains the document's metadata plus other information ([w3org, Document Metadata section][w3org_metadata]).
+### The `<head>` section
 
-There are five elements that belong to the `<head>` section. They include:
-
-- the `<title>` element: states the document's title
-- the `<base>` element: declares the base URL
-- the `<link>` element: establishes links to other resources, such as a CSS stylesheet
-- the `<meta>` element: provides additional metadata
-- the `<style>` element: enables internal styling with CSS
-
-## HTML Section Elements
-
-There are ten main HTML section elements, or elements used to define the sections of an HTML document. These will be some of the main and most often elements that we'll use in our HTML documents. They include:
-
-- the `<body>` element
-- the `<section>` element
-- the `<nav>` element
-- the `<article>` element
-- the `<aside>` element
-- the `<h1>`, `<h2>`, ..., `<h6>` elements
-- the `<hgroup>` element
-- the `<header>` element
-- the `<footer>` element
-- the `<address>` element
-
-See: [HTML Sections][html_sections]
-
-## Grouping Content Elements
-
-The other set of common elements that we'll use quite often are the HTML grouping elements. There are 13 elements categorized as grouping elements. These include:
-
-- the `<p>` element
-- the `<hr>` element
-- the `<pre>` element
-- the `<blockquote>` element
-- the `<ol>` element
-- the `<ul>` element
-- the `<li>` element
-- the `<dl>` element
-- the `<dt>` element
-- the `<dd>` element
-- the `<figure>` element
-- the `<figcaption>` element
-- the `<div>` element
-
-Some of these elements must be used together. For example, the <ul> and the <ol> elements are used to create unordered and ordered lists, respectively, and either one must include the <li> element to list the items.
-
-Likewise, the `<dl>` element is for starting description/definition lists and will also include the `<dt>` element for specifying a term in a description/definition list and the `<dd>` element to provide the description or definition.
-
-See: [Grouping content][grouping_content]
-
-## Text-level Semantic Elements
-
-There are 27 elements categorized as text-level semantic elements. You can read about the full list at the link below. Here I will only cover a few of the main ones:
-
-- the `<a>` element
-- the `<em>` element
-- the `<strong>` element
-- the `<cite>` element
-- the `<abbr>` element
-- the `<time>` element
-- the `<code>` element
-- the `<sub>` element
-- the `<q>` element
-- the `<span>` element
-- the `<br>` element
-
-See: [Text-level semantics][text_semantics]
-
-## The Structure of an HTML Document
-
-An HTML document follows a structure that begins with the DOCTYPE and HTML element. The second section is the HEAD section that includes document metadata. This is followed by the BODY section, which contains the content of the document. The content of an HTML document may include the SECTION elements, the GROUPING elements, and the TEXT-LEVEL SEMANTIC elements. A basic document structure might look like this:
+Let's focus on the [HEAD section][head_w3c], which contains a web document's metadata.
+A document's metadata is data that describes the data on the page.
+This section of the HTML document may typically include five elements:
+`<title>`, `<base>`, `<link>`, `<meta>`, and `<style>`, as shown below:
 
 ```
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title></title>
+        <base>
 		<link>
 		<meta>
+        <style>
 	</head>
 	<body>
-		<header></header>
-		<nav></nav>
-		<section>
-			<h1></h1>
-			<p></p>
-		</section>
-		<section>
-			<h2></h2>
-			<p></p>
-		</section>
-		<footer></footer>
 	</body>
 </html>
 ```
 
-### Start and End Tags
+Like the `<html>` element,
+the `<head>` element encompasses its own elements (`<title>`, `<base>`, `<link>`, `<meta>`, and `<style>`)
+since it closes after them with the `</head>` element.
 
-Most HTML elements will require open and end tags with content between these tags. For example, a `<h1>` tag is for heading level one content and will end with a closing `</h1>` tag, indicated by the forward slash:
+### The `<title>` element
 
-```
-<h1>Title of Paper</h1>
-```
-
-A few elements do not work like this, but these are used sparingly. For example, most of the elements in the DOCUMENT METADATA section only use an open tag because they only take HTML attributes (next up) and not content:
-
-```
-<link rel="stylesheet" href="styles/style.css">
-<meta charset="utf-8">
-```
-
-The `<br>` element also does not have a start or an end tag.Because the `<br>` element inserts a line break, it is used at the point in the text where a line break is needed and not to enclose content. It also includes a foward slash, but the slash is placed after the br. It's useful for breaking lines around addresses or poetry. For example, here are a few lines of The Litany Against Fear from the book Dune:
+The `<title>` element contains the document's title or name.
+As an example, if I am writing a web page about *Linux systems administration*,
+then I may include that within the TITLE element, like so:
 
 ```
-<p>I must not fear<br/>
-Fear is the mind-killer<br/>
-I will face my fear<br/>
+<title>Using the Linux OS for Systems Administration</title>
 ```
 
-### HTML Attributes
+Note the `<title>` element closes with `</title>`.
 
-HTML Attributes are:
-
-> additional values that configure the elements or adjust their behavior in various ways to meet the criteria the users want ([HTML Attribute Reference, MDN Web Docs][html_attributes]).
-
-The syntax to use is:
+We can add that to our HEAD section:
 
 ```
-<element attribute="value">
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>Using the Linux OS for Systems Administration</title>
+        <base>
+		<link>
+		<meta>
+        <style>
+	</head>
+	<body>
+	</body>
+</html>
 ```
 
-Many attributes are useful for JavaScript programming, but there are a few, essential attributes that are needed for regular HTML markup. These are referred to as global attributes. Some of the main ones include:
+### The `<base>` element
 
-- the lang attribute
-- the title attribute
-- the class attribute
-- the id attribute
-- the style attribute
+The `<base>` element <q>allows authors to specify the document base URL for the purpose of relative URLs</q>
+([The base element][base_w3m]).
 
-We used the lang attribute to declare the document's language in the `<html>` root element.
+The content of the `<base>` element therefore depends on your website's domain name.
+If I have a website at `https://www.example.org/`, then I add this information to my `<base>` element:
 
 ```
-<html lang="en"></html>
+<base href="https://www.example.org/">
 ```
 
-We use the title attribute (not the `<title>` element) to provide a title to objects like figures `<figure>` and images `<img>` (but we can title anything really):
+This allows me to link to other parts of my website without using the full URL or path.
+For example, if I have a website with two pages: **index.html** and **news.html**,
+then to link to **news.html** from the **index.html** page,
+I only have to link it like so:
 
 ```
-<img title="Title of Image">photo.jpg</img>
+Read my <a href="news.html">weekly newsletter</a>
 ```
 
-The class and id attribute are primarily used to identify specific parts of an HTML document and then to style those parts with CSS. The id attribute can be used to create links within the document, like bookmarks or table of contents. It's important to remember that:
-
-- The value for the id attribute can only be used once.
-- The value for a class attribute can be repeated.
-
-The style attribute can be used to insert in-text CSS styling. This will override styling declared in an external stylesheet or styling inserted in the HEAD of the document with the `<style>` element. E.g.:
+If I didn't include the `<base>` element in my `<head>` section,
+then I would have to reference or link to the full URL, like so:
 
 ```
-<h1 style="text-transform: uppercase">This will become uppercase</h1>
+Read my <a href="https://www.example.org/news.html">weekly newsletter</a>
 ```
 
-We'll use some other attributes later in the course, but for now, read through the list of [Global Attributes][global_attributes] on w3.org for full definitions and examples.
+The difference between these two examples is that the first example resolves the link relative to the `<base>` URL,
+while the second example specifies the full domain and path.
+Using the `<base>` element therefore makes it easier to link to other parts of your website.
+It also makes it easier if we change the domain name of our website.
+In such a case, we would only have to update the URL in the `<base>` element.
 
-[global_attributes]:https://www.w3.org/TR/2011/WD-html5-20110525/elements.html#global-attributes
-[grouping_content]:https://www.w3.org/TR/2011/WD-html5-20110525/grouping-content.html#grouping-content
+Let's modify our *HEAD* section with this new information:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>Using the Linux OS for Systems Administration</title>
+        <base href="https://www.example.org/">
+		<link>
+		<meta>
+        <style>
+	</head>
+	<body>
+	</body>
+</html>
+```
+
+Note that the `<base>` element does not close.
+
+### The `<link>` element
+
+The `<link>` element <q>allows authors to link their document to other resources</q>
+([The link element][link_w3c]).
+Other resources may include external CSS stylesheets, JavaScript code, and more.
+We will use this element later when we link to our CSS code or stylesheets.
+
+As an example, we might create a directory in our home project directory called **styles** and
+include our main (and perhaps other) CSS code in that directory,
+perhaps in a file named `style.css`.
+In such a case, we use the `<link>` element to link to our stylesheet in the following way:
+
+```
+<link rel="stylesheet" href="css/style.css">
+```
+
+In that example, the **ref** and the **href** are called **attributes**.
+The **ref** attribute describes the resource and the **href** attribute describes the location of the resource.
+Since we are using the `<base>` element, as described above, we only refer to the **relative** path
+of the stylesheet (named `style.css`) instead of the full path.
+
+```
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>Using the Linux OS for Systems Administration</title>
+        <base href="https://www.example.org/">
+        <link rel="stylesheet" href="css/style.css">
+		<meta>
+        <style>
+	</head>
+	<body>
+	</body>
+</html>
+```
+
+Note that the `<link>` element does not close.
+
+### The `<meta>` element
+
+The `<meta>` element <q>represents various kinds of metadata that cannot be expressed using the</q>
+other HEAD elements, such as **title**, **base**, **link**, **style**
+([The meta element][meta_w3c]).
+The `<meta>` element therefore has a few use cases, but to keep it simple,
+we'll cover the basics below and expand on them throughout this work as we cover other topics.
+To get started, we use the `<meta>` element to establish a few best practices.
+
+First, as the documentation states, the `<meta>` element requires one of three attributes:
+**name**, **http-equiv**, and **charset**.
+We'll skip the second attribute and discuss the first and third one.
+
+#### The **charset** and **name** attributes
+
+The **charset** attribute establishes the document's character set and allow proper displaying of non-ASCII characters.
+In practice, we use this to declare the document's character set to [UTF-8][utf8].
+
+The **name** attribute is used with several names that refer to the web/HTML document's metadata.
+We'll focus on the following four:
+
+- [viewport][viewport_mdn]: controls the size and shape of the browser's viewport:
+    - we use this to make our site mobile friendly by default
+- author: names the author of the web document:
+    - we use this to name the author of the web document
+- description: describes the content of the web document:
+    - we use this to describe the content of the web document
+- keywords: lists descriptive keywords that describe the content of the web document:
+    - we use this to list keywords that describe the content of the web document
+
+
+Putting this altogether, we have the following:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>Using the Linux OS for Systems Administration</title>
+        <base href="https://www.example.org/">
+        <link rel="stylesheet" href="css/style.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="C. Sean Burns">
+        <meta name="description" content="An introduction to Systems Administration with Linux OS, including Debian and Ubuntu">
+        <meta name="keywords" content="systems administration, linux, debian, ubuntu">
+        <style>
+	</head>
+	<body>
+	</body>
+</html>
+```
+
+### The `<style>` element
+
+Finally, the `<style>` element is used to embed CSS in our HEAD section.
+Most of the time and for most styling, we will want to use an external stylesheet for CSS code.
+We want this because it means that we only need to modify one CSS file to style our entire site.
+That's particularly nice when our website grows to include many, many pages.
+However, there are times when we might want to use a CSS style to modify just one page or some aspect of a single page.
+We want to limit those cases.
+This means that the `<style>` element is not always necessary
+But I demonstrate it now since it can be useful to add CSS just to just one page and
+to be completely descriptive about the content of the `<head>` section.
+
+When we use the `<style>` element, we use CSS syntax, and not HTML.
+As an example, in CSS, if we want to specify a specific family of fonts, then we can use the
+CSS `html` **selector** to specify a font-family for a single webpage.
+
+A CSS **selector** is often equivalent to an HTML **element** name.
+Such cases are called **[Type selectors][type_selectors_mdn]**.
+Thus, to modify the `<html>` element on a page, we use the CSS `html` type selector.
+In the following example, we state that the monospace font family should be used for the entire page,
+since we attach it to the `html` selector.
+
+```
+<style>
+    html { font-family: monospace; }
+</style> 
+```
+
+Note that the `<style>` element requires a closing tag.
+
+Once we add that to the `<head>` section, we have the following:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>Using the Linux OS for Systems Administration</title>
+        <base href="https://www.example.org/">
+        <link rel="stylesheet" href="css/style.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="C. Sean Burns">
+        <meta name="description" content="An introduction to Systems Administration with Linux OS, including Debian and Ubuntu">
+        <meta name="keywords" content="systems administration, linux, debian, ubuntu">
+        <style>
+            html { font-family: monospace; }
+        </style> 
+	</head>
+	<body>
+	</body>
+</html>
+```
+
+## Conclusion
+
+In this section, we introduced the basic structure of a web page and
+covered the basics of a web document's metadata section.
+The latter included the following elements:
+
+- `<!DOCTYPE html>`
+- `<html>`
+    - `<head>`
+        - `<title>`
+        - `<base>`
+        - `<link>`
+        - `<meta>`
+        - `<style>`
+
+In the next section, we focus on adding content within the `<body>` element of a web document.
+
 [html5_w3c]:https://www.w3.org/TR/2011/WD-html5-20110525/spec.html
-[html_attributes]:https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes
-[html_sections]:https://www.w3.org/TR/2011/WD-html5-20110525/sections.html#sections
-[mdnHTML]:https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML
-[text_semantics]:https://www.w3.org/TR/2011/WD-html5-20110525/text-level-semantics.html#text-level-semantics
-[w3org_metadata]:https://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#document-metadata
-
+[html_mdn]:https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML
+[w3c]:https://www.w3.org/
+[html_w3c]:https://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-html-element
+[base_w3m]:https://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-base-element
+[link_w3c]:https://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-link-element
+[meta_w3c]:https://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-meta-element
+[utf8]:https://en.wikipedia.org/wiki/UTF-8
+[viewport_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag
+[head_w3c]:https://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-html-element
+[type_selectors_mdn]:https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors#type_selectors
