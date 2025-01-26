@@ -6,16 +6,15 @@ One of the main purposes of HTML is to structure our web documents and our conte
 This purpose means that HTML offers a set of **elements** for this purpose.
 In this section, we will list, describe, and illustrate how to use these elements.
 
-First, as you learn HTML, please refer to the official documentation.
-The documentation is provided by [W3C][w3c],
-which is the organizing body for managing the HTML standards (among other web related technologies),
-its specifications, and documentation.
-The documentation for HTML5 should be constantly referenced throughout this work can be found at the following sources:
+First, as you learn HTML, please refer to the official documentation at [WHATWG][whatwg].
+WHATWG is the working group for managing the HTML standards, its specifications, and documentation.
+The documentation for HTML5 should be constantly referenced throughout this work.
+See:
 
-- [HTML5 at W3C][html5_w3c] or the most current draft: https://html.spec.whatwg.org/
+- [HTML5 at WHATWG][html5_whatwg]
 - Specifically the section on semantics: https://html.spec.whatwg.org/#semantics
 
-Mozilla maintains a solid reference source:
+Mozilla also maintains a solid reference source:
 
 - [MDN Web Docs: HTML][html_mdn]
 
@@ -23,10 +22,11 @@ Mozilla maintains a solid reference source:
 
 The overall basic structure of an HTML document is fairly simple and straightforward.
 An HTML document begins with the **DOCTYPE** declaration, which declares the document to be HTML.
-This is followed by the **HTML element** `<html>`, which <q>[represents the root of an HTML document][html_w3c]</q>
+This is followed by the **HTML element** `<html>`, which <q>[represents the root of an HTML document][html_whatwg]</q>
 The `<html>` element usually contains a **lang** attribute that we use to declare the
 natural language used in the document.
 In our case, that's English, and thus we use `<html lang="en">`.
+Using this helps speech synthesis tools and translation tools to parse our web document ([HTML Element][html_whatwg]).
 The **HEAD** `<head>` section includes the document metadata and follows the HTML root element.
 The **BODY** `<body>` section follows and contains the document's content.
 The very basic structure of an HTML document looks like this:
@@ -47,7 +47,7 @@ It therefore encompasses the `<head>` and `<body>` elements, which themselves wi
 
 ### The `<head>` section
 
-Let's focus on the [HEAD section][head_w3c], which contains a web document's metadata.
+Let's focus on the [HEAD section][head_whatwg], which contains a web document's metadata.
 A document's metadata is data that describes the data on the page.
 This section of the HTML document may typically include five elements:
 `<title>`, `<base>`, `<link>`, `<meta>`, and `<style>`, as shown below:
@@ -103,7 +103,7 @@ We can add that to our HEAD section:
 ### The `<base>` element
 
 The `<base>` element <q>allows authors to specify the document base URL for the purpose of relative URLs</q>
-([The base element][base_w3m]).
+([The base element][base_whatwg]).
 
 The content of the `<base>` element therefore depends on your website's domain name.
 If I have a website at `https://www.example.org/`, then I add this information to my `<base>` element:
@@ -156,7 +156,7 @@ Note that the `<base>` element does not close.
 ### The `<link>` element
 
 The `<link>` element <q>allows authors to link their document to other resources</q>
-([The link element][link_w3c]).
+([The link element][link_whatwg]).
 Other resources may include external CSS stylesheets, JavaScript code, and more.
 We will use this element later when we link to our CSS code or stylesheets.
 
@@ -195,7 +195,7 @@ Note that the `<link>` element does not close.
 
 The `<meta>` element <q>represents various kinds of metadata that cannot be expressed using the</q>
 other HEAD elements, such as **title**, **base**, **link**, **style**
-([The meta element][meta_w3c]).
+([The meta element][meta_whatwg]).
 The `<meta>` element therefore has a few use cases, but to keep it simple,
 we'll cover the basics below and expand on them throughout this work as we cover other topics.
 To get started, we use the `<meta>` element to establish a few best practices.
@@ -313,14 +313,14 @@ The latter included the following elements:
 
 In the next section, we focus on adding content within the `<body>` element of a web document.
 
-[html5_w3c]:https://www.w3.org/TR/2011/WD-html5-20110525/spec.html
+[base_whatwg]:https://html.spec.whatwg.org/multipage/semantics.html#the-base-element
+[head_whatwg]:https://html.spec.whatwg.org/multipage/semantics.html#the-head-element
+[html5_whatwg]:https://html.spec.whatwg.org/multipage/
 [html_mdn]:https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML
-[w3c]:https://www.w3.org/
-[html_w3c]:https://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-html-element
-[base_w3m]:https://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-base-element
-[link_w3c]:https://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-link-element
-[meta_w3c]:https://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-meta-element
+[html_whatwg]:https://html.spec.whatwg.org/multipage/semantics.html#the-html-element
+[link_whatwg]:https://html.spec.whatwg.org/multipage/semantics.html#the-link-element
+[meta_whatwg]:https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element
+[type_selectors_mdn]:https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors#type_selectors
 [utf8]:https://en.wikipedia.org/wiki/UTF-8
 [viewport_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag
-[head_w3c]:https://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-html-element
-[type_selectors_mdn]:https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors#type_selectors
+[whatwg]:https://whatwg.org/
