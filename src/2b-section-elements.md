@@ -89,8 +89,10 @@ We can enclose a `<section>` element within an `<article>` element or use it as 
 ```
 <body>
     <article>
+    
         <section>
         </section>
+        
     </article>
 </body>
 ```
@@ -105,10 +107,14 @@ This might be placed near the top of a web document.
 <body>
     <nav>
     </nav>
+    
     <article>
+    
         <section>
         </section>
+        
     </article>
+    
 </body>
 ```
 
@@ -126,13 +132,18 @@ Note that I add an additional `<section>` element to illustrate how this can be 
 <body>
     <nav>
     </nav>
+    
     <article>
+    
         <section>
         <aside></aside>
         </section>
+        
         <section>
         </section>
+        
     </article>
+    
 </body>
 ```
 
@@ -366,8 +377,8 @@ In that example, all lines between the comment tags will be ignored by the brows
 With this section and the last, we now have created the head of our web document,
 which contains the document's metadata, and a basic outline of our web document
 using the section elements listed on this page.
-Putting it together and using only those HTML elements covered so far,
-we might have something like below that gets me started on a web page about Linux systems administration.
+Putting it together and using only those HTML elements covered so far, we might have something below:
+a starting web document about Linux systems administration.
 Note that I've commented out the line with the `<base>` element since I don't yet have a domain name for this content.
 
 ```
