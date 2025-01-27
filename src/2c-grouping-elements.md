@@ -1,4 +1,4 @@
-# Grouping Elements
+# HTML Grouping Elements
 
 The other set of common elements that we'll use quite often are the HTML grouping elements. There are 13 elements categorized as grouping elements. These include:
 
