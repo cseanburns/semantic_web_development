@@ -3,8 +3,8 @@
 In chapter two, we focus on learning HTML5.
 The goal is to cover:
 
-- Document metadata
-- Document structure
+- Document structure metadata
+- Section elements
 - Grouping content and inline semantics
 - Embedded content: images and multimedia
 - Tables and forms
