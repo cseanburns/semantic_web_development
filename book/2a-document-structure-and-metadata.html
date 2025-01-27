@@ -179,15 +179,14 @@
                         <h1 id="document-structure-and-metadata"><a class="header" href="#document-structure-and-metadata">Document Structure and Metadata</a></h1>
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
 <p>One of the main purposes of HTML is to structure our web documents and our content.
-This purpose means that HTML offers a set of <strong>elements</strong> for this purpose.
+This means that HTML offers a set of <strong>elements</strong> for this purpose.
 In this section, we will list, describe, and illustrate how to use these elements.</p>
 <p>First, as you learn HTML, please refer to the official documentation at <a href="https://whatwg.org/">WHATWG</a>.
-WHATWG is the working group for managing the HTML standards, its specifications, and documentation.
+This is the working group for managing the HTML standards, its specifications, and documentation.
 The documentation for HTML5 should be constantly referenced throughout this work.
 See:</p>
 <ul>
 <li><a href="https://html.spec.whatwg.org/multipage/">HTML5 at WHATWG</a></li>
-<li>Specifically the section on semantics: https://html.spec.whatwg.org/#semantics</li>
 </ul>
 <p>Mozilla also maintains a solid reference source:</p>
 <ul>
@@ -196,7 +195,7 @@ See:</p>
 <h2 id="the-structure-of-an-html-document"><a class="header" href="#the-structure-of-an-html-document">The Structure of an HTML Document</a></h2>
 <p>The overall basic structure of an HTML document is fairly simple and straightforward.
 An HTML document begins with the <strong>DOCTYPE</strong> declaration, which declares the document to be HTML.
-This is followed by the <strong>HTML element</strong> <code>&lt;html&gt;</code>, which <q><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-html-element">represents the root of an HTML document</a></q>
+This is followed by the <strong>HTML element</strong> <code>&lt;html&gt;</code>, which <q><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-html-element">represents the root of an HTML document</a></q>.
 The <code>&lt;html&gt;</code> element usually contains a <strong>lang</strong> attribute that we use to declare the
 natural language used in the document.
 In our case, that's English, and thus we use <code>&lt;html lang="en"&gt;</code>.
@@ -212,13 +211,14 @@ The very basic structure of an HTML document looks like this:</p>
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<p>You should not that most but not all HTML elements have a start or opening tag and an end or closing tag.
-In the above example, the opening tag <code>&lt;html&gt;</code> begins on the second line and ends on the last line with <code>&lt;/html&gt;</code>.
-It therefore encompasses the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> elements, which themselves will encompass other elements.</p>
+<p>You should note that most but not all HTML elements have a start or opening tag and an end or closing tag.
+In the above example, the opening tag <code>&lt;html&gt;</code> begins on the second line
+and the ending tag is at the last line with <code>&lt;/html&gt;</code>.
+This tag therefore encompasses the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> elements, which themselves will encompass other elements.</p>
 <h3 id="the-head-section"><a class="header" href="#the-head-section">The <code>&lt;head&gt;</code> section</a></h3>
 <p>Let's focus on the <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element">HEAD section</a>, which contains a web document's metadata.
 A document's metadata is data that describes the data on the page.
-This section of the HTML document may typically include five elements:
+This section of the HTML document typically includes five elements:
 <code>&lt;title&gt;</code>, <code>&lt;base&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;meta&gt;</code>, and <code>&lt;style&gt;</code>, as shown below:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
@@ -227,7 +227,7 @@ This section of the HTML document may typically include five elements:
         &lt;base&gt;
 		&lt;link&gt;
 		&lt;meta&gt;
-        &lt;style&gt;
+        &lt;style&gt;&lt;/style&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
 	&lt;/body&gt;
@@ -239,11 +239,11 @@ since it closes after them with the <code>&lt;/head&gt;</code> element.</p>
 <h3 id="the-title-element"><a class="header" href="#the-title-element">The <code>&lt;title&gt;</code> element</a></h3>
 <p>The <code>&lt;title&gt;</code> element contains the document's title or name.
 As an example, if I am writing a web page about <em>Linux systems administration</em>,
-then I may include that within the TITLE element, like so:</p>
+then I may include that within the <code>&lt;title&gt;</code> element, like so:</p>
 <pre><code>&lt;title&gt;Using the Linux OS for Systems Administration&lt;/title&gt;
 </code></pre>
 <p>Note the <code>&lt;title&gt;</code> element closes with <code>&lt;/title&gt;</code>.</p>
-<p>We can add that to our HEAD section:</p>
+<p>We can add the title information to our <code>&lt;head&gt;</code> section, as shown below:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 	&lt;head&gt;
@@ -260,14 +260,14 @@ then I may include that within the TITLE element, like so:</p>
 <h3 id="the-base-element"><a class="header" href="#the-base-element">The <code>&lt;base&gt;</code> element</a></h3>
 <p>The <code>&lt;base&gt;</code> element <q>allows authors to specify the document base URL for the purpose of relative URLs</q>
 (<a href="https://html.spec.whatwg.org/multipage/semantics.html#the-base-element">The base element</a>).</p>
-<p>The content of the <code>&lt;base&gt;</code> element therefore depends on your website's domain name.
+<p>The content of the <code>&lt;base&gt;</code> element depends on your website's domain name.
 If I have a website at <code>https://www.example.org/</code>, then I add this information to my <code>&lt;base&gt;</code> element:</p>
 <pre><code>&lt;base href="https://www.example.org/"&gt;
 </code></pre>
 <p>This allows me to link to other parts of my website without using the full URL or path.
 For example, if I have a website with two pages: <strong>index.html</strong> and <strong>news.html</strong>,
 then to link to <strong>news.html</strong> from the <strong>index.html</strong> page,
-I only have to link it like so:</p>
+I only have to name the file:</p>
 <pre><code>Read my &lt;a href="news.html"&gt;weekly newsletter&lt;/a&gt;
 </code></pre>
 <p>If I didn't include the <code>&lt;base&gt;</code> element in my <code>&lt;head&gt;</code> section,
@@ -276,10 +276,10 @@ then I would have to reference or link to the full URL, like so:</p>
 </code></pre>
 <p>The difference between these two examples is that the first example resolves the link relative to the <code>&lt;base&gt;</code> URL,
 while the second example specifies the full domain and path.
-Using the <code>&lt;base&gt;</code> element therefore makes it easier to link to other parts of your website.
+Using the <code>&lt;base&gt;</code> element therefore makes it easier to link to other parts of our websites.
 It also makes it easier if we change the domain name of our website.
 In such a case, we would only have to update the URL in the <code>&lt;base&gt;</code> element.</p>
-<p>Let's modify our <em>HEAD</em> section with this new information:</p>
+<p>Let's modify our <code>&lt;head&gt;</code> section with this new information:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 	&lt;head&gt;
@@ -299,14 +299,13 @@ In such a case, we would only have to update the URL in the <code>&lt;base&gt;</
 (<a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">The link element</a>).
 Other resources may include external CSS stylesheets, JavaScript code, and more.
 We will use this element later when we link to our CSS code or stylesheets.</p>
-<p>As an example, we might create a directory in our home project directory called <strong>styles</strong> and
-include our main (and perhaps other) CSS code in that directory,
-perhaps in a file named <code>style.css</code>.
-In such a case, we use the <code>&lt;link&gt;</code> element to link to our stylesheet in the following way:</p>
+<p>As an example, we might create a directory in our root project directory called <strong>css</strong> and
+include our CSS code in that directory in a file named <code>style.css</code>.
+In this case, we use the <code>&lt;link&gt;</code> element to link to our stylesheet in the following way:</p>
 <pre><code>&lt;link rel="stylesheet" href="css/style.css"&gt;
 </code></pre>
-<p>In that example, the <strong>ref</strong> and the <strong>href</strong> are called <strong>attributes</strong>.
-The <strong>ref</strong> attribute describes the resource and the <strong>href</strong> attribute describes the location of the resource.
+<p>In that example, the <strong>rel</strong> and the <strong>href</strong> are called <strong>attributes</strong>.
+The <strong>rel</strong> attribute describes the resource and the <strong>href</strong> attribute describes the location of the resource.
 Since we are using the <code>&lt;base&gt;</code> element, as described above, we only refer to the <strong>relative</strong> path
 of the stylesheet (named <code>style.css</code>) instead of the full path.</p>
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -325,16 +324,16 @@ of the stylesheet (named <code>style.css</code>) instead of the full path.</p>
 <p>Note that the <code>&lt;link&gt;</code> element does not close.</p>
 <h3 id="the-meta-element"><a class="header" href="#the-meta-element">The <code>&lt;meta&gt;</code> element</a></h3>
 <p>The <code>&lt;meta&gt;</code> element <q>represents various kinds of metadata that cannot be expressed using the</q>
-other HEAD elements, such as <strong>title</strong>, <strong>base</strong>, <strong>link</strong>, <strong>style</strong>
+other <code>&lt;head&gt;</code> elements, such as <code>&lt;title&gt;</code>, <code>&lt;base&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;style&gt;</code>
 (<a href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element">The meta element</a>).
-The <code>&lt;meta&gt;</code> element therefore has a few use cases, but to keep it simple,
-we'll cover the basics below and expand on them throughout this work as we cover other topics.
-To get started, we use the <code>&lt;meta&gt;</code> element to establish a few best practices.</p>
+The <code>&lt;meta&gt;</code> element has a few use cases.
+To keep it simple for now,
+we'll cover the basics below and expand on them as we cover other topics.</p>
 <p>First, as the documentation states, the <code>&lt;meta&gt;</code> element requires one of three attributes:
 <strong>name</strong>, <strong>http-equiv</strong>, and <strong>charset</strong>.
 We'll skip the second attribute and discuss the first and third one.</p>
 <h4 id="the-charset-and-name-attributes"><a class="header" href="#the-charset-and-name-attributes">The <strong>charset</strong> and <strong>name</strong> attributes</a></h4>
-<p>The <strong>charset</strong> attribute establishes the document's character set and allow proper displaying of non-ASCII characters.
+<p>The <strong>charset</strong> attribute establishes the document's character set and allows proper displaying of non-ASCII characters.
 In practice, we use this to declare the document's character set to <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a>.</p>
 <p>The <strong>name</strong> attribute is used with several names that refer to the web/HTML document's metadata.
 We'll focus on the following four:</p>
@@ -379,23 +378,20 @@ We'll focus on the following four:</p>
 &lt;/html&gt;
 </code></pre>
 <h3 id="the-style-element"><a class="header" href="#the-style-element">The <code>&lt;style&gt;</code> element</a></h3>
-<p>Finally, the <code>&lt;style&gt;</code> element is used to embed CSS in our HEAD section.
-Most of the time and for most styling, we will want to use an external stylesheet for CSS code.
+<p>Finally, the <code>&lt;style&gt;</code> element is used to embed CSS in our <code>&lt;head&gt;</code> section.
+Most of the time, we want to use an external stylesheet for CSS code, which we'll cover later.
 We want this because it means that we only need to modify one CSS file to style our entire site.
-That's particularly nice when our website grows to include many, many pages.
-However, there are times when we might want to use a CSS style to modify just one page or some aspect of a single page.
-We want to limit those cases.
-This means that the <code>&lt;style&gt;</code> element is not always necessary
-But I demonstrate it now since it can be useful to add CSS just to just one page and
-to be completely descriptive about the content of the <code>&lt;head&gt;</code> section.</p>
-<p>When we use the <code>&lt;style&gt;</code> element, we use CSS syntax, and not HTML.
-As an example, in CSS, if we want to specify a specific family of fonts, then we can use the
+That's particularly nice when our website grows to include many pages.
+However, there are times when we want to use a CSS style to modify just one page or some aspect of a single page.</p>
+<p>When we use the <code>&lt;style&gt;</code> element, we use CSS syntax, and not HTML, within the <code>&lt;style&gt;</code> tag.
+As an example, if we want to specify a specific family of fonts, then we can use the
 CSS <code>html</code> <strong>selector</strong> to specify a font-family for a single webpage.</p>
-<p>A CSS <strong>selector</strong> is often equivalent to an HTML <strong>element</strong> name.
+<p>A CSS <strong>selector</strong> is often equivalently named to an HTML <strong>element</strong>.
 Such cases are called <strong><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Basic_selectors#type_selectors">Type selectors</a></strong>.
 Thus, to modify the <code>&lt;html&gt;</code> element on a page, we use the CSS <code>html</code> type selector.
 In the following example, we state that the monospace font family should be used for the entire page,
-since we attach it to the <code>html</code> selector.</p>
+since we attach it to the <code>html</code> selector.
+On a multi-page website, this styling would only apply to this one page.</p>
 <pre><code>&lt;style&gt;
     html { font-family: monospace; }
 &lt;/style&gt; 
