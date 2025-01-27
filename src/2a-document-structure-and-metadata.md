@@ -3,16 +3,15 @@
 ## Introduction
 
 One of the main purposes of HTML is to structure our web documents and our content.
-This purpose means that HTML offers a set of **elements** for this purpose.
+This means that HTML offers a set of **elements** for this purpose.
 In this section, we will list, describe, and illustrate how to use these elements.
 
 First, as you learn HTML, please refer to the official documentation at [WHATWG][whatwg].
-WHATWG is the working group for managing the HTML standards, its specifications, and documentation.
+This is the working group for managing the HTML standards, its specifications, and documentation.
 The documentation for HTML5 should be constantly referenced throughout this work.
 See:
 
 - [HTML5 at WHATWG][html5_whatwg]
-- Specifically the section on semantics: https://html.spec.whatwg.org/#semantics
 
 Mozilla also maintains a solid reference source:
 
@@ -22,7 +21,7 @@ Mozilla also maintains a solid reference source:
 
 The overall basic structure of an HTML document is fairly simple and straightforward.
 An HTML document begins with the **DOCTYPE** declaration, which declares the document to be HTML.
-This is followed by the **HTML element** `<html>`, which <q>[represents the root of an HTML document][html_whatwg]</q>
+This is followed by the **HTML element** `<html>`, which <q>[represents the root of an HTML document][html_whatwg]</q>.
 The `<html>` element usually contains a **lang** attribute that we use to declare the
 natural language used in the document.
 In our case, that's English, and thus we use `<html lang="en">`.
@@ -41,15 +40,16 @@ The very basic structure of an HTML document looks like this:
 </html>
 ```
 
-You should not that most but not all HTML elements have a start or opening tag and an end or closing tag.
-In the above example, the opening tag `<html>` begins on the second line and ends on the last line with `</html>`.
-It therefore encompasses the `<head>` and `<body>` elements, which themselves will encompass other elements.
+You should note that most but not all HTML elements have a start or opening tag and an end or closing tag.
+In the above example, the opening tag `<html>` begins on the second line
+and the ending tag is at the last line with `</html>`.
+This tag therefore encompasses the `<head>` and `<body>` elements, which themselves will encompass other elements.
 
 ### The `<head>` section
 
 Let's focus on the [HEAD section][head_whatwg], which contains a web document's metadata.
 A document's metadata is data that describes the data on the page.
-This section of the HTML document may typically include five elements:
+This section of the HTML document typically includes five elements:
 `<title>`, `<base>`, `<link>`, `<meta>`, and `<style>`, as shown below:
 
 ```
@@ -60,7 +60,7 @@ This section of the HTML document may typically include five elements:
         <base>
 		<link>
 		<meta>
-        <style>
+        <style></style>
 	</head>
 	<body>
 	</body>
@@ -75,7 +75,7 @@ since it closes after them with the `</head>` element.
 
 The `<title>` element contains the document's title or name.
 As an example, if I am writing a web page about *Linux systems administration*,
-then I may include that within the TITLE element, like so:
+then I may include that within the `<title>` element, like so:
 
 ```
 <title>Using the Linux OS for Systems Administration</title>
@@ -83,7 +83,7 @@ then I may include that within the TITLE element, like so:
 
 Note the `<title>` element closes with `</title>`.
 
-We can add that to our HEAD section:
+We can add the title information to our `<head>` section, as shown below:
 
 ```
 <!DOCTYPE html>
@@ -105,7 +105,7 @@ We can add that to our HEAD section:
 The `<base>` element <q>allows authors to specify the document base URL for the purpose of relative URLs</q>
 ([The base element][base_whatwg]).
 
-The content of the `<base>` element therefore depends on your website's domain name.
+The content of the `<base>` element depends on your website's domain name.
 If I have a website at `https://www.example.org/`, then I add this information to my `<base>` element:
 
 ```
@@ -115,7 +115,7 @@ If I have a website at `https://www.example.org/`, then I add this information t
 This allows me to link to other parts of my website without using the full URL or path.
 For example, if I have a website with two pages: **index.html** and **news.html**,
 then to link to **news.html** from the **index.html** page,
-I only have to link it like so:
+I only have to name the file:
 
 ```
 Read my <a href="news.html">weekly newsletter</a>
@@ -130,11 +130,11 @@ Read my <a href="https://www.example.org/news.html">weekly newsletter</a>
 
 The difference between these two examples is that the first example resolves the link relative to the `<base>` URL,
 while the second example specifies the full domain and path.
-Using the `<base>` element therefore makes it easier to link to other parts of your website.
+Using the `<base>` element therefore makes it easier to link to other parts of our websites.
 It also makes it easier if we change the domain name of our website.
 In such a case, we would only have to update the URL in the `<base>` element.
 
-Let's modify our *HEAD* section with this new information:
+Let's modify our `<head>` section with this new information:
 
 ```
 <!DOCTYPE html>
@@ -160,17 +160,16 @@ The `<link>` element <q>allows authors to link their document to other resources
 Other resources may include external CSS stylesheets, JavaScript code, and more.
 We will use this element later when we link to our CSS code or stylesheets.
 
-As an example, we might create a directory in our home project directory called **styles** and
-include our main (and perhaps other) CSS code in that directory,
-perhaps in a file named `style.css`.
-In such a case, we use the `<link>` element to link to our stylesheet in the following way:
+As an example, we might create a directory in our root project directory called **css** and
+include our CSS code in that directory in a file named `style.css`.
+In this case, we use the `<link>` element to link to our stylesheet in the following way:
 
 ```
 <link rel="stylesheet" href="css/style.css">
 ```
 
-In that example, the **ref** and the **href** are called **attributes**.
-The **ref** attribute describes the resource and the **href** attribute describes the location of the resource.
+In that example, the **rel** and the **href** are called **attributes**.
+The **rel** attribute describes the resource and the **href** attribute describes the location of the resource.
 Since we are using the `<base>` element, as described above, we only refer to the **relative** path
 of the stylesheet (named `style.css`) instead of the full path.
 
@@ -194,11 +193,11 @@ Note that the `<link>` element does not close.
 ### The `<meta>` element
 
 The `<meta>` element <q>represents various kinds of metadata that cannot be expressed using the</q>
-other HEAD elements, such as **title**, **base**, **link**, **style**
+other `<head>` elements, such as `<title>`, `<base>`, `<link>`, `<style>`
 ([The meta element][meta_whatwg]).
-The `<meta>` element therefore has a few use cases, but to keep it simple,
-we'll cover the basics below and expand on them throughout this work as we cover other topics.
-To get started, we use the `<meta>` element to establish a few best practices.
+The `<meta>` element has a few use cases.
+To keep it simple for now,
+we'll cover the basics below and expand on them as we cover other topics.
 
 First, as the documentation states, the `<meta>` element requires one of three attributes:
 **name**, **http-equiv**, and **charset**.
@@ -206,7 +205,7 @@ We'll skip the second attribute and discuss the first and third one.
 
 #### The **charset** and **name** attributes
 
-The **charset** attribute establishes the document's character set and allow proper displaying of non-ASCII characters.
+The **charset** attribute establishes the document's character set and allows proper displaying of non-ASCII characters.
 In practice, we use this to declare the document's character set to [UTF-8][utf8].
 
 The **name** attribute is used with several names that refer to the web/HTML document's metadata.
@@ -245,25 +244,22 @@ Putting this altogether, we have the following:
 
 ### The `<style>` element
 
-Finally, the `<style>` element is used to embed CSS in our HEAD section.
-Most of the time and for most styling, we will want to use an external stylesheet for CSS code.
+Finally, the `<style>` element is used to embed CSS in our `<head>` section.
+Most of the time, we want to use an external stylesheet for CSS code, which we'll cover later.
 We want this because it means that we only need to modify one CSS file to style our entire site.
-That's particularly nice when our website grows to include many, many pages.
-However, there are times when we might want to use a CSS style to modify just one page or some aspect of a single page.
-We want to limit those cases.
-This means that the `<style>` element is not always necessary
-But I demonstrate it now since it can be useful to add CSS just to just one page and
-to be completely descriptive about the content of the `<head>` section.
+That's particularly nice when our website grows to include many pages.
+However, there are times when we want to use a CSS style to modify just one page or some aspect of a single page.
 
-When we use the `<style>` element, we use CSS syntax, and not HTML.
-As an example, in CSS, if we want to specify a specific family of fonts, then we can use the
+When we use the `<style>` element, we use CSS syntax, and not HTML, within the `<style>` tag.
+As an example, if we want to specify a specific family of fonts, then we can use the
 CSS `html` **selector** to specify a font-family for a single webpage.
 
-A CSS **selector** is often equivalent to an HTML **element** name.
+A CSS **selector** is often equivalently named to an HTML **element**.
 Such cases are called **[Type selectors][type_selectors_mdn]**.
 Thus, to modify the `<html>` element on a page, we use the CSS `html` type selector.
 In the following example, we state that the monospace font family should be used for the entire page,
 since we attach it to the `html` selector.
+On a multi-page website, this styling would only apply to this one page.
 
 ```
 <style>

@@ -16,6 +16,7 @@ The grouping elements we cover here include:
 - the `<dl>` element
 - the `<dt>` element
 - the `<dd>` element
+- the `<main>` element
 - the `<div>` element
 
 For a few other defined elements, see: [Grouping content][grouping_whatwg]

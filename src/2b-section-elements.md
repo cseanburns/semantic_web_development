@@ -2,8 +2,8 @@
 
 ## Introduction
 
-In the last section, on Document Structure and Metadata, we covered the basic outline of a web document
-and built out its metadata section in the web document's `<head>` section.
+In the last section, we covered the basic outline of a web document
+and built its metadata section in the web document's `<head>` section.
 At the end of that section, we created the following content:
 
 ```
@@ -27,12 +27,13 @@ At the end of that section, we created the following content:
 </html>
 ```
 
-In this section and onward, we shift our focus to the content section of our web document.
+In this section, we shift our focus to the content section of our web document.
 This is the area within the opening and closing `<body></body>` element.
 We'll begin with what are called the [section elements][sections_whatwg] and
 use this to create a broad outline of our web document.
 In the next section, we'll cover the [grouping elements][grouping_whatwg].
 We'll use the grouping elements to begin adding content.
+For now, let's focus on sections.
 
 ## Section Elements
 
@@ -100,7 +101,7 @@ We can enclose a `<section>` element within an `<article>` element or use it as 
 ### The `<nav>` Element
 
 The `<nav>` element is used to contain navigational links to other parts of the site ([The nav element][nav_whatwg]).
-For example, if a website had a news page and an about page, then links to these pages would be place in `<nav>`.
+For example, if a website had a news page and an about page, then links to these pages would be placed in `<nav>`.
 This might be placed near the top of a web document.
 
 ```
@@ -126,7 +127,7 @@ For example, imagine you have written an article on text editors.
 In this article, you might want to take note of a historical aspect of a specific text editor, like [Vim][vim],
 even though the main article isn't about Vim.
 This is the kind of function that an `<aside>` fulfills.
-Note that I add an additional `<section>` element to illustrate how this can be used repeatedly.
+Note that I add an `<section>` element to illustrate how this can be used repeatedly.
 
 ```
 <body>
@@ -154,9 +155,9 @@ The `<h1>` through `<h6>` elements represent section headers
 These are useful for marking the title and subtitles of a web document and
 can be used for the entire web document or within specific sections,
 such as within `<article>` or `<section>` elements.
-In the example below, I show how to use these repeatedly through a web document.
+In the example below, I show how to use these repeatedly throughout a web document.
 However, it's best practice to use the `<h1>` element only once on a web page,
-give that it marks a top-level section.
+given that it marks a top-level section.
 
 ```
 <body>
@@ -220,9 +221,9 @@ It's a confusing element and the `<header>` element, which I describe below, off
 The `<header>` element is easily confused with the `<hgroup>` element but it has more versatility
 ([The header element][header_whatwg]).
 Like the `<hgroup>` element, it's meant to be used to group section headings
-(e.g., the `<h1>` elements and including the `<hgroup>` element).
-A good use case for it is to use it for the main heading area (i.e., the top of a web page),
-which might include a website's logo and navigational area.
+(e.g., the `<h1>` and etc. elements and even the `<hgroup>` element).
+A good use case is for the main heading area (i.e., the top of a web page),
+which could include a website's logo and navigational area.
 However, it can be used repeatedly throughout a web document, including in `<article>` or `<section>` elements.
 In practice, I generally use the `<header>` element and not the `<hgroup>` element.
 
@@ -262,7 +263,7 @@ The `<footer>` element <q>typically contains information about its section such 
 links to related documents, copyright data, and the like</q> ([The footer element][footer_whatwg]).
 Like the `<header>` element, it can be used repeatedly throughout a web document,
 such as at the end of an `<article>` or `<section>` element.
-It's more common use is at the end of an entire web document, just before the closing `<body>` element.
+It's more commonly used at the end of an entire web document, just before the closing `<body>` element.
 This use of course depends on the content of a web page.
 Therefore, use it where needed!
 
@@ -305,7 +306,7 @@ It can be used throughout a web document.
 If it appears at the end of a `<section>` element, then it marks the contact information for
 perhaps the author of that section.
 If it appears in the `<footer>` element, then it marks the contact information
-(email addresses, mailing address, etc.) for web site owners.
+(email addresses, mailing address, etc.) for the web site owners.
 
 ```
 <body>
@@ -344,11 +345,12 @@ If it appears in the `<footer>` element, then it marks the contact information
 
 ## Quick Note on HTML Comments
 
-Many programming and markup languages have the ability to add comments to your code.
-This is true for HTML, too.
+Many programming and markup languages have the ability to add comments to code.
+This is true for HTML.
+When we comment HTML code, the browser will not display the contents within the commented section.
 Adding comments to your HTML code is helpful for two reasons:
 
-1. You can leave yourself notes about the parts of your web document.
+1. You can leave yourself notes about parts of your web document.
 2. You can *comment out* code that you don't want to use but might want to use later.
 
 To comment out HTML code, use the comment tag:
@@ -374,7 +376,7 @@ In that example, all lines between the comment tags will be ignored by the brows
 
 ## Putting It Together
 
-With this section and the last, we now have created the head of our web document,
+With this section and the last, we have created the head of our web document,
 which contains the document's metadata, and a basic outline of our web document
 using the section elements listed on this page.
 Putting it together and using only those HTML elements covered so far, we might have something below:
@@ -463,6 +465,7 @@ Think a lot about the structure of your page.
 You'll want to modify that as you add content, which we'll cover next.
 But it's often helpful to have a starting outline, and the section elements covered here help with that.
 
+[address_whatwg]:https://html.spec.whatwg.org/multipage/sections.html#the-address-element
 [article_whatwg]:https://html.spec.whatwg.org/multipage/sections.html#the-article-element
 [aside_whatwg]:https://html.spec.whatwg.org/multipage/sections.html#the-aside-element
 [footer_whatwg]:https://html.spec.whatwg.org/multipage/sections.html#the-footer-element
@@ -471,6 +474,6 @@ But it's often helpful to have a starting outline, and the section elements cove
 [nav_whatwg]:https://html.spec.whatwg.org/multipage/sections.html#the-nav-element
 [section_whatwg]:https://html.spec.whatwg.org/multipage/sections.html#the-section-element
 [sections_whatwg]:https://html.spec.whatwg.org/multipage/sections.html#sections
-[grouping_whatwg]:https://www.w3.org/TR/2011/WD-html5-20110525/grouping-content.html#grouping-content
+[grouping_whatwg]:https://html.spec.whatwg.org/multipage/grouping-content.html#grouping-content
 [validator_w3]:https://validator.w3.org/nu/
 [vim]:https://www.vim.org/
