@@ -9,6 +9,7 @@
     - [Document Structure and Metadata](2a-document-structure-and-metadata.md)
     - [Section Elements](2b-section-elements.md)
     - [Grouping Elements](2c-grouping-elements.md)
+    - [HTML Links and Attributes](2d-links-and-attributes.md)
 - [CSS3 and Web Design](p3-css3-and-web-design.md)
     - [CSS3 and Basic Styling](3a-css3-and-basic-styling.md)
         - [Syntax and Selectors](3a1-syntax-and-selectors.md)
