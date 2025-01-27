@@ -5,7 +5,8 @@ The goal is to cover:
 
 - Document structure metadata
 - Section elements
-- Grouping content and inline semantics
+- Grouping content and text-level semantic elements
+- Links and attributes
 - Embedded content: images and multimedia
 - Tables and forms
 
