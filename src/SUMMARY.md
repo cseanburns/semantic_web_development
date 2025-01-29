@@ -8,6 +8,7 @@
 - [HTML5 and The Web](p2-html5-and-the-web.md)
     - [Document Structure and Metadata](2a-document-structure-and-metadata.md)
     - [Section Elements](2b-section-elements.md)
+    - [Using VS Code and GitHub](2b1-using-vscode-and-github.md)
     - [Grouping Elements](2c-grouping-elements.md)
     - [Links and Attributes](2d-links-and-attributes.md)
     - [Embedded Content: Images and Multimedia](2e-embedded-content.md)
