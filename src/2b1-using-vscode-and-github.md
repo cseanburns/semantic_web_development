@@ -37,12 +37,14 @@ Now to use Homebrew to install `git`, run this command in your Terminal.app:
 brew install git
 ```
 
-Once `git` is installed, visit [GitHub][github] and create an account, if you don't already have one.
-Be sure to use your personal email and not your university email, since you won't have your university email after you graduate.
+### Create GitHub Account
 
-## Local to Remote
+Once `git` is installed, visit [GitHub][github] and create an account if you don't already have one.
+Be sure to use your personal email and not your university or other non-permanent email, since you won't always have those accounts.
 
-The main two concepts to learn right now are:
+## Local and Remote Repositories
+
+Before we proceed, you should understand two main concepts:
 
 - Local repository (repo)
 - Remote repository (repo)
@@ -50,10 +52,12 @@ The main two concepts to learn right now are:
 The project folder on your personal computer will function as your **local repo**.
 The content in the project folder (your files and directories) will be sent to a GitHub repository.
 This GitHub repository will function as your **remote repo**.
-The main goal is to keep these two repos in sync with each other,
-such that the work you do in one repo will get sent to the other repo.
+The main goal is to keep these two repos in sync with each other, such that the work you do in one repo will get sent to the other repo.
 
-For example, let's say that you edit your `index.html` file using VS Code on your personal computer.
+### Local to Remote
+
+Most of the time you should be working on your local machine.
+So let's say that you edit your `index.html` file using VS Code on your personal computer.
 Once you have completed your editing work, you want to do the following things to sync it to your remote repo (i.e., to GitHub):
 
 - `stage` the file: this tells `git` to take notice of this file
@@ -61,10 +65,10 @@ Once you have completed your editing work, you want to do the following things t
     - `commit` message: add a descriptive message when committing&mdash;this is helpful for version control and collaboration
 - `push` the file: this updates the remote repository with the changes
 
-## Remote to Local
+### Remote to Local
 
 It's possible to edit and create files and directories on your remote repo (i.e., GitHub).
-I don't suggest doing this, because it means using GitHub's web text editor.
+I don't suggest doing this because it means using GitHub's web text editor.
 Although it's a decent online editor, it's not as powerful as VS Code.
 But if you do edit the remote repo through the browser, then you will want to sync any changes to your local repo.
 Like editing your local repo, the process involves staging and committing (with a commit) message any changes you've made in your remote repo.
@@ -73,8 +77,9 @@ Instead, you'll pull up VS Code and `pull` your changes to your local repo.
 
 ## *Gitting* Started
 
-Again, the following simply follows the steps outlined in at:
-[Introduction to Git in VS Code][git_vscode].
+Now that you understand the basics of syncing repos, we'll proceed to using Git and GitHub with VS Code.
+
+Again I'm mainly following the steps outlined at [Introduction to Git in VS Code][git_vscode].
 
 Now that we have `git` installed on our systems, open VS Code and access the Accounts menu.
 You will want to sign into GitHub in VS Code.

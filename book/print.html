@@ -1412,10 +1412,11 @@ Please read through the documentation to learn more.
 <p>Now to use Homebrew to install <code>git</code>, run this command in your Terminal.app:</p>
 <pre><code>brew install git
 </code></pre>
-<p>Once <code>git</code> is installed, visit <a href="https://github.com/">GitHub</a> and create an account, if you don't already have one.
-Be sure to use your personal email and not your university email, since you won't have your university email after you graduate.</p>
-<h2 id="local-to-remote"><a class="header" href="#local-to-remote">Local to Remote</a></h2>
-<p>The main two concepts to learn right now are:</p>
+<h3 id="create-github-account"><a class="header" href="#create-github-account">Create GitHub Account</a></h3>
+<p>Once <code>git</code> is installed, visit <a href="https://github.com/">GitHub</a> and create an account if you don't already have one.
+Be sure to use your personal email and not your university or other non-permanent email, since you won't always have those accounts.</p>
+<h2 id="local-and-remote-repositories"><a class="header" href="#local-and-remote-repositories">Local and Remote Repositories</a></h2>
+<p>Before we proceed, you should understand two main concepts:</p>
 <ul>
 <li>Local repository (repo)</li>
 <li>Remote repository (repo)</li>
@@ -1423,9 +1424,10 @@ Be sure to use your personal email and not your university email, since you won'
 <p>The project folder on your personal computer will function as your <strong>local repo</strong>.
 The content in the project folder (your files and directories) will be sent to a GitHub repository.
 This GitHub repository will function as your <strong>remote repo</strong>.
-The main goal is to keep these two repos in sync with each other,
-such that the work you do in one repo will get sent to the other repo.</p>
-<p>For example, let's say that you edit your <code>index.html</code> file using VS Code on your personal computer.
+The main goal is to keep these two repos in sync with each other, such that the work you do in one repo will get sent to the other repo.</p>
+<h3 id="local-to-remote"><a class="header" href="#local-to-remote">Local to Remote</a></h3>
+<p>Most of the time you should be working on your local machine.
+So let's say that you edit your <code>index.html</code> file using VS Code on your personal computer.
 Once you have completed your editing work, you want to do the following things to sync it to your remote repo (i.e., to GitHub):</p>
 <ul>
 <li><code>stage</code> the file: this tells <code>git</code> to take notice of this file</li>
@@ -1436,17 +1438,17 @@ Once you have completed your editing work, you want to do the following things t
 </li>
 <li><code>push</code> the file: this updates the remote repository with the changes</li>
 </ul>
-<h2 id="remote-to-local"><a class="header" href="#remote-to-local">Remote to Local</a></h2>
+<h3 id="remote-to-local"><a class="header" href="#remote-to-local">Remote to Local</a></h3>
 <p>It's possible to edit and create files and directories on your remote repo (i.e., GitHub).
-I don't suggest doing this, because it means using GitHub's web text editor.
+I don't suggest doing this because it means using GitHub's web text editor.
 Although it's a decent online editor, it's not as powerful as VS Code.
 But if you do edit the remote repo through the browser, then you will want to sync any changes to your local repo.
 Like editing your local repo, the process involves staging and committing (with a commit) message any changes you've made in your remote repo.
 However, you won't <code>push</code> your repo to your local repo.
 Instead, you'll pull up VS Code and <code>pull</code> your changes to your local repo.</p>
 <h2 id="gitting-started-1"><a class="header" href="#gitting-started-1"><em>Gitting</em> Started</a></h2>
-<p>Again, the following simply follows the steps outlined in at:
-<a href="https://code.visualstudio.com/docs/sourcecontrol/intro-to-git">Introduction to Git in VS Code</a>.</p>
+<p>Now that you understand the basics of syncing repos, we'll proceed to using Git and GitHub with VS Code.</p>
+<p>Again I'm mainly following the steps outlined at <a href="https://code.visualstudio.com/docs/sourcecontrol/intro-to-git">Introduction to Git in VS Code</a>.</p>
 <p>Now that we have <code>git</code> installed on our systems, open VS Code and access the Accounts menu.
 You will want to sign into GitHub in VS Code.</p>
 <p>Since we've already created a local folder to work with, which should have our <code>index.html</code> file, we need to turn that local folder into a local repo.
