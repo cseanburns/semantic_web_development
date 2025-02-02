@@ -1,0 +1,438 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Grouping and Text Level Semantic Elements - Semantic Web Development</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="Semantic Web Development with HTML5, CSS3, and JSON-LD">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="p1-introduction-to-semantic-web-development.html"><strong aria-hidden="true">1.</strong> Introduction to Semantic Web Development</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="1a-the-semantic-web.html"><strong aria-hidden="true">1.1.</strong> The Semantic Web</a></li><li class="chapter-item expanded "><a href="1b-user-experience-accessibility.html"><strong aria-hidden="true">1.2.</strong> User Experience and Accessibility</a></li><li class="chapter-item expanded "><a href="1c-tools-setup-workflow.html"><strong aria-hidden="true">1.3.</strong> Tools, Setup, and Workflow</a></li><li class="chapter-item expanded "><a href="1d-designing-with-inkscape.html"><strong aria-hidden="true">1.4.</strong> Designing with Inkscape</a></li></ol></li><li class="chapter-item expanded "><a href="p2-html5-and-the-web.html"><strong aria-hidden="true">2.</strong> HTML5 and The Web</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2a-document-structure-and-metadata.html"><strong aria-hidden="true">2.1.</strong> Document Structure and Metadata</a></li><li class="chapter-item expanded "><a href="2b-section-elements.html"><strong aria-hidden="true">2.2.</strong> Section Elements</a></li><li class="chapter-item expanded "><a href="2b1-using-vscode-and-github.html"><strong aria-hidden="true">2.3.</strong> Using VS Code and GitHub</a></li><li class="chapter-item expanded "><a href="2c-grouping-semantic-elements.html" class="active"><strong aria-hidden="true">2.4.</strong> Grouping and Text Level Semantic Elements</a></li><li class="chapter-item expanded "><a href="2d-links-and-attributes.html"><strong aria-hidden="true">2.5.</strong> Links and Attributes</a></li><li class="chapter-item expanded "><a href="2e-embedded-content.html"><strong aria-hidden="true">2.6.</strong> Embedded Content: Images and Multimedia</a></li><li class="chapter-item expanded "><a href="2f-tables-and-forms.html"><strong aria-hidden="true">2.7.</strong> Tables and Forms</a></li></ol></li><li class="chapter-item expanded "><a href="p3-css3-and-web-design.html"><strong aria-hidden="true">3.</strong> CSS3 and Web Design</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3a-css3-and-basic-styling.html"><strong aria-hidden="true">3.1.</strong> CSS3 and Basic Styling</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3a1-syntax-and-selectors.html"><strong aria-hidden="true">3.1.1.</strong> Syntax and Selectors</a></li><li class="chapter-item expanded "><a href="3a2-colors-units-measurements.html"><strong aria-hidden="true">3.1.2.</strong> Colors, Units, and Measurements</a></li><li class="chapter-item expanded "><a href="3a3-applying-css-to-html.html"><strong aria-hidden="true">3.1.3.</strong> Applying CSS to HTML</a></li></ol></li><li class="chapter-item expanded "><a href="3b-box-model.html"><strong aria-hidden="true">3.2.</strong> Box Model</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3b1-margins-borders-padding.html"><strong aria-hidden="true">3.2.1.</strong> Margins, Borders, Padding</a></li><li class="chapter-item expanded "><a href="3b2-box-sizing.html"><strong aria-hidden="true">3.2.2.</strong> Box-Sizing</a></li><li class="chapter-item expanded "><a href="3b3-display-properties.html"><strong aria-hidden="true">3.2.3.</strong> Display Properties</a></li></ol></li><li class="chapter-item expanded "><a href="3c-typography-and-text-styles.html"><strong aria-hidden="true">3.3.</strong> Typography and Text Styles</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3c1-fonts-and-typography.html"><strong aria-hidden="true">3.3.1.</strong> Fonts and Typography</a></li><li class="chapter-item expanded "><a href="3c2-text-styles-and-effects.html"><strong aria-hidden="true">3.3.2.</strong> Text Styles and Effects</a></li></ol></li><li class="chapter-item expanded "><a href="3d-images-multimedia-and-backgrounds.html"><strong aria-hidden="true">3.4.</strong> Images, Multimedia, and Backgrounds</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3d1-styling-images-and-multimedia.html"><strong aria-hidden="true">3.4.1.</strong> Styling Images and Multimedia</a></li><li class="chapter-item expanded "><a href="3d2-backgrounds.html"><strong aria-hidden="true">3.4.2.</strong> Backgrounds</a></li></ol></li><li class="chapter-item expanded "><a href="3e-responsive-layouts-with-flexbox-and-grid.html"><strong aria-hidden="true">3.5.</strong> Responsive Layouts with Flexbox and Grid</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3e1-flexbox-basics.html"><strong aria-hidden="true">3.5.1.</strong> Flexbox Basics</a></li><li class="chapter-item expanded "><a href="3e2-grid-layout-basics.html"><strong aria-hidden="true">3.5.2.</strong> Grid Layout Basics</a></li><li class="chapter-item expanded "><a href="3e3-media-queries-for-responsive-design.html"><strong aria-hidden="true">3.5.3.</strong> Media Queries for Responsive Design</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="p4-introduction-to-json-ld-and-schema-org.html"><strong aria-hidden="true">4.</strong> Introduction to JSON-LD and Schema.org</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="4a-additional-document-metadata-and-json-basics.html"><strong aria-hidden="true">4.1.</strong> Additional Document Metadata and JSON Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="4a1-document-metadata-revisited.html"><strong aria-hidden="true">4.1.1.</strong> Document Metadata Revisited</a></li><li class="chapter-item expanded "><a href="4a2-introduction-to-json.html"><strong aria-hidden="true">4.1.2.</strong> Introduction to JSON</a></li><li class="chapter-item expanded "><a href="4a3-json-syntax-and-data-types.html"><strong aria-hidden="true">4.1.3.</strong> JSON Syntax and Data Types</a></li></ol></li><li class="chapter-item expanded "><a href="4b-schema-org-and-structured-data.html"><strong aria-hidden="true">4.2.</strong> Schema.org and Structured Data</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="4b1-overview-of-schema-org.html"><strong aria-hidden="true">4.2.1.</strong> Overview of Schema.org</a></li><li class="chapter-item expanded "><a href="4b2-common-schema-types.html"><strong aria-hidden="true">4.2.2.</strong> Common Schema Types</a></li><li class="chapter-item expanded "><a href="4bc-benefits-of-structured-data.html"><strong aria-hidden="true">4.2.3.</strong> Benefits of Structured Data</a></li></ol></li><li class="chapter-item expanded "><a href="4c-implementing-json-ld-with-schema-org.html"><strong aria-hidden="true">4.3.</strong> Implementing JSON-LD with Schema.org</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="4c1-json-ld-syntax-and-integration.html"><strong aria-hidden="true">4.3.1.</strong> JSON-LD Syntax and Integration</a></li><li class="chapter-item expanded "><a href="4c2-examples-of-implementing-json-ld-in-html.html"><strong aria-hidden="true">4.3.2.</strong> Examples of Implementing JSON-LD in HTML</a></li><li class="chapter-item expanded "><a href="4c3-tools-for-testing-and-validating-json-ld.html"><strong aria-hidden="true">4.3.3.</strong> Tools for Testing and Validating JSON-LD</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="p5-conclusion-and-final-project.html"><strong aria-hidden="true">5.</strong> Conclusion and Final Project</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="5a-review-of-key-concepts.html"><strong aria-hidden="true">5.1.</strong> Review of Key Concepts</a></li><li class="chapter-item expanded "><a href="5b-final-project-implementing-a-semantic-web-site.html"><strong aria-hidden="true">5.2.</strong> Final Project: Implementing a Semantic Web Site</a></li></ol></li><li class="chapter-item expanded "><a href="syllabus.html"><strong aria-hidden="true">6.</strong> Appendix A: Syllabus</a></li><li class="chapter-item expanded "><a href="assignments.html"><strong aria-hidden="true">7.</strong> Appendix B: Assignments</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Semantic Web Development</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/cseanburns/semantic_web_development" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="html-grouping-and-text-level-semantic-elements"><a class="header" href="#html-grouping-and-text-level-semantic-elements">HTML Grouping and Text-Level Semantic Elements</a></h1>
+<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
+<p>In this section, we learn about the most frequent HTML element types: grouping elements and text-level or inline semantic elements.
+Most of our content will be marked up using these two categories of elements.</p>
+<p>The grouping elements we cover here include:</p>
+<ul>
+<li>the <code>&lt;p&gt;</code> element: paragraphs</li>
+<li>the <code>&lt;hr&gt;</code> element: horizontal rules</li>
+<li>the <code>&lt;pre&gt;</code> element: preformatted text</li>
+<li>the <code>&lt;blockquote&gt;</code> element: block quoted text</li>
+<li>the <code>&lt;ol&gt;</code> and the <code>&lt;ul&gt;</code> elements: ordered and unordered lists
+<ul>
+<li>the <code>&lt;li&gt;</code> element: items in ordered or unordered lists</li>
+</ul>
+</li>
+<li>the <code>&lt;dl&gt;</code> element: description list
+<ul>
+<li>the <code>&lt;dt&gt;</code> element: description term</li>
+<li>the <code>&lt;dd&gt;</code> element: description details</li>
+</ul>
+</li>
+<li>the <code>&lt;main&gt;</code> element: dominant content</li>
+<li>the <code>&lt;div&gt;</code> element: generic container</li>
+</ul>
+<p>For a full list of grouping elements, see: <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#grouping-content">Grouping content</a></p>
+<p>Some of these elements must be used together.
+I have indicated these as subitems in this above.
+For example, the <code>&lt;ul&gt;</code> and the <code>&lt;ol&gt;</code> elements are used to create <em>unordered</em> and <em>ordered</em> lists, respectively.
+However, either of these must include the <code>&lt;li&gt;</code> element to list items.</p>
+<p>Likewise, we use the <code>&lt;dl&gt;</code> element to start a description or definition list.
+Within that, we use the <code>&lt;dt&gt;</code> element to specify a term in a description/definition list
+and the <code>&lt;dd&gt;</code> element to provide the description or definition.</p>
+<p>We also cover a range of text-level or inline semantic elements.
+There are nearly 30 of these elements, but some are used more frequently than others.
+In this section, we'll cover the following text-level elements.</p>
+<ul>
+<li>the <code>&lt;a&gt;</code> element: hyperlinks</li>
+<li>the <code>&lt;em&gt;</code> element: emphasis</li>
+<li>the <code>&lt;strong&gt;</code> element: importance</li>
+<li>the <code>&lt;small&gt;</code> element: side comments</li>
+<li>the <code>&lt;s&gt;</code> element: mark inaccurate or irrelevant tet</li>
+<li>the <code>&lt;cite&gt;</code> element: mark titles of works</li>
+<li>the <code>&lt;q&gt;</code> element: mark quoted text</li>
+<li>the <code>&lt;dfn&gt;</code> element: mark defining term</li>
+<li>the <code>&lt;abbr&gt;</code> element: mark abbreviation or acronym</li>
+<li>the <code>&lt;data&gt;</code> element: mark machine-readable values</li>
+<li>the <code>&lt;time&gt;</code> element: mark date text</li>
+<li>the <code>&lt;code&gt;</code> element: mark computer code</li>
+<li>the <code>&lt;var&gt;</code> element: mark variable name</li>
+<li>the <code>&lt;samp&gt;</code> element: mark quoted computer output</li>
+<li>the <code>&lt;kbd&gt;</code> element: mark user input to computer</li>
+<li>the <code>&lt;sub&gt;</code> element: mark subscript</li>
+<li>the <code>&lt;sup&gt;</code> element: mark superscript</li>
+<li>the <code>&lt;i&gt;</code> element: mark alternate mood or voice in text</li>
+<li>the <code>&lt;b&gt;</code> element: mark text to draw attention to it but without suggesting extra importance</li>
+<li>the <code>&lt;mark&gt;</code> element: highlight text</li>
+<li>the <code>&lt;span&gt;</code> element: generic text marking</li>
+<li>the <code>&lt;br&gt;</code> element: add a line break</li>
+</ul>
+<p>For the full list, see: <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#text-level-semantics">Text-level semantics</a></p>
+<h2 id="a-quick-note-on-html-syntax"><a class="header" href="#a-quick-note-on-html-syntax">A Quick Note on HTML Syntax</a></h2>
+<h3 id="closing-tags"><a class="header" href="#closing-tags">Closing Tags</a></h3>
+<p>Most tags have closing forms.
+An opening paragraph tag looks like this: <code>&lt;p&gt;</code>.
+It's closing version looks like this: <code>&lt;/p&gt;</code>.
+The content for the paragraph is placed between the opening and closing tags.</p>
+<p>However, some HTML tags are self-closing.
+Self-closing means that these tags do not have a closing syntax.
+These include tags like <code>&lt;br&gt;</code>, <code>&lt;meta&gt;</code>, <code>&lt;hr&gt;</code>.
+For tags like these, there is no such thing as: <del><code>&lt;/br&gt;</code></del>, <del><code>&lt;/meta&gt;</code></del>, <del><code>&lt;/hr&gt;</code></del>, etc.</p>
+<p>Here is where it can get confusing.
+In HTML5, some tags have optional closing forms and some tags require closing forms.
+For example, the <code>&lt;p&gt;</code> and <code>&lt;li&gt;</code> tags do not have to be closed with <code>&lt;/p&gt;</code> and <code>&lt;/li&gt;</code>.
+But tags like <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> must be closed with <code>&lt;/div&gt;</code> and <code>&lt;/span&gt;</code>.
+Because of this mix of optional and required closing tags, it's best to close all tags that are not self-closing.
+Otherwise, you'll just get into the weeds about what needs closing or not.</p>
+<h3 id="nesting-tags"><a class="header" href="#nesting-tags">Nesting Tags</a></h3>
+<p>We have to be careful how we close tags when including tags within tags.
+For example, if we want to include a small code snippet within a paragraph tag, then we have to close that code tag before closing the paragraph tag.</p>
+<p>This is the correct usage:</p>
+<pre><code>&lt;p&gt;I use the Python interpreter as a calculator sometimes: &lt;code&gt;2 + 2&lt;/code&gt;.&lt;/p&gt;
+</code></pre>
+<p>In the above, the <code>&lt;code&gt;&lt;/code&gt;</code> tags are opened after the opening <code>&lt;p&gt;</code> tag and closed before the closing <code>&lt;/p&gt;</code> tag.</p>
+<p>This would be incorrect usage:</p>
+<pre><code>&lt;p&gt;I use the Python interpreter as a calculator sometimes: &lt;code&gt;2 + 2&lt;/p&gt;.&lt;/code&gt;
+</code></pre>
+<h2 id="elements-in-use-grouping-content"><a class="header" href="#elements-in-use-grouping-content">Elements in Use: Grouping Content</a></h2>
+<p>The HTML elements above are fairly straightforward, and the best way to learn them is to begin using them.
+To illustrate, in the text below, I use most of the grouping and text-level semantic elements listed above and then show the output.</p>
+<pre><code>&lt;p&gt;This is a paragraph.
+If I add sentences to this paragraph on separate lines, the lines will be joined when displayed in a browser.
+I keep adding lines until I close the paragraph with its closing tag.
+After this paragraph closes, I'll add a horizontal rule to separate this paragraph from the next one.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;This is the next paragraph, but it's a short paragraph.&lt;/p&gt;
+
+&lt;p&gt;Sometimes I want to present computer code. I can do that like so:&lt;/p&gt;
+
+&lt;pre&gt;
+#!/usr/bin/env bash
+
+# list files in directory
+for i in * ; do echo "${i}" ; done
+&lt;/pre&gt;
+
+&gt; This is a blockquote.
+&gt; We use it to quote multiple lines.
+&gt; Here's a goofy joke:
+    &gt; Why did the spider go to school? They wanted to be a web designer.
+
+&lt;p&gt;Sometimes I like to create lists. Here's a list of Unix shells:&lt;/p&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;Bourne shell&lt;/li&gt;
+    &lt;li&gt;Bash&lt;/li&gt;
+    &lt;li&gt;C shell&lt;/li&gt;
+    &lt;li&gt;tcsh&lt;/li&gt;
+    &lt;li&gt;Kornshell&lt;/li&gt;
+    &lt;li&gt;zsh&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I can also present them as an unordered list:&lt;/p&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;Bourne shell&lt;/li&gt;
+    &lt;li&gt;Bash&lt;/li&gt;
+    &lt;li&gt;C shell&lt;/li&gt;
+    &lt;li&gt;tcsh&lt;/li&gt;
+    &lt;li&gt;Kornshell&lt;/li&gt;
+    &lt;li&gt;zsh&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Here's a definition:&lt;/p&gt;
+
+&lt;dl&gt;
+    &lt;dt&gt;Linux&lt;/dt&gt;
+    &lt;dd&gt;&lt;q&gt;An open-source Unix-like operating system&lt;/q&gt; (source: Wikipedia article on &lt;cite&gt;Linux&lt;/cite&gt;)&lt;/dd&gt;
+    
+    &lt;dt&gt;FreeBSD&lt;/dt&gt;
+    &lt;dd&gt;&lt;q&gt;A free-software Unix-like operating system&lt;/q&gt; (source: Wikipedia article on &lt;cite&gt;FreeBSD&lt;/cite&gt;)&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+<h2 id="more-elements-in-use-text-level-semantics"><a class="header" href="#more-elements-in-use-text-level-semantics">More Elements in Use: Text-level Semantics</a></h2>
+<p>We want to reserve formatting text when we use CSS, but a few HTML tags change how font is rendered.
+Confusingly, some tags render fonts in the same way.
+Let's view some of these examples.</p>
+<h3 id="the-em-and-i-tags"><a class="header" href="#the-em-and-i-tags">The <code>&lt;em&gt;</code> and <code>&lt;i&gt;</code> tags</a></h3>
+<p>Both the <code>&lt;em&gt;</code> and the <code>&lt;i&gt;</code> tags will italicize text.
+The difference in use between them is literally one of semantics.
+If we want to place emphasis on some text, then we use the <code>&lt;em&gt;</code> tag.
+If we want to distinguish text from surrounding text in some way, then we use the <code>&lt;i&gt;</code> tag.</p>
+<p>In this example, we want to place major emphasis (e.g., a warning) on the word <strong>not</strong> and so use the <code>&lt;em&gt;</code> tag.</p>
+<pre><code>&lt;p&gt;Do &lt;em&gt;not&lt;/em&gt; eat that type of mushroom.&lt;/p&gt;
+</code></pre>
+<p>Even though the presentation of the text will be the same in the browser,
+here we simply want to make a slight change to the text to make it stand out.</p>
+<pre><code>&lt;p&gt;I study &lt;i&gt;bibliometrics&lt;/i&gt;.&lt;/p&gt;
+</code></pre>
+<h3 id="the-strong-and-b-tags"><a class="header" href="#the-strong-and-b-tags">The <code>&lt;strong&gt;</code> and <code>&lt;b&gt;</code> tags</a></h3>
+<p>The same kind of difference holds true for the <code>&lt;strong&gt;</code> and <code>&lt;b&gt;</code> HTML tags.
+Content wrapped within these tags will be rendered as bold in the browser.</p>
+<p>In this example, we use the <code>&lt;strong&gt;</code> tag to stress strong importance or urgency.</p>
+<pre><code>&lt;p&gt;Please submit your assignments &lt;strong&gt;by the due date&lt;/strong&gt;.&lt;/p&gt;
+</code></pre>
+<p>However in this example, we use the <code>&lt;b&gt;</code> tag as a purely visual marker:</p>
+<pre><code>&lt;p&gt;When you open your Canvas shell, visit the &lt;b&gt;Assignments&lt;/b&gt; section to view upcoming work.&lt;/p&gt;
+</code></pre>
+<p>In all of the above cases, we will learn how to use CSS later to make the same font changes.
+Therefore, in choosing whether how you want to emphasize or bold text, consider the semantic differences.
+Also note, your choice will have an impact on how some applications, like screen readers, will present the text.
+For example, when using the <code>&lt;strong&gt;</code> rather than the <code>&lt;b&gt;</code> tags, a screen reader's voice will place emphasis on the content
+within the <code>&lt;strong&gt;</code> tag.</p>
+<h3 id="other-tags-with-formatting-effects"><a class="header" href="#other-tags-with-formatting-effects">Other tags with formatting effects</a></h3>
+<p>Here are a few other HTML tags with special, semantic purposes:</p>
+<pre><code>&lt;p&gt;Be sure to use &lt;mark&gt;highlighting&lt;/mark&gt; when taking notes. It helps when reviewing for tests.&lt;/p&gt;
+
+&lt;p&gt;I have reduced prices by &lt;s&gt;10%&lt;/s&gt; 20%!&lt;/p&gt;
+
+&lt;p&gt;The opposite of big is &lt;small&gt;small&lt;/small&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the &lt;cite&gt;Merchant of Venice&lt;/cite&gt;, Shakespeare wrote: &lt;q&gt;All that glitters is not gold&lt;/q&gt;.
+And in &lt;cite&gt;Pursuit of Happiness&lt;/cite&gt;, Kid Cudi sang: &lt;p&gt;Everything that shine ain't always gonna be gold&lt;/cite&gt;.&lt;/p&gt;
+
+&lt;p&gt;I am a member of &lt;abbr title="Association for Library and Information Science Eduction"&gt;ALISE&lt;/abbr&gt;.&lt;/p&gt;
+
+&lt;p&gt;The date is &lt;time datetime="2025-01-25"&gt;January 25, 2025&lt;/time&gt;.&lt;/p&gt;
+
+&lt;p&gt;In R, we assign a value to a variable named &lt;var&gt;x&lt;/var&gt; like so: &lt;code&gt;x &amp;lt;- 45&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;To print the output of variable &lt;var&gt;x&lt;/var&gt; in R with the value of 45,
+I enter the name of the variable, &lt;kbd&gt;x&lt;/kbd&gt; and get back: &lt;samp&gt;[1] 45&lt;/samp&gt;.&lt;/p&gt;
+
+&lt;p&gt;Consider the vector &lt;var&gt;X&lt;/var&gt;&lt;sub&gt;1&lt;/sub&gt;.&lt;/p&gt;
+
+&lt;p&gt;Did you solve: 42&lt;sup&gt;2&lt;/sup&gt;?&lt;/p&gt;
+</code></pre>
+<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
+<p>It's important to understand HTML grouping and text-level semantic elements
+because we use these elements to structure and present content effectively and semantically.
+Grouping elements like <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;blockquote&gt;</code>, and <code>&lt;main&gt;</code> help organize content.
+Text-level semantic elements such as <code>&lt;em&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;code&gt;</code>, and <code>&lt;cite&gt;</code> provide meaning within text.
+It's crucial to recognize the distinction between purely presentational tags, like <code>&lt;b&gt;</code> and <code>&lt;i&gt;</code>,
+and semantic elements, like <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code>.
+These elements affect accessibility and the way content is interpreted by search engines and other assistive technologies.
+Apply these elements thoughtfully.
+They will help create well-structured, readable, and meaningful web content that enhances both usability and accessibility.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="2b1-using-vscode-and-github.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="2d-links-and-attributes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="2b1-using-vscode-and-github.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="2d-links-and-attributes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
