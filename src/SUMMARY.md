@@ -9,7 +9,7 @@
     - [Document Structure and Metadata](2a-document-structure-and-metadata.md)
     - [Section Elements](2b-section-elements.md)
     - [Using VS Code and GitHub](2b1-using-vscode-and-github.md)
-    - [Grouping Elements](2c-grouping-elements.md)
+    - [Grouping and Text Level Semantic Elements](2c-grouping-semantic-elements.md)
     - [Links and Attributes](2d-links-and-attributes.md)
     - [Embedded Content: Images and Multimedia](2e-embedded-content.md)
     - [Tables and Forms](2f-tables-and-forms.md)
