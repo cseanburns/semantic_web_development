@@ -21,7 +21,6 @@
     - [Box Model](3b-box-model.md)
         - [Margins, Borders, Padding](3b1-margins-borders-padding.md)
         - [Box-Sizing](3b2-box-sizing.md)
-        - [Display Properties](3b3-display-properties.md)
     - [Typography and Text Styles](3c-typography-and-text-styles.md)
         - [Fonts and Typography](3c1-fonts-and-typography.md)
         - [Text Styles and Effects](3c2-text-styles-and-effects.md)
