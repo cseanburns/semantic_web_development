@@ -1,1 +1,0 @@
-# Benefits of Structured Data
