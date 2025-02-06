@@ -233,6 +233,11 @@ using the `id` attribute:
 <a href=#cpm">Jump to CP/M section</a>
 ```
 
+## Global Attributes
+
+Other attributes are available to HTML elements and are listed at [Global Attributes][global_attributes_whatwg].
+We will cover some of these global attributes as we progress through this work.
+
 ## Conclusion
 
 In summary, HTML links come in three flavors: links to external resources, hyperlinks, and internal resource links.
@@ -243,6 +248,7 @@ We use the `<a>` tag to create hyperlinks, which serve as the defining character
 Hyperlinks are used to navigate from site to site, page to page, or within a page, such as with internal resource links.
 
 [google_fonts]:https://fonts.google.com/
+[global_attributes_whatwg]:https://html.spec.whatwg.org/multipage/dom.html#global-attributes
 [links_whatwg]:https://html.spec.whatwg.org/multipage/links.html#links
 [mime_iana]:https://www.iana.org/assignments/media-types/media-types.xhtml
 [roboto_google_fonts]:https://fonts.google.com/specimen/Roboto
