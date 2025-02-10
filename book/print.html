@@ -1974,8 +1974,8 @@ Both files are stored in a separate multimedia directory in the project folder.
 Both videos are otherwise equal,
 but providing options for both acts as a fallback mechanism in case a browser doesn't support one or the other format.</p>
 <pre><code>&lt;video controls autoplay="false" muted="true" width="600"&gt;
-    &lt;source src="multimedia/example.mp4" type="video/mp4"&gt;
-    &lt;source src="multimedia/example.webm" type="video/webm"&gt;
+    &lt;source src="media/example.mp4" type="video/mp4"&gt;
+    &lt;source src="media/example.webm" type="video/webm"&gt;
     Your browser does not support the video tag.
 &lt;/video&gt;
 </code></pre>
@@ -1993,8 +1993,8 @@ It uses some of the same attributes as the <code>&lt;video&gt;</code> element, s
 In the example below, I source two versions of the audio for maximum browser support: an <code>mp3</code> file and an <code>ogg</code> file.
 Both files are stored in a multimedia directory in the project's main directory.</p>
 <pre><code>&lt;audio controls&gt;
-    &lt;source src="multimedia/audio.mp3" type="audio/mpeg"&gt;
-    &lt;source src="multimedia/audio.ogg" type="audio/ogg"&gt;
+    &lt;source src="media/audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="media/audio.ogg" type="audio/ogg"&gt;
     Your browser does not support the audio tag.
 &lt;/audio&gt;
 </code></pre>
@@ -2009,8 +2009,8 @@ Other software, like <a href="https://support.zoom.com/hc/en/article?id=zm_kb&am
 <p>In the example code below, I use the <code>&lt;track&gt;</code> element with the <code>kind</code> attribute to indicate that the <code>vtt</code> file is for subtitles.
 See the link above for other <code>kind</code> attributes to use.</p>
 <pre><code>&lt;video controls autoplay="false" width="600"&gt;
-    &lt;source src="multimedia/example.mp4" type="video/mp4"&gt;
-    &lt;track src="multimedia/captions.vtt" kind="subtitles"
+    &lt;source src="media/example.mp4" type="video/mp4"&gt;
+    &lt;track src="media/captions.vtt" kind="subtitles"
         srclang="en" label="English"&gt;
 &lt;/video&gt;
 </code></pre>
@@ -2026,7 +2026,7 @@ This results in a big file size (around 3.2 MBs), which would display slowly on 
 Therefore, I might want to resize such images by a factor of six before using in a web document:
 <code>4038 / 6 = 673</code> and <code>2268 / 6 = 378</code>.
 Then I declare the sizes in the <code>width</code> and <code>height</code></p>
-<pre><code>&lt;img src="multimedia/walking_bridge.jpg"
+<pre><code>&lt;img src="media/walking_bridge.jpg"
     alt="A walking bridge over a stream"
     width="673"
     height="378"&gt;
@@ -2043,9 +2043,9 @@ which I've resized in a photo editor to have dimensions of <code>403 x 227 pixel
 When the display is equal to or greater than 673 pixels wide,
 the image loads <code>walking_bridge_big.jpg</code>, which has dimensions of <code>673 x 379 pixels</code>.</p>
 <pre><code>&lt;picture&gt;
-    &lt;source srcset="multimedia/walking_bridge_small.jpg" media="(max-width: 672px)"&gt;
-    &lt;source srcset="multimedia/walking_bridge_big.jpg" media="(min-width: 673px)"&gt;
-    &lt;img src="multimedia/walking_bridge.jpg" alt="A walking bridge over a stream"&gt;
+    &lt;source srcset="media/walking_bridge_small.jpg" media="(max-width: 672px)"&gt;
+    &lt;source srcset="media/walking_bridge_big.jpg" media="(min-width: 673px)"&gt;
+    &lt;img src="media/walking_bridge.jpg" alt="A walking bridge over a stream"&gt;
 &lt;/picture&gt;
 </code></pre>
 <p>Note the <code>&lt;img&gt;</code> tag is required in the <code>&lt;picture&gt;</code> element even though it primarily functions as a fallback image.
@@ -2055,7 +2055,7 @@ The <code>&lt;source&gt;</code> tags in the <code>&lt;picture&gt;</code> element
 This element may also include an optional <code>&lt;figcaption&gt;</code> element, which provides a caption for the media.
 This enables the caption to be semantically grouped with the figure.</p>
 <pre><code>&lt;figure&gt;
-    &lt;img src="plot.png" alt="a plot"&gt;
+    &lt;img src="media/plot.png" alt="a plot"&gt;
     &lt;figcaption&gt;a scientific plot&lt;/figcaption&gt;
 &lt;/figure&gt;
 </code></pre>
