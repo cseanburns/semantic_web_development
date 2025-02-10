@@ -39,8 +39,8 @@ but providing options for both acts as a fallback mechanism in case a browser do
 
 ```
 <video controls autoplay="false" muted="true" width="600">
-    <source src="multimedia/example.mp4" type="video/mp4">
-    <source src="multimedia/example.webm" type="video/webm">
+    <source src="media/example.mp4" type="video/mp4">
+    <source src="media/example.webm" type="video/webm">
     Your browser does not support the video tag.
 </video>
 ```
@@ -63,8 +63,8 @@ Both files are stored in a multimedia directory in the project's main directory.
 
 ```
 <audio controls>
-    <source src="multimedia/audio.mp3" type="audio/mpeg">
-    <source src="multimedia/audio.ogg" type="audio/ogg">
+    <source src="media/audio.mp3" type="audio/mpeg">
+    <source src="media/audio.ogg" type="audio/ogg">
     Your browser does not support the audio tag.
 </audio>
 ```
@@ -84,8 +84,8 @@ See the link above for other `kind` attributes to use.
 
 ```
 <video controls autoplay="false" width="600">
-    <source src="multimedia/example.mp4" type="video/mp4">
-    <track src="multimedia/captions.vtt" kind="subtitles"
+    <source src="media/example.mp4" type="video/mp4">
+    <track src="media/captions.vtt" kind="subtitles"
         srclang="en" label="English">
 </video>
 ```
@@ -107,7 +107,7 @@ Therefore, I might want to resize such images by a factor of six before using in
 Then I declare the sizes in the `width` and `height` 
 
 ```
-<img src="multimedia/walking_bridge.jpg"
+<img src="media/walking_bridge.jpg"
     alt="A walking bridge over a stream"
     width="673"
     height="378">
@@ -130,9 +130,9 @@ the image loads `walking_bridge_big.jpg`, which has dimensions of `673 x 379 pix
 
 ```
 <picture>
-    <source srcset="multimedia/walking_bridge_small.jpg" media="(max-width: 672px)">
-    <source srcset="multimedia/walking_bridge_big.jpg" media="(min-width: 673px)">
-    <img src="multimedia/walking_bridge.jpg" alt="A walking bridge over a stream">
+    <source srcset="media/walking_bridge_small.jpg" media="(max-width: 672px)">
+    <source srcset="media/walking_bridge_big.jpg" media="(min-width: 673px)">
+    <img src="media/walking_bridge.jpg" alt="A walking bridge over a stream">
 </picture>
 ```
 
@@ -147,7 +147,7 @@ This enables the caption to be semantically grouped with the figure.
 
 ```
 <figure>
-    <img src="plot.png" alt="a plot">
+    <img src="media/plot.png" alt="a plot">
     <figcaption>a scientific plot</figcaption>
 </figure>
 ```
