@@ -177,6 +177,235 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="html-tables-and-forms"><a class="header" href="#html-tables-and-forms">HTML Tables and Forms</a></h1>
+<p>In the previous sections, we discussed several categories of HTML elements to use on our web pages.
+These categories relate to document structure, document metadata, grouping elements, text level semantic elements, links, attributes,
+and embedded content like images and multimedia.
+These elements are regularly used because they represent how we structure our pages and add content to them.</p>
+<p>In this section, we learn how to create tables and forms to add to our web pages.
+These two aspects of HTML are less regularly used.
+Creating tables is about adding content, but specifically, tabular data only.
+Forms are used to gather user input and deliver that input to the web site owner or process it through,
+for example, a server side relational database server, like MariaDB, MySQL, PostgreSQL, etc.</p>
+<p>We have a number of types of forms available to us.
+They include basic text entry forms, drop down lists, and more.
+One major caveat with forms is that they require additional programming to function.
+For example, forms are often used with PHP to process the input.
+However, learning PHP is beyond the scope of this work.
+We are also using GitHub Pages to render our sites, and GitHub does not provide back-end PHP or relational database support.
+Therefore, in this section, we mainly learn how to create a variety of HTML forms.
+We will learn how to style them with CSS in a future section.</p>
+<h2 id="the-table-element"><a class="header" href="#the-table-element">The <code>&lt;table&gt;</code> Element</a></h2>
+<p>Tables are great for presenting tabular data:
+the kind of data that may be presented in spreadsheets or summarized in papers or articles
+(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">The <code>&lt;table&gt;</code> element</a>).
+In this demo, I create a simple table that contains the following elements:</p>
+<ul>
+<li><code>&lt;table&gt;</code>: This is the main table element. Other elements are enclosed within the <code>&lt;table&gt;</code> element.</li>
+<li><code>&lt;caption&gt;</code>: The <code>&lt;caption&gt;</code> element is used to add captions to tables and should immediately follow the <code>&lt;table&gt;</code> element.</li>
+<li><code>&lt;thead&gt;</code>: The <code>&lt;thead&gt;</code> element is semantic and defines table header information.</li>
+<li><code>&lt;tbody&gt;</code>: The <code>&lt;tbody&gt;</code> element is semantic and defines table body information.</li>
+<li><code>&lt;tfoot&gt;</code>: The <code>&lt;tfoot&gt;</code> element is semantic and defines table footer information.</li>
+<li><code>&lt;tr&gt;</code>: The <code>&lt;tr&gt;</code> element defines table row.</li>
+<li><code>&lt;th&gt;</code>: The <code>&lt;th&gt;</code> element defines header cell. This is often placed at the top row of a table:
+<ul>
+<li>It it often enclosed within the <code>&lt;thead&gt;</code> element but can be added to the <code>&lt;tbody&gt;</code> section for row headers.</li>
+</ul>
+</li>
+<li><code>&lt;td&gt;</code>: The <code>&lt;td&gt;</code> element defines a specific data cell in the table.</li>
+</ul>
+<p>Tables are fairly straightforward but grow complex as more data is added to them.
+The following, simple table begins with the <code>&lt;table&gt;</code> tag and is followed by the <code>&lt;caption&gt;</code> tag.
+The <code>&lt;caption&gt;</code> tag provides a description of the table and its purpose.
+Following this, the table has three main sections, which include: <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code>.
+While HTML does not require indentation, indentation can help with code readability, and is therefore highly encouraged.</p>
+<p>Additionally, one <code>&lt;th&gt;</code> element contains a <code>colspan</code> attribute, which is set to <code>5</code>, or five columns, in this example.
+Since the table only has five columns, this elements spans the width of the entire table.
+The <code>scope</code> attribute <q>defines the cells that the header (defined in the <code>&lt;th&gt;</code>) element relates to</q>
+(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th#scope">The <code>scope</code> attribute</a>).
+It's useful for clearly demarcating the row and column names from the tabular data.</p>
+<pre><code>&lt;table&gt;
+    &lt;caption&gt;Star Trek or Star Wars&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th scope="colgroup" colspan="5"&gt;Attitude&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="col"&gt;Films&lt;/th&gt;
+            &lt;th scope="col"&gt;For&lt;/th&gt;
+            &lt;th scope="col"&gt;Undecided&lt;/th&gt;
+            &lt;th scope="col"&gt;Against&lt;/th&gt;
+            &lt;th scope="col"&gt;Row Marginal&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Star Trek&lt;/th&gt;
+            &lt;td&gt;92&lt;/td&gt;
+            &lt;td&gt;18&lt;/td&gt;
+            &lt;td&gt;90&lt;/td&gt;
+            &lt;td&gt;200&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Star Wars&lt;/th&gt;
+            &lt;td&gt;68&lt;/td&gt;
+            &lt;td&gt;22&lt;/td&gt;
+            &lt;td&gt;110&lt;/td&gt;
+            &lt;td&gt;200&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;th scope="row"&gt;Column Marginal&lt;/th&gt;
+            &lt;td&gt;160&lt;/td&gt;
+            &lt;td&gt;40&lt;/td&gt;
+            &lt;td&gt;200&lt;/td&gt;
+            &lt;td&gt;400&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+</code></pre>
+<p>The MDN Web Docs provide thorough documentation on creating basic and more advanced tables:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Basics">Table basics</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced">Table advanced</a></li>
+</ul>
+<h2 id="forms"><a class="header" href="#forms">Forms</a></h2>
+<p>Forms are used to collect user input.
+Visitors can use forms to enter data, make selections, and submit information to a web server,
+which may either store that information, process it, or transmit it across the internet.</p>
+<h3 id="the-form-element"><a class="header" href="#the-form-element">The <code>&lt;form&gt;</code> Element</a></h3>
+<p>The <code>&lt;form&gt;</code> element is used to create a form.
+It takes at least two attributes: <code>action</code> and <code>method</code> (see additional details: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form">The <code>&lt;form&gt;</code> element</a>).</p>
+<ul>
+<li><code>action</code>: The <code>action</code> attribute holds a URL or file path as a value that links to a script, like PHP, which processes the user input.</li>
+<li><code>method</code>: The <code>method</code> attribute declares the type of HTTP request (<a href="https://www.diffen.com/difference/GET-vs-POST-HTTP-Requests">GET and POST</a>):
+<ul>
+<li>GET and POST are two HTTP methods to request data from web servers</li>
+<li>The <code>GET</code> request forms a query string with name and value pairs. The data pairs are visible in URLs.</li>
+<li>The <code>POST</code> request sends data to a server. Data is not visible in URLs, which makes this method more private by default.</li>
+</ul>
+</li>
+</ul>
+<p>Incomplete example of a basic <code>&lt;form&gt;</code>:</p>
+<pre><code>&lt;form action="#" method="get"&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="the-label-element"><a class="header" href="#the-label-element">The <code>&lt;label&gt;</code> Element</a></h3>
+<p>The <code>&lt;label&gt;</code> element is often associated with various forms and is used to add a caption in the user interface
+(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label">The <code>&lt;label&gt;</code> element</a>).
+Among others attributes, this element takes a <code>for</code> attribute, which functions like an <code>id</code> attribute.</p>
+<p>Incomplete example of a basic <code>&lt;form&gt;</code> with the <code>&lt;label&gt;</code> element:</p>
+<pre><code>&lt;form action="#" method="get"&gt;
+    &lt;label for="name"&gt;Enter your name: &lt;/label&gt;
+    &lt;label for="email"&gt;Enter your email: &lt;/label&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="the-input-element"><a class="header" href="#the-input-element">The <code>&lt;input&gt;</code> Element</a></h3>
+<p>The <code>&lt;input&gt;</code> element defines the type of data for the input (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">The <code>&lt;input&gt;</code> element</a>).
+Data types may include buttons, check boxes, dates, email addresses, and more.
+This element takes, among others, the following important attributes:</p>
+<ul>
+<li>The <code>type</code> attribute specifies the type of input.</li>
+<li>The <code>name</code> attribute is used to identify the data submitted to the server.</li>
+<li>The <code>required</code> attribute specifies that this field is required.</li>
+<li>The <code>id</code> attribute is for labeling unique input and allows for styling with CSS.</li>
+<li>The <code>for</code> attribute in <code>&lt;label&gt;</code> should match the <code>id</code> of the associated <code>&lt;input&gt;</code>.</li>
+</ul>
+<p>Complete example of a basic <code>&lt;form&gt;</code> with <code>&lt;label&gt;</code> and <code>&lt;input&gt;</code> elements:</p>
+<pre><code>&lt;form action="#" method="get"&gt;
+
+    &lt;label for="name"&gt;Enter your name: &lt;/label&gt;
+    &lt;input type="text" name="name" id="name" required&gt;
+    
+    &lt;label for="email"&gt;Enter your email: &lt;/label&gt;
+    &lt;input type="email" name="email" id="email" required&gt;
+    
+    &lt;input type="submit" value="Submit"&gt;
+    
+&lt;/form&gt;
+</code></pre>
+<h2 id="form-variations"><a class="header" href="#form-variations">Form Variations</a></h2>
+<h3 id="create-a-button"><a class="header" href="#create-a-button">Create a button</a></h3>
+<p>Here's an example of adding a <code>&lt;button&gt;</code> to a form (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button">The <code>&lt;button&gt;</code> element</a>).</p>
+<pre><code>&lt;form action="#" method="get"&gt;
+    &lt;button type="submit" name="button_like"&gt;Click if you like buttons.&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="the-datalist-element"><a class="header" href="#the-datalist-element">The <code>&lt;datalist&gt;</code> Element</a></h3>
+<p>Here's an example of creating a <code>&lt;datalist&gt;</code> (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">The <code>&lt;datalist&gt;</code> element</a>).
+The <code>&lt;datalist&gt;</code> is used with the <code>&lt;option&gt;</code> element to offer a predefined list of options for the user to select.
+This element is often used to suggest pre-defined options but allows for other data to be collected from the user.</p>
+<pre><code>&lt;form action="#" method="get"&gt;
+    &lt;label for="myOS"&gt;What is your favorite OS?&lt;/label&gt;
+    &lt;input list="OS" id="myOS" name="myOS"&gt;
+    &lt;datalist id="OS"&gt;
+        &lt;option value="GNU/Linux"&gt;
+        &lt;option value="Linux"&gt;
+        &lt;option value="BSD"&gt;
+        &lt;option value="Windows"&gt;
+        &lt;option value="macOS"&gt;
+     &lt;/datalist&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="the-select-element"><a class="header" href="#the-select-element">The <code>&lt;select&gt;</code> Element</a></h3>
+<p>Like above, the <code>&lt;select&gt;</code> element offers a list of options, but the options are restricted and presented in a drop down box
+(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">The <code>&lt;select&gt;</code> element</a>).
+The <code>&lt;optgroup&gt;</code> element groups logical options together.
+In the example below, I use <code>&lt;optgroup&gt;</code> to group two types of homes as either <em>traditional</em> or <em>alternative</em>.</p>
+<pre><code>&lt;form action="#" method="get"&gt;
+    &lt;label for="home-structure"&gt;What kind of house would you like to have?&lt;/label&gt;
+	&lt;select id="home-structure" name="home-structure"&gt;
+		&lt;option value=""&gt;--Please choose an option--&lt;/option&gt;
+		&lt;optgroup label="Traditional"&gt;
+			&lt;option value="castle"&gt;Castle&lt;/option&gt;
+			&lt;option value="mansion"&gt;Mansion&lt;/option&gt;
+			&lt;option value="bungalo"&gt;Bungalo&lt;/option&gt;
+		&lt;/optgroup&gt;
+		&lt;optgroup label="Alternative"&gt;
+			&lt;option value="treehouse"&gt;Tree House&lt;/option&gt;
+			&lt;option value="tinyhome"&gt;Tiny Home&lt;/option&gt;
+			&lt;option value="conversion_van"&gt;Conversion Van&lt;/option&gt;
+		&lt;/optgroup&gt;
+	&lt;/select&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="the-legend-and-fieldset-elements"><a class="header" href="#the-legend-and-fieldset-elements">The <code>&lt;legend&gt;</code> and <code>&lt;fieldset&gt;</code> Elements</a></h3>
+<p>The <code>&lt;fieldset&gt;</code> element is used to group multiple controls (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset">The <code>&lt;fieldset&gt;</code> element</a>).
+Adding a <code>&lt;legend&gt;</code> element informs the user what choice to select (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend">The <code>&lt;legend&gt;</code> element</a>).
+These elements are used to group inputs visually, but they also improve accessibility;
+specifically, they help screen readers convey the purpose of the related inputs.
+The <code>name</code> attribute contains the same value for all three options since the user selects only one option.</p>
+<pre><code>&lt;form action="#" method="get"&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Choose your favorite technology: &lt;/legend&gt;
+        &lt;label&gt;&lt;input type="radio" name="favtech" value="Pencil"&gt; Pencil&lt;/label&gt;&lt;br&gt;
+        &lt;label&gt;&lt;input type="radio" name="favtech" value="Smartphone"&gt; Smartphone&lt;/label&gt;&lt;br&gt;
+        &lt;label&gt;&lt;input type="radio" name="favtech" value="ERM"&gt; ERM Device&lt;/label&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+</code></pre>
+<h3 id="the-textarea-element"><a class="header" href="#the-textarea-element">The <code>&lt;textarea&gt;</code> Element</a></h3>
+<p>The <code>&lt;textarea&gt;</code> element provides a way to accept multi-line content from a user (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea">The <code>&lt;textarea&gt;</code> element</a>).
+The number of lines and the width of the element are adjustable via the <code>rows</code> and <code>columns</code> attributes.
+In the example below, I set the number of rows to <code>5</code> and the width of the text area to <code>100</code> columns.</p>
+<pre><code>&lt;form action="#" method="post"&gt;
+    &lt;label for="thoughts"&gt;What are you thinking about ICT nowadays?&lt;/label&gt;
+    &lt;textarea id="thoughts" name="thoughts" rows="5" cols="100"&gt;Enter here:&lt;/textarea&gt;
+&lt;/form&gt;
+</code></pre>
+<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
+<p>Tables and forms are useful tools for websites.
+They allow developers to structure data and collect user input, respectively.
+They each have different purposes.
+We use tables to display tabular data, and we use forms to collect user input.
+I grouped these technologies together in a single section not because they are alike but because,
+unlike the rest of the HTML that we have learned, tables and forms are used sparingly.</p>
+<p>With respect to forms, note that HTML (nor CSS) can process form data.
+Processing form data requires additional programming, such as <a href="https://www.php.net/">PHP</a>,
+which is often used with various database technologies, such as MySQL, MariaDB, PostgreSQL, etc.
+However, understanding how HTML forms work helps you understand the basics of frontend web application development.</p>
+<p>In the next chapter, we begin to study CSS (Cascading Style Sheets).
+CSS will be used to improve the usability and visual appeal of our rather, so far, bland HTML pages.</p>
 
                     </main>
 
