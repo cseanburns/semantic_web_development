@@ -293,7 +293,8 @@ It takes at least two attributes: <code>action</code> and <code>method</code> (s
 <h3 id="the-label-element"><a class="header" href="#the-label-element">The <code>&lt;label&gt;</code> Element</a></h3>
 <p>The <code>&lt;label&gt;</code> element is often associated with various forms and is used to add a caption in the user interface
 (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label">The <code>&lt;label&gt;</code> element</a>).
-Among others attributes, this element takes a <code>for</code> attribute, which functions like an <code>id</code> attribute.</p>
+This element takes a <code>for</code> attribute and is useful when a <code>&lt;form&gt;</code> has multiple <code>&lt;input&gt;</code> elements.
+Specifically, the <code>for</code> attribute connects the value of <code>for</code> to the value of the <code>id</code> attribute for the <code>&lt;input&gt;</code> element (see below).</p>
 <p>Incomplete example of a basic <code>&lt;form&gt;</code> with the <code>&lt;label&gt;</code> element:</p>
 <pre><code>&lt;form action="#" method="get"&gt;
     &lt;label for="name"&gt;Enter your name: &lt;/label&gt;
