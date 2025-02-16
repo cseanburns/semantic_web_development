@@ -125,7 +125,8 @@ Incomplete example of a basic `<form>`:
 
 The `<label>` element is often associated with various forms and is used to add a caption in the user interface
 ([The `<label>` element][label_mdn]).
-Among others attributes, this element takes a `for` attribute, which functions like an `id` attribute.
+This element takes a `for` attribute and is useful when a `<form>` has multiple `<input>` elements.
+Specifically, the `for` attribute connects the value of `for` to the value of the `id` attribute for the `<input>` element (see below).
 
 Incomplete example of a basic `<form>` with the `<label>` element:
 
