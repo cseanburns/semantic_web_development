@@ -14,7 +14,7 @@
     - [Embedded Content: Images and Multimedia](2e-embedded-content.md)
     - [Tables and Forms](2f-tables-and-forms.md)
 - [CSS3 and Web Design](p3-css3-and-web-design.md)
-    - [CSS3 and Basic Styling](3a-css3-and-basic-styling.md)
+    - [CSS: Getting Started](3a-css-getting-started.md)
         - [Syntax and Selectors](3a1-syntax-and-selectors.md)
         - [Colors, Units, and Measurements](3a2-colors-units-measurements.md)
     - [Box Model](3b-box-model.md)

@@ -1,4 +1,4 @@
-# CSS3 and Basic Styling
+# CSS: Getting Started 
 
 As stated by the [World Wide Web Consortium (W3C)][w3org], CSS, or *Cascading stylesheets*, is:
 
