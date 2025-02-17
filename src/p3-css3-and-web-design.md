@@ -1,11 +1,17 @@
 # CSS3 and Web Design
 
-We use HTML to structure our web pages and sites and to add content.
-HTML5's semantic elements help enrich the meaning of our page structures and content.
-However, we do not use HTML for presentation, layout, and style.
-Rather, we use CSS for these things.
-This idea, that we [separate content from presentation][separation_wiki], is key characteristic of web development.
-In this chapter, we explore how to use CSS3 to style our sites.
-We will learn how to use CSS to add color, change font styles, style tables and images, and most interestingly, to arrange a page's layout.
+HTML provides structure and content for web pages.
+It defines elements like sections, headings, paragraphs, and links.
+HTML5 adds semantic elements, and these elements enhance the meaning and accessibility of our content.
+However, HTML is not responsible for presentation, layout, or style.
+This is the roll of CSS, or Cascading Style Sheets.
+
+A fundamental principle of modern web development is the [separate content from presentation][separation_wiki].
+The idea is to use HTML to focus on structure and CSS on styling.
+By doing so, we create cleaner, more maintainable, and more adaptable web designs.
+
+In this chapter, we'll explore how to use CSS3 to add visual appeal and layouts to our web pages and sites.
+We will cover techniques for adding color, customizing fonts, styling images and tables, and most importantly,
+arranging page layouts with CSS.
 
 [separation_wiki]:https://en.wikipedia.org/wiki/Separation_of_content_and_presentation
