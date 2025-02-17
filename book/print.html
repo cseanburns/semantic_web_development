@@ -2439,6 +2439,322 @@ Later we will learn CSS that will allow us change fonts and add other effects.
 Then we will acquire an understanding of how CSS controls the elements on a page and
 use that understanding to create various layouts.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="syntax-and-selectors"><a class="header" href="#syntax-and-selectors">Syntax and Selectors</a></h1>
+<p>In HTML, <strong>elements</strong> define the structure of a webpage.
+Common elements include <code>&lt;h1&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;table&gt;</code>, and many others.
+We also learned that these elements may include <strong>attributes</strong>.
+For example, we can add <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">global attributes</a>, like the <code>class</code> or <code>id</code> attributes, to all tags.
+Furthermore, we learned that some elements, like the <code>&lt;th&gt;</code> tag, may have element specific attributes, like <code>colspan</code>.
+In order to style the HTML, CSS provides a mechanism to focus on specific elements or attributes.
+In CSS, this mechanism is called <a href="https://www.w3.org/TR/selectors-3/#selectors"><strong>selectors</strong></a>.</p>
+<p>There are multiple types of selectors.
+These include:</p>
+<ul>
+<li><a href="https://www.w3.org/TR/selectors-3/#universal-selector">Universal selector</a></li>
+<li><a href="https://www.w3.org/TR/selectors-3/#type-selectors">Type selectors</a></li>
+<li><a href="https://www.w3.org/TR/selectors-3/#attribute-selectors">Attribute selectors</a></li>
+<li><a href="https://www.w3.org/TR/selectors-3/#class-html">Class selectors</a></li>
+<li><a href="https://www.w3.org/TR/selectors-3/#id-selectors">ID selectors</a></li>
+<li><a href="https://www.w3.org/TR/selectors-3/#pseudo-classes">Pseudo classes</a></li>
+<li><a href="https://www.w3.org/TR/selectors-3/#pseudo-elements">Pseudo elements</a></li>
+<li><a href="https://www.w3.org/TR/selectors-3/#combinators">Combinators</a></li>
+</ul>
+<p>Each of these selectors are discussed below along with examples.
+For a deeper understanding of each selector type, refer to the linked resources above.</p>
+<p>Also, remember that to use these selectors, we add them to an external stylesheet for the reasons listed in the prior section.
+In my previous HTML discussions, I added the following line to the <code>&lt;head&gt;</code> section of my HTML document that links to my external stylesheet:</p>
+<pre><code>&lt;link rel="stylesheet" href="css/style.css"&gt;
+</code></pre>
+<p>Therefore, when I begin CSS coding, I create rules using these selectors
+by adding them to a file called <code>style.css</code> in a <code>css</code> directory in my project repository.</p>
+<h2 id="css-syntax"><a class="header" href="#css-syntax">CSS Syntax</a></h2>
+<p>CSS generally follows a very simple syntax.
+It begins with a selector, which for <strong>type selectors</strong> is equivalent to the HTML element.
+This is followed by an opening curly brace <code>{</code> and a list of <strong>properties</strong> and <strong>values</strong> to apply to the element named by the selector.
+Each property / value pair is closed with a semicolon <code>;</code>.
+And the selector rule ends with a closing curly brace <code>}</code>.
+This is expressed in the following generic example:</p>
+<pre><code>selector {
+    property: value;
+    property: value;
+    property: value;
+}
+</code></pre>
+<p>As a real example, if we want to change the foreground and background color of all <code>&lt;p&gt;</code> elements in a web document red and black,
+respectively, we would write the following rule:</p>
+<pre><code>p {
+    color: red;
+    background-color: black;
+}
+</code></pre>
+<h2 id="universal-selector"><a class="header" href="#universal-selector">Universal Selector</a></h2>
+<p>The <strong>universal selector</strong> is indicated by a single asterisk <code>*</code> and matches all elements in a web document.
+In the following example, I use this selector to make all text bold:</p>
+<pre><code>* {
+    font-weight: bold;
+}
+</code></pre>
+<p>This selector should be used sparingly,
+but it has <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors">special and advanced use cases</a> when combined with other selector types.</p>
+<h2 id="type-selectors"><a class="header" href="#type-selectors">Type selectors</a></h2>
+<p>The <strong>type selector</strong> is the most important selector.
+The names for these selectors specifically match the names of their HTML element equivalents.
+As an example, the CSS <code>p</code> selector matches the HTML <code>&lt;p&gt;</code> element.
+The CSS <code>h1</code> selector matches the HTML <code>&lt;h1&gt;</code> element.
+And so forth.</p>
+<p>In the following example, I use three type selectors: <code>html</code>, <code>h1</code>, and <code>p</code>.
+I use the <code>html</code> selector to change the foreground and background color to the entire HTML page,
+since an entire HTML page is enclose within the <code>&lt;html&gt;</code> element.
+I then show how to apply a <a href="https://en.wikipedia.org/wiki/Sans-serif">sans-serif</a> font-family to the <code>&lt;h1&gt;</code> elements,
+and a <a href="https://en.wikipedia.org/wiki/Serif">serif</a> font to the <code>&lt;p&gt;</code> elements in a web document:</p>
+<pre><code>html {
+    background-color: red;
+    color: white;
+}
+
+h1 {
+    font-family: sans-serif;
+}
+
+p {
+    font-family: serif;
+}
+</code></pre>
+<h2 id="attribute-selectors"><a class="header" href="#attribute-selectors">Attribute selectors</a></h2>
+<p>The <strong>attribute selector</strong> is used to style HTML elements with specific attributes.
+For example, if I use the <code>id</code> attribute throughout a web document, then I can apply CSS to all elements that have an <code>id</code> attribute,
+regardless of the element type or the value of the attribute.
+As an example, let's say I have a web document with the following:</p>
+<pre><code>&lt;h1 id="test1"&gt;This is test 1.&lt;/h1&gt;
+&lt;h2 id="test2"&gt;This is test 2.&lt;/h2&gt;
+&lt;section id="test3"&gt;
+    &lt;p&gt;This is test 3.&lt;/p&gt;
+&lt;/section&gt;
+</code></pre>
+<p>Then the following CSS will bold the font for all three heading elements:</p>
+<pre><code>[id] {
+    font-weight: bold;
+}
+</code></pre>
+<p>We can also select attributes with specific values:</p>
+<ul>
+<li><code>[att=value]</code> : select by attribute with specific value:
+<ul>
+<li>For example, <code>[id="test1"]</code> would select <code>&lt;h1 id="test1"&gt;</code></li>
+</ul>
+</li>
+<li><code>[att~=value]</code> : select by attribute where value is a separate word:
+<ul>
+<li>For example: <code>[id~="test"]</code> would match <code>&lt;h1 id="test one"&gt;</code> and <code>&lt;h2 id="test two"&gt;</code> since <code>test</code> is separate in each.</li>
+</ul>
+</li>
+</ul>
+<h2 id="class-selectors"><a class="header" href="#class-selectors">Class selectors</a></h2>
+<p>The <strong>class selectors</strong> focus on styling attributes with specific class names in an HTML document.
+Consider the following HTML that has three <code>&lt;p&gt;</code> tags with three separate classes: <code>bold</code>, <code>italics</code>, and <code>green</code>:</p>
+<pre><code>&lt;p class="bold"&gt;This text is bold.&lt;/p&gt;
+&lt;p class="italics"&gt;This text is italicized.&lt;/p&gt;
+&lt;p class="green"&gt;This text is green.&lt;/p&gt;
+</code></pre>
+<p>To use the class selector, I identify the class name in my CSS with the <em>dot name</em> <code>.class_name</code> syntax:</p>
+<pre><code>.bold {
+    font-weight: bold;
+}
+
+.italics {
+    font-style: italic;
+}
+
+.green {
+    color: green;
+}
+</code></pre>
+<h2 id="id-selectors"><a class="header" href="#id-selectors">ID selectors</a></h2>
+<p>Like the class selector, <strong>ID selectors</strong> identify the ID as the property and its value.
+To apply an ID selector, we use the <em>pound name</em> syntax <code>#id_name</code>.</p>
+<p>Recall that while class attributes can be re-used throughout a web document, ID attributes are unique and can only be used once.
+Consider the following HTML:</p>
+<pre><code>&lt;section id="news"&gt;News&lt;/section&gt;
+&lt;section id="about"&gt;About Us&lt;/section&gt;
+&lt;section id="store"&gt;Store&lt;/section&gt;
+</code></pre>
+<p>In the above HTML snippet, there can only be one <code>id</code> with a value of <code>news</code>,
+one <code>id</code> with a value of <code>about</code>, and one <code>id</code> with a value of <code>store</code>.
+To apply CSS to those specific IDs, we select by the value of the ID attributes.
+In the example CSS below, I add a black, dotted border that is one pixel thick to the News section,
+I change the line-height to 1.5 times the element's font-size in the About section, and
+I convert text in the Store section to all upper case:</p>
+<pre><code>#news {
+    border-bottom: 1px solid black;
+}
+
+#about {
+    line-height: 1.5;
+}
+
+#store {
+   text-transform: uppercase; 
+}
+</code></pre>
+<h2 id="combinators"><a class="header" href="#combinators">Combinators</a></h2>
+<p><strong>Combinators</strong>, and the <strong>pseudo classes</strong> and <strong>pseudo elements</strong> discussed in the following section,
+should be used when you start to gain a grasp of the relationships between HTML elements on a web page.
+Specifically, all elements in an HTML document can be represented in a hierarchical document tree.
+The hierarchy of elements includes descendant elements, child elements, and sibling elements.
+You can view the document tree of the HTML in your web browser by accessing Web Developer Tools for your browser.</p>
+<h3 id="descendant-combinators"><a class="header" href="#descendant-combinators">Descendant combinators</a></h3>
+<p>The <strong>descendant combinator</strong> selects <q>an element that is the descendant of another element in the document tree</q>
+(<a href="https://www.w3.org/TR/selectors-3/#descendant-combinators">Descendant combinator</a>).
+These are elements that are contained within other elements.
+For example, in the following code snippet, the <code>&lt;var&gt;</code> element is a descendant of the <code>&lt;p&gt;</code> element
+because it is enclosed within the <code>&lt;p&gt;</code> element:</p>
+<pre><code>&lt;p&gt;Consider the vector &lt;var&gt;X&lt;/var&gt;.&lt;/p&gt;
+</code></pre>
+<p>And in the following snippet, the <code>&lt;h2&gt;</code> element is a descendant of the <code>&lt;section&gt;</code> element.</p>
+<pre><code>&lt;section&gt;
+    &lt;h2&gt;Heading&lt;/h2&gt;
+&lt;/section&gt;
+</code></pre>
+<p>To use the descendant combinator, we simply identify both elements in our CSS.
+For example, to select the <code>&lt;var&gt;</code> element within the <code>&lt;p&gt;</code> element, we use the following syntax:</p>
+<pre><code>p var {
+    font-size: 10pt;
+}
+</code></pre>
+<p>In the above case, the <code>&lt;var&gt;</code> element is a direct descendant of the <code>&lt;p&gt;</code> element.
+However, we may also select a grandchild or later element by using the asterisk.
+For example, the following selects all <code>&lt;p&gt;</code> elements within all <code>&lt;section&gt;</code> elements in an HTML page:</p>
+<pre><code>section * p {
+    font-size: 14pt;
+}
+</code></pre>
+<h3 id="child-combinators"><a class="header" href="#child-combinators">Child combinators</a></h3>
+<p><q>A <strong>Child combinator</strong> describes a childhood relationship between two elements</q> (<a href="https://www.w3.org/TR/selectors-3/#child-combinators">Child combinators</a>).
+A prime example of a child combinator is the HTML list.
+Consider the following unordered list in HTML, where the <code>&lt;li&gt;</code> element is a child of the <code>&lt;ul&gt;</code> element:</p>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;Apples&lt;/li&gt;
+    &lt;li&gt;Bananas&lt;/li&gt;
+    &lt;li&gt;Grapes&lt;/li&gt;
+    &lt;li&gt;Oranges&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>To select the <code>&lt;li&gt;</code> child element, we use the following CSS syntax, where I convert all items in the unordered list to lowercase.</p>
+<pre><code>ul &gt; li {
+    text-transform: lowercase;
+}
+</code></pre>
+<p>Note that a child element is also a descendant element, so the descendant syntax (e.g., <code>ul li</code>) would also work.
+The child combinator is simply a more specific type of descendant.</p>
+<h3 id="sibling-combinators"><a class="header" href="#sibling-combinators">Sibling combinators</a></h3>
+<p>Per the W3 documenation, <q>there are two different sibling combinators: the next-sibling combinator and
+subsequent-sibling combinator</q> (<a href="https://www.w3.org/TR/selectors-3/#sibling-combinators">Sibling combinators</a>).</p>
+<p>The <strong>next-sibling combinator</strong> selects elements that immediately follow another element.
+Consider the following HTML, where a <code>&lt;p&gt;</code> element is followed by an <code>&lt;hr&gt;</code> (horizontal rule) element,
+which itself is followed by another <code>&lt;p&gt;</code> element:</p>
+<pre><code>&lt;p&gt;42 is the answer to life, the universe, and everything in it.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;What is the question?&lt;/p&gt;
+</code></pre>
+<p>In the above HTML snippet, the <code>&lt;hr&gt;</code> element is a next-sibling of the first <code>&lt;p&gt;</code> element,
+and the second <code>&lt;p&gt;</code> element is a next-sibling of the <code>&lt;hr&gt;</code> element.
+Therefore, to identify the last <code>&lt;p&gt;</code> element in the above snippet,
+which is the next-sibling of the <code>&lt;hr&gt;</code> element, we use the following next-sibling combinator:</p>
+<pre><code>hr + p {
+    font-size: 20pt;
+}
+</code></pre>
+<p>A <strong>subsequent-sibling combinator</strong> simply extends this relationship down the document tree.
+Consider the following HTML snippet, which includes a bit of the opening to Leo Tolstoy's novel <cite>Anna Karenina</cite>.</p>
+<pre><code>&lt;h1&gt;Anna Karenina / by Leo Tolstoy&lt;/h1&gt;
+&lt;h2&gt;Chapter 1&lt;/h2&gt;
+&lt;p&gt;Happy families are all alike; every unhappy family is unhappy in its own way.&lt;/p&gt;
+&lt;p&gt;Everything was in confusion in the Oblonksy's house....&lt;/p&gt; 
+&lt;h2&gt;Chapter 2&lt;/h2&gt;
+</code></pre>
+<p>We could specifically identify the <code>&lt;h2&gt;</code> elements as subsequent-siblings of the <code>&lt;h1&gt;</code> element with the following CSS syntax:</p>
+<pre><code>h1 ~ h2 {
+    color: yellow;
+    background-color: black;
+}
+</code></pre>
+<h2 id="pseudo-classes-and-pseudo-elements"><a class="header" href="#pseudo-classes-and-pseudo-elements">Pseudo-classes and pseudo-elements</a></h2>
+<p><strong>Pseudo-classes</strong> are used to select a specific state of an element.
+There are several types of pseudo-classes, but we will focus on just a few from two categories.
+For more details on other categories of pseudo-classes as well as a full list, see <a href="https://www.w3.org/TR/selectors-3/#pseudo-classes">Pseudo-classes</a>.</p>
+<ul>
+<li>Dynamic pseudo-classes:
+<ul>
+<li><code>:link</code></li>
+<li><code>:visited</code></li>
+<li><code>:hover</code></li>
+<li><code>:active</code></li>
+<li><code>:focus</code></li>
+</ul>
+</li>
+<li>Structural pseudo-classes:
+<ul>
+<li><code>:nth-child()</code></li>
+<li><code>:nth-last-child()</code></li>
+<li><code>:first-child</code></li>
+</ul>
+</li>
+</ul>
+<p>The dynamic pseudo-classes <code>:link</code> and <code>:visited</code> are often used to style hyperlinks (aka, the <code>&lt;a&gt;</code> anchor tag).
+In such situations, <code>:link</code> must be used before <code>:visited</code>.
+Here is an example of styling hyperlinks in CSS:</p>
+<pre><code>a:link {
+    text-decoration: green wavy underline;
+}
+
+a:visited {
+    text-decoration: underline overline;
+}
+</code></pre>
+<p>The <code>:hover</code> pseudo-class is also often paired with the <code>&lt;a&gt;</code> anchor tag, but it can be used on other elements, too.
+For example, it's often useful to apply to rows in a <code>&lt;table&gt;</code> to help highlight rows of interest.
+This will trigger a style change when the mouse cursor hovers over the element:</p>
+<pre><code>a:hover {
+    color: purple;
+    font-size: 20pt;
+}
+</code></pre>
+<p><strong>Pseudo-elements</strong> are methods to <q>create abstractions about the document tree beyond those specified by the document language</q>
+(<a href="https://www.w3.org/TR/selectors-3/#pseudo-elements">Psuedo-elements</a>).
+For example, there is no such element to indicate the first line in a <code>&lt;p&gt;</code> element, but using the <strong>pseudo-class</strong> for <code>first-line</code>,
+we can focus on and style the first line of a <code>&lt;p&gt;</code> (or other) element.
+For example, consider the following HTML:</p>
+<pre><code>&lt;p&gt;To be, or not to be, that is the question:&lt;br&gt;
+Whether 'tis nobler in the mind to suffer&lt;br&gt;
+The slings and arrows of outrageous fortune,&lt;br&gt;
+Or to take arms against a sea of troubles&lt;br&gt;
+And by opposing end them. To die&amp;mdash;to sleep,&lt;br&gt;
+No more;&lt;/p&gt;
+</code></pre>
+<p>Since there is a <code>&lt;br&gt;</code> tag at the end of each line, the first line is <q>To be, or not to be, that is the question:</q>.
+Using the <strong>pseudo-element</strong> for <code>first-line</code>, we can style it by, for example, converting it to uppercase:</p>
+<pre><code>p::first-line {
+    text-transform: uppercase;
+}
+</code></pre>
+<p>Other <strong>pseudo-classes</strong> that can be used include:</p>
+<ul>
+<li><code>::first-letter</code></li>
+<li><code>::before</code></li>
+<li><code>::after</code></li>
+</ul>
+<h2 id="conclusion-10"><a class="header" href="#conclusion-10">Conclusion</a></h2>
+<p>CSS Selectors and syntax form the foundation of web styling.
+They allow us to precisely target and modify elements within an HTML document.
+When we understand <strong>type</strong>, <strong>class</strong>, <strong>ID</strong>, and <strong>attribute</strong> selectors,
+and then more advanced <strong>combinators</strong> and <strong>pseudo-classes/elements</strong>,
+we are able to create flexible, maintainable styles that enhance the design and usability of our web pages.</p>
+<p>As you explore and apply CSS to your websites, experiment with different selectors to see how they interact.
+This is especially important when you work with the various combinator selectors,
+since these depend on how HTML elements are related to each other.
+It is important to become familiar with the selectors and syntax discussed here,
+because they are important building blocks to more advanced topics like responsive design.
+And although we will not use any CSS frameworks in this course,
+understanding the essentials here will help with those if you eventually use them.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="colors-units-and-measurements"><a class="header" href="#colors-units-and-measurements">Colors, Units, and Measurements</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-box-model"><a class="header" href="#the-box-model">The Box Model</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="margins-borders-and-padding"><a class="header" href="#margins-borders-and-padding">Margins, Borders, and Padding</a></h1>
