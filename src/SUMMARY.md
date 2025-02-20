@@ -16,7 +16,7 @@
 - [CSS3 and Web Design](p3-css3-and-web-design.md)
     - [CSS: Getting Started](3a-css-getting-started.md)
         - [Syntax and Selectors](3a1-syntax-and-selectors.md)
-        - [Colors, Units, and Measurements](3a2-colors-units-measurements.md)
+        - [Colors and Units of Measurements](3a2-colors-units-measurements.md)
     - [Box Model](3b-box-model.md)
         - [Margins, Borders, Padding](3b1-margins-borders-padding.md)
         - [Box-Sizing](3b2-box-sizing.md)
