@@ -2,16 +2,20 @@
 
 ## Introduction
 
-When designing a web page, controlling color and sizing provide crucial aspects in shaping user experience.
-Colors establish a site's visual identity, improve readability, and create contrast.
-Different measurement units allow for precise control over layout and typography, which we will cover soon.
+Designing a web page begins by controlling color and sizing.
+These base conditions lay the foundations for shaping user experience.
+It's also where the fun begins.
 
-CSS offers multiple methods to define colors.
-These include named colors, RGB values, hexadecimal codes, and HSL (Hue-Saturated-Lightness) values.
+Importantly, colors establish a site's visual identity, improves readability, and 
+[creates contrast][color_contrast], which is important for website accessibility.
+There are multiple methods to define colors in CSS.
+These methods include named colors (red, blue, green, yellow, etc),
+RGB values, hexadecimal codes, and HSL (Hue-Saturated-Lightness) values.
 Each method has its strengths with respect to levels of precision and to device type.
 
-CSS also provides a variety of units of measurement.
-These units define dimensions such as font size, spacing, and layout structure.
+CSS also provides many different types of units of measurement.
+These units allow for precise control over layout and typography, which we will cover soon,
+and define dimensions such as font size, spacing, and layout structure.
 There absolute units, such as pixels and inches, and there are relative units, such as `rem` and `em`.
 The latter make designs more flexible and responsive.
 
@@ -21,21 +25,21 @@ These concepts will help you build visually appealing and responsible web pages.
 
 ## Colors
 
-There are four ways to create or add color to the various parts of our websites.
-They include:
+There are four methods to create or add color to the various parts of our websites.
+We can use:
 
 - Color keywords:
-    - [Basic color keywords][basic_color_keywords_w3]
-    - [Extended color keywords][extended_color_keywords_w3]
+    - [Basic color keywords][basic_color_keywords_w3]: black, silver, gray, red, green, teal, etc.
+    - [Extended color keywords][extended_color_keywords_w3]: aqua, chocolate, cyan, gold, indigo, lime, etc
 - RGB values:
-    - The RGB value can declare a specific color: `p { color: rgb(255, 241, 0); }`
-    - We can add a fourth value to indicate opacity, such as 50% opacity: `p { color: rgb(255, 241, 0, 0.5); }`
+    - The RGB value can declare a specific color: `p { color: rgb(255, 241, 0); }` (a yellow color)
+    - We can add a fourth value to indicate opacity; here I set opacity to 50%: `p { color: rgb(255, 241, 0, 0.5); }`
 - Hexadecimal values;
-    - Use the hexadecimal value to identify a color: `p { color: #fffb00; }`
+    - We can use a hexadecimal value to identify a color: `p { color: #fffb00; }`
         - Lots of websites list RGB and Hexadecimal values, such as: [RGB / Hexademical Color Picker][rgb_color_picker] 
 - HSL (hue-saturated-lightness) values:
-    - HSL is considered more useful than RGB because its less hardware dependent and often considered more intuitive.
-    - For example, each value stands for Hue, Saturation, and Lightness: `p { color: hsl(291, 100%, 50%); }`
+    - HSL is considered more useful than RGB because it's less hardware dependent and considered more intuitive.
+    - The values stand for Hue, Saturation, and Lightness: `p { color: hsl(291, 100%, 50%); }`
     - The Hue is a degree on a color wheel and accepts values from 0 to 360.
     - Saturation and Lightness are coded as percentages.
         - See: [HSL Color Picker][hsl_color_picker] 
@@ -65,7 +69,8 @@ As an example, consider the following, abbreviated HTML document:
 </html>
 ```
 
-We can add background color to the page:
+We can add background color to the page.
+In the code below, `aliceblue` is a color keyword and `#000000` is hexadecimal for black:
 
 ```
 html {
@@ -83,7 +88,8 @@ h1 ~ h2 {
 }
 ```
 
-We can add background color the `<section>` element to create a box-like effect:
+We can add background color the `<section>` element to create a box-like effect.
+The code below uses HSL and RGB, as an example.
 
 ```
 section {
@@ -92,7 +98,7 @@ section {
 }
 ```
 
-Other than using the `color` and `background-color` properties, some properties accept color values
+In practice, it's certainly fine to stick to one method (keywords, RGB, HSL, hexadecimal), or mix it up.
 
 ## Data Types and Units of Measurements
 
@@ -100,8 +106,8 @@ Like many programming languages, CSS accepts a variety of data types.
 The common data types in CSS include:
 
 - Integers: whole numbers (e.g., 1, 42, -5)
-- Floating point numbers: decimal numbers (e.g., 1.5, 3.14, -0.75)
-- Dimension values: length, width, angle, and more
+- Floating point, aka, decimal numbers (e.g., 1.5, 3.14, -0.75)
+- Dimensional values: length, width, angle, and more
 - Percentages: fractions represented as percentages
 
 These data types are used primarily to add distance or length to elements.
@@ -130,7 +136,7 @@ This is because relative lengths are more responsive to different device sizes a
 However, it's important to know that absolute lengths exist if needed.
 
 Consider the following HTML snippet.
-I use internal CSS for demonstration purposes, but in practice, use an external stylesheet.
+In the snippet below, I use internal CSS for demonstration purposes, but in practice, use an external stylesheet.
 
 ```
 <html>
@@ -183,7 +189,7 @@ li {
 </html>
 ```
 
-1. Using `rem` in the `html`
+### Set `rem` in the `html` selector
 
 ```
 html {
@@ -194,10 +200,10 @@ html {
 By default, browsers set `1rem = 16px`, unless overridden.
 In this example, we make the connection explicit.
 
-2. Using `em` in `header`, `h1`, and `h2`
+### Example: using `em` in `header`, `h1`, and `h2`
  
-In the HTML example, note that `<header>` is a descendant element, and
-that `<h1>` and `<h2>` are siblings and are both descendants of `<header>`.
+In the HTML example, note that `<header>` is a descendant element of the `<html>` element, and
+that `<h1>` and `<h2>` are siblings and both descendants of `<header>`.
 Now consider the following CSS:
 
 ```
@@ -215,18 +221,18 @@ h2 {
 ```
 
 Since the `header` selector has a font-size of `1em`, it inherits its font size from the `html` selector since it's a descendant.
-Therefore, since `1em = 16px`, the `<header>` element is set to 16px.
+Therefore, since `1em = 16px`, the `<header>` element is set to `16px`.
 
-Since `<h1>` is inside `<header>`, and since it uses an `em` unit of measurement, it inherits from `<header>`.
+Since `<h1>` is inside `<header>`, and since it uses an `em` unit of measurement, it inherits its size from the `<header>` element.
 Since the `h1` selector is set to `2em`, then `2em * 16px = 32px`.
 
-Since `<h2>` is also inside `<header>` (it is not a descendant but is rather a sibling to `<h1>`),
+Since `<h2>` is also inside `<header>` (it is not a descendant but a sibling to `<h1>`),
 it also inherits from `<header>`.
 Since the `h2` is set to `2em`, then as with `h1`, we have `2em * 16px = 32px`.
 Specifically, since `header` is set to `1em`, its font size is unaffected with respect to `html`.
 Therefore, `h1` and `h2` are both calculated relative to `html`.
 
-3. Using `em` in `ul` and `li`
+### Example: Using `em` in `ul` and `li`
 
 In the above HTML, the `<ul>` element is a descendant of `<html>`.
 Since `ul` is set to `2em`, then like above, `2em * 16px = 32px`.
@@ -234,15 +240,13 @@ However, the `<li>` element is a child of `<ul>` and since its font-size uses th
 Since `ul` is calculated to be `32px`, then `li` is `1em * 32px = 32px`.
 
 In practice, therefore, we can see how `em` compounds based on what it inherits from its parent element.
-
 This makes using `rem` more predictable.
-If we set the font-size of all elements to `1rem`, then the font-size for all elements would be `16px`
-because `1rem * 16px = 16px`.
-However, if we only set the `html` selector to `1rem`, then the browser defaults for the rest of the elements would remain their defaults.
+If we set the font-size of all elements to `1rem`, then the font-size for all elements would be `16px` because `1rem * 16px = 16px`.
+However, if we only set the `html` selector to `1rem`, then the browser uses its default sizes.
 
-4. Be sure to understand inheritance.
+### Be sure to understand inheritance.
 
-Consider the following two settings:
+Consider the following rules:
 
 ```
 html {
@@ -264,7 +268,7 @@ h2 {
 
 We might think that since `h1` and `h2` are child elements of `header`,
 this would result in very large font sizes for `<h1>` and `<h2>`.
-`rem` is always relative to the font-size set in the `html` selector (typically `16px`).
+Remember though that `rem` is always relative to the font-size set in the `html` selector (typically `16px`).
 Even though the `header` is set to `2rem`, the `h1` and `h2` rules explicitly define their font sizes using `rem`.
 So they ignore the inherited value from `header`.
 That is, `h1` and `h2` are calculated with respect to `html`.
@@ -331,9 +335,9 @@ header {
 
 In the above code, I set the width of the `header` and `section` selectors to 50% of the viewport: `width: 50vw;`.
 Since `vw` (viewport width) is a relative unit, the elements inside these sections will automatically adjust
-when the browser is resized.
+when the browser window is resized.
 
-I also set the `margin: auto;`.
+I also set `margin: auto;`.
 The result is that the left and right margins will automatically adjust to ensure equal spacing on both sides
 and will be centered within the page.
 
@@ -343,18 +347,19 @@ Even though the `header` is only 50vw wide, the text inside is aligned to the ce
 
 ## Conclusion
 
-It's crucial to understand the color systems and measurement units in CSS.
-These CSS technologies help create visually appealing and responsive designs.
+It's important to understand the color systems and measurement units in CSS.
+We use these CSS technologies to create visually appealing and responsive designs.
 To recall:
 
-- Color values like RGB, HSL, and hexadecimal allow precise control over appearance.
-- Measurement units like rem, em, and viewport units help ensure layouts scale properly across different devices.
-- The choice between relative (em, rem, vw) and absolute (px, cm, in) units depends on whether you need flexibility or fixed sizing.
+- Color values like RGB, HSL, and hexadecimal allow precise control over appearance. Color keywords allow for easy color choices of common colors.
+- Measurement units like `rem`, `em`, and viewport units help ensure layouts scale properly across different devices.
+- The choice between relative (`em`, `rem`, `vw`) and absolute (`px`, `cm`, `in`) units depends on whether you need flexibility or fixed sizing.
 
 When you understand these concepts, you will be able to build adaptable, maintainable, and user-friendly web designs.
 We'll explore more responsive techniques later in this work when we tackle Flexbox and Grid Layout methods.
 
-[hsl_color_picker]:https://hslpicker.com/#d900ff
-[rgb_color_picker]:https://rgbcolorpicker.com/
 [basic_color_keywords_w3]:https://www.w3.org/TR/css-color-3/#html4
+[color_contrast]:https://beaccessible.com/post/the-importance-of-color-contrast-in-digital-accessibility/
 [extended_color_keywords_w3]:https://www.w3.org/TR/css-color-3/#svg-color
+[hsl_color_picker]:https://hslpicker.com/
+[rgb_color_picker]:https://rgbcolorpicker.com/
