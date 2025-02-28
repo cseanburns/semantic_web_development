@@ -48,10 +48,8 @@ In the following snippet, I add the universal selector to place a box around all
 </html>
 ```
 
-CSS treats all HTML elements as rectangular boxes, which can be nested inside or placed next to each other.
-
-Understanding this idea that CSS treats HTML elements as boxes is important for styling and designing layouts to our HTML.
-It's also important to understand that since boxes are nested within other boxes, or sit adjacent to other boxes
+Understanding this idea, that CSS treats HTML elements as boxes, is important for styling and designing layouts to our HTML.
+It's also important to understand that since boxes can be nested within other boxes, or sit adjacent to other boxes
 (e.g., descendant elements, sibling elements, etc),
 that styling elements has ripple effects.
 Adjusting a box's size or position affects surrounding elements, as boxes influence each other's layout.
