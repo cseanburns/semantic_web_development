@@ -179,10 +179,10 @@
                         <h1 id="margins-borders-padding-and-sizing"><a class="header" href="#margins-borders-padding-and-sizing">Margins, Borders, Padding, and Sizing</a></h1>
 <p>As you recall, the CSS box model contains <a href="https://www.w3.org/TR/css-box-3/#box-edges">four different properties</a>.</p>
 <ul>
-<li>margin: the space between the element's border and its surrounding elements, marked by the margin edge</li>
-<li>border: the visible boundary between the margin and padding, which can have width, color, and style</li>
-<li>padding: the space between the border and content</li>
-<li>content: the content</li>
+<li><strong>margin</strong>: the space between the element's border and its surrounding elements, marked by the margin edge</li>
+<li><strong>border</strong>: the boundary between the margin and padding, which can made visual with width, color, and style properties</li>
+<li><strong>padding</strong>: the space between the border and content</li>
+<li><strong>content</strong>: the content</li>
 </ul>
 <p>These properties are illustrated in the figure below.</p>
 <figure>
@@ -195,7 +195,7 @@ Fig. 1. <a href="https://www.w3.org/TR/css-box-3/#box-model">The CSS Box Model</
 </figure>
 <p>A key characteristic of the CSS box is that, like boxes in general, it has four edges, marked by the following keywords:
 <strong>top</strong>, <strong>right</strong>, <strong>bottom</strong>, and <strong>left</strong> (in that order).
-We can use CSS to target any of these sides or all sides at once and
+We can use CSS to target any of these sides, or all sides at once, and
 style boxes using the lessons covered in the prior section on <a href="3a2-colors-units-measurements.html">Colors and Units of Measurement</a>.</p>
 <h2 id="margin"><a class="header" href="#margin">Margin</a></h2>
 <p>Let's start with some basic HTML that contains only a <code>&lt;div&gt;</code> element in the <code>&lt;body&gt;</code>:</p>
@@ -209,10 +209,11 @@ style boxes using the lessons covered in the prior section on <a href="3a2-color
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<p>First, we'll add a border around the box, in order to highlight the border edge of the <code>&lt;div&gt;</code> element:</p>
+<p>First, we'll add a border around the box, in order to highlight the <code>&lt;div&gt;</code>'s boundary between its padding and margin:</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
 &lt;style&gt; 
+
 div {
     border: 1px solid black;
 }
@@ -226,11 +227,10 @@ div {
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<p>Next, I increase the <code>margin</code> to demonstrate how it adjusts the spacing around the <code>&lt;div&gt;</code> element,
+<p>Next, I add the <code>margin</code> property with a value of <code>2em</code> to demonstrate how it adjusts the spacing around the <code>&lt;div&gt;</code> element,
 pushing it away from adjacent elements.
-I use the <code>em</code> unit with a value of <code>2</code>.
 Since the default value of <code>em</code> is set by the browser to <code>16px</code>,
-the box will be offset from adjacent elements by 32 pixels on all four sides:</p>
+using <code>2em</code> means the box will be offset from adjacent elements by 32 pixels on all four sides:</p>
 <pre><code>div {
     border: 1px solid black;
     margin: 2em;
@@ -244,6 +244,7 @@ the <code>margin-bottom</code> to <code>1em</code>, and the <code>margin-left</c
 <pre><code>&lt;html&gt;
     &lt;head&gt;
 &lt;style&gt; 
+
 div {
     border: 1px solid black;
     /* top, right, bottom, left */
@@ -260,13 +261,14 @@ div {
 &lt;/html&gt;
 </code></pre>
 <h3 id="centering-boxes"><a class="header" href="#centering-boxes">Centering Boxes</a></h3>
-<p>To center a box horizontally, set a fixed <code>width</code> and use <code>margin: auto;</code>.
+<p>To center a box horizontally, set a <code>width</code> and use <code>margin: auto;</code>.
 This distributes the remaining space equally on both sides and centers the element within its parent container.
 In the following snippet, I set the width of the <code>&lt;div&gt;</code> element to 90% of the window.
-Then by setting <code>margin: auto</code>, the <code>&lt;div&gt;</code> element is centered in the viewing area.</p>
+Then by setting <code>margin: auto;</code>, the <code>&lt;div&gt;</code> element gets centered in the viewing area.</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
 &lt;style&gt; 
+
 div {
     border: 1px solid black;
     width: 90%;
@@ -285,9 +287,9 @@ div {
 <p>Note that we can also use <code>vw</code> to set the width.
 For example, instead of using <code>width: 90%;</code> we can use <code>width: 50vw;</code>.</p>
 <h2 id="border"><a class="header" href="#border">Border</a></h2>
-<p>The above snippet already demonstrates the <code>border</code> property.
+<p>The above snippet introduces the <code>border</code> property.
 This property is shorthand for <code>border-width</code>, <code>border-style</code>, and <code>border-color</code>, each of which can be set separately.
-There is also a <code>border-radius</code> property that can be used to create rounded edges.</p>
+There is also a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius"><code>border-radius</code></a> property that can be used to create rounded edges.</p>
 <p>Borders may be styled with various colors (<code>rgba</code>, <code>hsl</code>, hexadecimal, or color keywords)
 and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style">different styles</a>, such as <code>solid</code>, <code>dotted</code>, <code>dashed</code>, <code>double</code>, and more.
 Some styles, like <code>groove</code>, <code>ridge</code>, <code>inset</code>, and <code>outset</code>, create three-dimensional effects.
@@ -338,6 +340,7 @@ setting <code>margin: 2em;</code> results in <code>2 * 20px = 40px</code>.</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
 &lt;style&gt; 
+
 body {
     font-size: 20px;
 }
@@ -364,6 +367,7 @@ Since the <code>margin</code> and <code>padding</code> for the <code>div</code> 
 <pre><code>&lt;html&gt;
     &lt;head&gt;
 &lt;style&gt; 
+
 html {
     font-size: 1rem;
 }
@@ -390,6 +394,7 @@ then the size of the text enclosed in the <code>&lt;b&gt;</code> element is calc
 <pre><code>&lt;html&gt;
     &lt;head&gt;
 &lt;style&gt; 
+
 html {
     font-size: 1rem;
 }
@@ -405,6 +410,7 @@ b {
     margin: 2em;
     padding: 2em;
 }
+
 &lt;/style&gt;
     &lt;/head&gt;
     &lt;body&gt;
@@ -414,7 +420,7 @@ b {
 </code></pre>
 <h2 id="content"><a class="header" href="#content">Content</a></h2>
 <p>We have already discussed the last property: <strong>content</strong>.
-Increasing <code>font-size</code> expands the content area, causing the box to grow accordingly.
+For example, increasing <code>font-size</code> expands the content area, causing the box to grow accordingly.
 In the following code snippet, I have an <code>&lt;h1&gt;</code> element with some simple text:</p>
 <pre><code>&lt;html&gt;
     &lt;body&gt;
@@ -425,16 +431,16 @@ In the following code snippet, I have an <code>&lt;h1&gt;</code> element with so
 &lt;/html&gt;
 </code></pre>
 <p>Now let's add a border around that.
-This will reveal how the element is wrapped in a box:</p>
+This reveals how the element is wrapped in a box:</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
-    
 &lt;style&gt;
+
 h1 {
     border: 1px solid black;
 }
-&lt;/style&gt;
 
+&lt;/style&gt;
     &lt;/head&gt;
     &lt;body&gt;
         &lt;section&gt;
@@ -446,14 +452,14 @@ h1 {
 <p>Increasing the <code>font-size</code> enlarges the content, which in turn expands the overall box dimensions.</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
-    
 &lt;style&gt;
+
 h1 {
     border: 1px solid black;
     font-size: 5em;
 }
-&lt;/style&gt;
 
+&lt;/style&gt;
     &lt;/head&gt;
     &lt;body&gt;
         &lt;section&gt;
@@ -468,11 +474,10 @@ Remember that the <strong>margin</strong> creates space around an element,
 <strong>borders</strong> define its visible boundaries, <strong>padding</strong> controls the space between the border and content, and
 <strong>content</strong> itself determines the element's size.
 When we use these properties effectively, we can adjust positioning, control whitespace, and create visually appealing layouts.</p>
-<p>Learning how the interactions between these properties takes practice,
-especially when working with different units like <code>px</code>, <code>em</code>, and <code>rem</code>, or
-with various <a href="3a1-syntax-and-selectors.html#combinators">combinators</a>.
+<p>Learning how the interactions among these properties work takes practice,
+especially when mixing units like <code>px</code>, <code>em</code>, and <code>rem</code>, or using various <a href="3a1-syntax-and-selectors.html#combinators">combinators</a>.
 I encourage you to experiment with margin, padding, border, and content settings.
-As you do, you will gain an increasing understanding of how boxes interact in CSS.</p>
+As you do, you will gain an increasing understanding of how boxes work and interact in CSS.</p>
 
                     </main>
 
