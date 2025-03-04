@@ -468,6 +468,71 @@ h1 {
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
+<h2 id="box-sizing"><a class="header" href="#box-sizing">Box Sizing</a></h2>
+<p>When we set the dimensions of a box in CSS, the dimensions are calculated based on the size of the content
+and not on the dimensions (height, width) of the box's border or padding.
+The result is that <q>if you set an element's width to 100 pixels,
+then the element's content box will be 100 pixels wide,
+and the width of any border or padding will be added to the final rendered width,
+making the element wider than 100px</q> (The CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing"><code>box-sizing</code></a> property).</p>
+<p>The <code>border-box</code> property accounts for border and padding.
+In the following example, I nest a <code>&lt;div&gt;</code> within a <code>&lt;div&gt;</code> and add padding around the nested <code>&lt;div&gt;</code>.
+The width is set to <code>100%</code>, which intuitively suggests that the smaller box should fit within 100% of the larger box.
+But by adding padding (<code>10px</code>), the box expands beyond the larger box's border.</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+&lt;style&gt;
+.big, .small {
+    border: 10px solid black;
+    font-size: 3rem;
+}
+
+.big {
+    width: 300px;
+}
+
+.small {
+    padding: 10px;
+    width: 100%;
+}
+&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="big"&gt;big box
+            &lt;div class="small"&gt;little box&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>The result becomes more intuitive when adding <code>box-sizing: border-box;</code> to the small <code>&lt;div&gt;</code>.
+In the example below, the padding and border are adjusted to fit within the larger <code>&lt;div&gt;</code>.
+That is, the border width and padding, and not simply the content, are taken into account when sizing the box.</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+&lt;style&gt;
+.big, .small {
+    border: 10px solid black;
+    font-size: 3rem;
+}
+
+.big {
+    width: 300px;
+}
+
+.small {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+}
+&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="big"&gt;big box
+            &lt;div class="small"&gt;little box&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
 <p>Understanding the CSS box model is essential for controlling layout and spacing of elements on a webpage.
 Remember that the <strong>margin</strong> creates space around an element,
