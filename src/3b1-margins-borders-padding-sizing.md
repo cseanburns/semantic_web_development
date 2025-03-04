@@ -348,6 +348,79 @@ h1 {
 </html>
 ```
 
+## Box Sizing
+
+When we set the dimensions of a box in CSS, the dimensions are calculated based on the size of the content
+and not on the dimensions (height, width) of the box's border or padding.
+The result is that <q>if you set an element's width to 100 pixels,
+then the element's content box will be 100 pixels wide,
+and the width of any border or padding will be added to the final rendered width,
+making the element wider than 100px</q> (The CSS [`box-sizing`][box_sizing_mdn] property).
+
+The `border-box` property accounts for border and padding.
+In the following example, I nest a `<div>` within a `<div>` and add padding around the nested `<div>`.
+The width is set to `100%`, which intuitively suggests that the smaller box should fit within 100% of the larger box.
+But by adding padding (`10px`), the box expands beyond the larger box's border.
+
+```
+<html>
+    <head>
+<style>
+.big, .small {
+    border: 10px solid black;
+    font-size: 3rem;
+}
+
+.big {
+    width: 300px;
+}
+
+.small {
+    padding: 10px;
+    width: 100%;
+}
+</style>
+    </head>
+    <body>
+        <div class="big">big box
+            <div class="small">little box</div>
+        </div>
+    </body>
+</html>
+```
+
+The result becomes more intuitive when adding `box-sizing: border-box;` to the small `<div>`.
+In the example below, the padding and border are adjusted to fit within the larger `<div>`.
+That is, the border width and padding, and not simply the content, are taken into account when sizing the box.
+
+```
+<html>
+    <head>
+<style>
+.big, .small {
+    border: 10px solid black;
+    font-size: 3rem;
+}
+
+.big {
+    width: 300px;
+}
+
+.small {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+}
+</style>
+    </head>
+    <body>
+        <div class="big">big box
+            <div class="small">little box</div>
+        </div>
+    </body>
+</html>
+```
+
 ## Conclusion
 
 Understanding the CSS box model is essential for controlling layout and spacing of elements on a webpage.
@@ -364,3 +437,4 @@ As you do, you will gain an increasing understanding of how boxes work and inter
 [boxes_edges_w3]:https://www.w3.org/TR/css-box-3/#box-edges
 [border_styles_mdn]:https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
 [border_radius_mdn]:https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+[box_sizing_mdn]:https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
