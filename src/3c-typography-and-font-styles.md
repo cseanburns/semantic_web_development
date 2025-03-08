@@ -338,7 +338,7 @@ I have not vetted all these sources, but some options you may explore for locati
 - [Font Squirrel][font_squirrel]
 - [The League of Moveable Type][the_league]
 - [Adobe Fonts][adobe_fonts]
-- Velvetyne Type Foundry][velvetyne]
+- [Velvetyne Type Foundry][velvetyne]
 - [Open Foundry][open_foundry]
 - [Font Library][font_library]
 - [1001 Fonts][1001_fonts]
