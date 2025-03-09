@@ -80,12 +80,13 @@ you will be able to use these principles to augment content and enhance user exp
 We normally declare the `font-family` in the `html` or `body` selector.
 When we declare a `font-family`, we provide a list of families.
 Based on our operating systems, our browsers select the font to display by first available.
-Therefore, we place the main font at the beginning of the list but
+Therefore, we place the main, desired font at the beginning of the list but
 then provide fallback fonts in case the main font is unavailable in the reader's browser.
+
 In the following example, `Arial` is the font we ideally want to use in our web document, but
 if this isn't available, then the browser falls back to the generic `sans-serif` font family.
 For consistency, be sure to include fonts from the same family in this list
-(e.g., all serif, sans-serif, or monospace but not a mix).
+(e.g., all serif, all sans-serif, or all monospace but not a mix).
 
 ```
 body {
@@ -286,11 +287,10 @@ As stated before, fonts are generally provided by the operating system.
 Since there are different operating systems (e.g., Windows, macOS, iOS, Linux, Android, etc),
 not all fonts are available for all OSes.
 OSes from Microsoft, Apple, and Google might share the most common fonts because commercial companies
-pay licensing fees for many standard fonts since fonts may be copyrighted or
-they may license their own developed fonts to other companies.
+pay or charge licensing fees for many standard fonts since fonts may be copyrighted.
 In any case, this is why when we declare font families, we always declare `serif` as the fallback font-family
-if we are using a copyrighted serif font, like [Times New Roman][times_new_roman_wiki];
-or `sans-serif` as the fallback font-family if we are using a copyrighted sans-serif font, like [Arial][arial_wiki];
+if we are using a copyrighted serif font like [Times New Roman][times_wiki];
+or `sans-serif` as the fallback font-family if we are using a copyrighted sans-serif font like [Arial][arial_wiki];
 and so forth.
 
 However, we can load fonts from external sources.
@@ -304,7 +304,11 @@ Outsourced fonts present several issues.
 First, we may not know or agree with the privacy policies when using outsourced fonts.
 Also, outsourcing fonts means relying on third-party services.
 While these services may be reliable, they could go down.
-Lastly, outsource fonts requires extra bandwidth, which may be fine but does slow rendering down.
+Lastly, depending on the source used for outsourced fonts,
+using outsourced fonts may requires extra bandwidth:
+
+> The [Google Fonts Privacy Policy][google_fonts_privacy] makes an argument that using their services
+> instead of self-hosting their fonts saves bandwidth.
 
 Fortunately, we can also store and host fonts locally from within our project directory.
 This offers greater control and performance and allows our desired fonts to be used regardless of a user's OS or browser.
@@ -366,13 +370,14 @@ readability, legibility, hierarchy, consistency, alignment and balance, contrast
 [arial_wiki]:https://en.wikipedia.org/wiki/Arial
 [b_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b
 [em_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em
-[font_face_w3:https://www.w3.org/TR/css-fonts-4/#font-face-rule
+[font_face_w3]:https://www.w3.org/TR/css-fonts-4/#font-face-rule
 [font_families_w3]:https://www.w3.org/Style/Examples/007/fonts.en.html
 [font_library]:https://fontlibrary.org/
 [font_squirrel]:https://www.fontsquirrel.com/
 [font_style_w3m]:https://www.w3.org/TR/css-fonts-4/#font-style-prop
 [font_weight_w3]:https://www.w3.org/TR/css-fonts-4/#font-weight-prop
 [google_fonts]:https://fonts.google.com/
+[google_fonts_privacy]:https://developers.google.com/fonts/faq/privacy
 [i_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i
 [kerning_wiki]:https://en.wikipedia.org/wiki/Kerning
 [open_foundry]:https://open-foundry.com/
@@ -384,7 +389,7 @@ readability, legibility, hierarchy, consistency, alignment and balance, contrast
 [text_decoration_style_mdn]:https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style
 [text_transform_mdn]:https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform
 [the_league]:https://www.theleagueofmoveabletype.com/
-[times_new_roman_wiki]:https://en.wikipedia.org/wiki/Times_New_Roman#Free_alternatives
+[times_wiki]:https://en.wikipedia.org/wiki/Times_New_Roman#Free_alternatives
 [typeface_wiki]:https://en.wikipedia.org/wiki/Typeface
 [typography_wiki]:https://en.wikipedia.org/wiki/Typography
 [velvetyne]:https://velvetyne.fr/
