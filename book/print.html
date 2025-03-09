@@ -3593,12 +3593,12 @@ you will be able to use these principles to augment content and enhance user exp
 <p>We normally declare the <code>font-family</code> in the <code>html</code> or <code>body</code> selector.
 When we declare a <code>font-family</code>, we provide a list of families.
 Based on our operating systems, our browsers select the font to display by first available.
-Therefore, we place the main font at the beginning of the list but
-then provide fallback fonts in case the main font is unavailable in the reader's browser.
-In the following example, <code>Arial</code> is the font we ideally want to use in our web document, but
+Therefore, we place the main, desired font at the beginning of the list but
+then provide fallback fonts in case the main font is unavailable in the reader's browser.</p>
+<p>In the following example, <code>Arial</code> is the font we ideally want to use in our web document, but
 if this isn't available, then the browser falls back to the generic <code>sans-serif</code> font family.
 For consistency, be sure to include fonts from the same family in this list
-(e.g., all serif, sans-serif, or monospace but not a mix).</p>
+(e.g., all serif, all sans-serif, or all monospace but not a mix).</p>
 <pre><code>body {
     font-family: "Arial", sans-serif;
 }
@@ -3746,23 +3746,28 @@ A good use case is to apply this to various heading elements (e.g., <code>&lt;h2
 Since there are different operating systems (e.g., Windows, macOS, iOS, Linux, Android, etc),
 not all fonts are available for all OSes.
 OSes from Microsoft, Apple, and Google might share the most common fonts because commercial companies
-pay licensing fees for many standard fonts since fonts may be copyrighted.
+pay or charge licensing fees for many standard fonts since fonts may be copyrighted.
 In any case, this is why when we declare font families, we always declare <code>serif</code> as the fallback font-family
-if we are using a copyrighted serif font, like <a href="https://en.wikipedia.org/wiki/Times_New_Roman#Free_alternatives">Times New Roman</a>;
-or <code>sans-serif</code> as the fallback font-family if we are using a copyrighted sans-serif font, like <a href="https://en.wikipedia.org/wiki/Arial">Arial</a>;
+if we are using a copyrighted serif font like <a href="https://en.wikipedia.org/wiki/Times_New_Roman#Free_alternatives">Times New Roman</a>;
+or <code>sans-serif</code> as the fallback font-family if we are using a copyrighted sans-serif font like <a href="https://en.wikipedia.org/wiki/Arial">Arial</a>;
 and so forth.</p>
 <p>However, we can load fonts from external sources.
 One major example is <a href="https://fonts.google.com/">Google Fonts</a>.
 For example, if we want to use the <a href="https://fonts.google.com/specimen/Roboto">Roboto Font</a>,
-its Google Font's page provides the code to insert into our HTML pages and CSS stylesheets to use that font.</p>
+its Google Font page provides the code to insert into our HTML pages and CSS stylesheets.</p>
 <h2 id="locally-hosted-fonts"><a class="header" href="#locally-hosted-fonts">Locally Hosted Fonts</a></h2>
 <p>Outsourced fonts present several issues.
 First, we may not know or agree with the privacy policies when using outsourced fonts.
 Also, outsourcing fonts means relying on third-party services.
 While these services may be reliable, they could go down.
-Lastly, outsource fonts requires extra bandwidth, which may be fine but does slow rendering down.</p>
+Lastly, depending on the source used for outsourced fonts,
+using outsourced fonts may requires extra bandwidth:</p>
+<blockquote>
+<p>The <a href="https://developers.google.com/fonts/faq/privacy">Google Fonts Privacy Policy</a> makes an argument that using their services
+instead of self-hosting their fonts saves bandwidth.</p>
+</blockquote>
 <p>Fortunately, we can also store and host fonts locally from within our project directory.
-This offers greater control and performance and allows our desired fonts to be use regardless of a user's OS or browser.
+This offers greater control and performance and allows our desired fonts to be used regardless of a user's OS or browser.
 To do this, we need to:</p>
 <ol>
 <li>Download the font files:
@@ -3790,7 +3795,14 @@ body {
     font-family: 'CustomFont', sans-serif;
 }
 </code></pre>
-<p>If using locally hosted fonts, be sure you use fonts from <strong>trusted</strong> sources and fonts that have <strong>open licenses</strong>.
+<blockquote>
+<p>Note: Although the above example illustrates how to use downloaded fonts,
+since the <code>src</code> property takes a <code>url</code> value,
+you can use the <code>@font-face</code> rule to source remote font files.
+See the documentation for the <a href="https://www.w3.org/TR/css-fonts-4/#font-face-rule"><code>@font-face</code></a> rule for more details.</p>
+</blockquote>
+<p>If using locally hosted fonts, be sure you use fonts from <strong>trusted</strong> sources and fonts that have
+<a href="https://en.wikipedia.org/wiki/Open-source_license">open licenses</a>.
 Just like images, text, etc, fonts can be copyrighted.
 I have not vetted all these sources, but some options you may explore for locating fonts to download and use on your sites include:</p>
 <ul>
@@ -3805,9 +3817,10 @@ I have not vetted all these sources, but some options you may explore for locati
 <h2 id="conclusion-14"><a class="header" href="#conclusion-14">Conclusion</a></h2>
 <p>Typography plays a crucial role in shaping how content is presented, read, and understood.
 Try to select the right font family for your site visitors.
-Keep those visitors in mind, always!
-Be sure to use fine-tuning properties, like spacing, weight, and alignment, effectively to enhance aesthetics and readability.
-Finally, focus on the principles: readability, legibility, hierarchy, consistency, alignment and balance, contrast, and white space.</p>
+Keep those visitors in mind, always!</p>
+<p>And be sure to use fine-tuning properties, like spacing, weight, and alignment, to enhance aesthetics and readability.</p>
+<p>Finally, focus on the principles:
+readability, legibility, hierarchy, consistency, alignment and balance, contrast, and white space.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="images-multimedia-and-backgrounds"><a class="header" href="#images-multimedia-and-backgrounds">Images Multimedia and Backgrounds</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="styling-images-and-multimedia"><a class="header" href="#styling-images-and-multimedia">Styling Images and Multimedia</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="backgrounds"><a class="header" href="#backgrounds">Backgrounds</a></h1>
