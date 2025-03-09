@@ -286,7 +286,8 @@ As stated before, fonts are generally provided by the operating system.
 Since there are different operating systems (e.g., Windows, macOS, iOS, Linux, Android, etc),
 not all fonts are available for all OSes.
 OSes from Microsoft, Apple, and Google might share the most common fonts because commercial companies
-pay licensing fees for many standard fonts since fonts may be copyrighted.
+pay licensing fees for many standard fonts since fonts may be copyrighted or
+they may license their own developed fonts to other companies.
 In any case, this is why when we declare font families, we always declare `serif` as the fallback font-family
 if we are using a copyrighted serif font, like [Times New Roman][times_new_roman_wiki];
 or `sans-serif` as the fallback font-family if we are using a copyrighted sans-serif font, like [Arial][arial_wiki];
@@ -295,7 +296,7 @@ and so forth.
 However, we can load fonts from external sources.
 One major example is [Google Fonts][google_fonts].
 For example, if we want to use the [Roboto Font][roboto_google_font],
-its Google Font's page provides the code to insert into our HTML pages and CSS stylesheets to use that font.
+its Google Font page provides the code to insert into our HTML pages and CSS stylesheets.
 
 ## Locally Hosted Fonts
 
@@ -306,7 +307,7 @@ While these services may be reliable, they could go down.
 Lastly, outsource fonts requires extra bandwidth, which may be fine but does slow rendering down.
 
 Fortunately, we can also store and host fonts locally from within our project directory.
-This offers greater control and performance and allows our desired fonts to be use regardless of a user's OS or browser.
+This offers greater control and performance and allows our desired fonts to be used regardless of a user's OS or browser.
 To do this, we need to:
 
 1. Download the font files:
@@ -331,7 +332,13 @@ body {
 }
 ```
 
-If using locally hosted fonts, be sure you use fonts from **trusted** sources and fonts that have **open licenses**.
+> Note: Although the above example illustrates how to use downloaded fonts,
+> since the `src` property takes a `url` value,
+> you can use the `@font-face` rule to source remote font files.
+> See the documentation for the [`@font-face`][font_face_w3] rule for more details.
+
+If using locally hosted fonts, be sure you use fonts from **trusted** sources and fonts that have
+[open licenses][open_source_license_wiki].
 Just like images, text, etc, fonts can be copyrighted.
 I have not vetted all these sources, but some options you may explore for locating fonts to download and use on your sites include:
 
@@ -348,15 +355,18 @@ I have not vetted all these sources, but some options you may explore for locati
 Typography plays a crucial role in shaping how content is presented, read, and understood.
 Try to select the right font family for your site visitors.
 Keep those visitors in mind, always!
-Be sure to use fine-tuning properties, like spacing, weight, and alignment, effectively to enhance aesthetics and readability.
-Finally, focus on the principles: readability, legibility, hierarchy, consistency, alignment and balance, contrast, and white space.
 
+And be sure to use fine-tuning properties, like spacing, weight, and alignment, to enhance aesthetics and readability.
+
+Finally, focus on the principles:
+readability, legibility, hierarchy, consistency, alignment and balance, contrast, and white space.
 
 [1001_fonts]:https://www.1001fonts.com/
 [adobe_fonts]:https://fonts.adobe.com/
 [arial_wiki]:https://en.wikipedia.org/wiki/Arial
 [b_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b
 [em_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em
+[font_face_w3:https://www.w3.org/TR/css-fonts-4/#font-face-rule
 [font_families_w3]:https://www.w3.org/Style/Examples/007/fonts.en.html
 [font_library]:https://fontlibrary.org/
 [font_squirrel]:https://www.fontsquirrel.com/
@@ -366,6 +376,7 @@ Finally, focus on the principles: readability, legibility, hierarchy, consistenc
 [i_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i
 [kerning_wiki]:https://en.wikipedia.org/wiki/Kerning
 [open_foundry]:https://open-foundry.com/
+[open_source_license_wiki]:https://en.wikipedia.org/wiki/Open-source_license
 [roboto_google_font]:https://fonts.google.com/specimen/Roboto
 [strong_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong
 [text_decoration_line_mdn]:https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line
