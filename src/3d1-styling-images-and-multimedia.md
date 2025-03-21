@@ -1,1 +1,0 @@
-# Styling Images and Multimedia
