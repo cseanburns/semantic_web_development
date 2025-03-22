@@ -313,6 +313,8 @@ We can create **ordered** or **unordered** lists using the `<ol>` and `<ul>` HTM
 CSS offers flexibility in customizing [lists][css_lists_w3].
 We can use images, emojis, or custom markers for list items.
 
+### Standard Lists
+
 Let's begin with a standard unordered list:
 
 ```
@@ -323,6 +325,8 @@ Let's begin with a standard unordered list:
     <li>Watermelon</li>
 </ul>
 ```
+
+### List Marker Positions
 
 We can use the `list-style-position` to alter the position of the bullets.
 This also works for ordered lists using the `<ol>` element:
@@ -344,6 +348,8 @@ In the following HTML, I apply the position using a class:
 </ul>
 ```
 
+### Reverse Lists
+
 In ordered lists, we can reverse the order of the counter using the `reverse` attribute (no CSS needed!):
 
 ```
@@ -354,6 +360,8 @@ In ordered lists, we can reverse the order of the counter using the `reverse` at
     <li>Watermelon</li>
 </ol>
 ```
+
+### List Values
 
 We can also begin counting at arbitrary numbers (whole numbers only, though):
 
@@ -377,6 +385,8 @@ In the following example, we start the count at `10` and then countdown using th
     <li>Watermelon</li>
 </ol>
 ```
+
+### Roman Numerals
 
 We can change to Roman numerals:
 
@@ -409,6 +419,8 @@ To use lowercase Roman numerals, we use `list-style-type: lower-roman`.
     list-style-type: lower-roman;
 }
 ```
+
+### English Characters
 
 We can also use English characters by using either
 `list-style-type: lower-alpha` or `list-style-type: upper-alpha`:
@@ -443,6 +455,8 @@ We can also use English characters by using either
 }
 ```
 
+### Removing List Markers 
+
 We can remove all marks using `list-style-type: none`:
 
 **HTML**:
@@ -463,6 +477,8 @@ We can remove all marks using `list-style-type: none`:
     list-style-type: none;
 }
 ```
+
+### Changing List Markers
 
 Or may also specify using a `circle`, a `disc`, Unicode, or [other characters][list_style_type_mdn].
 
@@ -485,6 +501,8 @@ Or may also specify using a `circle`, a `disc`, Unicode, or [other characters][l
 }
 ```
 
+### Emojis as List Markers
+
 If we want to use emojis as our markers, then we need to use the corresponding Unicode for the emoji.
 See the [Full Emoji List][emojis_unicode] for ideas.
 In the following example, I use the [Vulcan Salute][vulcan_unicode] as a marker for my list:
@@ -505,6 +523,8 @@ In the following example, I use the [Vulcan Salute][vulcan_unicode] as a marker 
     list-style-type: "\1F596";
 }
 ```
+
+### Custom Images as List Markers
 
 We can also use our own images.
 In the examples below, I used ChatGPT to generate icons for the fruit images.
@@ -559,7 +579,12 @@ In the following list, I use a separate fruit icon for each item in the list:
 }
 ```
 
+### Nested Lists
+
 Additionally, we can nest lists to create outlines or apply different `list-style-type` values for more variety.
+
+#### Nested Ordered Lists
+
 In the following example, I add an ordered list within an ordered list:
 
 ```
@@ -585,6 +610,8 @@ In the following example, I add an ordered list within an ordered list:
     </li>
 </ol>
 ```
+
+#### Nested Unordered Lists
 
 Likewise, we can nest an unordered list within an unordered list:
 
@@ -612,9 +639,13 @@ Likewise, we can nest an unordered list within an unordered list:
 </ul>
 ```
 
+#### Nested Mixed Lists
+
 We can also mix ordered and unordered lists when nesting.
 In the following two lists, I nest an unordered list within an ordered list.
 Then an ordered list within an unordered list.
+
+##### Ordered to Unordered
 
 ```
 <h4>Ordered/Unordered Nested</h4>
@@ -638,7 +669,13 @@ Then an ordered list within an unordered list.
         </ul>
     </li>
 </ol>
+```
 
+##### Unordered to Ordered
+
+In this example, I nest ordered lists in an unordered list:
+
+```
 <h4>Unordered/Ordered Nested</h4>
 <ul>
     <li>Apples
@@ -661,6 +698,8 @@ Then an ordered list within an unordered list.
     </li>
 </ul>
 ```
+
+#### Nested, Mixed Style Types
 
 When nesting, we can apply a different `list-style-type` for the nested lists:
 
