@@ -20,7 +20,7 @@
     - [Box Model](3b-box-model.md)
         - [Margins, Borders, Padding, Sizing](3b1-margins-borders-padding-sizing.md)
     - [Typography and Font Styles](3c-typography-and-font-styles.md)
-    - [Images, Multimedia, and Backgrounds](3d-styling-images-multimedia-backgrounds.md)
+    - [Images and Backgrounds](3d-styling-images-backgrounds.md)
     - [Responsive Layouts with Flexbox and Grid](3e-responsive-layouts-with-flexbox-and-grid.md)
         - [Flexbox Basics](3e1-flexbox-basics.md)
         - [Grid Layout Basics](3e2-grid-layout-basics.md)
