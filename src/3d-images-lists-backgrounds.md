@@ -1,4 +1,4 @@
-# Styling Images, Multimedia, and Backgrounds
+# Styling Images, Lists, and Backgrounds
 
 - [CSS Images Module Level 3](css_images_w3)
     - [Gradients][gradients_w3]
