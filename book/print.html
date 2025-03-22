@@ -3822,17 +3822,553 @@ Keep those visitors in mind, always!</p>
 <p>Finally, focus on the principles:
 readability, legibility, hierarchy, consistency, alignment and balance, contrast, and white space.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="styling-images-lists-and-backgrounds"><a class="header" href="#styling-images-lists-and-backgrounds">Styling Images, Lists, and Backgrounds</a></h1>
+<p>We have discussed how to add <a href="2e-embedded-content.html">images</a> to our web pages.
+Now it's time to learn to style them.
+We will also learn how to style lists, which will include adding images to our lists,
+and styling the background canvas of a web page.
+For the full documentation, see <a href="https://www.w3.org/TR/css-images-3/#image-values">CSS Images Module Level 3</a>.</p>
+<h2 id="images"><a class="header" href="#images">Images</a></h2>
+<p>When we add images to a web page, we want to make sure that our images have been properly sized in a separate photo editor.
+For example, if I add a photo to a web page that has the resolution of something like 1920x1080 pixels,
+then the photo will be several megabytes in size.
+A photo this large uses more bandwidth, which may slow down how quickly the web page displays in the browser.
+Therefore, before we tinker with sizes in HTML or CSS, we need to reduce the resolution of our images in a separate photo editor.</p>
+<p>In HTML and CSS, we can set the values of an image with simple <code>width</code> and <code>height</code> settings.
+For example, in HTML, we can use the <code>width</code> and <code>height</code> attributes:</p>
+<pre><code>&lt;img src="media/walking_bridge.jpg"
+    alt="A walking bridge over a stream"
+    width="673"
+    height="378"&gt;
+</code></pre>
+<p>Alternatively, we can leave out the HTML attributes in the above code and instead add these properties to our CSS.
+In the CSS below, I use the <code>img</code> selector with the specified <code>width</code> and <code>height</code> properties:</p>
+<pre><code>img {
+    width: 673px;
+    height: 378px;
+}
+</code></pre>
+<h3 id="object-fit"><a class="header" href="#object-fit"><code>object-fit</code></a></h3>
+<p>Recall that the <a href="3b-box-model.html">CSS box model</a> informs everything about how content is styled on a page.
+This means that even images are enclosed within boxes.
+The following HTML code adds a simple drawing to our web page and the CSS code sets a border, background color, and dimensions.</p>
+<p><strong>HTML:</strong></p>
+<pre><code>&lt;img src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+</code></pre>
+<p><strong>CSS:</strong></p>
+<pre><code>img {
+    border: 1px solid black;
+    background-color: silver;
+    width: 300px;
+    height: 400px;
+}
+</code></pre>
+<p>Using the <a href="https://www.w3.org/TR/css-images-3/#sizing"><code>object-fit</code></a> property, we can scale the image within the box.
+We can use values such as <code>fill</code>, <code>contain</code>, <code>cover</code>, <code>none</code>, and <code>scale-down</code>.
+In the HTML code below, I use classes to style the same image for each of those values:</p>
+<pre><code>&lt;h3&gt;Fill&lt;/h3&gt;
+&lt;img class="fill" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+
+&lt;h3&gt;Contain&lt;/h3&gt;
+&lt;img class="contain" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+
+&lt;h3&gt;Cover&lt;/h3&gt;
+&lt;img class="cover" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+
+&lt;h3&gt;None&lt;/h3&gt;
+&lt;img class="none" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+
+&lt;h3&gt;Scale Down&lt;/h3&gt;
+&lt;img class="scale-down" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+</code></pre>
+<p>In the CSS code below, I apply the <code>object-fit</code> property to the appropriate classes:</p>
+<pre><code>.fill {
+    object-fit: fill;
+}
+
+.contain {
+    object-fit: contain;
+}
+
+.cover {
+    object-fit: cover;
+}
+
+.none {
+    object-fit: none;
+}
+
+.scale-down {
+    object-fit: scale-down;
+}
+</code></pre>
+<h3 id="position"><a class="header" href="#position">Position</a></h3>
+<p>Images may also be positioned within its surrounding box using the <a href="https://www.w3.org/TR/css-images-3/#the-object-position"><code>object-position</code></a> property.
+An image's position is defined by its x-axis and y-axis coordinates and defaults to 50% on both axes, or centered.
+However, we can move an image within its box by adjusting these coordinates.
+In the HTML below, I use classes to specify the position of the images:
+default, top, right, bottom, and left.</p>
+<pre><code>&lt;h3&gt;Image Default&lt;/h3&gt;
+&lt;img class="position" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+
+&lt;h3&gt;Image Top&lt;/h3&gt;
+&lt;img class="position_top" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+
+&lt;h3&gt;Image Right&lt;/h3&gt;
+&lt;img class="position_right" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+
+&lt;h3&gt;Image Bottom&lt;/h3&gt;
+&lt;img class="position_bottom" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+
+&lt;h3&gt;Image Left&lt;/h3&gt;
+&lt;img class="position_left" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+</code></pre>
+<p>In the CSS below, I apply the classes by modifying the x-axis and y-axis for each:</p>
+<pre><code>.position {
+    object-position: 50% 50%;
+}
+.position_top {
+    object-position: 50% -50px;
+}
+.position_right {
+    object-position: 50px 50%;
+}
+.position_bottom {
+    object-position: 50% 50px;
+}
+.position_left {
+    object-position: -50px 50%;
+}
+</code></pre>
+<h3 id="transform"><a class="header" href="#transform">Transform</a></h3>
+<p>We can also transform an image.
+For example, we may <q>rotate, scale, skew, or tranlate</q> (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">MDN <code>transform</code></a>) an image (and other elements, too).
+Consider the basic HTML code:</p>
+<pre><code>&lt;img class="flip" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+</code></pre>
+<p>Using the CSS <code>transform</code> property, we can rotate it by half a turn:</p>
+<pre><code>.flip {
+    transform: rotate(0.5turn);
+}
+</code></pre>
+<p>See the link above for examples of the other methods.</p>
+<h3 id="floats"><a class="header" href="#floats">Floats</a></h3>
+<p>We often use images adjacent to other elements, such as text in paragraphs.
+In such scenarios, we may wish to position an image next to the text to emphasize it in certain ways.
+In such cases, we can use the <a href="https://www.w3.org/TR/css-page-floats-3/#float-property"><code>float</code></a> property.
+Consider the following HTML examples.
+In each example, we position an <code>&lt;img&gt;</code> element adjacent to a <code>&lt;p&gt;</code> element.
+In the first example, we use the default behavior, which is to not <code>float</code> the image:</p>
+<pre><code>&lt;h3&gt;No Float (Default)&lt;/h3&gt;
+&lt;img class="small" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+&lt;p&gt;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+laborum.&lt;/p&gt;
+</code></pre>
+<p>In the next example, we <code>float</code> the image to the left of the text:</p>
+<pre><code>&lt;h3&gt;Float Left&lt;/h3&gt;
+&lt;img class="left_float" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+&lt;p&gt;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+laborum.&lt;/p&gt;
+</code></pre>
+<p>In the last example, we <code>float</code> the image to the right of the text:</p>
+<pre><code>&lt;h3&gt;Float Right&lt;/h3&gt;
+&lt;img class="right_float" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+&lt;p&gt; Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+laborum.&lt;/p&gt;
+</code></pre>
+<h3 id="gradients"><a class="header" href="#gradients">Gradients</a></h3>
+<p>We can style our images using <a href="https://www.w3.org/TR/css-images-3/#gradients"><code>gradients</code></a>.
+In the following examples, I use classes again to define types of gradients to use.
+We can apply gradients using angles (e.g., <code>45deg</code>) or keywords (e.g., <code>to top</code>).
+See the link above for other examples.</p>
+<pre><code>&lt;h3&gt;Linear Gradient&lt;/h3&gt;
+&lt;img class="linear" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+
+&lt;h3&gt;Linear Gradient Using Angle&lt;/h3&gt;
+&lt;img class="angle" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+
+&lt;h3&gt;Linear Gradient Using Keywords&lt;/h3&gt;
+&lt;img class="top" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+</code></pre>
+<p>In CSS below, I use a default <code>linear-gradient</code> in the first class.
+In the second class, I use degrees to specify the exact gradient angle.
+In the third class, I use the <code>to top</code> keyword.</p>
+<pre><code>.linear {
+    padding: 50px;
+    background: linear-gradient(white, black);
+}
+
+.angle {
+    padding: 50px;
+    background: linear-gradient(45deg, white, black);
+}
+
+.top {
+    padding: 50px;
+    background: linear-gradient(to top, silver, green);
+}
+</code></pre>
+<p>The <a href="https://www.w3.org/TR/css-images-3/#linear-gradient-syntax">main gradient keywords</a> include:</p>
 <ul>
-<li><a href="css_images_w3">CSS Images Module Level 3</a>
-<ul>
-<li><a href="https://www.w3.org/TR/css-images-3/#gradients">Gradients</a></li>
-<li><a href="https://www.w3.org/TR/css-images-3/#sizing">Image and Object Sizing</a></li>
+<li><code>to top</code> equates to <code>0deg</code></li>
+<li><code>to right</code> equates to <code>90deg</code></li>
+<li><code>to bottom</code> equates to <code>180deg</code></li>
+<li><code>to left</code> equates to <code>270deg</code></li>
 </ul>
-</li>
-<li><a href="https://www.w3.org/TR/css-lists-3/#propdef-list-style-image">CSS Lists and Counters Module Level 3</a></li>
+<h3 id="opacity"><a class="header" href="#opacity">Opacity</a></h3>
+<p>We can change the transparency of an image using the <code>opacity</code> property.
+A value of <code>0.0</code> indicates full transparency and a value of <code>1.0</code> indicates a fully opaque image.</p>
+<p><strong>HTML</strong>:</p>
+<pre><code>&lt;h3&gt;High Opacity&lt;/h3&gt;
+&lt;img class="opacity_low" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+
+&lt;h3&gt;Medium Opacity&lt;/h3&gt;
+&lt;img class="opacity_med" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
+</code></pre>
+<p><strong>CSS</strong>:</p>
+<pre><code>.opacity_low {
+    opacity: 0.2;
+}
+
+.opacity_med {
+    opacity: 0.5;
+}
+</code></pre>
+<h2 id="lists"><a class="header" href="#lists">Lists</a></h2>
+<p>As you recall, we can create either <strong>ordered</strong> or <strong>unordered</strong> lists using the <code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code> HTML elements.
+But we can do so much more with <a href="https://www.w3.org/TR/css-lists-3/#propdef-list-style-image">lists</a>.</p>
+<p>Let's begin with a standard unordered list:</p>
+<pre><code>&lt;h3&gt;Standard Unordered List&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Watermelon&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>We can use the <code>list-style-position</code> to alter the position of the bullets.
+This also works for ordered lists using the <code>&lt;ol&gt;</code> element:</p>
+<pre><code>.inside {
+    list-style-position: inside;
+}
+</code></pre>
+<p>In the following HTML, I apply the position using a class:</p>
+<pre><code>&lt;h3&gt;Unordered List: Inside Position&lt;/h3&gt;
+&lt;ul class="inside"&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Watermelon&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>In ordered lists, we can reverse the order of the counter using the <code>reverse</code> attribute (no CSS needed!):</p>
+<pre><code>&lt;h3&gt;Reversed Ordered List&lt;/h3&gt;
+&lt;ol reversed&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Watermelon&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<p>We can also begin counting at arbitrary numbers (whole numbers only, though):</p>
+<pre><code>&lt;h3&gt;New List Counter&lt;/h3&gt;
+&lt;ol start="10"&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Watermelon&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<p>We can combine both attributes.
+In the following example, we start the count at <code>10</code> and then countdown using the <code>reverse</code> attribute:</p>
+<pre><code>&lt;h3&gt;Reversed New List Counter&lt;/h3&gt;
+&lt;ol start="10" reversed&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Watermelon&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<p>We can change to Roman numerals:</p>
+<pre><code>&lt;h3&gt;Upper Roman Numeral&lt;/h3&gt;
+&lt;ul class="roman_upper"&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Watermelon&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Lower Roman Numeral&lt;/h3&gt;
+&lt;ul class="roman_lower"&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Watermelon&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>We define the use of Roman numerals in CSS.
+To use uppercase Roman numerals, we use <code>list-style-type: upper-roman</code>.
+To use lowercase Roman numerals, we use <code>list-style-type: lower-roman</code>.</p>
+<pre><code>.roman_upper {
+    list-style-type: upper-roman;
+}
+
+.roman_lower {
+    list-style-type: lower-roman;
+}
+</code></pre>
+<p>We can also use English characters by using either
+<code>list-style-type: lower-alpha</code> or <code>list-style-type: upper-alpha</code>:</p>
+<p><strong>HTML</strong>:</p>
+<pre><code>&lt;h3&gt;Lower Alpha&lt;/h3&gt;
+&lt;ul class="alpha_lower"&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Watermelon&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Upper Alpha&lt;/h3&gt;
+&lt;ul class="alpha_upper"&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Watermelon&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p><strong>CSS</strong>:</p>
+<pre><code>.alpha_lower {
+    list-style-type: lower-alpha;
+}
+
+.alpha_upper {
+    list-style-type: upper-alpha;
+}
+</code></pre>
+<p>We can remove all marks using <code>list-style-type: none</code>:</p>
+<p><strong>HTML</strong>:</p>
+<pre><code>&lt;h3&gt;No Marks&lt;/h3&gt;
+&lt;ol class="no_marks"&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Watermelon&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<p><strong>CSS</strong>:</p>
+<pre><code>.no_marks {
+    list-style-type: none;
+}
+</code></pre>
+<p>Or may also specify using a <code>circle</code>, a <code>disc</code>, unicode, or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type">other characters</a>.</p>
+<p><strong>HTML</strong>:</p>
+<pre><code>&lt;h3&gt;Circle&lt;/h3&gt;
+&lt;ol class="circle"&gt; 
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Watermelon&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<p><strong>CSS</strong>:</p>
+<pre><code>.circle {
+    list-style-type: circle;
+}
+</code></pre>
+<p>If we want to use Emojis as our markers, then we need to use the corresponding Unicode for the emoji.
+See the <a href="https://unicode.org/emoji/charts/full-emoji-list.html">Full Emoji List</a> for ideas.
+In the following example, I use the <a href="https://unicode.org/emoji/charts/full-emoji-list.html#1f596">Vulcan Salute</a> as a marker for my list:</p>
+<pre><code>&lt;h3&gt;Vulcan Salute&lt;/h3&gt;
+&lt;ol class="vulcan"&gt; 
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Watermelon&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<p><strong>CSS</strong>:</p>
+<pre><code>.vulcan {
+    list-style-type: "\1F596";
+}
+</code></pre>
+<p>We can also use our own images.
+In the examples below, I used ChatGPT to generate icons for the fruit images.
+These icons were generated as <a href="https://en.wikipedia.org/wiki/WebP"><code>webp</code></a> files, and
+I refer to them using using the <code>url</code> value in the CSS.</p>
+<p>In the first list below, I use one icon for all marks:</p>
+<p><strong>HTML</strong>:</p>
+<pre><code>&lt;h3&gt;Unordered List Using Images&lt;/h3&gt;
+&lt;ul class="fruit_basket"&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Watermelon&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p><strong>CSS</strong>:</p>
+<pre><code>.fruit_basket {
+    list-style-image: url('media/fruit.webp');
+}
+</code></pre>
+<p>In the following list, I use a separate fruit icon for each item in the list:</p>
+<pre><code>&lt;h3&gt;Unordered List Using Separate Images&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li class="apple"&gt;Apple&lt;/li&gt;
+    &lt;li class="banana"&gt;Banana&lt;/li&gt;
+    &lt;li class="watermelon"&gt;Watermelon&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p><strong>CSS</strong>:</p>
+<pre><code>.apple {
+    list-style-image: url('media/apple.webp');
+}
+
+.banana {
+    list-style-image: url('media/banana.webp');
+}
+
+.watermelon {
+    list-style-image: url('media/watermelon.webp');
+}
+</code></pre>
+<p>Although not technically styling, there are other things to know about lists.
+For example, we can nest lists, or include lists in lists.
+The result creates an outline.
+In the folloiwng example, I add an ordered list within an ordered list:</p>
+<pre><code>&lt;h4&gt;Ordered Nested&lt;/h4&gt;
+&lt;ol&gt;
+    &lt;li&gt;Apples
+        &lt;ol&gt;
+            &lt;li&gt;HoneyCrisp&lt;/li&gt;
+            &lt;li&gt;Fuji&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Bananas
+        &lt;ol&gt;
+            &lt;li&gt;Cavendish&lt;/li&gt;
+            &lt;li&gt;Plantain&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Watermelon
+        &lt;ol&gt;
+            &lt;li&gt;Crimson Sweet&lt;/li&gt;
+            &lt;li&gt;Yellow Baby&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<p>Likewise, we can nest an unordered list within an unordered list:</p>
+<pre><code>&lt;h4&gt;Unordered Nested&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;Apples
+        &lt;ul&gt;
+            &lt;li&gt;Honeycrisp&lt;/li&gt;
+            &lt;li&gt;Fuji&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Bananas
+        &lt;ul&gt;
+            &lt;li&gt;Cavendish&lt;/li&gt;
+            &lt;li&gt;Plantain&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Watermelon
+        &lt;ul&gt;
+            &lt;li&gt;Crimson Sweet&lt;/li&gt;
+            &lt;li&gt;Yellow Baby&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>We can also mix ordered and unordered lists when nesting.
+In the following two lists, I nest an unordered list within an ordered list.
+Then an ordered list within an unordered list.</p>
+<pre><code>&lt;h4&gt;Ordered/Unordered Nested&lt;/h4&gt;
+&lt;ol&gt;
+    &lt;li&gt;Apples
+        &lt;ul&gt;
+            &lt;li&gt;Honeycrisp&lt;/li&gt;
+            &lt;li&gt;Fuji&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Bananas
+        &lt;ul&gt;
+            &lt;li&gt;Cavendish&lt;/li&gt;
+            &lt;li&gt;Plantain&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Watermelon
+        &lt;ul&gt;
+            &lt;li&gt;Crimson Sweet&lt;/li&gt;
+            &lt;li&gt;Yellow Baby&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4&gt;Unordered/Ordered Nested&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;Apples
+        &lt;ol&gt;
+            &lt;li&gt;Honeycrisp&lt;/li&gt;
+            &lt;li&gt;Fuji&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Bananas
+        &lt;ol&gt;
+            &lt;li&gt;Cavendish&lt;/li&gt;
+            &lt;li&gt;Plantain&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Watermelon
+        &lt;ol&gt;
+            &lt;li&gt;Crimson Sweet&lt;/li&gt;
+            &lt;li&gt;Yellow Baby&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>When nesting, we can apply a different <code>list-style-type</code> for the nested lists:</p>
+<pre><code>&lt;h4&gt;Roman Upper/Lower Nested&lt;/h4&gt;
+&lt;ol class="roman_upper"&gt;
+    &lt;li&gt;Apples
+        &lt;ul class="roman_lower"&gt;
+            &lt;li&gt;Honeycrisp&lt;/li&gt;
+            &lt;li&gt;Fuji&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Bananas
+        &lt;ul class="roman_lower"&gt;
+            &lt;li&gt;Cavendish&lt;/li&gt;
+            &lt;li&gt;Plantain&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Watermelon
+        &lt;ul&gt;
+            &lt;li&gt;Crimson Sweet&lt;/li&gt;
+            &lt;li&gt;Yellow Baby&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<ul>
 <li><a href="https://www.w3.org/TR/css-backgrounds-3/#propdef-background-image">CSS Backgrounds and Borders Module 3</a></li>
 </ul>
-<h2 id=""><a class="header" href="#"></a></h2>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="responsive-layouts-with-flexbox-and-grid"><a class="header" href="#responsive-layouts-with-flexbox-and-grid">Responsive Layouts with Flexbox and Grid</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="flexbox-basics"><a class="header" href="#flexbox-basics">Flexbox Basics</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="grid-layout-basics"><a class="header" href="#grid-layout-basics">Grid Layout Basics</a></h1>
