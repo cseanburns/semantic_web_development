@@ -423,6 +423,7 @@ A value of <code>0.0</code> indicates full transparency and a value of <code>1.0
 <p>We can create <strong>ordered</strong> or <strong>unordered</strong> lists using the <code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code> HTML elements.
 CSS offers flexibility in customizing <a href="https://www.w3.org/TR/css-lists-3/#propdef-list-style-image">lists</a>.
 We can use images, emojis, or custom markers for list items.</p>
+<h3 id="standard-lists"><a class="header" href="#standard-lists">Standard Lists</a></h3>
 <p>Let's begin with a standard unordered list:</p>
 <pre><code>&lt;h3&gt;Standard Unordered List&lt;/h3&gt;
 &lt;ul&gt;
@@ -431,6 +432,7 @@ We can use images, emojis, or custom markers for list items.</p>
     &lt;li&gt;Watermelon&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
+<h3 id="list-marker-positions"><a class="header" href="#list-marker-positions">List Marker Positions</a></h3>
 <p>We can use the <code>list-style-position</code> to alter the position of the bullets.
 This also works for ordered lists using the <code>&lt;ol&gt;</code> element:</p>
 <pre><code>.inside {
@@ -445,6 +447,7 @@ This also works for ordered lists using the <code>&lt;ol&gt;</code> element:</p>
     &lt;li&gt;Watermelon&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
+<h3 id="reverse-lists"><a class="header" href="#reverse-lists">Reverse Lists</a></h3>
 <p>In ordered lists, we can reverse the order of the counter using the <code>reverse</code> attribute (no CSS needed!):</p>
 <pre><code>&lt;h3&gt;Reversed Ordered List&lt;/h3&gt;
 &lt;ol reversed&gt;
@@ -453,6 +456,7 @@ This also works for ordered lists using the <code>&lt;ol&gt;</code> element:</p>
     &lt;li&gt;Watermelon&lt;/li&gt;
 &lt;/ol&gt;
 </code></pre>
+<h3 id="list-values"><a class="header" href="#list-values">List Values</a></h3>
 <p>We can also begin counting at arbitrary numbers (whole numbers only, though):</p>
 <pre><code>&lt;h3&gt;New List Counter&lt;/h3&gt;
 &lt;ol start="10"&gt;
@@ -470,6 +474,7 @@ In the following example, we start the count at <code>10</code> and then countdo
     &lt;li&gt;Watermelon&lt;/li&gt;
 &lt;/ol&gt;
 </code></pre>
+<h3 id="roman-numerals"><a class="header" href="#roman-numerals">Roman Numerals</a></h3>
 <p>We can change to Roman numerals:</p>
 <pre><code>&lt;h3&gt;Upper Roman Numeral&lt;/h3&gt;
 &lt;ul class="roman_upper"&gt;
@@ -496,6 +501,7 @@ To use lowercase Roman numerals, we use <code>list-style-type: lower-roman</code
     list-style-type: lower-roman;
 }
 </code></pre>
+<h3 id="english-characters"><a class="header" href="#english-characters">English Characters</a></h3>
 <p>We can also use English characters by using either
 <code>list-style-type: lower-alpha</code> or <code>list-style-type: upper-alpha</code>:</p>
 <p><strong>HTML</strong>:</p>
@@ -522,6 +528,7 @@ To use lowercase Roman numerals, we use <code>list-style-type: lower-roman</code
     list-style-type: upper-alpha;
 }
 </code></pre>
+<h3 id="removing-list-markers"><a class="header" href="#removing-list-markers">Removing List Markers</a></h3>
 <p>We can remove all marks using <code>list-style-type: none</code>:</p>
 <p><strong>HTML</strong>:</p>
 <pre><code>&lt;h3&gt;No Marks&lt;/h3&gt;
@@ -536,6 +543,7 @@ To use lowercase Roman numerals, we use <code>list-style-type: lower-roman</code
     list-style-type: none;
 }
 </code></pre>
+<h3 id="changing-list-markers"><a class="header" href="#changing-list-markers">Changing List Markers</a></h3>
 <p>Or may also specify using a <code>circle</code>, a <code>disc</code>, Unicode, or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type">other characters</a>.</p>
 <p><strong>HTML</strong>:</p>
 <pre><code>&lt;h3&gt;Circle&lt;/h3&gt;
@@ -550,6 +558,7 @@ To use lowercase Roman numerals, we use <code>list-style-type: lower-roman</code
     list-style-type: circle;
 }
 </code></pre>
+<h3 id="emojis-as-list-markers"><a class="header" href="#emojis-as-list-markers">Emojis as List Markers</a></h3>
 <p>If we want to use emojis as our markers, then we need to use the corresponding Unicode for the emoji.
 See the <a href="https://unicode.org/emoji/charts/full-emoji-list.html">Full Emoji List</a> for ideas.
 In the following example, I use the <a href="https://unicode.org/emoji/charts/full-emoji-list.html#1f596">Vulcan Salute</a> as a marker for my list:</p>
@@ -565,6 +574,7 @@ In the following example, I use the <a href="https://unicode.org/emoji/charts/fu
     list-style-type: "\1F596";
 }
 </code></pre>
+<h3 id="custom-images-as-list-markers"><a class="header" href="#custom-images-as-list-markers">Custom Images as List Markers</a></h3>
 <p>We can also use our own images.
 In the examples below, I used ChatGPT to generate icons for the fruit images.
 These icons were generated as <a href="https://en.wikipedia.org/wiki/WebP"><code>webp</code></a> files, and
@@ -604,8 +614,10 @@ I refer to them using using the <code>url</code> value in the CSS.</p>
     list-style-image: url('media/watermelon.webp');
 }
 </code></pre>
-<p>Additionally, we can nest lists to create outlines or apply different <code>list-style-type</code> values for more variety.
-In the following example, I add an ordered list within an ordered list:</p>
+<h3 id="nested-lists"><a class="header" href="#nested-lists">Nested Lists</a></h3>
+<p>Additionally, we can nest lists to create outlines or apply different <code>list-style-type</code> values for more variety.</p>
+<h4 id="nested-ordered-lists"><a class="header" href="#nested-ordered-lists">Nested Ordered Lists</a></h4>
+<p>In the following example, I add an ordered list within an ordered list:</p>
 <pre><code>&lt;h4&gt;Ordered Nested&lt;/h4&gt;
 &lt;ol&gt;
     &lt;li&gt;Apples
@@ -628,6 +640,7 @@ In the following example, I add an ordered list within an ordered list:</p>
     &lt;/li&gt;
 &lt;/ol&gt;
 </code></pre>
+<h4 id="nested-unordered-lists"><a class="header" href="#nested-unordered-lists">Nested Unordered Lists</a></h4>
 <p>Likewise, we can nest an unordered list within an unordered list:</p>
 <pre><code>&lt;h4&gt;Unordered Nested&lt;/h4&gt;
 &lt;ul&gt;
@@ -651,9 +664,11 @@ In the following example, I add an ordered list within an ordered list:</p>
     &lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
+<h4 id="nested-mixed-lists"><a class="header" href="#nested-mixed-lists">Nested Mixed Lists</a></h4>
 <p>We can also mix ordered and unordered lists when nesting.
 In the following two lists, I nest an unordered list within an ordered list.
 Then an ordered list within an unordered list.</p>
+<h5 id="ordered-to-unordered"><a class="header" href="#ordered-to-unordered">Ordered to Unordered</a></h5>
 <pre><code>&lt;h4&gt;Ordered/Unordered Nested&lt;/h4&gt;
 &lt;ol&gt;
     &lt;li&gt;Apples
@@ -675,8 +690,10 @@ Then an ordered list within an unordered list.</p>
         &lt;/ul&gt;
     &lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;h4&gt;Unordered/Ordered Nested&lt;/h4&gt;
+</code></pre>
+<h5 id="unordered-to-ordered"><a class="header" href="#unordered-to-ordered">Unordered to Ordered</a></h5>
+<p>In this example, I nest ordered lists in an unordered list:</p>
+<pre><code>&lt;h4&gt;Unordered/Ordered Nested&lt;/h4&gt;
 &lt;ul&gt;
     &lt;li&gt;Apples
         &lt;ol&gt;
@@ -698,6 +715,7 @@ Then an ordered list within an unordered list.</p>
     &lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
+<h4 id="nested-mixed-style-types"><a class="header" href="#nested-mixed-style-types">Nested, Mixed Style Types</a></h4>
 <p>When nesting, we can apply a different <code>list-style-type</code> for the nested lists:</p>
 <pre><code>&lt;h4&gt;Roman Upper/Lower Nested&lt;/h4&gt;
 &lt;ol class="roman_upper"&gt;
