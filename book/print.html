@@ -3847,10 +3847,13 @@ In the CSS below, I use the <code>img</code> selector with the specified <code>w
     height: 378px;
 }
 </code></pre>
+<p>It's important to understand that resizing images directly in HTML or CSS does not reduce the image's <strong>file size</strong>.
+It only reduces the <strong>display size</strong>.
+Therefore, be sure to properly resize the image using a photo editor to optimize your web page's performance.</p>
 <h3 id="object-fit"><a class="header" href="#object-fit"><code>object-fit</code></a></h3>
 <p>Recall that the <a href="3b-box-model.html">CSS box model</a> informs everything about how content is styled on a page.
 This means that even images are enclosed within boxes.
-The following HTML code adds a simple drawing to our web page and the CSS code sets a border, background color, and dimensions.</p>
+The following HTML code adds a simple drawing to our web page, and the CSS code sets a border, background color, and dimensions.</p>
 <p><strong>HTML:</strong></p>
 <pre><code>&lt;img src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
 </code></pre>
@@ -3863,7 +3866,7 @@ The following HTML code adds a simple drawing to our web page and the CSS code s
 }
 </code></pre>
 <p>Using the <a href="https://www.w3.org/TR/css-images-3/#sizing"><code>object-fit</code></a> property, we can scale the image within the box.
-We can use values such as <code>fill</code>, <code>contain</code>, <code>cover</code>, <code>none</code>, and <code>scale-down</code>.
+Values include <code>fill</code>, <code>contain</code>, <code>cover</code>, <code>none</code>, and <code>scale-down</code>.
 In the HTML code below, I use classes to style the same image for each of those values:</p>
 <pre><code>&lt;h3&gt;Fill&lt;/h3&gt;
 &lt;img class="fill" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
@@ -3902,9 +3905,9 @@ In the HTML code below, I use classes to style the same image for each of those 
 }
 </code></pre>
 <h3 id="position"><a class="header" href="#position">Position</a></h3>
-<p>Images may also be positioned within its surrounding box using the <a href="https://www.w3.org/TR/css-images-3/#the-object-position"><code>object-position</code></a> property.
-An image's position is defined by its x-axis and y-axis coordinates and defaults to 50% on both axes, or centered.
-However, we can move an image within its box by adjusting these coordinates.
+<p>Images may also be positioned within their surrounding boxes using the <a href="https://www.w3.org/TR/css-images-3/#the-object-position"><code>object-position</code></a> property.
+By default, an image's position is centered in its box.
+We can adjust the x-axis and y-axis coordinates to move the image within its box.
 In the HTML below, I use classes to specify the position of the images:
 default, top, right, bottom, and left.</p>
 <pre><code>&lt;h3&gt;Image Default&lt;/h3&gt;
@@ -3940,8 +3943,8 @@ default, top, right, bottom, and left.</p>
 }
 </code></pre>
 <h3 id="transform"><a class="header" href="#transform">Transform</a></h3>
-<p>We can also transform an image.
-For example, we may <q>rotate, scale, skew, or tranlate</q> (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">MDN <code>transform</code></a>) an image (and other elements, too).
+<p>We can also transform images and <q>rotate, scale, skew, or translate</q> (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">MDN <code>transform</code></a>) them
+(and other elements, too).
 Consider the basic HTML code:</p>
 <pre><code>&lt;img class="flip" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
 </code></pre>
@@ -3952,11 +3955,10 @@ Consider the basic HTML code:</p>
 </code></pre>
 <p>See the link above for examples of the other methods.</p>
 <h3 id="floats"><a class="header" href="#floats">Floats</a></h3>
-<p>We often use images adjacent to other elements, such as text in paragraphs.
-In such scenarios, we may wish to position an image next to the text to emphasize it in certain ways.
-In such cases, we can use the <a href="https://www.w3.org/TR/css-page-floats-3/#float-property"><code>float</code></a> property.
-Consider the following HTML examples.
-In each example, we position an <code>&lt;img&gt;</code> element adjacent to a <code>&lt;p&gt;</code> element.
+<p>The <a href="https://www.w3.org/TR/css-page-floats-3/#float-property"><code>float</code></a> property lets us position images adjacent to text (or other elements).
+This technique is useful when creating layouts where text wraps around images.</p>
+<p>Consider the following HTML examples.
+In each example, we add an <code>&lt;img&gt;</code> element adjacent to a <code>&lt;p&gt;</code> element.
 In the first example, we use the default behavior, which is to not <code>float</code> the image:</p>
 <pre><code>&lt;h3&gt;No Float (Default)&lt;/h3&gt;
 &lt;img class="small" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
@@ -4006,8 +4008,7 @@ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
 laborum.&lt;/p&gt;
 </code></pre>
 <h3 id="gradients"><a class="header" href="#gradients">Gradients</a></h3>
-<p>We can style our images using <a href="https://www.w3.org/TR/css-images-3/#gradients"><code>gradients</code></a>.
-In the following examples, I use classes again to define types of gradients to use.
+<p>We can use <a href="https://www.w3.org/TR/css-images-3/#gradients"><code>gradient</code></a> colors to style images or backgrounds.
 We can apply gradients using angles (e.g., <code>45deg</code>) or keywords (e.g., <code>to top</code>).
 See the link above for other examples.</p>
 <pre><code>&lt;h3&gt;Linear Gradient&lt;/h3&gt;
@@ -4019,7 +4020,7 @@ See the link above for other examples.</p>
 &lt;h3&gt;Linear Gradient Using Keywords&lt;/h3&gt;
 &lt;img class="top" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
 </code></pre>
-<p>In CSS below, I use a default <code>linear-gradient</code> in the first class.
+<p>In CSS below, I use a default <code>linear-gradient</code> in the first CSS class.
 In the second class, I use degrees to specify the exact gradient angle.
 In the third class, I use the <code>to top</code> keyword.</p>
 <pre><code>.linear {
@@ -4064,8 +4065,9 @@ A value of <code>0.0</code> indicates full transparency and a value of <code>1.0
 }
 </code></pre>
 <h2 id="lists"><a class="header" href="#lists">Lists</a></h2>
-<p>As you recall, we can create either <strong>ordered</strong> or <strong>unordered</strong> lists using the <code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code> HTML elements.
-But we can do so much more with <a href="https://www.w3.org/TR/css-lists-3/#propdef-list-style-image">lists</a>.</p>
+<p>We can create <strong>ordered</strong> or <strong>unordered</strong> lists using the <code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code> HTML elements.
+CSS offers flexibility in customizing <a href="https://www.w3.org/TR/css-lists-3/#propdef-list-style-image">lists</a>.
+We can use images, emojis, or custom markers for list items.</p>
 <p>Let's begin with a standard unordered list:</p>
 <pre><code>&lt;h3&gt;Standard Unordered List&lt;/h3&gt;
 &lt;ul&gt;
@@ -4179,7 +4181,7 @@ To use lowercase Roman numerals, we use <code>list-style-type: lower-roman</code
     list-style-type: none;
 }
 </code></pre>
-<p>Or may also specify using a <code>circle</code>, a <code>disc</code>, unicode, or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type">other characters</a>.</p>
+<p>Or may also specify using a <code>circle</code>, a <code>disc</code>, Unicode, or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type">other characters</a>.</p>
 <p><strong>HTML</strong>:</p>
 <pre><code>&lt;h3&gt;Circle&lt;/h3&gt;
 &lt;ol class="circle"&gt; 
@@ -4193,7 +4195,7 @@ To use lowercase Roman numerals, we use <code>list-style-type: lower-roman</code
     list-style-type: circle;
 }
 </code></pre>
-<p>If we want to use Emojis as our markers, then we need to use the corresponding Unicode for the emoji.
+<p>If we want to use emojis as our markers, then we need to use the corresponding Unicode for the emoji.
 See the <a href="https://unicode.org/emoji/charts/full-emoji-list.html">Full Emoji List</a> for ideas.
 In the following example, I use the <a href="https://unicode.org/emoji/charts/full-emoji-list.html#1f596">Vulcan Salute</a> as a marker for my list:</p>
 <pre><code>&lt;h3&gt;Vulcan Salute&lt;/h3&gt;
@@ -4247,10 +4249,8 @@ I refer to them using using the <code>url</code> value in the CSS.</p>
     list-style-image: url('media/watermelon.webp');
 }
 </code></pre>
-<p>Although not technically styling, there are other things to know about lists.
-For example, we can nest lists, or include lists in lists.
-The result creates an outline.
-In the folloiwng example, I add an ordered list within an ordered list:</p>
+<p>Additionally, we can nest lists to create outlines or apply different <code>list-style-type</code> values for more variety.
+In the following example, I add an ordered list within an ordered list:</p>
 <pre><code>&lt;h4&gt;Ordered Nested&lt;/h4&gt;
 &lt;ol&gt;
     &lt;li&gt;Apples
@@ -4366,9 +4366,75 @@ Then an ordered list within an unordered list.</p>
     &lt;/li&gt;
 &lt;/ol&gt;
 </code></pre>
-<ul>
-<li><a href="https://www.w3.org/TR/css-backgrounds-3/#propdef-background-image">CSS Backgrounds and Borders Module 3</a></li>
-</ul>
+<h2 id="styling-the-background"><a class="header" href="#styling-the-background">Styling the Background</a></h2>
+<p>We can set the background color of an HTML page by using the <a href="https://www.w3.org/TR/css-backgrounds-3/#backgrounds"><code>background</code> property</a>.
+For example, if we want a black background with white text, then we can set that using the <code>html</code> selector:</p>
+<pre><code>html {
+    background: black;
+    color: white;
+}
+</code></pre>
+<p>But we have tools to offer more control using <a href="https://www.w3.org/TR/css-images-3/#gradients">gradients</a>.
+For example, we can create cool gradient effects with <code>linear-gradient</code>, <code>radial-gradient</code>, <code>conic-gradient</code>, and other properties.
+In the following example, I use the <code>linear-gradient</code> property to create a white and gray gradient across the page:</p>
+<pre><code>html {
+    background: linear-gradient(white, gray);
+}
+</code></pre>
+<p>And the <code>radial-gradient</code> property to create a yellow and green radial gradient across the page:</p>
+<pre><code>html {
+    background: radial-gradient(yellow, green);
+}
+</code></pre>
+<p>We can also use gradient keywords.
+In the example below, I create a radial gradient focused on the left bottom of the page:</p>
+<pre><code>html {
+    background: radial-gradient(farthest-side at left bottom, yellow 50px, green);
+}
+</code></pre>
+<p>When using images for the background, we use the <code>url</code> keyword with the location to the image.
+By default, background images repeat across the x-axis and y-axis.
+I use an image of a small grid or square to create a kind of notebook effect for the page:</p>
+<pre><code>html {
+    background: url('media/small_grid.gif');
+}
+</code></pre>
+<p>We need to use the <code>background-repeat: no-repeat</code> property and value to disble image repeating:</p>
+<pre><code>html {
+    background: url('media/squiggly.png');
+    background-repeat: no-repeat;
+}
+</code></pre>
+<p>We can control the axis where the image repeats and the position on the page with
+the <code>repeat-x</code> value and <code>background-position: center;</code> declaration:</p>
+<pre><code>html {
+    background: url('media/squiggly.png');
+    background-repeat: repeat-x;
+    background-position: center;
+}
+</code></pre>
+<p>And the same for the y-axis:</p>
+<pre><code>html {
+    background: url('media/squiggly.png');
+    background-repeat: repeat-y;
+    background-position: center;
+}
+</code></pre>
+<p>We can also fix the image to a specific location so that the image remains fixed when the user scrolls the page:</p>
+<pre><code>html {
+    background: url('media/squiggly.png');
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+}
+</code></pre>
+<h2 id="conclusion-15"><a class="header" href="#conclusion-15">Conclusion</a></h2>
+<p>In this section, we covered various CSS techniques for styling images, lists, and backgrounds.
+We manipulated images with properties like <code>object-fit</code> and <code>transform</code>,
+we customized lists with different styles and markers,
+and we also explored backgrounds with gradients, fixed positions, and background images.
+CSS offers a lot of flexibility.</p>
+<p>Please experiment with these concepts to create visually engaging and user-friendly (or wild looking) web pages.
+Have fun, practice, and build your knowledge.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="responsive-layouts-with-flexbox-and-grid"><a class="header" href="#responsive-layouts-with-flexbox-and-grid">Responsive Layouts with Flexbox and Grid</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="flexbox-basics"><a class="header" href="#flexbox-basics">Flexbox Basics</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="grid-layout-basics"><a class="header" href="#grid-layout-basics">Grid Layout Basics</a></h1>
