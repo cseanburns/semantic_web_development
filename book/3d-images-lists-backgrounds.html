@@ -222,7 +222,7 @@ The following HTML code adds a simple drawing to our web page, and the CSS code 
 </code></pre>
 <p>Using the <a href="https://www.w3.org/TR/css-images-3/#sizing"><code>object-fit</code></a> property, we can scale the image within the box.
 Values include <code>fill</code>, <code>contain</code>, <code>cover</code>, <code>none</code>, and <code>scale-down</code>.
-In the HTML code below, I use classes to style the same image for each of those values:</p>
+First, in the HTML code below, I use classes to style the same image for each of those values.</p>
 <pre><code>&lt;h3&gt;Fill&lt;/h3&gt;
 &lt;img class="fill" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
 
@@ -238,24 +238,31 @@ In the HTML code below, I use classes to style the same image for each of those 
 &lt;h3&gt;Scale Down&lt;/h3&gt;
 &lt;img class="scale-down" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
 </code></pre>
-<p>In the CSS code below, I apply the <code>object-fit</code> property to the appropriate classes:</p>
+<p>In the CSS code below, I apply the <code>object-fit</code> property to the appropriate classes in the above HTML.</p>
+<p>The original image (<code>box_image.png</code>) has the dimensions of <code>513x503</code>,
+but we set the <code>width: 300px</code> and <code>height: 400px</code> in the <code>img</code> selector.
+Therefore, the <code>fill</code> value will distort the image so that it fills the box:</p>
 <pre><code>.fill {
     object-fit: fill;
 }
-
-.contain {
+</code></pre>
+<p>The <code>contain</code> value scales the content so that it maintains its original aspect ratio:</p>
+<pre><code>.contain {
     object-fit: contain;
 }
-
-.cover {
+</code></pre>
+<p>The <code>cover</code> value scales the content so the content completely covers the box and preserves the original aspect ratio:</p>
+<pre><code>.cover {
     object-fit: cover;
 }
-
-.none {
+</code></pre>
+<p>The <code>none</code> value displays the content at its original size (513x503):</p>
+<pre><code>.none {
     object-fit: none;
 }
-
-.scale-down {
+</code></pre>
+<p>The <code>scale-down</code> value displays the content at its smallest possible size between <code>none</code> and <code>contain</code>:</p>
+<pre><code>.scale-down {
     object-fit: scale-down;
 }
 </code></pre>
