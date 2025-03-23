@@ -257,6 +257,18 @@ cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
 laborum.</p>
 ```
 
+To create that effect, I create a class for this element and add `float: left`.
+I add a few pixels on the right margin of the `img` to add a gap between the image and the text.
+
+```
+.left_float {
+	width: 75px;
+	height: 75px;
+	float: left;
+	margin-right: 5px;
+}
+```
+
 In the last example, we `float` the image to the right of the text:
 
 ```
@@ -274,6 +286,18 @@ culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat
 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
 laborum.</p>
+```
+
+Similar to the left float above, below the CSS simply floats the right using `float: right`.
+Also note that I change the margin side to left with `margin-left`:
+
+```
+.right_float {
+	width: 75px;
+	height: 75px;
+	float: right;
+	margin-left: 5px;
+}
 ```
 
 ### Gradients
