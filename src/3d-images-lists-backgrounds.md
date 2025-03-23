@@ -63,7 +63,7 @@ img {
 
 Using the [`object-fit`][object_fit_w3] property, we can scale the image within the box.
 Values include `fill`, `contain`, `cover`, `none`, and `scale-down`.
-In the HTML code below, I use classes to style the same image for each of those values:
+First, in the HTML code below, I use classes to style the same image for each of those values.
 
 ```
 <h3>Fill</h3>
@@ -82,25 +82,45 @@ In the HTML code below, I use classes to style the same image for each of those 
 <img class="scale-down" src='media/box_circle.png' alt='A drawing of a box in a circle'>
 ```
 
-In the CSS code below, I apply the `object-fit` property to the appropriate classes:
+In the CSS code below, I apply the `object-fit` property to the appropriate classes in the above HTML.
+
+The original image (`box_image.png`) has the dimensions of `513x503`,
+but we set the `width: 300px` and `height: 400px` in the `img` selector.
+Therefore, the `fill` value will distort the image so that it fills the box:
 
 ```
 .fill {
     object-fit: fill;
 }
+```
 
+The `contain` value scales the content so that it maintains its original aspect ratio:
+
+```
 .contain {
     object-fit: contain;
 }
+```
 
+The `cover` value scales the content so the content completely covers the box and preserves the original aspect ratio:
+
+```
 .cover {
     object-fit: cover;
 }
+```
 
+The `none` value displays the content at its original size (513x503):
+
+```
 .none {
     object-fit: none;
 }
+```
 
+The `scale-down` value displays the content at its smallest possible size between `none` and `contain`:
+
+```
 .scale-down {
     object-fit: scale-down;
 }
