@@ -3822,17 +3822,34 @@ Keep those visitors in mind, always!</p>
 <p>Finally, focus on the principles:
 readability, legibility, hierarchy, consistency, alignment and balance, contrast, and white space.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="styling-images-lists-and-backgrounds"><a class="header" href="#styling-images-lists-and-backgrounds">Styling Images, Lists, and Backgrounds</a></h1>
+<h2 id="introduction-8"><a class="header" href="#introduction-8">Introduction</a></h2>
 <p>We have discussed how to add <a href="2e-embedded-content.html">images</a> to our web pages.
 Now it's time to learn to style them.
 We will also learn how to style lists, which will include adding images to our lists,
 and styling the background canvas of a web page.
 For the full documentation, see <a href="https://www.w3.org/TR/css-images-3/#image-values">CSS Images Module Level 3</a>.</p>
-<h2 id="images"><a class="header" href="#images">Images</a></h2>
+<h2 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h2>
 <p>When we add images to a web page, we want to make sure that our images have been properly sized in a separate photo editor.
 For example, if I add a photo to a web page that has the resolution of something like 1920x1080 pixels,
-then the photo will be several megabytes in size.
+then the photo may be several megabytes in size.
 A photo this large uses more bandwidth, which may slow down how quickly the web page displays in the browser.
 Therefore, before we tinker with sizes in HTML or CSS, we need to reduce the resolution of our images in a separate photo editor.</p>
+<p>Second, we may want to change the default format of our images.
+Most of our cameras will default to saving photos as JPEGs.
+Or we might generate images in PNG format.
+These are both popular image formats that are used on the web, along with GIFs.
+However, another popular format is <a href="https://en.wikipedia.org/wiki/WebP">WEBP</a>, an image format optimized for the web and
+that supports <a href="https://en.wikipedia.org/wiki/Lossy_compression">lossy</a> and <a href="https://en.wikipedia.org/wiki/Lossless_compression">lossless</a> compression, transparency, and animation.
+Photo and other types of image editors can export images to WEBP.
+For example, in the <a href="https://www.gimp.org/">GIMP photo editor</a>, I can export photos as WEBP and choose lossless or lossy compression when exporting.</p>
+<p>Another excellent image format is <a href="https://en.wikipedia.org/wiki/SVG">SVG</a> (Scalable Vector Graphics).
+SVG formats are used for vector based images and are the default file format for programs like <a href="https://inkscape.org/">Inkscape</a>.
+These images are ideal for images that are drawn, like logos, icons, or similar forms of visual art.
+Also, since SVG files are text files, we can use scripting languages, like Python, to modify them.
+But one of the most important characteristics of SVG files is that they are scalable.
+That is, no matter how much we zoom in or out on a SVG file, the image will retain its resolution,
+unlike raster or bitmap based images, which will become pixelated.</p>
+<h2 id="images"><a class="header" href="#images">Images</a></h2>
 <p>In HTML and CSS, we can set the values of an image with simple <code>width</code> and <code>height</code> settings.
 For example, in HTML, we can use the <code>width</code> and <code>height</code> attributes:</p>
 <pre><code>&lt;img src="media/walking_bridge.jpg"
@@ -4460,6 +4477,34 @@ and we also explored backgrounds with gradients, fixed positions, and background
 CSS offers a lot of flexibility.</p>
 <p>Please experiment with these concepts to create visually engaging and user-friendly (or wild looking) web pages.
 Have fun, practice, and build your knowledge.</p>
+<h2 id="appendix-favicons"><a class="header" href="#appendix-favicons">Appendix: Favicons</a></h2>
+<p>Your browser will display a <a href="https://en.wikipedia.org/wiki/Favicon">favicon</a> for a site in the site's tab, bookmark, etc.
+You can create favicons using most of the major file formats: PNG, JPEG, SVG.
+You can also use the <a href="https://en.wikipedia.org/wiki/ICO_(file_format)">ICO</a> file format.
+The important thing to know is that favicons may be created in mutiple sizes and
+but should maintain a perfectly square ratio (1:1 aspect ratio).
+The most common sizes are 16x16 pixels, 32x32 pixels, 48x48 pixels, 96x96 pixels, etc.
+These sizes are used on different devices or under different views (tab, bookmark, etc).
+<a href="https://developers.google.com/search/docs/appearance/favicon-in-search">Google</a> suggests using a favicon that's larger than 48x48px.
+However, it's common to make available multiple sizes and the browser can choose which one to use.</p>
+<p>Favicons can be created in a photo editor, like GIMP, or better yet, in an SVG editor, like Inkscape.
+To use a favicon on a site, we use the <code>&lt;link&gt;</code> tag in the <code>&lt;head&gt;</code> of a web document.
+The following is an example of linking to four different files in a separate <code>icons/</code> directory with different favicon sizes:</p>
+<pre><code>&lt;link rel="icon" type="icons/png" sizes="16x16" href="icons/icon_16.png"&gt;
+&lt;link rel="icon" type="icons/png" sizes="32x32" href="icons/icon_32.png"&gt;
+&lt;link rel="icon" type="icons/png" sizes="72x72" href="icons/icon_72.png"&gt;
+&lt;link rel="icon" type="icons/png" sizes="114x114" href="icons/icon_114.png"&gt;
+&lt;link rel="apple-touch-icon" sizes="144x144" href="icons/icon_144.png"&gt;
+</code></pre>
+<p>The files in the above code represent the different image sizes:</p>
+<ul>
+<li><code>icon_16.png</code>: 16x16 pixels</li>
+<li><code>icon_32.png</code>: 32x32 pixels</li>
+<li><code>icon_72.png</code>: 72x72 pixels</li>
+<li><code>icon_114.png</code>: 114x114 pixels</li>
+</ul>
+<p>The <code>rel</code> attribute with the value of <code>apple-touch-icon</code> makes the favicon more accessible for iOS devices
+(because Apple).</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="responsive-layouts-with-flexbox-and-grid"><a class="header" href="#responsive-layouts-with-flexbox-and-grid">Responsive Layouts with Flexbox and Grid</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="flexbox-basics"><a class="header" href="#flexbox-basics">Flexbox Basics</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="grid-layout-basics"><a class="header" href="#grid-layout-basics">Grid Layout Basics</a></h1>
