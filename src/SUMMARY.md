@@ -24,7 +24,6 @@
     - [Responsive Layouts with Flexbox and Grid](3e-responsive-layouts-with-flexbox-and-grid.md)
         - [Flexbox Basics](3e1-flexbox-basics.md)
         - [Grid Layout Basics](3e2-grid-layout-basics.md)
-        - [Media Queries for Responsive Design](3e3-media-queries-for-responsive-design.md)
 - [Introduction to JSON-LD and Schema.org](p4-introduction-to-json-ld-and-schema-org.md)
     - [Document Metadata and JSON Basics](4a-document-metadata-and-json-basics.md)
         - [Document Metadata Revisited](4a1-document-metadata-revisited.md)
