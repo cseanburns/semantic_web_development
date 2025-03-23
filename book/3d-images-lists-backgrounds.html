@@ -370,6 +370,15 @@ fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
 laborum.&lt;/p&gt;
 </code></pre>
+<p>To create that effect, I create a class for this element and add <code>float: left</code>.
+I add a few pixels on the right margin of the <code>img</code> to add a gap between the image and the text.</p>
+<pre><code>.left_float {
+	width: 75px;
+	height: 75px;
+	float: left;
+	margin-right: 5px;
+}
+</code></pre>
 <p>In the last example, we <code>float</code> the image to the right of the text:</p>
 <pre><code>&lt;h3&gt;Float Right&lt;/h3&gt;
 &lt;img class="right_float" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
@@ -385,6 +394,15 @@ culpa qui officia deserunt mollit anim id est laborum. Excepteur sint occaecat
 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
 laborum.&lt;/p&gt;
+</code></pre>
+<p>Similar to the left float above, below the CSS simply floats the right using <code>float: right</code>.
+Also note that I change the margin side to left with <code>margin-left</code>:</p>
+<pre><code>.right_float {
+	width: 75px;
+	height: 75px;
+	float: right;
+	margin-left: 5px;
+}
 </code></pre>
 <h3 id="gradients"><a class="header" href="#gradients">Gradients</a></h3>
 <p>We can use <a href="https://www.w3.org/TR/css-images-3/#gradients"><code>gradient</code></a> colors to style images or backgrounds.
