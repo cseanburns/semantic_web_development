@@ -16,6 +16,12 @@ Therefore this work focuses on entry level topics: HTML5 and its semantic elemen
 This book is a work in progress.
 The goal is to complete an initial draft between January and May 2025.
 
+Example code and files for this work will be updated each semester I teach this course.
+Each semester will have its own repo.
+List of repos:
+
+- [Spring 2025](https://github.com/cseanburns/semantic2025)
+
 ## How to Use this Book
 
 ### Markup
