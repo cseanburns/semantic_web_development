@@ -1,12 +1,10 @@
-# Responsive Layouts with Flexbox and Grid
+# Responsive Layouts with Flexbox
 
 ## Introduction
 
 Responsive design is of fundamental importance to the web.
-Since smartphones were introduced in 2007,
-smartphone browsers have increasingly become the dominant way to interact with the web.
-As a result of this trend in user behavior,
-search engines prioritize a smartphone-first web.
+Since smartphones were introduced in 2007, smartphone browsers have increasingly become the dominant way to interact with the web.
+As a result of this trend in user behavior, search engines prioritize a smartphone-first web.
 Google, for example, stopped [indexing sites that are not mobile accessible][mobile_google] as of July 2024.
 This means that if your website isn't responsive, i.e., it doesn't collapse into a single column in mobile view,
 then it will eventually now show up in Google searches.
@@ -92,11 +90,20 @@ that also collapse into single column layouts in mobile view.
 
 ## Conclusion
 
-In the next two sections, we will cover CSS Flexbox and CSS Grid.
-Each of these tools has its particular strengths:
-CSS Flexbox is ideal for working with one-dimensions: rows **or** columns.
-CSS Grid is ideal when manipulating two-dimensions: rows **and** rows.
-We will use them to create multi-column/multi-row layouts that are also responsive to smaller screens.
+In the next section, we will learn how to use CSS Flexbox to create responsive website designs.
+CSS Flexbox is ideal for working with a single dimension at a time: rows **or** columns.
 
+While we will not cover CSS Grid at this time, it is well worth learning.
+CSS Grid is ideal when manipulating two-dimensions: rows **and** columns.
+It is used to create complex multi-column/multi-row layouts that are also responsive to smaller screens.
+To learn more about CSS Grid, see the following resources:
+
+- [CSS Grid Layout Module Level 1][grid_w3]
+- [Grid: MDN][grid_mdn]
+- [Grid: W3 Schools][grid_w3_schools]
+
+[grid_mdn]:https://developer.mozilla.org/en-US/docs/Web/CSS/grid
+[grid_w3]:https://www.w3.org/TR/css-grid-1/
+[grid_w3_schools]:https://www.w3schools.com/css/css_grid.asp
 [layouts_mdn]:https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Design_and_accessibility/Common_web_layouts
 [mobile_google]:https://developers.google.com/search/blog/2024/06/mobile-indexing-vlast-final-final.doc?hl=en

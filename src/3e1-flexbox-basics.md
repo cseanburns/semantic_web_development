@@ -2,7 +2,7 @@
 
 CSS has long offered a number of *layout modes* for desining the layout of documents, text, tables, and positions.
 [CSS Flexbox layout][flexbox_w3] is a newer layout mode used to create responsive web page designs.
-It works in one-dimensions: rows **or** columns.
+It works in one-dimension at a time: rows **or** columns.
 
 ## Introduction
 
@@ -38,6 +38,9 @@ CSS Flexbox includes the following **properties**:
     - `space-between`: distribute items evenly in the flex container, placing first and last flex item near the each margin border
     - `space-around`: similar to above, but spaces first and last flex item a half space from each margin border
     - `stretch`: flex items are stretched from start to end
+
+Note how some properties above refer to the main-axis or the cross-axis.
+By default, the main-axis is the x-axis, and the cross-axis is the y-axis.
 
 ## Examples
 
@@ -139,6 +142,14 @@ I use a **structural pseudo class** `nth-child()` to alternate the colors of the
 ```
 
 ### Two Column Example
+
+In the following example, I create a basic two-column layout.
+The HTML of the page contains a `<section>` element with two `<article>` elements.
+In the CSS, I make the `<section>` element the flex container.
+Since this element has the two `<article>` elements as child elements,
+the `<article>` elements become flex items.
+The items are wrapped (`flex-flow`) to make them responsive.
+And `justify-content` is used to center the items within the `<section>` container.
 
 ```
 <!DOCTYPE html>
