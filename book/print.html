@@ -4530,7 +4530,466 @@ The following is an example of linking to four different files in a separate <co
 <p>The <code>rel</code> attribute with the value of <code>apple-touch-icon</code> makes the favicon more accessible for iOS devices
 (because Apple).</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="responsive-layouts-with-flexbox-and-grid"><a class="header" href="#responsive-layouts-with-flexbox-and-grid">Responsive Layouts with Flexbox and Grid</a></h1>
+<h2 id="introduction-9"><a class="header" href="#introduction-9">Introduction</a></h2>
+<p>Responsive design is of fundamental importance to the web.
+Since smartphones were introduced in 2007,
+smartphone browsers have increasingly become the dominant way to interact with the web.
+As a result of this trend in user behavior,
+search engines prioritize a smartphone-first web.
+Google, for example, stopped <a href="https://developers.google.com/search/blog/2024/06/mobile-indexing-vlast-final-final.doc?hl=en">indexing sites that are not mobile accessible</a> as of July 2024.
+This means that if your website isn't responsive, i.e., it doesn't collapse into a single column in mobile view,
+then it will eventually now show up in Google searches.</p>
+<h2 id="common-layouts"><a class="header" href="#common-layouts">Common Layouts</a></h2>
+<p>So far in this work, we have primarily covered different ways to style the content of our web pages.
+However, one of the main purposes of CSS is to style the layout of a page.
+By far, the most common layouts include variations of the following:</p>
+<h3 id="1-column-layout"><a class="header" href="#1-column-layout">1-column layout</a></h3>
+<pre><code>-----------------------------------
+|              HEADER             |
+-----------------------------------
+|              Row 2              |
+-----------------------------------
+|              Row 3              |
+-----------------------------------
+|              FOOTER             |
+-----------------------------------
+</code></pre>
+<h3 id="2-column-layout"><a class="header" href="#2-column-layout">2-column layout</a></h3>
+<pre><code>-----------------------------------
+|              HEADER             |
+-----------------------------------
+|          |                      |
+| Column A |   Column B           |
+|          |                      |
+-----------------------------------
+|              FOOTER             |
+-----------------------------------
+</code></pre>
+<h3 id="3-column-layout"><a class="header" href="#3-column-layout">3-column layout</a></h3>
+<pre><code>-------------------------------------
+|              HEADER               |
+-------------------------------------
+|          |             |          |
+| Column A |   Column B  | Column C |
+|          |             |          |
+-------------------------------------
+|              FOOTER               |
+-------------------------------------
+</code></pre>
+<h3 id="nested-layout"><a class="header" href="#nested-layout">Nested Layout</a></h3>
+<p>Using more advanced techniques, we can nest layouts within layouts.
+For example, we can divide the body of a web page into additional grids, row- or column-wise.
+In the following example, the 1-column layout includes an extra column in the third row:</p>
+<pre><code>-----------------------------------
+|              HEADER             |
+-----------------------------------
+|              Row 2              |
+-----------------------------------
+| Row 3 Column A | Row 3 Column B |
+-----------------------------------
+|              FOOTER             |
+-----------------------------------
+</code></pre>
+<p>The MDN Web Docs provides a nice overview of the <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Design_and_accessibility/Common_web_layouts">common layouts in web design</a>.</p>
+<h2 id="responsive-layouts"><a class="header" href="#responsive-layouts">Responsive Layouts</a></h2>
+<p>Layouts with more than one column only work on devices such a tablets, laptops, and desktop machines.
+When viewing on mobile, all layouts should be a 1-column layout.</p>
+<p>Fortunately, CSS provides the tools to create <strong>responsive</strong> designs;
+i.e., tools needed to collapse multi-column layouts into a single layout.
+The two newest tools include <strong>Flexbox</strong> and <strong>Grid</strong>.
+Both of these tools make it much easier to create complex, multi-row and multi-column, layouts
+that also collapse into single column layouts in mobile view.</p>
+<h2 id="conclusion-16"><a class="header" href="#conclusion-16">Conclusion</a></h2>
+<p>In the next two sections, we will cover CSS Flexbox and CSS Grid.
+Each of these tools has its particular strengths:
+CSS Flexbox is ideal for working with one-dimensions: rows <strong>or</strong> columns.
+CSS Grid is ideal when manipulating two-dimensions: rows <strong>and</strong> rows.
+We will use them to create multi-column/multi-row layouts that are also responsive to smaller screens.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="flexbox-basics"><a class="header" href="#flexbox-basics">Flexbox Basics</a></h1>
+<p>CSS has long offered a number of <em>layout modes</em> for desining the layout of documents, text, tables, and positions.
+<a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexbox layout</a> is a newer layout mode used to create responsive web page designs.
+It works in one-dimensions: rows <strong>or</strong> columns.</p>
+<h2 id="introduction-10"><a class="header" href="#introduction-10">Introduction</a></h2>
+<p>CSS Flexbox includes the following <strong>properties</strong>:</p>
+<ul>
+<li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-direction-property"><code>flex-direction</code></a> sets the axis of the flex container. Options include:
+<ul>
+<li><code>row</code></li>
+<li><code>row-reversed</code></li>
+<li><code>column</code></li>
+<li><code>column-reversed</code></li>
+</ul>
+</li>
+<li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-wrap-property"><code>flex-wrap</code></a> defines whether flex container is single or multi-line. Options include:
+<ul>
+<li><code>nowrap</code> (single line)</li>
+<li><code>wrap</code> (multi-line)</li>
+<li><code>wrap-reverse</code></li>
+</ul>
+</li>
+<li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-flow-property"><code>flex-flow</code></a> is shorthand for: <code>flex-direction</code> and <code>flex-wrap</code>.
+<ul>
+<li>For example: <code>article { flex-flow: row wrap }</code> or <code>section { flex-flow: column nowrap}</code>.</li>
+</ul>
+</li>
+<li><a href="https://www.w3.org/TR/css-flexbox-1/#justify-content-property"><code>justify-content</code></a> works to align flex items (items in a flex container) along the <strong>main axis</strong> defined in <code>flex-diretion</code>. Options include:
+<ul>
+<li><code>flex-start</code>: pack items at the line start</li>
+<li><code>flex-end</code>: pack items at the line end</li>
+<li><code>center</code>: pack items near the center</li>
+<li><code>space-between</code>: distribute items evenly across the line, placing first and last flex item near the each margin border</li>
+<li><code>space-around</code>: similar to above, but spaces first and last flex item a half space from each margin border</li>
+</ul>
+</li>
+<li><a href="https://www.w3.org/TR/css-flexbox-1/#align-items-property"><code>align-items</code></a> works on the <strong>cross axis</strong> of the container. Options include:
+<ul>
+<li><code>auto</code> (default)</li>
+<li><code>flex-start</code>: flex items are flushed against the start of the container</li>
+<li><code>flex-end</code>: flex items are flushed against the end of the container</li>
+<li><code>baseline</code>: the baselines of flex items are aligned</li>
+<li><code>stretch</code>: flex items are stretched from start to end</li>
+</ul>
+</li>
+<li><a href="https://www.w3.org/TR/css-flexbox-1/#align-content-property"><code>align-content</code></a> is similary to how <code>justify-content</code> works on the main axis but works on the <strong>cross-axis</strong>. Options include:
+<ul>
+<li><code>flex-start</code>: pack items at the container start</li>
+<li><code>flex-end</code>: pack items at the container end</li>
+<li><code>center</code>: pack items near the center of the container</li>
+<li><code>space-between</code>: distribute items evenly in the flex container, placing first and last flex item near the each margin border</li>
+<li><code>space-around</code>: similar to above, but spaces first and last flex item a half space from each margin border</li>
+<li><code>stretch</code>: flex items are stretched from start to end</li>
+</ul>
+</li>
+</ul>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<p>To initiate a flex layout, we use the <code>display</code> property.
+We can use the <code>display</code> property in section elements such as <code>&lt;body&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;div&gt;</code>, etc.
+For example, to create a flex container for the <code>&lt;nav&gt;</code> element, we could use the following CSS declaration:</p>
+<pre><code>nav {
+    display: flex;
+    flex-flow: column wrap;
+}
+</code></pre>
+<p>To create nested layouts, we can use <code>display</code> multiple times in a single web page.
+For example, if an <code>&lt;article&gt;</code> element contains several <code>&lt;section&gt;</code> elements, then the following would be used:</p>
+<pre><code>article {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+section {
+    display: flex;
+    flex-flow: row wrap;
+    }
+</code></pre>
+<h3 id="basic-flex-example"><a class="header" href="#basic-flex-example">Basic Flex Example</a></h3>
+<p>In the following example, I make the <code>&lt;section&gt;</code> element a <strong>flex container</strong>.
+This element includes six <code>&lt;p&gt;</code> elements, which become the <strong>flex items</strong>.
+The <code>gap</code> property in the <code>section</code> rule adds a <code>10px</code> gap between between flex items.
+For the <code>&lt;p&gt;</code> element, I add borders and expand their dimensions to create boxes around these elements.
+I use a <strong>structural pseudo class</strong> <code>nth-child()</code> to alternate the colors of these boxes.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Flex Example&lt;/title&gt;
+        &lt;style&gt;
+            html {
+                font-size: 100%;
+            }
+
+            header {
+                border-bottom: 10px dotted blue;
+            }
+
+            section {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            p {
+                border: 1px solid black;
+                font-size: 2rem;
+                width: 8rem;
+                height: 8rem;
+                padding: 10rem;
+            }
+
+            p:nth-child(odd) {
+                background-color: black;
+                color: white;
+            }
+
+            p:nth-child(even) {
+                background-color: yellow;
+                color: black;
+            }
+
+            footer {
+                border-top: 10px dotted blue;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;header&gt;&lt;h1&gt;This is a title&lt;/h1&gt;&lt;/header&gt;
+
+        &lt;section&gt;
+            &lt;p&gt;Box 1&lt;/p&gt;
+            &lt;p&gt;Box 2&lt;/p&gt;
+            &lt;p&gt;Box 3&lt;/p&gt;
+            &lt;p&gt;Box 4&lt;/p&gt;
+            &lt;p&gt;Box 5&lt;/p&gt;
+            &lt;p&gt;Box 6&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;footer&gt;&lt;h2&gt;This is a footer&lt;/h2&gt;&lt;/footer&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="two-column-example"><a class="header" href="#two-column-example">Two Column Example</a></h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Flex Example: Two Column Layout&lt;/title&gt;
+        &lt;style&gt;
+            html {
+                font-size: 100%;
+            }
+
+            header {
+                border-bottom: 2px black solid;
+                text-align: center;
+            }
+
+            section {
+                display: flex;
+                gap: 50px;
+                flex-flow: row wrap;
+                justify-content: center;
+            }
+
+            article {
+                margin: auto;
+            }
+
+            footer {
+                
+                border-top: 2px black solid;
+                text-align: center;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;header&gt;&lt;h1&gt;Main Title&lt;/h1&gt;&lt;/header&gt;
+
+        &lt;section&gt;
+            &lt;article&gt;
+                &lt;h2&gt;Article Title 1&lt;/h2&gt;
+                &lt;p&gt;This is some text.&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article&gt;
+                &lt;h2&gt;Article Title 2&lt;/h2&gt;
+                &lt;p&gt;This is more text.&lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/section&gt;
+
+        &lt;footer&gt;&lt;h2&gt;This is a footer&lt;/h2&gt;&lt;/footer&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h3 id="mixed-columns"><a class="header" href="#mixed-columns">Mixed Columns</a></h3>
+<p>In the following example, I add an additional row that isn't a flex container.
+The result is a top row that contains two columns and an additional single colum row.
+I make several other changes to augment the look of the page.
+These include:</p>
+<p>I add the following to the <code>body</code> selector to make the margins flush with the browser window:</p>
+<pre><code>body {
+    max-width: 100%;
+    margin: auto;
+</code></pre>
+<p>I create a <code>nav</code> section and make it a flex container.
+The result is a responsive navigation bar.
+The <code>&lt;nav&gt;</code> element includes an unordered list.
+I remove the bullets in this list to make the list's appearance more conventional for a navigation section.</p>
+<pre><code>nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    list-style-position: inside;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+</code></pre>
+<p>Next comes the first of two <code>&lt;section&gt;</code> elements in the web document.
+I assign the first <code>&lt;section&gt;</code> element to a class called <code>main</code> to indicate that this is the main section,
+and to differentiate it from the second <code>&lt;section&gt;</code> element.
+In the CSS, I make the main section a flex container.
+I use <code>flex-flow: row wrap</code> to make it a responsive row, and I use <code>justify-content: center;</code> to center it on the main axis.</p>
+<pre><code>.main {
+    display: flex;
+    gap: 10px;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+</code></pre>
+<p>The remaining styles in the CSS control help keep the page consistent with the rest of the styling.
+Note the use of the <code>clamp()</code> function.
+This is used to set the minimum, preferred, and maximum values of an element.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;Flex Example: Mixed Column Layout&lt;/title&gt;
+        &lt;style&gt;
+            html {
+                font-size: 100%;
+                font-family: monospace;
+            }
+
+            body {
+                max-width: 100%;
+                margin: auto;
+                font-size: 1.5rem;
+            }
+
+            header {
+                border-bottom: 2px black solid;
+                text-align: center;
+            }
+
+            nav ul {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+                background-color: black;
+                color: white;
+                padding: 10px;
+                list-style-position: inside;
+            }
+
+            nav ul li {
+                list-style-type: none;
+            }
+
+            .main {
+                display: flex;
+                gap: 10px;
+                flex-flow: row wrap;
+                justify-content: center;
+            }
+
+            .main_article { 
+                margin: auto;
+                max-width: clamp(320px, 40%, 1000px); */
+            }
+
+            .secondary_article {
+                margin: auto;
+                max-width: clamp(320px, 40%, 1000px);
+            }
+
+            footer {
+                border-top: 2px black solid;
+                text-align: center;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;header&gt;
+            &lt;h1&gt;Main Title&lt;/h1&gt;
+            &lt;nav&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;Home&lt;/li&gt;
+                    &lt;li&gt;About&lt;/li&gt;
+                    &lt;li&gt;Blog&lt;/li&gt;
+                &lt;/ul&gt;
+        &lt;/header&gt;
+
+
+        &lt;section class="main"&gt;
+
+            &lt;article class="main_article"&gt;
+                &lt;h2&gt;Article Title 1&lt;/h2&gt;
+
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum.&lt;/p&gt;
+
+            &lt;/article&gt;
+
+            &lt;article class="main_article"&gt;
+
+                &lt;h2&gt;Article Title 2&lt;/h2&gt;
+
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident, sunt in culpa qui officia deserunt.&lt;/p&gt;
+
+            &lt;/article&gt;
+
+        &lt;/section&gt;
+
+        &lt;section&gt;
+
+            &lt;article class="secondary_article"&gt;
+
+                &lt;h2&gt;Article Title 3&lt;/h2&gt;
+
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident, sunt in culpa qui officia deserunt.&lt;/p&gt;
+
+            &lt;/article&gt;
+
+        &lt;/section&gt;
+
+        &lt;footer&gt;&lt;h2&gt;This is a footer&lt;/h2&gt;&lt;/footer&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="conclusion-17"><a class="header" href="#conclusion-17">Conclusion</a></h2>
+<p>In this section we learned about the CSS Flexbox layout model.
+I first detailed the CSS properties that are available to create a Flex layout.
+I provided an example using basic boxes.
+Then I created a two-column example and a mixed column example,
+both of which are responsive to mobile views.
+These may also be adapted to create more complex layouts.</p>
+<p>Note that the use of Flex aligns well with section elements,
+such as the <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;main&gt;</code>, elements.
+This is because, by definition, these elements are container elements.</p>
+<p>Additional sources:</p>
+<ul>
+<li><a href="https://www.w3schools.com/css/css3_flexbox.asp">CSS Flex Container</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox">Flexbox MDN</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="grid-layout-basics"><a class="header" href="#grid-layout-basics">Grid Layout Basics</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="document-metadata-json-ld-and-schemaorg"><a class="header" href="#document-metadata-json-ld-and-schemaorg">Document Metadata: JSON-LD and Schema.org</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="document-metadata-and-json-basics"><a class="header" href="#document-metadata-and-json-basics">Document Metadata and JSON Basics</a></h1>

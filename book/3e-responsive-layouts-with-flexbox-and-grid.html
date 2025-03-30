@@ -177,6 +177,81 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="responsive-layouts-with-flexbox-and-grid"><a class="header" href="#responsive-layouts-with-flexbox-and-grid">Responsive Layouts with Flexbox and Grid</a></h1>
+<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
+<p>Responsive design is of fundamental importance to the web.
+Since smartphones were introduced in 2007,
+smartphone browsers have increasingly become the dominant way to interact with the web.
+As a result of this trend in user behavior,
+search engines prioritize a smartphone-first web.
+Google, for example, stopped <a href="https://developers.google.com/search/blog/2024/06/mobile-indexing-vlast-final-final.doc?hl=en">indexing sites that are not mobile accessible</a> as of July 2024.
+This means that if your website isn't responsive, i.e., it doesn't collapse into a single column in mobile view,
+then it will eventually now show up in Google searches.</p>
+<h2 id="common-layouts"><a class="header" href="#common-layouts">Common Layouts</a></h2>
+<p>So far in this work, we have primarily covered different ways to style the content of our web pages.
+However, one of the main purposes of CSS is to style the layout of a page.
+By far, the most common layouts include variations of the following:</p>
+<h3 id="1-column-layout"><a class="header" href="#1-column-layout">1-column layout</a></h3>
+<pre><code>-----------------------------------
+|              HEADER             |
+-----------------------------------
+|              Row 2              |
+-----------------------------------
+|              Row 3              |
+-----------------------------------
+|              FOOTER             |
+-----------------------------------
+</code></pre>
+<h3 id="2-column-layout"><a class="header" href="#2-column-layout">2-column layout</a></h3>
+<pre><code>-----------------------------------
+|              HEADER             |
+-----------------------------------
+|          |                      |
+| Column A |   Column B           |
+|          |                      |
+-----------------------------------
+|              FOOTER             |
+-----------------------------------
+</code></pre>
+<h3 id="3-column-layout"><a class="header" href="#3-column-layout">3-column layout</a></h3>
+<pre><code>-------------------------------------
+|              HEADER               |
+-------------------------------------
+|          |             |          |
+| Column A |   Column B  | Column C |
+|          |             |          |
+-------------------------------------
+|              FOOTER               |
+-------------------------------------
+</code></pre>
+<h3 id="nested-layout"><a class="header" href="#nested-layout">Nested Layout</a></h3>
+<p>Using more advanced techniques, we can nest layouts within layouts.
+For example, we can divide the body of a web page into additional grids, row- or column-wise.
+In the following example, the 1-column layout includes an extra column in the third row:</p>
+<pre><code>-----------------------------------
+|              HEADER             |
+-----------------------------------
+|              Row 2              |
+-----------------------------------
+| Row 3 Column A | Row 3 Column B |
+-----------------------------------
+|              FOOTER             |
+-----------------------------------
+</code></pre>
+<p>The MDN Web Docs provides a nice overview of the <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Design_and_accessibility/Common_web_layouts">common layouts in web design</a>.</p>
+<h2 id="responsive-layouts"><a class="header" href="#responsive-layouts">Responsive Layouts</a></h2>
+<p>Layouts with more than one column only work on devices such a tablets, laptops, and desktop machines.
+When viewing on mobile, all layouts should be a 1-column layout.</p>
+<p>Fortunately, CSS provides the tools to create <strong>responsive</strong> designs;
+i.e., tools needed to collapse multi-column layouts into a single layout.
+The two newest tools include <strong>Flexbox</strong> and <strong>Grid</strong>.
+Both of these tools make it much easier to create complex, multi-row and multi-column, layouts
+that also collapse into single column layouts in mobile view.</p>
+<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
+<p>In the next two sections, we will cover CSS Flexbox and CSS Grid.
+Each of these tools has its particular strengths:
+CSS Flexbox is ideal for working with one-dimensions: rows <strong>or</strong> columns.
+CSS Grid is ideal when manipulating two-dimensions: rows <strong>and</strong> rows.
+We will use them to create multi-column/multi-row layouts that are also responsive to smaller screens.</p>
 
                     </main>
 
