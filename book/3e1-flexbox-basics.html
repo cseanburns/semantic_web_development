@@ -177,7 +177,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="flexbox-basics"><a class="header" href="#flexbox-basics">Flexbox Basics</a></h1>
-<p>CSS has long offered a number of <em>layout modes</em> for desining the layout of documents, text, tables, and positions.
+<p>CSS has long offered a number of <em>layout modes</em> for designing the layout of documents, text, tables, and positions.
 <a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexbox layout</a> is a newer layout mode used to create responsive web page designs.
 It works in one-dimension at a time: rows <strong>or</strong> columns.</p>
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
@@ -186,9 +186,9 @@ It works in one-dimension at a time: rows <strong>or</strong> columns.</p>
 <li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-direction-property"><code>flex-direction</code></a> sets the axis of the flex container. Options include:
 <ul>
 <li><code>row</code></li>
-<li><code>row-reversed</code></li>
+<li><code>row-reverse</code></li>
 <li><code>column</code></li>
-<li><code>column-reversed</code></li>
+<li><code>column-reverse</code></li>
 </ul>
 </li>
 <li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-wrap-property"><code>flex-wrap</code></a> defines whether flex container is single or multi-line. Options include:
@@ -203,7 +203,7 @@ It works in one-dimension at a time: rows <strong>or</strong> columns.</p>
 <li>For example: <code>article { flex-flow: row wrap }</code> or <code>section { flex-flow: column nowrap}</code>.</li>
 </ul>
 </li>
-<li><a href="https://www.w3.org/TR/css-flexbox-1/#justify-content-property"><code>justify-content</code></a> works to align flex items (items in a flex container) along the <strong>main axis</strong> defined in <code>flex-diretion</code>. Options include:
+<li><a href="https://www.w3.org/TR/css-flexbox-1/#justify-content-property"><code>justify-content</code></a> works to align flex items (items in a flex container) along the <strong>main axis</strong> defined in <code>flex-direction</code>. Options include:
 <ul>
 <li><code>flex-start</code>: pack items at the line start</li>
 <li><code>flex-end</code>: pack items at the line end</li>
@@ -214,14 +214,14 @@ It works in one-dimension at a time: rows <strong>or</strong> columns.</p>
 </li>
 <li><a href="https://www.w3.org/TR/css-flexbox-1/#align-items-property"><code>align-items</code></a> works on the <strong>cross axis</strong> of the container. Options include:
 <ul>
-<li><code>auto</code> (default)</li>
 <li><code>flex-start</code>: flex items are flushed against the start of the container</li>
 <li><code>flex-end</code>: flex items are flushed against the end of the container</li>
 <li><code>baseline</code>: the baselines of flex items are aligned</li>
 <li><code>stretch</code>: flex items are stretched from start to end</li>
 </ul>
 </li>
-<li><a href="https://www.w3.org/TR/css-flexbox-1/#align-content-property"><code>align-content</code></a> is similary to how <code>justify-content</code> works on the main axis but works on the <strong>cross-axis</strong>. Options include:
+<li><a href="https://www.w3.org/TR/css-flexbox-1/#align-content-property"><code>align-content</code></a> is similarly to how <code>justify-content</code> works on the main axis but works on the <strong>cross axis</strong> when there is extra space.
+Takes effect when their are multiple lines of items, such as when <code>flex-wrap: wrap</code> is in effect. Options include:
 <ul>
 <li><code>flex-start</code>: pack items at the container start</li>
 <li><code>flex-end</code>: pack items at the container end</li>
@@ -232,17 +232,33 @@ It works in one-dimension at a time: rows <strong>or</strong> columns.</p>
 </ul>
 </li>
 </ul>
-<p>Note how some properties above refer to the main-axis or the cross-axis.
-By default, the main-axis is the x-axis, and the cross-axis is the y-axis.</p>
+<p>Note how some properties above refer to the main axis or the cross axis.</p>
+<ul>
+<li>to use on main axis properties:
+<ul>
+<li><code>justify-content</code></li>
+</ul>
+</li>
+<li>to use on cross axis properties:
+<ul>
+<li><code>align-items</code></li>
+<li><code>align-content</code></li>
+</ul>
+</li>
+</ul>
+<p>By default, the main axis is the x-axis, and the cross axis is the y-axis.</p>
 <h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
 <p>To initiate a flex layout, we use the <code>display</code> property.
 We can use the <code>display</code> property in section elements such as <code>&lt;body&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;div&gt;</code>, etc.
+These elements become <strong>flex containers</strong>.
+The <strong>flex items</strong> in these containers is thus any direct child element of a flex container.
 For example, to create a flex container for the <code>&lt;nav&gt;</code> element, we could use the following CSS declaration:</p>
 <pre><code>nav {
     display: flex;
     flex-flow: column wrap;
 }
 </code></pre>
+<p>The elements in that <code>&lt;nav&gt;</code> section, such as an unordered list <code>&lt;ul&gt;</code>, become the container's flex items.</p>
 <p>To create nested layouts, we can use <code>display</code> multiple times in a single web page.
 For example, if an <code>&lt;article&gt;</code> element contains several <code>&lt;section&gt;</code> elements, then the following would be used:</p>
 <pre><code>article {
@@ -386,13 +402,14 @@ And <code>justify-content</code> is used to center the items within the <code>&l
 </code></pre>
 <h3 id="mixed-columns"><a class="header" href="#mixed-columns">Mixed Columns</a></h3>
 <p>In the following example, I add an additional row that isn't a flex container.
-The result is a top row that contains two columns and an additional single colum row.
+The result is a top row that contains two columns and an additional single column row.
 I make several other changes to augment the look of the page.
 These include:</p>
 <p>I add the following to the <code>body</code> selector to make the margins flush with the browser window:</p>
 <pre><code>body {
     max-width: 100%;
     margin: auto;
+}
 </code></pre>
 <p>I create a <code>nav</code> section and make it a flex container.
 The result is a responsive navigation bar.
@@ -473,7 +490,7 @@ This is used to set the minimum, preferred, and maximum values of an element.</p
 
             .main_article { 
                 margin: auto;
-                max-width: clamp(320px, 40%, 1000px); */
+                max-width: clamp(320px, 40%, 1000px);
             }
 
             .secondary_article {
@@ -497,6 +514,7 @@ This is used to set the minimum, preferred, and maximum values of an element.</p
                     &lt;li&gt;About&lt;/li&gt;
                     &lt;li&gt;Blog&lt;/li&gt;
                 &lt;/ul&gt;
+            &lt;/nav&gt;
         &lt;/header&gt;
 
 
