@@ -1,6 +1,6 @@
 # Flexbox Basics
 
-CSS has long offered a number of *layout modes* for desining the layout of documents, text, tables, and positions.
+CSS has long offered a number of *layout modes* for designing the layout of documents, text, tables, and positions.
 [CSS Flexbox layout][flexbox_w3] is a newer layout mode used to create responsive web page designs.
 It works in one-dimension at a time: rows **or** columns.
 
@@ -10,28 +10,28 @@ CSS Flexbox includes the following **properties**:
 
 - [`flex-direction`][flex_direction_w3] sets the axis of the flex container. Options include:
     - `row`
-    - `row-reversed`
+    - `row-reverse`
     - `column`
-    - `column-reversed`
+    - `column-reverse`
 - [`flex-wrap`][flex_wrap_w3] defines whether flex container is single or multi-line. Options include:
     - `nowrap` (single line)
     - `wrap` (multi-line)
     - `wrap-reverse`
 - [`flex-flow`][flex_flow_w3] is shorthand for: `flex-direction` and `flex-wrap`.
     - For example: `article { flex-flow: row wrap }` or `section { flex-flow: column nowrap}`.
-- [`justify-content`][justify_content_w3] works to align flex items (items in a flex container) along the **main axis** defined in `flex-diretion`. Options include:
+- [`justify-content`][justify_content_w3] works to align flex items (items in a flex container) along the **main axis** defined in `flex-direction`. Options include:
     - `flex-start`: pack items at the line start
     - `flex-end`: pack items at the line end
     - `center`: pack items near the center
     - `space-between`: distribute items evenly across the line, placing first and last flex item near the each margin border
     - `space-around`: similar to above, but spaces first and last flex item a half space from each margin border
 - [`align-items`][align_items_w3] works on the **cross axis** of the container. Options include:
-    - `auto` (default)
     - `flex-start`: flex items are flushed against the start of the container
     - `flex-end`: flex items are flushed against the end of the container
     - `baseline`: the baselines of flex items are aligned 
     - `stretch`: flex items are stretched from start to end
-- [`align-content`][align_content_w3] is similary to how `justify-content` works on the main axis but works on the **cross-axis**. Options include:
+- [`align-content`][align_content_w3] is similarly to how `justify-content` works on the main axis but works on the **cross axis** when there is extra space.
+Takes effect when their are multiple lines of items, such as when `flex-wrap: wrap` is in effect. Options include:
     - `flex-start`: pack items at the container start
     - `flex-end`: pack items at the container end
     - `center`: pack items near the center of the container
@@ -39,13 +39,22 @@ CSS Flexbox includes the following **properties**:
     - `space-around`: similar to above, but spaces first and last flex item a half space from each margin border
     - `stretch`: flex items are stretched from start to end
 
-Note how some properties above refer to the main-axis or the cross-axis.
-By default, the main-axis is the x-axis, and the cross-axis is the y-axis.
+Note how some properties above refer to the main axis or the cross axis.
+
+- to use on main axis properties:
+    - `justify-content`
+- to use on cross axis properties:
+    - `align-items`
+    - `align-content`
+
+By default, the main axis is the x-axis, and the cross axis is the y-axis.
 
 ## Examples
 
 To initiate a flex layout, we use the `display` property.
 We can use the `display` property in section elements such as `<body>`, `<article>`, `<section>`, `<nav>`, `<div>`, etc.
+These elements become **flex containers**.
+The **flex items** in these containers is thus any direct child element of a flex container.
 For example, to create a flex container for the `<nav>` element, we could use the following CSS declaration:
 
 ```
@@ -54,6 +63,8 @@ nav {
     flex-flow: column wrap;
 }
 ```
+
+The elements in that `<nav>` section, such as an unordered list `<ul>`, become the container's flex items.
 
 To create nested layouts, we can use `display` multiple times in a single web page.
 For example, if an `<article>` element contains several `<section>` elements, then the following would be used:
@@ -210,7 +221,7 @@ And `justify-content` is used to center the items within the `<section>` contain
 ### Mixed Columns
 
 In the following example, I add an additional row that isn't a flex container.
-The result is a top row that contains two columns and an additional single colum row.
+The result is a top row that contains two columns and an additional single column row.
 I make several other changes to augment the look of the page.
 These include:
 
@@ -220,6 +231,7 @@ I add the following to the `body` selector to make the margins flush with the br
 body {
     max-width: 100%;
     margin: auto;
+}
 ```
 
 I create a `nav` section and make it a flex container.
@@ -309,7 +321,7 @@ This is used to set the minimum, preferred, and maximum values of an element.
 
             .main_article { 
                 margin: auto;
-                max-width: clamp(320px, 40%, 1000px); */
+                max-width: clamp(320px, 40%, 1000px);
             }
 
             .secondary_article {
@@ -333,6 +345,7 @@ This is used to set the minimum, preferred, and maximum values of an element.
                     <li>About</li>
                     <li>Blog</li>
                 </ul>
+            </nav>
         </header>
 
 

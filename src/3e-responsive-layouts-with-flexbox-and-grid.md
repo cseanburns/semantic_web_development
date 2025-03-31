@@ -7,7 +7,7 @@ Since smartphones were introduced in 2007, smartphone browsers have increasingly
 As a result of this trend in user behavior, search engines prioritize a smartphone-first web.
 Google, for example, stopped [indexing sites that are not mobile accessible][mobile_google] as of July 2024.
 This means that if your website isn't responsive, i.e., it doesn't collapse into a single column in mobile view,
-then it will eventually now show up in Google searches.
+then it will eventually not show up in Google searches.
 
 ## Common Layouts
 
@@ -79,7 +79,7 @@ The MDN Web Docs provides a nice overview of the [common layouts in web design][
 
 ## Responsive Layouts
 
-Layouts with more than one column only work on devices such a tablets, laptops, and desktop machines.
+Layouts with more than one column only work on devices such as tablets, laptops, and desktop machines.
 When viewing on mobile, all layouts should be a 1-column layout.
 
 Fortunately, CSS provides the tools to create **responsive** designs;
