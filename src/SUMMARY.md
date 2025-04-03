@@ -23,7 +23,7 @@
     - [Images, Lists, and Backgrounds](3d-images-lists-backgrounds.md)
     - [Responsive Layouts with Flexbox](3e-responsive-layouts-with-flexbox-and-grid.md)
         - [Flexbox Basics](3e1-flexbox-basics.md)
-- [Document Metadata: JSON-LD and Schema.org](p4-introduction-to-json-ld-and-schema-org.md)
+- [Document Metadata: JSON-LD and Schema.org](p4-document-metadata-json-ld-schema-org.md)
     - [JSON Basics](4a-json-basics.md)
     - [Schema.org, Schema Types, and Structured Data](4b-schema-org-schema-types-structured-data.md)
     - [JSON-LD and Schema.org Integration](4c-json-ld-and-schema-org-integration.md)
