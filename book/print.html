@@ -5201,44 +5201,58 @@ The more complex our JSON objects become, the easier it is to introduce syntax e
 <p>When we begin working with schema.org, you will see how this structured, machine-readable format allows search engines and AI
 to <em>understand</em> what your website is about, even if no human ever reads it.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="schemaorg-and-structured-data"><a class="header" href="#schemaorg-and-structured-data">Schema.org and Structured Data</a></h1>
-<h2 id="json-ld"><a class="header" href="#json-ld">JSON-LD</a></h2>
-<p>Metadata plays a central role in most computer applications.
-Metadata serialized in JSON-LD is used by search engines, AI, and other services to <em>understand</em> the content expressed in HTML,
+<!--
+
+## JSON-LD
+
+Metadata plays a central role in most computer applications.
+Metadata serialized in JSON-LD is used by search engines, AI, and other services to *understand* the content expressed in HTML,
 the latter of which is used for human consumption.
 It accomplishes this through the schema.org vocabulary (although other data models exist for different contexts).
 Like other data models, the schema.org vocabulary provides a method for adding structured, linked data.
-The data is <em>linked</em> because the vocabulary is interconnected via a hierarchical data model.
-For example, the main data type in schema.org is <em>Thing</em>.
-The <em>Thing</em> type includes child data types such as <em>Action</em>, <em>Person</em>, <em>Place</em>, <em>Organization</em>, and more.
+The data is *linked* because the vocabulary is interconnected via a hierarchical data model.
+For example, the main data type in schema.org is *Thing*.
+The *Thing* type includes child data types such as *Action*, *Person*, *Place*, *Organization*, and more.
 The child data types include additional descendants:
-an <em>Organization</em> thing includes <em>Airline</em>, <em>EducationalOrganization</em>, <em>PoliticalParty</em>, <em>LocalBusiness</em>, and more.
-And an <em>EducationalOrganization</em> may include <em>CollegeOrUniversity</em>, <em>ElementarySchool</em>, <em>HighSchool</em>, and so on.</p>
-<p>These data types are <em>transitive</em> (if <code>a &gt; b</code> and <code>b &gt; c</code>, then <code>a &gt; c</code>).
-For example, the University of Kentucky is a <strong>property</strong> of a <em>CollegeOrUniversity</em> thing.
-Since it's a <em>CollegeOrUniversity</em> thing, then it is also an <em>EducationalOrganization</em> thing.
-If it's an <em>EducationalOrganization</em> thing, then it is also an <em>Organization</em> thing.
-And finally, if it's an <em>Organization</em> thing, then it is a <em>Thing</em>.</p>
-<pre><code>- Thing
+an *Organization* thing includes *Airline*, *EducationalOrganization*, *PoliticalParty*, *LocalBusiness*, and more.
+And an *EducationalOrganization* may include *CollegeOrUniversity*, *ElementarySchool*, *HighSchool*, and so on.
+
+These data types are *transitive* (if `a > b` and `b > c`, then `a > c`).
+For example, the University of Kentucky is a **property** of a *CollegeOrUniversity* thing.
+Since it's a *CollegeOrUniversity* thing, then it is also an *EducationalOrganization* thing.
+If it's an *EducationalOrganization* thing, then it is also an *Organization* thing.
+And finally, if it's an *Organization* thing, then it is a *Thing*.
+
+```
+- Thing
     - Organization
         - EducationalOrganization
             - CollegeOrUniversity
                 - University of Kentucky (property)
-</code></pre>
-<p>All data types eventually walk back to the <em>Thing</em> type, just as in biology,
-all life on Earth is classified in a [taxonomy][taxonomic_rank] with <em>Domain</em> holding the broadest rank.</p>
-<p>However, just like <em>University of Kentucky</em> can be counted as a specific <em>property</em> of <em>CollegeOrUniversity</em>,
-each <em>type</em> has its own set of properties in schema.org.
-Since a <em>CollegeOrUniversity</em> thing is also an <em>EducationalOrganization</em> thing,
-then a <em>CollegeOrUniversity</em> thing may also have the properties specific to <em>EducationalOrganization</em>, such as <em>alumni</em>.
-Furthermore, a <em>CollegeOrUniversity</em> thing may include the properties of other types not in its direct lineage.
-For example, a <em>CollegeOrUniversity</em> thing may also be a <em>CivicStructure</em> thing and a <em>Place</em> thing,
-even though neither of those are specific descendants of <em>EducationalOrganization</em>.
-In this way, specific <em>things</em> and <em>properties</em> can interconnect or <em>link</em> to each other, forming <strong>linked data</strong>.</p>
-<p>See the [Full schema hierarchy][full_schema_schema_org] for a complete listing.</p>
-<h2 id="conclusion-19"><a class="header" href="#conclusion-19">Conclusion</a></h2>
-<p>We were also introduced to <strong>schema.org</strong> data model
-We learned that JSON-LD is a hierarchical, linked data model that contains a root data type, <em>Thing</em>,
-which includes descendant thing types.</p>
+```
+
+All data types eventually walk back to the *Thing* type, just as in biology,
+all life on Earth is classified in a [taxonomy][taxonomic_rank] with *Domain* holding the broadest rank.
+
+However, just like *University of Kentucky* can be counted as a specific *property* of *CollegeOrUniversity*,
+each *type* has its own set of properties in schema.org.
+Since a *CollegeOrUniversity* thing is also an *EducationalOrganization* thing,
+then a *CollegeOrUniversity* thing may also have the properties specific to *EducationalOrganization*, such as *alumni*.
+Furthermore, a *CollegeOrUniversity* thing may include the properties of other types not in its direct lineage.
+For example, a *CollegeOrUniversity* thing may also be a *CivicStructure* thing and a *Place* thing,
+even though neither of those are specific descendants of *EducationalOrganization*.
+In this way, specific *things* and *properties* can interconnect or *link* to each other, forming **linked data**.
+
+See the [Full schema hierarchy][full_schema_schema_org] for a complete listing.
+
+## Conclusion
+
+
+We were also introduced to **schema.org** data model
+We learned that JSON-LD is a hierarchical, linked data model that contains a root data type, *Thing*,
+which includes descendant thing types.
+
+-->
 <div style="break-before: page; page-break-before: always;"></div><h1 id="json-ld-syntax-and-integration"><a class="header" href="#json-ld-syntax-and-integration">JSON-LD Syntax and Integration</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="conclusion-and-final-project"><a class="header" href="#conclusion-and-final-project">Conclusion and Final Project</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="review-of-key-concepts"><a class="header" href="#review-of-key-concepts">Review of Key Concepts</a></h1>
