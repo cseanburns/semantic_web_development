@@ -1,5 +1,7 @@
 # Schema.org and Structured Data
 
+<!--
+
 ## JSON-LD
 
 Metadata plays a central role in most computer applications.
@@ -48,3 +50,5 @@ See the [Full schema hierarchy][full_schema_schema_org] for a complete listing.
 We were also introduced to **schema.org** data model
 We learned that JSON-LD is a hierarchical, linked data model that contains a root data type, *Thing*,
 which includes descendant thing types.
+
+-->
