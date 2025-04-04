@@ -5054,28 +5054,28 @@ authored by <em>C. Sean Burns</em>:</p>
 </code></pre>
 <p>In the <a href="2b-section-elements.html">HTML Semantic Elements</a> and the
 <a href="2c-grouping-semantic-elements.html">HTML Grouping and Text-Level Semantics</a> sections of this work,
-we were introduced to the ways that the HTML5 language has created <strong>semantic elements</strong> that help to add meaning to a document's structure.
+we were introduced to the ways that the HTML5 language created <strong>semantic elements</strong> that help to add meaning to a document's structure.
 These elements are placed in the <code>&lt;body&gt;</code> section of a web page.</p>
 <p>For example, the <code>&lt;article&gt;</code> element
 <q>represents a self-contained composition in a document, page, application, or site</q>
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article"><code>&lt;article&gt;</code>: The Article Contents element</a>.
+(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article"><code>&lt;article&gt;</code>: The Article Contents element</a>).
 We might use the <code>&lt;article&gt;</code> element to capture a part of a web page that has an essay, blog post, news article, or like.
 Likewise, the <code>&lt;nav&gt;</code> element is a semantic element that
 <q>represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents</q>
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav"><code>&lt;nav&gt;</code>: The Navigation Section element</a>.
+(<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav"><code>&lt;nav&gt;</code>: The Navigation Section element</a>).
 Thus we use this to provide navigation on our websites.</p>
 <p>Combined, via the elements we add to our <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections of our web pages,
-HTML5 provides quite a few tools to add metadata and semantic data to our web pages and thus help build <strong>The Semantic Web</strong>.</p>
+HTML5 provides tools to add metadata and semantic data to our web pages and thus help build <strong>The Semantic Web</strong>.</p>
 <p>However, those elements are primarily aimed at adding semantic data about the document as a whole and its structure.
 In this last section of our work, we will explore how to add semantic data to our web pages that provide
 more information about the <strong>content</strong> of our those pages.</p>
-<p>To to that, we will learn about the <a href="https://schema.org/">schema.org</a> vocabulary.
-Schema.org is a data model that we will serialized as JSON-LD, or <a href="https://en.wikipedia.org/wiki/JSON-LD">JSON Linked Data</a>.
+<p>To do that, we will learn about the <a href="https://schema.org/">schema.org</a> vocabulary.
+Schema.org is a <strong>data model</strong> that we will serialize as JSON-LD, or <a href="https://en.wikipedia.org/wiki/JSON-LD">JSON Linked Data</a>.
 Therefore, we will first learn how to structure data using <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>,
 which is a format for data exchange, primarily across the internet.
 And then we will learn how to serialize, or integrate, a schema.org vocabulary into JSON-LD.</p>
-<p>By adding appropriate metadata in <code>&lt;head&gt;</code> sections and semantic elements in our <code>&lt;body&gt;</code> sections of our web documents,
-and by adding JSON-LD metadata to our documents, we will make a large contribution to the <a href="https://en.wikipedia.org/wiki/Semantic_Web">Semantic Web</a>.
+<p>By adding appropriate metadata in the <code>&lt;head&gt;</code> sections and semantic elements in the <code>&lt;body&gt;</code> sections of our web documents,
+and by adding JSON-LD metadata to our documents, we will make a contribution to the <a href="https://en.wikipedia.org/wiki/Semantic_Web">Semantic Web</a>.
 The result will be websites that are more accessible to search engines, AI, and to our users.</p>
 <p>In the next section, we will begin by learning how to create JSON objects.
 Then in the following section, we learn about the schema.org data model and how to use it.
@@ -5099,14 +5099,14 @@ One schema to rule them all: How Schema.org models the world of search.
 <p>It may be too obvious to say, but computer applications use and exchange data in order to operate.
 For example, an <a href="https://en.wikipedia.org/wiki/Online_public_access_catalog">OPAC (library catalog)</a> contains bibliographic records (data)
 that allows users to search the data from a browser to locate information sources.
-An <a href="https://en.wikipedia.org/wiki/Apache_HTTP_Server">Apache web server</a> stores configuration information in order to turn on, off, or fine tune the services it provides.</p>
+An <a href="https://en.wikipedia.org/wiki/Apache_HTTP_Server">Apache web server</a> stores configuration information in order to turn on, off, or fine tune the HTTP services it provides.</p>
 <p>What may not be obvious is that data is stored in a variety of formats.
 Library science students may be familiar with <a href="https://en.wikipedia.org/wiki/XML">XML (Extensible Markup Language)</a> because it's used to serialize MARC data
 (see <a href="https://www.loc.gov/standards/marcxml/">MARCXML</a>) or <a href="https://www.dublincore.org/specifications/dublin-core/dc-xml-guidelines/">DublinCore (DC)</a> metadata.
-XML performs this service by storing data and metadata in a standardized format.
+XML performs this service by storing data and metadata in a <a href="https://www.w3.org/TR/xml/">standardized format</a>.
 <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV (comma separated values)</a> files function as a <em>de facto</em> standard for storing tabular data.
 Data stored in CSV files are often used for data or statistical analysis, like in the R or Python programming languages.
-[YAML][yaml_wiki] files are used to store configuration files for various applications.</p>
+<a href="https://en.wikipedia.org/wiki/YAML">YAML</a> files are used to store configuration files for various applications.</p>
 <p>Oftentimes we might hear that data or metadata is <strong>encoded</strong> in a certain way, such as in MARC or DC, and
 then <strong>encoded</strong> again in XML, CSV, YAML, or similar formats.
 This isn't accurate, though.
@@ -5136,8 +5136,8 @@ the schema.org data model provides a vocabulary we can use to describe our web p
 Thus, using <a href="https://en.wikipedia.org/wiki/JSON">JSON</a> syntax, we will serialize our schema.org data as <a href="https://en.wikipedia.org/wiki/JSON-LD">JSON-LD</a>, or JSON Linked Data.</p>
 <p>The purpose of JSON-LD is to provide computers with data about the context and content of web pages.
 That is, the purpose is to provide <em>metadata</em>, or <em>data about data</em>, to computers, like search engines and AI,
-that allow them to build an <em>understanding</em> our web pages.
-Major platforms like Google, Bing, and others, use JSON-LD to understand web content specifically.</p>
+that allow them to build an <em>understanding</em> of our web pages.
+Major platforms like Google, Bing, and others use JSON-LD to understand web content specifically.</p>
 <h2 id="json"><a class="header" href="#json">JSON</a></h2>
 <p>To understand how to serialize the schema.org data model into JSON-LD, we need to know how to use JSON.
 <a href="https://www.json.org/json-en.html">JSON (JavaScript Object Notation)</a> is a format for data exchange, primarily across the internet.
@@ -5147,7 +5147,8 @@ Many programming languages have built-in or add-on libraries for working with da
 Per the JSON documentation:</p>
 <blockquote>
 <p>an <em>object</em> is an unordered set of name/value pairs.
-An object begins with a { <code>left brace</code> and ends with } <code>right brace. Each name is followed by : </code>colon<code>and the name/value pairs are separated by ,</code>comma`.</p>
+An object begins with a { <code>left brace</code> and ends with } <code>right brace</code>.
+Each name is followed by : <code>colon</code> and the name/value pairs are separated by , <code>comma</code>.</p>
 </blockquote>
 <p>And:</p>
 <blockquote>
@@ -5155,7 +5156,7 @@ An object begins with a { <code>left brace</code> and ends with } <code>right br
 Values are separated by , <code>comma</code>.</p>
 </blockquote>
 <p>Name/value pairs are separated by colons and both are <strong>double quoted</strong>:</p>
-<pre><code>"name":"value"
+<pre><code>"name": "value"
 </code></pre>
 <p>Values may take on specific data types that include:</p>
 <ul>
@@ -5211,7 +5212,7 @@ To see what this looks like, I convert the <code>interests</code> field to a arr
 <h3 id="nesting-json-objects"><a class="header" href="#nesting-json-objects">Nesting JSON Objects</a></h3>
 <p>As noted, JSON objects may take as a <em>value</em> other JSON objects.
 This is useful when a particular field name may be converted into an object itself.
-For example, in the above JSON objects, the <code>worksFor</code> field name can include other properties and thus may be extended into an object.
+For example, in the above JSON objects, the <code>worksFor</code> field name can include other properties and thus may be extended into an <strong>object</strong>.
 Since the person described in the JSON object also has a work location, I can add that as a new object named as <code>location</code>.
 The result is the following JSON object that contains two nested JSON objects: <code>worksFor</code> and <code>location</code>.
 Note that since the person described in this object teaches in two programs, I converted the <code>program</code> field name into a list
@@ -5256,7 +5257,7 @@ When writing JSON syntax manually, use the <a href="https://jsonlint.com/">JSONL
 It is not a linter, but it can be used to examine, search, sort, and analyze JSON data.</p>
 <h2 id="conclusion-18"><a class="header" href="#conclusion-18">Conclusion</a></h2>
 <p>In this section, we learned more about the concept of metadata,
-which generally relies on a <strong>data model (or schema)</strong> and serialization into a format, such as XML, CSV, or JSON.
+which generally relies on a <strong>data model (or schema)</strong> and serialization into a format, such as XML, CSV, and JSON.
 In the next section, we will begin to explore the full richness of the schema.org vocabulary and learn how to serialize that as JSON-LD.</p>
 <p>Before we can use JSON-LD, we need to know how to understand and use JSON.
 We learned that JSON uses a <code>"name": "value"</code> syntax.
@@ -5268,8 +5269,8 @@ If a JSON object includes an array as a data type, the array is enclosed in squa
 JSON objects nested in JSON objects are <strong>named</strong> and then the nested object is enclosed in curly brackets <code>{ }</code>.</p>
 <p>As with HTML and CSS, remember that it's important to validate our JSON syntax.
 Therefore, we also learned about tools like the JSON Linter.
-Be sure to validate your JSON.
-The more complex our JSON objects become, the easier it is to introduce syntax errors into them.</p>
+The more complex our JSON objects become, the easier it is to introduce syntax errors into them.
+So be sure to validate your JSON.</p>
 <p>When we begin working with schema.org, you will see how this structured, machine-readable format allows search engines and AI
 to <em>understand</em> what your website is about, even if no human ever reads it.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="schemaorg-and-structured-data"><a class="header" href="#schemaorg-and-structured-data">Schema.org and Structured Data</a></h1>
