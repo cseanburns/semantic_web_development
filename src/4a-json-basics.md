@@ -5,12 +5,12 @@
 It may be too obvious to say, but computer applications use and exchange data in order to operate.
 For example, an [OPAC (library catalog)][opac_wiki] contains bibliographic records (data)
 that allows users to search the data from a browser to locate information sources.
-An [Apache web server][apache_wiki] stores configuration information in order to turn on, off, or fine tune the services it provides.
+An [Apache web server][apache_wiki] stores configuration information in order to turn on, off, or fine tune the HTTP services it provides.
 
 What may not be obvious is that data is stored in a variety of formats.
 Library science students may be familiar with [XML (Extensible Markup Language)][xml_wiki] because it's used to serialize MARC data
 (see [MARCXML][marcxml_loc]) or [DublinCore (DC)][dc_dcorg] metadata.
-XML performs this service by storing data and metadata in a standardized format.
+XML performs this service by storing data and metadata in a [standardized format][xml_w3].
 [CSV (comma separated values)][csv_wiki] files function as a *de facto* standard for storing tabular data.
 Data stored in CSV files are often used for data or statistical analysis, like in the R or Python programming languages.
 [YAML][yaml_wiki] files are used to store configuration files for various applications.
@@ -50,8 +50,8 @@ Thus, using [JSON][json_wiki] syntax, we will serialize our schema.org data as [
 
 The purpose of JSON-LD is to provide computers with data about the context and content of web pages.
 That is, the purpose is to provide *metadata*, or *data about data*, to computers, like search engines and AI,
-that allow them to build an *understanding* our web pages.
-Major platforms like Google, Bing, and others, use JSON-LD to understand web content specifically.
+that allow them to build an *understanding* of our web pages.
+Major platforms like Google, Bing, and others use JSON-LD to understand web content specifically.
 
 ## JSON
 
@@ -64,7 +64,7 @@ JSON uses two data structures: objects and arrays (or lists).
 Per the JSON documentation:
 
 > an *object* is an unordered set of name/value pairs.
-> An object begins with a { `left brace` and ends with } `right brace.
+> An object begins with a { `left brace` and ends with } `right brace`.
 > Each name is followed by : `colon` and the name/value pairs are separated by , `comma`.
 
 And:
@@ -75,7 +75,7 @@ And:
 Name/value pairs are separated by colons and both are **double quoted**:
 
 ```
-"name":"value"
+"name": "value"
 ```
 
 Values may take on specific data types that include:
@@ -142,7 +142,7 @@ To see what this looks like, I convert the `interests` field to a array that lis
 
 As noted, JSON objects may take as a *value* other JSON objects.
 This is useful when a particular field name may be converted into an object itself.
-For example, in the above JSON objects, the `worksFor` field name can include other properties and thus may be extended into an object.
+For example, in the above JSON objects, the `worksFor` field name can include other properties and thus may be extended into an **object**.
 Since the person described in the JSON object also has a work location, I can add that as a new object named as `location`.
 The result is the following JSON object that contains two nested JSON objects: `worksFor` and `location`.
 Note that since the person described in this object teaches in two programs, I converted the `program` field name into a list
@@ -193,7 +193,7 @@ It is not a linter, but it can be used to examine, search, sort, and analyze JSO
 ## Conclusion
 
 In this section, we learned more about the concept of metadata,
-which generally relies on a **data model (or schema)** and serialization into a format, such as XML, CSV, or JSON.
+which generally relies on a **data model (or schema)** and serialization into a format, such as XML, CSV, and JSON.
 In the next section, we will begin to explore the full richness of the schema.org vocabulary and learn how to serialize that as JSON-LD.
 
 Before we can use JSON-LD, we need to know how to understand and use JSON.
@@ -207,29 +207,31 @@ JSON objects nested in JSON objects are **named** and then the nested object is 
 
 As with HTML and CSS, remember that it's important to validate our JSON syntax.
 Therefore, we also learned about tools like the JSON Linter.
-Be sure to validate your JSON.
 The more complex our JSON objects become, the easier it is to introduce syntax errors into them.
+So be sure to validate your JSON.
 
 When we begin working with schema.org, you will see how this structured, machine-readable format allows search engines and AI
 to *understand* what your website is about, even if no human ever reads it.
 
+[apache_wiki]:https://en.wikipedia.org/wiki/Apache_HTTP_Server
+[ascii_wiki]:https://en.wikipedia.org/wiki/ASCII
 [css3_validator_w3c]:https://jigsaw.w3.org/css-validator/
+[csv_wiki]:https://en.wikipedia.org/wiki/Comma-separated_values
+[dc_dcorg]:https://www.dublincore.org/specifications/dublin-core/dc-xml-guidelines/
+[full_schema_schema_org]:https://schema.org/docs/full.html
 [html5_validator_w3c]:https://validator.w3.org/
-[jsonlint]:https://jsonlint.com/
 [jq]:https://jqlang.org/
 [json_json_org]:https://www.json.org/json-en.html
-[full_schema_schema_org]:https://schema.org/docs/full.html
-[taxonomic_rank]:https://en.wikipedia.org/wiki/Taxonomic_rank
-[xml_wiki]:https://en.wikipedia.org/wiki/XML
-[marcxml_loc]:https://www.loc.gov/standards/marcxml/
-[dc_dcorg]:https://www.dublincore.org/specifications/dublin-core/dc-xml-guidelines/
-[serialization_wiki]:https://en.wikipedia.org/wiki/Serialization
-[csv_wiki]:https://en.wikipedia.org/wiki/Comma-separated_values
-[utf8_wiki]:https://en.wikipedia.org/wiki/UTF-8
-[ascii_wiki]:https://en.wikipedia.org/wiki/ASCII
-[opac_wiki]:https://en.wikipedia.org/wiki/Online_public_access_catalog
-[apache_wiki]:https://en.wikipedia.org/wiki/Apache_HTTP_Server
-[schema]:https://schema.org/
 [json_ld_wiki]:https://en.wikipedia.org/wiki/JSON-LD
+[jsonlint]:https://jsonlint.com/
 [json_wiki]:https://en.wikipedia.org/wiki/JSON
+[marcxml_loc]:https://www.loc.gov/standards/marcxml/
 [metadata_wiki]:https://en.wikipedia.org/wiki/Metadata
+[opac_wiki]:https://en.wikipedia.org/wiki/Online_public_access_catalog
+[schema]:https://schema.org/
+[serialization_wiki]:https://en.wikipedia.org/wiki/Serialization
+[taxonomic_rank]:https://en.wikipedia.org/wiki/Taxonomic_rank
+[utf8_wiki]:https://en.wikipedia.org/wiki/UTF-8
+[xml_w3]:https://www.w3.org/TR/xml/
+[xml_wiki]:https://en.wikipedia.org/wiki/XML
+[yaml_wiki]:https://en.wikipedia.org/wiki/YAML

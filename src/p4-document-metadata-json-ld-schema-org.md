@@ -38,33 +38,33 @@ authored by *C. Sean Burns*:
 
 In the [HTML Semantic Elements](2b-section-elements.html) and the
 [HTML Grouping and Text-Level Semantics](2c-grouping-semantic-elements.html) sections of this work,
-we were introduced to the ways that the HTML5 language has created **semantic elements** that help to add meaning to a document's structure.
+we were introduced to the ways that the HTML5 language created **semantic elements** that help to add meaning to a document's structure.
 These elements are placed in the `<body>` section of a web page.
 
 For example, the `<article>` element
 <q>represents a self-contained composition in a document, page, application, or site</q>
-[`<article>`: The Article Contents element][article_mdn].
+([`<article>`: The Article Contents element][article_mdn]).
 We might use the `<article>` element to capture a part of a web page that has an essay, blog post, news article, or like.
 Likewise, the `<nav>` element is a semantic element that
 <q>represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents</q> 
-[`<nav>`: The Navigation Section element][nav_mdn].
+([`<nav>`: The Navigation Section element][nav_mdn]).
 Thus we use this to provide navigation on our websites.
 
 Combined, via the elements we add to our `<head>` and `<body>` sections of our web pages,
-HTML5 provides quite a few tools to add metadata and semantic data to our web pages and thus help build **The Semantic Web**.
+HTML5 provides tools to add metadata and semantic data to our web pages and thus help build **The Semantic Web**.
 
 However, those elements are primarily aimed at adding semantic data about the document as a whole and its structure.
 In this last section of our work, we will explore how to add semantic data to our web pages that provide
 more information about the **content** of our those pages.
 
-To to that, we will learn about the [schema.org][schema] vocabulary.
-Schema.org is a data model that we will serialized as JSON-LD, or [JSON Linked Data][json_ld_wiki].
+To do that, we will learn about the [schema.org][schema] vocabulary.
+Schema.org is a **data model** that we will serialize as JSON-LD, or [JSON Linked Data][json_ld_wiki].
 Therefore, we will first learn how to structure data using [JSON][json_wiki],
 which is a format for data exchange, primarily across the internet.
 And then we will learn how to serialize, or integrate, a schema.org vocabulary into JSON-LD.
 
-By adding appropriate metadata in `<head>` sections and semantic elements in our `<body>` sections of our web documents,
-and by adding JSON-LD metadata to our documents, we will make a large contribution to the [Semantic Web][semantic_web_wiki].
+By adding appropriate metadata in the `<head>` sections and semantic elements in the `<body>` sections of our web documents,
+and by adding JSON-LD metadata to our documents, we will make a contribution to the [Semantic Web][semantic_web_wiki].
 The result will be websites that are more accessible to search engines, AI, and to our users.
 
 In the next section, we will begin by learning how to create JSON objects.
@@ -77,12 +77,12 @@ By the end of this chapter, you will be able to:
 - Use schema.org types and properties to describe content
 - Embed structured data in a web page using JSON-LD
 
-[semantic_web_wiki]:https://en.wikipedia.org/wiki/Semantic_Web
-[json_wiki]:https://en.wikipedia.org/wiki/JSON
-[json_ld_wiki]:https://en.wikipedia.org/wiki/JSON-LD
-[nav_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
 [article_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article
+[json_ld_wiki]:https://en.wikipedia.org/wiki/JSON-LD
+[json_wiki]:https://en.wikipedia.org/wiki/JSON
+[nav_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
 [schema]:https://schema.org/
+[semantic_web_wiki]:https://en.wikipedia.org/wiki/Semantic_Web
 
 <!--
 ## References
