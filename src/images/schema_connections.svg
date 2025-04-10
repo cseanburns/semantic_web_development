@@ -1,185 +1,144 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
-<svg
-   width="297mm"
-   height="210mm"
-   viewBox="0 0 297 210"
-   version="1.1"
-   id="svg5"
-   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="schema_connections.svg"
-   inkscape:export-filename="/home/seanburns/workspace/semantic_web_development/src/images/schema_connections.png"
-   inkscape:export-xdpi="96"
-   inkscape:export-ydpi="96"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
-     showgrid="false"
-     inkscape:zoom="1.0646329"
-     inkscape:cx="561.69594"
-     inkscape:cy="396.85039"
-     inkscape:window-width="1920"
-     inkscape:window-height="1057"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
-  <defs
-     id="defs2" />
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
-    <rect
-       style="fill:#ffffff;stroke:#030000;stroke-width:1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect846"
-       width="47.057785"
-       height="18.175989"
-       x="128.05708"
-       y="28.109053" />
-    <rect
-       style="fill:#ffffff;stroke:#030000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect1170"
-       width="47.057785"
-       height="18.175989"
-       x="88.040398"
-       y="62.276768" />
-    <rect
-       style="fill:#ffffff;stroke:#030000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect1172"
-       width="47.057785"
-       height="18.175989"
-       x="175.90509"
-       y="62.276768" />
-    <text
-       xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
-       x="145.87677"
-       y="38.364933"
-       id="text2870"><tspan
-         sodipodi:role="line"
-         id="tspan2868"
-         style="font-size:4.23333px;stroke-width:0.264583"
-         x="145.87677"
-         y="38.364933">Thing</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
-       x="105.84665"
-       y="72.942963"
-       id="text5382"><tspan
-         sodipodi:role="line"
-         id="tspan5380"
-         style="font-size:4.23333px;stroke-width:0.264583"
-         x="105.84665"
-         y="72.942963">Place</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
-       x="185.96298"
-       y="72.532646"
-       id="text7828"><tspan
-         sodipodi:role="line"
-         id="tspan7826"
-         style="font-size:4.23333px;stroke-width:0.264583"
-         x="185.96298"
-         y="72.532646">Organization</tspan></text>
-    <rect
-       style="fill:#ffffff;stroke:#030000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect10946"
-       width="47.057785"
-       height="18.175989"
-       x="62.041832"
-       y="97.432739" />
-    <text
-       xml:space="preserve"
-       style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
-       x="70.647614"
-       y="108.09893"
-       id="text13812"><tspan
-         sodipodi:role="line"
-         id="tspan13810"
-         style="font-size:4.23333px;stroke-width:0.264583"
-         x="70.647614"
-         y="108.09893">CivicStructure</tspan></text>
-    <g
-       id="g44498"
-       transform="translate(7.8536428,17.693509)">
-      <rect
-         style="fill:#ffffff;stroke:#030000;stroke-width:1.21258;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect10948"
-         width="57.061386"
-         height="22.039864"
-         x="148.56976"
-         y="103.77578" />
-      <text
-         xml:space="preserve"
-         style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
-         x="151.11757"
-         y="115.9636"
-         id="text15730"><tspan
-           sodipodi:role="line"
-           id="tspan15728"
-           style="font-size:4.23333px;stroke-width:0.264583"
-           x="151.11757"
-           y="115.9636">EducationalOrganization</tspan></text>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="35cm" height="38cm" viewBox="76 208 694 744" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Background">
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="298" y="210" width="154" height="66" rx="0" ry="0"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="375" y="246.881">
+        <tspan x="375" y="246.881">Thing</tspan>
+      </text>
     </g>
-    <g
-       id="g44503"
-       transform="translate(-4.2345599,18.650703)">
-      <rect
-         style="fill:#ffffff;stroke:#030000;stroke-width:1.21258;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect37862"
-         width="57.061386"
-         height="22.039864"
-         x="129.66666"
-         y="146.92712" />
-      <text
-         xml:space="preserve"
-         style="font-size:4.23333px;line-height:1.25;font-family:sans-serif;word-spacing:0px;stroke-width:0.264583"
-         x="137.0307"
-         y="159.11494"
-         id="text39950"><tspan
-           sodipodi:role="line"
-           id="tspan39948"
-           style="font-size:4.23333px;stroke-width:0.264583"
-           x="137.0307"
-           y="159.11494">CollegeOrUniversity</tspan></text>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="145" y="310" width="150" height="69" rx="0" ry="0"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="220" y="348.381">
+        <tspan x="220" y="348.381">Place</tspan>
+      </text>
     </g>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 128.05708,46.285041 115.20294,61.940873"
-       id="path44409" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 175.11487,46.285041 20.2525,15.656803"
-       id="path44411" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 109.519,80.416836 86.583254,97.549231"
-       id="path44413" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 109.09962,115.60873 47.32572,15.87717"
-       id="path44538" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 200.6096,81.465281 188.11658,121.1354"
-       id="path44540" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 182.6899,143.23044 -22.56005,22.30377"
-       id="path44542" />
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="401" y="303" width="136" height="63" rx="0" ry="0"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="469" y="338.381">
+        <tspan x="469" y="338.381">Organization</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="78" y="434" width="172" height="74" rx="0" ry="0"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="164" y="474.881">
+        <tspan x="164" y="474.881">CivicStructure</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="341.075" y="450" width="178.85" height="75" rx="0" ry="0"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="430.5" y="491.381">
+        <tspan x="430.5" y="491.381">EducationalOrganization</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="245" y="657" width="162" height="77" rx="0" ry="0"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="326" y="699.381">
+        <tspan x="326" y="699.381">CollegeOrUniversity</tspan>
+      </text>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="375" y1="276" x2="230.745" y2="307.643"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="229.673,302.759 220.977,309.786 231.816,312.527 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="375" y1="276" x2="458.427" y2="299.963"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="457.047,304.769 468.039,302.724 459.808,295.158 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="220" y1="379" x2="171.848" y2="426.292"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="168.344,422.725 164.713,433.299 175.351,429.859 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="469" y1="366" x2="435.083" y2="440"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="430.538,437.917 430.917,449.091 439.629,442.084 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="250" y1="471" x2="330.251" y2="485.539"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="329.36,490.459 340.091,487.322 331.143,480.619 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="430.5" y1="525" x2="332.828" y2="648.375"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="328.908,645.272 326.621,656.216 336.748,651.479 "/>
+    </g>
+    <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="475" y="689">
+      <tspan x="475" y="689"></tspan>
+    </text>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x="585.525" y="305" width="131.475" height="60" rx="0" ry="0"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="651.263" y="338.881">
+        <tspan x="651.263" y="338.881">Person</tspan>
+      </text>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="452" y1="243" x2="640.759" y2="301.732"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="639.274,306.506 650.308,304.703 642.245,296.958 "/>
+    </g>
+    <g>
+      <ellipse style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="515.539" cy="605.699" rx="51.0055" ry="19.1423"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="515.539" y="609.58">
+        <tspan x="515.539" y="609.58">alumni</tspan>
+      </text>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="651.263" y1="365" x2="521.285" y2="577.176"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="517.022,574.565 516.062,585.704 525.549,579.788 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="430.5" y1="525" x2="488.092" y2="580.389"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="484.626,583.992 495.299,587.32 491.558,576.785 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" x1="326" y1="734" x2="281.128" y2="799.843"/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="276.996,797.027 275.496,808.106 285.259,802.659 "/>
+    </g>
+    <g>
+      <ellipse style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="274.933" cy="835.966" rx="63.0673" ry="27.0336"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="274.933" y="839.847">
+        <tspan x="274.933" y="839.847">name</tspan>
+      </text>
+    </g>
+    <g>
+      <polyline style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" points="515.539,624.841 515.539,671.421 686.5,671.421 686.5,707 "/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="681.5,707 686.5,717 691.5,707 "/>
+    </g>
+    <g>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 627.7 718 L 745.3,718 L 768.82,777 L 745.3,836 L 627.7,836 L 604.18,777 L 627.7,718z"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="686.5" y="756.881">
+        <tspan x="686.5" y="756.881">Doris Y. Wilkinson</tspan>
+        <tspan x="686.5" y="772.881">Ashley Judd</tspan>
+        <tspan x="686.5" y="788.881">Mitch McConnell</tspan>
+        <tspan x="686.5" y="804.881">Steve Beshear</tspan>
+      </text>
+    </g>
+    <g>
+      <polyline style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" points="211.865,835.966 190.865,882.983 190.865,882.983 365.896,927.3 "/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="364.669,932.147 375.591,929.755 367.124,922.453 "/>
+    </g>
+    <g>
+      <ellipse style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" cx="522.652" cy="843.846" rx="49.8304" ry="23.2689"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="522.652" y="847.727">
+        <tspan x="522.652" y="847.727">alumniOf</tspan>
+      </text>
+    </g>
+    <g>
+      <polyline style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" points="604.18,777 522.652,777 522.652,809.577 "/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="517.652,809.577 522.652,819.577 527.652,809.577 "/>
+    </g>
+    <g>
+      <polyline style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" points="572.482,843.846 606.44,886.923 606.44,886.923 590.26,920.112 "/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="585.766,917.921 585.878,929.101 594.755,922.303 "/>
+    </g>
+    <g>
+      <polyline style="fill: none; stroke-opacity: 1; stroke-width: 2; stroke: #000000" points="406.4,910 406.4,766.692 496.02,766.692 496.02,634.384 "/>
+      <polygon style="fill: #000000; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" points="501.02,634.384 496.02,624.384 491.02,634.384 "/>
+    </g>
+    <g>
+      <path style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 2; stroke: #000000" fill-rule="evenodd" d="M 406.4 910 L 555.6,910 L 585.44,930 L 555.6,950 L 406.4,950 L 376.56,930 L 406.4,910z"/>
+      <text font-size="12.7998" style="fill: #000000; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="481" y="933.881">
+        <tspan x="481" y="933.881">University of Kentucky</tspan>
+      </text>
+    </g>
   </g>
 </svg>
