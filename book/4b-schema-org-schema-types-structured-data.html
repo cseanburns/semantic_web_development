@@ -177,58 +177,157 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="schemaorg-and-structured-data"><a class="header" href="#schemaorg-and-structured-data">Schema.org and Structured Data</a></h1>
-<!--
-
-## JSON-LD
-
-Metadata plays a central role in most computer applications.
-Metadata serialized in JSON-LD is used by search engines, AI, and other services to *understand* the content expressed in HTML,
-the latter of which is used for human consumption.
-It accomplishes this through the schema.org vocabulary (although other data models exist for different contexts).
-Like other data models, the schema.org vocabulary provides a method for adding structured, linked data.
-The data is *linked* because the vocabulary is interconnected via a hierarchical data model.
-For example, the main data type in schema.org is *Thing*.
-The *Thing* type includes child data types such as *Action*, *Person*, *Place*, *Organization*, and more.
-The child data types include additional descendants:
-an *Organization* thing includes *Airline*, *EducationalOrganization*, *PoliticalParty*, *LocalBusiness*, and more.
-And an *EducationalOrganization* may include *CollegeOrUniversity*, *ElementarySchool*, *HighSchool*, and so on.
-
-These data types are *transitive* (if `a > b` and `b > c`, then `a > c`).
-For example, the University of Kentucky is a **property** of a *CollegeOrUniversity* thing.
-Since it's a *CollegeOrUniversity* thing, then it is also an *EducationalOrganization* thing.
-If it's an *EducationalOrganization* thing, then it is also an *Organization* thing.
-And finally, if it's an *Organization* thing, then it is a *Thing*.
-
-```
-- Thing
+<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
+<p>Metadata plays a central role in most computer applications.
+There are different data models to structure metadata.
+The data model we will use to add metadata to our pages is called <a href="https://schema.org/">schema.org</a>.</p>
+<h2 id="data-models-an-overview"><a class="header" href="#data-models-an-overview">Data Models: An Overview</a></h2>
+<p>Some data models provide a basic structure, but others are more involved.
+Regardless, they all provide a sort of <strong>controlled vocabulary</strong>, which means they:</p>
+<ul>
+<li>reduce ambiguity by using approved terms</li>
+<li>promote interoperability between systems, platforms, or institutions</li>
+<li>allow for machine processing by enforcing structures and values.</li>
+</ul>
+<p>For example, the <a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#section-3">Dublin Core</a> data model provides a flat list of controlled terms.
+The main terms include:</p>
+<ul>
+<li><code>contributor</code></li>
+<li><code>coverage</code></li>
+<li><code>creator</code></li>
+<li><code>date</code></li>
+<li><code>description</code></li>
+<li><code>format</code></li>
+<li><code>identifier</code></li>
+<li><code>language</code></li>
+<li><code>publisher</code></li>
+<li><code>relation</code></li>
+<li><code>rights</code></li>
+<li><code>source</code></li>
+<li><code>subject</code></li>
+<li><code>title</code></li>
+<li><code>type</code></li>
+</ul>
+<p>We can use this data model for all sorts of items or works.
+Here I use it to describe Toni Morrison's Pulitzer Prize winning novel, <em>Beloved</em>:</p>
+<div class="table-wrapper"><table><thead><tr><th>DC Term</th><th>Property</th></tr></thead><tbody>
+<tr><td>Creator</td><td>Toni Morrison</td></tr>
+<tr><td>Title</td><td>Beloved</td></tr>
+<tr><td>Publisher</td><td>Alfred A. Knopf Inc.</td></tr>
+<tr><td>Language</td><td>English</td></tr>
+<tr><td>Date</td><td>1987</td></tr>
+<tr><td>Identifier</td><td>1-58060-120-0</td></tr>
+</tbody></table>
+</div>
+<p>Unlike Dublin Core, other controlled vocabulary data models are designed to be more interconnected.
+For example, <a href="https://www.ncbi.nlm.nih.gov/mesh/">MeSH (Medical Subject Headings)</a> and <a href="https://www.loc.gov/aba/publications/FreeLCSH/freelcsh.html">LCSH (Library of Congress Subject Headings)</a>
+are types of <a href="https://en.wikipedia.org/wiki/Thesaurus_(information_retrieval)">thesauri</a>.
+Both are organized in a tree-like hierarchical structure;
+for example, MeSH terms are arranged from broad categories (e.g., <strong>neoplasms</strong>) to specific categories (e.g., <strong>Neoplasm Metastasis</strong>).
+Likewise, LCSH employs broader terms (BT, like <strong>C (Computer Programming Language)</strong>),
+related terms (RT, like <strong>Objective-C (Computer Programming Language)</strong>), and
+narrower terms (NT, like <strong>Small-C (Computer Programming Language)</strong>).
+MeSH is used in biomedical and health-related indexing, such as in <a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a>.
+LCSH is often used by the Library of Congress and in academic libraries catalogs (e.g., UK's InfoKat).</p>
+<h2 id="schemaorg"><a class="header" href="#schemaorg">Schema.org</a></h2>
+<p>Then there's <strong>schema.org</strong>, which was created by Google, Microsoft, Yahoo, and Yandex, for the purpose of describing web content
+for search engines.
+Unlike the prior data models, schema.org functions more like a <a href="https://en.wikipedia.org/wiki/Taxonomy">taxonomy</a> and <a href="https://en.wikipedia.org/wiki/Ontology_(information_science)">ontology</a>.
+As a taxonomy, schema.org is a kind of hierarchical, relational classification system, and as an ontology,
+schema.org stresses foundational components, such as concepts or classes, properties or attributes, relationships, and instances.</p>
+<p>Like other data models, the schema.org vocabulary provides a method for adding structured, linked data.
+The data is <em>linked</em> because the vocabulary is interconnected via a hierarchical data model.
+This means that each type or property can point to or be reused across datasets, and
+it's this characteristic that creates a web of meaning that is readable by machines.</p>
+<p>For example, the root data type in schema.org is <code>Thing</code>.
+The <code>Thing</code> type includes child data types such as <code>Action</code>, <code>Person</code>, <code>Place</code>, <code>Organization</code>, and more.
+These are all types of <em>Things</em> (or <em>classes</em>).
+The child data types include additional descendants; for example, the following are all examples of specific classes of
+an <code>Organization</code> thing:</p>
+<ul>
+<li><code>Airline</code>,</li>
+<li><code>EducationalOrganization</code></li>
+<li><code>PoliticalParty</code>,</li>
+<li><code>LocalBusiness</code>, and more.</li>
+</ul>
+<p>Digging deeper, if we focus on the <code>EducationalOrganization</code> type, we find that it may include other <em>Things</em>:</p>
+<ul>
+<li><code>CollegeOrUniversity</code></li>
+<li><code>ElementarySchool</code></li>
+<li><code>HighSchool</code>, and so on.</li>
+</ul>
+<p>Schema.org data types are <em>transitive</em> (if <code>a &gt; b</code> and <code>b &gt; c</code>, then <code>a &gt; c</code>).
+For example, the <em>University of Kentucky</em> is an <code>instance</code> of a <code>CollegeOrUniversity</code> type.
+This itself is a subclass of an <code>EducationalOrganization</code>.
+We could go on: an <code>EducationalOrganization</code> type is a subclass of an <code>Organization</code> type.
+And finally, an <code>Organization</code> thing is a subclass of <code>Thing</code>.
+We might represent this as follows:</p>
+<pre><code>- Thing
     - Organization
         - EducationalOrganization
             - CollegeOrUniversity
-                - University of Kentucky (property)
-```
-
-All data types eventually walk back to the *Thing* type, just as in biology,
-all life on Earth is classified in a [taxonomy][taxonomic_rank] with *Domain* holding the broadest rank.
-
-However, just like *University of Kentucky* can be counted as a specific *property* of *CollegeOrUniversity*,
-each *type* has its own set of properties in schema.org.
-Since a *CollegeOrUniversity* thing is also an *EducationalOrganization* thing,
-then a *CollegeOrUniversity* thing may also have the properties specific to *EducationalOrganization*, such as *alumni*.
-Furthermore, a *CollegeOrUniversity* thing may include the properties of other types not in its direct lineage.
-For example, a *CollegeOrUniversity* thing may also be a *CivicStructure* thing and a *Place* thing,
-even though neither of those are specific descendants of *EducationalOrganization*.
-In this way, specific *things* and *properties* can interconnect or *link* to each other, forming **linked data**.
-
-See the [Full schema hierarchy][full_schema_schema_org] for a complete listing.
-
-## Conclusion
-
-
-We were also introduced to **schema.org** data model
-We learned that JSON-LD is a hierarchical, linked data model that contains a root data type, *Thing*,
-which includes descendant thing types.
-
--->
+                - University of Kentucky (instance)
+</code></pre>
+<p>All classes eventually descend back to the <code>Thing</code> type, just as in biology,
+all life on Earth is classified in a <a href="https://en.wikipedia.org/wiki/Taxonomy_(biology)">taxonomy</a> with <code>Domain</code> holding the broadest rank.</p>
+<p>Furthermore, all types have <strong>properties</strong>.
+A <a href="https://schema.org/Thing"><code>Thing</code></a> type can have the following properties:</p>
+<ul>
+<li><code>image</code></li>
+<li><code>name</code></li>
+<li><code>description</code></li>
+</ul>
+<p>And an <code>EducationalOrganization</code> Thing can have <code>alumni</code> as a property.</p>
+<p>And each of those properties may have additional properties or take on values.
+For example, for <code>image</code>, we can provide a URL to an actual image.
+Or we may provide a <code>caption</code> for it.</p>
+<p>However, just like <code>University of Kentucky</code> can be counted as an instance of <code>CollegeOrUniversity</code>,
+each <code>type</code> has its own set of <strong>instances</strong> in schema.org.
+To illustrate: since a <code>CollegeOrUniversity</code> thing is also an <code>EducationalOrganization</code> thing,
+a <code>CollegeOrUniversity</code> thing may also have the properties specific to <code>EducationalOrganization</code>, such as <code>alumni</code>.
+For instance, because <code>CollegeOrUniversity</code> inherits from <code>Thing</code>,
+it can use general properties like <code>name</code>, <code>description</code>, and <code>url</code>, but
+also more specific ones like <code>alumni</code> that are directly inherited from <code>EducationalOrganization</code>.</p>
+<p>That is, a <code>CollegeOrUniversity</code> thing may inherit properties of other types not in its direct lineage.
+Another example: a <code>CollegeOrUniversity</code> thing may also be a <code>CivicStructure</code> thing and a <code>Place</code> thing,
+even though neither of those are specific descendants of <code>EducationalOrganization</code>.
+In this way, specific <code>things</code> and <code>properties</code> can interconnect or <code>link</code> to each other, forming <code>linked data</code>.
+That is, it's this ability to belong to multiple classes, and to inherit properties from these classes,
+that enables schema.org to describe real-world complexity more naturally than rigid, single-hierarchy systems.</p>
+<figure>
+<img src="images/schema_connections.svg"
+alt="Visual representation of the connections between schema.org types using University of Kentucky as an example"
+title="Visual representation of the connections between schema.org types using University of Kentucky as an example">
+<figcaption>
+Fig. 2. <a href="https://schema.org/CollegeOrUniversity">Schema.org Example Map of University of Kentucky</a>.
+<em>Types</em> are represented in square shapes.
+<em>Properties</em> are represented in oval shapes.
+<em>Instances</em> are represented in hexagonal shapes.
+Diagram created using <a href="https://wiki.gnome.org/Apps/Dia">Dia</a>.
+</figcaption>
+</figure>
+<p>As you can see, a particular <code>instance</code> of some <code>Thing</code> may be a member of many classes, or be many types of <code>Things</code>.
+This is the same as you and me.
+For example, I am a professor, a parent, an offspring, etc.
+You might be a student and offspring.
+Thus, we both share at least one class, and inherit the properties of that class and its broader classes, like <code>Person</code>.
+By using this organizational model to describe the content of a web page, search engines can begin to <em>understand</em>
+that content and its context and the relationship among <em>Things</em> on the web.</p>
+<p>To employ schema.org on your web pages requires some familiarity with the data model and what it offers.
+Therefore, begin reviewing the <a href="https://schema.org/docs/full.html">Full schema hierarchy</a> for a complete listing of what is available.</p>
+<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
+<p>In this section, we were introduced to the <strong>schema.org</strong> data model.
+We learned that schema.org is a hierarchical and extensible data model, with <code>Thing</code> as the root class and
+many descendant classes that inherit and extend its properties.
+By understanding this structure,
+we will be able to select the right types and properties that describe our web pages.</p>
+<p>In the next section, we will use the schema.org data model to model the content of our web pages.
+Then we will serialize the models we create as JSON-LD.</p>
+<p>To sum it up:
+Metadata serialized in JSON-LD is used by search engines, AI, and other services to <em>understand</em> the content expressed in HTML,
+the latter of which is used for human consumption.
+It accomplishes this through the schema.org vocabulary (although other data models exist for different contexts).</p>
+<p>In the next section, we focus on the practical aspects of serializing <code>schema.org</code> as JSON-LD.</p>
 
                     </main>
 
