@@ -1,4 +1,4 @@
-# Conclusion and Final Project
+# Conclusion
 
 The purpose of this textbook is to serve as an introduction to semantic web development.
 It does this by focusing on the fundamentals: HTML5, CSS3, and JSON-LD.
