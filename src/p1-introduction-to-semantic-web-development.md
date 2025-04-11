@@ -68,5 +68,13 @@ It is focused on a select and small range of those topics that have the specific
 
 I use [mdBook][mdbook] to build [markdown][markdown] source files into this final output.
 
+## Copyright
+
+The content in this book is open access and licensed under the
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0][ccbyncsa] license.
+Feel free to fork it on [GitHub][semantic_wd_github] and modify it for your own needs.
+
+[semantic_wd_github]:https://github.com/cseanburns/semantic_web_development
+[ccbyncsa]:https://creativecommons.org/licenses/by-nc-sa/4.0/
 [markdown]:https://www.markdownguide.org/
 [mdbook]:https://github.com/rust-lang/mdBook
