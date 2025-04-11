@@ -71,7 +71,7 @@ This is because JSON-LD is meant to capture details about the content in the web
 
 For example, consider a recipe for [Baked Kibbeh][kibbeh_mb], a Lebanese dish made of lamb, bulgur wheat, onion, and spices,
 often eaten when the meat is raw and sometimes cooked.
-If we search the source code of the article, we find that it uses JSON-LD.
+If we search the source code of the recipe's web page, we find that it uses JSON-LD.
 We can examine that JSON-LD by pasting the URL in the [schema.org validator][validator_schema_org], and
 see that the entire recipe, including ingredients and recipe instructions, is described in the JSON-LD.
 
@@ -90,7 +90,9 @@ then we must create a JSON-LD model based on that topic and on the content in th
 If we add schema.org `Types`, `Properties`, and `Instances` to our JSON-LD that are not covered in the systems administration article,
 search engines will demote our website in their search results.
 
-Here's a basic JSON-LD example that describes Debian, a GNU/Linux distribution that is one of the topics of my made-up webpage:
+Here's a basic JSON-LD example that describes the Debian a GNU/Linux distribution, one of the topics of my made-up webpage.
+Note that a JSON object begins with an `@context` statement and a link to the schema.org site.
+Then, the `@type` is declared:
 
 ```
 <script type="application/ld+json">
@@ -113,7 +115,7 @@ Here's a basic JSON-LD example that describes Debian, a GNU/Linux distribution t
 </script>
 ```
 
-The above example is based on `SoftwareApplication` Type.
+The above example is based on `SoftwareApplication` type.
 This is declared in the second line with `"@type": "SoftwareApplication"`.
 This type entails a range of properties but also inherits properties from parent/ancestor types.
 That is, since [`SoftwareApplication`][software_application_schema_org] is a descendant/subclass of the `CreativeWork` type,
@@ -123,28 +125,28 @@ Therefore, in the JSON-LD code above, I use properties from `SoftwareApplication
 as detailed at the schema.org link above and in the list below:
 
 ```
-- `Thing`
-    - `name`
-    - `description`
-    - `url`
-        - `CreativeWork`
-            - `datePublished`
-                - `SoftwareApplication`
-                    - `applicationCategory`
-                    - `applicationSubCategory`
-                    - `downloadUrl`
-                    - `memoryRequirements`
-                    - `operatingSystem`
-                    - `releaseNotes`
-                    - `softwareVersion`
-                    - `storageRequirements`
+- Thing (TYPE), properties of Thing:
+    - name
+    - description
+    - url
+        - CreativeWork (TYPE), property of CreativeWork:
+            - datePublished
+                - SoftwareApplication (TYPE), properties of SoftwareApplication:
+                    - applicationCategory
+                    - applicationSubCategory
+                    - downloadUrl
+                    - memoryRequirements
+                    - operatingSystem
+                    - releaseNotes
+                    - softwareVersion
+                    - storageRequirements
 ```
 
 The above JSON-LD is a good start, but we can capture more metadata about the Debian operating system.
 For example, the Debian OS is overseen by *The Debian Project*, which is a legal entity and the creator of the OS.
 We can modify our JSON-LD code to include that metadata.
 Specifically, we will use the [`creator`][creator_schema_org] property,
-which accepts either `Organization` or `Person` as values (or instances).
+which accepts either the `Organization` or `Person` properties as values (or instances).
 Since both instances are schema.org `Types`, we can create a nested JSON object:
 To capture more detail, we can list the main features of Debian using the `featureList` property of the `SoftwareApplication` type.
 I use a JSON list (using square brackets) to list the system's features.
@@ -189,6 +191,59 @@ see the earlier section on [JSON Basics][json_basics].
 }
 ```
 
+Finally, we're missing a subtle addition to the JSON-LD.
+My made-up web page is about using Debian for systems administration.
+It's not about **Debian**, per se.
+Thus, the above JSON-LD might be appropriate on the [Debian homepage][debian], but
+my web page talks about using Debian rather than being about Debian.
+Understanding this requires acquiring a judgment of thing's [aboutness][aboutness_wiki].
+In any case, to capture this distinction, I add the [WebPage][webpage_schema_org] type to the JSON-LD,
+along with `name` and `description` properties, and make the rest of the JSON nested in that type.
+I also name the nested JSON-LD object as `about`:
+
+```
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Introduction to Linux Systems Administration with Debian",
+    "description": "An educational web page covering systems administration with Linux, focusing on Debian GNU/Linux.",
+    "about": {
+        "@type": "SoftwareApplication",
+        "name": "Debian GNU/Linux",
+        "description": "The Universal Operating System",
+        "operatingSystem": "Debian",
+        "softwareVersion": "12.10",
+        "applicationCategory": "Operating System",
+        "applicationSubCategory": "Linux Distribution",
+        "memoryRequirements": "780MB",
+        "storageRequirements": "1160MB",
+        "url": "https://www.debian.org/",
+        "downloadUrl": "https://www.debian.org/distrib",
+        "releaseNotes": "https://www.debian.org/News/2025/20250315",
+        "datePublished": "2025-03-15",
+        "license": "https://www.debian.org/legal/licenses/",
+        "creator": {
+            "@type": "Organization",
+            "name": "Debian Project",
+            "url": "https://www.debian.org/intro/about"
+        },
+        "featureList": [
+            "free software",
+            "stable",
+            "secure",
+            "extensive hardware support",
+            "flexible installer",
+            "smooth upgrades",
+            "community-developed",
+            "long-term support"
+        ]
+    }
+}
+</script>
+```
+
+
 ## Step 4: Validating Our JSON-LD
 
 It's quite easy to make mistakes when manually writing JSON-LD code.
@@ -227,37 +282,43 @@ The following snippet illustrates this:
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Debian GNU/Linux",
-    "description": "The Universal Operating System",
-    "operatingSystem": "Debian",
-    "softwareVersion": "12.10",
-    "applicationCategory": "Operating System",
-    "applicationSubCategory": "Linux Distribution",
-    "memoryRequirements": "780MB",
-    "storageRequirements": "1160MB",
-    "url": "https://www.debian.org/",
-    "downloadUrl": "https://www.debian.org/distrib",
-    "releaseNotes": "https://www.debian.org/News/2025/20250315",
-    "datePublished": "2025-03-15",
-    "license": "https://www.debian.org/legal/licenses/",
-    "creator": {
-        "@type": "Organization",
-        "name": "Debian Project",
-        "url": "https://www.debian.org/intro/about"
-    },
-    "featureList": [
-        "free software",
-        "stable",
-        "secure",
-        "extensive hardware support",
-        "flexible installer",
-        "smooth upgrades",
-        "community-developed",
-        "long-term support"
-    ]
+    "@type": "WebPage",
+    "name": "Introduction to Linux Systems Administration with Debian",
+    "description": "An educational web page covering systems administration with Linux, focusing on Debian GNU/Linux.",
+    "about": {
+        "@type": "SoftwareApplication",
+        "name": "Debian GNU/Linux",
+        "description": "The Universal Operating System",
+        "operatingSystem": "Debian",
+        "softwareVersion": "12.10",
+        "applicationCategory": "Operating System",
+        "applicationSubCategory": "Linux Distribution",
+        "memoryRequirements": "780MB",
+        "storageRequirements": "1160MB",
+        "url": "https://www.debian.org/",
+        "downloadUrl": "https://www.debian.org/distrib",
+        "releaseNotes": "https://www.debian.org/News/2025/20250315",
+        "datePublished": "2025-03-15",
+        "license": "https://www.debian.org/legal/licenses/",
+        "creator": {
+            "@type": "Organization",
+            "name": "Debian Project",
+            "url": "https://www.debian.org/intro/about"
+        },
+        "featureList": [
+            "free software",
+            "stable",
+            "secure",
+            "extensive hardware support",
+            "flexible installer",
+            "smooth upgrades",
+            "community-developed",
+            "long-term support"
+        ]
+    }
 }
-        </script>
+
+</script>
     </head>
     <body>
     </body>
@@ -289,3 +350,6 @@ use JSON syntax to serialize metadata, validate the results, and add your JSON-L
 [sportsevent_schema_org]:https://schema.org/SportsEvent
 [hackathon_schema_org]:https://schema.org/Hackathon
 [json_basics]:4a-json-basics.html
+[webpage_schema_org]:https://schema.org/WebPage
+[debian]:https://www.debian.org/
+[aboutness_wiki]:https://en.wikipedia.org/wiki/Aboutness
