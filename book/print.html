@@ -5426,6 +5426,248 @@ the latter of which is used for human consumption.
 It accomplishes this through the schema.org vocabulary (although other data models exist for different contexts).</p>
 <p>In the next section, we focus on the practical aspects of serializing <code>schema.org</code> as JSON-LD.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="json-ld-syntax-and-integration"><a class="header" href="#json-ld-syntax-and-integration">JSON-LD Syntax and Integration</a></h1>
+<h2 id="introduction-14"><a class="header" href="#introduction-14">Introduction</a></h2>
+<p>Now that we know how to structure data using JSON and use schema.org to conceptualize <code>Things</code>,
+we can begin to learn how to serialize schema.org into JSON-LD.</p>
+<h2 id="step-1-the-script-tag"><a class="header" href="#step-1-the-script-tag">Step 1: The <code>&lt;script&gt;</code> tag</a></h2>
+<p>Our JSON-LD code will be placed within the <code>&lt;head&gt;</code> of our web pages.
+We will use the <code>&lt;script&gt;</code> HTML element with the <code>type</code> attribute.
+The <code>type</code> attribute will hold a value for the <code>ld+json</code> <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types/Common_types">MIME</a> type, which is <code>application/ld+json</code>.
+In the following snippet, I place this element just before the closing <code>&lt;/head&gt;</code> tag.
+The JSON-LD metadata will be placed between the opening and closing <code>&lt;script&gt;</code> tags.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;title&gt;Using the Linux OS for Systems Administration&lt;/title&gt;
+        &lt;base href="https://www.example.org/"&gt;
+        &lt;link rel="stylesheet" href="css/style.css"&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;meta name="author" content="C. Sean Burns"&gt;
+        &lt;meta name="description" content="An introduction to Systems Administration with Linux OS, including Debian and Ubuntu"&gt;
+        &lt;meta name="keywords" content="systems administration, linux, debian, ubuntu"&gt;
+        &lt;style&gt;
+            html { font-family: monospace; }
+        &lt;/style&gt; 
+        &lt;script type="application/ld+json"&gt;
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="step-2-creating-a-data-model"><a class="header" href="#step-2-creating-a-data-model">Step 2: Creating a Data Model</a></h2>
+<p>In the last section, I showed how data models dictate the kind of metadata we can collect.
+I showed an initial example of how Dublin Core's fifteen main data fields can be used to capture specific metadata elements of a novel.
+That was a relatively easy example, and that's in large part because Dublin Core is a fairly flat and small schema.
+Knowing how to use schema.org to capture the important metadata elements is a bit more involved,
+and this is because schema.org is a big, general purpose taxonomy.</p>
+<p>The first step in identifying the schema.org elements to use is to start with the content of the web page
+that you want to describe with schema.org.
+The next step is to identify the main topic(s) of that content.
+For example, is the main topic a person?
+If so, then we should start with the <a href="https://schema.org/Person"><code>Person</code> schema.org type</a>.
+Or is the main topic an event, like a sporting event or a hackathon?
+Then we should start with the
+<a href="https://schema.org/SportsEvent"><code>SportsEvent</code> schema.org type</a> or
+<a href="https://schema.org/Hackathon"><code>Hackathon</code> schema.org type</a>.
+Or are there multiple topics?
+In no way are you expected to memorize all the available <code>Types</code> that schema.org provides,
+however, identifying the needed <code>Types</code> does involve searching through <code>schema.org</code> to locate what's most relevant to your topic.</p>
+<p>In the HTML snippet above, my made-up web page entails at least four topics:</p>
+<ul>
+<li>Systems Administration</li>
+<li>Linux</li>
+<li>Debian</li>
+<li>Ubuntu</li>
+</ul>
+<p>Without knowing anything else, I can use these four topics to begin building a data model for my web page.
+However, I want to <strong>reiterate</strong> that in real-world practice, we build a JSON-LD data model based on the content
+and not just on what appears in the <code>&lt;title&gt;</code> and <code>&lt;meta&gt;</code> HTML tags.
+This is because JSON-LD is meant to capture details about the content in the web document and not just about the document overall.</p>
+<p>For example, consider a recipe for <a href="https://maureenabood.com/baked-kibbeh-you-say-meatloaf-i-say-meatlove/">Baked Kibbeh</a>, a Lebanese dish made of lamb, bulgur wheat, onion, and spices,
+often eaten when the meat is raw and sometimes cooked.
+If we search the source code of the article, we find that it uses JSON-LD.
+We can examine that JSON-LD by pasting the URL in the <a href="https://validator.schema.org/">schema.org validator</a>, and
+see that the entire recipe, including ingredients and recipe instructions, is described in the JSON-LD.</p>
+<p>Content creators do not need to manually create their JSON-LD markup.
+The recipe site above likely uses JSON-LD generated by the <a href="https://yoast.com/">Yoast SEO WordPress CMS plugin</a>.
+Other CMS platforms can probably do similar things.
+The NY Times, the WSJ, and other major news platforms also embed JSON-LD and their JSON-LD
+are likely created through other automated mechanisms.</p>
+<h2 id="step-3-serializing-schemaorg-as-json-ld"><a class="header" href="#step-3-serializing-schemaorg-as-json-ld">Step 3: Serializing schema.org as JSON-LD</a></h2>
+<p>When we create a JSON-LD data model for our web pages, we must use data extracted from the content on the web pages and no more.
+If our web page has an article on Linux Systems Administration,
+as suggested in the various <code>&lt;meta&gt;</code> elements in the above HTML snippet,
+then we must create a JSON-LD model based on that topic and on the content in that article <strong>only</strong>.
+If we add schema.org <code>Types</code>, <code>Properties</code>, and <code>Instances</code> to our JSON-LD that are not covered in the systems administration article,
+search engines will demote our website in their search results.</p>
+<p>Here's a basic JSON-LD example that describes Debian, a GNU/Linux distribution that is one of the topics of my made-up webpage:</p>
+<pre><code>&lt;script type="application/ld+json"&gt;
+{
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Debian GNU/Linux",
+    "description": "The Universal Operating System",
+    "operatingSystem": "Debian",
+    "softwareVersion": "12.10",
+    "applicationCategory": "Operating System",
+    "applicationSubCategory": "Linux Distribution",
+    "memoryRequirements": "780MB",
+    "storageRequirements": "1160MB",
+    "url": "https://www.debian.org/",
+    "downloadUrl": "https://www.debian.org/distrib",
+    "releaseNotes": "https://www.debian.org/News/2025/20250315",
+    "datePublished": "2025-03-15"
+}
+&lt;/script&gt;
+</code></pre>
+<p>The above example is based on <code>SoftwareApplication</code> Type.
+This is declared in the second line with <code>"@type": "SoftwareApplication"</code>.
+This type entails a range of properties but also inherits properties from parent/ancestor types.
+That is, since <a href="https://schema.org/SoftwareApplication"><code>SoftwareApplication</code></a> is a descendant/subclass of the <code>CreativeWork</code> type,
+which itself is a subclass of <code>Thing</code> type, then <code>SoftwareApplication</code> can use properties from itself but
+also from <code>CreativeWork</code> and <code>Thing</code>.
+Therefore, in the JSON-LD code above, I use properties from <code>SoftwareApplication</code> but also from <code>CreativeWork</code> and <code>Thing</code>,
+as detailed at the schema.org link above and in the list below:</p>
+<pre><code>- `Thing`
+    - `name`
+    - `description`
+    - `url`
+        - `CreativeWork`
+            - `datePublished`
+                - `SoftwareApplication`
+                    - `applicationCategory`
+                    - `applicationSubCategory`
+                    - `downloadUrl`
+                    - `memoryRequirements`
+                    - `operatingSystem`
+                    - `releaseNotes`
+                    - `softwareVersion`
+                    - `storageRequirements`
+</code></pre>
+<p>The above JSON-LD is a good start, but we can capture more metadata about the Debian operating system.
+For example, the Debian OS is overseen by <em>The Debian Project</em>, which is a legal entity and the creator of the OS.
+We can modify our JSON-LD code to include that metadata.
+Specifically, we will use the <a href="https://schema.org/creator"><code>creator</code></a> property,
+which accepts either <code>Organization</code> or <code>Person</code> as values (or instances).
+Since both instances are schema.org <code>Types</code>, we can create a nested JSON object:
+To capture more detail, we can list the main features of Debian using the <code>featureList</code> property of the <code>SoftwareApplication</code> type.
+I use a JSON list (using square brackets) to list the system's features.
+Remember that square brackets <code>[]</code> indicate a list of values (an array),
+while curly braces <code>{}</code> represent a nested object.
+If you need a refresher on how arrays and nested objects work in JSON,
+see the earlier section on <a href="4a-json-basics.html">JSON Basics</a>.</p>
+<pre><code>&lt;script type="application/ld+json"&gt;
+{
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Debian GNU/Linux",
+    "description": "The Universal Operating System",
+    "operatingSystem": "Debian",
+    "softwareVersion": "12.10",
+    "applicationCategory": "Operating System",
+    "applicationSubCategory": "Linux Distribution",
+    "memoryRequirements": "780MB",
+    "storageRequirements": "1160MB",
+    "url": "https://www.debian.org/",
+    "downloadUrl": "https://www.debian.org/distrib",
+    "releaseNotes": "https://www.debian.org/News/2025/20250315",
+    "datePublished": "2025-03-15",
+    "license": "https://www.debian.org/legal/licenses/",
+    "creator": {
+        "@type": "Organization",
+        "name": "Debian Project",
+        "url": "https://www.debian.org/intro/about"
+    },
+    "featureList": [
+        "free software",
+        "stable",
+        "secure",
+        "extensive hardware support",
+        "flexible installer",
+        "smooth upgrades",
+        "community-developed",
+        "long-term support"
+    ]
+}
+</code></pre>
+<h2 id="step-4-validating-our-json-ld"><a class="header" href="#step-4-validating-our-json-ld">Step 4: Validating Our JSON-LD</a></h2>
+<p>It's quite easy to make mistakes when manually writing JSON-LD code.
+Therefore, be sure to test your JSON-LD using the <a href="https://validator.schema.org/">Schema Markup Validator</a>.
+The validator will test both the syntax of your JSON-LD but also show if any schema.org types or properties are missing.</p>
+<p>You can also use the <a href="https://search.google.com/test/rich-results">Rich Results Test</a> tool.
+From the site, <q>Rich results are experiences on Google surfaces, such as Search, that go beyond the standard blue link.
+Rich results can also include carousels, images, or other non-textual elements.</q>
+In other words, Rich Results are those results that feature prominently at the top of a Google search and generally
+include images and other descriptive content about a search result.
+For this to work, include images on your site and describe them in your JSON-LD.</p>
+<h2 id="step-5-inserting-json-ld-in-your-html-document"><a class="header" href="#step-5-inserting-json-ld-in-your-html-document">Step 5: Inserting JSON-LD in Your HTML Document</a></h2>
+<p>Now that I've completed my JSON-LD object that describes one aspect of the topic of my Linux Systems Administration page,
+I can add it to my web document.
+To do that, I insert the JSON-LD object into the <code>&lt;head&gt;</code> section.
+The following snippet illustrates this:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;title&gt;Using the Linux OS for Systems Administration&lt;/title&gt;
+        &lt;base href="https://www.example.org/"&gt;
+        &lt;link rel="stylesheet" href="css/style.css"&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;meta name="author" content="C. Sean Burns"&gt;
+        &lt;meta name="description" content="An introduction to Systems Administration with Linux OS, including Debian and Ubuntu"&gt;
+        &lt;meta name="keywords" content="systems administration, linux, debian, ubuntu"&gt;
+        &lt;style&gt;
+            html { font-family: monospace; }
+        &lt;/style&gt; 
+&lt;script type="application/ld+json"&gt;
+{
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Debian GNU/Linux",
+    "description": "The Universal Operating System",
+    "operatingSystem": "Debian",
+    "softwareVersion": "12.10",
+    "applicationCategory": "Operating System",
+    "applicationSubCategory": "Linux Distribution",
+    "memoryRequirements": "780MB",
+    "storageRequirements": "1160MB",
+    "url": "https://www.debian.org/",
+    "downloadUrl": "https://www.debian.org/distrib",
+    "releaseNotes": "https://www.debian.org/News/2025/20250315",
+    "datePublished": "2025-03-15",
+    "license": "https://www.debian.org/legal/licenses/",
+    "creator": {
+        "@type": "Organization",
+        "name": "Debian Project",
+        "url": "https://www.debian.org/intro/about"
+    },
+    "featureList": [
+        "free software",
+        "stable",
+        "secure",
+        "extensive hardware support",
+        "flexible installer",
+        "smooth upgrades",
+        "community-developed",
+        "long-term support"
+    ]
+}
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>If I have additional topics, I could add additional types to my JSON-LD.
+Generally, it's good to use JSON-LD that's fairly descriptive of the content on the page.</p>
+<p>Note that JSON-LD isn't completely reusable across a site, since it's meant to mirror the content of a specific page.
+Therefore, each webpage on a website should include unique JSON-LD.</p>
+<h2 id="conclusion-20"><a class="header" href="#conclusion-20">Conclusion</a></h2>
+<p>In this section, we explored how to describe web content using schema.org and JSON-LD.
+We learned how to model page content with appropriate types and properties,
+use JSON syntax to serialize metadata, validate the results, and add your JSON-LD to your web page.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="conclusion-and-final-project"><a class="header" href="#conclusion-and-final-project">Conclusion and Final Project</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="review-of-key-concepts"><a class="header" href="#review-of-key-concepts">Review of Key Concepts</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="final-project-implementing-a-semantic-web-site"><a class="header" href="#final-project-implementing-a-semantic-web-site">Final Project: Implementing a Semantic Web Site</a></h1>
