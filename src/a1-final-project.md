@@ -60,4 +60,4 @@ Include a brief (400-600 words) reflection in which you:
 [wave]:https://wave.webaim.org/
 [schema_validator]:https://validator.schema.org/
 [html5_validator]:https://validator.w3.org/
-css3_validator]:https://jigsaw.w3.org/css-validator/
+[css3_validator]:https://jigsaw.w3.org/css-validator/
