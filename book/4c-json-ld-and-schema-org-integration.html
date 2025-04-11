@@ -238,7 +238,7 @@ and not just on what appears in the <code>&lt;title&gt;</code> and <code>&lt;met
 This is because JSON-LD is meant to capture details about the content in the web document and not just about the document overall.</p>
 <p>For example, consider a recipe for <a href="https://maureenabood.com/baked-kibbeh-you-say-meatloaf-i-say-meatlove/">Baked Kibbeh</a>, a Lebanese dish made of lamb, bulgur wheat, onion, and spices,
 often eaten when the meat is raw and sometimes cooked.
-If we search the source code of the article, we find that it uses JSON-LD.
+If we search the source code of the recipe's web page, we find that it uses JSON-LD.
 We can examine that JSON-LD by pasting the URL in the <a href="https://validator.schema.org/">schema.org validator</a>, and
 see that the entire recipe, including ingredients and recipe instructions, is described in the JSON-LD.</p>
 <p>Content creators do not need to manually create their JSON-LD markup.
@@ -253,7 +253,9 @@ as suggested in the various <code>&lt;meta&gt;</code> elements in the above HTML
 then we must create a JSON-LD model based on that topic and on the content in that article <strong>only</strong>.
 If we add schema.org <code>Types</code>, <code>Properties</code>, and <code>Instances</code> to our JSON-LD that are not covered in the systems administration article,
 search engines will demote our website in their search results.</p>
-<p>Here's a basic JSON-LD example that describes Debian, a GNU/Linux distribution that is one of the topics of my made-up webpage:</p>
+<p>Here's a basic JSON-LD example that describes the Debian a GNU/Linux distribution, one of the topics of my made-up webpage.
+Note that a JSON object begins with an <code>@context</code> statement and a link to the schema.org site.
+Then, the <code>@type</code> is declared:</p>
 <pre><code>&lt;script type="application/ld+json"&gt;
 {
     "@context": "https://schema.org",
@@ -273,7 +275,7 @@ search engines will demote our website in their search results.</p>
 }
 &lt;/script&gt;
 </code></pre>
-<p>The above example is based on <code>SoftwareApplication</code> Type.
+<p>The above example is based on <code>SoftwareApplication</code> type.
 This is declared in the second line with <code>"@type": "SoftwareApplication"</code>.
 This type entails a range of properties but also inherits properties from parent/ancestor types.
 That is, since <a href="https://schema.org/SoftwareApplication"><code>SoftwareApplication</code></a> is a descendant/subclass of the <code>CreativeWork</code> type,
@@ -281,27 +283,27 @@ which itself is a subclass of <code>Thing</code> type, then <code>SoftwareApplic
 also from <code>CreativeWork</code> and <code>Thing</code>.
 Therefore, in the JSON-LD code above, I use properties from <code>SoftwareApplication</code> but also from <code>CreativeWork</code> and <code>Thing</code>,
 as detailed at the schema.org link above and in the list below:</p>
-<pre><code>- `Thing`
-    - `name`
-    - `description`
-    - `url`
-        - `CreativeWork`
-            - `datePublished`
-                - `SoftwareApplication`
-                    - `applicationCategory`
-                    - `applicationSubCategory`
-                    - `downloadUrl`
-                    - `memoryRequirements`
-                    - `operatingSystem`
-                    - `releaseNotes`
-                    - `softwareVersion`
-                    - `storageRequirements`
+<pre><code>- Thing (TYPE), properties of Thing:
+    - name
+    - description
+    - url
+        - CreativeWork (TYPE), property of CreativeWork:
+            - datePublished
+                - SoftwareApplication (TYPE), properties of SoftwareApplication:
+                    - applicationCategory
+                    - applicationSubCategory
+                    - downloadUrl
+                    - memoryRequirements
+                    - operatingSystem
+                    - releaseNotes
+                    - softwareVersion
+                    - storageRequirements
 </code></pre>
 <p>The above JSON-LD is a good start, but we can capture more metadata about the Debian operating system.
 For example, the Debian OS is overseen by <em>The Debian Project</em>, which is a legal entity and the creator of the OS.
 We can modify our JSON-LD code to include that metadata.
 Specifically, we will use the <a href="https://schema.org/creator"><code>creator</code></a> property,
-which accepts either <code>Organization</code> or <code>Person</code> as values (or instances).
+which accepts either the <code>Organization</code> or <code>Person</code> properties as values (or instances).
 Since both instances are schema.org <code>Types</code>, we can create a nested JSON object:
 To capture more detail, we can list the main features of Debian using the <code>featureList</code> property of the <code>SoftwareApplication</code> type.
 I use a JSON list (using square brackets) to list the system's features.
@@ -343,6 +345,55 @@ see the earlier section on <a href="4a-json-basics.html">JSON Basics</a>.</p>
     ]
 }
 </code></pre>
+<p>Finally, we're missing a subtle addition to the JSON-LD.
+My made-up web page is about using Debian for systems administration.
+It's not about <strong>Debian</strong>, per se.
+Thus, the above JSON-LD might be appropriate on the <a href="https://www.debian.org/">Debian homepage</a>, but
+my web page talks about using Debian rather than being about Debian.
+Understanding this requires acquiring a judgment of thing's <a href="https://en.wikipedia.org/wiki/Aboutness">aboutness</a>.
+In any case, to capture this distinction, I add the <a href="https://schema.org/WebPage">WebPage</a> type to the JSON-LD,
+along with <code>name</code> and <code>description</code> properties, and make the rest of the JSON nested in that type.
+I also name the nested JSON-LD object as <code>about</code>:</p>
+<pre><code>&lt;script type="application/ld+json"&gt;
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Introduction to Linux Systems Administration with Debian",
+    "description": "An educational web page covering systems administration with Linux, focusing on Debian GNU/Linux.",
+    "about": {
+        "@type": "SoftwareApplication",
+        "name": "Debian GNU/Linux",
+        "description": "The Universal Operating System",
+        "operatingSystem": "Debian",
+        "softwareVersion": "12.10",
+        "applicationCategory": "Operating System",
+        "applicationSubCategory": "Linux Distribution",
+        "memoryRequirements": "780MB",
+        "storageRequirements": "1160MB",
+        "url": "https://www.debian.org/",
+        "downloadUrl": "https://www.debian.org/distrib",
+        "releaseNotes": "https://www.debian.org/News/2025/20250315",
+        "datePublished": "2025-03-15",
+        "license": "https://www.debian.org/legal/licenses/",
+        "creator": {
+            "@type": "Organization",
+            "name": "Debian Project",
+            "url": "https://www.debian.org/intro/about"
+        },
+        "featureList": [
+            "free software",
+            "stable",
+            "secure",
+            "extensive hardware support",
+            "flexible installer",
+            "smooth upgrades",
+            "community-developed",
+            "long-term support"
+        ]
+    }
+}
+&lt;/script&gt;
+</code></pre>
 <h2 id="step-4-validating-our-json-ld"><a class="header" href="#step-4-validating-our-json-ld">Step 4: Validating Our JSON-LD</a></h2>
 <p>It's quite easy to make mistakes when manually writing JSON-LD code.
 Therefore, be sure to test your JSON-LD using the <a href="https://validator.schema.org/">Schema Markup Validator</a>.
@@ -375,37 +426,43 @@ The following snippet illustrates this:</p>
 &lt;script type="application/ld+json"&gt;
 {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Debian GNU/Linux",
-    "description": "The Universal Operating System",
-    "operatingSystem": "Debian",
-    "softwareVersion": "12.10",
-    "applicationCategory": "Operating System",
-    "applicationSubCategory": "Linux Distribution",
-    "memoryRequirements": "780MB",
-    "storageRequirements": "1160MB",
-    "url": "https://www.debian.org/",
-    "downloadUrl": "https://www.debian.org/distrib",
-    "releaseNotes": "https://www.debian.org/News/2025/20250315",
-    "datePublished": "2025-03-15",
-    "license": "https://www.debian.org/legal/licenses/",
-    "creator": {
-        "@type": "Organization",
-        "name": "Debian Project",
-        "url": "https://www.debian.org/intro/about"
-    },
-    "featureList": [
-        "free software",
-        "stable",
-        "secure",
-        "extensive hardware support",
-        "flexible installer",
-        "smooth upgrades",
-        "community-developed",
-        "long-term support"
-    ]
+    "@type": "WebPage",
+    "name": "Introduction to Linux Systems Administration with Debian",
+    "description": "An educational web page covering systems administration with Linux, focusing on Debian GNU/Linux.",
+    "about": {
+        "@type": "SoftwareApplication",
+        "name": "Debian GNU/Linux",
+        "description": "The Universal Operating System",
+        "operatingSystem": "Debian",
+        "softwareVersion": "12.10",
+        "applicationCategory": "Operating System",
+        "applicationSubCategory": "Linux Distribution",
+        "memoryRequirements": "780MB",
+        "storageRequirements": "1160MB",
+        "url": "https://www.debian.org/",
+        "downloadUrl": "https://www.debian.org/distrib",
+        "releaseNotes": "https://www.debian.org/News/2025/20250315",
+        "datePublished": "2025-03-15",
+        "license": "https://www.debian.org/legal/licenses/",
+        "creator": {
+            "@type": "Organization",
+            "name": "Debian Project",
+            "url": "https://www.debian.org/intro/about"
+        },
+        "featureList": [
+            "free software",
+            "stable",
+            "secure",
+            "extensive hardware support",
+            "flexible installer",
+            "smooth upgrades",
+            "community-developed",
+            "long-term support"
+        ]
+    }
 }
-        &lt;/script&gt;
+
+&lt;/script&gt;
     &lt;/head&gt;
     &lt;body&gt;
     &lt;/body&gt;
