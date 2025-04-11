@@ -27,6 +27,5 @@
     - [JSON Basics](4a-json-basics.md)
     - [Schema.org, Schema Types, and Structured Data](4b-schema-org-schema-types-structured-data.md)
     - [JSON-LD and Schema.org Integration](4c-json-ld-and-schema-org-integration.md)
-- [Conclusion and Final Project](p5-conclusion-and-final-project.md)
-    - [Review of Key Concepts](5a-review-of-key-concepts.md)
-    - [Final Project: Implementing a Semantic Web Site](5b-final-project-implementing-a-semantic-web-site.md)
+- [Conclusion](p5-conclusion.md)
+- [Appendix: Sample Final Project Description](a1-final-project.md)
