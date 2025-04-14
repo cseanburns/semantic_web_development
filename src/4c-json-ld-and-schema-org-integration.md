@@ -90,8 +90,8 @@ then we must create a JSON-LD model based on that topic and on the content in th
 If we add schema.org `Types`, `Properties`, and `Instances` to our JSON-LD that are not covered in the systems administration article,
 search engines will demote our website in their search results.
 
-Here's a basic JSON-LD example that describes the Debian a GNU/Linux distribution, one of the topics of my made-up webpage.
-Note that a JSON object begins with an `@context` statement and a link to the schema.org site.
+Here's a basic JSON-LD example that describes the Debian GNU/Linux distribution, one of the topics of my made-up webpage.
+Note that a JSON-LD object begins with an `@context` statement and a link to the schema.org site.
 Then, the `@type` is declared:
 
 ```
@@ -250,6 +250,8 @@ It's quite easy to make mistakes when manually writing JSON-LD code.
 Therefore, be sure to test your JSON-LD using the [Schema Markup Validator][validator_schema_org].
 The validator will test both the syntax of your JSON-LD but also show if any schema.org types or properties are missing.
 
+Also, the [JSON-LD Playground][json_ld_playground] is not a validator, but it's useful for visualizing your code.
+
 You can also use the [Rich Results Test][rich_results] tool.
 From the site, <q>Rich results are experiences on Google surfaces, such as Search, that go beyond the standard blue link.
 Rich results can also include carousels, images, or other non-textual elements.</q>
@@ -337,19 +339,20 @@ In this section, we explored how to describe web content using schema.org and JS
 We learned how to model page content with appropriate types and properties,
 use JSON syntax to serialize metadata, validate the results, and add your JSON-LD to your web page.
 
-[rich_results]:https://search.google.com/test/rich-results
-[software_application_schema_org]:https://schema.org/SoftwareApplication
-[mime_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types/Common_types
+[aboutness_wiki]:https://en.wikipedia.org/wiki/Aboutness
 [creator_schema_org]:https://schema.org/creator
-[sportsevent_schema]:https://schema.org/SportsEvent
+[debian]:https://www.debian.org/
 [hackathon_schema]:https://schema.org/Hackathon
-[person_schema_org]:https://schema.org/Person
-[kibbeh_mb]:https://maureenabood.com/baked-kibbeh-you-say-meatloaf-i-say-meatlove/
-[validator_schema_org]:https://validator.schema.org/
-[yoast]:https://yoast.com/
-[sportsevent_schema_org]:https://schema.org/SportsEvent
 [hackathon_schema_org]:https://schema.org/Hackathon
 [json_basics]:4a-json-basics.html
+[json_ld_playground]:https://json-ld.org/playground/
+[kibbeh_mb]:https://maureenabood.com/baked-kibbeh-you-say-meatloaf-i-say-meatlove/
+[mime_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types/Common_types
+[person_schema_org]:https://schema.org/Person
+[rich_results]:https://search.google.com/test/rich-results
+[software_application_schema_org]:https://schema.org/SoftwareApplication
+[sportsevent_schema]:https://schema.org/SportsEvent
+[sportsevent_schema_org]:https://schema.org/SportsEvent
+[validator_schema_org]:https://validator.schema.org/
 [webpage_schema_org]:https://schema.org/WebPage
-[debian]:https://www.debian.org/
-[aboutness_wiki]:https://en.wikipedia.org/wiki/Aboutness
+[yoast]:https://yoast.com/
