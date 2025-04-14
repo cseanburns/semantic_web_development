@@ -5504,8 +5504,8 @@ as suggested in the various <code>&lt;meta&gt;</code> elements in the above HTML
 then we must create a JSON-LD model based on that topic and on the content in that article <strong>only</strong>.
 If we add schema.org <code>Types</code>, <code>Properties</code>, and <code>Instances</code> to our JSON-LD that are not covered in the systems administration article,
 search engines will demote our website in their search results.</p>
-<p>Here's a basic JSON-LD example that describes the Debian a GNU/Linux distribution, one of the topics of my made-up webpage.
-Note that a JSON object begins with an <code>@context</code> statement and a link to the schema.org site.
+<p>Here's a basic JSON-LD example that describes the Debian GNU/Linux distribution, one of the topics of my made-up webpage.
+Note that a JSON-LD object begins with an <code>@context</code> statement and a link to the schema.org site.
 Then, the <code>@type</code> is declared:</p>
 <pre><code>&lt;script type="application/ld+json"&gt;
 {
@@ -5649,6 +5649,7 @@ I also name the nested JSON-LD object as <code>about</code>:</p>
 <p>It's quite easy to make mistakes when manually writing JSON-LD code.
 Therefore, be sure to test your JSON-LD using the <a href="https://validator.schema.org/">Schema Markup Validator</a>.
 The validator will test both the syntax of your JSON-LD but also show if any schema.org types or properties are missing.</p>
+<p>Also, the <a href="https://json-ld.org/playground/">JSON-LD Playground</a> is not a validator, but it's useful for visualizing your code.</p>
 <p>You can also use the <a href="https://search.google.com/test/rich-results">Rich Results Test</a> tool.
 From the site, <q>Rich results are experiences on Google surfaces, such as Search, that go beyond the standard blue link.
 Rich results can also include carousels, images, or other non-textual elements.</q>
