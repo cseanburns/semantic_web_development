@@ -258,6 +258,9 @@ Rich results can also include carousels, images, or other non-textual elements.<
 In other words, Rich Results are those results that feature prominently at the top of a Google search and generally
 include images and other descriptive content about a search result.
 For this to work, include images on your site and describe them in your JSON-LD.
+Also, these types of results are based on a subset of structured data.
+See: [Structured data markup that Google Search supports][structured_rich_results].
+
 
 ## Step 5: Inserting JSON-LD in Your HTML Document
 
@@ -353,6 +356,7 @@ use JSON syntax to serialize metadata, validate the results, and add your JSON-L
 [software_application_schema_org]:https://schema.org/SoftwareApplication
 [sportsevent_schema]:https://schema.org/SportsEvent
 [sportsevent_schema_org]:https://schema.org/SportsEvent
+[structured_rich_results]:https://developers.google.com/search/docs/appearance/structured-data/search-gallery
 [validator_schema_org]:https://validator.schema.org/
 [webpage_schema_org]:https://schema.org/WebPage
 [yoast]:https://yoast.com/
