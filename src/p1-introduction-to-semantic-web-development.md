@@ -1,7 +1,7 @@
 # Introduction to Semantic Web Development
 
 Author: C. Sean Burns  
-Date: 2025-01-10  
+Date: 2025-04-19  
 Email: sean.burns@uky.edu  
 Website: [cseanburns.net](https://cseanburns.net)  
 GitHub: [@cseanburns](https://github.com/cseanburns)
