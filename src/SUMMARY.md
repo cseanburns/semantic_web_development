@@ -21,7 +21,7 @@
         - [Margins, Borders, Padding, Sizing](3b1-margins-borders-padding-sizing.md)
     - [Typography and Font Styles](3c-typography-and-font-styles.md)
     - [Images, Lists, and Backgrounds](3d-images-lists-backgrounds.md)
-    - [Responsive Layouts with Flexbox](3e-responsive-layouts-with-flexbox-and-grid.md)
+    - [Responsive Layouts with Flexbox](3e-responsive-layouts-with-flexbox.md)
         - [Flexbox Basics](3e1-flexbox-basics.md)
 - [Document Metadata: JSON-LD and Schema.org](p4-document-metadata-json-ld-schema-org.md)
     - [JSON Basics](4a-json-basics.md)
