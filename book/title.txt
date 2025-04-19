@@ -1,0 +1,7 @@
+---
+title: Semantic Web Development
+author: C. Sean Burns
+rights: Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+language: en-US
+date: 2025-04-19
+---
