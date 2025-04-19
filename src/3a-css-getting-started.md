@@ -1,6 +1,6 @@
 # CSS: Getting Started 
 
-As stated by the [World Wide Web Consortium (W3C)][w3org], CSS, or *Cascading stylesheets*, is:
+As stated by the [World Wide Web Consortium (W3C)][w3_org], CSS, or *Cascading stylesheets*, is:
 
 > a language for writing stylesheets, and
 > is designed to describe the rendering of structured documents (such as HTML and XML) on a variety of media.
@@ -125,6 +125,6 @@ Later we will learn CSS that will allow us change fonts and add other effects.
 Then we will acquire an understanding of how CSS controls the elements on a page and
 use that understanding to create various layouts.
 
-[w3org]:https://www.w3.org/
+[w3_org]:https://www.w3.org/
 [what_is_css_w3]:https://www.w3.org/TR/CSS/#css
 [css_zen]:https://www.csszengarden.com/

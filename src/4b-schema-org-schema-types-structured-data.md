@@ -103,7 +103,7 @@ We might represent this as follows:
 ```
 
 All classes eventually descend back to the `Thing` type, just as in biology,
-all life on Earth is classified in a [taxonomy][taxonomic_rank] with `Domain` holding the broadest rank.
+all life on Earth is classified in a [taxonomy][taxonomic_bio] with `Domain` holding the broadest rank.
 
 Furthermore, all types have **properties**.
 A [`Thing`][thing_schema_org] type can have the following properties:
@@ -183,6 +183,6 @@ In the next section, we focus on the practical aspects of serializing `schema.or
 [pubmed]:https://pubmed.ncbi.nlm.nih.gov/
 [taxonomy_wiki]:https://en.wikipedia.org/wiki/Taxonomy
 [ontology_wiki]:https://en.wikipedia.org/wiki/Ontology_(information_science)
-[taxonomic_rank]:https://en.wikipedia.org/wiki/Taxonomy_(biology)
+[taxonomic_bio]:https://en.wikipedia.org/wiki/Taxonomy_(biology)
 [full_schema_schema_org]:https://schema.org/docs/full.html
 [thing_schema_org]:https://schema.org/Thing

@@ -39,7 +39,7 @@ brew install git
 
 ### Create GitHub Account
 
-Once `git` is installed, visit [GitHub][github] and create an account if you don't already have one.
+Once `git` is installed, visit [GitHub][github_github] and create an account if you don't already have one.
 Be sure to use your personal email and not your university or other non-permanent email, since you won't always have those accounts.
 
 ## Local and Remote Repositories
@@ -108,4 +108,4 @@ But if you do, then from your local machine, you will need to do a `pull` reques
 [git_init_vscode]:https://code.visualstudio.com/docs/sourcecontrol/intro-to-git#_initialize-a-repository-in-a-local-folder
 [git_vscode]:https://code.visualstudio.com/docs/sourcecontrol/intro-to-git
 [homebrew]:https://brew.sh/
-[github]:https://github.com/
+[github_github]:https://github.com/

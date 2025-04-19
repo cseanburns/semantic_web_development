@@ -54,7 +54,7 @@ We need layouts that are usable on large screens, but mobile matters for several
 
 1. Mobile usage trends: Most [Americans have a smartphone][pew_mobile_fact_sheet] and use their smartphone browsers for accessing the web. This trend is growing around the world, too, and around 50% of global website traffic comes from mobile devices. As an example, [nearly half of Wikipedia's visitors][wikipedia_mobile] are on mobile (iOS and Android). Ignoring mobile users can therefore result in loss of engagement.
 2. User expectations: Mobile users expect fast-loading, easy-to-navigate sites with content formatted for smaller screens.
-3. Search engine optimization (SEO): Search engines [like Google prioritize mobile-friendly websites][google_seo] in their rankings. This is called **mobile-first indexing**.
+3. Search engine optimization (SEO): Search engines [like Google prioritize mobile-friendly websites][seo_google] in their rankings. This is called **mobile-first indexing**.
 
 When we begin coding our sites using HTML and CSS, we'll have to create code that adapts to both large and small screen sizes.
 
@@ -133,7 +133,7 @@ In the next two chapters, we will explore how to implement these layouts using H
 For now, experiment with Inkscape and create your own prototypes for both desktop and mobile views.
 
 [11_website_layouts]:https://wordpress.com/blog/2024/11/14/website-layout-examples/#creating-a-website-layout-mockup
-[google_seo]:https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing
+[seo_google]:https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing
 [pew_mobile_fact_sheet]:https://www.pewresearch.org/internet/fact-sheet/mobile/
 [uky]:https://www.uky.edu/
 [uky_wikipedia]:https://en.wikipedia.org/wiki/University_of_Kentucky
