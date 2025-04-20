@@ -1,7 +1,7 @@
 # Introduction to Semantic Web Development
 
 Author: C. Sean Burns  
-Date: 2025-04-19  
+Date: 2025-04-20  
 Email: sean.burns@uky.edu  
 Website: [cseanburns.net](https://cseanburns.net)  
 GitHub: [@cseanburns](https://github.com/cseanburns)
@@ -28,7 +28,7 @@ There are two markup styles that I want to bring to your attention:
 #### Code Blocks
 
 Text that looks like **code blocks** indicate some kind of command, series of commands, or web code.
-Do not simply copy and paste the code into your terminal or text editor.
+To learn the material, do not copy and paste the code into your terminal or text editor.
 You should practice and type all code yourself.
 
 #### Asides
@@ -54,7 +54,7 @@ Use this to search this work.
 
 #### Printing
 
-I intend this book to be a live document, and therefore it'll be regularly updated.
+I intend this book to be a living document, which means it'll be regularly updated.
 But feel free to print it, if you want.
 You can use the print function to save the entire book as a PDF file.
 See the printer icon at the top right of the screen to get started.
@@ -66,7 +66,7 @@ Download the EPUB file from the GitHub repo.
 
 ## About This Book
 
-This book works as a live document since I use it for my spring semester Semantic Web Development course.
+This book works is living document since I use it for my spring semester Semantic Web Development course.
 I will update the content as I teach it in order to address changes in the technology and to edit for clarity.
 
 This book is not a comprehensive introduction to semantic web development.
@@ -74,7 +74,7 @@ It is designed for an entry level course on these topics.
 It is focused on a select and small range of those topics that have the specific pedagogical aims described above.
 
 I use [mdBook][mdbook] to build [markdown][markdown] source files into this final output for the website version.
-I use `pandoc` to build the EPUB version.
+I use [pandoc](https://pandoc.org/) to build the EPUB version.
 The `pandoc` script file can be found in the GitHub repo.
 
 ## Copyright
@@ -82,6 +82,9 @@ The `pandoc` script file can be found in the GitHub repo.
 The content in this book is open access and licensed under the
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0][ccbyncsa] license.
 Feel free to fork it on [GitHub][semantic_wd_github] and modify it for your own needs.
+
+The EPUB version includes a cover image.
+I generated this image using ChatGPT.
 
 [semantic_wd_github]:https://github.com/cseanburns/semantic_web_development
 [ccbyncsa]:https://creativecommons.org/licenses/by-nc-sa/4.0/

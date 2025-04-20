@@ -42,7 +42,6 @@ ordered=(title.txt
     4b-schema-org-schema-types-structured-data.md
     4c-json-ld-and-schema-org-integration.md
     p5-conclusion.md
-    5c-course-wrap-up-and-q-and-a.md
     a1-final-project.md)
 
 # Build the full paths, checking each one
