@@ -40,22 +40,29 @@ Asides look like this:
 > This is an aside.
 > Asides will contain extra information, notes, or comments.
 
-### Theme
+### Website Version
 
-At the top of the page is an icon of a paint brush.
+#### Theme
+
+If reading this on the website, at the top of the page is an icon of a paint brush.
 The default theme is darker text on a light background, but you can change the theme per your preferences.
 
-### Search
+#### Search
 
 Next to the paintbrush is an icon of a magnifying glass.
 Use this to search this work.
 
-### Printing
+#### Printing
 
 I intend this book to be a live document, and therefore it'll be regularly updated.
 But feel free to print it, if you want.
 You can use the print function to save the entire book as a PDF file.
 See the printer icon at the top right of the screen to get started.
+
+### EPUB Version
+
+This work also is available as an EPUB.
+Download the EPUB file from the GitHub repo.
 
 ## About This Book
 
@@ -66,7 +73,9 @@ This book is not a comprehensive introduction to semantic web development.
 It is designed for an entry level course on these topics.
 It is focused on a select and small range of those topics that have the specific pedagogical aims described above.
 
-I use [mdBook][mdbook] to build [markdown][markdown] source files into this final output.
+I use [mdBook][mdbook] to build [markdown][markdown] source files into this final output for the website version.
+I use `pandoc` to build the EPUB version.
+The `pandoc` script file can be found in the GitHub repo.
 
 ## Copyright
 
