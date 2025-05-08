@@ -25,8 +25,8 @@ These concepts will help you build visually appealing and responsible web pages.
 
 ## Colors
 
-There are four methods to create or add color to the various parts of our websites.
-We can use:
+There are multiple methods to create or add color to the various parts of our websites.
+The common ones include:
 
 - Color keywords:
     - [Basic color keywords][basic_color_keywords_w3]: black, silver, gray, red, green, teal, etc.
@@ -43,6 +43,14 @@ We can use:
     - The Hue is a degree on a color wheel and accepts values from 0 to 360.
     - Saturation and Lightness are coded as percentages.
         - See: [HSL Color Picker][hsl_color_picker] 
+
+> CSS has a bewildering number of methods to control color.
+> In addition to those listed above, read more about them at their respective links:
+> - [hwb()][hwb_mdn]
+> - [lab()][lab_mdn]
+> - [lch()][lch_mdn]
+> - [oklab()][oklab_mdn]
+> - [oklch()][oklch_mdn]
 
 We can add color to any element, and we can specify which elements to style using the selectors we reviewed in the prior section.
 As an example, consider the following, abbreviated HTML document:
@@ -362,4 +370,9 @@ We'll explore more responsive techniques later in this work when we tackle Flexb
 [color_contrast]:https://beaccessible.com/post/the-importance-of-color-contrast-in-digital-accessibility/
 [extended_color_keywords_w3]:https://www.w3.org/TR/css-color-3/#svg-color
 [hsl_color_picker]:https://hslpicker.com/
+[hwb_mdn]:https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hwb
+[lab_mdn]:https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/lab
+[lch_mdn]:https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/lch
+[oklab_mdn]:https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklab
+[oklch_mdn]:https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch
 [rgb_color_picker]:https://rgbcolorpicker.com/
