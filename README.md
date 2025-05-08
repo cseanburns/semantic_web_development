@@ -4,11 +4,10 @@ This repo contains the markdown source code for a textbook on semantic web devel
 
 The work is located at: [https://cseanburns.github.io/semantic_web_development/](https://cseanburns.github.io/semantic_web_development/)
 
-The work is generated using [mdbook][mdbook], but
-is now available as an EPUB file.
+The work is generated using [mdbook][mdbook], but is now available as an EPUB file.
 
-Demonstration code is currently stored in a separate repository, but I'll make this more standardized at some point.
-[Semantic 2025](https://github.com/cseanburns/semantic2025).
+Demonstration code is currently stored in a separate repository, [Semantic 2025](https://github.com/cseanburns/semantic2025),
+but I'll make this more standardized at some point.
 
 [mdbook]:https://github.com/rust-lang/mdBook
 
@@ -16,4 +15,3 @@ Demonstration code is currently stored in a separate repository, but I'll make t
 
 - clean up and combine directories from past semesters
 - create a demo directory for demonstrating technologies
-- create a work website
