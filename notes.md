@@ -11,3 +11,4 @@
     - https://spectrum.ieee.org/lean-software-development
     - https://www.smashingmagazine.com/2020/10/developing-semantic-web/
     - https://lawsofux.com/articles/
+    - https://thenewstack.io/html-first-framework-second-is-javascript-finally-growing-up/
