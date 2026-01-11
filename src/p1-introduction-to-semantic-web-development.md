@@ -13,11 +13,9 @@ A more advanced semantic web development course would introduce students to RDFS
 But this book expects undergraduate students who are new to web development.
 Therefore this work focuses on entry level topics: HTML5 and its semantic elements, CSS3, and JSON-LD with schema.org.
 
-Example code and files for this work will be updated each semester I teach this course.
-Each semester will have its own repo.
-List of repos:
+Example code and files for this work will be updated each semester I teach this course:
 
-- [Spring 2025](https://github.com/cseanburns/semantic2025)
+- [Semantic Web Examles](https://github.com/cseanburns/semantic_web_examles)
 
 ## How to Use this Book
 
