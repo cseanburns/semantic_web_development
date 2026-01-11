@@ -15,7 +15,7 @@ Therefore this work focuses on entry level topics: HTML5 and its semantic elemen
 
 Example code and files for this work will be updated each semester I teach this course:
 
-- [Semantic Web Examles](https://github.com/cseanburns/semantic_web_examles)
+- [Semantic Web Examles](https://github.com/cseanburns/semantic_web_examples)
 
 ## How to Use this Book
 
