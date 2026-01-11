@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="light" dir="ltr">
+<html lang="en" class="light sidebar-visible" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
 
         <!-- Custom HTML head -->
-        
+
         <meta name="description" content="Semantic Web Development with HTML5, CSS3, and JSON-LD">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -24,26 +24,41 @@
         <link rel="stylesheet" href="fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
-        <!-- Provide site root to javascript -->
-        <script>
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
-        </script>
 
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -57,70 +72,51 @@
 
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script>
-            var theme;
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
+            const html = document.documentElement;
             html.classList.remove('light')
             html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
+            html.classList.add("js");
         </script>
 
         <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var body = document.querySelector('body');
-            var sidebar = null;
-            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="p1-introduction-to-semantic-web-development.html"><strong aria-hidden="true">1.</strong> Introduction to Semantic Web Development</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="1a-the-semantic-web.html"><strong aria-hidden="true">1.1.</strong> The Semantic Web</a></li><li class="chapter-item expanded "><a href="1b-user-experience-accessibility.html"><strong aria-hidden="true">1.2.</strong> User Experience and Accessibility</a></li><li class="chapter-item expanded "><a href="1c-tools-setup-workflow.html"><strong aria-hidden="true">1.3.</strong> Tools, Setup, and Workflow</a></li><li class="chapter-item expanded "><a href="1d-designing-with-inkscape.html"><strong aria-hidden="true">1.4.</strong> Designing with Inkscape</a></li></ol></li><li class="chapter-item expanded "><a href="p2-html5-and-the-web.html"><strong aria-hidden="true">2.</strong> HTML5 and The Web</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2a-document-structure-and-metadata.html"><strong aria-hidden="true">2.1.</strong> Document Structure and Metadata</a></li><li class="chapter-item expanded "><a href="2b-section-elements.html"><strong aria-hidden="true">2.2.</strong> Section Elements</a></li><li class="chapter-item expanded "><a href="2b1-using-vscode-and-github.html"><strong aria-hidden="true">2.3.</strong> Using VS Code and GitHub</a></li><li class="chapter-item expanded "><a href="2c-grouping-semantic-elements.html"><strong aria-hidden="true">2.4.</strong> Grouping and Text Level Semantic Elements</a></li><li class="chapter-item expanded "><a href="2d-links-and-attributes.html"><strong aria-hidden="true">2.5.</strong> Links and Attributes</a></li><li class="chapter-item expanded "><a href="2e-embedded-content.html"><strong aria-hidden="true">2.6.</strong> Embedded Content: Images and Multimedia</a></li><li class="chapter-item expanded "><a href="2f-tables-and-forms.html"><strong aria-hidden="true">2.7.</strong> Tables and Forms</a></li></ol></li><li class="chapter-item expanded "><a href="p3-css3-and-web-design.html"><strong aria-hidden="true">3.</strong> CSS3 and Web Design</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3a-css-getting-started.html"><strong aria-hidden="true">3.1.</strong> CSS: Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3a1-syntax-and-selectors.html"><strong aria-hidden="true">3.1.1.</strong> Syntax and Selectors</a></li><li class="chapter-item expanded "><a href="3a2-colors-units-measurements.html"><strong aria-hidden="true">3.1.2.</strong> Colors and Units of Measurements</a></li></ol></li><li class="chapter-item expanded "><a href="3b-box-model.html"><strong aria-hidden="true">3.2.</strong> Box Model</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3b1-margins-borders-padding-sizing.html"><strong aria-hidden="true">3.2.1.</strong> Margins, Borders, Padding, Sizing</a></li></ol></li><li class="chapter-item expanded "><a href="3c-typography-and-font-styles.html"><strong aria-hidden="true">3.3.</strong> Typography and Font Styles</a></li><li class="chapter-item expanded "><a href="3d-images-lists-backgrounds.html"><strong aria-hidden="true">3.4.</strong> Images, Lists, and Backgrounds</a></li><li class="chapter-item expanded "><a href="3e-responsive-layouts-with-flexbox.html"><strong aria-hidden="true">3.5.</strong> Responsive Layouts with Flexbox</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3e1-flexbox-basics.html"><strong aria-hidden="true">3.5.1.</strong> Flexbox Basics</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="p4-document-metadata-json-ld-schema-org.html"><strong aria-hidden="true">4.</strong> Document Metadata: JSON-LD and Schema.org</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="4a-json-basics.html"><strong aria-hidden="true">4.1.</strong> JSON Basics</a></li><li class="chapter-item expanded "><a href="4b-schema-org-schema-types-structured-data.html"><strong aria-hidden="true">4.2.</strong> Schema.org, Schema Types, and Structured Data</a></li><li class="chapter-item expanded "><a href="4c-json-ld-and-schema-org-integration.html"><strong aria-hidden="true">4.3.</strong> JSON-LD and Schema.org Integration</a></li></ol></li><li class="chapter-item expanded "><a href="p5-conclusion.html"><strong aria-hidden="true">5.</strong> Conclusion</a></li><li class="chapter-item expanded "><a href="a1-final-project.html" class="active"><strong aria-hidden="true">6.</strong> Appendix: Sample Final Project Description</a></li></ol>
-            </div>
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
-
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -130,13 +126,14 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -156,7 +153,12 @@
 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -284,6 +286,7 @@ Your final website must include the following:</p>
         <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
+
 
 
     </div>
