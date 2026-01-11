@@ -313,7 +313,7 @@ using older hardware, having a poor internet connection, or having limited eyesi
 Accessible web design is considering how to create effective web pages and sites that are accessible to as many people as possible,
 despite the devices they have or their physical conditions.</p>
 <h2 id="accessibility"><a class="header" href="#accessibility">Accessibility</a></h2>
-<p>In this section, we study general web accessibility and how web semantics helps make sites more accessible.
+<p>In this section, we study general web accessibility and how web semantics help make sites more accessible.
 I use the term accessibility as a kind of shorthand:
 I also include, broadly, things like usability and inclusion.</p>
 <p>One of our readings makes important distinctions among these terms.
@@ -328,15 +328,15 @@ Our reading from <a href="https://www.w3.org/WAI/intro/usable">w3.org</a> define
 </blockquote>
 <p>Finally, inclusion is referred to as:</p>
 <blockquote>
-<p>Inclusive design, universal design, and design for all involves designing products, such as websites, to be usable by everyone to the greatest extent possible, without the need for adaptation. Inclusion addresses a broad range of issues including access to and quality of hardware, software, and Internet connectivity; computer literacy and skills; economic situation; education; geographic location; and language — as well as age and disability.</p>
+<p>Inclusive design, universal design, and design for all involve designing products, such as websites, to be usable by everyone to the greatest extent possible, without the need for adaptation. Inclusion addresses a broad range of issues including access to and quality of hardware, software, and Internet connectivity; computer literacy and skills; economic situation; education; geographic location; and language — as well as age and disability.</p>
 </blockquote>
 <p>Things related to inclusion are pretty broadly defined.
 This can be related to the responsiveness of a website to various displays, such as mobile phones,
-and then to the whole ranges of mobile phones that exist, as well as to desktops, laptops, and tablets, and even to smart watches.</p>
+and then to the whole range of mobile phones that exist, as well as to desktops, laptops, and tablets, and even to smart watches.</p>
 <p>We're going to discuss these issues.
 You're going to identify some websites and rank and judge these sites according
-to the principles of accessibility, usability, and inclusion by enabling accessibility mode
-on your laptop/desktop browser and on your phones.</p>
+to the principles of accessibility, usability, and inclusion by enabling built-in accessibility features
+or reader mode on your laptop/desktop browser and on your phones.</p>
 <p>It will help to watch a <a href="https://www.youtube.com/watch?v=3f31oufqFSM">short video about accessibility on YouTube</a>,
 which does a really nice job demonstrating all the above issues.</p>
 <h2 id="semantics-and-accessibility"><a class="header" href="#semantics-and-accessibility">Semantics and Accessibility</a></h2>
@@ -345,7 +345,7 @@ Humans are pretty good (most of the time) at interpreting meaning but not comput
 For example, you and I know what a person is, but a computer does not.
 Yet despite that, if you search for a person on the web, you will likely get accurate results back.
 The reason this is successful is because information retrieval algorithms
-use other methods to figure out to identify what is relevant based on what we search.</p>
+use other methods to identify what is relevant based on what we search.</p>
 <p>Thus when we talk about semantics and accessibility,
 we talk about how to make it so that the structure and the content on our websites can be understood by computers.
 The result of this is better information search and information retrieval, via search engines and artificial intelligence assistants.</p>
@@ -353,7 +353,7 @@ The result of this is better information search and information retrieval, via s
 Therefore, one way that we will address accessible web development is through HTML5,
 which was specifically released to add semantic HTML elements.
 This helps computer systems (like search engines and screen readers) interpret the meaning of a document's structure
-better than prior versions of HTML could and provide better accessibility options to people, then, too.
+better than prior versions of HTML could and provides better accessibility options to people as well.
 Later we'll learn and apply JSON-LD technologies to provide meaning to the content on a page,
 so that a search technology can have a better understanding of what a webpage is about.</p>
 <h2 id="do-more-with-less"><a class="header" href="#do-more-with-less">Do More with Less</a></h2>
@@ -373,7 +373,7 @@ then the more likely it becomes that we will break something, and that makes it 
 </blockquote>
 <h2 id="the-semantic-structure"><a class="header" href="#the-semantic-structure">The Semantic Structure</a></h2>
 <p>I mentioned this above, but we'll talk about semantics in two ways.
-We we start creating our sites, we will use HTML5 to add semantics to a web page,
+When we start creating our sites, we will use HTML5 to add semantics to a web page,
 and later we will use JSON-LD to add additional semantics that describe the content on a webpage.
 Some <a href="https://developer.mozilla.org/en-US/docs/Glossary/semantics#Semantics_in_HTML">example semantic HTML5 elements</a> include:</p>
 <ul>
@@ -385,7 +385,7 @@ Some <a href="https://developer.mozilla.org/en-US/docs/Glossary/semantics#Semant
 <li><code>&lt;nav&gt;</code>: provides navigation links to parts of a webpage or parts of a website</li>
 <li><code>&lt;section&gt;</code>: "represents a generic standalone section" of a webpage</li>
 <li><code>&lt;summary&gt;</code>: "specifies a summary, caption, or legend for a <code>&lt;details&gt;</code> element's disclosure box"</li>
-<li><code>&lt;time&gt;</code>: "represents a period of time</li>
+<li><code>&lt;time&gt;</code>: "represents a period of time"</li>
 </ul>
 <p>Below are links to two lists of HTML5 elements.
 You should begin to review them and save or bookmark these pages for constant reference:</p>
@@ -397,8 +397,8 @@ You should begin to review them and save or bookmark these pages for constant re
 and through hacks that were not all that ideal, such as excessive use of the <code>&lt;div&gt;</code> element, or through scripting languages like JavaScript.
 That is, in the early days of the web, developers often used (and still do, unfortunately) non-semantic elements
 like <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> to structure content.
-In the very early days, they structured content using tables (e.g., <code>&lt;table&gt;</code>) elements.
-These were sad days because it made it difficult for assistive technologies to interpret content accurately.</p>
+In the very early days, they structured content using table elements (e.g., <code>&lt;table&gt;</code>).
+This made it difficult for assistive technologies to interpret content accurately.</p>
 <p>However, these deficits led to the development of semantic HTML in HTML5.
 That is, HTML5's great benefit is that it provides semantic elements directly.
 For example, the <code>&lt;article&gt;</code> element was created to <a href="https://www.w3.org/TR/2012/WD-html-markup-20121025/article.html#article">describe an article, like a blog entry, on a web page</a>,
@@ -408,8 +408,8 @@ This element defines a site's navigation menu and helps both users and search en
 Screen readers can then provide users with an overview of the site's main sections and thus improve navigation for visually impaired users.</p>
 <p>By using such elements, we provide semantic information not just to the user of the site, or to other developers,
 but also to machines that parse that website for data and information.
-This includes web crawlers from search engines and screen readers for people who are visually impaired in some way.
-These semantic elements also provide text-to-speech advantages.
+This includes web crawlers from search engines and screen readers for people with visual impairments.
+These semantic elements also provide better text-to-speech support.
 These are a few reasons why HTML5 semantic elements are important.
 You won't have to memorize all of the elements, but there will be ones that you'll use more often,
 like the ones that I listed above.</p>
@@ -427,7 +427,7 @@ This will improve search and retrieval processes but also create a more equitabl
 <div style="break-before: page; page-break-before: always;"></div><h1 id="tools-setup-and-workflow"><a class="header" href="#tools-setup-and-workflow">Tools, Setup, and Workflow</a></h1>
 <h2 id="install-software-for-web-development"><a class="header" href="#install-software-for-web-development">Install Software for Web Development</a></h2>
 <p>Web developers, and other programmers, rely on a suite of applications to conduct their work.
-In order to learn how to become web developers, we will need learn how to use some of these applications.</p>
+In order to learn how to become web developers, we will need to learn how to use some of these applications.</p>
 <p>To learn to use these applications, we need to install them.
 Hence, our first task is to install the software we need to start web development.
 For this course, we will use the following tools:</p>
@@ -439,19 +439,19 @@ For this course, we will use the following tools:</p>
 <p>The tricky part about this week is that I cannot show you how to install this software.
 The installation process is dependent on the operating system you use.
 Whether you use Windows, macOS, or Linux (as I do),
-then you should already know the basics of installing.
+you should already know the basics of installing.
 And fortunately, once these tools are up and running on your systems,
 we'll all be in sync and what you'll see in my instructions going forward will be easier to follow.</p>
 <h3 id="text-editor"><a class="header" href="#text-editor">Text Editor</a></h3>
 <p>Let's start with the most important application: a text editor.
 Text editors are a programmer's bread and butter.
-They have a long history and there are even <a href="https://en.wikipedia.org/wiki/Command-line_interface">funny cultural wars</a> about text editors.
+They have a long history and there are even <a href="https://en.wikipedia.org/wiki/Editor_war">funny cultural wars</a> about text editors.
 Personally, I use the <a href="https://www.vim.org/">Vim</a> editor, which is a <a href="https://en.wikipedia.org/wiki/Command-line_interface">command line</a> editor.
 Vim can be difficult to learn, and we don't have the time to learn it.
 Therefore, for this course you can use a GUI (graphical user interface) text editor.</p>
 <p>Note that we <strong>do not</strong> use a <a href="https://en.wikipedia.org/wiki/Word_processor">word processor</a> like Microsoft Word or Google Docs in programming.
-When we write any kind of code, the code needs to be saved as <a href="https://en.wikipedia.org/wiki/Plain_text">plain text</a> and not as encoded text.
-Word processors save files as encoded text and text editors save files as plain text (e.g., DOCX versus TXT files).</p>
+When we write any kind of code, the code needs to be saved as <a href="https://en.wikipedia.org/wiki/Plain_text">plain text</a> and not as rich or structured text.
+Word processors save files as rich or structured text and text editors save files as plain text (e.g., DOCX versus TXT files).</p>
 <p>Also, text editors offer a number of functions that are designed to help us write better programs.
 Fortunately, many are free and open source software.</p>
 <p>For this course, you can use the free <a href="https://code.visualstudio.com/">VS Code</a> text editor.
@@ -466,7 +466,7 @@ Themes will alter how VS Code appears.</p>
 <h3 id="vector-graphics-editor"><a class="header" href="#vector-graphics-editor">Vector Graphics Editor</a></h3>
 <p>When we begin a web development project,
 it is a pretty bad idea to just sit down and start coding a website without first thinking about its architecture,
-how it looks, its design, what it contains, who the audience is or are, and so forth.
+how it looks, its design, what it contains, who the audience is, and so forth.
 The good idea is to start with a plan.</p>
 <p>The same is true for any professional, like an architect, who designs anything in this world.
 Imagine having the money to build your own home and then hiring a builder
@@ -474,28 +474,29 @@ who starts assembling a bunch of lumber and pipes and wires with only a vague id
 That would be foolish as well as a waste of money and time.
 The same is true for any profession that builds or develops anything.
 If you want to build a website, then you start with a plan.</p>
-<p>For this course, I mainly want you to think about how the website you will build will look on a desktop/laptop browser and also on mobile. We could hand draw this, but in some settings, you will want to share your plans with others,
-and thus it makes more sense to use a drawing tool in order to share native, digital files with your colleagues or customers.</p>
+<p>For this course, I mainly want you to think about how the website you will build will look on a desktop/laptop browser and also on mobile.
+We could hand draw this, but in some settings, you will want to share your plans with others,
+and thus it makes more sense to use a drawing tool to share native, digital files with your colleagues or customers.</p>
 <p>Enter Inkscape, a <a href="https://en.wikipedia.org/wiki/Vector_graphics">vector graphics editor</a>.
 Vector graphics editors are often used to design things like logos.
 Unlike raster-based editors, like Photoshop or <a href="https://www.gimp.org/">GIMP</a>,
 vector graphics scale to any size and still maintain quality.
-Adobe Illustrator is a vector graphics editor, but Inkscape is as advanced as Illustrator and is free and open source software.</p>
-<p>If you have and are comfortable using a vector graphics editor, like Illustrator, you are free to use that,
+Adobe Illustrator is a vector graphics editor, but Inkscape is a capable alternative and is free and open source software.</p>
+<p>If you have one and are comfortable using a vector graphics editor, like Illustrator, you are free to use that,
 but for this course, I will use and demonstrate Inkscape.</p>
 <p>Download and install Inkscape:</p>
 <ul>
 <li><a href="https://inkscape.org/">Inkscape</a></li>
 </ul>
 <h3 id="version-control"><a class="header" href="#version-control">Version Control</a></h3>
-<p>Finally, one of other most important tools for actual web development (and for any kind of programming) is version control.
+<p>Finally, one of the other most important tools for actual web development (and for any kind of programming) is version control.
 Version control is about project management, such as keeping track of your work and the history of your work,
 and about collaboration, such as working with other developers.
 A number of version control software systems are available, but one of the most popular ones is Git, and we'll use that in this course.</p>
 <p>Version control systems are enhanced with version control repositories, which are used to send, store, and share code and other work.
 We could set up our own Git repository, but for this course, we will use <a href="https://github.com">GitHub</a>.</p>
 <p>I'll show you the basics of using <a href="https://git-scm.com/">Git</a> and GitHub in this course, but for now,
-we need to create an account on GitHub, if you don't have one, and download Git on our machines.</p>
+we need to create an account on GitHub, if you don't have one, and download Git on your machines.</p>
 <h4 id="github"><a class="header" href="#github">GitHub</a></h4>
 <p>First, create an account on GitHub, if you don't already have an account.
 Use a personal email address and not your university email (since it's temporary) when setting up the account:</p>
@@ -512,19 +513,18 @@ Use a personal email address and not your university email (since it's temporary
 <h3 id="gitting-started"><a class="header" href="#gitting-started"><em>Gitting</em> Started</a></h3>
 <h4 id="git-configuration"><a class="header" href="#git-configuration">Git Configuration</a></h4>
 <p>Once Git is downloaded, we need to configure our system to use it.
-We do that by giving Git our name, GitHub username, and email address plus some other details.
+We do that by giving Git our name and email address plus some other details.
 Here we need to be sure to use the same email address that we used to create our accounts on GitHub.</p>
 <p>To get started, open a command shell or terminal on your computer
 (e.g., CMD.exe or PowerShell on Windows or Terminal.app on macOS) and run the following command.
-Note the quotes around the name but not around the <strong>github_username</strong> or email address.
-Use YOUR NAME AND YOUR EMAIL ADDRESS.</p>
+Note the quotes around the name but not around the email address.
+Use your name and your email address.</p>
 <pre><code>git config --global user.name "Your Name"
-git config --global user.name github_username
 git config --global user.email youremail@example.com
 </code></pre>
 <p>Next, we configure Git to use <strong>main</strong> as our default branch name.
 If you are using VS Code, then the second command instructs Git to use it as your default text editor.
-Run these two commands as-is, but if you are using a different text editor, then be sure to lookup the appropriate command for that editor:</p>
+Run these two commands as-is, but if you are using a different text editor, then be sure to look up the appropriate command for that editor:</p>
 <pre><code>git config --global init.defaultBranch main
 git config --global core.editor "code --wait"
 </code></pre>
@@ -563,7 +563,7 @@ The default branch will be named <strong>main</strong>.</p>
 <p>However, since Git is a version control system,
 we can create additional branches to test or work on different components of our projects without messing with the main branch.
 For large or complex projects, we would work and switch among different branches.
-A large project might be a big website, an software application, or even an operating systems.
+A large project might be a big website, a software application, or even an operating system.
 Working in non-main branches (e.g., a testing branch),
 allows us to develop components of our project without interfering with the main branch, which might be at a stable version of our project. And then when we are ready, we can merge a testing branch with our main branch,
 or we can delete the testing branch if we don't want to use it.</p>
@@ -591,7 +591,7 @@ We will use VS Code with Git and GitHub to:</p>
 <p>For future reference, here's a nice cheat sheet of <a href="https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html">Git commands</a>.
 Most of these commands are to be used from the command line (Windows, macOS, or Linux),
 and so if we explore any command line usage of Git, these will be good to have on hand.</p>
-<div style="break-before: page; page-break-before: always;"></div><h2 id="designing-with-inkscape"><a class="header" href="#designing-with-inkscape">Designing with Inkscape</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="designing-with-inkscape"><a class="header" href="#designing-with-inkscape">Designing with Inkscape</a></h1>
 <p>Good website design begins with a solid understanding of layout.
 Layouts determine how information is structured visually and guide users' interactions with your content.
 A well-thought-out layout ensures that a website is aesthetically pleasing and functional, and
@@ -603,7 +603,7 @@ To get started, review the <a href="https://wordpress.com/blog/2024/11/14/websit
 <p>Although some of the layouts at the above link might seem complicated,
 you can start by considering two common layout structures: Single Column Layout and Two-Column Layout.</p>
 <p>The single-column layout can also be framed as a multiple row layout.
-This layout is organized by rows with a header top row, navigation second row (or shared with the header row),
+This layout is organized by rows with a header row, navigation second row (or shared with the header row),
 main content third row, and footer as the last row.
 Although seemingly simple, the main <a href="https://www.uky.edu/">UK</a> website follows a single column layout,
 except that it contains columns within rows.</p>
@@ -615,9 +615,9 @@ title="Example Wireframe of a Single Column Layout">
 Fig. 1. Example Wireframe of a Single Column Layout
 </figcaption>
 </figure>
-<p>Some layouts may follow the above layout but push the navigation to the side, creating a two column layout,
+<p>Some layouts may follow the above layout but push the navigation to the side, creating a two-column layout,
 with the main content area to the right (usually) or left of the navigation.
-Many <a href="https://en.wikipedia.org/wiki/University_of_Kentucky">Wikipedia articles</a> following this kind of layout.</p>
+Many Wikipedia articles (e.g., <a href="https://en.wikipedia.org/wiki/University_of_Kentucky">University of Kentucky</a>) follow this kind of layout.</p>
 <figure>
 <img src="images/two_column.png"
 alt="Wireframe of example two column layout"
@@ -634,7 +634,7 @@ Responsive design adapts a website's layout to screen size, resolution, and orie
 <h4 id="why-mobile-matters"><a class="header" href="#why-mobile-matters">Why Mobile Matters</a></h4>
 <p>We need layouts that are usable on large screens, but mobile matters for several reasons:</p>
 <ol>
-<li>Mobile usage trends: Most <a href="https://www.pewresearch.org/internet/fact-sheet/mobile/">Americans have a smartphone</a> and use their smartphone browsers for accessing the web. This trend is growing around the world, too, and around 50% of global website traffic comes from mobile devices. As an example, <a href="https://en.wikipedia.org/wiki/Usage_share_of_operating_systems">nearly half of Wikipedia's visitors</a> are on mobile (iOS and Android). Ignoring mobile users can therefore result in loss of engagement.</li>
+<li>Mobile usage trends: Most <a href="https://www.pewresearch.org/internet/fact-sheet/mobile/">Americans have a smartphone</a> and use their smartphone browsers for accessing the web. Mobile usage continues to grow globally, and many sites see significant mobile traffic. Ignoring mobile users can therefore result in loss of engagement.</li>
 <li>User expectations: Mobile users expect fast-loading, easy-to-navigate sites with content formatted for smaller screens.</li>
 <li>Search engine optimization (SEO): Search engines <a href="https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing">like Google prioritize mobile-friendly websites</a> in their rankings. This is called <strong>mobile-first indexing</strong>.</li>
 </ol>
@@ -653,11 +653,11 @@ With Inkscape, you can create high-quality, scalable designs for large screens a
 <li>Open Inkscape and create a new document.</li>
 <li>Adjust the canvas size to match your target screen dimensions.
 <ul>
-<li>Go to File → Document Properties →</li>
-<li>Select Custom size to pixels or <strong>px</strong></li>
+<li>Go to File → Document Properties.</li>
+<li>Set units to <strong>px</strong> and choose a custom size.</li>
 <li>For a regular desktop layout: Set the canvas width to 1440 pixels and height to 900 pixels (or a size relevant to your project).</li>
 <li>For a mobile layout: Use dimensions like 360 pixels wide by 640 pixels tall.</li>
-<li>Close Document Properties and press the number <strong>5</strong> to center canvas in Inskcape</li>
+<li>Close Document Properties and use View → Zoom → Page to center the canvas in Inkscape</li>
 </ul>
 </li>
 <li>To organize your work:
@@ -667,34 +667,34 @@ With Inkscape, you can create high-quality, scalable designs for large screens a
 </ul>
 </li>
 </ol>
-<h3 id="step-2-creating-a-wireframe"><a class="header" href="#step-2-creating-a-wireframe">Step 2: Creating a Wireframe</a></h3>
+<h4 id="step-2-creating-a-wireframe"><a class="header" href="#step-2-creating-a-wireframe">Step 2: Creating a Wireframe</a></h4>
 <p>A wireframe is a basic visual guide that represents the skeletal framework of your website.
 It's generally a good idea to know the content that you want to present on a site before you wireframe,
 but since we're in the exploration stage, we will worry about content later.
-When we begin to write CSS but after we have written our HTML, we can revisit and revise our wireframes as needed.</p>
+After we write our HTML and start CSS, we can revisit and revise our wireframes as needed.</p>
 <p>Here's how to create a wireframe in Inkscape:</p>
 <ol>
 <li>Use the <strong>Rectangle Tool</strong> to define sections such as headers, footers, navigation bars, and content areas.</li>
 <li>Use the <strong>Text Tool</strong> to label each section; e.g., "Header", "Main Content", "Footer".</li>
 <li>Keep the wireframe simple by using grayscale colors to focus on layout without distractions from design details.</li>
 </ol>
-<h3 id="step-3-adding-design-elements"><a class="header" href="#step-3-adding-design-elements">Step 3: Adding Design Elements</a></h3>
+<h4 id="step-3-adding-design-elements"><a class="header" href="#step-3-adding-design-elements">Step 3: Adding Design Elements</a></h4>
 <p>Once the wireframe is complete for your Desktop version, you can refine it by adding design elements.</p>
 <ol>
 <li>Use shapes and gradients to visualize buttons, cards, or other interactive elements.</li>
 <li>Add placeholders for images using rectangles with an <strong>X</strong> through them.</li>
 <li>Experiment with font sizes and text alignment for headings, subheadings, and body content.</li>
-<li>Save as <strong>Desktop_Prototype.svg</strong>.</li>
+<li>Save your updated desktop prototype (for example, overwrite <strong>Desktop_Prototype.svg</strong>).</li>
 </ol>
 <h4 id="adapting-layouts-for-mobile"><a class="header" href="#adapting-layouts-for-mobile">Adapting Layouts for Mobile</a></h4>
 <p>To create a mobile version of your design:</p>
 <ol>
 <li>Duplicate your desktop wireframe and adjust the canvas size to match mobile dimensions.</li>
 <li>Rearrange elements to fit within the narrower viewport:
-<ol>
+<ul>
 <li>Stack sections vertically</li>
 <li>Resize text and images for smaller screens</li>
-</ol>
+</ul>
 </li>
 <li>Ensure touch-friendly design by spacing buttons and interactive elements adequately.</li>
 <li>Save as <strong>Mobile_Prototype.svg</strong>.</li>
