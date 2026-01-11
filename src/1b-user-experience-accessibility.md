@@ -9,7 +9,7 @@ despite the devices they have or their physical conditions.
 
 ## Accessibility
 
-In this section, we study general web accessibility and how web semantics helps make sites more accessible.
+In this section, we study general web accessibility and how web semantics help make sites more accessible.
 I use the term accessibility as a kind of shorthand:
 I also include, broadly, things like usability and inclusion.
 
@@ -25,16 +25,16 @@ And then usability is related to user experience design or UX design. Usability 
 
 Finally, inclusion is referred to as:
 
-> Inclusive design, universal design, and design for all involves designing products, such as websites, to be usable by everyone to the greatest extent possible, without the need for adaptation. Inclusion addresses a broad range of issues including access to and quality of hardware, software, and Internet connectivity; computer literacy and skills; economic situation; education; geographic location; and language — as well as age and disability.
+> Inclusive design, universal design, and design for all involve designing products, such as websites, to be usable by everyone to the greatest extent possible, without the need for adaptation. Inclusion addresses a broad range of issues including access to and quality of hardware, software, and Internet connectivity; computer literacy and skills; economic situation; education; geographic location; and language — as well as age and disability.
 
 Things related to inclusion are pretty broadly defined.
 This can be related to the responsiveness of a website to various displays, such as mobile phones,
-and then to the whole ranges of mobile phones that exist, as well as to desktops, laptops, and tablets, and even to smart watches.
+and then to the whole range of mobile phones that exist, as well as to desktops, laptops, and tablets, and even to smart watches.
 
 We're going to discuss these issues.
 You're going to identify some websites and rank and judge these sites according
-to the principles of accessibility, usability, and inclusion by enabling accessibility mode
-on your laptop/desktop browser and on your phones.
+to the principles of accessibility, usability, and inclusion by enabling built-in accessibility features
+or reader mode on your laptop/desktop browser and on your phones.
 
 It will help to watch a [short video about accessibility on YouTube][yt_accessibility],
 which does a really nice job demonstrating all the above issues.
@@ -46,7 +46,7 @@ Humans are pretty good (most of the time) at interpreting meaning but not comput
 For example, you and I know what a person is, but a computer does not.
 Yet despite that, if you search for a person on the web, you will likely get accurate results back.
 The reason this is successful is because information retrieval algorithms
-use other methods to figure out to identify what is relevant based on what we search.
+use other methods to identify what is relevant based on what we search.
 
 Thus when we talk about semantics and accessibility,
 we talk about how to make it so that the structure and the content on our websites can be understood by computers.
@@ -56,7 +56,7 @@ It makes sense then that the meaning of a thing relates to its accessibility.
 Therefore, one way that we will address accessible web development is through HTML5,
 which was specifically released to add semantic HTML elements.
 This helps computer systems (like search engines and screen readers) interpret the meaning of a document's structure
-better than prior versions of HTML could and provide better accessibility options to people, then, too.
+better than prior versions of HTML could and provides better accessibility options to people as well.
 Later we'll learn and apply JSON-LD technologies to provide meaning to the content on a page,
 so that a search technology can have a better understanding of what a webpage is about.
 
@@ -80,7 +80,7 @@ then the more likely it becomes that we will break something, and that makes it 
 ## The Semantic Structure
 
 I mentioned this above, but we'll talk about semantics in two ways.
-We we start creating our sites, we will use HTML5 to add semantics to a web page,
+When we start creating our sites, we will use HTML5 to add semantics to a web page,
 and later we will use JSON-LD to add additional semantics that describe the content on a webpage.
 Some [example semantic HTML5 elements][html5_example] include:
 
@@ -92,7 +92,7 @@ Some [example semantic HTML5 elements][html5_example] include:
 - `<nav>`: provides navigation links to parts of a webpage or parts of a website
 - `<section>`: "represents a generic standalone section" of a webpage
 - `<summary>`: "specifies a summary, caption, or legend for a `<details>` element's disclosure box"
-- `<time>`: "represents a period of time
+- `<time>`: "represents a period of time"
 
 Below are links to two lists of HTML5 elements.
 You should begin to review them and save or bookmark these pages for constant reference:
@@ -104,8 +104,8 @@ Attempts to provide semantic data were provided for in previous versions of HTML
 and through hacks that were not all that ideal, such as excessive use of the `<div>` element, or through scripting languages like JavaScript.
 That is, in the early days of the web, developers often used (and still do, unfortunately) non-semantic elements
 like `<div>` and `<span>` to structure content.
-In the very early days, they structured content using tables (e.g., `<table>`) elements.
-These were sad days because it made it difficult for assistive technologies to interpret content accurately.
+In the very early days, they structured content using table elements (e.g., `<table>`).
+This made it difficult for assistive technologies to interpret content accurately.
 
 However, these deficits led to the development of semantic HTML in HTML5.
 That is, HTML5's great benefit is that it provides semantic elements directly.
@@ -117,8 +117,8 @@ Screen readers can then provide users with an overview of the site's main sectio
 
 By using such elements, we provide semantic information not just to the user of the site, or to other developers,
 but also to machines that parse that website for data and information.
-This includes web crawlers from search engines and screen readers for people who are visually impaired in some way.
-These semantic elements also provide text-to-speech advantages.
+This includes web crawlers from search engines and screen readers for people with visual impairments.
+These semantic elements also provide better text-to-speech support.
 These are a few reasons why HTML5 semantic elements are important.
 You won't have to memorize all of the elements, but there will be ones that you'll use more often,
 like the ones that I listed above.

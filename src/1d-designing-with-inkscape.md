@@ -1,4 +1,4 @@
-## Designing with Inkscape
+# Designing with Inkscape
 
 Good website design begins with a solid understanding of layout.
 Layouts determine how information is structured visually and guide users' interactions with your content.
@@ -14,7 +14,7 @@ Although some of the layouts at the above link might seem complicated,
 you can start by considering two common layout structures: Single Column Layout and Two-Column Layout.
 
 The single-column layout can also be framed as a multiple row layout.
-This layout is organized by rows with a header top row, navigation second row (or shared with the header row),
+This layout is organized by rows with a header row, navigation second row (or shared with the header row),
 main content third row, and footer as the last row.
 Although seemingly simple, the main [UK][uky] website follows a single column layout,
 except that it contains columns within rows.
@@ -28,9 +28,9 @@ Fig. 1. Example Wireframe of a Single Column Layout
 </figcaption>
 </figure>
 
-Some layouts may follow the above layout but push the navigation to the side, creating a two column layout,
+Some layouts may follow the above layout but push the navigation to the side, creating a two-column layout,
 with the main content area to the right (usually) or left of the navigation.
-Many [Wikipedia articles][uky_wikipedia] following this kind of layout.
+Many Wikipedia articles (e.g., [University of Kentucky][uky_wikipedia]) follow this kind of layout.
 
 <figure>
 <img src="images/two_column.png"
@@ -52,7 +52,7 @@ Responsive design adapts a website's layout to screen size, resolution, and orie
 
 We need layouts that are usable on large screens, but mobile matters for several reasons:
 
-1. Mobile usage trends: Most [Americans have a smartphone][pew_mobile_fact_sheet] and use their smartphone browsers for accessing the web. This trend is growing around the world, too, and around 50% of global website traffic comes from mobile devices. As an example, [nearly half of Wikipedia's visitors][wikipedia_mobile] are on mobile (iOS and Android). Ignoring mobile users can therefore result in loss of engagement.
+1. Mobile usage trends: Most [Americans have a smartphone][pew_mobile_fact_sheet] and use their smartphone browsers for accessing the web. Mobile usage continues to grow globally, and many sites see significant mobile traffic. Ignoring mobile users can therefore result in loss of engagement.
 2. User expectations: Mobile users expect fast-loading, easy-to-navigate sites with content formatted for smaller screens.
 3. Search engine optimization (SEO): Search engines [like Google prioritize mobile-friendly websites][seo_google] in their rankings. This is called **mobile-first indexing**.
 
@@ -75,21 +75,21 @@ With Inkscape, you can create high-quality, scalable designs for large screens a
  
 1. Open Inkscape and create a new document.
 2. Adjust the canvas size to match your target screen dimensions.
-    - Go to File &rarr; Document Properties &rarr;
-    - Select Custom size to pixels or **px**
+    - Go to File &rarr; Document Properties.
+    - Set units to **px** and choose a custom size.
     - For a regular desktop layout: Set the canvas width to 1440 pixels and height to 900 pixels (or a size relevant to your project).
     - For a mobile layout: Use dimensions like 360 pixels wide by 640 pixels tall.
-    - Close Document Properties and press the number **5** to center canvas in Inskcape
+    - Close Document Properties and use View &rarr; Zoom &rarr; Page to center the canvas in Inkscape
 3. To organize your work:
     - Save your desktop sized canvas file as **Desktop_Prototype.svg**.
     - Save your mobile sized canvas file as **Mobile_Prototype.svg**. 
 
-### Step 2: Creating a Wireframe
+#### Step 2: Creating a Wireframe
 
 A wireframe is a basic visual guide that represents the skeletal framework of your website.
 It's generally a good idea to know the content that you want to present on a site before you wireframe,
 but since we're in the exploration stage, we will worry about content later.
-When we begin to write CSS but after we have written our HTML, we can revisit and revise our wireframes as needed.
+After we write our HTML and start CSS, we can revisit and revise our wireframes as needed.
 
 Here's how to create a wireframe in Inkscape:
 
@@ -97,14 +97,14 @@ Here's how to create a wireframe in Inkscape:
 2. Use the **Text Tool** to label each section; e.g., "Header", "Main Content", "Footer".
 3. Keep the wireframe simple by using grayscale colors to focus on layout without distractions from design details.
 
-### Step 3: Adding Design Elements
+#### Step 3: Adding Design Elements
 
 Once the wireframe is complete for your Desktop version, you can refine it by adding design elements.
 
 1. Use shapes and gradients to visualize buttons, cards, or other interactive elements.
 2. Add placeholders for images using rectangles with an **X** through them.
 3. Experiment with font sizes and text alignment for headings, subheadings, and body content.
-4. Save as **Desktop_Prototype.svg**.
+4. Save your updated desktop prototype (for example, overwrite **Desktop_Prototype.svg**).
 
 #### Adapting Layouts for Mobile
 
@@ -112,8 +112,8 @@ To create a mobile version of your design:
 
 1. Duplicate your desktop wireframe and adjust the canvas size to match mobile dimensions.
 2. Rearrange elements to fit within the narrower viewport:
-    1. Stack sections vertically
-    2. Resize text and images for smaller screens
+    - Stack sections vertically
+    - Resize text and images for smaller screens
 3. Ensure touch-friendly design by spacing buttons and interactive elements adequately.
 4. Save as **Mobile_Prototype.svg**.
 
@@ -137,5 +137,4 @@ For now, experiment with Inkscape and create your own prototypes for both deskto
 [pew_mobile_fact_sheet]:https://www.pewresearch.org/internet/fact-sheet/mobile/
 [uky]:https://www.uky.edu/
 [uky_wikipedia]:https://en.wikipedia.org/wiki/University_of_Kentucky
-[wikipedia_mobile]:https://en.wikipedia.org/wiki/Usage_share_of_operating_systems
 [wireframing_wordpress]:https://wordpress.com/blog/2024/11/14/website-layout-examples/#creating-a-website-layout-mockup

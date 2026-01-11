@@ -3,7 +3,7 @@
 ## Install Software for Web Development
 
 Web developers, and other programmers, rely on a suite of applications to conduct their work.
-In order to learn how to become web developers, we will need learn how to use some of these applications.
+In order to learn how to become web developers, we will need to learn how to use some of these applications.
 
 To learn to use these applications, we need to install them.
 Hence, our first task is to install the software we need to start web development.
@@ -16,7 +16,7 @@ For this course, we will use the following tools:
 The tricky part about this week is that I cannot show you how to install this software.
 The installation process is dependent on the operating system you use.
 Whether you use Windows, macOS, or Linux (as I do),
-then you should already know the basics of installing.
+you should already know the basics of installing.
 And fortunately, once these tools are up and running on your systems,
 we'll all be in sync and what you'll see in my instructions going forward will be easier to follow.
 
@@ -30,8 +30,8 @@ Vim can be difficult to learn, and we don't have the time to learn it.
 Therefore, for this course you can use a GUI (graphical user interface) text editor.
 
 Note that we **do not** use a [word processor][word_processor] like Microsoft Word or Google Docs in programming.
-When we write any kind of code, the code needs to be saved as [plain text][plaintext] and not as encoded text.
-Word processors save files as encoded text and text editors save files as plain text (e.g., DOCX versus TXT files).
+When we write any kind of code, the code needs to be saved as [plain text][plaintext] and not as rich or structured text.
+Word processors save files as rich or structured text and text editors save files as plain text (e.g., DOCX versus TXT files).
 
 Also, text editors offer a number of functions that are designed to help us write better programs.
 Fortunately, many are free and open source software.
@@ -50,7 +50,7 @@ Download and install VS Code from:
 
 When we begin a web development project,
 it is a pretty bad idea to just sit down and start coding a website without first thinking about its architecture,
-how it looks, its design, what it contains, who the audience is or are, and so forth.
+how it looks, its design, what it contains, who the audience is, and so forth.
 The good idea is to start with a plan.
 
 The same is true for any professional, like an architect, who designs anything in this world.
@@ -60,16 +60,17 @@ That would be foolish as well as a waste of money and time.
 The same is true for any profession that builds or develops anything.
 If you want to build a website, then you start with a plan.
 
-For this course, I mainly want you to think about how the website you will build will look on a desktop/laptop browser and also on mobile. We could hand draw this, but in some settings, you will want to share your plans with others,
-and thus it makes more sense to use a drawing tool in order to share native, digital files with your colleagues or customers.
+For this course, I mainly want you to think about how the website you will build will look on a desktop/laptop browser and also on mobile.
+We could hand draw this, but in some settings, you will want to share your plans with others,
+and thus it makes more sense to use a drawing tool to share native, digital files with your colleagues or customers.
 
 Enter Inkscape, a [vector graphics editor][vector_graphics].
 Vector graphics editors are often used to design things like logos.
 Unlike raster-based editors, like Photoshop or [GIMP][gimp],
 vector graphics scale to any size and still maintain quality.
-Adobe Illustrator is a vector graphics editor, but Inkscape is as advanced as Illustrator and is free and open source software.
+Adobe Illustrator is a vector graphics editor, but Inkscape is a capable alternative and is free and open source software.
 
-If you have and are comfortable using a vector graphics editor, like Illustrator, you are free to use that,
+If you have one and are comfortable using a vector graphics editor, like Illustrator, you are free to use that,
 but for this course, I will use and demonstrate Inkscape.
 
 Download and install Inkscape:
@@ -78,7 +79,7 @@ Download and install Inkscape:
 
 ### Version Control
 
-Finally, one of other most important tools for actual web development (and for any kind of programming) is version control.
+Finally, one of the other most important tools for actual web development (and for any kind of programming) is version control.
 Version control is about project management, such as keeping track of your work and the history of your work,
 and about collaboration, such as working with other developers.
 A number of version control software systems are available, but one of the most popular ones is Git, and we'll use that in this course.
@@ -87,7 +88,7 @@ Version control systems are enhanced with version control repositories, which ar
 We could set up our own Git repository, but for this course, we will use [GitHub][github].
 
 I'll show you the basics of using [Git][git] and GitHub in this course, but for now,
-we need to create an account on GitHub, if you don't have one, and download Git on our machines.
+we need to create an account on GitHub, if you don't have one, and download Git on your machines.
 
 #### GitHub
 
@@ -111,23 +112,22 @@ Follow the instructions in the macOS section on [Installing on macOS][git_instal
 #### Git Configuration
 
 Once Git is downloaded, we need to configure our system to use it.
-We do that by giving Git our name, GitHub username, and email address plus some other details.
+We do that by giving Git our name and email address plus some other details.
 Here we need to be sure to use the same email address that we used to create our accounts on GitHub.
 
 To get started, open a command shell or terminal on your computer
 (e.g., CMD.exe or PowerShell on Windows or Terminal.app on macOS) and run the following command.
-Note the quotes around the name but not around the **github_username** or email address.
-Use YOUR NAME AND YOUR EMAIL ADDRESS.
+Note the quotes around the name but not around the email address.
+Use your name and your email address.
 
 ```
 git config --global user.name "Your Name"
-git config --global user.name github_username
 git config --global user.email youremail@example.com
 ```
 
 Next, we configure Git to use **main** as our default branch name.
 If you are using VS Code, then the second command instructs Git to use it as your default text editor.
-Run these two commands as-is, but if you are using a different text editor, then be sure to lookup the appropriate command for that editor:
+Run these two commands as-is, but if you are using a different text editor, then be sure to look up the appropriate command for that editor:
 
 ```
 git config --global init.defaultBranch main
@@ -180,7 +180,7 @@ The default branch will be named **main**.
 However, since Git is a version control system,
 we can create additional branches to test or work on different components of our projects without messing with the main branch.
 For large or complex projects, we would work and switch among different branches.
-A large project might be a big website, an software application, or even an operating systems.
+A large project might be a big website, a software application, or even an operating system.
 Working in non-main branches (e.g., a testing branch),
 allows us to develop components of our project without interfering with the main branch, which might be at a stable version of our project. And then when we are ready, we can merge a testing branch with our main branch,
 or we can delete the testing branch if we don't want to use it.
@@ -214,7 +214,7 @@ Most of these commands are to be used from the command line (Windows, macOS, or 
 and so if we explore any command line usage of Git, these will be good to have on hand.
 
 [cli]:https://en.wikipedia.org/wiki/Command-line_interface
-[culture_wars]:https://en.wikipedia.org/wiki/Command-line_interface
+[culture_wars]:https://en.wikipedia.org/wiki/Editor_war
 [gimp]:https://www.gimp.org/
 [git_branches]:https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell
 [git_commands]:https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
