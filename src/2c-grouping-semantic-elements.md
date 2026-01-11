@@ -22,7 +22,7 @@ The grouping elements we cover here include:
 For a full list of grouping elements, see: [Grouping content][grouping_whatwg]
 
 Some of these elements must be used together.
-I have indicated these as subitems in this above.
+I have indicated these as subitems above.
 For example, the `<ul>` and the `<ol>` elements are used to create *unordered* and *ordered* lists, respectively.
 However, either of these must include the `<li>` element to list items.
 
@@ -38,7 +38,7 @@ In this section, we'll cover the following text-level elements.
 - the `<em>` element: emphasis
 - the `<strong>` element: importance
 - the `<small>` element: side comments
-- the `<s>` element: mark inaccurate or irrelevant tet
+- the `<s>` element: mark no longer accurate or relevant text
 - the `<cite>` element: mark titles of works
 - the `<q>` element: mark quoted text
 - the `<dfn>` element: mark defining term
@@ -65,7 +65,7 @@ For the full list, see: [Text-level semantics][text_semantics_whatwg]
 
 Most tags have closing forms.
 An opening paragraph tag looks like this: `<p>`.
-It's closing version looks like this: `</p>`.
+Its closing version looks like this: `</p>`.
 The content for the paragraph is placed between the opening and closing tags.
 
 However, some HTML tags are self-closing.
@@ -123,10 +123,14 @@ After this paragraph closes, I'll add a horizontal rule to separate this paragra
 for i in * ; do echo "${i}" ; done
 </pre>
 
-> This is a blockquote.
-> We use it to quote multiple lines.
-> Here's a goofy joke:
-    > Why did the spider go to school? They wanted to be a web designer.
+<blockquote>
+    <p>This is a blockquote.</p>
+    <p>We use it to quote multiple lines.</p>
+    <p>Here's a goofy joke:</p>
+    <blockquote>
+        <p>Why did the spider go to school? They wanted to be a web designer.</p>
+    </blockquote>
+</blockquote>
 
 <p>Sometimes I like to create lists. Here's a list of Unix shells:</p>
 
@@ -163,7 +167,7 @@ for i in * ; do echo "${i}" ; done
 
 ## More Elements in Use: Text-level Semantics
 
-We want to reserve formatting text when we use CSS, but a few HTML tags change how font is rendered.
+We want to reserve formatting for CSS, but a few HTML tags change how font is rendered.
 Confusingly, some tags render fonts in the same way.
 Let's view some of these examples.
 
@@ -222,9 +226,9 @@ Here are a few other HTML tags with special, semantic purposes:
 <p>The opposite of big is <small>small</small>.</p>
 
 <p>In the <cite>Merchant of Venice</cite>, Shakespeare wrote: <q>All that glitters is not gold</q>.
-And in <cite>Pursuit of Happiness</cite>, Kid Cudi sang: <p>Everything that shine ain't always gonna be gold</cite>.</p>
+And in <cite>Pursuit of Happiness</cite>, Kid Cudi sang: <q>Everything that shine ain't always gonna be gold</q>.</p>
 
-<p>I am a member of <abbr title="Association for Library and Information Science Eduction">ALISE</abbr>.</p>
+<p>I am a member of <abbr title="Association for Library and Information Science Education">ALISE</abbr>.</p>
 
 <p>The date is <time datetime="2025-01-25">January 25, 2025</time>.</p>
 

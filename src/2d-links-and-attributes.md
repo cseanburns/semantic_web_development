@@ -45,10 +45,10 @@ Specifically, there are several use cases for the `<a>` tag, and these include:
 3. Email links
     - To open the user's default email client to send an email. This is useful for contact pages or in the `<footer>` section of a page.
     - Example: `<a href="mailto:someone@example.com">Email us</a>`
-5. Telephone links
+4. Telephone links
     - To provide mobile users a way to tap and call a phone number directly. This is useful for contact pages or in the `<footer>` section of a page.
     - Example: `<a href="tel:+12162452368">Call us</a>`
-6. File downloads
+5. File downloads
     - To provide a link to download a file directly.
     - Example: `<a href="file.pdf" download>Download PDF</a>`
 
@@ -72,7 +72,7 @@ The `<a>` tag can use the following attributes:
 - `title`: This provides additional information about the link and results in displaying a tooltip on hover.
     - Example: `<a href="https://www.example.com" title="Example.com">Visit Example</a>` 
 - `download`: This prompts the browser to download the linked file instead of navigating to it.
-    - Example: `<a href="https://www.example.com/file.pdf" download>` 
+    - Example: `<a href="https://www.example.com/file.pdf" download>Download PDF</a>` 
 
 ## The `<link>` Element
 
@@ -87,19 +87,19 @@ These resources may include CSS stylesheets, icons, fonts, and more.
 1. Linking stylesheets
     - To tell the browser to fetch and apply CSS rules to your HTML document. In the following example, the rules are in a `styles.css` file in a local `css` directory.
     - Example: `<link rel="stylesheet" href="css/styles.css">`
-3. Favicons
+2. Favicons
     - To instruct the browser to use an icon that represents your website in browser tabs, bookmarks, and other UI elements. Inkscape is a great application for creating favicons. The following example uses the `favicon.ico` file in a local `images` directory as the icon file.
     - Example: `<link rel="icon" href="images/favicon.ico">`
-4. Preloading and prefetching resources
+3. Preloading and prefetching resources
     - To instruct the browser to fetch resources, such as scripts, fonts, and images, early. This helps to optimize performance because it helps to load these resources before the page begins to render. The following example preloads and prefetches a JavaScript file `javascript.js` in a local `js` directory.
     - Example: `<link rel="preload" href="js/javascript.js" as="script">`
-5. RSS feeds
+4. RSS feeds
     - To instruct browsers and feed readers that there is an RSS feed for the site or page.
     - Example: `<link rel="alternate" type="application/rss+xml" title="RSS" href="feed.xml">`
 
 ### Common Attributes for `<link>`
 
-Like the `<a>` tag, the `<link>` tab has some common attributes, some of which are shared between the two.
+Like the `<a>` tag, the `<link>` tag has some common attributes, some of which are shared between the two.
 Here are some common attributes for the `<link>` tag:
 
 - `rel`: This specifies the relationship between the current document and the linked resource. This helps to inform the browser how to treat the linked resource.
@@ -127,7 +127,7 @@ Here is the example code:
 
 Another common example is to use the `<link>` tag to load external fonts.
 We'll cover this in more detail when we learn about styling our sites with CSS.
-However, you should know that browsers use the fonts intalled on your operating system as the default.
+However, you should know that browsers use the fonts installed on your operating system as the default.
 Thus, basic fonts will display a bit differently depending on your operating system: Windows, macOS, iOS, Android, Linux, etc.
 To mitigate this variance, many web developers use external fonts or download fonts to their web source code directory for their websites.
 There are several font services available for free, such as [Google Fonts][google_fonts].
@@ -140,7 +140,7 @@ For example, to use the [Roboto][roboto_google_fonts] font on your website, you 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 ```
 
-And then add the following to your stylesheet or within the the `<style>` tag of your HTML document:
+And then add the following to your stylesheet or within the `<style>` tag of your HTML document:
 
 ```
 html {
@@ -154,7 +154,7 @@ html {
 
 ## Other Attributes
 
-Two additional type of attributes I need to cover are the `id` and `class` attributes.
+Two additional types of attributes I need to cover are the `id` and `class` attributes.
 These are commonly used in JavaScript and CSS.
 We'll cover them more when we learn about CSS, but the `id` attribute is also used to create **internal resource links**.
 
@@ -162,7 +162,7 @@ We'll cover them more when we learn about CSS, but the `id` attribute is also us
 
 The `class` attribute can be assigned to most HTML tags and is used to group multiple HTML elements together under a common name.
 This makes it easier to apply a shared style (CSS) or behavior (JavaScript) to the group of elements.
-For example, we can apply a class name to multiple HTML elements to style them similarily:
+For example, we can apply a class name to multiple HTML elements to style them similarly:
 
 ```
 <main class="dark_background">
@@ -174,7 +174,7 @@ For example, we can apply a class name to multiple HTML elements to style them s
 </main>
 ```
 
-In CSS, we would refer to the class name to style classes named `dark_background` similarily and `light_background` similarily:
+In CSS, we would refer to the class name to style classes named `dark_background` similarly and `light_background` similarly:
 
 ```
 .dark_background {
@@ -193,7 +193,7 @@ In CSS, we would refer to the class name to style classes named `dark_background
 Whereas the `class` attribute is used to group different elements together,
 the `id` attribute is used to uniquely identify a single element on a page.
 This plays in handy for CSS and JavaScript, too, but because it's like applying a fingerprint to a single element,
-it can also be used to **internal resource links**.
+it can also be used to create **internal resource links**.
 
 Here's an example where we have multiple `<h3>` elements on a page, but we want to distinguish them from each other:
 
@@ -228,9 +228,9 @@ Thus, imagine a long web page with the above `<h3>` sections, we could create a 
 using the `id` attribute:
 
 ```
-<a href=#linux">Jump to Linux section</a>
-<a href=#unix">Jump to Unix section</a>
-<a href=#cpm">Jump to CP/M section</a>
+<a href="#linux">Jump to Linux section</a>
+<a href="#unix">Jump to Unix section</a>
+<a href="#cpm">Jump to CP/M section</a>
 ```
 
 ## Global Attributes

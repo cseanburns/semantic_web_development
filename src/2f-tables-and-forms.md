@@ -1,18 +1,18 @@
 # HTML Tables and Forms
 
 In the previous sections, we discussed several categories of HTML elements to use on our web pages.
-These categories relate to document structure, document metadata, grouping elements, text level semantic elements, links, attributes,
+These categories relate to document structure, document metadata, grouping elements, text-level semantic elements, links, attributes,
 and embedded content like images and multimedia.
 These elements are regularly used because they represent how we structure our pages and add content to them.
 
 In this section, we learn how to create tables and forms to add to our web pages.
 These two aspects of HTML are less regularly used.
 Creating tables is about adding content, but specifically, tabular data only.
-Forms are used to gather user input and deliver that input to the web site owner or process it through,
-for example, a server side relational database server, like MariaDB, MySQL, PostgreSQL, etc.
+Forms are used to gather user input and deliver that input to the website owner or process it through,
+for example, a server-side relational database server, like MariaDB, MySQL, PostgreSQL, etc.
 
 We have a number of types of forms available to us.
-They include basic text entry forms, drop down lists, and more.
+They include basic text entry forms, drop-down lists, and more.
 One major caveat with forms is that they require additional programming to function.
 For example, forms are often used with PHP to process the input.
 However, learning PHP is beyond the scope of this work.
@@ -32,9 +32,9 @@ In this demo, I create a simple table that contains the following elements:
 - `<thead>`: The `<thead>` element is semantic and defines table header information.
 - `<tbody>`: The `<tbody>` element is semantic and defines table body information.
 - `<tfoot>`: The `<tfoot>` element is semantic and defines table footer information.
-- `<tr>`: The `<tr>` element defines table row.
+- `<tr>`: The `<tr>` element defines a table row.
 - `<th>`: The `<th>` element defines header cell. This is often placed at the top row of a table:
-    - It it often enclosed within the `<thead>` element but can be added to the `<tbody>` section for row headers.
+    - It is often enclosed within the `<thead>` element but can be added to the `<tbody>` section for row headers.
 - `<td>`: The `<td>` element defines a specific data cell in the table.
 
 Tables are fairly straightforward but grow complex as more data is added to them.
@@ -44,7 +44,7 @@ Following this, the table has three main sections, which include: `<thead>`, `<t
 While HTML does not require indentation, indentation can help with code readability, and is therefore highly encouraged.
 
 Additionally, one `<th>` element contains a `colspan` attribute, which is set to `5`, or five columns, in this example.
-Since the table only has five columns, this elements spans the width of the entire table.
+Since the table only has five columns, this element spans the width of the entire table.
 The `scope` attribute <q>defines the cells that the header (defined in the `<th>`) element relates to</q>
 ([The `scope` attribute][scope_mdn]).
 It's useful for clearly demarcating the row and column names from the tabular data.
@@ -188,18 +188,18 @@ This element is often used to suggest pre-defined options but allows for other d
     <label for="myOS">What is your favorite OS?</label>
     <input list="OS" id="myOS" name="myOS">
     <datalist id="OS">
-        <option value="GNU/Linux">
-        <option value="Linux">
-        <option value="BSD">
-        <option value="Windows">
-        <option value="macOS">
+        <option value="GNU/Linux"></option>
+        <option value="Linux"></option>
+        <option value="BSD"></option>
+        <option value="Windows"></option>
+        <option value="macOS"></option>
      </datalist>
 </form>
 ```
 
 ### The `<select>` Element
 
-Like above, the `<select>` element offers a list of options, but the options are restricted and presented in a drop down box
+Like above, the `<select>` element offers a list of options, but the options are restricted and presented in a drop-down box
 ([The `<select>` element][select_mdn]).
 The `<optgroup>` element groups logical options together.
 In the example below, I use `<optgroup>` to group two types of homes as either *traditional* or *alternative*.
@@ -212,7 +212,7 @@ In the example below, I use `<optgroup>` to group two types of homes as either *
 		<optgroup label="Traditional">
 			<option value="castle">Castle</option>
 			<option value="mansion">Mansion</option>
-			<option value="bungalo">Bungalo</option>
+			<option value="bungalow">Bungalow</option>
 		</optgroup>
 		<optgroup label="Alternative">
 			<option value="treehouse">Tree House</option>
@@ -264,7 +264,7 @@ We use tables to display tabular data, and we use forms to collect user input.
 I grouped these technologies together in a single section not because they are alike but because,
 unlike the rest of the HTML that we have learned, tables and forms are used sparingly.
 
-With respect to forms, note that HTML (nor CSS) can process form data.
+With respect to forms, note that HTML (nor CSS) cannot process form data.
 Processing form data requires additional programming, such as [PHP][php],
 which is often used with various database technologies, such as MySQL, MariaDB, PostgreSQL, etc.
 However, understanding how HTML forms work helps you understand the basics of frontend web application development.

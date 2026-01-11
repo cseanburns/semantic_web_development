@@ -775,8 +775,10 @@ This tag therefore encompasses the <code>&lt;head&gt;</code> and <code>&lt;body&
 <h3 id="the-head-section"><a class="header" href="#the-head-section">The <code>&lt;head&gt;</code> section</a></h3>
 <p>Let's focus on the <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element">HEAD section</a>, which contains a web document's metadata.
 A document's metadata is data that describes the data on the page.
-This section of the HTML document typically includes five elements:
-<code>&lt;title&gt;</code>, <code>&lt;base&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;meta&gt;</code>, and <code>&lt;style&gt;</code>, as shown below:</p>
+This section of the HTML document commonly includes elements such as
+<code>&lt;title&gt;</code>, <code>&lt;base&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;meta&gt;</code>, and <code>&lt;style&gt;</code>.
+Some documents also include <code>&lt;script&gt;</code> or <code>&lt;noscript&gt;</code> tags,
+but we will focus on the five above, as shown below:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 	&lt;head&gt;
@@ -809,6 +811,7 @@ then I may include that within the <code>&lt;title&gt;</code> element, like so:<
 		&lt;link&gt;
 		&lt;meta&gt;
         &lt;style&gt;
+        &lt;/style&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
 	&lt;/body&gt;
@@ -821,6 +824,8 @@ then I may include that within the <code>&lt;title&gt;</code> element, like so:<
 If I have a website at <code>https://www.example.org/</code>, then I add this information to my <code>&lt;base&gt;</code> element:</p>
 <pre><code>&lt;base href="https://www.example.org/"&gt;
 </code></pre>
+<p>For now, leave the <code>&lt;base&gt;</code> element out until you know your actual domain name.
+We will return to it later when we set up GitHub Pages and you have a real site URL.</p>
 <p>This allows me to link to other parts of my website without using the full URL or path.
 For example, if I have a website with two pages: <strong>index.html</strong> and <strong>news.html</strong>,
 then to link to <strong>news.html</strong> from the <strong>index.html</strong> page,
@@ -828,13 +833,18 @@ I only have to name the file:</p>
 <pre><code>Read my &lt;a href="news.html"&gt;weekly newsletter&lt;/a&gt;
 </code></pre>
 <p>If I didn't include the <code>&lt;base&gt;</code> element in my <code>&lt;head&gt;</code> section,
-then I would have to reference or link to the full URL, like so:</p>
+then a relative link like <code>news.html</code> would resolve against the current
+document URL.
+If I wanted to force an absolute URL without <code>&lt;base&gt;</code>, I could use the full
+URL, like so:</p>
 <pre><code>Read my &lt;a href="https://www.example.org/news.html"&gt;weekly newsletter&lt;/a&gt;
 </code></pre>
-<p>The difference between these two examples is that the first example resolves the link relative to the <code>&lt;base&gt;</code> URL,
-while the second example specifies the full domain and path.
-Using the <code>&lt;base&gt;</code> element therefore makes it easier to link to other parts of our websites.
-It also makes it easier if we change the domain name of our website.
+<p>With <code>&lt;base href="https://www.example.org/"&gt;</code>, a relative link like <code>news.html</code>
+resolves to <code>https://www.example.org/news.html</code> regardless of the current page's
+location.
+Using the <code>&lt;base&gt;</code> element can make it easier to link consistently across
+directories or environments.
+It also helps if we change the domain name of our website.
 In such a case, we would only have to update the URL in the <code>&lt;base&gt;</code> element.</p>
 <p>Let's modify our <code>&lt;head&gt;</code> section with this new information:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -845,6 +855,7 @@ In such a case, we would only have to update the URL in the <code>&lt;base&gt;</
 		&lt;link&gt;
 		&lt;meta&gt;
         &lt;style&gt;
+        &lt;/style&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
 	&lt;/body&gt;
@@ -873,6 +884,7 @@ of the stylesheet (named <code>style.css</code>) instead of the full path.</p>
         &lt;link rel="stylesheet" href="css/style.css"&gt;
 		&lt;meta&gt;
         &lt;style&gt;
+        &lt;/style&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
 	&lt;/body&gt;
@@ -886,9 +898,10 @@ other <code>&lt;head&gt;</code> elements, such as <code>&lt;title&gt;</code>, <c
 The <code>&lt;meta&gt;</code> element has a few use cases.
 To keep it simple for now,
 we'll cover the basics below and expand on them as we cover other topics.</p>
-<p>First, as the documentation states, the <code>&lt;meta&gt;</code> element requires one of three attributes:
-<strong>name</strong>, <strong>http-equiv</strong>, and <strong>charset</strong>.
-We'll skip the second attribute and discuss the first and third one.</p>
+<p>First, as the documentation states, the <code>&lt;meta&gt;</code> element uses one of several
+attributes to identify metadata, commonly <strong>name</strong>, <strong>http-equiv</strong>,
+<strong>charset</strong>, or <strong>itemprop</strong>.
+We'll skip <strong>http-equiv</strong> for now and discuss <strong>name</strong> and <strong>charset</strong>.</p>
 <h4 id="the-charset-and-name-attributes"><a class="header" href="#the-charset-and-name-attributes">The <strong>charset</strong> and <strong>name</strong> attributes</a></h4>
 <p>The <strong>charset</strong> attribute establishes the document's character set and allows proper displaying of non-ASCII characters.
 In practice, we use this to declare the document's character set to <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a>.</p>
@@ -929,6 +942,7 @@ We'll focus on the following four:</p>
         &lt;meta name="description" content="An introduction to Systems Administration with Linux OS, including Debian and Ubuntu"&gt;
         &lt;meta name="keywords" content="systems administration, linux, debian, ubuntu"&gt;
         &lt;style&gt;
+        &lt;/style&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
 	&lt;/body&gt;
@@ -1004,7 +1018,7 @@ At the end of that section, we created the following content:</p>
 &lt;html lang="en"&gt;
 	&lt;head&gt;
         &lt;title&gt;Using the Linux OS for Systems Administration&lt;/title&gt;
-        &lt;base href="https://www.example.org/"&gt;
+        &lt;!-- &lt;base href="https://www.example.org/"&gt; --&gt;
         &lt;link rel="stylesheet" href="css/style.css"&gt;
         &lt;meta charset="utf-8"&gt;
         &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
@@ -1027,7 +1041,7 @@ In the next section, we'll cover the <a href="https://html.spec.whatwg.org/multi
 We'll use the grouping elements to begin adding content.
 For now, let's focus on sections.</p>
 <h2 id="section-elements"><a class="header" href="#section-elements">Section Elements</a></h2>
-<p>There are ten main HTML section elements, or elements used to define the sections of an HTML document.
+<p>There are ten HTML sectioning-related elements or element groups that we will focus on.
 We have already covered the first one, which is the <code>&lt;body&gt;</code> element.
 The <code>&lt;body&gt;</code> element is the only required section element.
 The rest of the elements help us structure the main layout of our web document.
@@ -1041,7 +1055,6 @@ the easier it will be for both visitors and machines to parse our web documents.
 <li>the <code>&lt;nav&gt;</code> element</li>
 <li>the <code>&lt;aside&gt;</code> element</li>
 <li>the <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, ..., <code>&lt;h6&gt;</code> elements</li>
-<li>the <code>&lt;hgroup&gt;</code> element</li>
 <li>the <code>&lt;header&gt;</code> element</li>
 <li>the <code>&lt;footer&gt;</code> element</li>
 <li>the <code>&lt;address&gt;</code> element</li>
@@ -1126,7 +1139,7 @@ can be used for the entire web document or within specific sections,
 such as within <code>&lt;article&gt;</code> or <code>&lt;section&gt;</code> elements.
 In the example below, I show how to use these repeatedly throughout a web document.
 However, it's best practice to use the <code>&lt;h1&gt;</code> element only once on a web page,
-given that it marks a top-level section.</p>
+even though HTML allows multiple <code>&lt;h1&gt;</code> elements in sectioning contexts.</p>
 <pre><code>&lt;body&gt;
     &lt;nav&gt;
     &lt;/nav&gt;
@@ -1149,40 +1162,9 @@ given that it marks a top-level section.</p>
     
 &lt;/body&gt;
 </code></pre>
-<h3 id="the-hgroup-element"><a class="header" href="#the-hgroup-element">The <code>&lt;hgroup&gt;</code> element</a></h3>
-<p>The <code>&lt;hgroup&gt;</code> element is used to bundle section header elements.
-It may include <code>&lt;p&gt;</code> elements for paragraphs.
-I demonstrate it here for completeness, but in reality, it's probably best to avoid using it.
-It's a confusing element and the <code>&lt;header&gt;</code> element, which I describe below, offers more versatility and semantics.</p>
-<pre><code>&lt;body&gt;
-    &lt;nav&gt;
-    &lt;/nav&gt;
-    
-    &lt;article&gt;
-        &lt;hgroup&gt;
-            &lt;h1&gt;Some title here&lt;/h1&gt;
-            &lt;p&gt;A paragraph here, like an introduction.&lt;/p&gt;
-        &lt;/hgroup&gt;
-        
-        &lt;section&gt;
-            &lt;h2&gt;Section title here&lt;/h2&gt;
-                &lt;aside&gt;&lt;/aside&gt;
-            &lt;h3&gt;Subtitle here&lt;/h3&gt;
-        &lt;/section&gt;
-        
-        &lt;section&gt;
-            &lt;h2&gt;Section title here&lt;/h2&gt;
-        &lt;/section&gt;
-        
-    &lt;/article&gt;
-    
-&lt;/body&gt;
-</code></pre>
 <h3 id="the-header-element"><a class="header" href="#the-header-element">The <code>&lt;header&gt;</code> element</a></h3>
-<p>The <code>&lt;header&gt;</code> element is easily confused with the <code>&lt;hgroup&gt;</code> element but it has more versatility
+<p>The <code>&lt;header&gt;</code> element represents introductory or navigational content for its nearest sectioning ancestor
 (<a href="https://html.spec.whatwg.org/multipage/sections.html#the-header-element">The header element</a>).
-Like the <code>&lt;hgroup&gt;</code> element, it's meant to be used to group section headings
-(e.g., the <code>&lt;h1&gt;</code> and etc. elements and even the <code>&lt;hgroup&gt;</code> element).
 A good use case is for the main heading area (i.e., the top of a web page),
 which could include a website's logo and navigational area.
 However, it can be used repeatedly throughout a web document, including in <code>&lt;article&gt;</code> or <code>&lt;section&gt;</code> elements.
@@ -1305,12 +1287,13 @@ Adding comments to your HTML code is helpful for two reasons:</p>
 <p>To comment out HTML code, use the comment tag:</p>
 <pre><code>&lt;!-- insert comment here --&gt;
 </code></pre>
-<p>The above line will be ignored by the browser.</p>
+<p>The above line will be ignored by the browser.
+You can use comments to temporarily disable elements like <code>&lt;base&gt;</code> until you have a real domain name.</p>
 <p>You can also comment out multiple lines of HTML code, like so:</p>
 <pre><code>&lt;!--
 &lt;section&gt;
 &lt;h1&gt;Some title here&lt;/h1&gt;
-&lt;h2&gt;Some subtitle here&lt;/h1&gt;
+&lt;h2&gt;Some subtitle here&lt;/h2&gt;
 &lt;/section&gt;
 --&gt;
 </code></pre>
@@ -1401,11 +1384,12 @@ But it's often helpful to have a starting outline, and the section elements cove
 <div style="break-before: page; page-break-before: always;"></div><h1 id="using-vs-code-and-github"><a class="header" href="#using-vs-code-and-github">Using VS Code and GitHub</a></h1>
 <h2 id="introduction-3"><a class="header" href="#introduction-3">Introduction</a></h2>
 <p>Developing a project means managing a project, which includes its source code and its documentation.
-To manage our project, we will use Git and GitHub with the Visual Studio (VS) Code editor.
+To manage our project, we will use Git and GitHub with the Visual Studio Code (VS Code) editor.
 The process is fairly straightforward, and the steps are clearly outlined in
 <a href="https://code.visualstudio.com/docs/sourcecontrol/intro-to-git">Introduction to Git in VS Code</a>.
 However, since we have already begun our project by creating a folder and an <code>index.html</code> file on our local machine,
-some additional setup guidance is necessary.</p>
+some additional setup guidance is necessary.
+We will use Git entirely through VS Code and not the command line.</p>
 <h2 id="install-git"><a class="header" href="#install-git">Install Git</a></h2>
 <p>Per the VS Code documentation, you need to install <code>git</code> on your computer first.
 To install <code>git</code>, visit the <a href="https://git-scm.com/downloads">Git Downloads</a> page and select your operating system.
@@ -1414,7 +1398,7 @@ If you are using Linux, I will assume <code>git</code> is already installed on y
 If you are using Windows, the process should be fairly straightforward for standard <code>.exe</code> files.
 However, if you are using macOS, then you should install <code>brew</code> first.</p>
 <h3 id="install-homebrew-brew-and-git-on-macos"><a class="header" href="#install-homebrew-brew-and-git-on-macos">Install Homebrew (<code>brew</code>) and <code>git</code> on macOS</a></h3>
-<p>To install Homebrew on macOS, visit the <a href="https://brew.sh/">Homebrew</a> page and following the instructions listed there.
+<p>To install Homebrew on macOS, visit the <a href="https://brew.sh/">Homebrew</a> page and follow the instructions listed there.
 You will need to open your macOS Terminal.app, then copy and paste the command presented on the Homebrew page:</p>
 <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 </code></pre>
@@ -1443,23 +1427,23 @@ So let's say that you edit your <code>index.html</code> file using VS Code on yo
 Once you have completed your editing work, you want to do the following things to sync it to your remote repo (i.e., to GitHub):</p>
 <ul>
 <li><code>stage</code> the file: this tells <code>git</code> to take notice of this file</li>
-<li><code>commit</code> the file: this tells <code>git</code> to record the changes in the repository (whether local or remote)
+<li><code>commit</code> the file: this tells <code>git</code> to record the changes in your local repository
 <ul>
 <li><code>commit</code> message: add a descriptive message when committing—this is helpful for version control and collaboration</li>
 </ul>
 </li>
-<li><code>push</code> the file: this updates the remote repository with the changes</li>
+<li><code>push</code> the file: this updates the remote repository with the committed changes</li>
 </ul>
 <h3 id="remote-to-local"><a class="header" href="#remote-to-local">Remote to Local</a></h3>
 <p>It's possible to edit and create files and directories on your remote repo (i.e., GitHub).
 I don't suggest doing this because it means using GitHub's web text editor.
 Although it's a decent online editor, it's not as powerful as VS Code.
 But if you do edit the remote repo through the browser, then you will want to sync any changes to your local repo.
-Like editing your local repo, the process involves staging and committing (with a commit) message any changes you've made in your remote repo.
-However, you won't <code>push</code> your repo to your local repo.
-Instead, you'll pull up VS Code and <code>pull</code> your changes to your local repo.</p>
+Those GitHub edits are already committed on the remote, so in VS Code you only need to <code>pull</code>
+or <strong>Sync Changes</strong> to bring them down to your local repo.</p>
 <h2 id="gitting-started-1"><a class="header" href="#gitting-started-1"><em>Gitting</em> Started</a></h2>
-<p>Now that you understand the basics of syncing repos, we'll proceed to using Git and GitHub with VS Code.</p>
+<p>Now that you understand the basics of syncing repos, we'll proceed to using Git and GitHub with VS Code.
+All Git actions in this course happen through the VS Code Source Control view.</p>
 <p>Again I'm mainly following the steps outlined at <a href="https://code.visualstudio.com/docs/sourcecontrol/intro-to-git">Introduction to Git in VS Code</a>.</p>
 <p>Now that we have <code>git</code> installed on our systems, open VS Code and access the Accounts menu.
 You will want to sign into GitHub in VS Code.</p>
@@ -1470,9 +1454,9 @@ In short, the steps are to:</p>
 <ol>
 <li>Open your project folder in VS Code</li>
 <li>Go to the <strong>Source Control</strong> view and select <strong>Initialize Repository</strong></li>
-<li>Add a descriptive <code>commit</code> message and the press <strong>Commit</strong></li>
+<li>Add a descriptive <code>commit</code> message and then press <strong>Commit</strong></li>
 <li>Press <strong>Yes</strong> to stage your commit</li>
-<li>Then click <strong>Publish Branch</strong> and the sign-in and authenticate with GitHub.</li>
+<li>Then click <strong>Publish Branch</strong> and sign in to authenticate with GitHub.</li>
 <li>Then select <strong>Publish to GitHub public repository ...</strong>.
 <ul>
 <li>We need this to be public for later work</li>
@@ -1482,7 +1466,8 @@ In short, the steps are to:</p>
 </ol>
 <h3 id="remote-sync"><a class="header" href="#remote-sync">Remote Sync</a></h3>
 <p>I highly encourage you to only work in VS Code and not edit files or create directories directly on GitHub.
-But if you do, then from your local machine, you will need to do a <code>pull</code> request in VS Code to sync the changes you made on GitHub to your local repo.</p>
+But if you do, then from your local machine, you will need to <code>pull</code> or use <strong>Sync Changes</strong> in VS Code
+to sync the commits you made on GitHub to your local repo.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="html-grouping-and-text-level-semantic-elements"><a class="header" href="#html-grouping-and-text-level-semantic-elements">HTML Grouping and Text-Level Semantic Elements</a></h1>
 <h2 id="introduction-4"><a class="header" href="#introduction-4">Introduction</a></h2>
 <p>In this section, we learn about the most frequent HTML element types: grouping elements and text-level or inline semantic elements.
@@ -1509,7 +1494,7 @@ Most of our content will be marked up using these two categories of elements.</p
 </ul>
 <p>For a full list of grouping elements, see: <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#grouping-content">Grouping content</a></p>
 <p>Some of these elements must be used together.
-I have indicated these as subitems in this above.
+I have indicated these as subitems above.
 For example, the <code>&lt;ul&gt;</code> and the <code>&lt;ol&gt;</code> elements are used to create <em>unordered</em> and <em>ordered</em> lists, respectively.
 However, either of these must include the <code>&lt;li&gt;</code> element to list items.</p>
 <p>Likewise, we use the <code>&lt;dl&gt;</code> element to start a description or definition list.
@@ -1523,7 +1508,7 @@ In this section, we'll cover the following text-level elements.</p>
 <li>the <code>&lt;em&gt;</code> element: emphasis</li>
 <li>the <code>&lt;strong&gt;</code> element: importance</li>
 <li>the <code>&lt;small&gt;</code> element: side comments</li>
-<li>the <code>&lt;s&gt;</code> element: mark inaccurate or irrelevant tet</li>
+<li>the <code>&lt;s&gt;</code> element: mark no longer accurate or relevant text</li>
 <li>the <code>&lt;cite&gt;</code> element: mark titles of works</li>
 <li>the <code>&lt;q&gt;</code> element: mark quoted text</li>
 <li>the <code>&lt;dfn&gt;</code> element: mark defining term</li>
@@ -1547,7 +1532,7 @@ In this section, we'll cover the following text-level elements.</p>
 <h3 id="closing-tags"><a class="header" href="#closing-tags">Closing Tags</a></h3>
 <p>Most tags have closing forms.
 An opening paragraph tag looks like this: <code>&lt;p&gt;</code>.
-It's closing version looks like this: <code>&lt;/p&gt;</code>.
+Its closing version looks like this: <code>&lt;/p&gt;</code>.
 The content for the paragraph is placed between the opening and closing tags.</p>
 <p>However, some HTML tags are self-closing.
 Self-closing means that these tags do not have a closing syntax.
@@ -1590,10 +1575,14 @@ After this paragraph closes, I'll add a horizontal rule to separate this paragra
 for i in * ; do echo "${i}" ; done
 &lt;/pre&gt;
 
-&gt; This is a blockquote.
-&gt; We use it to quote multiple lines.
-&gt; Here's a goofy joke:
-    &gt; Why did the spider go to school? They wanted to be a web designer.
+&lt;blockquote&gt;
+    &lt;p&gt;This is a blockquote.&lt;/p&gt;
+    &lt;p&gt;We use it to quote multiple lines.&lt;/p&gt;
+    &lt;p&gt;Here's a goofy joke:&lt;/p&gt;
+    &lt;blockquote&gt;
+        &lt;p&gt;Why did the spider go to school? They wanted to be a web designer.&lt;/p&gt;
+    &lt;/blockquote&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;Sometimes I like to create lists. Here's a list of Unix shells:&lt;/p&gt;
 
@@ -1628,7 +1617,7 @@ for i in * ; do echo "${i}" ; done
 &lt;/dl&gt;
 </code></pre>
 <h2 id="more-elements-in-use-text-level-semantics"><a class="header" href="#more-elements-in-use-text-level-semantics">More Elements in Use: Text-level Semantics</a></h2>
-<p>We want to reserve formatting text when we use CSS, but a few HTML tags change how font is rendered.
+<p>We want to reserve formatting for CSS, but a few HTML tags change how font is rendered.
 Confusingly, some tags render fonts in the same way.
 Let's view some of these examples.</p>
 <h3 id="the-em-and-i-tags"><a class="header" href="#the-em-and-i-tags">The <code>&lt;em&gt;</code> and <code>&lt;i&gt;</code> tags</a></h3>
@@ -1666,9 +1655,9 @@ within the <code>&lt;strong&gt;</code> tag.</p>
 &lt;p&gt;The opposite of big is &lt;small&gt;small&lt;/small&gt;.&lt;/p&gt;
 
 &lt;p&gt;In the &lt;cite&gt;Merchant of Venice&lt;/cite&gt;, Shakespeare wrote: &lt;q&gt;All that glitters is not gold&lt;/q&gt;.
-And in &lt;cite&gt;Pursuit of Happiness&lt;/cite&gt;, Kid Cudi sang: &lt;p&gt;Everything that shine ain't always gonna be gold&lt;/cite&gt;.&lt;/p&gt;
+And in &lt;cite&gt;Pursuit of Happiness&lt;/cite&gt;, Kid Cudi sang: &lt;q&gt;Everything that shine ain't always gonna be gold&lt;/q&gt;.&lt;/p&gt;
 
-&lt;p&gt;I am a member of &lt;abbr title="Association for Library and Information Science Eduction"&gt;ALISE&lt;/abbr&gt;.&lt;/p&gt;
+&lt;p&gt;I am a member of &lt;abbr title="Association for Library and Information Science Education"&gt;ALISE&lt;/abbr&gt;.&lt;/p&gt;
 
 &lt;p&gt;The date is &lt;time datetime="2025-01-25"&gt;January 25, 2025&lt;/time&gt;.&lt;/p&gt;
 
@@ -1793,7 +1782,7 @@ The <code>&lt;a&gt;</code> tag can use the following attributes:</p>
 </li>
 <li><code>download</code>: This prompts the browser to download the linked file instead of navigating to it.
 <ul>
-<li>Example: <code>&lt;a href="https://www.example.com/file.pdf" download&gt;</code></li>
+<li>Example: <code>&lt;a href="https://www.example.com/file.pdf" download&gt;Download PDF&lt;/a&gt;</code></li>
 </ul>
 </li>
 </ul>
@@ -1831,7 +1820,7 @@ These resources may include CSS stylesheets, icons, fonts, and more.</p>
 </li>
 </ol>
 <h3 id="common-attributes-for-link"><a class="header" href="#common-attributes-for-link">Common Attributes for <code>&lt;link&gt;</code></a></h3>
-<p>Like the <code>&lt;a&gt;</code> tag, the <code>&lt;link&gt;</code> tab has some common attributes, some of which are shared between the two.
+<p>Like the <code>&lt;a&gt;</code> tag, the <code>&lt;link&gt;</code> tag has some common attributes, some of which are shared between the two.
 Here are some common attributes for the <code>&lt;link&gt;</code> tag:</p>
 <ul>
 <li><code>rel</code>: This specifies the relationship between the current document and the linked resource. This helps to inform the browser how to treat the linked resource.
@@ -1862,7 +1851,7 @@ Here is the example code:</p>
 </code></pre>
 <p>Another common example is to use the <code>&lt;link&gt;</code> tag to load external fonts.
 We'll cover this in more detail when we learn about styling our sites with CSS.
-However, you should know that browsers use the fonts intalled on your operating system as the default.
+However, you should know that browsers use the fonts installed on your operating system as the default.
 Thus, basic fonts will display a bit differently depending on your operating system: Windows, macOS, iOS, Android, Linux, etc.
 To mitigate this variance, many web developers use external fonts or download fonts to their web source code directory for their websites.
 There are several font services available for free, such as <a href="https://fonts.google.com/">Google Fonts</a>.
@@ -1872,7 +1861,7 @@ For example, to use the <a href="https://fonts.google.com/specimen/Roboto">Robot
 &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
 &lt;link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"&gt;
 </code></pre>
-<p>And then add the following to your stylesheet or within the the <code>&lt;style&gt;</code> tag of your HTML document:</p>
+<p>And then add the following to your stylesheet or within the <code>&lt;style&gt;</code> tag of your HTML document:</p>
 <pre><code>html {
     font-family: "Roboto", serif;
     font-optical-sizing: auto;
@@ -1882,13 +1871,13 @@ For example, to use the <a href="https://fonts.google.com/specimen/Roboto">Robot
 }
 </code></pre>
 <h2 id="other-attributes"><a class="header" href="#other-attributes">Other Attributes</a></h2>
-<p>Two additional type of attributes I need to cover are the <code>id</code> and <code>class</code> attributes.
+<p>Two additional types of attributes I need to cover are the <code>id</code> and <code>class</code> attributes.
 These are commonly used in JavaScript and CSS.
 We'll cover them more when we learn about CSS, but the <code>id</code> attribute is also used to create <strong>internal resource links</strong>.</p>
 <h3 id="the-class-attribute"><a class="header" href="#the-class-attribute">The <code>class</code> Attribute</a></h3>
 <p>The <code>class</code> attribute can be assigned to most HTML tags and is used to group multiple HTML elements together under a common name.
 This makes it easier to apply a shared style (CSS) or behavior (JavaScript) to the group of elements.
-For example, we can apply a class name to multiple HTML elements to style them similarily:</p>
+For example, we can apply a class name to multiple HTML elements to style them similarly:</p>
 <pre><code>&lt;main class="dark_background"&gt;
     &lt;article class="light_background"&gt;
         &lt;section class="dark_background"&gt;
@@ -1897,7 +1886,7 @@ For example, we can apply a class name to multiple HTML elements to style them s
     &lt;/article&gt;
 &lt;/main&gt;
 </code></pre>
-<p>In CSS, we would refer to the class name to style classes named <code>dark_background</code> similarily and <code>light_background</code> similarily:</p>
+<p>In CSS, we would refer to the class name to style classes named <code>dark_background</code> similarly and <code>light_background</code> similarly:</p>
 <pre><code>.dark_background {
     background-color: black;
     color: white;
@@ -1912,7 +1901,7 @@ For example, we can apply a class name to multiple HTML elements to style them s
 <p>Whereas the <code>class</code> attribute is used to group different elements together,
 the <code>id</code> attribute is used to uniquely identify a single element on a page.
 This plays in handy for CSS and JavaScript, too, but because it's like applying a fingerprint to a single element,
-it can also be used to <strong>internal resource links</strong>.</p>
+it can also be used to create <strong>internal resource links</strong>.</p>
 <p>Here's an example where we have multiple <code>&lt;h3&gt;</code> elements on a page, but we want to distinguish them from each other:</p>
 <pre><code>&lt;h3 id="linux"&gt;Linux&lt;/h3&gt;
 &lt;h3 id="unix"&gt;Unix&lt;/h3&gt;
@@ -1938,9 +1927,9 @@ is that you can use that attribute to link to it.
 This is <strong>internal resource linking</strong>.
 Thus, imagine a long web page with the above <code>&lt;h3&gt;</code> sections, we could create a table of contents that links to each section
 using the <code>id</code> attribute:</p>
-<pre><code>&lt;a href=#linux"&gt;Jump to Linux section&lt;/a&gt;
-&lt;a href=#unix"&gt;Jump to Unix section&lt;/a&gt;
-&lt;a href=#cpm"&gt;Jump to CP/M section&lt;/a&gt;
+<pre><code>&lt;a href="#linux"&gt;Jump to Linux section&lt;/a&gt;
+&lt;a href="#unix"&gt;Jump to Unix section&lt;/a&gt;
+&lt;a href="#cpm"&gt;Jump to CP/M section&lt;/a&gt;
 </code></pre>
 <h2 id="global-attributes"><a class="header" href="#global-attributes">Global Attributes</a></h2>
 <p>Other attributes are available to HTML elements and are listed at <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes">Global Attributes</a>.
@@ -1963,7 +1952,7 @@ These include:</p>
 <li>The <code>&lt;track&gt;</code> element for providing captioning for video content</li>
 <li>The <code>&lt;audio&gt;</code> element for embedding audio content</li>
 <li>The <code>&lt;img&gt;</code> element for embedding images</li>
-<li>The <code>&lt;picture&gt;</code> element to facilitate how image respond to different device/screen sizes</li>
+<li>The <code>&lt;picture&gt;</code> element to facilitate how images respond to different device/screen sizes</li>
 <li>The <code>&lt;figure&gt;</code> element to group media content, including images and video, with an optional <code>&lt;figcaption&gt;</code> element for captions</li>
 <li>The <code>&lt;iframe&gt;</code> element is used to embed other HTML pages in our main HTML documents</li>
 </ul>
@@ -1985,7 +1974,7 @@ In the following example, I use the <code>&lt;source&gt;</code> element to refer
 Both files are stored in a separate multimedia directory in the project folder.
 Both videos are otherwise equal,
 but providing options for both acts as a fallback mechanism in case a browser doesn't support one or the other format.</p>
-<pre><code>&lt;video controls autoplay="false" muted="true" width="600"&gt;
+<pre><code>&lt;video controls width="600"&gt;
     &lt;source src="media/example.mp4" type="video/mp4"&gt;
     &lt;source src="media/example.webm" type="video/webm"&gt;
     Your browser does not support the video tag.
@@ -1994,8 +1983,10 @@ but providing options for both acts as a fallback mechanism in case a browser do
 <p>The element accepts global attributes but also accepts attributes specific to the element.
 These include <code>controls</code>, <code>autoplay</code>, <code>width</code>, and more.
 The <code>controls</code> attribute adds functions to the embedded player, such as volume control, pause/resume playback, and more.
-The <code>autoplay</code> attribute instructs the browser to enable or disable autoplay upon loading.
-If set to <code>false</code>, autoplay is disabled (which is the humane thing to do for your site visitors!).
+The <code>autoplay</code> and <code>muted</code> attributes are boolean, which means they are either present or absent.
+If you include <code>autoplay</code>, the browser may attempt to play the video immediately.
+Most browsers block autoplay with sound, so if you use <code>autoplay</code>, you should also use <code>muted</code> and
+expect that some browsers still require a user gesture.
 The <code>width</code> attribute sets a default width size for the embedded player.
 An optional <code>height</code> attribute is also available.
 Other attributes are listed at the MDN Web Docs link above.</p>
@@ -2020,7 +2011,7 @@ For example, Microsoft illustrates how WebVTT files can be created manually <a h
 Other software, like <a href="https://support.zoom.com/hc/en/article?id=zm_kb&amp;sysparm_article=KB0064927">Zoom</a>, automatically creates <code>.vtt</code> audio transcription files for cloud recordings.</p>
 <p>In the example code below, I use the <code>&lt;track&gt;</code> element with the <code>kind</code> attribute to indicate that the <code>vtt</code> file is for subtitles.
 See the link above for other <code>kind</code> attributes to use.</p>
-<pre><code>&lt;video controls autoplay="false" width="600"&gt;
+<pre><code>&lt;video controls width="600"&gt;
     &lt;source src="media/example.mp4" type="video/mp4"&gt;
     &lt;track src="media/captions.vtt" kind="subtitles"
         srclang="en" label="English"&gt;
@@ -2045,10 +2036,16 @@ Then I declare the sizes in the <code>width</code> and <code>height</code></p>
 </code></pre>
 <p>See the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">MDN Web Docs</a> for more details on how to use the <code>&lt;img&gt;</code> element.</p>
 <h2 id="the-picture-element"><a class="header" href="#the-picture-element">The <code>&lt;picture&gt;</code> Element</a></h2>
-<p>By default, the above <code>&lt;img&gt;</code> element should react responsively when resizing the display.
-This is because browsers apply a default CSS setting (<code>max-width: 100%</code>) to images, which we will discuss later.
-However, there may be times when it's helpful to provide different versions of an image by declaring multiple sources.
-The <code>&lt;picture&gt;</code> element enables this by serving entirely two different images, depending on the size of the display or device
+<p>By default, the above <code>&lt;img&gt;</code> element will not respond to smaller displays unless we add CSS.
+We will cover CSS in the next chapter, but for now focus on the HTML.
+A common pattern is:</p>
+<pre><code>img {
+    max-width: 100%;
+    height: auto;
+}
+</code></pre>
+<p>However, there may be times when it's helpful to provide different versions of an image by declaring multiple sources.
+The <code>&lt;picture&gt;</code> element enables this by selecting among different images, depending on the size of the display or device,
 and not just resolutions (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture">The Picture Element</a>).</p>
 <p>In the example below, when the display is equal to or smaller than 672 pixels wide, the image loads <code>walking_bridge_small.jpg</code>,
 which I've resized in a photo editor to have dimensions of <code>403 x 227 pixels</code>.
@@ -2082,7 +2079,6 @@ who helped develop the algorithms that search engines and other information retr
 <pre><code>&lt;iframe width="560" height="315"
     src="https://www.youtube.com/embed/5fYeKiebpuo?si=QcvAjF13AjhGkHMq"
     title="YouTube video player"
-    frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen&gt;
@@ -2096,21 +2092,21 @@ the <code>&lt;img&gt;</code> for images,
 the <code>&lt;picture&gt;</code> elements to provide responsive images,
 the <code>&lt;figure&gt;</code> element to group media,
 and the <code>&lt;iframe&gt;</code> element to embed other HTML pages.</p>
-<p>Be aware that the <code>&lt;img&gt;</code> element is inherently responsive in most cases due to browser defaults,
-but the <code>&lt;picture&gt;</code> element allows serving different images entirely depending on device and screen size.
+<p>Be aware that the <code>&lt;img&gt;</code> element is not inherently responsive without CSS,
+but the <code>&lt;picture&gt;</code> element allows serving different images depending on device and screen size.
 Also, be sure to use the <code>alt</code> attribute for images to provide fallback text for screen readers and for when images fail to load.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="html-tables-and-forms"><a class="header" href="#html-tables-and-forms">HTML Tables and Forms</a></h1>
 <p>In the previous sections, we discussed several categories of HTML elements to use on our web pages.
-These categories relate to document structure, document metadata, grouping elements, text level semantic elements, links, attributes,
+These categories relate to document structure, document metadata, grouping elements, text-level semantic elements, links, attributes,
 and embedded content like images and multimedia.
 These elements are regularly used because they represent how we structure our pages and add content to them.</p>
 <p>In this section, we learn how to create tables and forms to add to our web pages.
 These two aspects of HTML are less regularly used.
 Creating tables is about adding content, but specifically, tabular data only.
-Forms are used to gather user input and deliver that input to the web site owner or process it through,
-for example, a server side relational database server, like MariaDB, MySQL, PostgreSQL, etc.</p>
+Forms are used to gather user input and deliver that input to the website owner or process it through,
+for example, a server-side relational database server, like MariaDB, MySQL, PostgreSQL, etc.</p>
 <p>We have a number of types of forms available to us.
-They include basic text entry forms, drop down lists, and more.
+They include basic text entry forms, drop-down lists, and more.
 One major caveat with forms is that they require additional programming to function.
 For example, forms are often used with PHP to process the input.
 However, learning PHP is beyond the scope of this work.
@@ -2128,10 +2124,10 @@ In this demo, I create a simple table that contains the following elements:</p>
 <li><code>&lt;thead&gt;</code>: The <code>&lt;thead&gt;</code> element is semantic and defines table header information.</li>
 <li><code>&lt;tbody&gt;</code>: The <code>&lt;tbody&gt;</code> element is semantic and defines table body information.</li>
 <li><code>&lt;tfoot&gt;</code>: The <code>&lt;tfoot&gt;</code> element is semantic and defines table footer information.</li>
-<li><code>&lt;tr&gt;</code>: The <code>&lt;tr&gt;</code> element defines table row.</li>
+<li><code>&lt;tr&gt;</code>: The <code>&lt;tr&gt;</code> element defines a table row.</li>
 <li><code>&lt;th&gt;</code>: The <code>&lt;th&gt;</code> element defines header cell. This is often placed at the top row of a table:
 <ul>
-<li>It it often enclosed within the <code>&lt;thead&gt;</code> element but can be added to the <code>&lt;tbody&gt;</code> section for row headers.</li>
+<li>It is often enclosed within the <code>&lt;thead&gt;</code> element but can be added to the <code>&lt;tbody&gt;</code> section for row headers.</li>
 </ul>
 </li>
 <li><code>&lt;td&gt;</code>: The <code>&lt;td&gt;</code> element defines a specific data cell in the table.</li>
@@ -2142,7 +2138,7 @@ The <code>&lt;caption&gt;</code> tag provides a description of the table and its
 Following this, the table has three main sections, which include: <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code>.
 While HTML does not require indentation, indentation can help with code readability, and is therefore highly encouraged.</p>
 <p>Additionally, one <code>&lt;th&gt;</code> element contains a <code>colspan</code> attribute, which is set to <code>5</code>, or five columns, in this example.
-Since the table only has five columns, this elements spans the width of the entire table.
+Since the table only has five columns, this element spans the width of the entire table.
 The <code>scope</code> attribute <q>defines the cells that the header (defined in the <code>&lt;th&gt;</code>) element relates to</q>
 (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th#scope">The <code>scope</code> attribute</a>).
 It's useful for clearly demarcating the row and column names from the tabular data.</p>
@@ -2263,16 +2259,16 @@ This element is often used to suggest pre-defined options but allows for other d
     &lt;label for="myOS"&gt;What is your favorite OS?&lt;/label&gt;
     &lt;input list="OS" id="myOS" name="myOS"&gt;
     &lt;datalist id="OS"&gt;
-        &lt;option value="GNU/Linux"&gt;
-        &lt;option value="Linux"&gt;
-        &lt;option value="BSD"&gt;
-        &lt;option value="Windows"&gt;
-        &lt;option value="macOS"&gt;
+        &lt;option value="GNU/Linux"&gt;&lt;/option&gt;
+        &lt;option value="Linux"&gt;&lt;/option&gt;
+        &lt;option value="BSD"&gt;&lt;/option&gt;
+        &lt;option value="Windows"&gt;&lt;/option&gt;
+        &lt;option value="macOS"&gt;&lt;/option&gt;
      &lt;/datalist&gt;
 &lt;/form&gt;
 </code></pre>
 <h3 id="the-select-element"><a class="header" href="#the-select-element">The <code>&lt;select&gt;</code> Element</a></h3>
-<p>Like above, the <code>&lt;select&gt;</code> element offers a list of options, but the options are restricted and presented in a drop down box
+<p>Like above, the <code>&lt;select&gt;</code> element offers a list of options, but the options are restricted and presented in a drop-down box
 (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">The <code>&lt;select&gt;</code> element</a>).
 The <code>&lt;optgroup&gt;</code> element groups logical options together.
 In the example below, I use <code>&lt;optgroup&gt;</code> to group two types of homes as either <em>traditional</em> or <em>alternative</em>.</p>
@@ -2283,7 +2279,7 @@ In the example below, I use <code>&lt;optgroup&gt;</code> to group two types of 
 		&lt;optgroup label="Traditional"&gt;
 			&lt;option value="castle"&gt;Castle&lt;/option&gt;
 			&lt;option value="mansion"&gt;Mansion&lt;/option&gt;
-			&lt;option value="bungalo"&gt;Bungalo&lt;/option&gt;
+			&lt;option value="bungalow"&gt;Bungalow&lt;/option&gt;
 		&lt;/optgroup&gt;
 		&lt;optgroup label="Alternative"&gt;
 			&lt;option value="treehouse"&gt;Tree House&lt;/option&gt;
@@ -2324,7 +2320,7 @@ They each have different purposes.
 We use tables to display tabular data, and we use forms to collect user input.
 I grouped these technologies together in a single section not because they are alike but because,
 unlike the rest of the HTML that we have learned, tables and forms are used sparingly.</p>
-<p>With respect to forms, note that HTML (nor CSS) can process form data.
+<p>With respect to forms, note that HTML (nor CSS) cannot process form data.
 Processing form data requires additional programming, such as <a href="https://www.php.net/">PHP</a>,
 which is often used with various database technologies, such as MySQL, MariaDB, PostgreSQL, etc.
 However, understanding how HTML forms work helps you understand the basics of frontend web application development.</p>

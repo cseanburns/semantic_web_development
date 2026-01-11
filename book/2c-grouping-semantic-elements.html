@@ -204,7 +204,7 @@ Most of our content will be marked up using these two categories of elements.</p
 </ul>
 <p>For a full list of grouping elements, see: <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#grouping-content">Grouping content</a></p>
 <p>Some of these elements must be used together.
-I have indicated these as subitems in this above.
+I have indicated these as subitems above.
 For example, the <code>&lt;ul&gt;</code> and the <code>&lt;ol&gt;</code> elements are used to create <em>unordered</em> and <em>ordered</em> lists, respectively.
 However, either of these must include the <code>&lt;li&gt;</code> element to list items.</p>
 <p>Likewise, we use the <code>&lt;dl&gt;</code> element to start a description or definition list.
@@ -218,7 +218,7 @@ In this section, we'll cover the following text-level elements.</p>
 <li>the <code>&lt;em&gt;</code> element: emphasis</li>
 <li>the <code>&lt;strong&gt;</code> element: importance</li>
 <li>the <code>&lt;small&gt;</code> element: side comments</li>
-<li>the <code>&lt;s&gt;</code> element: mark inaccurate or irrelevant tet</li>
+<li>the <code>&lt;s&gt;</code> element: mark no longer accurate or relevant text</li>
 <li>the <code>&lt;cite&gt;</code> element: mark titles of works</li>
 <li>the <code>&lt;q&gt;</code> element: mark quoted text</li>
 <li>the <code>&lt;dfn&gt;</code> element: mark defining term</li>
@@ -242,7 +242,7 @@ In this section, we'll cover the following text-level elements.</p>
 <h3 id="closing-tags"><a class="header" href="#closing-tags">Closing Tags</a></h3>
 <p>Most tags have closing forms.
 An opening paragraph tag looks like this: <code>&lt;p&gt;</code>.
-It's closing version looks like this: <code>&lt;/p&gt;</code>.
+Its closing version looks like this: <code>&lt;/p&gt;</code>.
 The content for the paragraph is placed between the opening and closing tags.</p>
 <p>However, some HTML tags are self-closing.
 Self-closing means that these tags do not have a closing syntax.
@@ -285,10 +285,14 @@ After this paragraph closes, I'll add a horizontal rule to separate this paragra
 for i in * ; do echo "${i}" ; done
 &lt;/pre&gt;
 
-&gt; This is a blockquote.
-&gt; We use it to quote multiple lines.
-&gt; Here's a goofy joke:
-    &gt; Why did the spider go to school? They wanted to be a web designer.
+&lt;blockquote&gt;
+    &lt;p&gt;This is a blockquote.&lt;/p&gt;
+    &lt;p&gt;We use it to quote multiple lines.&lt;/p&gt;
+    &lt;p&gt;Here's a goofy joke:&lt;/p&gt;
+    &lt;blockquote&gt;
+        &lt;p&gt;Why did the spider go to school? They wanted to be a web designer.&lt;/p&gt;
+    &lt;/blockquote&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;Sometimes I like to create lists. Here's a list of Unix shells:&lt;/p&gt;
 
@@ -323,7 +327,7 @@ for i in * ; do echo "${i}" ; done
 &lt;/dl&gt;
 </code></pre>
 <h2 id="more-elements-in-use-text-level-semantics"><a class="header" href="#more-elements-in-use-text-level-semantics">More Elements in Use: Text-level Semantics</a></h2>
-<p>We want to reserve formatting text when we use CSS, but a few HTML tags change how font is rendered.
+<p>We want to reserve formatting for CSS, but a few HTML tags change how font is rendered.
 Confusingly, some tags render fonts in the same way.
 Let's view some of these examples.</p>
 <h3 id="the-em-and-i-tags"><a class="header" href="#the-em-and-i-tags">The <code>&lt;em&gt;</code> and <code>&lt;i&gt;</code> tags</a></h3>
@@ -361,9 +365,9 @@ within the <code>&lt;strong&gt;</code> tag.</p>
 &lt;p&gt;The opposite of big is &lt;small&gt;small&lt;/small&gt;.&lt;/p&gt;
 
 &lt;p&gt;In the &lt;cite&gt;Merchant of Venice&lt;/cite&gt;, Shakespeare wrote: &lt;q&gt;All that glitters is not gold&lt;/q&gt;.
-And in &lt;cite&gt;Pursuit of Happiness&lt;/cite&gt;, Kid Cudi sang: &lt;p&gt;Everything that shine ain't always gonna be gold&lt;/cite&gt;.&lt;/p&gt;
+And in &lt;cite&gt;Pursuit of Happiness&lt;/cite&gt;, Kid Cudi sang: &lt;q&gt;Everything that shine ain't always gonna be gold&lt;/q&gt;.&lt;/p&gt;
 
-&lt;p&gt;I am a member of &lt;abbr title="Association for Library and Information Science Eduction"&gt;ALISE&lt;/abbr&gt;.&lt;/p&gt;
+&lt;p&gt;I am a member of &lt;abbr title="Association for Library and Information Science Education"&gt;ALISE&lt;/abbr&gt;.&lt;/p&gt;
 
 &lt;p&gt;The date is &lt;time datetime="2025-01-25"&gt;January 25, 2025&lt;/time&gt;.&lt;/p&gt;
 

@@ -11,7 +11,7 @@ At the end of that section, we created the following content:
 <html lang="en">
 	<head>
         <title>Using the Linux OS for Systems Administration</title>
-        <base href="https://www.example.org/">
+        <!-- <base href="https://www.example.org/"> -->
         <link rel="stylesheet" href="css/style.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +37,7 @@ For now, let's focus on sections.
 
 ## Section Elements
 
-There are ten main HTML section elements, or elements used to define the sections of an HTML document.
+There are ten HTML sectioning-related elements or element groups that we will focus on.
 We have already covered the first one, which is the `<body>` element.
 The `<body>` element is the only required section element.
 The rest of the elements help us structure the main layout of our web document.
@@ -47,15 +47,14 @@ the easier it will be for both visitors and machines to parse our web documents.
 These section elements include:
 
 1. the `<body>` element
-4. the `<article>` element
-2. the `<section>` element
-3. the `<nav>` element
+2. the `<article>` element
+3. the `<section>` element
+4. the `<nav>` element
 5. the `<aside>` element
 6. the `<h1>`, `<h2>`, ..., `<h6>` elements
-7. the `<hgroup>` element
-8. the `<header>` element
-9. the `<footer>` element
-10. the `<address>` element
+7. the `<header>` element
+8. the `<footer>` element
+9. the `<address>` element
 
 See: [HTML Sections][sections_whatwg]
 
@@ -157,7 +156,7 @@ can be used for the entire web document or within specific sections,
 such as within `<article>` or `<section>` elements.
 In the example below, I show how to use these repeatedly throughout a web document.
 However, it's best practice to use the `<h1>` element only once on a web page,
-given that it marks a top-level section.
+even though HTML allows multiple `<h1>` elements in sectioning contexts.
 
 ```
 <body>
@@ -183,45 +182,10 @@ given that it marks a top-level section.
 </body>
 ```
 
-### The `<hgroup>` element
-
-The `<hgroup>` element is used to bundle section header elements.
-It may include `<p>` elements for paragraphs.
-I demonstrate it here for completeness, but in reality, it's probably best to avoid using it.
-It's a confusing element and the `<header>` element, which I describe below, offers more versatility and semantics.
-
-```
-<body>
-    <nav>
-    </nav>
-    
-    <article>
-        <hgroup>
-            <h1>Some title here</h1>
-            <p>A paragraph here, like an introduction.</p>
-        </hgroup>
-        
-        <section>
-            <h2>Section title here</h2>
-                <aside></aside>
-            <h3>Subtitle here</h3>
-        </section>
-        
-        <section>
-            <h2>Section title here</h2>
-        </section>
-        
-    </article>
-    
-</body>
-```
-
 ### The `<header>` element
 
-The `<header>` element is easily confused with the `<hgroup>` element but it has more versatility
+The `<header>` element represents introductory or navigational content for its nearest sectioning ancestor
 ([The header element][header_whatwg]).
-Like the `<hgroup>` element, it's meant to be used to group section headings
-(e.g., the `<h1>` and etc. elements and even the `<hgroup>` element).
 A good use case is for the main heading area (i.e., the top of a web page),
 which could include a website's logo and navigational area.
 However, it can be used repeatedly throughout a web document, including in `<article>` or `<section>` elements.
@@ -360,6 +324,7 @@ To comment out HTML code, use the comment tag:
 ```
 
 The above line will be ignored by the browser.
+You can use comments to temporarily disable elements like `<base>` until you have a real domain name.
 
 You can also comment out multiple lines of HTML code, like so:
 
@@ -367,7 +332,7 @@ You can also comment out multiple lines of HTML code, like so:
 <!--
 <section>
 <h1>Some title here</h1>
-<h2>Some subtitle here</h1>
+<h2>Some subtitle here</h2>
 </section>
 -->
 ```

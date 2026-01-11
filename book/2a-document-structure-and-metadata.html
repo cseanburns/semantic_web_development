@@ -220,8 +220,10 @@ This tag therefore encompasses the <code>&lt;head&gt;</code> and <code>&lt;body&
 <h3 id="the-head-section"><a class="header" href="#the-head-section">The <code>&lt;head&gt;</code> section</a></h3>
 <p>Let's focus on the <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element">HEAD section</a>, which contains a web document's metadata.
 A document's metadata is data that describes the data on the page.
-This section of the HTML document typically includes five elements:
-<code>&lt;title&gt;</code>, <code>&lt;base&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;meta&gt;</code>, and <code>&lt;style&gt;</code>, as shown below:</p>
+This section of the HTML document commonly includes elements such as
+<code>&lt;title&gt;</code>, <code>&lt;base&gt;</code>, <code>&lt;link&gt;</code>, <code>&lt;meta&gt;</code>, and <code>&lt;style&gt;</code>.
+Some documents also include <code>&lt;script&gt;</code> or <code>&lt;noscript&gt;</code> tags,
+but we will focus on the five above, as shown below:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 	&lt;head&gt;
@@ -254,6 +256,7 @@ then I may include that within the <code>&lt;title&gt;</code> element, like so:<
 		&lt;link&gt;
 		&lt;meta&gt;
         &lt;style&gt;
+        &lt;/style&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
 	&lt;/body&gt;
@@ -266,6 +269,8 @@ then I may include that within the <code>&lt;title&gt;</code> element, like so:<
 If I have a website at <code>https://www.example.org/</code>, then I add this information to my <code>&lt;base&gt;</code> element:</p>
 <pre><code>&lt;base href="https://www.example.org/"&gt;
 </code></pre>
+<p>For now, leave the <code>&lt;base&gt;</code> element out until you know your actual domain name.
+We will return to it later when we set up GitHub Pages and you have a real site URL.</p>
 <p>This allows me to link to other parts of my website without using the full URL or path.
 For example, if I have a website with two pages: <strong>index.html</strong> and <strong>news.html</strong>,
 then to link to <strong>news.html</strong> from the <strong>index.html</strong> page,
@@ -273,13 +278,18 @@ I only have to name the file:</p>
 <pre><code>Read my &lt;a href="news.html"&gt;weekly newsletter&lt;/a&gt;
 </code></pre>
 <p>If I didn't include the <code>&lt;base&gt;</code> element in my <code>&lt;head&gt;</code> section,
-then I would have to reference or link to the full URL, like so:</p>
+then a relative link like <code>news.html</code> would resolve against the current
+document URL.
+If I wanted to force an absolute URL without <code>&lt;base&gt;</code>, I could use the full
+URL, like so:</p>
 <pre><code>Read my &lt;a href="https://www.example.org/news.html"&gt;weekly newsletter&lt;/a&gt;
 </code></pre>
-<p>The difference between these two examples is that the first example resolves the link relative to the <code>&lt;base&gt;</code> URL,
-while the second example specifies the full domain and path.
-Using the <code>&lt;base&gt;</code> element therefore makes it easier to link to other parts of our websites.
-It also makes it easier if we change the domain name of our website.
+<p>With <code>&lt;base href="https://www.example.org/"&gt;</code>, a relative link like <code>news.html</code>
+resolves to <code>https://www.example.org/news.html</code> regardless of the current page's
+location.
+Using the <code>&lt;base&gt;</code> element can make it easier to link consistently across
+directories or environments.
+It also helps if we change the domain name of our website.
 In such a case, we would only have to update the URL in the <code>&lt;base&gt;</code> element.</p>
 <p>Let's modify our <code>&lt;head&gt;</code> section with this new information:</p>
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -290,6 +300,7 @@ In such a case, we would only have to update the URL in the <code>&lt;base&gt;</
 		&lt;link&gt;
 		&lt;meta&gt;
         &lt;style&gt;
+        &lt;/style&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
 	&lt;/body&gt;
@@ -318,6 +329,7 @@ of the stylesheet (named <code>style.css</code>) instead of the full path.</p>
         &lt;link rel="stylesheet" href="css/style.css"&gt;
 		&lt;meta&gt;
         &lt;style&gt;
+        &lt;/style&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
 	&lt;/body&gt;
@@ -331,9 +343,10 @@ other <code>&lt;head&gt;</code> elements, such as <code>&lt;title&gt;</code>, <c
 The <code>&lt;meta&gt;</code> element has a few use cases.
 To keep it simple for now,
 we'll cover the basics below and expand on them as we cover other topics.</p>
-<p>First, as the documentation states, the <code>&lt;meta&gt;</code> element requires one of three attributes:
-<strong>name</strong>, <strong>http-equiv</strong>, and <strong>charset</strong>.
-We'll skip the second attribute and discuss the first and third one.</p>
+<p>First, as the documentation states, the <code>&lt;meta&gt;</code> element uses one of several
+attributes to identify metadata, commonly <strong>name</strong>, <strong>http-equiv</strong>,
+<strong>charset</strong>, or <strong>itemprop</strong>.
+We'll skip <strong>http-equiv</strong> for now and discuss <strong>name</strong> and <strong>charset</strong>.</p>
 <h4 id="the-charset-and-name-attributes"><a class="header" href="#the-charset-and-name-attributes">The <strong>charset</strong> and <strong>name</strong> attributes</a></h4>
 <p>The <strong>charset</strong> attribute establishes the document's character set and allows proper displaying of non-ASCII characters.
 In practice, we use this to declare the document's character set to <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a>.</p>
@@ -374,6 +387,7 @@ We'll focus on the following four:</p>
         &lt;meta name="description" content="An introduction to Systems Administration with Linux OS, including Debian and Ubuntu"&gt;
         &lt;meta name="keywords" content="systems administration, linux, debian, ubuntu"&gt;
         &lt;style&gt;
+        &lt;/style&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
 	&lt;/body&gt;

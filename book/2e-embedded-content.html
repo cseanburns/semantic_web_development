@@ -189,7 +189,7 @@ These include:</p>
 <li>The <code>&lt;track&gt;</code> element for providing captioning for video content</li>
 <li>The <code>&lt;audio&gt;</code> element for embedding audio content</li>
 <li>The <code>&lt;img&gt;</code> element for embedding images</li>
-<li>The <code>&lt;picture&gt;</code> element to facilitate how image respond to different device/screen sizes</li>
+<li>The <code>&lt;picture&gt;</code> element to facilitate how images respond to different device/screen sizes</li>
 <li>The <code>&lt;figure&gt;</code> element to group media content, including images and video, with an optional <code>&lt;figcaption&gt;</code> element for captions</li>
 <li>The <code>&lt;iframe&gt;</code> element is used to embed other HTML pages in our main HTML documents</li>
 </ul>
@@ -211,7 +211,7 @@ In the following example, I use the <code>&lt;source&gt;</code> element to refer
 Both files are stored in a separate multimedia directory in the project folder.
 Both videos are otherwise equal,
 but providing options for both acts as a fallback mechanism in case a browser doesn't support one or the other format.</p>
-<pre><code>&lt;video controls autoplay="false" muted="true" width="600"&gt;
+<pre><code>&lt;video controls width="600"&gt;
     &lt;source src="media/example.mp4" type="video/mp4"&gt;
     &lt;source src="media/example.webm" type="video/webm"&gt;
     Your browser does not support the video tag.
@@ -220,8 +220,10 @@ but providing options for both acts as a fallback mechanism in case a browser do
 <p>The element accepts global attributes but also accepts attributes specific to the element.
 These include <code>controls</code>, <code>autoplay</code>, <code>width</code>, and more.
 The <code>controls</code> attribute adds functions to the embedded player, such as volume control, pause/resume playback, and more.
-The <code>autoplay</code> attribute instructs the browser to enable or disable autoplay upon loading.
-If set to <code>false</code>, autoplay is disabled (which is the humane thing to do for your site visitors!).
+The <code>autoplay</code> and <code>muted</code> attributes are boolean, which means they are either present or absent.
+If you include <code>autoplay</code>, the browser may attempt to play the video immediately.
+Most browsers block autoplay with sound, so if you use <code>autoplay</code>, you should also use <code>muted</code> and
+expect that some browsers still require a user gesture.
 The <code>width</code> attribute sets a default width size for the embedded player.
 An optional <code>height</code> attribute is also available.
 Other attributes are listed at the MDN Web Docs link above.</p>
@@ -246,7 +248,7 @@ For example, Microsoft illustrates how WebVTT files can be created manually <a h
 Other software, like <a href="https://support.zoom.com/hc/en/article?id=zm_kb&amp;sysparm_article=KB0064927">Zoom</a>, automatically creates <code>.vtt</code> audio transcription files for cloud recordings.</p>
 <p>In the example code below, I use the <code>&lt;track&gt;</code> element with the <code>kind</code> attribute to indicate that the <code>vtt</code> file is for subtitles.
 See the link above for other <code>kind</code> attributes to use.</p>
-<pre><code>&lt;video controls autoplay="false" width="600"&gt;
+<pre><code>&lt;video controls width="600"&gt;
     &lt;source src="media/example.mp4" type="video/mp4"&gt;
     &lt;track src="media/captions.vtt" kind="subtitles"
         srclang="en" label="English"&gt;
@@ -271,10 +273,16 @@ Then I declare the sizes in the <code>width</code> and <code>height</code></p>
 </code></pre>
 <p>See the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">MDN Web Docs</a> for more details on how to use the <code>&lt;img&gt;</code> element.</p>
 <h2 id="the-picture-element"><a class="header" href="#the-picture-element">The <code>&lt;picture&gt;</code> Element</a></h2>
-<p>By default, the above <code>&lt;img&gt;</code> element should react responsively when resizing the display.
-This is because browsers apply a default CSS setting (<code>max-width: 100%</code>) to images, which we will discuss later.
-However, there may be times when it's helpful to provide different versions of an image by declaring multiple sources.
-The <code>&lt;picture&gt;</code> element enables this by serving entirely two different images, depending on the size of the display or device
+<p>By default, the above <code>&lt;img&gt;</code> element will not respond to smaller displays unless we add CSS.
+We will cover CSS in the next chapter, but for now focus on the HTML.
+A common pattern is:</p>
+<pre><code>img {
+    max-width: 100%;
+    height: auto;
+}
+</code></pre>
+<p>However, there may be times when it's helpful to provide different versions of an image by declaring multiple sources.
+The <code>&lt;picture&gt;</code> element enables this by selecting among different images, depending on the size of the display or device,
 and not just resolutions (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture">The Picture Element</a>).</p>
 <p>In the example below, when the display is equal to or smaller than 672 pixels wide, the image loads <code>walking_bridge_small.jpg</code>,
 which I've resized in a photo editor to have dimensions of <code>403 x 227 pixels</code>.
@@ -308,7 +316,6 @@ who helped develop the algorithms that search engines and other information retr
 <pre><code>&lt;iframe width="560" height="315"
     src="https://www.youtube.com/embed/5fYeKiebpuo?si=QcvAjF13AjhGkHMq"
     title="YouTube video player"
-    frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen&gt;
@@ -322,8 +329,8 @@ the <code>&lt;img&gt;</code> for images,
 the <code>&lt;picture&gt;</code> elements to provide responsive images,
 the <code>&lt;figure&gt;</code> element to group media,
 and the <code>&lt;iframe&gt;</code> element to embed other HTML pages.</p>
-<p>Be aware that the <code>&lt;img&gt;</code> element is inherently responsive in most cases due to browser defaults,
-but the <code>&lt;picture&gt;</code> element allows serving different images entirely depending on device and screen size.
+<p>Be aware that the <code>&lt;img&gt;</code> element is not inherently responsive without CSS,
+but the <code>&lt;picture&gt;</code> element allows serving different images depending on device and screen size.
 Also, be sure to use the <code>alt</code> attribute for images to provide fallback text for screen readers and for when images fail to load.</p>
 
                     </main>

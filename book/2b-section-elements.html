@@ -187,7 +187,7 @@ At the end of that section, we created the following content:</p>
 &lt;html lang="en"&gt;
 	&lt;head&gt;
         &lt;title&gt;Using the Linux OS for Systems Administration&lt;/title&gt;
-        &lt;base href="https://www.example.org/"&gt;
+        &lt;!-- &lt;base href="https://www.example.org/"&gt; --&gt;
         &lt;link rel="stylesheet" href="css/style.css"&gt;
         &lt;meta charset="utf-8"&gt;
         &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
@@ -210,7 +210,7 @@ In the next section, we'll cover the <a href="https://html.spec.whatwg.org/multi
 We'll use the grouping elements to begin adding content.
 For now, let's focus on sections.</p>
 <h2 id="section-elements"><a class="header" href="#section-elements">Section Elements</a></h2>
-<p>There are ten main HTML section elements, or elements used to define the sections of an HTML document.
+<p>There are ten HTML sectioning-related elements or element groups that we will focus on.
 We have already covered the first one, which is the <code>&lt;body&gt;</code> element.
 The <code>&lt;body&gt;</code> element is the only required section element.
 The rest of the elements help us structure the main layout of our web document.
@@ -224,7 +224,6 @@ the easier it will be for both visitors and machines to parse our web documents.
 <li>the <code>&lt;nav&gt;</code> element</li>
 <li>the <code>&lt;aside&gt;</code> element</li>
 <li>the <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, ..., <code>&lt;h6&gt;</code> elements</li>
-<li>the <code>&lt;hgroup&gt;</code> element</li>
 <li>the <code>&lt;header&gt;</code> element</li>
 <li>the <code>&lt;footer&gt;</code> element</li>
 <li>the <code>&lt;address&gt;</code> element</li>
@@ -309,7 +308,7 @@ can be used for the entire web document or within specific sections,
 such as within <code>&lt;article&gt;</code> or <code>&lt;section&gt;</code> elements.
 In the example below, I show how to use these repeatedly throughout a web document.
 However, it's best practice to use the <code>&lt;h1&gt;</code> element only once on a web page,
-given that it marks a top-level section.</p>
+even though HTML allows multiple <code>&lt;h1&gt;</code> elements in sectioning contexts.</p>
 <pre><code>&lt;body&gt;
     &lt;nav&gt;
     &lt;/nav&gt;
@@ -332,40 +331,9 @@ given that it marks a top-level section.</p>
     
 &lt;/body&gt;
 </code></pre>
-<h3 id="the-hgroup-element"><a class="header" href="#the-hgroup-element">The <code>&lt;hgroup&gt;</code> element</a></h3>
-<p>The <code>&lt;hgroup&gt;</code> element is used to bundle section header elements.
-It may include <code>&lt;p&gt;</code> elements for paragraphs.
-I demonstrate it here for completeness, but in reality, it's probably best to avoid using it.
-It's a confusing element and the <code>&lt;header&gt;</code> element, which I describe below, offers more versatility and semantics.</p>
-<pre><code>&lt;body&gt;
-    &lt;nav&gt;
-    &lt;/nav&gt;
-    
-    &lt;article&gt;
-        &lt;hgroup&gt;
-            &lt;h1&gt;Some title here&lt;/h1&gt;
-            &lt;p&gt;A paragraph here, like an introduction.&lt;/p&gt;
-        &lt;/hgroup&gt;
-        
-        &lt;section&gt;
-            &lt;h2&gt;Section title here&lt;/h2&gt;
-                &lt;aside&gt;&lt;/aside&gt;
-            &lt;h3&gt;Subtitle here&lt;/h3&gt;
-        &lt;/section&gt;
-        
-        &lt;section&gt;
-            &lt;h2&gt;Section title here&lt;/h2&gt;
-        &lt;/section&gt;
-        
-    &lt;/article&gt;
-    
-&lt;/body&gt;
-</code></pre>
 <h3 id="the-header-element"><a class="header" href="#the-header-element">The <code>&lt;header&gt;</code> element</a></h3>
-<p>The <code>&lt;header&gt;</code> element is easily confused with the <code>&lt;hgroup&gt;</code> element but it has more versatility
+<p>The <code>&lt;header&gt;</code> element represents introductory or navigational content for its nearest sectioning ancestor
 (<a href="https://html.spec.whatwg.org/multipage/sections.html#the-header-element">The header element</a>).
-Like the <code>&lt;hgroup&gt;</code> element, it's meant to be used to group section headings
-(e.g., the <code>&lt;h1&gt;</code> and etc. elements and even the <code>&lt;hgroup&gt;</code> element).
 A good use case is for the main heading area (i.e., the top of a web page),
 which could include a website's logo and navigational area.
 However, it can be used repeatedly throughout a web document, including in <code>&lt;article&gt;</code> or <code>&lt;section&gt;</code> elements.
@@ -488,12 +456,13 @@ Adding comments to your HTML code is helpful for two reasons:</p>
 <p>To comment out HTML code, use the comment tag:</p>
 <pre><code>&lt;!-- insert comment here --&gt;
 </code></pre>
-<p>The above line will be ignored by the browser.</p>
+<p>The above line will be ignored by the browser.
+You can use comments to temporarily disable elements like <code>&lt;base&gt;</code> until you have a real domain name.</p>
 <p>You can also comment out multiple lines of HTML code, like so:</p>
 <pre><code>&lt;!--
 &lt;section&gt;
 &lt;h1&gt;Some title here&lt;/h1&gt;
-&lt;h2&gt;Some subtitle here&lt;/h1&gt;
+&lt;h2&gt;Some subtitle here&lt;/h2&gt;
 &lt;/section&gt;
 --&gt;
 </code></pre>

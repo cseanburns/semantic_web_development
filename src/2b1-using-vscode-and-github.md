@@ -3,11 +3,12 @@
 ## Introduction
 
 Developing a project means managing a project, which includes its source code and its documentation.
-To manage our project, we will use Git and GitHub with the Visual Studio (VS) Code editor.
+To manage our project, we will use Git and GitHub with the Visual Studio Code (VS Code) editor.
 The process is fairly straightforward, and the steps are clearly outlined in 
 [Introduction to Git in VS Code][git_vscode].
 However, since we have already begun our project by creating a folder and an `index.html` file on our local machine,
 some additional setup guidance is necessary.
+We will use Git entirely through VS Code and not the command line.
 
 ## Install Git
 
@@ -20,7 +21,7 @@ However, if you are using macOS, then you should install `brew` first.
 
 ### Install Homebrew (`brew`) and `git` on macOS
 
-To install Homebrew on macOS, visit the [Homebrew][homebrew] page and following the instructions listed there.
+To install Homebrew on macOS, visit the [Homebrew][homebrew] page and follow the instructions listed there.
 You will need to open your macOS Terminal.app, then copy and paste the command presented on the Homebrew page:
 
 ```
@@ -61,9 +62,9 @@ So let's say that you edit your `index.html` file using VS Code on your personal
 Once you have completed your editing work, you want to do the following things to sync it to your remote repo (i.e., to GitHub):
 
 - `stage` the file: this tells `git` to take notice of this file
-- `commit` the file: this tells `git` to record the changes in the repository (whether local or remote)
+- `commit` the file: this tells `git` to record the changes in your local repository
     - `commit` message: add a descriptive message when committing&mdash;this is helpful for version control and collaboration
-- `push` the file: this updates the remote repository with the changes
+- `push` the file: this updates the remote repository with the committed changes
 
 ### Remote to Local
 
@@ -71,13 +72,13 @@ It's possible to edit and create files and directories on your remote repo (i.e.
 I don't suggest doing this because it means using GitHub's web text editor.
 Although it's a decent online editor, it's not as powerful as VS Code.
 But if you do edit the remote repo through the browser, then you will want to sync any changes to your local repo.
-Like editing your local repo, the process involves staging and committing (with a commit) message any changes you've made in your remote repo.
-However, you won't `push` your repo to your local repo.
-Instead, you'll pull up VS Code and `pull` your changes to your local repo.
+Those GitHub edits are already committed on the remote, so in VS Code you only need to `pull`
+or **Sync Changes** to bring them down to your local repo.
 
 ## *Gitting* Started
 
 Now that you understand the basics of syncing repos, we'll proceed to using Git and GitHub with VS Code.
+All Git actions in this course happen through the VS Code Source Control view.
 
 Again I'm mainly following the steps outlined at [Introduction to Git in VS Code][git_vscode].
 
@@ -91,9 +92,9 @@ In short, the steps are to:
 
 1. Open your project folder in VS Code
 2. Go to the **Source Control** view and select **Initialize Repository**
-3. Add a descriptive `commit` message and the press **Commit**
+3. Add a descriptive `commit` message and then press **Commit**
 4. Press **Yes** to stage your commit
-5. Then click **Publish Branch** and the sign-in and authenticate with GitHub.
+5. Then click **Publish Branch** and sign in to authenticate with GitHub.
 6. Then select **Publish to GitHub public repository ...**.
     - We need this to be public for later work
 7. Open on GitHub to view your uploaded repo!
@@ -101,7 +102,8 @@ In short, the steps are to:
 ### Remote Sync
 
 I highly encourage you to only work in VS Code and not edit files or create directories directly on GitHub.
-But if you do, then from your local machine, you will need to do a `pull` request in VS Code to sync the changes you made on GitHub to your local repo.
+But if you do, then from your local machine, you will need to `pull` or use **Sync Changes** in VS Code
+to sync the commits you made on GitHub to your local repo.
 
 
 [git_downloads]:https://git-scm.com/downloads

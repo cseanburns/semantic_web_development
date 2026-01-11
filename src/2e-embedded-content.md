@@ -11,7 +11,7 @@ These include:
 - The `<track>` element for providing captioning for video content
 - The `<audio>` element for embedding audio content
 - The `<img>` element for embedding images
-- The `<picture>` element to facilitate how image respond to different device/screen sizes
+- The `<picture>` element to facilitate how images respond to different device/screen sizes
 - The `<figure>` element to group media content, including images and video, with an optional `<figcaption>` element for captions
 - The `<iframe>` element is used to embed other HTML pages in our main HTML documents
 
@@ -38,7 +38,7 @@ Both videos are otherwise equal,
 but providing options for both acts as a fallback mechanism in case a browser doesn't support one or the other format.
 
 ```
-<video controls autoplay="false" muted="true" width="600">
+<video controls width="600">
     <source src="media/example.mp4" type="video/mp4">
     <source src="media/example.webm" type="video/webm">
     Your browser does not support the video tag.
@@ -48,8 +48,10 @@ but providing options for both acts as a fallback mechanism in case a browser do
 The element accepts global attributes but also accepts attributes specific to the element.
 These include `controls`, `autoplay`, `width`, and more.
 The `controls` attribute adds functions to the embedded player, such as volume control, pause/resume playback, and more.
-The `autoplay` attribute instructs the browser to enable or disable autoplay upon loading.
-If set to `false`, autoplay is disabled (which is the humane thing to do for your site visitors!).
+The `autoplay` and `muted` attributes are boolean, which means they are either present or absent.
+If you include `autoplay`, the browser may attempt to play the video immediately.
+Most browsers block autoplay with sound, so if you use `autoplay`, you should also use `muted` and
+expect that some browsers still require a user gesture.
 The `width` attribute sets a default width size for the embedded player.
 An optional `height` attribute is also available.
 Other attributes are listed at the MDN Web Docs link above.
@@ -83,7 +85,7 @@ In the example code below, I use the `<track>` element with the `kind` attribute
 See the link above for other `kind` attributes to use.
 
 ```
-<video controls autoplay="false" width="600">
+<video controls width="600">
     <source src="media/example.mp4" type="video/mp4">
     <track src="media/captions.vtt" kind="subtitles"
         srclang="en" label="English">
@@ -117,10 +119,19 @@ See the [MDN Web Docs][img_mdn] for more details on how to use the `<img>` eleme
 
 ## The `<picture>` Element
 
-By default, the above `<img>` element should react responsively when resizing the display.
-This is because browsers apply a default CSS setting (`max-width: 100%`) to images, which we will discuss later.
+By default, the above `<img>` element will not respond to smaller displays unless we add CSS.
+We will cover CSS in the next chapter, but for now focus on the HTML.
+A common pattern is:
+
+```
+img {
+    max-width: 100%;
+    height: auto;
+}
+```
+
 However, there may be times when it's helpful to provide different versions of an image by declaring multiple sources.
-The `<picture>` element enables this by serving entirely two different images, depending on the size of the display or device
+The `<picture>` element enables this by selecting among different images, depending on the size of the display or device,
 and not just resolutions ([The Picture Element][picture_mdn]).
 
 In the example below, when the display is equal to or smaller than 672 pixels wide, the image loads `walking_bridge_small.jpg`,
@@ -167,7 +178,6 @@ who helped develop the algorithms that search engines and other information retr
 <iframe width="560" height="315"
     src="https://www.youtube.com/embed/5fYeKiebpuo?si=QcvAjF13AjhGkHMq"
     title="YouTube video player"
-    frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     referrerpolicy="strict-origin-when-cross-origin"
     allowfullscreen>
@@ -184,8 +194,8 @@ the `<picture>` elements to provide responsive images,
 the `<figure>` element to group media,
 and the `<iframe>` element to embed other HTML pages.
 
-Be aware that the `<img>` element is inherently responsive in most cases due to browser defaults,
-but the `<picture>` element allows serving different images entirely depending on device and screen size.
+Be aware that the `<img>` element is not inherently responsive without CSS,
+but the `<picture>` element allows serving different images depending on device and screen size.
 Also, be sure to use the `alt` attribute for images to provide fallback text for screen readers and for when images fail to load.
 
 [audio_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio

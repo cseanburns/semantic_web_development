@@ -180,16 +180,16 @@
                     <main>
                         <h1 id="html-tables-and-forms"><a class="header" href="#html-tables-and-forms">HTML Tables and Forms</a></h1>
 <p>In the previous sections, we discussed several categories of HTML elements to use on our web pages.
-These categories relate to document structure, document metadata, grouping elements, text level semantic elements, links, attributes,
+These categories relate to document structure, document metadata, grouping elements, text-level semantic elements, links, attributes,
 and embedded content like images and multimedia.
 These elements are regularly used because they represent how we structure our pages and add content to them.</p>
 <p>In this section, we learn how to create tables and forms to add to our web pages.
 These two aspects of HTML are less regularly used.
 Creating tables is about adding content, but specifically, tabular data only.
-Forms are used to gather user input and deliver that input to the web site owner or process it through,
-for example, a server side relational database server, like MariaDB, MySQL, PostgreSQL, etc.</p>
+Forms are used to gather user input and deliver that input to the website owner or process it through,
+for example, a server-side relational database server, like MariaDB, MySQL, PostgreSQL, etc.</p>
 <p>We have a number of types of forms available to us.
-They include basic text entry forms, drop down lists, and more.
+They include basic text entry forms, drop-down lists, and more.
 One major caveat with forms is that they require additional programming to function.
 For example, forms are often used with PHP to process the input.
 However, learning PHP is beyond the scope of this work.
@@ -207,10 +207,10 @@ In this demo, I create a simple table that contains the following elements:</p>
 <li><code>&lt;thead&gt;</code>: The <code>&lt;thead&gt;</code> element is semantic and defines table header information.</li>
 <li><code>&lt;tbody&gt;</code>: The <code>&lt;tbody&gt;</code> element is semantic and defines table body information.</li>
 <li><code>&lt;tfoot&gt;</code>: The <code>&lt;tfoot&gt;</code> element is semantic and defines table footer information.</li>
-<li><code>&lt;tr&gt;</code>: The <code>&lt;tr&gt;</code> element defines table row.</li>
+<li><code>&lt;tr&gt;</code>: The <code>&lt;tr&gt;</code> element defines a table row.</li>
 <li><code>&lt;th&gt;</code>: The <code>&lt;th&gt;</code> element defines header cell. This is often placed at the top row of a table:
 <ul>
-<li>It it often enclosed within the <code>&lt;thead&gt;</code> element but can be added to the <code>&lt;tbody&gt;</code> section for row headers.</li>
+<li>It is often enclosed within the <code>&lt;thead&gt;</code> element but can be added to the <code>&lt;tbody&gt;</code> section for row headers.</li>
 </ul>
 </li>
 <li><code>&lt;td&gt;</code>: The <code>&lt;td&gt;</code> element defines a specific data cell in the table.</li>
@@ -221,7 +221,7 @@ The <code>&lt;caption&gt;</code> tag provides a description of the table and its
 Following this, the table has three main sections, which include: <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code>.
 While HTML does not require indentation, indentation can help with code readability, and is therefore highly encouraged.</p>
 <p>Additionally, one <code>&lt;th&gt;</code> element contains a <code>colspan</code> attribute, which is set to <code>5</code>, or five columns, in this example.
-Since the table only has five columns, this elements spans the width of the entire table.
+Since the table only has five columns, this element spans the width of the entire table.
 The <code>scope</code> attribute <q>defines the cells that the header (defined in the <code>&lt;th&gt;</code>) element relates to</q>
 (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th#scope">The <code>scope</code> attribute</a>).
 It's useful for clearly demarcating the row and column names from the tabular data.</p>
@@ -342,16 +342,16 @@ This element is often used to suggest pre-defined options but allows for other d
     &lt;label for="myOS"&gt;What is your favorite OS?&lt;/label&gt;
     &lt;input list="OS" id="myOS" name="myOS"&gt;
     &lt;datalist id="OS"&gt;
-        &lt;option value="GNU/Linux"&gt;
-        &lt;option value="Linux"&gt;
-        &lt;option value="BSD"&gt;
-        &lt;option value="Windows"&gt;
-        &lt;option value="macOS"&gt;
+        &lt;option value="GNU/Linux"&gt;&lt;/option&gt;
+        &lt;option value="Linux"&gt;&lt;/option&gt;
+        &lt;option value="BSD"&gt;&lt;/option&gt;
+        &lt;option value="Windows"&gt;&lt;/option&gt;
+        &lt;option value="macOS"&gt;&lt;/option&gt;
      &lt;/datalist&gt;
 &lt;/form&gt;
 </code></pre>
 <h3 id="the-select-element"><a class="header" href="#the-select-element">The <code>&lt;select&gt;</code> Element</a></h3>
-<p>Like above, the <code>&lt;select&gt;</code> element offers a list of options, but the options are restricted and presented in a drop down box
+<p>Like above, the <code>&lt;select&gt;</code> element offers a list of options, but the options are restricted and presented in a drop-down box
 (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">The <code>&lt;select&gt;</code> element</a>).
 The <code>&lt;optgroup&gt;</code> element groups logical options together.
 In the example below, I use <code>&lt;optgroup&gt;</code> to group two types of homes as either <em>traditional</em> or <em>alternative</em>.</p>
@@ -362,7 +362,7 @@ In the example below, I use <code>&lt;optgroup&gt;</code> to group two types of 
 		&lt;optgroup label="Traditional"&gt;
 			&lt;option value="castle"&gt;Castle&lt;/option&gt;
 			&lt;option value="mansion"&gt;Mansion&lt;/option&gt;
-			&lt;option value="bungalo"&gt;Bungalo&lt;/option&gt;
+			&lt;option value="bungalow"&gt;Bungalow&lt;/option&gt;
 		&lt;/optgroup&gt;
 		&lt;optgroup label="Alternative"&gt;
 			&lt;option value="treehouse"&gt;Tree House&lt;/option&gt;
@@ -403,7 +403,7 @@ They each have different purposes.
 We use tables to display tabular data, and we use forms to collect user input.
 I grouped these technologies together in a single section not because they are alike but because,
 unlike the rest of the HTML that we have learned, tables and forms are used sparingly.</p>
-<p>With respect to forms, note that HTML (nor CSS) can process form data.
+<p>With respect to forms, note that HTML (nor CSS) cannot process form data.
 Processing form data requires additional programming, such as <a href="https://www.php.net/">PHP</a>,
 which is often used with various database technologies, such as MySQL, MariaDB, PostgreSQL, etc.
 However, understanding how HTML forms work helps you understand the basics of frontend web application development.</p>

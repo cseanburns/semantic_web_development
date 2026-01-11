@@ -49,8 +49,10 @@ This tag therefore encompasses the `<head>` and `<body>` elements, which themsel
 
 Let's focus on the [HEAD section][head_whatwg], which contains a web document's metadata.
 A document's metadata is data that describes the data on the page.
-This section of the HTML document typically includes five elements:
-`<title>`, `<base>`, `<link>`, `<meta>`, and `<style>`, as shown below:
+This section of the HTML document commonly includes elements such as
+`<title>`, `<base>`, `<link>`, `<meta>`, and `<style>`.
+Some documents also include `<script>` or `<noscript>` tags,
+but we will focus on the five above, as shown below:
 
 ```
 <!DOCTYPE html>
@@ -94,6 +96,7 @@ We can add the title information to our `<head>` section, as shown below:
 		<link>
 		<meta>
         <style>
+        </style>
 	</head>
 	<body>
 	</body>
@@ -112,6 +115,9 @@ If I have a website at `https://www.example.org/`, then I add this information t
 <base href="https://www.example.org/">
 ```
 
+For now, leave the `<base>` element out until you know your actual domain name.
+We will return to it later when we set up GitHub Pages and you have a real site URL.
+
 This allows me to link to other parts of my website without using the full URL or path.
 For example, if I have a website with two pages: **index.html** and **news.html**,
 then to link to **news.html** from the **index.html** page,
@@ -122,16 +128,21 @@ Read my <a href="news.html">weekly newsletter</a>
 ```
 
 If I didn't include the `<base>` element in my `<head>` section,
-then I would have to reference or link to the full URL, like so:
+then a relative link like `news.html` would resolve against the current
+document URL.
+If I wanted to force an absolute URL without `<base>`, I could use the full
+URL, like so:
 
 ```
 Read my <a href="https://www.example.org/news.html">weekly newsletter</a>
 ```
 
-The difference between these two examples is that the first example resolves the link relative to the `<base>` URL,
-while the second example specifies the full domain and path.
-Using the `<base>` element therefore makes it easier to link to other parts of our websites.
-It also makes it easier if we change the domain name of our website.
+With `<base href="https://www.example.org/">`, a relative link like `news.html`
+resolves to `https://www.example.org/news.html` regardless of the current page's
+location.
+Using the `<base>` element can make it easier to link consistently across
+directories or environments.
+It also helps if we change the domain name of our website.
 In such a case, we would only have to update the URL in the `<base>` element.
 
 Let's modify our `<head>` section with this new information:
@@ -145,6 +156,7 @@ Let's modify our `<head>` section with this new information:
 		<link>
 		<meta>
         <style>
+        </style>
 	</head>
 	<body>
 	</body>
@@ -182,6 +194,7 @@ of the stylesheet (named `style.css`) instead of the full path.
         <link rel="stylesheet" href="css/style.css">
 		<meta>
         <style>
+        </style>
 	</head>
 	<body>
 	</body>
@@ -199,9 +212,10 @@ The `<meta>` element has a few use cases.
 To keep it simple for now,
 we'll cover the basics below and expand on them as we cover other topics.
 
-First, as the documentation states, the `<meta>` element requires one of three attributes:
-**name**, **http-equiv**, and **charset**.
-We'll skip the second attribute and discuss the first and third one.
+First, as the documentation states, the `<meta>` element uses one of several
+attributes to identify metadata, commonly **name**, **http-equiv**,
+**charset**, or **itemprop**.
+We'll skip **http-equiv** for now and discuss **name** and **charset**.
 
 #### The **charset** and **name** attributes
 
@@ -236,6 +250,7 @@ Putting this altogether, we have the following:
         <meta name="description" content="An introduction to Systems Administration with Linux OS, including Debian and Ubuntu">
         <meta name="keywords" content="systems administration, linux, debian, ubuntu">
         <style>
+        </style>
 	</head>
 	<body>
 	</body>
