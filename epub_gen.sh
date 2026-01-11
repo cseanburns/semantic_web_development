@@ -61,6 +61,6 @@ pandoc "${md_files[@]}" \
 	--css="$CSS_FILE" \
 	-o "$OUTPUT_FILE" \
     --standalone \
-    --toc=true \
+    --toc \
     --epub-metadata="epub_metadata.xml" \
     --epub-cover-image="src/images/cover_image_semantic_web_development.png"
