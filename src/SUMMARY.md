@@ -2,8 +2,8 @@
 
 - [Introduction to Semantic Web Development](p1-introduction-to-semantic-web-development.md)
     - [The Semantic Web](1a-the-semantic-web.md)
-    - [User Experience and Accessibility](1b-user-experience-accessibility.md)
-    - [Tools, Setup, and Workflow](1c-tools-setup-workflow.md)
+    - [Tools, Setup, and Workflow](1b-tools-setup-workflow.md)
+    - [User Experience and Accessibility](1c-user-experience-accessibility.md)
     - [Designing with Inkscape](1d-designing-with-inkscape.md)
 - [HTML5 and The Web](p2-html5-and-the-web.md)
     - [Document Structure and Metadata](2a-document-structure-and-metadata.md)
