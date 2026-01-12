@@ -4,7 +4,7 @@ In HTML, **elements** define the structure of a webpage.
 Common elements include `<h1>`, `<main>`, `<p>`, `<table>`, and many others.
 We also learned that these elements may include **attributes**.
 For example, we can add [global attributes][global_attributes_mdn], like the `class` or `id` attributes, to all tags.
-Furthermore, we learned that some elements, like the `<th>` tag, may have element specific attributes, like `colspan`.
+Furthermore, we learned that some elements, like the `<th>` tag, may have element-specific attributes, like `colspan`.
 In order to style the HTML, CSS provides a mechanism to focus on specific elements or attributes.
 In CSS, this mechanism is called [**selectors**][css_selectors_w3].
 
@@ -16,11 +16,11 @@ These include:
 - [Attribute selectors][attribute_selectors_w3]
 - [Class selectors][class_selectors_w3]
 - [ID selectors][id_selectors_w3]
-- [Pseudo classes][pseudo_classes_w3]
-- [Pseudo elements][pseudo_elements_w3]
+- [Pseudo-classes][pseudo_classes_w3]
+- [Pseudo-elements][pseudo_elements_w3]
 - [Combinators][combinators_w3]
 
-Each of these selectors are discussed below along with examples.
+Each of these selectors is discussed below along with examples.
 For a deeper understanding of each selector type, refer to the linked resources above.
 
 Also, remember that to use these selectors, we add them to an external stylesheet for the reasons listed in the prior section.
@@ -83,8 +83,8 @@ The CSS `h1` selector matches the HTML `<h1>` element.
 And so forth.
 
 In the following example, I use three type selectors: `html`, `h1`, and `p`.
-I use the `html` selector to change the foreground and background color to the entire HTML page,
-since an entire HTML page is enclose within the `<html>` element.
+I use the `html` selector to change the foreground and background color for the entire HTML page,
+since an entire HTML page is enclosed within the `<html>` element.
 I then show how to apply a [sans-serif][sans_serif_wikipedia] font-family to the `<h1>` elements,
 and a [serif][serif_wikipedia] font to the `<p>` elements in a web document:
 
@@ -118,7 +118,7 @@ As an example, let's say I have a web document with the following:
 </section>
 ```
 
-Then the following CSS will bold the font for all three heading elements:
+Then the following CSS will bold the font for all three elements with an `id` attribute:
 
 ```
 [id] {
@@ -131,7 +131,7 @@ We can also select attributes with specific values:
 - `[att=value]` : select by attribute with specific value:
     - For example, `[id="test1"]` would select `<h1 id="test1">`
 - `[att~=value]` : select by attribute where value is a separate word:
-    - For example: `[id~="test"]` would match `<h1 id="test one">` and `<h2 id="test two">` since `test` is separate in each.
+    - For example: `[class~="test"]` would match `<h1 class="test one">` and `<h2 class="test two">` since `test` is separate in each.
 
 ## Class selectors
 
@@ -177,7 +177,7 @@ Consider the following HTML:
 In the above HTML snippet, there can only be one `id` with a value of `news`,
 one `id` with a value of `about`, and one `id` with a value of `store`.
 To apply CSS to those specific IDs, we select by the value of the ID attributes.
-In the example CSS below, I add a black, dotted border that is one pixel thick to the News section,
+In the example CSS below, I add a black, solid bottom border that is one pixel thick to the News section,
 I change the line-height to 1.5 times the element's font-size in the About section, and
 I convert text in the Store section to all upper case:
 
@@ -197,7 +197,7 @@ I convert text in the Store section to all upper case:
 
 ## Combinators
 
-**Combinators**, and the **pseudo classes** and **pseudo elements** discussed in the following section,
+**Combinators**, and the **pseudo-classes** and **pseudo-elements** discussed in the following section,
 should be used when you start to gain a grasp of the relationships between HTML elements on a web page.
 Specifically, all elements in an HTML document can be represented in a hierarchical document tree.
 The hierarchy of elements includes descendant elements, child elements, and sibling elements.
@@ -232,19 +232,19 @@ p var {
 }
 ```
 
-In the above case, the `<var>` element is a direct descendant of the `<p>` element.
-However, we may also select a grandchild or later element by using the asterisk.
+In the above case, the `<var>` element is a child of the `<p>` element.
+However, we may also select a grandchild or later element by using a space between selectors.
 For example, the following selects all `<p>` elements within all `<section>` elements in an HTML page:
 
 ```
-section * p {
+section p {
     font-size: 14pt;
 }
 ```
 
 ### Child combinators
 
-<q>A **Child combinator** describes a childhood relationship between two elements</q> ([Child combinators][child_combinators_w3]).
+<q>A **child combinator** describes a parent-child relationship between two elements</q> ([Child combinators][child_combinators_w3]).
 A prime example of a child combinator is the HTML list.
 Consider the following unordered list in HTML, where the `<li>` element is a child of the `<ul>` element:
 
@@ -270,7 +270,7 @@ The child combinator is simply a more specific type of descendant.
 
 ### Sibling combinators
 
-Per the W3 documenation, <q>there are two different sibling combinators: the next-sibling combinator and
+Per the W3 documentation, <q>there are two different sibling combinators: the next-sibling combinator and
 subsequent-sibling combinator</q> ([Sibling combinators][sibling_combinators_w3]).
 
 The **next-sibling combinator** selects elements that immediately follow another element.
@@ -357,8 +357,8 @@ a:hover {
 ```
     
 **Pseudo-elements** are methods to <q>create abstractions about the document tree beyond those specified by the document language</q>
-([Psuedo-elements][pseudo_elements_w3]).
-For example, there is no such element to indicate the first line in a `<p>` element, but using the **pseudo-class** for `first-line`,
+([Pseudo-elements][pseudo_elements_w3]).
+For example, there is no such element to indicate the first line in a `<p>` element, but using the **pseudo-element** `::first-line`,
 we can focus on and style the first line of a `<p>` (or other) element.
 For example, consider the following HTML:
 
@@ -372,7 +372,7 @@ No more;</p>
 ```
 
 Since there is a `<br>` tag at the end of each line, the first line is <q>To be, or not to be, that is the question:</q>.
-Using the **pseudo-element** for `first-line`, we can style it by, for example, converting it to uppercase:
+Using the **pseudo-element** `::first-line`, we can style it by, for example, converting it to uppercase:
 
 ```
 p::first-line {
@@ -380,7 +380,7 @@ p::first-line {
 }
 ```
 
-Other **pseudo-classes** that can be used include:
+Other **pseudo-elements** that can be used include:
 
 - `::first-letter`
 - `::before`

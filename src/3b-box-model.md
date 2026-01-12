@@ -2,7 +2,7 @@
 
 The basic principle of working with CSS and HTML is knowing that all HTML elements are contained in a box.
 This includes everything from the root element `<html>` all the way down to
-text-level elements such as the paragraph tag `<p>` or the `<span>` tag.
+block-level elements such as the paragraph tag `<p>` or inline elements such as the `<span>` tag.
 We can test this using the universal selector `*` in our CSS.
 For example, consider the following HTML, which quotes the first sentence from <cite>Moby-Dick</cite>:
 
@@ -48,12 +48,12 @@ In the following snippet, I add the universal selector to place a box around all
 </html>
 ```
 
-Understanding this idea, that CSS treats HTML elements as boxes, is important for styling and designing layouts to our HTML.
-It's also important to understand that since boxes can be nested within other boxes, or sit adjacent to other boxes
-(e.g., descendant elements, sibling elements, etc),
-that styling elements has ripple effects.
+Understanding that CSS treats HTML elements as boxes is important for styling and designing layouts for our HTML.
+It's also important to understand that since boxes can be nested within other boxes,
+or sit adjacent to other boxes (e.g., descendant elements, sibling elements, etc),
+that styling elements can have ripple effects.
 Adjusting a box's size or position affects surrounding elements, as boxes influence each other's layout.
-Therefore, to fully fully understand how to manipulate HTML elements, we need to understand that CSS boxes possess several properties.
+Therefore, to fully understand how to manipulate HTML elements, we need to understand that CSS boxes possess several properties.
 
 ## Box Properties
 

@@ -1,8 +1,8 @@
 # Flexbox Basics
 
-CSS has long offered a number of *layout modes* for designing the layout of documents, text, tables, and positions.
+CSS has long offered a number of *layout modes* for designing the layout of documents, text, tables, and positioned elements.
 [CSS Flexbox layout][flexbox_w3] is a newer layout mode used to create responsive web page designs.
-It works in one-dimension at a time: rows **or** columns.
+It works in one dimension at a time: rows **or** columns.
 
 ## Introduction
 
@@ -13,48 +13,49 @@ CSS Flexbox includes the following **properties**:
     - `row-reverse`
     - `column`
     - `column-reverse`
-- [`flex-wrap`][flex_wrap_w3] defines whether flex container is single or multi-line. Options include:
+- [`flex-wrap`][flex_wrap_w3] defines whether a flex container is single- or multi-line. Options include:
     - `nowrap` (single line)
     - `wrap` (multi-line)
     - `wrap-reverse`
-- [`flex-flow`][flex_flow_w3] is shorthand for: `flex-direction` and `flex-wrap`.
-    - For example: `article { flex-flow: row wrap }` or `section { flex-flow: column nowrap}`.
+- [`flex-flow`][flex_flow_w3] is shorthand for `flex-direction` and `flex-wrap`.
+    - For example: `article { flex-flow: row wrap; }` or `section { flex-flow: column nowrap; }`.
 - [`justify-content`][justify_content_w3] works to align flex items (items in a flex container) along the **main axis** defined in `flex-direction`. Options include:
     - `flex-start`: pack items at the line start
     - `flex-end`: pack items at the line end
     - `center`: pack items near the center
-    - `space-between`: distribute items evenly across the line, placing first and last flex item near the each margin border
-    - `space-around`: similar to above, but spaces first and last flex item a half space from each margin border
+    - `space-between`: distribute items evenly across the line, placing the first and last flex items near the container edges
+    - `space-around`: similar to above, but with equal space on both sides of each item
 - [`align-items`][align_items_w3] works on the **cross axis** of the container. Options include:
     - `flex-start`: flex items are flushed against the start of the container
     - `flex-end`: flex items are flushed against the end of the container
     - `baseline`: the baselines of flex items are aligned 
     - `stretch`: flex items are stretched from start to end
-- [`align-content`][align_content_w3] is similarly to how `justify-content` works on the main axis but works on the **cross axis** when there is extra space.
-Takes effect when their are multiple lines of items, such as when `flex-wrap: wrap` is in effect. Options include:
+- [`align-content`][align_content_w3] works like `justify-content` but on the **cross axis**, and it applies when there is extra space.
+It takes effect when there are multiple lines of items, such as when `flex-wrap: wrap` is in effect. Options include:
     - `flex-start`: pack items at the container start
     - `flex-end`: pack items at the container end
     - `center`: pack items near the center of the container
-    - `space-between`: distribute items evenly in the flex container, placing first and last flex item near the each margin border
-    - `space-around`: similar to above, but spaces first and last flex item a half space from each margin border
+    - `space-between`: distribute items evenly in the flex container, placing the first and last flex items near the container edges
+    - `space-around`: similar to above, but with equal space on both sides of each item
     - `stretch`: flex items are stretched from start to end
 
 Note how some properties above refer to the main axis or the cross axis.
 
-- to use on main axis properties:
+- Main-axis properties include:
     - `justify-content`
-- to use on cross axis properties:
+- Cross-axis properties include:
     - `align-items`
     - `align-content`
 
-By default, the main axis is the x-axis, and the cross axis is the y-axis.
+By default, the main axis is the x-axis and the cross axis is the y-axis.
+If you switch to a column direction, those axes flip.
 
 ## Examples
 
 To initiate a flex layout, we use the `display` property.
 We can use the `display` property in section elements such as `<body>`, `<article>`, `<section>`, `<nav>`, `<div>`, etc.
 These elements become **flex containers**.
-The **flex items** in these containers is thus any direct child element of a flex container.
+The **flex items** in these containers are any direct child elements of a flex container.
 For example, to create a flex container for the `<nav>` element, we could use the following CSS declaration:
 
 ```
@@ -64,7 +65,7 @@ nav {
 }
 ```
 
-The elements in that `<nav>` section, such as an unordered list `<ul>`, become the container's flex items.
+The elements in that `<nav>` section, such as a `<ul>`, become the container's flex items.
 
 To create nested layouts, we can use `display` multiple times in a single web page.
 For example, if an `<article>` element contains several `<section>` elements, then the following would be used:
@@ -78,14 +79,14 @@ article {
 section {
     display: flex;
     flex-flow: row wrap;
-    }
+}
 ```
 
 ### Basic Flex Example
 
 In the following example, I make the `<section>` element a **flex container**.
 This element includes six `<p>` elements, which become the **flex items**.
-The `gap` property in the `section` rule adds a `10px` gap between between flex items.
+The `gap` property in the `section` rule adds a `10px` gap between flex items.
 For the `<p>` element, I add borders and expand their dimensions to create boxes around these elements. 
 I use a **structural pseudo class** `nth-child()` to alternate the colors of these boxes.
 
@@ -230,7 +231,7 @@ I add the following to the `body` selector to make the margins flush with the br
 ```
 body {
     max-width: 100%;
-    margin: auto;
+    margin: 0;
 }
 ```
 
@@ -270,7 +271,7 @@ I use `flex-flow: row wrap` to make it a responsive row, and I use `justify-cont
 }
 ```
 
-The remaining styles in the CSS control help keep the page consistent with the rest of the styling.
+The remaining styles in the CSS help keep the page consistent with the rest of the styling.
 Note the use of the `clamp()` function.
 This is used to set the minimum, preferred, and maximum values of an element.
 
@@ -407,15 +408,15 @@ This is used to set the minimum, preferred, and maximum values of an element.
 
 ## Conclusion
 
-In this section we learned about the CSS Flexbox layout model.
+In this section, we learned about the CSS Flexbox layout model.
 I first detailed the CSS properties that are available to create a Flex layout.
 I provided an example using basic boxes.
 Then I created a two-column example and a mixed column example,
 both of which are responsive to mobile views.
 These may also be adapted to create more complex layouts.
 
-Note that the use of Flex aligns well with section elements,
-such as the `<article>`, `<section>`, `<main>`, elements.
+Note that the use of Flexbox aligns well with section elements,
+such as the `<article>`, `<section>`, and `<main>` elements.
 This is because, by definition, these elements are container elements.
 
 Additional sources:

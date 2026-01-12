@@ -1,19 +1,19 @@
 # Typography and Font Styles
 
 The *typography* of a document is generally its most visible aspect.
-This is true regardless if the document is a web page, a book, a billboard, or a flyer.
+This is true regardless of whether the document is a web page, a book, a billboard, or a flyer.
 We use typographic principles to shape how text is presented, read, and interpreted.
 
 In web development, typography is important because it influences the user experience.
 It affects readability, aesthetics, and accessibility, and
 it plays a central role in how content is presented across different screen sizes and devices.
 
-In all, good typography can:
+Overall, good typography can:
 
 - improve readability and legibility
 - establish identity and tone
 - enhance user engagement
-- maximize accessibility for users, and this includes those with visual impairments
+- maximize accessibility for users, including those with visual impairments
 - contribute to an intuitive and pleasant user experience
 
 ## Key Concepts in Typography
@@ -21,11 +21,11 @@ In all, good typography can:
 Typography consists of several elements that determine how text appears.
 These elements include:
 
-- `font-family`: this is the specific typeface or group of typefaces. Major typefaces include: `serif`, `sans-serif`, `monospace`
+- `font-family`: this is the specific typeface or group of typefaces. Major families include: `serif`, `sans-serif`, `monospace`
 - `font-style`: this includes variations like normal, italic, or oblique
 - `font-weight`: this addresses the thickness of characters and ranges from light to bold
-- `font-size`: this consists of the height of characters. It can be set in fixed or relative units, and it alters the content-size of its box
-- `letter-spacing`, or kerning: this addresses the spacing between individual letters
+- `font-size`: this sets the height of characters. It can be set in fixed or relative units, and it alters the content size of its box
+- `letter-spacing`: this addresses the spacing between individual characters
 - `line-height`: this addresses the spacing between lines of text
 - `text-align`: this addresses the horizontal alignment of text and is used to center or justify text
 - `text-indent`: this addresses the indentation of text
@@ -43,7 +43,7 @@ while fonts are the specific tools used in that arrangement.
 ## Basic Typography Principles
 
 The goal of typography is to improve readability.
-This is accomplished by creating web pages and sites that are visually appealing.
+This is supported by creating web pages and sites that are visually appealing.
 The following key principles help achieve that goal:
 
 - **Readability and legibility**: Use appropriate font choices, sizes, and spacing to make sure that text is easy to read.
@@ -60,7 +60,7 @@ The major font families include `serif`, `sans-serif`, and `monospace`, but [the
 We select font families based on several criteria:
 
 - **Serif fonts**: these are typefaces that have decorative strokes, or *serifs*, at the ends of letters. Common examples include Times New Roman and Georgia. These kinds of typefaces are commonly used in print and they convey a classic, professional look.
-- **Sans-serif fonts**: these fonts lack (*sans*) serifs or decorations. These fonts convey cleaner and more modern designs. Common examples include Arial, Helvetica, and Verdana. They benefit digital content because they augment clarity and readability on screens in particular.
+- **Sans-serif fonts**: these fonts lack (*sans*) serifs or decorations. These fonts convey cleaner and more modern designs. Common examples include Arial, Helvetica, and Verdana. They often improve clarity and readability on screens in particular.
 - **Monospace fonts**: the characters in these fonts take up the same amount of horizontal space. Examples include Courier New and Consolas. These font families are typically used in coding environments or to display code in web documents because they make it easier to align characters and read structured text.
 
 ## Typography in Web Development
@@ -70,7 +70,7 @@ The goal is to always make sure that text is legible and visually appealing.
 While this section covers the basics, typography is a big subject.
 Entire books are dedicated to typography, and companies spend lots of resources on developing and using good fonts
 because fonts play an important role in brand identity.
-However, as you begin to use and then understand typography principles,
+However, as you begin to use and understand typography principles,
 you will be able to use these principles to augment content and enhance user experience.
 
 ## Typography in Practice
@@ -79,7 +79,7 @@ you will be able to use these principles to augment content and enhance user exp
 
 We normally declare the `font-family` in the `html` or `body` selector.
 When we declare a `font-family`, we provide a list of families.
-Based on our operating systems, our browsers select the font to display by first available.
+Browsers select the first available font from the list.
 Therefore, we place the main, desired font at the beginning of the list but
 then provide fallback fonts in case the main font is unavailable in the reader's browser.
 
@@ -138,7 +138,7 @@ It's generally worthwhile to use these HTML elements when the reason for the emp
 
 ### Font Weight
 
-We use the [`font-weight`][font_weight_w3] property to thickness of the font, or its boldness.
+We use the [`font-weight`][font_weight_w3] property to control the thickness of the font, or its boldness.
 Since font thickness is defined numerically, we can specify a range of weights, from light to heavy.
 
 ```
@@ -160,16 +160,16 @@ Again, unless there is some semantic reason to do so, use the CSS `font-weight` 
 
 ### Font Size and Scaling
 
-It's a good idea to clarify the default `font-size` in the `html` selector, and
-then modify font-sizes throughout the document with respect to that.
+It's a good idea to set a base `font-size` in the `html` selector, and
+then modify font sizes throughout the document with respect to that.
 
 ```
 html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 ```
 
-However, we can also implement different font-sizes throughout the document:
+However, we can also implement different font sizes throughout the document:
 
 ```
 .normal-text {
@@ -187,10 +187,10 @@ However, we can also implement different font-sizes throughout the document:
 
 ### Letter and Word Spacing
 
-We have two properties to control the spacing between either letters or words.
-This kind of property, generally referred to as [kerning][kerning_wiki], can augment readability.
-However, be careful implementing this property.
-Most typefaces have been designed with default kerning parameters, and
+We have two properties to control the spacing between letters or words.
+Adjusting spacing can augment readability.
+However, be careful when implementing these properties.
+Most typefaces have been designed with default [kerning][kerning_wiki] parameters, and
 the basic font families have been well tested for readability.
 
 ```
@@ -206,13 +206,13 @@ the basic font families have been well tested for readability.
 ### Line Properties and Text Layout
 
 The `line-height` property adjusts the spacing between lines.
-Like kerning, be conservative when applying this property since it may impact legibility.
-In the following example, we use a class (`.line-height-example`), but this for the kind of property,
-we might want to apply it consistently by applying to one specific element, such as the `<p>` element.
+As with letter spacing, be conservative when applying this property since it may impact legibility.
+In the following example, we use a class (`.line-height-example`), but for this kind of property,
+we might want to apply it consistently to one specific element, such as the `<p>` element.
 
 ```
 .line-height-example {
-    line-height: 1.5; /* Adjusts leading */
+    line-height: 1.5; /* Adjusts line spacing */
 }
 ```
 
@@ -229,8 +229,9 @@ We can `center` or `justify` text with the `text-align` property:
 ```
 
 We can use the `text-indent` property to indent only the first line of an element.
-This is especially useful for paragraph `<p>` elements, but a good use case is to use it as a class
-in a `<span>` element and indent the first line of a paragraph immediately after a heading (e.g., `<h2>`) element:
+This is especially useful for paragraph `<p>` elements.
+A common use case is to add a class to the first paragraph after a heading (e.g., `<h2>`)
+and indent its first line:
 
 ```
 .text-indent-example {
@@ -249,7 +250,6 @@ The default is to underline text, but we can also use `text-decoration`
 to add an [overline or line-through][text_decoration_line_mdn].
 We may also color the line.
 
- 
 ```
 .underline-text {
     text-decoration: underline;
@@ -286,12 +286,9 @@ A good use case is to apply this to various heading elements (e.g., `<h2>`), suc
 As stated before, fonts are generally provided by the operating system.
 Since there are different operating systems (e.g., Windows, macOS, iOS, Linux, Android, etc),
 not all fonts are available for all OSes.
-OSes from Microsoft, Apple, and Google might share the most common fonts because commercial companies
-pay or charge licensing fees for many standard fonts since fonts may be copyrighted.
-In any case, this is why when we declare font families, we always declare `serif` as the fallback font-family
-if we are using a copyrighted serif font like [Times New Roman][times_wiki];
-or `sans-serif` as the fallback font-family if we are using a copyrighted sans-serif font like [Arial][arial_wiki];
-and so forth.
+Some common fonts ship across multiple platforms, but availability still varies.
+This is why, when we declare font families, we include a generic family fallback,
+such as `serif` or `sans-serif`, at the end of the list.
 
 However, we can load fonts from external sources.
 One major example is [Google Fonts][google_fonts].
@@ -305,7 +302,7 @@ First, we may not know or agree with the privacy policies when using outsourced 
 Also, outsourcing fonts means relying on third-party services.
 While these services may be reliable, they could go down.
 Lastly, depending on the source used for outsourced fonts,
-using outsourced fonts may requires extra bandwidth:
+using outsourced fonts may require extra bandwidth:
 
 > The [Google Fonts Privacy Policy][google_fonts_privacy] makes an argument that using their services
 > instead of self-hosting their fonts saves bandwidth.
@@ -315,10 +312,10 @@ This offers greater control and performance and allows our desired fonts to be u
 To do this, we need to:
 
 1. Download the font files:
-    1. we obtain font files in formats like `.woff`, `woff2`, `ttf`, or `.otf` from a **trusted** source.
-    2. we save those fonts to a designated `fonts/` directory in our project.
+    1. We obtain font files in formats like `.woff`, `woff2`, `ttf`, or `.otf` from a **trusted** source.
+    2. We save those fonts to a designated `fonts/` directory in our project.
 2. Define the font in our CSS:
-    1. we use the `@font-face` rule to specify the font name and file path.
+    1. We use the `@font-face` rule to specify the font name and file path.
 
 Finally, we might add the following to our CSS stylesheet to use a font named `CustomFont`:
 
@@ -367,7 +364,6 @@ readability, legibility, hierarchy, consistency, alignment and balance, contrast
 
 [1001_fonts]:https://www.1001fonts.com/
 [adobe_fonts]:https://fonts.adobe.com/
-[arial_wiki]:https://en.wikipedia.org/wiki/Arial
 [b_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b
 [em_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em
 [font_face_w3]:https://www.w3.org/TR/css-fonts-4/#font-face-rule
@@ -389,7 +385,6 @@ readability, legibility, hierarchy, consistency, alignment and balance, contrast
 [text_decoration_style_mdn]:https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style
 [text_transform_mdn]:https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform
 [the_league]:https://www.theleagueofmoveabletype.com/
-[times_wiki]:https://en.wikipedia.org/wiki/Times_New_Roman#Free_alternatives
 [typeface_wiki]:https://en.wikipedia.org/wiki/Typeface
 [typography_wiki]:https://en.wikipedia.org/wiki/Typography
 [velvetyne]:https://velvetyne.fr/

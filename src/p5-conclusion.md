@@ -7,21 +7,21 @@ No JavaScript required.
 
 Some call this [The rule of least power][rule_html_hell].
 The idea is to use the least powerful, most descriptive programming language before using more procedural programming languages.
-This is incredibly effective for web development for at least several reasons.
-First, the web is built first on HTML as the base technology and is backwards compatible to prior HTML versions.
-This means that if all the more complicated technologies (like JavaScript, etc) fail, HTML should still load.
+This is incredibly effective for web development for several reasons.
+First, the web is built on HTML as the base technology and is backwards compatible with prior HTML versions.
+This means that if the more complicated technologies (like JavaScript, etc) fail, HTML should still load.
 CSS probably will, too.
-Second, HTML, and even CSS, are fast because the basics of them are simple.
-They are incredibly focused on the document.
+Second, HTML, and even CSS, are fast because their basics are simple.
+They are focused on the document.
 
-Last, HTML is [highly tolerant][html_computerphile].
+Finally, HTML is [highly tolerant][html_computerphile].
 This means we can make a lot of mistakes in HTML, and web browsers will adjust.
 They won't even **crash**!
-If we make a mistake in our JavaScript code, the JavaScript will fail.
-Maybe that means the web page won't load, or more severely, the browser won't grind to a halt and crash.
+If we make a mistake in our JavaScript code, that script can fail.
+That might mean a feature doesn't work, or, in worst cases, a runaway script can freeze the browser.
 
-I should stress the importance of the document more.
-Focusing on HTML allows us to focus on a document's structure and content, both of which inform each other and make web pages accessible.
+I should stress the importance of the document.
+Focusing on HTML keeps us focused on a document's structure and content, both of which inform each other and make web pages accessible.
 They also serve as the basis for CSS and JavaScript.
 These other, more complicated technologies require access to the [DOM, or the Document Object Model][dom_wiki], and
 as a markup language, HTML's focus on the document underpins the DOM structure used by both CSS and JavaScript.
@@ -40,8 +40,8 @@ Use them wisely.
 
 As you practice and acquire proficiency with the basics covered here, I invite you to keep experimenting.
 There are a lot of basics we haven't covered.
-For instance, since CSS is *rule-based*, there is a lot more to learn about writing conditional statements
-that initiate sets of rules depending on the [context][css_container_mdn], the [device][css_device_mdn], and the [browser][css_browser_mdn].
+For instance, since CSS is *rule-based*, there is a lot more to learn about writing conditional rules
+that apply sets of styles depending on the [context][css_container_mdn], the [device][css_device_mdn], and the [browser][css_browser_mdn].
 There are other so-called [at-rules][css_at_rules_mdn] to learn, too.
 Furthermore, there is more to learn about CSS layouts, like [CSS Grid][css_grid_mdn],
 which allows for more complicated layout designs than CSS Flexbox.

@@ -13,7 +13,7 @@ CSS is very powerful.
 As an example, the [CSS Zen Garden][css_zen] demonstrates how a single HTML file
 can be rendered differently simply by applying different CSS rules to it.
 
-## Way to Apply CSS
+## Ways to Apply CSS
 
 There are three ways to apply CSS to a web page.
 We can add **external CSS** stylesheets using the HTML `<link>` element in a web document's `<head>` section.
@@ -51,7 +51,7 @@ Using external stylesheets has several advantages:
 However, we can also add CSS to a single page using two different methods: **internal CSS** and **inline CSS**.
 We add internal CSS by using the HTML `<style>` tag in the `<head>` section of our web document.
 When adding it to a single page, whatever CSS rules we add in the `<style>` element only apply to that single page.
-In the basic example below, I change the color of **all** `<p>` elements in a single web page to green using inline CSS.
+In the basic example below, I change the color of **all** `<p>` elements in a single web page to green using internal CSS.
 
 ```
 <!DOCTYPE html>
@@ -102,14 +102,15 @@ In this case, the first line is the default color, and then I change the followi
 </html>
 ```
 
-In short, using external, internal, and inline CSS is a matter of applying CSS with greater page and element specificity.
+In short, using external, internal, and inline CSS is a matter of choosing the scope of where styles apply.
 External stylesheets can be used by all pages on a website.
 Internal CSS is used by a single page.
 Inline CSS is used by a single element in a single page.
 
-Be aware that inline styles override internal and external styles and internal styles override external styles.
+Be aware that inline styles typically override internal and external styles.
+When rules conflict, the most specific rule or the one that appears later will usually win.
 That is, if I declare in an external stylesheet that all `<p>` elements should be red,
-but then use `<p style=color:green;">` on some page in my site,
+but then use `<p style="color:green;">` on some page in my site,
 green will override the red for that particular case.
 
 ## Conclusion
@@ -120,8 +121,8 @@ When desired, there are certain methods we can use to apply CSS to single pages 
 even when CSS code is in an external stylesheet.
 
 In the next two sections, we first learn about CSS **selectors**, which is the most important and basic aspect of CSS to know.
-Then will learn how to apply colors and define units of measurement.
-Later we will learn CSS that will allow us change fonts and add other effects.
+Then we will learn how to apply colors and define units of measurement.
+Later we will learn CSS that will allow us to change fonts and add other effects.
 Then we will acquire an understanding of how CSS controls the elements on a page and
 use that understanding to create various layouts.
 

@@ -4,15 +4,15 @@
 
 It may be too obvious to say, but computer applications use and exchange data in order to operate.
 For example, an [OPAC (library catalog)][opac_wiki] contains bibliographic records (data)
-that allows users to search the data from a browser to locate information sources.
-An [Apache web server][apache_wiki] stores configuration information in order to turn on, off, or fine tune the HTTP services it provides.
+that allow users to search a catalog from a browser to locate information sources.
+An [Apache web server][apache_wiki] stores configuration information in order to turn on, off, or fine-tune the HTTP services it provides.
 
 What may not be obvious is that data is stored in a variety of formats.
 Library science students may be familiar with [XML (Extensible Markup Language)][xml_wiki] because it's used to serialize MARC data
 (see [MARCXML][marcxml_loc]) or [DublinCore (DC)][dc_dcorg] metadata.
 XML performs this service by storing data and metadata in a [standardized format][xml_w3].
 [CSV (comma separated values)][csv_wiki] files function as a *de facto* standard for storing tabular data.
-Data stored in CSV files are often used for data or statistical analysis, like in the R or Python programming languages.
+Data stored in CSV files are often used for data analysis or statistical work, like in the R or Python programming languages.
 [YAML][yaml_wiki] files are used to store configuration files for various applications.
 
 Oftentimes we might hear that data or metadata is **encoded** in a certain way, such as in MARC or DC, and
@@ -72,7 +72,7 @@ And:
 > An *array* is an ordered collection of values. An array begins with [ `left bracket` and ends with ] `right bracket`.
 > Values are separated by , `comma`.
 
-Name/value pairs are separated by colons and both are **double quoted**:
+Name/value pairs are separated by colons. Names are double-quoted strings, and string values are double-quoted:
 
 ```
 "name": "value"
@@ -84,7 +84,7 @@ Values may take on specific data types that include:
 - numbers
 - JSON objects
 - arrays
-- Boolean ("true" or "false")
+- booleans (`true` or `false`)
 - null
 
 ### A Simple JSON Object
@@ -117,7 +117,7 @@ Fortunately, we can use a JSON **array** to add more interests.
 
 An array is assigned a name and begins and ends with square brackets.
 Each item in a JSON array ends with a comma, but like the last item in a JSON object, the last item in an array does not end with a comma.
-To see what this looks like, I convert the `interests` field to a array that lists several of this person's interests:
+To see what this looks like, I convert the `interests` field to an array that lists several of this person's interests:
 
 ```
 {
@@ -140,10 +140,10 @@ To see what this looks like, I convert the `interests` field to a array that lis
 
 ### Nesting JSON Objects
 
-As noted, JSON objects may take as a *value* other JSON objects.
+As noted, JSON objects may take other JSON objects as a *value*.
 This is useful when a particular field name may be converted into an object itself.
 For example, in the above JSON objects, the `worksFor` field name can include other properties and thus may be extended into an **object**.
-Since the person described in the JSON object also has a work location, I can add that as a new object named as `location`.
+Since the person described in the JSON object also has a work location, I can add that as a new object named `location`.
 The result is the following JSON object that contains two nested JSON objects: `worksFor` and `location`.
 Note that since the person described in this object teaches in two programs, I converted the `program` field name into a list
 that includes both programs.
@@ -161,16 +161,16 @@ that includes both programs.
         "academic libraries"
     ],
     "worksFor": {
-        "name": "University of Kentucky", // nested object describing organization
+        "name": "University of Kentucky",
         "college": "College of Communication and Information",
         "department": "School of Information Science",
         "program": [
-            "Information Communication Technology", // new array
+            "Information Communication Technology",
             "Library Science"
         ]
     },
     "location": {
-        "streetAddress": "326 Lucille Little Library", // nested object describing location
+        "streetAddress": "326 Lucille Little Library",
         "addressLocality": "Lexington",
         "addressRegion": "Kentucky",
         "postalCode": "40506"
@@ -178,7 +178,7 @@ that includes both programs.
 }
 ```
 
-> Note: Comments (marked with `//`) in the above JSON object are shown here for explanation and are not allowed in actual JSON syntax.
+> Note: The example above omits comments because JSON does not allow them.
 
 ### JSON Linting
 
@@ -198,7 +198,7 @@ In the next section, we will begin to explore the full richness of the schema.or
 
 Before we can use JSON-LD, we need to know how to understand and use JSON.
 We learned that JSON uses a `"name": "value"` syntax.
-Both `"name"` and `"value"` are double quoted.
+Both `"name"` and string values are double quoted.
 **Values** may include specific data types such as strings, numbers, JSON objects, arrays, Boolean, and null.
 Each `"name": "value"` item ends with a comma.
 The last `"name": "value"` item in a JSON object does not end in a comma.
@@ -206,7 +206,7 @@ If a JSON object includes an array as a data type, the array is enclosed in squa
 JSON objects nested in JSON objects are **named** and then the nested object is enclosed in curly brackets `{ }`.
 
 As with HTML and CSS, remember that it's important to validate our JSON syntax.
-Therefore, we also learned about tools like the JSON Linter.
+Therefore, we also learned about tools like JSONLint.
 The more complex our JSON objects become, the easier it is to introduce syntax errors into them.
 So be sure to validate your JSON.
 
@@ -218,7 +218,6 @@ to *understand* what your website is about, even if no human ever reads it.
 [css3_validator_w3c]:https://jigsaw.w3.org/css-validator/
 [csv_wiki]:https://en.wikipedia.org/wiki/Comma-separated_values
 [dc_dcorg]:https://www.dublincore.org/specifications/dublin-core/dc-xml-guidelines/
-[full_schema_schema_org]:https://schema.org/docs/full.html
 [html5_validator_w3c]:https://validator.w3.org/
 [jq]:https://jqlang.org/
 [json_json_org]:https://www.json.org/json-en.html
@@ -230,7 +229,6 @@ to *understand* what your website is about, even if no human ever reads it.
 [opac_wiki]:https://en.wikipedia.org/wiki/Online_public_access_catalog
 [schema]:https://schema.org/
 [serialization_wiki]:https://en.wikipedia.org/wiki/Serialization
-[taxonomic_rank]:https://en.wikipedia.org/wiki/Taxonomic_rank
 [utf8_wiki]:https://en.wikipedia.org/wiki/UTF-8
 [xml_w3]:https://www.w3.org/TR/xml/
 [xml_wiki]:https://en.wikipedia.org/wiki/XML

@@ -1,27 +1,27 @@
-# Colors and Units of Measurements
+# Colors and Units of Measurement
 
 ## Introduction
 
 Designing a web page begins by controlling color and sizing.
-These base conditions lay the foundations for shaping user experience.
+These base conditions lay the foundation for shaping the user experience.
 It's also where the fun begins.
 
-Importantly, colors establish a site's visual identity, improves readability, and 
+Importantly, colors establish a site's visual identity, improve readability, and
 [creates contrast][color_contrast], which is important for website accessibility.
 There are multiple methods to define colors in CSS.
 These methods include named colors (red, blue, green, yellow, etc),
-RGB values, hexadecimal codes, and HSL (Hue-Saturated-Lightness) values.
-Each method has its strengths with respect to levels of precision and to device type.
+RGB values, hexadecimal codes, and HSL (Hue-Saturation-Lightness) values.
+Each method has its strengths depending on precision needs and ease of use.
 
 CSS also provides many different types of units of measurement.
 These units allow for precise control over layout and typography, which we will cover soon,
 and define dimensions such as font size, spacing, and layout structure.
-There absolute units, such as pixels and inches, and there are relative units, such as `rem` and `em`.
+There are absolute units, such as pixels and inches, and there are relative units, such as `rem` and `em`.
 The latter make designs more flexible and responsive.
 
 In this section, we will explore how to use CSS color properties to enhance design and
 measurement units to create scalable, adaptable layouts.
-These concepts will help you build visually appealing and responsible web pages.
+These concepts will help you build visually appealing and responsive web pages.
 
 ## Colors
 
@@ -30,15 +30,15 @@ The common ones include:
 
 - Color keywords:
     - [Basic color keywords][basic_color_keywords_w3]: black, silver, gray, red, green, teal, etc.
-    - [Extended color keywords][extended_color_keywords_w3]: aqua, chocolate, cyan, gold, indigo, lime, etc
+    - [Extended color keywords][extended_color_keywords_w3]: aqua, chocolate, cyan, gold, indigo, lime, etc.
 - RGB values:
     - The RGB value can declare a specific color: `p { color: rgb(255, 241, 0); }` (a yellow color)
-    - We can add a fourth value to indicate opacity; here I set opacity to 50%: `p { color: rgb(255, 241, 0, 0.5); }`
-- Hexadecimal values;
+    - We can add a fourth value to indicate opacity; here I set opacity to 50%: `p { color: rgba(255, 241, 0, 0.5); }`
+- Hexadecimal values:
     - We can use a hexadecimal value to identify a color: `p { color: #fffb00; }`
-        - Lots of websites list RGB and Hexadecimal values, such as: [RGB / Hexademical Color Picker][rgb_color_picker] 
-- HSL (hue-saturated-lightness) values:
-    - HSL is considered more useful than RGB because it's less hardware dependent and considered more intuitive.
+        - Lots of websites list RGB and Hexadecimal values, such as: [RGB / Hexadecimal Color Picker][rgb_color_picker] 
+- HSL (Hue-Saturation-Lightness) values:
+    - HSL is often considered more intuitive because it maps directly to hue, saturation, and lightness.
     - The values stand for Hue, Saturation, and Lightness: `p { color: hsl(291, 100%, 50%); }`
     - The Hue is a degree on a color wheel and accepts values from 0 to 360.
     - Saturation and Lightness are coded as percentages.
@@ -90,36 +90,36 @@ html {
 We can colorize the headings:
 
 ```
-h1 ~ h2 {
+h1, h2 {
     color: yellow;
     background-color: aqua;
 }
 ```
 
-We can add background color the `<section>` element to create a box-like effect.
+We can add background color to the `<section>` element to create a box-like effect.
 The code below uses HSL and RGB, as an example.
 
 ```
 section {
     background-color: hsl(360, 100%, 60%);
-    color: rgb(255,241,0,0.5);
+    color: rgba(255, 241, 0, 0.5);
 }
 ```
 
 In practice, it's certainly fine to stick to one method (keywords, RGB, HSL, hexadecimal), or mix it up.
 
-## Data Types and Units of Measurements
+## Data Types and Units of Measurement
 
 Like many programming languages, CSS accepts a variety of data types.
 The common data types in CSS include:
 
 - Integers: whole numbers (e.g., 1, 42, -5)
-- Floating point, aka, decimal numbers (e.g., 1.5, 3.14, -0.75)
-- Dimensional values: length, width, angle, and more
+- Floating-point, aka, decimal numbers (e.g., 1.5, 3.14, -0.75)
+- Dimensional values: lengths, angles, and other measurements
 - Percentages: fractions represented as percentages
 
-These data types are used primarily to add distance or length to elements.
-There are two broad categories of length and each include a variety of units:
+These data types are used to describe sizes, spacing, and other measurements.
+There are two broad categories of length, and each includes a variety of units:
 
 - Relative lengths:
     - Font-relative lengths:
@@ -144,7 +144,7 @@ This is because relative lengths are more responsive to different device sizes a
 However, it's important to know that absolute lengths exist if needed.
 
 Consider the following HTML snippet.
-In the snippet below, I use internal CSS for demonstration purposes, but in practice, use an external stylesheet.
+In the snippet below, I use internal CSS for demonstration purposes, but in practice, we use an external stylesheet.
 
 ```
 <html>
@@ -152,7 +152,7 @@ In the snippet below, I use internal CSS for demonstration purposes, but in prac
         <title>sizes</title>
 <style>
 html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 header {
@@ -197,16 +197,16 @@ li {
 </html>
 ```
 
-### Set `rem` in the `html` selector
+### Set a base font size in the `html` selector
 
 ```
 html {
-    font-size: 1rem;
+    font-size: 16px;
     }
 ```
 
-By default, browsers set `1rem = 16px`, unless overridden.
-In this example, we make the connection explicit.
+By default, browsers set the root font size to `16px`, unless overridden.
+In this example, we make that base size explicit.
 
 ### Example: using `em` in `header`, `h1`, and `h2`
  
@@ -220,11 +220,11 @@ header {
 }
 
 h1 {
-    font-size: 1em;
+    font-size: 2em;
 }
 
 h2 {
-    font-size: 1em;
+    font-size: 2em;
 }
 ```
 
@@ -234,8 +234,7 @@ Therefore, since `1em = 16px`, the `<header>` element is set to `16px`.
 Since `<h1>` is inside `<header>`, and since it uses an `em` unit of measurement, it inherits its size from the `<header>` element.
 Since the `h1` selector is set to `2em`, then `2em * 16px = 32px`.
 
-Since `<h2>` is also inside `<header>` (it is not a descendant but a sibling to `<h1>`),
-it also inherits from `<header>`.
+Since `<h2>` is also inside `<header>`, it inherits from `<header>` as well.
 Since the `h2` is set to `2em`, then as with `h1`, we have `2em * 16px = 32px`.
 Specifically, since `header` is set to `1em`, its font size is unaffected with respect to `html`.
 Therefore, `h1` and `h2` are both calculated relative to `html`.
@@ -249,8 +248,10 @@ Since `ul` is calculated to be `32px`, then `li` is `1em * 32px = 32px`.
 
 In practice, therefore, we can see how `em` compounds based on what it inherits from its parent element.
 This makes using `rem` more predictable.
-If we set the font-size of all elements to `1rem`, then the font-size for all elements would be `16px` because `1rem * 16px = 16px`.
-However, if we only set the `html` selector to `1rem`, then the browser uses its default sizes.
+If we set the font-size of all elements to `1rem`, then each element computes to the root font size
+(`16px` by default).
+However, if we only set the `html` selector (or leave it at its default),
+then the browser uses its default sizes for other elements.
 
 ### Be sure to understand inheritance.
 
@@ -258,7 +259,7 @@ Consider the following rules:
 
 ```
 html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 header {
@@ -281,7 +282,7 @@ Even though the `header` is set to `2rem`, the `h1` and `h2` rules explicitly de
 So they ignore the inherited value from `header`.
 That is, `h1` and `h2` are calculated with respect to `html`.
 
-- `html`: `1rem * 16px = 16px`
+- `html`: `16px`
 - `h1`: `1rem * 16px = 16px`
 - `h2`: `1.5rem * 16px = 24px`
 
@@ -289,7 +290,7 @@ However, if we only use the following two rules in our CSS:
 
 ```
 html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 header {
@@ -297,12 +298,13 @@ header {
 }
 ```
 
-Then both `h1` and `h2` would increase by `2rem` since they are direct children of `<header>`. 
+Then `h1` and `h2` would scale relative to `header`,
+and browser defaults would make them larger than the base size.
 
 ## Page Sizing
 
 Viewport relative lengths are useful when controlling the width of the sections on a page,
-like `<main>`, `<section>`, `<article>`, and like.
+like `<main>`, `<section>`, `<article>`, and similar elements.
 Consider the following HTML snippet:
 
 ```

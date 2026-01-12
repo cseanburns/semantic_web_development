@@ -35,7 +35,7 @@ The main terms include:
 - `type`
 
 We can use this data model for all sorts of items or works.
-Here I use it to describe Toni Morrison's Pulitzer Prize winning novel, *Beloved*:
+Here I use it to describe Toni Morrison's Pulitzer Prize-winning novel, *Beloved*:
 
 | DC Term    | Property             |
 | ---------  | ----------           |
@@ -66,8 +66,7 @@ As a taxonomy, schema.org is a kind of hierarchical, relational classification s
 schema.org stresses foundational components, such as concepts or classes, properties or attributes, relationships, and instances.
 
 Like other data models, the schema.org vocabulary provides a method for adding structured, linked data.
-The data is *linked* because the vocabulary is interconnected via a hierarchical data model.
-This means that each type or property can point to or be reused across datasets, and
+The data is *linked* because types and properties can reference one another and be reused across datasets, and
 it's this characteristic that creates a web of meaning that is readable by machines.
 
 For example, the root data type in schema.org is `Thing`.
@@ -87,7 +86,7 @@ Digging deeper, if we focus on the `EducationalOrganization` type, we find that 
 - `ElementarySchool`
 - `HighSchool`, and so on.
 
-Schema.org data types are *transitive* (if `a > b` and `b > c`, then `a > c`).
+Schema.org subclass relationships are *transitive* (if `a > b` and `b > c`, then `a > c`).
 For example, the *University of Kentucky* is an `instance` of a `CollegeOrUniversity` type.
 This itself is a subclass of an `EducationalOrganization`.
 We could go on: an `EducationalOrganization` type is a subclass of an `Organization` type.
@@ -114,23 +113,23 @@ A [`Thing`][thing_schema_org] type can have the following properties:
 
 And an `EducationalOrganization` Thing can have `alumni` as a property.
 
-And each of those properties may have additional properties or take on values.
-For example, for `image`, we can provide a URL to an actual image.
-Or we may provide a `caption` for it.
+Properties take values, and those values can be simple (like text or URLs) or structured objects
+with their own properties.
+For example, `image` can be a URL or an `ImageObject` that includes a `caption`.
 
 However, just like `University of Kentucky` can be counted as an instance of `CollegeOrUniversity`,
-each `type` has its own set of **instances** in schema.org.
+each `type` has real-world **instances** that we describe using schema.org.
 To illustrate: since a `CollegeOrUniversity` thing is also an `EducationalOrganization` thing,
 a `CollegeOrUniversity` thing may also have the properties specific to `EducationalOrganization`, such as `alumni`.
 For instance, because `CollegeOrUniversity` inherits from `Thing`,
 it can use general properties like `name`, `description`, and `url`, but
 also more specific ones like `alumni` that are directly inherited from `EducationalOrganization`.
 
-That is, a `CollegeOrUniversity` thing may inherit properties of other types not in its direct lineage.
-Another example: a `CollegeOrUniversity` thing may also be a `CivicStructure` thing and a `Place` thing,
-even though neither of those are specific descendants of `EducationalOrganization`.
+That is, schema.org supports multiple inheritance.
+For example, `EducationalOrganization` is a subtype of both `Organization` and `Place`,
+so a `CollegeOrUniversity` can use properties from all of those broader types.
 In this way, specific `things` and `properties` can interconnect or `link` to each other, forming `linked data`.
-That is, it's this ability to belong to multiple classes, and to inherit properties from these classes,
+That is, it's this ability to belong to multiple classes and to inherit properties from these classes
 that enables schema.org to describe real-world complexity more naturally than rigid, single-hierarchy systems.
 
 <figure>
@@ -146,15 +145,15 @@ Diagram created using <a href="https://wiki.gnome.org/Apps/Dia">Dia</a>.
 </figcaption>
 </figure>
 
-As you can see, a particular `instance` of some `Thing` may be a member of many classes, or be many types of `Things`.
-This is the same as you and me.
+As you can see, a particular `instance` of some `Thing` may be described with multiple types.
+This is similar to how people fit multiple roles.
 For example, I am a professor, a parent, an offspring, etc.
-You might be a student and offspring.
+You might be a student and an offspring.
 Thus, we both share at least one class, and inherit the properties of that class and its broader classes, like `Person`.
 By using this organizational model to describe the content of a web page, search engines can begin to *understand*
 that content and its context and the relationship among *Things* on the web.
 
-To employ schema.org on your web pages requires some familiarity with the data model and what it offers.
+Using schema.org on your web pages requires some familiarity with the data model and what it offers.
 Therefore, begin reviewing the [Full schema hierarchy][full_schema_schema_org] for a complete listing of what is available.
 
 ## Conclusion

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-We have discussed how to add [images](2e-embedded-content.html) to our web pages.
+We have discussed how to add [images][embedded_content] to our web pages.
 Now it's time to learn to style them.
 We will also learn how to style lists, which will include adding images to our lists,
 and styling the background canvas of a web page.
@@ -20,18 +20,18 @@ Second, we may want to change the default format of our images.
 Most of our cameras will default to saving photos as JPEGs.
 Or we might generate images in PNG format.
 These are both popular image formats that are used on the web, along with GIFs.
-However, another popular format is [WEBP][webp_wiki], an image format optimized for the web and
+However, another popular format is [WebP][webp_wiki], an image format optimized for the web and
 that supports [lossy][lossy_wiki] and [lossless][lossless_wiki] compression, transparency, and animation.
 Photo and other types of image editors can export images to WEBP.
 For example, in the [GIMP photo editor][gimp], I can export photos as WEBP and choose lossless or lossy compression when exporting.
 
 Another excellent image format is [SVG][svg_wiki] (Scalable Vector Graphics).
-SVG formats are used for vector based images and are the default file format for programs like [Inkscape][inkscape].
+SVG formats are used for vector-based images and are the default file format for programs like [Inkscape][inkscape].
 These images are ideal for images that are drawn, like logos, icons, or similar forms of visual art.
 Also, since SVG files are text files, we can use scripting languages, like Python, to modify them.
 But one of the most important characteristics of SVG files is that they are scalable.
-That is, no matter how much we zoom in or out on a SVG file, the image will retain its resolution,
-unlike raster or bitmap based images, which will become pixelated.
+That is, no matter how much we zoom in or out on an SVG file, the image will retain its resolution,
+unlike raster or bitmap-based images, which will become pixelated.
 
 ## Images
 
@@ -61,7 +61,7 @@ Therefore, be sure to properly resize the image using a photo editor to optimize
 
 ### `object-fit`
 
-Recall that the [CSS box model](3b-box-model.html) informs everything about how content is styled on a page.
+Recall that the [CSS box model][css_box_model] informs everything about how content is styled on a page.
 This means that even images are enclosed within boxes.
 The following HTML code adds a simple drawing to our web page, and the CSS code sets a border, background color, and dimensions.
 
@@ -105,7 +105,7 @@ First, in the HTML code below, I use classes to style the same image for each of
 
 In the CSS code below, I apply the `object-fit` property to the appropriate classes in the above HTML.
 
-The original image (`box_image.png`) has the dimensions of `513x503`,
+The original image (`box_circle.png`) has the dimensions of `513x503`,
 but we set the `width: 300px` and `height: 400px` in the `img` selector.
 Therefore, the `fill` value will distort the image so that it fills the box:
 
@@ -179,16 +179,16 @@ In the CSS below, I apply the classes by modifying the x-axis and y-axis for eac
     object-position: 50% 50%;
 }
 .position_top {
-    object-position: 50% -50px;
+    object-position: 50% 0%;
 }
 .position_right {
-    object-position: 50px 50%;
+    object-position: 100% 50%;
 }
 .position_bottom {
-    object-position: 50% 50px;
+    object-position: 50% 100%;
 }
 .position_left {
-    object-position: -50px 50%;
+    object-position: 0% 50%;
 }
 ```
 
@@ -262,10 +262,10 @@ I add a few pixels on the right margin of the `img` to add a gap between the ima
 
 ```
 .left_float {
-	width: 75px;
-	height: 75px;
-	float: left;
-	margin-right: 5px;
+    width: 75px;
+    height: 75px;
+    float: left;
+    margin-right: 5px;
 }
 ```
 
@@ -293,16 +293,16 @@ Also note that I change the margin side to left with `margin-left`:
 
 ```
 .right_float {
-	width: 75px;
-	height: 75px;
-	float: right;
-	margin-left: 5px;
+    width: 75px;
+    height: 75px;
+    float: right;
+    margin-left: 5px;
 }
 ```
 
 ### Gradients
 
-We can use [`gradient`][gradients_w3] colors to style images or backgrounds.
+We can use [gradients][gradients_w3] to style images or backgrounds.
 We can apply gradients using angles (e.g., `45deg`) or keywords (e.g., `to top`).
 See the link above for other examples.
 
@@ -317,7 +317,7 @@ See the link above for other examples.
 <img class="top" src='media/box_circle.png' alt='A drawing of a box in a circle'>
 ```
 
-In CSS below, I use a default `linear-gradient` in the first CSS class.
+In the CSS below, I use a default `linear-gradient` in the first CSS class.
 In the second class, I use degrees to specify the exact gradient angle.
 In the third class, I use the `to top` keyword.
 
@@ -353,7 +353,7 @@ A value of `0.0` indicates full transparency and a value of `1.0` indicates a fu
 **HTML**:
 
 ```
-<h3>High Opacity</h3>
+<h3>Low Opacity</h3>
 <img class="opacity_low" src='media/box_circle.png' alt='A drawing of a box in a circle'>
 
 <h3>Medium Opacity</h3>
@@ -457,18 +457,18 @@ We can change to Roman numerals:
 
 ```
 <h3>Upper Roman Numeral</h3>
-<ul class="roman_upper">
+<ol class="roman_upper">
     <li>Apple</li>
     <li>Banana</li>
     <li>Watermelon</li>
-</ul>
+</ol>
 
 <h3>Lower Roman Numeral</h3>
-<ul class="roman_lower">
+<ol class="roman_lower">
     <li>Apple</li>
     <li>Banana</li>
     <li>Watermelon</li>
-</ul>
+</ol>
 ```
 
 We define the use of Roman numerals in CSS.
@@ -494,18 +494,18 @@ We can also use English characters by using either
 
 ```
 <h3>Lower Alpha</h3>
-<ul class="alpha_lower">
+<ol class="alpha_lower">
     <li>Apple</li>
     <li>Banana</li>
     <li>Watermelon</li>
-</ul>
+</ol>
 
 <h3>Upper Alpha</h3>
-<ul class="alpha_upper">
+<ol class="alpha_upper">
     <li>Apple</li>
     <li>Banana</li>
     <li>Watermelon</li>
-</ul>
+</ol>
 ```
 
 **CSS**:
@@ -545,17 +545,17 @@ We can remove all marks using `list-style-type: none`:
 
 ### Changing List Markers
 
-Or may also specify using a `circle`, a `disc`, Unicode, or [other characters][list_style_type_mdn].
+We may also specify using a `circle`, a `disc`, Unicode, or [other characters][list_style_type_mdn].
 
 **HTML**:
 
 ```
 <h3>Circle</h3>
-<ol class="circle"> 
+<ul class="circle"> 
     <li>Apple</li>
     <li>Banana</li>
     <li>Watermelon</li>
-</ol>
+</ul>
 ```
 
 **CSS**:
@@ -574,11 +574,11 @@ In the following example, I use the [Vulcan Salute][vulcan_unicode] as a marker 
 
 ```
 <h3>Vulcan Salute</h3>
-<ol class="vulcan"> 
+<ul class="vulcan"> 
     <li>Apple</li>
     <li>Banana</li>
     <li>Watermelon</li>
-</ol>
+</ul>
 ```
 
 **CSS**:
@@ -594,7 +594,7 @@ In the following example, I use the [Vulcan Salute][vulcan_unicode] as a marker 
 We can also use our own images.
 In the examples below, I used ChatGPT to generate icons for the fruit images.
 These icons were generated as [`webp`][webp_wiki] files, and
-I refer to them using using the `url` value in the CSS.
+I refer to them using the `url` value in the CSS.
 
 In the first list below, I use one icon for all marks:
 
@@ -657,7 +657,7 @@ In the following example, I add an ordered list within an ordered list:
 <ol>
     <li>Apples
         <ol>
-            <li>HoneyCrisp</li>
+            <li>Honeycrisp</li>
             <li>Fuji</li>
         </ol>
     </li>
@@ -696,10 +696,10 @@ Likewise, we can nest an unordered list within an unordered list:
         </ul>
     </li>
     <li>Watermelon
-        <ul>
+        <ol class="roman_lower">
             <li>Crimson Sweet</li>
             <li>Yellow Baby</li>
-        </ul>
+        </ol>
     </li>
 </ul>
 ```
@@ -772,16 +772,16 @@ When nesting, we can apply a different `list-style-type` for the nested lists:
 <h4>Roman Upper/Lower Nested</h4>
 <ol class="roman_upper">
     <li>Apples
-        <ul class="roman_lower">
+        <ol class="roman_lower">
             <li>Honeycrisp</li>
             <li>Fuji</li>
-        </ul>
+        </ol>
     </li>
     <li>Bananas
-        <ul class="roman_lower">
+        <ol class="roman_lower">
             <li>Cavendish</li>
             <li>Plantain</li>
-        </ul>
+        </ol>
     </li>
     <li>Watermelon
         <ul>
@@ -842,7 +842,7 @@ html {
 }
 ```
 
-We need to use the `background-repeat: no-repeat` property and value to disble image repeating:
+We need to use the `background-repeat: no-repeat` property and value to disable image repeating:
 
 ```
 html {
@@ -898,7 +898,7 @@ Have fun, practice, and build your knowledge.
 Your browser will display a [favicon][favicon_wiki] for a site in the site's tab, bookmark, etc.
 You can create favicons using most of the major file formats: PNG, JPEG, SVG.
 You can also use the [ICO][ico_wiki] file format.
-The important thing to know is that favicons may be created in mutiple sizes and
+The important thing to know is that favicons may be created in multiple sizes
 but should maintain a perfectly square ratio (1:1 aspect ratio).
 The most common sizes are 16x16 pixels, 32x32 pixels, 48x48 pixels, 96x96 pixels, etc.
 These sizes are used on different devices or under different views (tab, bookmark, etc).
@@ -907,13 +907,14 @@ However, it's common to make available multiple sizes and the browser can choose
 
 Favicons can be created in a photo editor, like GIMP, or better yet, in an SVG editor, like Inkscape.
 To use a favicon on a site, we use the `<link>` tag in the `<head>` of a web document.
-The following is an example of linking to four different files in a separate `icons/` directory with different favicon sizes:
+The following is an example of linking to several different files in a separate `icons/` directory
+with different favicon sizes, plus an Apple touch icon:
 
 ```
-<link rel="icon" type="icons/png" sizes="16x16" href="icons/icon_16.png">
-<link rel="icon" type="icons/png" sizes="32x32" href="icons/icon_32.png">
-<link rel="icon" type="icons/png" sizes="72x72" href="icons/icon_72.png">
-<link rel="icon" type="icons/png" sizes="114x114" href="icons/icon_114.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/icon_16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/icon_32.png">
+<link rel="icon" type="image/png" sizes="72x72" href="icons/icon_72.png">
+<link rel="icon" type="image/png" sizes="114x114" href="icons/icon_114.png">
 <link rel="apple-touch-icon" sizes="144x144" href="icons/icon_144.png">
 ```
 
@@ -923,6 +924,7 @@ The files in the above code represent the different image sizes:
 - `icon_32.png`: 32x32 pixels
 - `icon_72.png`: 72x72 pixels
 - `icon_114.png`: 114x114 pixels
+- `icon_144.png`: 144x144 pixels (Apple touch icon)
 
 The `rel` attribute with the value of `apple-touch-icon` makes the favicon more accessible for iOS devices
 (because Apple).
@@ -930,6 +932,8 @@ The `rel` attribute with the value of `apple-touch-icon` makes the favicon more 
 [css_backgrounds_w3]:https://www.w3.org/TR/css-backgrounds-3/#backgrounds
 [css_images_w3]:https://www.w3.org/TR/css-images-3/#image-values
 [css_lists_w3]:https://www.w3.org/TR/css-lists-3/#propdef-list-style-image
+[css_box_model]:3b-box-model.html
+[embedded_content]:2e-embedded-content.html
 [emojis_unicode]:https://unicode.org/emoji/charts/full-emoji-list.html
 [favicons_google]:https://developers.google.com/search/docs/appearance/favicon-in-search
 [favicon_wiki]:https://en.wikipedia.org/wiki/Favicon

@@ -11,7 +11,7 @@ author and to provide a description and keywords of the web pages we create.
 Adding this metadata provides search engines with the information they need to return relevant results to their users.
 
 As an example, the following HTML code snippet was introduced in the
-[Document Structure and Metadata](2a-document-structure-and-metadata.html) section of this work.
+[Document Structure and Metadata][document_structure_metadata] section of this work.
 The code snippet includes `<title>` and `<meta>` elements that describe a page about *Linux Systems Administration*
 authored by *C. Sean Burns*:
 
@@ -55,10 +55,10 @@ HTML5 provides tools to add metadata and semantic data to our web pages and thus
 
 However, those elements are primarily aimed at adding semantic data about the document as a whole and its structure.
 In this last section of our work, we will explore how to add semantic data to our web pages that provide
-more information about the **content** of our those pages.
+more information about the **content** of those pages.
 
 To do that, we will learn about the [schema.org][schema] vocabulary.
-Schema.org is a **data model** that we will serialize as JSON-LD, or [JSON Linked Data][json_ld_wiki].
+Schema.org is a **data model** that we will serialize as JSON-LD, or [JSON-LD][json_ld_wiki].
 Therefore, we will first learn how to structure data using [JSON][json_wiki],
 which is a format for data exchange, primarily across the internet.
 And then we will learn how to serialize, or integrate, a schema.org vocabulary into JSON-LD.
@@ -83,6 +83,7 @@ By the end of this chapter, you will be able to:
 [nav_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
 [schema]:https://schema.org/
 [semantic_web_wiki]:https://en.wikipedia.org/wiki/Semantic_Web
+[document_structure_metadata]:2a-document-structure-and-metadata.html
 
 <!--
 ## References
