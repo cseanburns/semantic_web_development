@@ -180,28 +180,28 @@
                     <main>
                         <h1 id="typography-and-font-styles"><a class="header" href="#typography-and-font-styles">Typography and Font Styles</a></h1>
 <p>The <em>typography</em> of a document is generally its most visible aspect.
-This is true regardless if the document is a web page, a book, a billboard, or a flyer.
+This is true regardless of whether the document is a web page, a book, a billboard, or a flyer.
 We use typographic principles to shape how text is presented, read, and interpreted.</p>
 <p>In web development, typography is important because it influences the user experience.
 It affects readability, aesthetics, and accessibility, and
 it plays a central role in how content is presented across different screen sizes and devices.</p>
-<p>In all, good typography can:</p>
+<p>Overall, good typography can:</p>
 <ul>
 <li>improve readability and legibility</li>
 <li>establish identity and tone</li>
 <li>enhance user engagement</li>
-<li>maximize accessibility for users, and this includes those with visual impairments</li>
+<li>maximize accessibility for users, including those with visual impairments</li>
 <li>contribute to an intuitive and pleasant user experience</li>
 </ul>
 <h2 id="key-concepts-in-typography"><a class="header" href="#key-concepts-in-typography">Key Concepts in Typography</a></h2>
 <p>Typography consists of several elements that determine how text appears.
 These elements include:</p>
 <ul>
-<li><code>font-family</code>: this is the specific typeface or group of typefaces. Major typefaces include: <code>serif</code>, <code>sans-serif</code>, <code>monospace</code></li>
+<li><code>font-family</code>: this is the specific typeface or group of typefaces. Major families include: <code>serif</code>, <code>sans-serif</code>, <code>monospace</code></li>
 <li><code>font-style</code>: this includes variations like normal, italic, or oblique</li>
 <li><code>font-weight</code>: this addresses the thickness of characters and ranges from light to bold</li>
-<li><code>font-size</code>: this consists of the height of characters. It can be set in fixed or relative units, and it alters the content-size of its box</li>
-<li><code>letter-spacing</code>, or kerning: this addresses the spacing between individual letters</li>
+<li><code>font-size</code>: this sets the height of characters. It can be set in fixed or relative units, and it alters the content size of its box</li>
+<li><code>letter-spacing</code>: this addresses the spacing between individual characters</li>
 <li><code>line-height</code>: this addresses the spacing between lines of text</li>
 <li><code>text-align</code>: this addresses the horizontal alignment of text and is used to center or justify text</li>
 <li><code>text-indent</code>: this addresses the indentation of text</li>
@@ -215,7 +215,7 @@ In short, typography is the art of arranging text,
 while fonts are the specific tools used in that arrangement.</p>
 <h2 id="basic-typography-principles"><a class="header" href="#basic-typography-principles">Basic Typography Principles</a></h2>
 <p>The goal of typography is to improve readability.
-This is accomplished by creating web pages and sites that are visually appealing.
+This is supported by creating web pages and sites that are visually appealing.
 The following key principles help achieve that goal:</p>
 <ul>
 <li><strong>Readability and legibility</strong>: Use appropriate font choices, sizes, and spacing to make sure that text is easy to read.</li>
@@ -231,7 +231,7 @@ The major font families include <code>serif</code>, <code>sans-serif</code>, and
 We select font families based on several criteria:</p>
 <ul>
 <li><strong>Serif fonts</strong>: these are typefaces that have decorative strokes, or <em>serifs</em>, at the ends of letters. Common examples include Times New Roman and Georgia. These kinds of typefaces are commonly used in print and they convey a classic, professional look.</li>
-<li><strong>Sans-serif fonts</strong>: these fonts lack (<em>sans</em>) serifs or decorations. These fonts convey cleaner and more modern designs. Common examples include Arial, Helvetica, and Verdana. They benefit digital content because they augment clarity and readability on screens in particular.</li>
+<li><strong>Sans-serif fonts</strong>: these fonts lack (<em>sans</em>) serifs or decorations. These fonts convey cleaner and more modern designs. Common examples include Arial, Helvetica, and Verdana. They often improve clarity and readability on screens in particular.</li>
 <li><strong>Monospace fonts</strong>: the characters in these fonts take up the same amount of horizontal space. Examples include Courier New and Consolas. These font families are typically used in coding environments or to display code in web documents because they make it easier to align characters and read structured text.</li>
 </ul>
 <h2 id="typography-in-web-development"><a class="header" href="#typography-in-web-development">Typography in Web Development</a></h2>
@@ -240,13 +240,13 @@ The goal is to always make sure that text is legible and visually appealing.
 While this section covers the basics, typography is a big subject.
 Entire books are dedicated to typography, and companies spend lots of resources on developing and using good fonts
 because fonts play an important role in brand identity.
-However, as you begin to use and then understand typography principles,
+However, as you begin to use and understand typography principles,
 you will be able to use these principles to augment content and enhance user experience.</p>
 <h2 id="typography-in-practice"><a class="header" href="#typography-in-practice">Typography in Practice</a></h2>
 <h3 id="font-family"><a class="header" href="#font-family">Font Family</a></h3>
 <p>We normally declare the <code>font-family</code> in the <code>html</code> or <code>body</code> selector.
 When we declare a <code>font-family</code>, we provide a list of families.
-Based on our operating systems, our browsers select the font to display by first available.
+Browsers select the first available font from the list.
 Therefore, we place the main, desired font at the beginning of the list but
 then provide fallback fonts in case the main font is unavailable in the reader's browser.</p>
 <p>In the following example, <code>Arial</code> is the font we ideally want to use in our web document, but
@@ -286,7 +286,7 @@ I could use a <code>&lt;span&gt;</code> element with a <code>class</code> attrib
 to add some kind of emphasis to our text that generally renders it as italicized text.
 It's generally worthwhile to use these HTML elements when the reason for the emphasis has a semantic purpose.</p>
 <h3 id="font-weight"><a class="header" href="#font-weight">Font Weight</a></h3>
-<p>We use the <a href="https://www.w3.org/TR/css-fonts-4/#font-weight-prop"><code>font-weight</code></a> property to thickness of the font, or its boldness.
+<p>We use the <a href="https://www.w3.org/TR/css-fonts-4/#font-weight-prop"><code>font-weight</code></a> property to control the thickness of the font, or its boldness.
 Since font thickness is defined numerically, we can specify a range of weights, from light to heavy.</p>
 <pre><code>.light-text {
     font-weight: 200; /* Thin */
@@ -303,13 +303,13 @@ Since font thickness is defined numerically, we can specify a range of weights, 
 <p>In HTML, we can use the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b"><code>&lt;b&gt;</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong"><code>&lt;strong&gt;</code></a> elements to render text as bold.
 Again, unless there is some semantic reason to do so, use the CSS <code>font-weight</code> property instead.</p>
 <h3 id="font-size-and-scaling"><a class="header" href="#font-size-and-scaling">Font Size and Scaling</a></h3>
-<p>It's a good idea to clarify the default <code>font-size</code> in the <code>html</code> selector, and
-then modify font-sizes throughout the document with respect to that.</p>
+<p>It's a good idea to set a base <code>font-size</code> in the <code>html</code> selector, and
+then modify font sizes throughout the document with respect to that.</p>
 <pre><code>html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 </code></pre>
-<p>However, we can also implement different font-sizes throughout the document:</p>
+<p>However, we can also implement different font sizes throughout the document:</p>
 <pre><code>.normal-text {
     font-size: 16px; /* Fixed size */
 }
@@ -323,10 +323,10 @@ then modify font-sizes throughout the document with respect to that.</p>
 }
 </code></pre>
 <h3 id="letter-and-word-spacing"><a class="header" href="#letter-and-word-spacing">Letter and Word Spacing</a></h3>
-<p>We have two properties to control the spacing between either letters or words.
-This kind of property, generally referred to as <a href="https://en.wikipedia.org/wiki/Kerning">kerning</a>, can augment readability.
-However, be careful implementing this property.
-Most typefaces have been designed with default kerning parameters, and
+<p>We have two properties to control the spacing between letters or words.
+Adjusting spacing can augment readability.
+However, be careful when implementing these properties.
+Most typefaces have been designed with default <a href="https://en.wikipedia.org/wiki/Kerning">kerning</a> parameters, and
 the basic font families have been well tested for readability.</p>
 <pre><code>.kerning-example {
     letter-spacing: 2px; /* Adjusts letter spacing */
@@ -338,11 +338,11 @@ the basic font families have been well tested for readability.</p>
 </code></pre>
 <h3 id="line-properties-and-text-layout"><a class="header" href="#line-properties-and-text-layout">Line Properties and Text Layout</a></h3>
 <p>The <code>line-height</code> property adjusts the spacing between lines.
-Like kerning, be conservative when applying this property since it may impact legibility.
-In the following example, we use a class (<code>.line-height-example</code>), but this for the kind of property,
-we might want to apply it consistently by applying to one specific element, such as the <code>&lt;p&gt;</code> element.</p>
+As with letter spacing, be conservative when applying this property since it may impact legibility.
+In the following example, we use a class (<code>.line-height-example</code>), but for this kind of property,
+we might want to apply it consistently to one specific element, such as the <code>&lt;p&gt;</code> element.</p>
 <pre><code>.line-height-example {
-    line-height: 1.5; /* Adjusts leading */
+    line-height: 1.5; /* Adjusts line spacing */
 }
 </code></pre>
 <p>We can <code>center</code> or <code>justify</code> text with the <code>text-align</code> property:</p>
@@ -355,8 +355,9 @@ we might want to apply it consistently by applying to one specific element, such
 }
 </code></pre>
 <p>We can use the <code>text-indent</code> property to indent only the first line of an element.
-This is especially useful for paragraph <code>&lt;p&gt;</code> elements, but a good use case is to use it as a class
-in a <code>&lt;span&gt;</code> element and indent the first line of a paragraph immediately after a heading (e.g., <code>&lt;h2&gt;</code>) element:</p>
+This is especially useful for paragraph <code>&lt;p&gt;</code> elements.
+A common use case is to add a class to the first paragraph after a heading (e.g., <code>&lt;h2&gt;</code>)
+and indent its first line:</p>
 <pre><code>.text-indent-example {
     text-indent: 20px; /* Indents first line */
 }
@@ -399,12 +400,9 @@ A good use case is to apply this to various heading elements (e.g., <code>&lt;h2
 <p>As stated before, fonts are generally provided by the operating system.
 Since there are different operating systems (e.g., Windows, macOS, iOS, Linux, Android, etc),
 not all fonts are available for all OSes.
-OSes from Microsoft, Apple, and Google might share the most common fonts because commercial companies
-pay or charge licensing fees for many standard fonts since fonts may be copyrighted.
-In any case, this is why when we declare font families, we always declare <code>serif</code> as the fallback font-family
-if we are using a copyrighted serif font like <a href="https://en.wikipedia.org/wiki/Times_New_Roman#Free_alternatives">Times New Roman</a>;
-or <code>sans-serif</code> as the fallback font-family if we are using a copyrighted sans-serif font like <a href="https://en.wikipedia.org/wiki/Arial">Arial</a>;
-and so forth.</p>
+Some common fonts ship across multiple platforms, but availability still varies.
+This is why, when we declare font families, we include a generic family fallback,
+such as <code>serif</code> or <code>sans-serif</code>, at the end of the list.</p>
 <p>However, we can load fonts from external sources.
 One major example is <a href="https://fonts.google.com/">Google Fonts</a>.
 For example, if we want to use the <a href="https://fonts.google.com/specimen/Roboto">Roboto Font</a>,
@@ -415,7 +413,7 @@ First, we may not know or agree with the privacy policies when using outsourced 
 Also, outsourcing fonts means relying on third-party services.
 While these services may be reliable, they could go down.
 Lastly, depending on the source used for outsourced fonts,
-using outsourced fonts may requires extra bandwidth:</p>
+using outsourced fonts may require extra bandwidth:</p>
 <blockquote>
 <p>The <a href="https://developers.google.com/fonts/faq/privacy">Google Fonts Privacy Policy</a> makes an argument that using their services
 instead of self-hosting their fonts saves bandwidth.</p>
@@ -426,13 +424,13 @@ To do this, we need to:</p>
 <ol>
 <li>Download the font files:
 <ol>
-<li>we obtain font files in formats like <code>.woff</code>, <code>woff2</code>, <code>ttf</code>, or <code>.otf</code> from a <strong>trusted</strong> source.</li>
-<li>we save those fonts to a designated <code>fonts/</code> directory in our project.</li>
+<li>We obtain font files in formats like <code>.woff</code>, <code>woff2</code>, <code>ttf</code>, or <code>.otf</code> from a <strong>trusted</strong> source.</li>
+<li>We save those fonts to a designated <code>fonts/</code> directory in our project.</li>
 </ol>
 </li>
 <li>Define the font in our CSS:
 <ol>
-<li>we use the <code>@font-face</code> rule to specify the font name and file path.</li>
+<li>We use the <code>@font-face</code> rule to specify the font name and file path.</li>
 </ol>
 </li>
 </ol>

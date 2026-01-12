@@ -181,7 +181,7 @@
                     <main>
                         <h1 id="introduction-to-semantic-web-development"><a class="header" href="#introduction-to-semantic-web-development">Introduction to Semantic Web Development</a></h1>
 <p>Author: C. Sean Burns<br />
-Date: 2025-04-20<br />
+Date: 2026-01-12<br />
 Email: sean.burns@uky.edu<br />
 Website: <a href="https://cseanburns.net">cseanburns.net</a><br />
 GitHub: <a href="https://github.com/cseanburns">@cseanburns</a></p>
@@ -2350,7 +2350,7 @@ The presentation does not interfere with or alter the underlying semantics of th
 <p>CSS is very powerful.
 As an example, the <a href="https://www.csszengarden.com/">CSS Zen Garden</a> demonstrates how a single HTML file
 can be rendered differently simply by applying different CSS rules to it.</p>
-<h2 id="way-to-apply-css"><a class="header" href="#way-to-apply-css">Way to Apply CSS</a></h2>
+<h2 id="ways-to-apply-css"><a class="header" href="#ways-to-apply-css">Ways to Apply CSS</a></h2>
 <p>There are three ways to apply CSS to a web page.
 We can add <strong>external CSS</strong> stylesheets using the HTML <code>&lt;link&gt;</code> element in a web document's <code>&lt;head&gt;</code> section.
 In the example below, the stylesheet is named <code>style.css</code> and resides in a project's <code>css</code> folder (or directory).
@@ -2383,7 +2383,7 @@ we are able to apply the same set of CSS rules to all web pages on a web site.</
 <p>However, we can also add CSS to a single page using two different methods: <strong>internal CSS</strong> and <strong>inline CSS</strong>.
 We add internal CSS by using the HTML <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> section of our web document.
 When adding it to a single page, whatever CSS rules we add in the <code>&lt;style&gt;</code> element only apply to that single page.
-In the basic example below, I change the color of <strong>all</strong> <code>&lt;p&gt;</code> elements in a single web page to green using inline CSS.</p>
+In the basic example below, I change the color of <strong>all</strong> <code>&lt;p&gt;</code> elements in a single web page to green using internal CSS.</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
     &lt;head&gt;
@@ -2428,13 +2428,14 @@ In this case, the first line is the default color, and then I change the followi
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<p>In short, using external, internal, and inline CSS is a matter of applying CSS with greater page and element specificity.
+<p>In short, using external, internal, and inline CSS is a matter of choosing the scope of where styles apply.
 External stylesheets can be used by all pages on a website.
 Internal CSS is used by a single page.
 Inline CSS is used by a single element in a single page.</p>
-<p>Be aware that inline styles override internal and external styles and internal styles override external styles.
+<p>Be aware that inline styles typically override internal and external styles.
+When rules conflict, the most specific rule or the one that appears later will usually win.
 That is, if I declare in an external stylesheet that all <code>&lt;p&gt;</code> elements should be red,
-but then use <code>&lt;p style=color:green;"&gt;</code> on some page in my site,
+but then use <code>&lt;p style="color:green;"&gt;</code> on some page in my site,
 green will override the red for that particular case.</p>
 <h2 id="conclusion-9"><a class="header" href="#conclusion-9">Conclusion</a></h2>
 <p>In this chapter on CSS, we will primarily use external stylesheets because they offer more advantages than internal or inline styles.
@@ -2442,8 +2443,8 @@ External stylesheets don't take away any precision, either.
 When desired, there are certain methods we can use to apply CSS to single pages or to specific elements,
 even when CSS code is in an external stylesheet.</p>
 <p>In the next two sections, we first learn about CSS <strong>selectors</strong>, which is the most important and basic aspect of CSS to know.
-Then will learn how to apply colors and define units of measurement.
-Later we will learn CSS that will allow us change fonts and add other effects.
+Then we will learn how to apply colors and define units of measurement.
+Later we will learn CSS that will allow us to change fonts and add other effects.
 Then we will acquire an understanding of how CSS controls the elements on a page and
 use that understanding to create various layouts.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="syntax-and-selectors"><a class="header" href="#syntax-and-selectors">Syntax and Selectors</a></h1>
@@ -2451,7 +2452,7 @@ use that understanding to create various layouts.</p>
 Common elements include <code>&lt;h1&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;table&gt;</code>, and many others.
 We also learned that these elements may include <strong>attributes</strong>.
 For example, we can add <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">global attributes</a>, like the <code>class</code> or <code>id</code> attributes, to all tags.
-Furthermore, we learned that some elements, like the <code>&lt;th&gt;</code> tag, may have element specific attributes, like <code>colspan</code>.
+Furthermore, we learned that some elements, like the <code>&lt;th&gt;</code> tag, may have element-specific attributes, like <code>colspan</code>.
 In order to style the HTML, CSS provides a mechanism to focus on specific elements or attributes.
 In CSS, this mechanism is called <a href="https://www.w3.org/TR/selectors-3/#selectors"><strong>selectors</strong></a>.</p>
 <p>There are multiple types of selectors.
@@ -2462,11 +2463,11 @@ These include:</p>
 <li><a href="https://www.w3.org/TR/selectors-3/#attribute-selectors">Attribute selectors</a></li>
 <li><a href="https://www.w3.org/TR/selectors-3/#class-html">Class selectors</a></li>
 <li><a href="https://www.w3.org/TR/selectors-3/#id-selectors">ID selectors</a></li>
-<li><a href="https://www.w3.org/TR/selectors-3/#pseudo-classes">Pseudo classes</a></li>
-<li><a href="https://www.w3.org/TR/selectors-3/#pseudo-elements">Pseudo elements</a></li>
+<li><a href="https://www.w3.org/TR/selectors-3/#pseudo-classes">Pseudo-classes</a></li>
+<li><a href="https://www.w3.org/TR/selectors-3/#pseudo-elements">Pseudo-elements</a></li>
 <li><a href="https://www.w3.org/TR/selectors-3/#combinators">Combinators</a></li>
 </ul>
-<p>Each of these selectors are discussed below along with examples.
+<p>Each of these selectors is discussed below along with examples.
 For a deeper understanding of each selector type, refer to the linked resources above.</p>
 <p>Also, remember that to use these selectors, we add them to an external stylesheet for the reasons listed in the prior section.
 In my previous HTML discussions, I added the following line to the <code>&lt;head&gt;</code> section of my HTML document that links to my external stylesheet:</p>
@@ -2510,8 +2511,8 @@ As an example, the CSS <code>p</code> selector matches the HTML <code>&lt;p&gt;<
 The CSS <code>h1</code> selector matches the HTML <code>&lt;h1&gt;</code> element.
 And so forth.</p>
 <p>In the following example, I use three type selectors: <code>html</code>, <code>h1</code>, and <code>p</code>.
-I use the <code>html</code> selector to change the foreground and background color to the entire HTML page,
-since an entire HTML page is enclose within the <code>&lt;html&gt;</code> element.
+I use the <code>html</code> selector to change the foreground and background color for the entire HTML page,
+since an entire HTML page is enclosed within the <code>&lt;html&gt;</code> element.
 I then show how to apply a <a href="https://en.wikipedia.org/wiki/Sans-serif">sans-serif</a> font-family to the <code>&lt;h1&gt;</code> elements,
 and a <a href="https://en.wikipedia.org/wiki/Serif">serif</a> font to the <code>&lt;p&gt;</code> elements in a web document:</p>
 <pre><code>html {
@@ -2538,7 +2539,7 @@ As an example, let's say I have a web document with the following:</p>
     &lt;p&gt;This is test 3.&lt;/p&gt;
 &lt;/section&gt;
 </code></pre>
-<p>Then the following CSS will bold the font for all three heading elements:</p>
+<p>Then the following CSS will bold the font for all three elements with an <code>id</code> attribute:</p>
 <pre><code>[id] {
     font-weight: bold;
 }
@@ -2552,7 +2553,7 @@ As an example, let's say I have a web document with the following:</p>
 </li>
 <li><code>[att~=value]</code> : select by attribute where value is a separate word:
 <ul>
-<li>For example: <code>[id~="test"]</code> would match <code>&lt;h1 id="test one"&gt;</code> and <code>&lt;h2 id="test two"&gt;</code> since <code>test</code> is separate in each.</li>
+<li>For example: <code>[class~="test"]</code> would match <code>&lt;h1 class="test one"&gt;</code> and <code>&lt;h2 class="test two"&gt;</code> since <code>test</code> is separate in each.</li>
 </ul>
 </li>
 </ul>
@@ -2588,7 +2589,7 @@ Consider the following HTML:</p>
 <p>In the above HTML snippet, there can only be one <code>id</code> with a value of <code>news</code>,
 one <code>id</code> with a value of <code>about</code>, and one <code>id</code> with a value of <code>store</code>.
 To apply CSS to those specific IDs, we select by the value of the ID attributes.
-In the example CSS below, I add a black, dotted border that is one pixel thick to the News section,
+In the example CSS below, I add a black, solid bottom border that is one pixel thick to the News section,
 I change the line-height to 1.5 times the element's font-size in the About section, and
 I convert text in the Store section to all upper case:</p>
 <pre><code>#news {
@@ -2604,7 +2605,7 @@ I convert text in the Store section to all upper case:</p>
 }
 </code></pre>
 <h2 id="combinators"><a class="header" href="#combinators">Combinators</a></h2>
-<p><strong>Combinators</strong>, and the <strong>pseudo classes</strong> and <strong>pseudo elements</strong> discussed in the following section,
+<p><strong>Combinators</strong>, and the <strong>pseudo-classes</strong> and <strong>pseudo-elements</strong> discussed in the following section,
 should be used when you start to gain a grasp of the relationships between HTML elements on a web page.
 Specifically, all elements in an HTML document can be represented in a hierarchical document tree.
 The hierarchy of elements includes descendant elements, child elements, and sibling elements.
@@ -2628,15 +2629,15 @@ For example, to select the <code>&lt;var&gt;</code> element within the <code>&lt
     font-size: 10pt;
 }
 </code></pre>
-<p>In the above case, the <code>&lt;var&gt;</code> element is a direct descendant of the <code>&lt;p&gt;</code> element.
-However, we may also select a grandchild or later element by using the asterisk.
+<p>In the above case, the <code>&lt;var&gt;</code> element is a child of the <code>&lt;p&gt;</code> element.
+However, we may also select a grandchild or later element by using a space between selectors.
 For example, the following selects all <code>&lt;p&gt;</code> elements within all <code>&lt;section&gt;</code> elements in an HTML page:</p>
-<pre><code>section * p {
+<pre><code>section p {
     font-size: 14pt;
 }
 </code></pre>
 <h3 id="child-combinators"><a class="header" href="#child-combinators">Child combinators</a></h3>
-<p><q>A <strong>Child combinator</strong> describes a childhood relationship between two elements</q> (<a href="https://www.w3.org/TR/selectors-3/#child-combinators">Child combinators</a>).
+<p><q>A <strong>child combinator</strong> describes a parent-child relationship between two elements</q> (<a href="https://www.w3.org/TR/selectors-3/#child-combinators">Child combinators</a>).
 A prime example of a child combinator is the HTML list.
 Consider the following unordered list in HTML, where the <code>&lt;li&gt;</code> element is a child of the <code>&lt;ul&gt;</code> element:</p>
 <pre><code>&lt;ul&gt;
@@ -2654,7 +2655,7 @@ Consider the following unordered list in HTML, where the <code>&lt;li&gt;</code>
 <p>Note that a child element is also a descendant element, so the descendant syntax (e.g., <code>ul li</code>) would also work.
 The child combinator is simply a more specific type of descendant.</p>
 <h3 id="sibling-combinators"><a class="header" href="#sibling-combinators">Sibling combinators</a></h3>
-<p>Per the W3 documenation, <q>there are two different sibling combinators: the next-sibling combinator and
+<p>Per the W3 documentation, <q>there are two different sibling combinators: the next-sibling combinator and
 subsequent-sibling combinator</q> (<a href="https://www.w3.org/TR/selectors-3/#sibling-combinators">Sibling combinators</a>).</p>
 <p>The <strong>next-sibling combinator</strong> selects elements that immediately follow another element.
 Consider the following HTML, where a <code>&lt;p&gt;</code> element is followed by an <code>&lt;hr&gt;</code> (horizontal rule) element,
@@ -2727,8 +2728,8 @@ This will trigger a style change when the mouse cursor hovers over the element:<
 }
 </code></pre>
 <p><strong>Pseudo-elements</strong> are methods to <q>create abstractions about the document tree beyond those specified by the document language</q>
-(<a href="https://www.w3.org/TR/selectors-3/#pseudo-elements">Psuedo-elements</a>).
-For example, there is no such element to indicate the first line in a <code>&lt;p&gt;</code> element, but using the <strong>pseudo-class</strong> for <code>first-line</code>,
+(<a href="https://www.w3.org/TR/selectors-3/#pseudo-elements">Pseudo-elements</a>).
+For example, there is no such element to indicate the first line in a <code>&lt;p&gt;</code> element, but using the <strong>pseudo-element</strong> <code>::first-line</code>,
 we can focus on and style the first line of a <code>&lt;p&gt;</code> (or other) element.
 For example, consider the following HTML:</p>
 <pre><code>&lt;p&gt;To be, or not to be, that is the question:&lt;br&gt;
@@ -2739,12 +2740,12 @@ And by opposing end them. To die&amp;mdash;to sleep,&lt;br&gt;
 No more;&lt;/p&gt;
 </code></pre>
 <p>Since there is a <code>&lt;br&gt;</code> tag at the end of each line, the first line is <q>To be, or not to be, that is the question:</q>.
-Using the <strong>pseudo-element</strong> for <code>first-line</code>, we can style it by, for example, converting it to uppercase:</p>
+Using the <strong>pseudo-element</strong> <code>::first-line</code>, we can style it by, for example, converting it to uppercase:</p>
 <pre><code>p::first-line {
     text-transform: uppercase;
 }
 </code></pre>
-<p>Other <strong>pseudo-classes</strong> that can be used include:</p>
+<p>Other <strong>pseudo-elements</strong> that can be used include:</p>
 <ul>
 <li><code>::first-letter</code></li>
 <li><code>::before</code></li>
@@ -2763,25 +2764,25 @@ It is important to become familiar with the selectors and syntax discussed here,
 because they are important building blocks to more advanced topics like responsive design.
 And although we will not use any CSS frameworks in this course,
 understanding the essentials here will help with those if you eventually use them.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="colors-and-units-of-measurements"><a class="header" href="#colors-and-units-of-measurements">Colors and Units of Measurements</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="colors-and-units-of-measurement"><a class="header" href="#colors-and-units-of-measurement">Colors and Units of Measurement</a></h1>
 <h2 id="introduction-7"><a class="header" href="#introduction-7">Introduction</a></h2>
 <p>Designing a web page begins by controlling color and sizing.
-These base conditions lay the foundations for shaping user experience.
+These base conditions lay the foundation for shaping the user experience.
 It's also where the fun begins.</p>
-<p>Importantly, colors establish a site's visual identity, improves readability, and
+<p>Importantly, colors establish a site's visual identity, improve readability, and
 <a href="https://beaccessible.com/post/the-importance-of-color-contrast-in-digital-accessibility/">creates contrast</a>, which is important for website accessibility.
 There are multiple methods to define colors in CSS.
 These methods include named colors (red, blue, green, yellow, etc),
-RGB values, hexadecimal codes, and HSL (Hue-Saturated-Lightness) values.
-Each method has its strengths with respect to levels of precision and to device type.</p>
+RGB values, hexadecimal codes, and HSL (Hue-Saturation-Lightness) values.
+Each method has its strengths depending on precision needs and ease of use.</p>
 <p>CSS also provides many different types of units of measurement.
 These units allow for precise control over layout and typography, which we will cover soon,
 and define dimensions such as font size, spacing, and layout structure.
-There absolute units, such as pixels and inches, and there are relative units, such as <code>rem</code> and <code>em</code>.
+There are absolute units, such as pixels and inches, and there are relative units, such as <code>rem</code> and <code>em</code>.
 The latter make designs more flexible and responsive.</p>
 <p>In this section, we will explore how to use CSS color properties to enhance design and
 measurement units to create scalable, adaptable layouts.
-These concepts will help you build visually appealing and responsible web pages.</p>
+These concepts will help you build visually appealing and responsive web pages.</p>
 <h2 id="colors"><a class="header" href="#colors">Colors</a></h2>
 <p>There are multiple methods to create or add color to the various parts of our websites.
 The common ones include:</p>
@@ -2789,27 +2790,27 @@ The common ones include:</p>
 <li>Color keywords:
 <ul>
 <li><a href="https://www.w3.org/TR/css-color-3/#html4">Basic color keywords</a>: black, silver, gray, red, green, teal, etc.</li>
-<li><a href="https://www.w3.org/TR/css-color-3/#svg-color">Extended color keywords</a>: aqua, chocolate, cyan, gold, indigo, lime, etc</li>
+<li><a href="https://www.w3.org/TR/css-color-3/#svg-color">Extended color keywords</a>: aqua, chocolate, cyan, gold, indigo, lime, etc.</li>
 </ul>
 </li>
 <li>RGB values:
 <ul>
 <li>The RGB value can declare a specific color: <code>p { color: rgb(255, 241, 0); }</code> (a yellow color)</li>
-<li>We can add a fourth value to indicate opacity; here I set opacity to 50%: <code>p { color: rgb(255, 241, 0, 0.5); }</code></li>
+<li>We can add a fourth value to indicate opacity; here I set opacity to 50%: <code>p { color: rgba(255, 241, 0, 0.5); }</code></li>
 </ul>
 </li>
-<li>Hexadecimal values;
+<li>Hexadecimal values:
 <ul>
 <li>We can use a hexadecimal value to identify a color: <code>p { color: #fffb00; }</code>
 <ul>
-<li>Lots of websites list RGB and Hexadecimal values, such as: <a href="https://rgbcolorpicker.com/">RGB / Hexademical Color Picker</a></li>
+<li>Lots of websites list RGB and Hexadecimal values, such as: <a href="https://rgbcolorpicker.com/">RGB / Hexadecimal Color Picker</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>HSL (hue-saturated-lightness) values:
+<li>HSL (Hue-Saturation-Lightness) values:
 <ul>
-<li>HSL is considered more useful than RGB because it's less hardware dependent and considered more intuitive.</li>
+<li>HSL is often considered more intuitive because it maps directly to hue, saturation, and lightness.</li>
 <li>The values stand for Hue, Saturation, and Lightness: <code>p { color: hsl(291, 100%, 50%); }</code></li>
 <li>The Hue is a degree on a color wheel and accepts values from 0 to 360.</li>
 <li>Saturation and Lightness are coded as percentages.
@@ -2861,30 +2862,30 @@ In the code below, <code>aliceblue</code> is a color keyword and <code>#000000</
 }
 </code></pre>
 <p>We can colorize the headings:</p>
-<pre><code>h1 ~ h2 {
+<pre><code>h1, h2 {
     color: yellow;
     background-color: aqua;
 }
 </code></pre>
-<p>We can add background color the <code>&lt;section&gt;</code> element to create a box-like effect.
+<p>We can add background color to the <code>&lt;section&gt;</code> element to create a box-like effect.
 The code below uses HSL and RGB, as an example.</p>
 <pre><code>section {
     background-color: hsl(360, 100%, 60%);
-    color: rgb(255,241,0,0.5);
+    color: rgba(255, 241, 0, 0.5);
 }
 </code></pre>
 <p>In practice, it's certainly fine to stick to one method (keywords, RGB, HSL, hexadecimal), or mix it up.</p>
-<h2 id="data-types-and-units-of-measurements"><a class="header" href="#data-types-and-units-of-measurements">Data Types and Units of Measurements</a></h2>
+<h2 id="data-types-and-units-of-measurement"><a class="header" href="#data-types-and-units-of-measurement">Data Types and Units of Measurement</a></h2>
 <p>Like many programming languages, CSS accepts a variety of data types.
 The common data types in CSS include:</p>
 <ul>
 <li>Integers: whole numbers (e.g., 1, 42, -5)</li>
-<li>Floating point, aka, decimal numbers (e.g., 1.5, 3.14, -0.75)</li>
-<li>Dimensional values: length, width, angle, and more</li>
+<li>Floating-point, aka, decimal numbers (e.g., 1.5, 3.14, -0.75)</li>
+<li>Dimensional values: lengths, angles, and other measurements</li>
 <li>Percentages: fractions represented as percentages</li>
 </ul>
-<p>These data types are used primarily to add distance or length to elements.
-There are two broad categories of length and each include a variety of units:</p>
+<p>These data types are used to describe sizes, spacing, and other measurements.
+There are two broad categories of length, and each includes a variety of units:</p>
 <ul>
 <li>Relative lengths:
 <ul>
@@ -2920,13 +2921,13 @@ There are two broad categories of length and each include a variety of units:</p
 This is because relative lengths are more responsive to different device sizes and screen resolutions.
 However, it's important to know that absolute lengths exist if needed.</p>
 <p>Consider the following HTML snippet.
-In the snippet below, I use internal CSS for demonstration purposes, but in practice, use an external stylesheet.</p>
+In the snippet below, I use internal CSS for demonstration purposes, but in practice, we use an external stylesheet.</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;sizes&lt;/title&gt;
 &lt;style&gt;
 html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 header {
@@ -2970,13 +2971,13 @@ li {
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<h3 id="set-rem-in-the-html-selector"><a class="header" href="#set-rem-in-the-html-selector">Set <code>rem</code> in the <code>html</code> selector</a></h3>
+<h3 id="set-a-base-font-size-in-the-html-selector"><a class="header" href="#set-a-base-font-size-in-the-html-selector">Set a base font size in the <code>html</code> selector</a></h3>
 <pre><code>html {
-    font-size: 1rem;
+    font-size: 16px;
     }
 </code></pre>
-<p>By default, browsers set <code>1rem = 16px</code>, unless overridden.
-In this example, we make the connection explicit.</p>
+<p>By default, browsers set the root font size to <code>16px</code>, unless overridden.
+In this example, we make that base size explicit.</p>
 <h3 id="example-using-em-in-header-h1-and-h2"><a class="header" href="#example-using-em-in-header-h1-and-h2">Example: using <code>em</code> in <code>header</code>, <code>h1</code>, and <code>h2</code></a></h3>
 <p>In the HTML example, note that <code>&lt;header&gt;</code> is a descendant element of the <code>&lt;html&gt;</code> element, and
 that <code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code> are siblings and both descendants of <code>&lt;header&gt;</code>.
@@ -2986,19 +2987,18 @@ Now consider the following CSS:</p>
 }
 
 h1 {
-    font-size: 1em;
+    font-size: 2em;
 }
 
 h2 {
-    font-size: 1em;
+    font-size: 2em;
 }
 </code></pre>
 <p>Since the <code>header</code> selector has a font-size of <code>1em</code>, it inherits its font size from the <code>html</code> selector since it's a descendant.
 Therefore, since <code>1em = 16px</code>, the <code>&lt;header&gt;</code> element is set to <code>16px</code>.</p>
 <p>Since <code>&lt;h1&gt;</code> is inside <code>&lt;header&gt;</code>, and since it uses an <code>em</code> unit of measurement, it inherits its size from the <code>&lt;header&gt;</code> element.
 Since the <code>h1</code> selector is set to <code>2em</code>, then <code>2em * 16px = 32px</code>.</p>
-<p>Since <code>&lt;h2&gt;</code> is also inside <code>&lt;header&gt;</code> (it is not a descendant but a sibling to <code>&lt;h1&gt;</code>),
-it also inherits from <code>&lt;header&gt;</code>.
+<p>Since <code>&lt;h2&gt;</code> is also inside <code>&lt;header&gt;</code>, it inherits from <code>&lt;header&gt;</code> as well.
 Since the <code>h2</code> is set to <code>2em</code>, then as with <code>h1</code>, we have <code>2em * 16px = 32px</code>.
 Specifically, since <code>header</code> is set to <code>1em</code>, its font size is unaffected with respect to <code>html</code>.
 Therefore, <code>h1</code> and <code>h2</code> are both calculated relative to <code>html</code>.</p>
@@ -3009,12 +3009,14 @@ However, the <code>&lt;li&gt;</code> element is a child of <code>&lt;ul&gt;</cod
 Since <code>ul</code> is calculated to be <code>32px</code>, then <code>li</code> is <code>1em * 32px = 32px</code>.</p>
 <p>In practice, therefore, we can see how <code>em</code> compounds based on what it inherits from its parent element.
 This makes using <code>rem</code> more predictable.
-If we set the font-size of all elements to <code>1rem</code>, then the font-size for all elements would be <code>16px</code> because <code>1rem * 16px = 16px</code>.
-However, if we only set the <code>html</code> selector to <code>1rem</code>, then the browser uses its default sizes.</p>
+If we set the font-size of all elements to <code>1rem</code>, then each element computes to the root font size
+(<code>16px</code> by default).
+However, if we only set the <code>html</code> selector (or leave it at its default),
+then the browser uses its default sizes for other elements.</p>
 <h3 id="be-sure-to-understand-inheritance"><a class="header" href="#be-sure-to-understand-inheritance">Be sure to understand inheritance.</a></h3>
 <p>Consider the following rules:</p>
 <pre><code>html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 header {
@@ -3036,23 +3038,24 @@ Even though the <code>header</code> is set to <code>2rem</code>, the <code>h1</c
 So they ignore the inherited value from <code>header</code>.
 That is, <code>h1</code> and <code>h2</code> are calculated with respect to <code>html</code>.</p>
 <ul>
-<li><code>html</code>: <code>1rem * 16px = 16px</code></li>
+<li><code>html</code>: <code>16px</code></li>
 <li><code>h1</code>: <code>1rem * 16px = 16px</code></li>
 <li><code>h2</code>: <code>1.5rem * 16px = 24px</code></li>
 </ul>
 <p>However, if we only use the following two rules in our CSS:</p>
 <pre><code>html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 header {
     font-size: 2rem;
 }
 </code></pre>
-<p>Then both <code>h1</code> and <code>h2</code> would increase by <code>2rem</code> since they are direct children of <code>&lt;header&gt;</code>.</p>
+<p>Then <code>h1</code> and <code>h2</code> would scale relative to <code>header</code>,
+and browser defaults would make them larger than the base size.</p>
 <h2 id="page-sizing"><a class="header" href="#page-sizing">Page Sizing</a></h2>
 <p>Viewport relative lengths are useful when controlling the width of the sections on a page,
-like <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, and like.
+like <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, and similar elements.
 Consider the following HTML snippet:</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
@@ -3111,7 +3114,7 @@ We'll explore more responsive techniques later in this work when we tackle Flexb
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-box-model"><a class="header" href="#the-box-model">The Box Model</a></h1>
 <p>The basic principle of working with CSS and HTML is knowing that all HTML elements are contained in a box.
 This includes everything from the root element <code>&lt;html&gt;</code> all the way down to
-text-level elements such as the paragraph tag <code>&lt;p&gt;</code> or the <code>&lt;span&gt;</code> tag.
+block-level elements such as the paragraph tag <code>&lt;p&gt;</code> or inline elements such as the <code>&lt;span&gt;</code> tag.
 We can test this using the universal selector <code>*</code> in our CSS.
 For example, consider the following HTML, which quotes the first sentence from <cite>Moby-Dick</cite>:</p>
 <pre><code>&lt;html&gt;
@@ -3151,12 +3154,12 @@ For example, consider the following HTML, which quotes the first sentence from <
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<p>Understanding this idea, that CSS treats HTML elements as boxes, is important for styling and designing layouts to our HTML.
-It's also important to understand that since boxes can be nested within other boxes, or sit adjacent to other boxes
-(e.g., descendant elements, sibling elements, etc),
-that styling elements has ripple effects.
+<p>Understanding that CSS treats HTML elements as boxes is important for styling and designing layouts for our HTML.
+It's also important to understand that since boxes can be nested within other boxes,
+or sit adjacent to other boxes (e.g., descendant elements, sibling elements, etc),
+that styling elements can have ripple effects.
 Adjusting a box's size or position affects surrounding elements, as boxes influence each other's layout.
-Therefore, to fully fully understand how to manipulate HTML elements, we need to understand that CSS boxes possess several properties.</p>
+Therefore, to fully understand how to manipulate HTML elements, we need to understand that CSS boxes possess several properties.</p>
 <h2 id="box-properties"><a class="header" href="#box-properties">Box Properties</a></h2>
 <p>The CSS box model consists of four main properties:
 the <strong>content</strong>, surrounded by <strong>padding</strong>, a <strong>border</strong>, and an outer <strong>margin</strong>.
@@ -3180,7 +3183,7 @@ In the next section, we learn how to control a box's sizing and appearance by st
 <p>As you recall, the CSS box model contains <a href="https://www.w3.org/TR/css-box-3/#box-edges">four different properties</a>.</p>
 <ul>
 <li><strong>margin</strong>: the space between the element's border and its surrounding elements, marked by the margin edge</li>
-<li><strong>border</strong>: the boundary between the margin and padding, which can made visual with width, color, and style properties</li>
+<li><strong>border</strong>: the boundary between the margin and padding, which can be made visible with width, color, and style properties</li>
 <li><strong>padding</strong>: the space between the border and content</li>
 <li><strong>content</strong>: the content</li>
 </ul>
@@ -3229,7 +3232,7 @@ div {
 </code></pre>
 <p>Next, I add the <code>margin</code> property with a value of <code>2em</code> to demonstrate how it adjusts the spacing around the <code>&lt;div&gt;</code> element,
 pushing it away from adjacent elements.
-Since the default value of <code>em</code> is set by the browser to <code>16px</code>,
+Since the browser default font size is <code>16px</code>,
 using <code>2em</code> means the box will be offset from adjacent elements by 32 pixels on all four sides:</p>
 <pre><code>div {
     border: 1px solid black;
@@ -3256,14 +3259,14 @@ div {
     &lt;body&gt;
         &lt;h1&gt;Heading 1&lt;/h1&gt;
         &lt;div&gt;Hello world&lt;/div&gt;
-        &lt;h2&gt;Heading 1&lt;/h2&gt;
+        &lt;h2&gt;Heading 2&lt;/h2&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
 <h3 id="centering-boxes"><a class="header" href="#centering-boxes">Centering Boxes</a></h3>
 <p>To center a box horizontally, set a <code>width</code> and use <code>margin: auto;</code>.
 This distributes the remaining space equally on both sides and centers the element within its parent container.
-In the following snippet, I set the width of the <code>&lt;div&gt;</code> element to 90% of the window.
+In the following snippet, I set the width of the <code>&lt;div&gt;</code> element to 90% of its parent container.
 Then by setting <code>margin: auto;</code>, the <code>&lt;div&gt;</code> element gets centered in the viewing area.</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
@@ -3280,7 +3283,7 @@ div {
     &lt;body&gt;
         &lt;h1&gt;Heading 1&lt;/h1&gt;
         &lt;div&gt;Hello world&lt;/div&gt;
-        &lt;h2&gt;Heading 1&lt;/h2&gt;
+        &lt;h2&gt;Heading 2&lt;/h2&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -3304,8 +3307,9 @@ In the following snippet, I focus on the border's bottom edge by setting only th
 <h2 id="padding"><a class="header" href="#padding">Padding</a></h2>
 <p>The <code>padding</code> property covers the space between the <code>border</code> and the <code>content</code>.
 Note that the effect is different when using relative lengths, like <code>em</code> or <code>rem</code>, and absolute lengths, like <code>px</code>.
-As you recall, the <code>em</code> is relative to the <code>font-size</code> of the parent element and
-<code>rem</code> is relative to the <code>font-size</code> of the <code>&lt;html&gt;</code> root element.
+As you recall, <code>em</code> is relative to the element's computed font size
+(often inherited from its parent), and <code>rem</code> is relative to the <code>font-size</code>
+of the <code>&lt;html&gt;</code> root element.
 Thus, the following three examples result in different box sizes of the <code>&lt;div&gt;</code> element.</p>
 <h3 id="setting-in-pixels"><a class="header" href="#setting-in-pixels">Setting in Pixels</a></h3>
 <p>In the snippet below, the values for the <code>margin</code> and <code>padding</code> properties are set to 10 pixels regardless of the value of the
@@ -3315,7 +3319,7 @@ Thus, the following three examples result in different box sizes of the <code>&l
 &lt;style&gt; 
 
 html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 div {
@@ -3335,7 +3339,8 @@ div {
 </code></pre>
 <h3 id="setting-in-em-relative-to-parent-element"><a class="header" href="#setting-in-em-relative-to-parent-element">Setting in <code>em</code> (relative to parent element)</a></h3>
 <p>In the snippet below, the values for the <code>margin</code> and <code>padding</code> properties are set to <code>2em</code>.
-Since the <code>&lt;body&gt;</code> element's <code>font-size</code> is <code>20px</code>, and <code>em</code> is relative to its parent,
+Since the <code>&lt;div&gt;</code> inherits a <code>font-size</code> of <code>20px</code> from <code>&lt;body&gt;</code>,
+and <code>em</code> is relative to the element's computed font size,
 setting <code>margin: 2em;</code> results in <code>2 * 20px = 40px</code>.</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
@@ -3362,14 +3367,15 @@ div {
 <p>You can test the relationship between the <code>&lt;div&gt;</code> and its parent element <code>&lt;body&gt;</code> by changing the font-size
 for the <code>body</code> selector.</p>
 <h3 id="setting-in-rem-relative-to-root-element"><a class="header" href="#setting-in-rem-relative-to-root-element">Setting in <code>rem</code> (relative to root element)</a></h3>
-<p>In the following snippet, the font-size for the root <code>&lt;html&gt;</code> element is set to the default, which is <code>16px</code> (<code>1rem = 16px</code>).
-Since the <code>margin</code> and <code>padding</code> for the <code>div</code> selector is set to <code>2rem</code> each, then they will each be <code>32px</code> (<code>2rem * 16px = 32px</code>).</p>
+<p>In the following snippet, the font-size for the root <code>&lt;html&gt;</code> element is set to the default, which is <code>16px</code>.
+Since the <code>margin</code> and <code>padding</code> for the <code>div</code> selector are set to <code>2rem</code> each,
+they will each be <code>32px</code> (<code>2rem * 16px = 32px</code>).</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
 &lt;style&gt; 
 
 html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 div {
     border: 1px solid black;
@@ -3396,7 +3402,7 @@ then the size of the text enclosed in the <code>&lt;b&gt;</code> element is calc
 &lt;style&gt; 
 
 html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 p {
@@ -3469,13 +3475,13 @@ h1 {
 &lt;/html&gt;
 </code></pre>
 <h2 id="box-sizing"><a class="header" href="#box-sizing">Box Sizing</a></h2>
-<p>When we set the dimensions of a box in CSS, the dimensions are calculated based on the size of the content
-and not on the dimensions (height, width) of the box's border or padding.
+<p>When we set the dimensions of a box in CSS, the width and height are applied to the content box by default.
+This default is <code>box-sizing: content-box</code>.
 The result is that <q>if you set an element's width to 100 pixels,
 then the element's content box will be 100 pixels wide,
 and the width of any border or padding will be added to the final rendered width,
-making the element wider than 100px</q> (The CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing"><code>box-sizing</code></a> property).</p>
-<p>The <code>border-box</code> property accounts for border and padding.
+making the element wider than 100px</q> (the CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing"><code>box-sizing</code></a> property).</p>
+<p>The <code>border-box</code> value accounts for border and padding.
 In the following example, I nest a <code>&lt;div&gt;</code> within a <code>&lt;div&gt;</code> and add padding around the nested <code>&lt;div&gt;</code>.
 The width is set to <code>100%</code>, which intuitively suggests that the smaller box should fit within 100% of the larger box.
 But by adding padding (<code>10px</code>), the box expands beyond the larger box's border.</p>
@@ -3545,28 +3551,28 @@ I encourage you to experiment with margin, padding, border, and content settings
 As you do, you will gain an increasing understanding of how boxes work and interact in CSS.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="typography-and-font-styles"><a class="header" href="#typography-and-font-styles">Typography and Font Styles</a></h1>
 <p>The <em>typography</em> of a document is generally its most visible aspect.
-This is true regardless if the document is a web page, a book, a billboard, or a flyer.
+This is true regardless of whether the document is a web page, a book, a billboard, or a flyer.
 We use typographic principles to shape how text is presented, read, and interpreted.</p>
 <p>In web development, typography is important because it influences the user experience.
 It affects readability, aesthetics, and accessibility, and
 it plays a central role in how content is presented across different screen sizes and devices.</p>
-<p>In all, good typography can:</p>
+<p>Overall, good typography can:</p>
 <ul>
 <li>improve readability and legibility</li>
 <li>establish identity and tone</li>
 <li>enhance user engagement</li>
-<li>maximize accessibility for users, and this includes those with visual impairments</li>
+<li>maximize accessibility for users, including those with visual impairments</li>
 <li>contribute to an intuitive and pleasant user experience</li>
 </ul>
 <h2 id="key-concepts-in-typography"><a class="header" href="#key-concepts-in-typography">Key Concepts in Typography</a></h2>
 <p>Typography consists of several elements that determine how text appears.
 These elements include:</p>
 <ul>
-<li><code>font-family</code>: this is the specific typeface or group of typefaces. Major typefaces include: <code>serif</code>, <code>sans-serif</code>, <code>monospace</code></li>
+<li><code>font-family</code>: this is the specific typeface or group of typefaces. Major families include: <code>serif</code>, <code>sans-serif</code>, <code>monospace</code></li>
 <li><code>font-style</code>: this includes variations like normal, italic, or oblique</li>
 <li><code>font-weight</code>: this addresses the thickness of characters and ranges from light to bold</li>
-<li><code>font-size</code>: this consists of the height of characters. It can be set in fixed or relative units, and it alters the content-size of its box</li>
-<li><code>letter-spacing</code>, or kerning: this addresses the spacing between individual letters</li>
+<li><code>font-size</code>: this sets the height of characters. It can be set in fixed or relative units, and it alters the content size of its box</li>
+<li><code>letter-spacing</code>: this addresses the spacing between individual characters</li>
 <li><code>line-height</code>: this addresses the spacing between lines of text</li>
 <li><code>text-align</code>: this addresses the horizontal alignment of text and is used to center or justify text</li>
 <li><code>text-indent</code>: this addresses the indentation of text</li>
@@ -3580,7 +3586,7 @@ In short, typography is the art of arranging text,
 while fonts are the specific tools used in that arrangement.</p>
 <h2 id="basic-typography-principles"><a class="header" href="#basic-typography-principles">Basic Typography Principles</a></h2>
 <p>The goal of typography is to improve readability.
-This is accomplished by creating web pages and sites that are visually appealing.
+This is supported by creating web pages and sites that are visually appealing.
 The following key principles help achieve that goal:</p>
 <ul>
 <li><strong>Readability and legibility</strong>: Use appropriate font choices, sizes, and spacing to make sure that text is easy to read.</li>
@@ -3596,7 +3602,7 @@ The major font families include <code>serif</code>, <code>sans-serif</code>, and
 We select font families based on several criteria:</p>
 <ul>
 <li><strong>Serif fonts</strong>: these are typefaces that have decorative strokes, or <em>serifs</em>, at the ends of letters. Common examples include Times New Roman and Georgia. These kinds of typefaces are commonly used in print and they convey a classic, professional look.</li>
-<li><strong>Sans-serif fonts</strong>: these fonts lack (<em>sans</em>) serifs or decorations. These fonts convey cleaner and more modern designs. Common examples include Arial, Helvetica, and Verdana. They benefit digital content because they augment clarity and readability on screens in particular.</li>
+<li><strong>Sans-serif fonts</strong>: these fonts lack (<em>sans</em>) serifs or decorations. These fonts convey cleaner and more modern designs. Common examples include Arial, Helvetica, and Verdana. They often improve clarity and readability on screens in particular.</li>
 <li><strong>Monospace fonts</strong>: the characters in these fonts take up the same amount of horizontal space. Examples include Courier New and Consolas. These font families are typically used in coding environments or to display code in web documents because they make it easier to align characters and read structured text.</li>
 </ul>
 <h2 id="typography-in-web-development"><a class="header" href="#typography-in-web-development">Typography in Web Development</a></h2>
@@ -3605,13 +3611,13 @@ The goal is to always make sure that text is legible and visually appealing.
 While this section covers the basics, typography is a big subject.
 Entire books are dedicated to typography, and companies spend lots of resources on developing and using good fonts
 because fonts play an important role in brand identity.
-However, as you begin to use and then understand typography principles,
+However, as you begin to use and understand typography principles,
 you will be able to use these principles to augment content and enhance user experience.</p>
 <h2 id="typography-in-practice"><a class="header" href="#typography-in-practice">Typography in Practice</a></h2>
 <h3 id="font-family"><a class="header" href="#font-family">Font Family</a></h3>
 <p>We normally declare the <code>font-family</code> in the <code>html</code> or <code>body</code> selector.
 When we declare a <code>font-family</code>, we provide a list of families.
-Based on our operating systems, our browsers select the font to display by first available.
+Browsers select the first available font from the list.
 Therefore, we place the main, desired font at the beginning of the list but
 then provide fallback fonts in case the main font is unavailable in the reader's browser.</p>
 <p>In the following example, <code>Arial</code> is the font we ideally want to use in our web document, but
@@ -3651,7 +3657,7 @@ I could use a <code>&lt;span&gt;</code> element with a <code>class</code> attrib
 to add some kind of emphasis to our text that generally renders it as italicized text.
 It's generally worthwhile to use these HTML elements when the reason for the emphasis has a semantic purpose.</p>
 <h3 id="font-weight"><a class="header" href="#font-weight">Font Weight</a></h3>
-<p>We use the <a href="https://www.w3.org/TR/css-fonts-4/#font-weight-prop"><code>font-weight</code></a> property to thickness of the font, or its boldness.
+<p>We use the <a href="https://www.w3.org/TR/css-fonts-4/#font-weight-prop"><code>font-weight</code></a> property to control the thickness of the font, or its boldness.
 Since font thickness is defined numerically, we can specify a range of weights, from light to heavy.</p>
 <pre><code>.light-text {
     font-weight: 200; /* Thin */
@@ -3668,13 +3674,13 @@ Since font thickness is defined numerically, we can specify a range of weights, 
 <p>In HTML, we can use the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b"><code>&lt;b&gt;</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong"><code>&lt;strong&gt;</code></a> elements to render text as bold.
 Again, unless there is some semantic reason to do so, use the CSS <code>font-weight</code> property instead.</p>
 <h3 id="font-size-and-scaling"><a class="header" href="#font-size-and-scaling">Font Size and Scaling</a></h3>
-<p>It's a good idea to clarify the default <code>font-size</code> in the <code>html</code> selector, and
-then modify font-sizes throughout the document with respect to that.</p>
+<p>It's a good idea to set a base <code>font-size</code> in the <code>html</code> selector, and
+then modify font sizes throughout the document with respect to that.</p>
 <pre><code>html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 </code></pre>
-<p>However, we can also implement different font-sizes throughout the document:</p>
+<p>However, we can also implement different font sizes throughout the document:</p>
 <pre><code>.normal-text {
     font-size: 16px; /* Fixed size */
 }
@@ -3688,10 +3694,10 @@ then modify font-sizes throughout the document with respect to that.</p>
 }
 </code></pre>
 <h3 id="letter-and-word-spacing"><a class="header" href="#letter-and-word-spacing">Letter and Word Spacing</a></h3>
-<p>We have two properties to control the spacing between either letters or words.
-This kind of property, generally referred to as <a href="https://en.wikipedia.org/wiki/Kerning">kerning</a>, can augment readability.
-However, be careful implementing this property.
-Most typefaces have been designed with default kerning parameters, and
+<p>We have two properties to control the spacing between letters or words.
+Adjusting spacing can augment readability.
+However, be careful when implementing these properties.
+Most typefaces have been designed with default <a href="https://en.wikipedia.org/wiki/Kerning">kerning</a> parameters, and
 the basic font families have been well tested for readability.</p>
 <pre><code>.kerning-example {
     letter-spacing: 2px; /* Adjusts letter spacing */
@@ -3703,11 +3709,11 @@ the basic font families have been well tested for readability.</p>
 </code></pre>
 <h3 id="line-properties-and-text-layout"><a class="header" href="#line-properties-and-text-layout">Line Properties and Text Layout</a></h3>
 <p>The <code>line-height</code> property adjusts the spacing between lines.
-Like kerning, be conservative when applying this property since it may impact legibility.
-In the following example, we use a class (<code>.line-height-example</code>), but this for the kind of property,
-we might want to apply it consistently by applying to one specific element, such as the <code>&lt;p&gt;</code> element.</p>
+As with letter spacing, be conservative when applying this property since it may impact legibility.
+In the following example, we use a class (<code>.line-height-example</code>), but for this kind of property,
+we might want to apply it consistently to one specific element, such as the <code>&lt;p&gt;</code> element.</p>
 <pre><code>.line-height-example {
-    line-height: 1.5; /* Adjusts leading */
+    line-height: 1.5; /* Adjusts line spacing */
 }
 </code></pre>
 <p>We can <code>center</code> or <code>justify</code> text with the <code>text-align</code> property:</p>
@@ -3720,8 +3726,9 @@ we might want to apply it consistently by applying to one specific element, such
 }
 </code></pre>
 <p>We can use the <code>text-indent</code> property to indent only the first line of an element.
-This is especially useful for paragraph <code>&lt;p&gt;</code> elements, but a good use case is to use it as a class
-in a <code>&lt;span&gt;</code> element and indent the first line of a paragraph immediately after a heading (e.g., <code>&lt;h2&gt;</code>) element:</p>
+This is especially useful for paragraph <code>&lt;p&gt;</code> elements.
+A common use case is to add a class to the first paragraph after a heading (e.g., <code>&lt;h2&gt;</code>)
+and indent its first line:</p>
 <pre><code>.text-indent-example {
     text-indent: 20px; /* Indents first line */
 }
@@ -3764,12 +3771,9 @@ A good use case is to apply this to various heading elements (e.g., <code>&lt;h2
 <p>As stated before, fonts are generally provided by the operating system.
 Since there are different operating systems (e.g., Windows, macOS, iOS, Linux, Android, etc),
 not all fonts are available for all OSes.
-OSes from Microsoft, Apple, and Google might share the most common fonts because commercial companies
-pay or charge licensing fees for many standard fonts since fonts may be copyrighted.
-In any case, this is why when we declare font families, we always declare <code>serif</code> as the fallback font-family
-if we are using a copyrighted serif font like <a href="https://en.wikipedia.org/wiki/Times_New_Roman#Free_alternatives">Times New Roman</a>;
-or <code>sans-serif</code> as the fallback font-family if we are using a copyrighted sans-serif font like <a href="https://en.wikipedia.org/wiki/Arial">Arial</a>;
-and so forth.</p>
+Some common fonts ship across multiple platforms, but availability still varies.
+This is why, when we declare font families, we include a generic family fallback,
+such as <code>serif</code> or <code>sans-serif</code>, at the end of the list.</p>
 <p>However, we can load fonts from external sources.
 One major example is <a href="https://fonts.google.com/">Google Fonts</a>.
 For example, if we want to use the <a href="https://fonts.google.com/specimen/Roboto">Roboto Font</a>,
@@ -3780,7 +3784,7 @@ First, we may not know or agree with the privacy policies when using outsourced 
 Also, outsourcing fonts means relying on third-party services.
 While these services may be reliable, they could go down.
 Lastly, depending on the source used for outsourced fonts,
-using outsourced fonts may requires extra bandwidth:</p>
+using outsourced fonts may require extra bandwidth:</p>
 <blockquote>
 <p>The <a href="https://developers.google.com/fonts/faq/privacy">Google Fonts Privacy Policy</a> makes an argument that using their services
 instead of self-hosting their fonts saves bandwidth.</p>
@@ -3791,13 +3795,13 @@ To do this, we need to:</p>
 <ol>
 <li>Download the font files:
 <ol>
-<li>we obtain font files in formats like <code>.woff</code>, <code>woff2</code>, <code>ttf</code>, or <code>.otf</code> from a <strong>trusted</strong> source.</li>
-<li>we save those fonts to a designated <code>fonts/</code> directory in our project.</li>
+<li>We obtain font files in formats like <code>.woff</code>, <code>woff2</code>, <code>ttf</code>, or <code>.otf</code> from a <strong>trusted</strong> source.</li>
+<li>We save those fonts to a designated <code>fonts/</code> directory in our project.</li>
 </ol>
 </li>
 <li>Define the font in our CSS:
 <ol>
-<li>we use the <code>@font-face</code> rule to specify the font name and file path.</li>
+<li>We use the <code>@font-face</code> rule to specify the font name and file path.</li>
 </ol>
 </li>
 </ol>
@@ -3857,17 +3861,17 @@ Therefore, before we tinker with sizes in HTML or CSS, we need to reduce the res
 Most of our cameras will default to saving photos as JPEGs.
 Or we might generate images in PNG format.
 These are both popular image formats that are used on the web, along with GIFs.
-However, another popular format is <a href="https://en.wikipedia.org/wiki/WebP">WEBP</a>, an image format optimized for the web and
+However, another popular format is <a href="https://en.wikipedia.org/wiki/WebP">WebP</a>, an image format optimized for the web and
 that supports <a href="https://en.wikipedia.org/wiki/Lossy_compression">lossy</a> and <a href="https://en.wikipedia.org/wiki/Lossless_compression">lossless</a> compression, transparency, and animation.
 Photo and other types of image editors can export images to WEBP.
 For example, in the <a href="https://www.gimp.org/">GIMP photo editor</a>, I can export photos as WEBP and choose lossless or lossy compression when exporting.</p>
 <p>Another excellent image format is <a href="https://en.wikipedia.org/wiki/SVG">SVG</a> (Scalable Vector Graphics).
-SVG formats are used for vector based images and are the default file format for programs like <a href="https://inkscape.org/">Inkscape</a>.
+SVG formats are used for vector-based images and are the default file format for programs like <a href="https://inkscape.org/">Inkscape</a>.
 These images are ideal for images that are drawn, like logos, icons, or similar forms of visual art.
 Also, since SVG files are text files, we can use scripting languages, like Python, to modify them.
 But one of the most important characteristics of SVG files is that they are scalable.
-That is, no matter how much we zoom in or out on a SVG file, the image will retain its resolution,
-unlike raster or bitmap based images, which will become pixelated.</p>
+That is, no matter how much we zoom in or out on an SVG file, the image will retain its resolution,
+unlike raster or bitmap-based images, which will become pixelated.</p>
 <h2 id="images"><a class="header" href="#images">Images</a></h2>
 <p>In HTML and CSS, we can set the values of an image with simple <code>width</code> and <code>height</code> settings.
 For example, in HTML, we can use the <code>width</code> and <code>height</code> attributes:</p>
@@ -3920,7 +3924,7 @@ First, in the HTML code below, I use classes to style the same image for each of
 &lt;img class="scale-down" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
 </code></pre>
 <p>In the CSS code below, I apply the <code>object-fit</code> property to the appropriate classes in the above HTML.</p>
-<p>The original image (<code>box_image.png</code>) has the dimensions of <code>513x503</code>,
+<p>The original image (<code>box_circle.png</code>) has the dimensions of <code>513x503</code>,
 but we set the <code>width: 300px</code> and <code>height: 400px</code> in the <code>img</code> selector.
 Therefore, the <code>fill</code> value will distort the image so that it fills the box:</p>
 <pre><code>.fill {
@@ -3973,16 +3977,16 @@ default, top, right, bottom, and left.</p>
     object-position: 50% 50%;
 }
 .position_top {
-    object-position: 50% -50px;
+    object-position: 50% 0%;
 }
 .position_right {
-    object-position: 50px 50%;
+    object-position: 100% 50%;
 }
 .position_bottom {
-    object-position: 50% 50px;
+    object-position: 50% 100%;
 }
 .position_left {
-    object-position: -50px 50%;
+    object-position: 0% 50%;
 }
 </code></pre>
 <h3 id="transform"><a class="header" href="#transform">Transform</a></h3>
@@ -4037,10 +4041,10 @@ laborum.&lt;/p&gt;
 <p>To create that effect, I create a class for this element and add <code>float: left</code>.
 I add a few pixels on the right margin of the <code>img</code> to add a gap between the image and the text.</p>
 <pre><code>.left_float {
-	width: 75px;
-	height: 75px;
-	float: left;
-	margin-right: 5px;
+    width: 75px;
+    height: 75px;
+    float: left;
+    margin-right: 5px;
 }
 </code></pre>
 <p>In the last example, we <code>float</code> the image to the right of the text:</p>
@@ -4062,14 +4066,14 @@ laborum.&lt;/p&gt;
 <p>Similar to the left float above, below the CSS simply floats the right using <code>float: right</code>.
 Also note that I change the margin side to left with <code>margin-left</code>:</p>
 <pre><code>.right_float {
-	width: 75px;
-	height: 75px;
-	float: right;
-	margin-left: 5px;
+    width: 75px;
+    height: 75px;
+    float: right;
+    margin-left: 5px;
 }
 </code></pre>
 <h3 id="gradients"><a class="header" href="#gradients">Gradients</a></h3>
-<p>We can use <a href="https://www.w3.org/TR/css-images-3/#gradients"><code>gradient</code></a> colors to style images or backgrounds.
+<p>We can use <a href="https://www.w3.org/TR/css-images-3/#gradients">gradients</a> to style images or backgrounds.
 We can apply gradients using angles (e.g., <code>45deg</code>) or keywords (e.g., <code>to top</code>).
 See the link above for other examples.</p>
 <pre><code>&lt;h3&gt;Linear Gradient&lt;/h3&gt;
@@ -4081,7 +4085,7 @@ See the link above for other examples.</p>
 &lt;h3&gt;Linear Gradient Using Keywords&lt;/h3&gt;
 &lt;img class="top" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
 </code></pre>
-<p>In CSS below, I use a default <code>linear-gradient</code> in the first CSS class.
+<p>In the CSS below, I use a default <code>linear-gradient</code> in the first CSS class.
 In the second class, I use degrees to specify the exact gradient angle.
 In the third class, I use the <code>to top</code> keyword.</p>
 <pre><code>.linear {
@@ -4110,7 +4114,7 @@ In the third class, I use the <code>to top</code> keyword.</p>
 <p>We can change the transparency of an image using the <code>opacity</code> property.
 A value of <code>0.0</code> indicates full transparency and a value of <code>1.0</code> indicates a fully opaque image.</p>
 <p><strong>HTML</strong>:</p>
-<pre><code>&lt;h3&gt;High Opacity&lt;/h3&gt;
+<pre><code>&lt;h3&gt;Low Opacity&lt;/h3&gt;
 &lt;img class="opacity_low" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
 
 &lt;h3&gt;Medium Opacity&lt;/h3&gt;
@@ -4183,18 +4187,18 @@ In the following example, we start the count at <code>10</code> and then countdo
 <h3 id="roman-numerals"><a class="header" href="#roman-numerals">Roman Numerals</a></h3>
 <p>We can change to Roman numerals:</p>
 <pre><code>&lt;h3&gt;Upper Roman Numeral&lt;/h3&gt;
-&lt;ul class="roman_upper"&gt;
+&lt;ol class="roman_upper"&gt;
     &lt;li&gt;Apple&lt;/li&gt;
     &lt;li&gt;Banana&lt;/li&gt;
     &lt;li&gt;Watermelon&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 
 &lt;h3&gt;Lower Roman Numeral&lt;/h3&gt;
-&lt;ul class="roman_lower"&gt;
+&lt;ol class="roman_lower"&gt;
     &lt;li&gt;Apple&lt;/li&gt;
     &lt;li&gt;Banana&lt;/li&gt;
     &lt;li&gt;Watermelon&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 </code></pre>
 <p>We define the use of Roman numerals in CSS.
 To use uppercase Roman numerals, we use <code>list-style-type: upper-roman</code>.
@@ -4212,18 +4216,18 @@ To use lowercase Roman numerals, we use <code>list-style-type: lower-roman</code
 <code>list-style-type: lower-alpha</code> or <code>list-style-type: upper-alpha</code>:</p>
 <p><strong>HTML</strong>:</p>
 <pre><code>&lt;h3&gt;Lower Alpha&lt;/h3&gt;
-&lt;ul class="alpha_lower"&gt;
+&lt;ol class="alpha_lower"&gt;
     &lt;li&gt;Apple&lt;/li&gt;
     &lt;li&gt;Banana&lt;/li&gt;
     &lt;li&gt;Watermelon&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 
 &lt;h3&gt;Upper Alpha&lt;/h3&gt;
-&lt;ul class="alpha_upper"&gt;
+&lt;ol class="alpha_upper"&gt;
     &lt;li&gt;Apple&lt;/li&gt;
     &lt;li&gt;Banana&lt;/li&gt;
     &lt;li&gt;Watermelon&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 </code></pre>
 <p><strong>CSS</strong>:</p>
 <pre><code>.alpha_lower {
@@ -4250,14 +4254,14 @@ To use lowercase Roman numerals, we use <code>list-style-type: lower-roman</code
 }
 </code></pre>
 <h3 id="changing-list-markers"><a class="header" href="#changing-list-markers">Changing List Markers</a></h3>
-<p>Or may also specify using a <code>circle</code>, a <code>disc</code>, Unicode, or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type">other characters</a>.</p>
+<p>We may also specify using a <code>circle</code>, a <code>disc</code>, Unicode, or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type">other characters</a>.</p>
 <p><strong>HTML</strong>:</p>
 <pre><code>&lt;h3&gt;Circle&lt;/h3&gt;
-&lt;ol class="circle"&gt; 
+&lt;ul class="circle"&gt; 
     &lt;li&gt;Apple&lt;/li&gt;
     &lt;li&gt;Banana&lt;/li&gt;
     &lt;li&gt;Watermelon&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 </code></pre>
 <p><strong>CSS</strong>:</p>
 <pre><code>.circle {
@@ -4269,11 +4273,11 @@ To use lowercase Roman numerals, we use <code>list-style-type: lower-roman</code
 See the <a href="https://unicode.org/emoji/charts/full-emoji-list.html">Full Emoji List</a> for ideas.
 In the following example, I use the <a href="https://unicode.org/emoji/charts/full-emoji-list.html#1f596">Vulcan Salute</a> as a marker for my list:</p>
 <pre><code>&lt;h3&gt;Vulcan Salute&lt;/h3&gt;
-&lt;ol class="vulcan"&gt; 
+&lt;ul class="vulcan"&gt; 
     &lt;li&gt;Apple&lt;/li&gt;
     &lt;li&gt;Banana&lt;/li&gt;
     &lt;li&gt;Watermelon&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 </code></pre>
 <p><strong>CSS</strong>:</p>
 <pre><code>.vulcan {
@@ -4284,7 +4288,7 @@ In the following example, I use the <a href="https://unicode.org/emoji/charts/fu
 <p>We can also use our own images.
 In the examples below, I used ChatGPT to generate icons for the fruit images.
 These icons were generated as <a href="https://en.wikipedia.org/wiki/WebP"><code>webp</code></a> files, and
-I refer to them using using the <code>url</code> value in the CSS.</p>
+I refer to them using the <code>url</code> value in the CSS.</p>
 <p>In the first list below, I use one icon for all marks:</p>
 <p><strong>HTML</strong>:</p>
 <pre><code>&lt;h3&gt;Unordered List Using Images&lt;/h3&gt;
@@ -4328,7 +4332,7 @@ I refer to them using using the <code>url</code> value in the CSS.</p>
 &lt;ol&gt;
     &lt;li&gt;Apples
         &lt;ol&gt;
-            &lt;li&gt;HoneyCrisp&lt;/li&gt;
+            &lt;li&gt;Honeycrisp&lt;/li&gt;
             &lt;li&gt;Fuji&lt;/li&gt;
         &lt;/ol&gt;
     &lt;/li&gt;
@@ -4363,10 +4367,10 @@ I refer to them using using the <code>url</code> value in the CSS.</p>
         &lt;/ul&gt;
     &lt;/li&gt;
     &lt;li&gt;Watermelon
-        &lt;ul&gt;
+        &lt;ol class="roman_lower"&gt;
             &lt;li&gt;Crimson Sweet&lt;/li&gt;
             &lt;li&gt;Yellow Baby&lt;/li&gt;
-        &lt;/ul&gt;
+        &lt;/ol&gt;
     &lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
@@ -4426,16 +4430,16 @@ Then an ordered list within an unordered list.</p>
 <pre><code>&lt;h4&gt;Roman Upper/Lower Nested&lt;/h4&gt;
 &lt;ol class="roman_upper"&gt;
     &lt;li&gt;Apples
-        &lt;ul class="roman_lower"&gt;
+        &lt;ol class="roman_lower"&gt;
             &lt;li&gt;Honeycrisp&lt;/li&gt;
             &lt;li&gt;Fuji&lt;/li&gt;
-        &lt;/ul&gt;
+        &lt;/ol&gt;
     &lt;/li&gt;
     &lt;li&gt;Bananas
-        &lt;ul class="roman_lower"&gt;
+        &lt;ol class="roman_lower"&gt;
             &lt;li&gt;Cavendish&lt;/li&gt;
             &lt;li&gt;Plantain&lt;/li&gt;
-        &lt;/ul&gt;
+        &lt;/ol&gt;
     &lt;/li&gt;
     &lt;li&gt;Watermelon
         &lt;ul&gt;
@@ -4478,7 +4482,7 @@ I use an image of a small grid or square to create a kind of notebook effect for
     background: url('media/small_grid.gif');
 }
 </code></pre>
-<p>We need to use the <code>background-repeat: no-repeat</code> property and value to disble image repeating:</p>
+<p>We need to use the <code>background-repeat: no-repeat</code> property and value to disable image repeating:</p>
 <pre><code>html {
     background: url('media/squiggly.png');
     background-repeat: no-repeat;
@@ -4518,7 +4522,7 @@ Have fun, practice, and build your knowledge.</p>
 <p>Your browser will display a <a href="https://en.wikipedia.org/wiki/Favicon">favicon</a> for a site in the site's tab, bookmark, etc.
 You can create favicons using most of the major file formats: PNG, JPEG, SVG.
 You can also use the <a href="https://en.wikipedia.org/wiki/ICO_(file_format)">ICO</a> file format.
-The important thing to know is that favicons may be created in mutiple sizes and
+The important thing to know is that favicons may be created in multiple sizes
 but should maintain a perfectly square ratio (1:1 aspect ratio).
 The most common sizes are 16x16 pixels, 32x32 pixels, 48x48 pixels, 96x96 pixels, etc.
 These sizes are used on different devices or under different views (tab, bookmark, etc).
@@ -4526,11 +4530,12 @@ These sizes are used on different devices or under different views (tab, bookmar
 However, it's common to make available multiple sizes and the browser can choose which one to use.</p>
 <p>Favicons can be created in a photo editor, like GIMP, or better yet, in an SVG editor, like Inkscape.
 To use a favicon on a site, we use the <code>&lt;link&gt;</code> tag in the <code>&lt;head&gt;</code> of a web document.
-The following is an example of linking to four different files in a separate <code>icons/</code> directory with different favicon sizes:</p>
-<pre><code>&lt;link rel="icon" type="icons/png" sizes="16x16" href="icons/icon_16.png"&gt;
-&lt;link rel="icon" type="icons/png" sizes="32x32" href="icons/icon_32.png"&gt;
-&lt;link rel="icon" type="icons/png" sizes="72x72" href="icons/icon_72.png"&gt;
-&lt;link rel="icon" type="icons/png" sizes="114x114" href="icons/icon_114.png"&gt;
+The following is an example of linking to several different files in a separate <code>icons/</code> directory
+with different favicon sizes, plus an Apple touch icon:</p>
+<pre><code>&lt;link rel="icon" type="image/png" sizes="16x16" href="icons/icon_16.png"&gt;
+&lt;link rel="icon" type="image/png" sizes="32x32" href="icons/icon_32.png"&gt;
+&lt;link rel="icon" type="image/png" sizes="72x72" href="icons/icon_72.png"&gt;
+&lt;link rel="icon" type="image/png" sizes="114x114" href="icons/icon_114.png"&gt;
 &lt;link rel="apple-touch-icon" sizes="144x144" href="icons/icon_144.png"&gt;
 </code></pre>
 <p>The files in the above code represent the different image sizes:</p>
@@ -4539,6 +4544,7 @@ The following is an example of linking to four different files in a separate <co
 <li><code>icon_32.png</code>: 32x32 pixels</li>
 <li><code>icon_72.png</code>: 72x72 pixels</li>
 <li><code>icon_114.png</code>: 114x114 pixels</li>
+<li><code>icon_144.png</code>: 144x144 pixels (Apple touch icon)</li>
 </ul>
 <p>The <code>rel</code> attribute with the value of <code>apple-touch-icon</code> makes the favicon more accessible for iOS devices
 (because Apple).</p>
@@ -4546,10 +4552,10 @@ The following is an example of linking to four different files in a separate <co
 <h2 id="introduction-9"><a class="header" href="#introduction-9">Introduction</a></h2>
 <p>Responsive design is of fundamental importance to the web.
 Since smartphones were introduced in 2007, smartphone browsers have increasingly become the dominant way to interact with the web.
-As a result of this trend in user behavior, search engines prioritize a smartphone-first web.
-Google, for example, stopped <a href="https://developers.google.com/search/blog/2024/06/mobile-indexing-vlast-final-final.doc?hl=en">indexing sites that are not mobile accessible</a> as of July 2024.
-This means that if your website isn't responsive, i.e., it doesn't collapse into a single column in mobile view,
-then it will eventually not show up in Google searches.</p>
+As a result of this trend in user behavior, search engines prioritize mobile-friendly content.
+Google, for example, uses <a href="https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-first-indexing">mobile-first indexing</a>, which means it primarily uses the mobile version
+of a site for indexing and ranking.
+This means that if your website isn't responsive, it will be harder to rank and harder for users to navigate on small screens.</p>
 <h2 id="common-layouts"><a class="header" href="#common-layouts">Common Layouts</a></h2>
 <p>So far in this work, we have primarily covered different ways to style the content of our web pages.
 However, one of the main purposes of CSS is to style the layout of a page.
@@ -4603,12 +4609,12 @@ In the following example, the 1-column layout includes an extra column in the th
 </code></pre>
 <p>The MDN Web Docs provides a nice overview of the <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Design_and_accessibility/Common_web_layouts">common layouts in web design</a>.</p>
 <h2 id="responsive-layouts"><a class="header" href="#responsive-layouts">Responsive Layouts</a></h2>
-<p>Layouts with more than one column only work on devices such as tablets, laptops, and desktop machines.
-When viewing on mobile, all layouts should be a 1-column layout.</p>
+<p>Layouts with more than one column only work well on devices such as tablets, laptops, and desktop machines.
+When viewing on mobile, layouts often collapse into a 1-column layout.</p>
 <p>Fortunately, CSS provides the tools to create <strong>responsive</strong> designs;
 i.e., tools needed to collapse multi-column layouts into a single layout.
-The two newest tools include <strong>Flexbox</strong> and <strong>Grid</strong>.
-Both of these tools make it much easier to create complex, multi-row and multi-column, layouts
+Two widely used layout tools include <strong>Flexbox</strong> and <strong>Grid</strong>.
+Both of these tools make it much easier to create complex, multi-row and multi-column layouts
 that also collapse into single column layouts in mobile view.</p>
 <h2 id="conclusion-16"><a class="header" href="#conclusion-16">Conclusion</a></h2>
 <p>In the next section, we will learn how to use CSS Flexbox to create responsive website designs.
@@ -4623,9 +4629,9 @@ To learn more about CSS Grid, see the following resources:</p>
 <li><a href="https://www.w3schools.com/css/css_grid.asp">Grid: W3 Schools</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="flexbox-basics"><a class="header" href="#flexbox-basics">Flexbox Basics</a></h1>
-<p>CSS has long offered a number of <em>layout modes</em> for designing the layout of documents, text, tables, and positions.
+<p>CSS has long offered a number of <em>layout modes</em> for designing the layout of documents, text, tables, and positioned elements.
 <a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexbox layout</a> is a newer layout mode used to create responsive web page designs.
-It works in one-dimension at a time: rows <strong>or</strong> columns.</p>
+It works in one dimension at a time: rows <strong>or</strong> columns.</p>
 <h2 id="introduction-10"><a class="header" href="#introduction-10">Introduction</a></h2>
 <p>CSS Flexbox includes the following <strong>properties</strong>:</p>
 <ul>
@@ -4637,16 +4643,16 @@ It works in one-dimension at a time: rows <strong>or</strong> columns.</p>
 <li><code>column-reverse</code></li>
 </ul>
 </li>
-<li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-wrap-property"><code>flex-wrap</code></a> defines whether flex container is single or multi-line. Options include:
+<li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-wrap-property"><code>flex-wrap</code></a> defines whether a flex container is single- or multi-line. Options include:
 <ul>
 <li><code>nowrap</code> (single line)</li>
 <li><code>wrap</code> (multi-line)</li>
 <li><code>wrap-reverse</code></li>
 </ul>
 </li>
-<li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-flow-property"><code>flex-flow</code></a> is shorthand for: <code>flex-direction</code> and <code>flex-wrap</code>.
+<li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-flow-property"><code>flex-flow</code></a> is shorthand for <code>flex-direction</code> and <code>flex-wrap</code>.
 <ul>
-<li>For example: <code>article { flex-flow: row wrap }</code> or <code>section { flex-flow: column nowrap}</code>.</li>
+<li>For example: <code>article { flex-flow: row wrap; }</code> or <code>section { flex-flow: column nowrap; }</code>.</li>
 </ul>
 </li>
 <li><a href="https://www.w3.org/TR/css-flexbox-1/#justify-content-property"><code>justify-content</code></a> works to align flex items (items in a flex container) along the <strong>main axis</strong> defined in <code>flex-direction</code>. Options include:
@@ -4654,8 +4660,8 @@ It works in one-dimension at a time: rows <strong>or</strong> columns.</p>
 <li><code>flex-start</code>: pack items at the line start</li>
 <li><code>flex-end</code>: pack items at the line end</li>
 <li><code>center</code>: pack items near the center</li>
-<li><code>space-between</code>: distribute items evenly across the line, placing first and last flex item near the each margin border</li>
-<li><code>space-around</code>: similar to above, but spaces first and last flex item a half space from each margin border</li>
+<li><code>space-between</code>: distribute items evenly across the line, placing the first and last flex items near the container edges</li>
+<li><code>space-around</code>: similar to above, but with equal space on both sides of each item</li>
 </ul>
 </li>
 <li><a href="https://www.w3.org/TR/css-flexbox-1/#align-items-property"><code>align-items</code></a> works on the <strong>cross axis</strong> of the container. Options include:
@@ -4666,45 +4672,46 @@ It works in one-dimension at a time: rows <strong>or</strong> columns.</p>
 <li><code>stretch</code>: flex items are stretched from start to end</li>
 </ul>
 </li>
-<li><a href="https://www.w3.org/TR/css-flexbox-1/#align-content-property"><code>align-content</code></a> is similarly to how <code>justify-content</code> works on the main axis but works on the <strong>cross axis</strong> when there is extra space.
-Takes effect when their are multiple lines of items, such as when <code>flex-wrap: wrap</code> is in effect. Options include:
+<li><a href="https://www.w3.org/TR/css-flexbox-1/#align-content-property"><code>align-content</code></a> works like <code>justify-content</code> but on the <strong>cross axis</strong>, and it applies when there is extra space.
+It takes effect when there are multiple lines of items, such as when <code>flex-wrap: wrap</code> is in effect. Options include:
 <ul>
 <li><code>flex-start</code>: pack items at the container start</li>
 <li><code>flex-end</code>: pack items at the container end</li>
 <li><code>center</code>: pack items near the center of the container</li>
-<li><code>space-between</code>: distribute items evenly in the flex container, placing first and last flex item near the each margin border</li>
-<li><code>space-around</code>: similar to above, but spaces first and last flex item a half space from each margin border</li>
+<li><code>space-between</code>: distribute items evenly in the flex container, placing the first and last flex items near the container edges</li>
+<li><code>space-around</code>: similar to above, but with equal space on both sides of each item</li>
 <li><code>stretch</code>: flex items are stretched from start to end</li>
 </ul>
 </li>
 </ul>
 <p>Note how some properties above refer to the main axis or the cross axis.</p>
 <ul>
-<li>to use on main axis properties:
+<li>Main-axis properties include:
 <ul>
 <li><code>justify-content</code></li>
 </ul>
 </li>
-<li>to use on cross axis properties:
+<li>Cross-axis properties include:
 <ul>
 <li><code>align-items</code></li>
 <li><code>align-content</code></li>
 </ul>
 </li>
 </ul>
-<p>By default, the main axis is the x-axis, and the cross axis is the y-axis.</p>
+<p>By default, the main axis is the x-axis and the cross axis is the y-axis.
+If you switch to a column direction, those axes flip.</p>
 <h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
 <p>To initiate a flex layout, we use the <code>display</code> property.
 We can use the <code>display</code> property in section elements such as <code>&lt;body&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;div&gt;</code>, etc.
 These elements become <strong>flex containers</strong>.
-The <strong>flex items</strong> in these containers is thus any direct child element of a flex container.
+The <strong>flex items</strong> in these containers are any direct child elements of a flex container.
 For example, to create a flex container for the <code>&lt;nav&gt;</code> element, we could use the following CSS declaration:</p>
 <pre><code>nav {
     display: flex;
     flex-flow: column wrap;
 }
 </code></pre>
-<p>The elements in that <code>&lt;nav&gt;</code> section, such as an unordered list <code>&lt;ul&gt;</code>, become the container's flex items.</p>
+<p>The elements in that <code>&lt;nav&gt;</code> section, such as a <code>&lt;ul&gt;</code>, become the container's flex items.</p>
 <p>To create nested layouts, we can use <code>display</code> multiple times in a single web page.
 For example, if an <code>&lt;article&gt;</code> element contains several <code>&lt;section&gt;</code> elements, then the following would be used:</p>
 <pre><code>article {
@@ -4715,12 +4722,12 @@ For example, if an <code>&lt;article&gt;</code> element contains several <code>&
 section {
     display: flex;
     flex-flow: row wrap;
-    }
+}
 </code></pre>
 <h3 id="basic-flex-example"><a class="header" href="#basic-flex-example">Basic Flex Example</a></h3>
 <p>In the following example, I make the <code>&lt;section&gt;</code> element a <strong>flex container</strong>.
 This element includes six <code>&lt;p&gt;</code> elements, which become the <strong>flex items</strong>.
-The <code>gap</code> property in the <code>section</code> rule adds a <code>10px</code> gap between between flex items.
+The <code>gap</code> property in the <code>section</code> rule adds a <code>10px</code> gap between flex items.
 For the <code>&lt;p&gt;</code> element, I add borders and expand their dimensions to create boxes around these elements.
 I use a <strong>structural pseudo class</strong> <code>nth-child()</code> to alternate the colors of these boxes.</p>
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -4854,7 +4861,7 @@ These include:</p>
 <p>I add the following to the <code>body</code> selector to make the margins flush with the browser window:</p>
 <pre><code>body {
     max-width: 100%;
-    margin: auto;
+    margin: 0;
 }
 </code></pre>
 <p>I create a <code>nav</code> section and make it a flex container.
@@ -4887,7 +4894,7 @@ I use <code>flex-flow: row wrap</code> to make it a responsive row, and I use <c
     justify-content: center;
 }
 </code></pre>
-<p>The remaining styles in the CSS control help keep the page consistent with the rest of the styling.
+<p>The remaining styles in the CSS help keep the page consistent with the rest of the styling.
 Note the use of the <code>clamp()</code> function.
 This is used to set the minimum, preferred, and maximum values of an element.</p>
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -5020,14 +5027,14 @@ This is used to set the minimum, preferred, and maximum values of an element.</p
 &lt;/html&gt;
 </code></pre>
 <h2 id="conclusion-17"><a class="header" href="#conclusion-17">Conclusion</a></h2>
-<p>In this section we learned about the CSS Flexbox layout model.
+<p>In this section, we learned about the CSS Flexbox layout model.
 I first detailed the CSS properties that are available to create a Flex layout.
 I provided an example using basic boxes.
 Then I created a two-column example and a mixed column example,
 both of which are responsive to mobile views.
 These may also be adapted to create more complex layouts.</p>
-<p>Note that the use of Flex aligns well with section elements,
-such as the <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;main&gt;</code>, elements.
+<p>Note that the use of Flexbox aligns well with section elements,
+such as the <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;main&gt;</code> elements.
 This is because, by definition, these elements are container elements.</p>
 <p>Additional sources:</p>
 <ul>
@@ -5081,9 +5088,9 @@ Thus we use this to provide navigation on our websites.</p>
 HTML5 provides tools to add metadata and semantic data to our web pages and thus help build <strong>The Semantic Web</strong>.</p>
 <p>However, those elements are primarily aimed at adding semantic data about the document as a whole and its structure.
 In this last section of our work, we will explore how to add semantic data to our web pages that provide
-more information about the <strong>content</strong> of our those pages.</p>
+more information about the <strong>content</strong> of those pages.</p>
 <p>To do that, we will learn about the <a href="https://schema.org/">schema.org</a> vocabulary.
-Schema.org is a <strong>data model</strong> that we will serialize as JSON-LD, or <a href="https://en.wikipedia.org/wiki/JSON-LD">JSON Linked Data</a>.
+Schema.org is a <strong>data model</strong> that we will serialize as JSON-LD, or <a href="https://en.wikipedia.org/wiki/JSON-LD">JSON-LD</a>.
 Therefore, we will first learn how to structure data using <a href="https://en.wikipedia.org/wiki/JSON">JSON</a>,
 which is a format for data exchange, primarily across the internet.
 And then we will learn how to serialize, or integrate, a schema.org vocabulary into JSON-LD.</p>
@@ -5111,14 +5118,14 @@ One schema to rule them all: How Schema.org models the world of search.
 <h2 id="introduction-12"><a class="header" href="#introduction-12">Introduction</a></h2>
 <p>It may be too obvious to say, but computer applications use and exchange data in order to operate.
 For example, an <a href="https://en.wikipedia.org/wiki/Online_public_access_catalog">OPAC (library catalog)</a> contains bibliographic records (data)
-that allows users to search the data from a browser to locate information sources.
-An <a href="https://en.wikipedia.org/wiki/Apache_HTTP_Server">Apache web server</a> stores configuration information in order to turn on, off, or fine tune the HTTP services it provides.</p>
+that allow users to search a catalog from a browser to locate information sources.
+An <a href="https://en.wikipedia.org/wiki/Apache_HTTP_Server">Apache web server</a> stores configuration information in order to turn on, off, or fine-tune the HTTP services it provides.</p>
 <p>What may not be obvious is that data is stored in a variety of formats.
 Library science students may be familiar with <a href="https://en.wikipedia.org/wiki/XML">XML (Extensible Markup Language)</a> because it's used to serialize MARC data
 (see <a href="https://www.loc.gov/standards/marcxml/">MARCXML</a>) or <a href="https://www.dublincore.org/specifications/dublin-core/dc-xml-guidelines/">DublinCore (DC)</a> metadata.
 XML performs this service by storing data and metadata in a <a href="https://www.w3.org/TR/xml/">standardized format</a>.
 <a href="https://en.wikipedia.org/wiki/Comma-separated_values">CSV (comma separated values)</a> files function as a <em>de facto</em> standard for storing tabular data.
-Data stored in CSV files are often used for data or statistical analysis, like in the R or Python programming languages.
+Data stored in CSV files are often used for data analysis or statistical work, like in the R or Python programming languages.
 <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> files are used to store configuration files for various applications.</p>
 <p>Oftentimes we might hear that data or metadata is <strong>encoded</strong> in a certain way, such as in MARC or DC, and
 then <strong>encoded</strong> again in XML, CSV, YAML, or similar formats.
@@ -5168,7 +5175,7 @@ Each name is followed by : <code>colon</code> and the name/value pairs are separ
 <p>An <em>array</em> is an ordered collection of values. An array begins with [ <code>left bracket</code> and ends with ] <code>right bracket</code>.
 Values are separated by , <code>comma</code>.</p>
 </blockquote>
-<p>Name/value pairs are separated by colons and both are <strong>double quoted</strong>:</p>
+<p>Name/value pairs are separated by colons. Names are double-quoted strings, and string values are double-quoted:</p>
 <pre><code>"name": "value"
 </code></pre>
 <p>Values may take on specific data types that include:</p>
@@ -5177,7 +5184,7 @@ Values are separated by , <code>comma</code>.</p>
 <li>numbers</li>
 <li>JSON objects</li>
 <li>arrays</li>
-<li>Boolean ("true" or "false")</li>
+<li>booleans (<code>true</code> or <code>false</code>)</li>
 <li>null</li>
 </ul>
 <h3 id="a-simple-json-object"><a class="header" href="#a-simple-json-object">A Simple JSON Object</a></h3>
@@ -5204,7 +5211,7 @@ For example, I happen to know that the person described in the simple JSON objec
 Fortunately, we can use a JSON <strong>array</strong> to add more interests.</p>
 <p>An array is assigned a name and begins and ends with square brackets.
 Each item in a JSON array ends with a comma, but like the last item in a JSON object, the last item in an array does not end with a comma.
-To see what this looks like, I convert the <code>interests</code> field to a array that lists several of this person's interests:</p>
+To see what this looks like, I convert the <code>interests</code> field to an array that lists several of this person's interests:</p>
 <pre><code>{
     "name": "C. Sean Burns",
     "title": "Associate Professor",
@@ -5223,10 +5230,10 @@ To see what this looks like, I convert the <code>interests</code> field to a arr
 }
 </code></pre>
 <h3 id="nesting-json-objects"><a class="header" href="#nesting-json-objects">Nesting JSON Objects</a></h3>
-<p>As noted, JSON objects may take as a <em>value</em> other JSON objects.
+<p>As noted, JSON objects may take other JSON objects as a <em>value</em>.
 This is useful when a particular field name may be converted into an object itself.
 For example, in the above JSON objects, the <code>worksFor</code> field name can include other properties and thus may be extended into an <strong>object</strong>.
-Since the person described in the JSON object also has a work location, I can add that as a new object named as <code>location</code>.
+Since the person described in the JSON object also has a work location, I can add that as a new object named <code>location</code>.
 The result is the following JSON object that contains two nested JSON objects: <code>worksFor</code> and <code>location</code>.
 Note that since the person described in this object teaches in two programs, I converted the <code>program</code> field name into a list
 that includes both programs.</p>
@@ -5242,16 +5249,16 @@ that includes both programs.</p>
         "academic libraries"
     ],
     "worksFor": {
-        "name": "University of Kentucky", // nested object describing organization
+        "name": "University of Kentucky",
         "college": "College of Communication and Information",
         "department": "School of Information Science",
         "program": [
-            "Information Communication Technology", // new array
+            "Information Communication Technology",
             "Library Science"
         ]
     },
     "location": {
-        "streetAddress": "326 Lucille Little Library", // nested object describing location
+        "streetAddress": "326 Lucille Little Library",
         "addressLocality": "Lexington",
         "addressRegion": "Kentucky",
         "postalCode": "40506"
@@ -5259,7 +5266,7 @@ that includes both programs.</p>
 }
 </code></pre>
 <blockquote>
-<p>Note: Comments (marked with <code>//</code>) in the above JSON object are shown here for explanation and are not allowed in actual JSON syntax.</p>
+<p>Note: The example above omits comments because JSON does not allow them.</p>
 </blockquote>
 <h3 id="json-linting"><a class="header" href="#json-linting">JSON Linting</a></h3>
 <p>Just as we have validated our <a href="https://validator.w3.org/">HTML5</a> and <a href="https://jigsaw.w3.org/css-validator/">CSS3</a> code,
@@ -5274,14 +5281,14 @@ which generally relies on a <strong>data model (or schema)</strong> and serializ
 In the next section, we will begin to explore the full richness of the schema.org vocabulary and learn how to serialize that as JSON-LD.</p>
 <p>Before we can use JSON-LD, we need to know how to understand and use JSON.
 We learned that JSON uses a <code>"name": "value"</code> syntax.
-Both <code>"name"</code> and <code>"value"</code> are double quoted.
+Both <code>"name"</code> and string values are double quoted.
 <strong>Values</strong> may include specific data types such as strings, numbers, JSON objects, arrays, Boolean, and null.
 Each <code>"name": "value"</code> item ends with a comma.
 The last <code>"name": "value"</code> item in a JSON object does not end in a comma.
 If a JSON object includes an array as a data type, the array is enclosed in square brackets <code>[ ]</code>.
 JSON objects nested in JSON objects are <strong>named</strong> and then the nested object is enclosed in curly brackets <code>{ }</code>.</p>
 <p>As with HTML and CSS, remember that it's important to validate our JSON syntax.
-Therefore, we also learned about tools like the JSON Linter.
+Therefore, we also learned about tools like JSONLint.
 The more complex our JSON objects become, the easier it is to introduce syntax errors into them.
 So be sure to validate your JSON.</p>
 <p>When we begin working with schema.org, you will see how this structured, machine-readable format allows search engines and AI
@@ -5319,7 +5326,7 @@ The main terms include:</p>
 <li><code>type</code></li>
 </ul>
 <p>We can use this data model for all sorts of items or works.
-Here I use it to describe Toni Morrison's Pulitzer Prize winning novel, <em>Beloved</em>:</p>
+Here I use it to describe Toni Morrison's Pulitzer Prize-winning novel, <em>Beloved</em>:</p>
 <div class="table-wrapper"><table><thead><tr><th>DC Term</th><th>Property</th></tr></thead><tbody>
 <tr><td>Creator</td><td>Toni Morrison</td></tr>
 <tr><td>Title</td><td>Beloved</td></tr>
@@ -5346,8 +5353,7 @@ Unlike the prior data models, schema.org functions more like a <a href="https://
 As a taxonomy, schema.org is a kind of hierarchical, relational classification system, and as an ontology,
 schema.org stresses foundational components, such as concepts or classes, properties or attributes, relationships, and instances.</p>
 <p>Like other data models, the schema.org vocabulary provides a method for adding structured, linked data.
-The data is <em>linked</em> because the vocabulary is interconnected via a hierarchical data model.
-This means that each type or property can point to or be reused across datasets, and
+The data is <em>linked</em> because types and properties can reference one another and be reused across datasets, and
 it's this characteristic that creates a web of meaning that is readable by machines.</p>
 <p>For example, the root data type in schema.org is <code>Thing</code>.
 The <code>Thing</code> type includes child data types such as <code>Action</code>, <code>Person</code>, <code>Place</code>, <code>Organization</code>, and more.
@@ -5366,7 +5372,7 @@ an <code>Organization</code> thing:</p>
 <li><code>ElementarySchool</code></li>
 <li><code>HighSchool</code>, and so on.</li>
 </ul>
-<p>Schema.org data types are <em>transitive</em> (if <code>a &gt; b</code> and <code>b &gt; c</code>, then <code>a &gt; c</code>).
+<p>Schema.org subclass relationships are <em>transitive</em> (if <code>a &gt; b</code> and <code>b &gt; c</code>, then <code>a &gt; c</code>).
 For example, the <em>University of Kentucky</em> is an <code>instance</code> of a <code>CollegeOrUniversity</code> type.
 This itself is a subclass of an <code>EducationalOrganization</code>.
 We could go on: an <code>EducationalOrganization</code> type is a subclass of an <code>Organization</code> type.
@@ -5388,21 +5394,21 @@ A <a href="https://schema.org/Thing"><code>Thing</code></a> type can have the fo
 <li><code>description</code></li>
 </ul>
 <p>And an <code>EducationalOrganization</code> Thing can have <code>alumni</code> as a property.</p>
-<p>And each of those properties may have additional properties or take on values.
-For example, for <code>image</code>, we can provide a URL to an actual image.
-Or we may provide a <code>caption</code> for it.</p>
+<p>Properties take values, and those values can be simple (like text or URLs) or structured objects
+with their own properties.
+For example, <code>image</code> can be a URL or an <code>ImageObject</code> that includes a <code>caption</code>.</p>
 <p>However, just like <code>University of Kentucky</code> can be counted as an instance of <code>CollegeOrUniversity</code>,
-each <code>type</code> has its own set of <strong>instances</strong> in schema.org.
+each <code>type</code> has real-world <strong>instances</strong> that we describe using schema.org.
 To illustrate: since a <code>CollegeOrUniversity</code> thing is also an <code>EducationalOrganization</code> thing,
 a <code>CollegeOrUniversity</code> thing may also have the properties specific to <code>EducationalOrganization</code>, such as <code>alumni</code>.
 For instance, because <code>CollegeOrUniversity</code> inherits from <code>Thing</code>,
 it can use general properties like <code>name</code>, <code>description</code>, and <code>url</code>, but
 also more specific ones like <code>alumni</code> that are directly inherited from <code>EducationalOrganization</code>.</p>
-<p>That is, a <code>CollegeOrUniversity</code> thing may inherit properties of other types not in its direct lineage.
-Another example: a <code>CollegeOrUniversity</code> thing may also be a <code>CivicStructure</code> thing and a <code>Place</code> thing,
-even though neither of those are specific descendants of <code>EducationalOrganization</code>.
+<p>That is, schema.org supports multiple inheritance.
+For example, <code>EducationalOrganization</code> is a subtype of both <code>Organization</code> and <code>Place</code>,
+so a <code>CollegeOrUniversity</code> can use properties from all of those broader types.
 In this way, specific <code>things</code> and <code>properties</code> can interconnect or <code>link</code> to each other, forming <code>linked data</code>.
-That is, it's this ability to belong to multiple classes, and to inherit properties from these classes,
+That is, it's this ability to belong to multiple classes and to inherit properties from these classes
 that enables schema.org to describe real-world complexity more naturally than rigid, single-hierarchy systems.</p>
 <figure>
 <img src="images/schema_connections.svg"
@@ -5416,14 +5422,14 @@ Fig. 2. <a href="https://schema.org/CollegeOrUniversity">Schema.org Example Map 
 Diagram created using <a href="https://wiki.gnome.org/Apps/Dia">Dia</a>.
 </figcaption>
 </figure>
-<p>As you can see, a particular <code>instance</code> of some <code>Thing</code> may be a member of many classes, or be many types of <code>Things</code>.
-This is the same as you and me.
+<p>As you can see, a particular <code>instance</code> of some <code>Thing</code> may be described with multiple types.
+This is similar to how people fit multiple roles.
 For example, I am a professor, a parent, an offspring, etc.
-You might be a student and offspring.
+You might be a student and an offspring.
 Thus, we both share at least one class, and inherit the properties of that class and its broader classes, like <code>Person</code>.
 By using this organizational model to describe the content of a web page, search engines can begin to <em>understand</em>
 that content and its context and the relationship among <em>Things</em> on the web.</p>
-<p>To employ schema.org on your web pages requires some familiarity with the data model and what it offers.
+<p>Using schema.org on your web pages requires some familiarity with the data model and what it offers.
 Therefore, begin reviewing the <a href="https://schema.org/docs/full.html">Full schema hierarchy</a> for a complete listing of what is available.</p>
 <h2 id="conclusion-19"><a class="header" href="#conclusion-19">Conclusion</a></h2>
 <p>In this section, we were introduced to the <strong>schema.org</strong> data model.
@@ -5445,7 +5451,7 @@ we can begin to learn how to serialize schema.org into JSON-LD.</p>
 <h2 id="step-1-the-script-tag"><a class="header" href="#step-1-the-script-tag">Step 1: The <code>&lt;script&gt;</code> tag</a></h2>
 <p>Our JSON-LD code will be placed within the <code>&lt;head&gt;</code> of our web pages.
 We will use the <code>&lt;script&gt;</code> HTML element with the <code>type</code> attribute.
-The <code>type</code> attribute will hold a value for the <code>ld+json</code> <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types/Common_types">MIME</a> type, which is <code>application/ld+json</code>.
+The <code>type</code> attribute will use the JSON-LD <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/MIME_types/Common_types">MIME type</a>, which is <code>application/ld+json</code>.
 In the following snippet, I place this element just before the closing <code>&lt;/head&gt;</code> tag.
 The JSON-LD metadata will be placed between the opening and closing <code>&lt;script&gt;</code> tags.</p>
 <pre><code>&lt;!DOCTYPE html&gt;
@@ -5474,7 +5480,7 @@ The JSON-LD metadata will be placed between the opening and closing <code>&lt;sc
 I showed an initial example of how Dublin Core's fifteen main data fields can be used to capture specific metadata elements of a novel.
 That was a relatively easy example, and that's in large part because Dublin Core is a fairly flat and small schema.
 Knowing how to use schema.org to capture the important metadata elements is a bit more involved,
-and this is because schema.org is a big, general purpose taxonomy.</p>
+and this is because schema.org is a big, general-purpose taxonomy.</p>
 <p>The first step in identifying the schema.org elements to use is to start with the content of the web page
 that you want to describe with schema.org.
 The next step is to identify the main topic(s) of that content.
@@ -5498,24 +5504,24 @@ however, identifying the needed <code>Types</code> does involve searching throug
 However, I want to <strong>reiterate</strong> that in real-world practice, we build a JSON-LD data model based on the content
 and not just on what appears in the <code>&lt;title&gt;</code> and <code>&lt;meta&gt;</code> HTML tags.
 This is because JSON-LD is meant to capture details about the content in the web document and not just about the document overall.</p>
-<p>For example, consider a recipe for <a href="https://maureenabood.com/baked-kibbeh-you-say-meatloaf-i-say-meatlove/">Baked Kibbeh</a>, a Lebanese dish made of lamb, bulgur wheat, onion, and spices,
-often eaten when the meat is raw and sometimes cooked.
+<p>For example, consider a recipe for <a href="https://maureenabood.com/baked-kibbeh-you-say-meatloaf-i-say-meatlove/">Baked Kibbeh</a>, a Lebanese dish made of lamb, bulgur wheat, onion, and spices.
+Some versions of kibbeh are eaten raw, but baked kibbeh is cooked.
 If we search the source code of the recipe's web page, we find that it uses JSON-LD.
 We can examine that JSON-LD by pasting the URL in the <a href="https://validator.schema.org/">schema.org validator</a>, and
 see that the entire recipe, including ingredients and recipe instructions, is described in the JSON-LD.</p>
 <p>Content creators do not need to manually create their JSON-LD markup.
 The recipe site above likely uses JSON-LD generated by the <a href="https://yoast.com/">Yoast SEO WordPress CMS plugin</a>.
 Other CMS platforms can probably do similar things.
-The NY Times, the WSJ, and other major news platforms also embed JSON-LD and their JSON-LD
-are likely created through other automated mechanisms.</p>
+The NY Times, the WSJ, and other major news platforms also embed JSON-LD, and their JSON-LD
+is likely created through other automated mechanisms.</p>
 <h2 id="step-3-serializing-schemaorg-as-json-ld"><a class="header" href="#step-3-serializing-schemaorg-as-json-ld">Step 3: Serializing schema.org as JSON-LD</a></h2>
-<p>When we create a JSON-LD data model for our web pages, we must use data extracted from the content on the web pages and no more.
+<p>When we create a JSON-LD data model for our web pages, we should use data extracted from the content on the web pages and no more.
 If our web page has an article on Linux Systems Administration,
 as suggested in the various <code>&lt;meta&gt;</code> elements in the above HTML snippet,
-then we must create a JSON-LD model based on that topic and on the content in that article <strong>only</strong>.
+then we should create a JSON-LD model based on that topic and on the content in that article <strong>only</strong>.
 If we add schema.org <code>Types</code>, <code>Properties</code>, and <code>Instances</code> to our JSON-LD that are not covered in the systems administration article,
-search engines will demote our website in their search results.</p>
-<p>Here's a basic JSON-LD example that describes the Debian GNU/Linux distribution, one of the topics of my made-up webpage.
+search engines may ignore that markup or make the page ineligible for certain rich results.</p>
+<p>Here's a basic JSON-LD example that describes the Debian GNU/Linux distribution, one of the topics of my made-up web page.
 Note that a JSON-LD object begins with an <code>@context</code> statement and a link to the schema.org site.
 Then, the <code>@type</code> is declared:</p>
 <pre><code>&lt;script type="application/ld+json"&gt;
@@ -5537,11 +5543,11 @@ Then, the <code>@type</code> is declared:</p>
 }
 &lt;/script&gt;
 </code></pre>
-<p>The above example is based on <code>SoftwareApplication</code> type.
+<p>The above example is based on the <code>SoftwareApplication</code> type.
 This is declared in the second line with <code>"@type": "SoftwareApplication"</code>.
 This type entails a range of properties but also inherits properties from parent/ancestor types.
 That is, since <a href="https://schema.org/SoftwareApplication"><code>SoftwareApplication</code></a> is a descendant/subclass of the <code>CreativeWork</code> type,
-which itself is a subclass of <code>Thing</code> type, then <code>SoftwareApplication</code> can use properties from itself but
+which itself is a subclass of the <code>Thing</code> type, then <code>SoftwareApplication</code> can use properties from itself but
 also from <code>CreativeWork</code> and <code>Thing</code>.
 Therefore, in the JSON-LD code above, I use properties from <code>SoftwareApplication</code> but also from <code>CreativeWork</code> and <code>Thing</code>,
 as detailed at the schema.org link above and in the list below:</p>
@@ -5549,24 +5555,24 @@ as detailed at the schema.org link above and in the list below:</p>
     - name
     - description
     - url
-        - CreativeWork (TYPE), property of CreativeWork:
-            - datePublished
-                - SoftwareApplication (TYPE), properties of SoftwareApplication:
-                    - applicationCategory
-                    - applicationSubCategory
-                    - downloadUrl
-                    - memoryRequirements
-                    - operatingSystem
-                    - releaseNotes
-                    - softwareVersion
-                    - storageRequirements
+- CreativeWork (TYPE), property of CreativeWork:
+    - datePublished
+- SoftwareApplication (TYPE), properties of SoftwareApplication:
+    - applicationCategory
+    - applicationSubCategory
+    - downloadUrl
+    - memoryRequirements
+    - operatingSystem
+    - releaseNotes
+    - softwareVersion
+    - storageRequirements
 </code></pre>
 <p>The above JSON-LD is a good start, but we can capture more metadata about the Debian operating system.
 For example, the Debian OS is overseen by <em>The Debian Project</em>, which is a legal entity and the creator of the OS.
 We can modify our JSON-LD code to include that metadata.
 Specifically, we will use the <a href="https://schema.org/creator"><code>creator</code></a> property,
 which accepts either the <code>Organization</code> or <code>Person</code> properties as values (or instances).
-Since both instances are schema.org <code>Types</code>, we can create a nested JSON object:
+Since those values can be schema.org <code>Types</code>, we can create a nested JSON object:
 To capture more detail, we can list the main features of Debian using the <code>featureList</code> property of the <code>SoftwareApplication</code> type.
 I use a JSON list (using square brackets) to list the system's features.
 Remember that square brackets <code>[]</code> indicate a list of values (an array),
@@ -5606,13 +5612,14 @@ see the earlier section on <a href="4a-json-basics.html">JSON Basics</a>.</p>
         "long-term support"
     ]
 }
+&lt;/script&gt;
 </code></pre>
 <p>Finally, we're missing a subtle addition to the JSON-LD.
 My made-up web page is about using Debian for systems administration.
 It's not about <strong>Debian</strong>, per se.
 Thus, the above JSON-LD might be appropriate on the <a href="https://www.debian.org/">Debian homepage</a>, but
 my web page talks about using Debian rather than being about Debian.
-Understanding this requires acquiring a judgment of thing's <a href="https://en.wikipedia.org/wiki/Aboutness">aboutness</a>.
+Understanding this requires acquiring a judgment of a thing's <a href="https://en.wikipedia.org/wiki/Aboutness">aboutness</a>.
 In any case, to capture this distinction, I add the <a href="https://schema.org/WebPage">WebPage</a> type to the JSON-LD,
 along with <code>name</code> and <code>description</code> properties, and make the rest of the JSON nested in that type.
 I also name the nested JSON-LD object as <code>about</code>:</p>
@@ -5659,7 +5666,7 @@ I also name the nested JSON-LD object as <code>about</code>:</p>
 <h2 id="step-4-validating-our-json-ld"><a class="header" href="#step-4-validating-our-json-ld">Step 4: Validating Our JSON-LD</a></h2>
 <p>It's quite easy to make mistakes when manually writing JSON-LD code.
 Therefore, be sure to test your JSON-LD using the <a href="https://validator.schema.org/">Schema Markup Validator</a>.
-The validator will test both the syntax of your JSON-LD but also show if any schema.org types or properties are missing.</p>
+The validator will test both the syntax of your JSON-LD and flag invalid schema.org types or properties.</p>
 <p>Also, the <a href="https://json-ld.org/playground/">JSON-LD Playground</a> is not a validator, but it's useful for visualizing your code.</p>
 <p>You can also use the <a href="https://search.google.com/test/rich-results">Rich Results Test</a> tool.
 From the site, <q>Rich results are experiences on Google surfaces, such as Search, that go beyond the standard blue link.
@@ -5670,7 +5677,7 @@ For this to work, include images on your site and describe them in your JSON-LD.
 Also, these types of results are based on a subset of structured data.
 See: <a href="https://developers.google.com/search/docs/appearance/structured-data/search-gallery">Structured data markup that Google Search supports</a>.</p>
 <h2 id="step-5-inserting-json-ld-in-your-html-document"><a class="header" href="#step-5-inserting-json-ld-in-your-html-document">Step 5: Inserting JSON-LD in Your HTML Document</a></h2>
-<p>Now that I've completed my JSON-LD object that describes one aspect of the topic of my Linux Systems Administration page,
+<p>Now that I've completed the JSON-LD object that describes one aspect of the topic of my Linux Systems Administration page,
 I can add it to my web document.
 To do that, I insert the JSON-LD object into the <code>&lt;head&gt;</code> section.
 The following snippet illustrates this:</p>
@@ -5688,7 +5695,7 @@ The following snippet illustrates this:</p>
         &lt;style&gt;
             html { font-family: monospace; }
         &lt;/style&gt; 
-&lt;script type="application/ld+json"&gt;
+        &lt;script type="application/ld+json"&gt;
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -5727,7 +5734,7 @@ The following snippet illustrates this:</p>
     }
 }
 
-&lt;/script&gt;
+        &lt;/script&gt;
     &lt;/head&gt;
     &lt;body&gt;
     &lt;/body&gt;
@@ -5736,7 +5743,7 @@ The following snippet illustrates this:</p>
 <p>If I have additional topics, I could add additional types to my JSON-LD.
 Generally, it's good to use JSON-LD that's fairly descriptive of the content on the page.</p>
 <p>Note that JSON-LD isn't completely reusable across a site, since it's meant to mirror the content of a specific page.
-Therefore, each webpage on a website should include unique JSON-LD.</p>
+Therefore, each web page on a website should include unique JSON-LD.</p>
 <h2 id="conclusion-20"><a class="header" href="#conclusion-20">Conclusion</a></h2>
 <p>In this section, we explored how to describe web content using schema.org and JSON-LD.
 We learned how to model page content with appropriate types and properties,
@@ -5748,19 +5755,19 @@ Complete, usable, accessible, and semantically rich sites can be created with ju
 No JavaScript required.</p>
 <p>Some call this <a href="https://www.htmhell.dev/adventcalendar/2023/2/">The rule of least power</a>.
 The idea is to use the least powerful, most descriptive programming language before using more procedural programming languages.
-This is incredibly effective for web development for at least several reasons.
-First, the web is built first on HTML as the base technology and is backwards compatible to prior HTML versions.
-This means that if all the more complicated technologies (like JavaScript, etc) fail, HTML should still load.
+This is incredibly effective for web development for several reasons.
+First, the web is built on HTML as the base technology and is backwards compatible with prior HTML versions.
+This means that if the more complicated technologies (like JavaScript, etc) fail, HTML should still load.
 CSS probably will, too.
-Second, HTML, and even CSS, are fast because the basics of them are simple.
-They are incredibly focused on the document.</p>
-<p>Last, HTML is <a href="https://www.youtube.com/watch?v=-csXdj4WVwA">highly tolerant</a>.
+Second, HTML, and even CSS, are fast because their basics are simple.
+They are focused on the document.</p>
+<p>Finally, HTML is <a href="https://www.youtube.com/watch?v=-csXdj4WVwA">highly tolerant</a>.
 This means we can make a lot of mistakes in HTML, and web browsers will adjust.
 They won't even <strong>crash</strong>!
-If we make a mistake in our JavaScript code, the JavaScript will fail.
-Maybe that means the web page won't load, or more severely, the browser won't grind to a halt and crash.</p>
-<p>I should stress the importance of the document more.
-Focusing on HTML allows us to focus on a document's structure and content, both of which inform each other and make web pages accessible.
+If we make a mistake in our JavaScript code, that script can fail.
+That might mean a feature doesn't work, or, in worst cases, a runaway script can freeze the browser.</p>
+<p>I should stress the importance of the document.
+Focusing on HTML keeps us focused on a document's structure and content, both of which inform each other and make web pages accessible.
 They also serve as the basis for CSS and JavaScript.
 These other, more complicated technologies require access to the <a href="https://en.wikipedia.org/wiki/Document_Object_Model">DOM, or the Document Object Model</a>, and
 as a markup language, HTML's focus on the document underpins the DOM structure used by both CSS and JavaScript.
@@ -5776,21 +5783,21 @@ Plus, those other technologies are less for creating good web pages and more for
 Use them wisely.</p>
 <p>As you practice and acquire proficiency with the basics covered here, I invite you to keep experimenting.
 There are a lot of basics we haven't covered.
-For instance, since CSS is <em>rule-based</em>, there is a lot more to learn about writing conditional statements
-that initiate sets of rules depending on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@container">context</a>, the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media">device</a>, and the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports">browser</a>.
+For instance, since CSS is <em>rule-based</em>, there is a lot more to learn about writing conditional rules
+that apply sets of styles depending on the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@container">context</a>, the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media">device</a>, and the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@supports">browser</a>.
 There are other so-called <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_syntax/At-rule">at-rules</a> to learn, too.
 Furthermore, there is more to learn about CSS layouts, like <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout">CSS Grid</a>,
 which allows for more complicated layout designs than CSS Flexbox.</p>
 <p>Thanks, have fun, learn a lot, and study deeply.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="final-project-implementing-a-semantic-web-site"><a class="header" href="#final-project-implementing-a-semantic-web-site">Final Project: Implementing a Semantic Web Site</a></h1>
-<p>The following is a sample final project assignment students should be able to do upon completion of this book.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="final-project-implementing-a-semantic-website"><a class="header" href="#final-project-implementing-a-semantic-website">Final Project: Implementing a Semantic Website</a></h1>
+<p>The following is a sample final project assignment students should be able to complete upon finishing this book.</p>
 <h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
 <p>Your final project is to design and build a small, semantically structured website that
 reflects your understanding of HTML5, CSS3, Flexbox layout, JSON-LD, and web accessibility principles.
 This project gives you the opportunity to integrate the core concepts we've explored throughout this work
 into a cohesive and standards-compliant site.</p>
 <h2 id="instructions-and-project-requirements"><a class="header" href="#instructions-and-project-requirements">Instructions and Project Requirements</a></h2>
-<p>Please follow these steps in preparing your assignment.
+<p>Please follow these steps when preparing your assignment.
 Your final website must include the following:</p>
 <h3 id="step-1-site-structure"><a class="header" href="#step-1-site-structure">Step 1: Site Structure</a></h3>
 <ul>
@@ -5802,7 +5809,7 @@ Your final website must include the following:</p>
 <li>Each page must include consistent <strong>navigational links</strong> connecting all three pages.</li>
 <li>Use of <strong>semantic HTML5 elements</strong> appropriately; e.g., <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>, etc.</li>
 <li>All pages must link to the <strong>same external CSS stylesheet</strong>.</li>
-<li>Use <strong>Flexbox only</strong> for layout (no float-based or media query layouts accepted. Some Grid may be accepted but the overall layout should be dictated by Flexbox).</li>
+<li>Use <strong>Flexbox only</strong> for layout (no float-based layouts; media queries can be used for minor adjustments. Some Grid may be accepted, but the overall layout should be dictated by Flexbox).</li>
 </ul>
 <h3 id="step-2-semantic-web-component"><a class="header" href="#step-2-semantic-web-component">Step 2: Semantic Web Component</a></h3>
 <ul>
@@ -5818,7 +5825,7 @@ Your final website must include the following:</p>
 </li>
 <li><strong>Validate</strong> your JSON-LD using the <a href="https://validator.schema.org/">schema.org validator</a> for all three pages.</li>
 <li><strong>Review the accessibility</strong> of your color scheme using <a href="https://wave.webaim.org/">WAVE (web accessibility evaluation tool)</a>.</li>
-<li><strong>Turn on accessibility features</strong> (like screen readers, high contrast mode, etc) on your <strong>laptop or smartphone</strong> and review your own site from that perspective.
+<li><strong>Turn on accessibility features</strong> (like screen readers, high contrast mode, etc.) on your <strong>laptop or smartphone</strong> and review your own site from that perspective.
 <ul>
 <li>This step builds on our earlier activity where you explored accessibility modes of various websites.</li>
 </ul>
@@ -5843,7 +5850,7 @@ Your final website must include the following:</p>
 <li>Link to your website.</li>
 <li>Link to your GitHub repository for your website.</li>
 <li>WAVE review summary or screenshot.</li>
-<li>HTML5/CSS3 validator conformation (screenshots or links).</li>
+<li>HTML5/CSS3 validator confirmation (screenshots or links).</li>
 <li>JSON-LD validator confirmation (screenshots or links).</li>
 <li>Reflection statement.</li>
 </ul>

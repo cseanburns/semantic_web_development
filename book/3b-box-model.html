@@ -181,7 +181,7 @@
                         <h1 id="the-box-model"><a class="header" href="#the-box-model">The Box Model</a></h1>
 <p>The basic principle of working with CSS and HTML is knowing that all HTML elements are contained in a box.
 This includes everything from the root element <code>&lt;html&gt;</code> all the way down to
-text-level elements such as the paragraph tag <code>&lt;p&gt;</code> or the <code>&lt;span&gt;</code> tag.
+block-level elements such as the paragraph tag <code>&lt;p&gt;</code> or inline elements such as the <code>&lt;span&gt;</code> tag.
 We can test this using the universal selector <code>*</code> in our CSS.
 For example, consider the following HTML, which quotes the first sentence from <cite>Moby-Dick</cite>:</p>
 <pre><code>&lt;html&gt;
@@ -221,12 +221,12 @@ For example, consider the following HTML, which quotes the first sentence from <
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<p>Understanding this idea, that CSS treats HTML elements as boxes, is important for styling and designing layouts to our HTML.
-It's also important to understand that since boxes can be nested within other boxes, or sit adjacent to other boxes
-(e.g., descendant elements, sibling elements, etc),
-that styling elements has ripple effects.
+<p>Understanding that CSS treats HTML elements as boxes is important for styling and designing layouts for our HTML.
+It's also important to understand that since boxes can be nested within other boxes,
+or sit adjacent to other boxes (e.g., descendant elements, sibling elements, etc),
+that styling elements can have ripple effects.
 Adjusting a box's size or position affects surrounding elements, as boxes influence each other's layout.
-Therefore, to fully fully understand how to manipulate HTML elements, we need to understand that CSS boxes possess several properties.</p>
+Therefore, to fully understand how to manipulate HTML elements, we need to understand that CSS boxes possess several properties.</p>
 <h2 id="box-properties"><a class="header" href="#box-properties">Box Properties</a></h2>
 <p>The CSS box model consists of four main properties:
 the <strong>content</strong>, surrounded by <strong>padding</strong>, a <strong>border</strong>, and an outer <strong>margin</strong>.

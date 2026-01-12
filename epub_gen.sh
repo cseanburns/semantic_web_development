@@ -16,8 +16,8 @@ OUTPUT_FILE="semantic_web_development.epub"
 ordered=(title.txt
     p1-introduction-to-semantic-web-development.md
     1a-the-semantic-web.md
-    1b-user-experience-accessibility.md
-    1c-tools-setup-workflow.md
+    1b-tools-setup-workflow.md
+    1c-user-experience-accessibility.md
     1d-designing-with-inkscape.md
     p2-html5-and-the-web.md
     2a-document-structure-and-metadata.md

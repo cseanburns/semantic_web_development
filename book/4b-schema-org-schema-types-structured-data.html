@@ -211,7 +211,7 @@ The main terms include:</p>
 <li><code>type</code></li>
 </ul>
 <p>We can use this data model for all sorts of items or works.
-Here I use it to describe Toni Morrison's Pulitzer Prize winning novel, <em>Beloved</em>:</p>
+Here I use it to describe Toni Morrison's Pulitzer Prize-winning novel, <em>Beloved</em>:</p>
 <div class="table-wrapper"><table><thead><tr><th>DC Term</th><th>Property</th></tr></thead><tbody>
 <tr><td>Creator</td><td>Toni Morrison</td></tr>
 <tr><td>Title</td><td>Beloved</td></tr>
@@ -238,8 +238,7 @@ Unlike the prior data models, schema.org functions more like a <a href="https://
 As a taxonomy, schema.org is a kind of hierarchical, relational classification system, and as an ontology,
 schema.org stresses foundational components, such as concepts or classes, properties or attributes, relationships, and instances.</p>
 <p>Like other data models, the schema.org vocabulary provides a method for adding structured, linked data.
-The data is <em>linked</em> because the vocabulary is interconnected via a hierarchical data model.
-This means that each type or property can point to or be reused across datasets, and
+The data is <em>linked</em> because types and properties can reference one another and be reused across datasets, and
 it's this characteristic that creates a web of meaning that is readable by machines.</p>
 <p>For example, the root data type in schema.org is <code>Thing</code>.
 The <code>Thing</code> type includes child data types such as <code>Action</code>, <code>Person</code>, <code>Place</code>, <code>Organization</code>, and more.
@@ -258,7 +257,7 @@ an <code>Organization</code> thing:</p>
 <li><code>ElementarySchool</code></li>
 <li><code>HighSchool</code>, and so on.</li>
 </ul>
-<p>Schema.org data types are <em>transitive</em> (if <code>a &gt; b</code> and <code>b &gt; c</code>, then <code>a &gt; c</code>).
+<p>Schema.org subclass relationships are <em>transitive</em> (if <code>a &gt; b</code> and <code>b &gt; c</code>, then <code>a &gt; c</code>).
 For example, the <em>University of Kentucky</em> is an <code>instance</code> of a <code>CollegeOrUniversity</code> type.
 This itself is a subclass of an <code>EducationalOrganization</code>.
 We could go on: an <code>EducationalOrganization</code> type is a subclass of an <code>Organization</code> type.
@@ -280,21 +279,21 @@ A <a href="https://schema.org/Thing"><code>Thing</code></a> type can have the fo
 <li><code>description</code></li>
 </ul>
 <p>And an <code>EducationalOrganization</code> Thing can have <code>alumni</code> as a property.</p>
-<p>And each of those properties may have additional properties or take on values.
-For example, for <code>image</code>, we can provide a URL to an actual image.
-Or we may provide a <code>caption</code> for it.</p>
+<p>Properties take values, and those values can be simple (like text or URLs) or structured objects
+with their own properties.
+For example, <code>image</code> can be a URL or an <code>ImageObject</code> that includes a <code>caption</code>.</p>
 <p>However, just like <code>University of Kentucky</code> can be counted as an instance of <code>CollegeOrUniversity</code>,
-each <code>type</code> has its own set of <strong>instances</strong> in schema.org.
+each <code>type</code> has real-world <strong>instances</strong> that we describe using schema.org.
 To illustrate: since a <code>CollegeOrUniversity</code> thing is also an <code>EducationalOrganization</code> thing,
 a <code>CollegeOrUniversity</code> thing may also have the properties specific to <code>EducationalOrganization</code>, such as <code>alumni</code>.
 For instance, because <code>CollegeOrUniversity</code> inherits from <code>Thing</code>,
 it can use general properties like <code>name</code>, <code>description</code>, and <code>url</code>, but
 also more specific ones like <code>alumni</code> that are directly inherited from <code>EducationalOrganization</code>.</p>
-<p>That is, a <code>CollegeOrUniversity</code> thing may inherit properties of other types not in its direct lineage.
-Another example: a <code>CollegeOrUniversity</code> thing may also be a <code>CivicStructure</code> thing and a <code>Place</code> thing,
-even though neither of those are specific descendants of <code>EducationalOrganization</code>.
+<p>That is, schema.org supports multiple inheritance.
+For example, <code>EducationalOrganization</code> is a subtype of both <code>Organization</code> and <code>Place</code>,
+so a <code>CollegeOrUniversity</code> can use properties from all of those broader types.
 In this way, specific <code>things</code> and <code>properties</code> can interconnect or <code>link</code> to each other, forming <code>linked data</code>.
-That is, it's this ability to belong to multiple classes, and to inherit properties from these classes,
+That is, it's this ability to belong to multiple classes and to inherit properties from these classes
 that enables schema.org to describe real-world complexity more naturally than rigid, single-hierarchy systems.</p>
 <figure>
 <img src="images/schema_connections.svg"
@@ -308,14 +307,14 @@ Fig. 2. <a href="https://schema.org/CollegeOrUniversity">Schema.org Example Map 
 Diagram created using <a href="https://wiki.gnome.org/Apps/Dia">Dia</a>.
 </figcaption>
 </figure>
-<p>As you can see, a particular <code>instance</code> of some <code>Thing</code> may be a member of many classes, or be many types of <code>Things</code>.
-This is the same as you and me.
+<p>As you can see, a particular <code>instance</code> of some <code>Thing</code> may be described with multiple types.
+This is similar to how people fit multiple roles.
 For example, I am a professor, a parent, an offspring, etc.
-You might be a student and offspring.
+You might be a student and an offspring.
 Thus, we both share at least one class, and inherit the properties of that class and its broader classes, like <code>Person</code>.
 By using this organizational model to describe the content of a web page, search engines can begin to <em>understand</em>
 that content and its context and the relationship among <em>Things</em> on the web.</p>
-<p>To employ schema.org on your web pages requires some familiarity with the data model and what it offers.
+<p>Using schema.org on your web pages requires some familiarity with the data model and what it offers.
 Therefore, begin reviewing the <a href="https://schema.org/docs/full.html">Full schema hierarchy</a> for a complete listing of what is available.</p>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
 <p>In this section, we were introduced to the <strong>schema.org</strong> data model.

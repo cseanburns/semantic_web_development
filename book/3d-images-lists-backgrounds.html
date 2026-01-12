@@ -195,17 +195,17 @@ Therefore, before we tinker with sizes in HTML or CSS, we need to reduce the res
 Most of our cameras will default to saving photos as JPEGs.
 Or we might generate images in PNG format.
 These are both popular image formats that are used on the web, along with GIFs.
-However, another popular format is <a href="https://en.wikipedia.org/wiki/WebP">WEBP</a>, an image format optimized for the web and
+However, another popular format is <a href="https://en.wikipedia.org/wiki/WebP">WebP</a>, an image format optimized for the web and
 that supports <a href="https://en.wikipedia.org/wiki/Lossy_compression">lossy</a> and <a href="https://en.wikipedia.org/wiki/Lossless_compression">lossless</a> compression, transparency, and animation.
 Photo and other types of image editors can export images to WEBP.
 For example, in the <a href="https://www.gimp.org/">GIMP photo editor</a>, I can export photos as WEBP and choose lossless or lossy compression when exporting.</p>
 <p>Another excellent image format is <a href="https://en.wikipedia.org/wiki/SVG">SVG</a> (Scalable Vector Graphics).
-SVG formats are used for vector based images and are the default file format for programs like <a href="https://inkscape.org/">Inkscape</a>.
+SVG formats are used for vector-based images and are the default file format for programs like <a href="https://inkscape.org/">Inkscape</a>.
 These images are ideal for images that are drawn, like logos, icons, or similar forms of visual art.
 Also, since SVG files are text files, we can use scripting languages, like Python, to modify them.
 But one of the most important characteristics of SVG files is that they are scalable.
-That is, no matter how much we zoom in or out on a SVG file, the image will retain its resolution,
-unlike raster or bitmap based images, which will become pixelated.</p>
+That is, no matter how much we zoom in or out on an SVG file, the image will retain its resolution,
+unlike raster or bitmap-based images, which will become pixelated.</p>
 <h2 id="images"><a class="header" href="#images">Images</a></h2>
 <p>In HTML and CSS, we can set the values of an image with simple <code>width</code> and <code>height</code> settings.
 For example, in HTML, we can use the <code>width</code> and <code>height</code> attributes:</p>
@@ -258,7 +258,7 @@ First, in the HTML code below, I use classes to style the same image for each of
 &lt;img class="scale-down" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
 </code></pre>
 <p>In the CSS code below, I apply the <code>object-fit</code> property to the appropriate classes in the above HTML.</p>
-<p>The original image (<code>box_image.png</code>) has the dimensions of <code>513x503</code>,
+<p>The original image (<code>box_circle.png</code>) has the dimensions of <code>513x503</code>,
 but we set the <code>width: 300px</code> and <code>height: 400px</code> in the <code>img</code> selector.
 Therefore, the <code>fill</code> value will distort the image so that it fills the box:</p>
 <pre><code>.fill {
@@ -311,16 +311,16 @@ default, top, right, bottom, and left.</p>
     object-position: 50% 50%;
 }
 .position_top {
-    object-position: 50% -50px;
+    object-position: 50% 0%;
 }
 .position_right {
-    object-position: 50px 50%;
+    object-position: 100% 50%;
 }
 .position_bottom {
-    object-position: 50% 50px;
+    object-position: 50% 100%;
 }
 .position_left {
-    object-position: -50px 50%;
+    object-position: 0% 50%;
 }
 </code></pre>
 <h3 id="transform"><a class="header" href="#transform">Transform</a></h3>
@@ -375,10 +375,10 @@ laborum.&lt;/p&gt;
 <p>To create that effect, I create a class for this element and add <code>float: left</code>.
 I add a few pixels on the right margin of the <code>img</code> to add a gap between the image and the text.</p>
 <pre><code>.left_float {
-	width: 75px;
-	height: 75px;
-	float: left;
-	margin-right: 5px;
+    width: 75px;
+    height: 75px;
+    float: left;
+    margin-right: 5px;
 }
 </code></pre>
 <p>In the last example, we <code>float</code> the image to the right of the text:</p>
@@ -400,14 +400,14 @@ laborum.&lt;/p&gt;
 <p>Similar to the left float above, below the CSS simply floats the right using <code>float: right</code>.
 Also note that I change the margin side to left with <code>margin-left</code>:</p>
 <pre><code>.right_float {
-	width: 75px;
-	height: 75px;
-	float: right;
-	margin-left: 5px;
+    width: 75px;
+    height: 75px;
+    float: right;
+    margin-left: 5px;
 }
 </code></pre>
 <h3 id="gradients"><a class="header" href="#gradients">Gradients</a></h3>
-<p>We can use <a href="https://www.w3.org/TR/css-images-3/#gradients"><code>gradient</code></a> colors to style images or backgrounds.
+<p>We can use <a href="https://www.w3.org/TR/css-images-3/#gradients">gradients</a> to style images or backgrounds.
 We can apply gradients using angles (e.g., <code>45deg</code>) or keywords (e.g., <code>to top</code>).
 See the link above for other examples.</p>
 <pre><code>&lt;h3&gt;Linear Gradient&lt;/h3&gt;
@@ -419,7 +419,7 @@ See the link above for other examples.</p>
 &lt;h3&gt;Linear Gradient Using Keywords&lt;/h3&gt;
 &lt;img class="top" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
 </code></pre>
-<p>In CSS below, I use a default <code>linear-gradient</code> in the first CSS class.
+<p>In the CSS below, I use a default <code>linear-gradient</code> in the first CSS class.
 In the second class, I use degrees to specify the exact gradient angle.
 In the third class, I use the <code>to top</code> keyword.</p>
 <pre><code>.linear {
@@ -448,7 +448,7 @@ In the third class, I use the <code>to top</code> keyword.</p>
 <p>We can change the transparency of an image using the <code>opacity</code> property.
 A value of <code>0.0</code> indicates full transparency and a value of <code>1.0</code> indicates a fully opaque image.</p>
 <p><strong>HTML</strong>:</p>
-<pre><code>&lt;h3&gt;High Opacity&lt;/h3&gt;
+<pre><code>&lt;h3&gt;Low Opacity&lt;/h3&gt;
 &lt;img class="opacity_low" src='media/box_circle.png' alt='A drawing of a box in a circle'&gt;
 
 &lt;h3&gt;Medium Opacity&lt;/h3&gt;
@@ -521,18 +521,18 @@ In the following example, we start the count at <code>10</code> and then countdo
 <h3 id="roman-numerals"><a class="header" href="#roman-numerals">Roman Numerals</a></h3>
 <p>We can change to Roman numerals:</p>
 <pre><code>&lt;h3&gt;Upper Roman Numeral&lt;/h3&gt;
-&lt;ul class="roman_upper"&gt;
+&lt;ol class="roman_upper"&gt;
     &lt;li&gt;Apple&lt;/li&gt;
     &lt;li&gt;Banana&lt;/li&gt;
     &lt;li&gt;Watermelon&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 
 &lt;h3&gt;Lower Roman Numeral&lt;/h3&gt;
-&lt;ul class="roman_lower"&gt;
+&lt;ol class="roman_lower"&gt;
     &lt;li&gt;Apple&lt;/li&gt;
     &lt;li&gt;Banana&lt;/li&gt;
     &lt;li&gt;Watermelon&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 </code></pre>
 <p>We define the use of Roman numerals in CSS.
 To use uppercase Roman numerals, we use <code>list-style-type: upper-roman</code>.
@@ -550,18 +550,18 @@ To use lowercase Roman numerals, we use <code>list-style-type: lower-roman</code
 <code>list-style-type: lower-alpha</code> or <code>list-style-type: upper-alpha</code>:</p>
 <p><strong>HTML</strong>:</p>
 <pre><code>&lt;h3&gt;Lower Alpha&lt;/h3&gt;
-&lt;ul class="alpha_lower"&gt;
+&lt;ol class="alpha_lower"&gt;
     &lt;li&gt;Apple&lt;/li&gt;
     &lt;li&gt;Banana&lt;/li&gt;
     &lt;li&gt;Watermelon&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 
 &lt;h3&gt;Upper Alpha&lt;/h3&gt;
-&lt;ul class="alpha_upper"&gt;
+&lt;ol class="alpha_upper"&gt;
     &lt;li&gt;Apple&lt;/li&gt;
     &lt;li&gt;Banana&lt;/li&gt;
     &lt;li&gt;Watermelon&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 </code></pre>
 <p><strong>CSS</strong>:</p>
 <pre><code>.alpha_lower {
@@ -588,14 +588,14 @@ To use lowercase Roman numerals, we use <code>list-style-type: lower-roman</code
 }
 </code></pre>
 <h3 id="changing-list-markers"><a class="header" href="#changing-list-markers">Changing List Markers</a></h3>
-<p>Or may also specify using a <code>circle</code>, a <code>disc</code>, Unicode, or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type">other characters</a>.</p>
+<p>We may also specify using a <code>circle</code>, a <code>disc</code>, Unicode, or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type">other characters</a>.</p>
 <p><strong>HTML</strong>:</p>
 <pre><code>&lt;h3&gt;Circle&lt;/h3&gt;
-&lt;ol class="circle"&gt; 
+&lt;ul class="circle"&gt; 
     &lt;li&gt;Apple&lt;/li&gt;
     &lt;li&gt;Banana&lt;/li&gt;
     &lt;li&gt;Watermelon&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 </code></pre>
 <p><strong>CSS</strong>:</p>
 <pre><code>.circle {
@@ -607,11 +607,11 @@ To use lowercase Roman numerals, we use <code>list-style-type: lower-roman</code
 See the <a href="https://unicode.org/emoji/charts/full-emoji-list.html">Full Emoji List</a> for ideas.
 In the following example, I use the <a href="https://unicode.org/emoji/charts/full-emoji-list.html#1f596">Vulcan Salute</a> as a marker for my list:</p>
 <pre><code>&lt;h3&gt;Vulcan Salute&lt;/h3&gt;
-&lt;ol class="vulcan"&gt; 
+&lt;ul class="vulcan"&gt; 
     &lt;li&gt;Apple&lt;/li&gt;
     &lt;li&gt;Banana&lt;/li&gt;
     &lt;li&gt;Watermelon&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 </code></pre>
 <p><strong>CSS</strong>:</p>
 <pre><code>.vulcan {
@@ -622,7 +622,7 @@ In the following example, I use the <a href="https://unicode.org/emoji/charts/fu
 <p>We can also use our own images.
 In the examples below, I used ChatGPT to generate icons for the fruit images.
 These icons were generated as <a href="https://en.wikipedia.org/wiki/WebP"><code>webp</code></a> files, and
-I refer to them using using the <code>url</code> value in the CSS.</p>
+I refer to them using the <code>url</code> value in the CSS.</p>
 <p>In the first list below, I use one icon for all marks:</p>
 <p><strong>HTML</strong>:</p>
 <pre><code>&lt;h3&gt;Unordered List Using Images&lt;/h3&gt;
@@ -666,7 +666,7 @@ I refer to them using using the <code>url</code> value in the CSS.</p>
 &lt;ol&gt;
     &lt;li&gt;Apples
         &lt;ol&gt;
-            &lt;li&gt;HoneyCrisp&lt;/li&gt;
+            &lt;li&gt;Honeycrisp&lt;/li&gt;
             &lt;li&gt;Fuji&lt;/li&gt;
         &lt;/ol&gt;
     &lt;/li&gt;
@@ -701,10 +701,10 @@ I refer to them using using the <code>url</code> value in the CSS.</p>
         &lt;/ul&gt;
     &lt;/li&gt;
     &lt;li&gt;Watermelon
-        &lt;ul&gt;
+        &lt;ol class="roman_lower"&gt;
             &lt;li&gt;Crimson Sweet&lt;/li&gt;
             &lt;li&gt;Yellow Baby&lt;/li&gt;
-        &lt;/ul&gt;
+        &lt;/ol&gt;
     &lt;/li&gt;
 &lt;/ul&gt;
 </code></pre>
@@ -764,16 +764,16 @@ Then an ordered list within an unordered list.</p>
 <pre><code>&lt;h4&gt;Roman Upper/Lower Nested&lt;/h4&gt;
 &lt;ol class="roman_upper"&gt;
     &lt;li&gt;Apples
-        &lt;ul class="roman_lower"&gt;
+        &lt;ol class="roman_lower"&gt;
             &lt;li&gt;Honeycrisp&lt;/li&gt;
             &lt;li&gt;Fuji&lt;/li&gt;
-        &lt;/ul&gt;
+        &lt;/ol&gt;
     &lt;/li&gt;
     &lt;li&gt;Bananas
-        &lt;ul class="roman_lower"&gt;
+        &lt;ol class="roman_lower"&gt;
             &lt;li&gt;Cavendish&lt;/li&gt;
             &lt;li&gt;Plantain&lt;/li&gt;
-        &lt;/ul&gt;
+        &lt;/ol&gt;
     &lt;/li&gt;
     &lt;li&gt;Watermelon
         &lt;ul&gt;
@@ -816,7 +816,7 @@ I use an image of a small grid or square to create a kind of notebook effect for
     background: url('media/small_grid.gif');
 }
 </code></pre>
-<p>We need to use the <code>background-repeat: no-repeat</code> property and value to disble image repeating:</p>
+<p>We need to use the <code>background-repeat: no-repeat</code> property and value to disable image repeating:</p>
 <pre><code>html {
     background: url('media/squiggly.png');
     background-repeat: no-repeat;
@@ -856,7 +856,7 @@ Have fun, practice, and build your knowledge.</p>
 <p>Your browser will display a <a href="https://en.wikipedia.org/wiki/Favicon">favicon</a> for a site in the site's tab, bookmark, etc.
 You can create favicons using most of the major file formats: PNG, JPEG, SVG.
 You can also use the <a href="https://en.wikipedia.org/wiki/ICO_(file_format)">ICO</a> file format.
-The important thing to know is that favicons may be created in mutiple sizes and
+The important thing to know is that favicons may be created in multiple sizes
 but should maintain a perfectly square ratio (1:1 aspect ratio).
 The most common sizes are 16x16 pixels, 32x32 pixels, 48x48 pixels, 96x96 pixels, etc.
 These sizes are used on different devices or under different views (tab, bookmark, etc).
@@ -864,11 +864,12 @@ These sizes are used on different devices or under different views (tab, bookmar
 However, it's common to make available multiple sizes and the browser can choose which one to use.</p>
 <p>Favicons can be created in a photo editor, like GIMP, or better yet, in an SVG editor, like Inkscape.
 To use a favicon on a site, we use the <code>&lt;link&gt;</code> tag in the <code>&lt;head&gt;</code> of a web document.
-The following is an example of linking to four different files in a separate <code>icons/</code> directory with different favicon sizes:</p>
-<pre><code>&lt;link rel="icon" type="icons/png" sizes="16x16" href="icons/icon_16.png"&gt;
-&lt;link rel="icon" type="icons/png" sizes="32x32" href="icons/icon_32.png"&gt;
-&lt;link rel="icon" type="icons/png" sizes="72x72" href="icons/icon_72.png"&gt;
-&lt;link rel="icon" type="icons/png" sizes="114x114" href="icons/icon_114.png"&gt;
+The following is an example of linking to several different files in a separate <code>icons/</code> directory
+with different favicon sizes, plus an Apple touch icon:</p>
+<pre><code>&lt;link rel="icon" type="image/png" sizes="16x16" href="icons/icon_16.png"&gt;
+&lt;link rel="icon" type="image/png" sizes="32x32" href="icons/icon_32.png"&gt;
+&lt;link rel="icon" type="image/png" sizes="72x72" href="icons/icon_72.png"&gt;
+&lt;link rel="icon" type="image/png" sizes="114x114" href="icons/icon_114.png"&gt;
 &lt;link rel="apple-touch-icon" sizes="144x144" href="icons/icon_144.png"&gt;
 </code></pre>
 <p>The files in the above code represent the different image sizes:</p>
@@ -877,6 +878,7 @@ The following is an example of linking to four different files in a separate <co
 <li><code>icon_32.png</code>: 32x32 pixels</li>
 <li><code>icon_72.png</code>: 72x72 pixels</li>
 <li><code>icon_114.png</code>: 114x114 pixels</li>
+<li><code>icon_144.png</code>: 144x144 pixels (Apple touch icon)</li>
 </ul>
 <p>The <code>rel</code> attribute with the value of <code>apple-touch-icon</code> makes the favicon more accessible for iOS devices
 (because Apple).</p>

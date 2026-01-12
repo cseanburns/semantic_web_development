@@ -178,25 +178,25 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="colors-and-units-of-measurements"><a class="header" href="#colors-and-units-of-measurements">Colors and Units of Measurements</a></h1>
+                        <h1 id="colors-and-units-of-measurement"><a class="header" href="#colors-and-units-of-measurement">Colors and Units of Measurement</a></h1>
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
 <p>Designing a web page begins by controlling color and sizing.
-These base conditions lay the foundations for shaping user experience.
+These base conditions lay the foundation for shaping the user experience.
 It's also where the fun begins.</p>
-<p>Importantly, colors establish a site's visual identity, improves readability, and
+<p>Importantly, colors establish a site's visual identity, improve readability, and
 <a href="https://beaccessible.com/post/the-importance-of-color-contrast-in-digital-accessibility/">creates contrast</a>, which is important for website accessibility.
 There are multiple methods to define colors in CSS.
 These methods include named colors (red, blue, green, yellow, etc),
-RGB values, hexadecimal codes, and HSL (Hue-Saturated-Lightness) values.
-Each method has its strengths with respect to levels of precision and to device type.</p>
+RGB values, hexadecimal codes, and HSL (Hue-Saturation-Lightness) values.
+Each method has its strengths depending on precision needs and ease of use.</p>
 <p>CSS also provides many different types of units of measurement.
 These units allow for precise control over layout and typography, which we will cover soon,
 and define dimensions such as font size, spacing, and layout structure.
-There absolute units, such as pixels and inches, and there are relative units, such as <code>rem</code> and <code>em</code>.
+There are absolute units, such as pixels and inches, and there are relative units, such as <code>rem</code> and <code>em</code>.
 The latter make designs more flexible and responsive.</p>
 <p>In this section, we will explore how to use CSS color properties to enhance design and
 measurement units to create scalable, adaptable layouts.
-These concepts will help you build visually appealing and responsible web pages.</p>
+These concepts will help you build visually appealing and responsive web pages.</p>
 <h2 id="colors"><a class="header" href="#colors">Colors</a></h2>
 <p>There are multiple methods to create or add color to the various parts of our websites.
 The common ones include:</p>
@@ -204,27 +204,27 @@ The common ones include:</p>
 <li>Color keywords:
 <ul>
 <li><a href="https://www.w3.org/TR/css-color-3/#html4">Basic color keywords</a>: black, silver, gray, red, green, teal, etc.</li>
-<li><a href="https://www.w3.org/TR/css-color-3/#svg-color">Extended color keywords</a>: aqua, chocolate, cyan, gold, indigo, lime, etc</li>
+<li><a href="https://www.w3.org/TR/css-color-3/#svg-color">Extended color keywords</a>: aqua, chocolate, cyan, gold, indigo, lime, etc.</li>
 </ul>
 </li>
 <li>RGB values:
 <ul>
 <li>The RGB value can declare a specific color: <code>p { color: rgb(255, 241, 0); }</code> (a yellow color)</li>
-<li>We can add a fourth value to indicate opacity; here I set opacity to 50%: <code>p { color: rgb(255, 241, 0, 0.5); }</code></li>
+<li>We can add a fourth value to indicate opacity; here I set opacity to 50%: <code>p { color: rgba(255, 241, 0, 0.5); }</code></li>
 </ul>
 </li>
-<li>Hexadecimal values;
+<li>Hexadecimal values:
 <ul>
 <li>We can use a hexadecimal value to identify a color: <code>p { color: #fffb00; }</code>
 <ul>
-<li>Lots of websites list RGB and Hexadecimal values, such as: <a href="https://rgbcolorpicker.com/">RGB / Hexademical Color Picker</a></li>
+<li>Lots of websites list RGB and Hexadecimal values, such as: <a href="https://rgbcolorpicker.com/">RGB / Hexadecimal Color Picker</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>HSL (hue-saturated-lightness) values:
+<li>HSL (Hue-Saturation-Lightness) values:
 <ul>
-<li>HSL is considered more useful than RGB because it's less hardware dependent and considered more intuitive.</li>
+<li>HSL is often considered more intuitive because it maps directly to hue, saturation, and lightness.</li>
 <li>The values stand for Hue, Saturation, and Lightness: <code>p { color: hsl(291, 100%, 50%); }</code></li>
 <li>The Hue is a degree on a color wheel and accepts values from 0 to 360.</li>
 <li>Saturation and Lightness are coded as percentages.
@@ -276,30 +276,30 @@ In the code below, <code>aliceblue</code> is a color keyword and <code>#000000</
 }
 </code></pre>
 <p>We can colorize the headings:</p>
-<pre><code>h1 ~ h2 {
+<pre><code>h1, h2 {
     color: yellow;
     background-color: aqua;
 }
 </code></pre>
-<p>We can add background color the <code>&lt;section&gt;</code> element to create a box-like effect.
+<p>We can add background color to the <code>&lt;section&gt;</code> element to create a box-like effect.
 The code below uses HSL and RGB, as an example.</p>
 <pre><code>section {
     background-color: hsl(360, 100%, 60%);
-    color: rgb(255,241,0,0.5);
+    color: rgba(255, 241, 0, 0.5);
 }
 </code></pre>
 <p>In practice, it's certainly fine to stick to one method (keywords, RGB, HSL, hexadecimal), or mix it up.</p>
-<h2 id="data-types-and-units-of-measurements"><a class="header" href="#data-types-and-units-of-measurements">Data Types and Units of Measurements</a></h2>
+<h2 id="data-types-and-units-of-measurement"><a class="header" href="#data-types-and-units-of-measurement">Data Types and Units of Measurement</a></h2>
 <p>Like many programming languages, CSS accepts a variety of data types.
 The common data types in CSS include:</p>
 <ul>
 <li>Integers: whole numbers (e.g., 1, 42, -5)</li>
-<li>Floating point, aka, decimal numbers (e.g., 1.5, 3.14, -0.75)</li>
-<li>Dimensional values: length, width, angle, and more</li>
+<li>Floating-point, aka, decimal numbers (e.g., 1.5, 3.14, -0.75)</li>
+<li>Dimensional values: lengths, angles, and other measurements</li>
 <li>Percentages: fractions represented as percentages</li>
 </ul>
-<p>These data types are used primarily to add distance or length to elements.
-There are two broad categories of length and each include a variety of units:</p>
+<p>These data types are used to describe sizes, spacing, and other measurements.
+There are two broad categories of length, and each includes a variety of units:</p>
 <ul>
 <li>Relative lengths:
 <ul>
@@ -335,13 +335,13 @@ There are two broad categories of length and each include a variety of units:</p
 This is because relative lengths are more responsive to different device sizes and screen resolutions.
 However, it's important to know that absolute lengths exist if needed.</p>
 <p>Consider the following HTML snippet.
-In the snippet below, I use internal CSS for demonstration purposes, but in practice, use an external stylesheet.</p>
+In the snippet below, I use internal CSS for demonstration purposes, but in practice, we use an external stylesheet.</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;sizes&lt;/title&gt;
 &lt;style&gt;
 html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 header {
@@ -385,13 +385,13 @@ li {
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<h3 id="set-rem-in-the-html-selector"><a class="header" href="#set-rem-in-the-html-selector">Set <code>rem</code> in the <code>html</code> selector</a></h3>
+<h3 id="set-a-base-font-size-in-the-html-selector"><a class="header" href="#set-a-base-font-size-in-the-html-selector">Set a base font size in the <code>html</code> selector</a></h3>
 <pre><code>html {
-    font-size: 1rem;
+    font-size: 16px;
     }
 </code></pre>
-<p>By default, browsers set <code>1rem = 16px</code>, unless overridden.
-In this example, we make the connection explicit.</p>
+<p>By default, browsers set the root font size to <code>16px</code>, unless overridden.
+In this example, we make that base size explicit.</p>
 <h3 id="example-using-em-in-header-h1-and-h2"><a class="header" href="#example-using-em-in-header-h1-and-h2">Example: using <code>em</code> in <code>header</code>, <code>h1</code>, and <code>h2</code></a></h3>
 <p>In the HTML example, note that <code>&lt;header&gt;</code> is a descendant element of the <code>&lt;html&gt;</code> element, and
 that <code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code> are siblings and both descendants of <code>&lt;header&gt;</code>.
@@ -401,19 +401,18 @@ Now consider the following CSS:</p>
 }
 
 h1 {
-    font-size: 1em;
+    font-size: 2em;
 }
 
 h2 {
-    font-size: 1em;
+    font-size: 2em;
 }
 </code></pre>
 <p>Since the <code>header</code> selector has a font-size of <code>1em</code>, it inherits its font size from the <code>html</code> selector since it's a descendant.
 Therefore, since <code>1em = 16px</code>, the <code>&lt;header&gt;</code> element is set to <code>16px</code>.</p>
 <p>Since <code>&lt;h1&gt;</code> is inside <code>&lt;header&gt;</code>, and since it uses an <code>em</code> unit of measurement, it inherits its size from the <code>&lt;header&gt;</code> element.
 Since the <code>h1</code> selector is set to <code>2em</code>, then <code>2em * 16px = 32px</code>.</p>
-<p>Since <code>&lt;h2&gt;</code> is also inside <code>&lt;header&gt;</code> (it is not a descendant but a sibling to <code>&lt;h1&gt;</code>),
-it also inherits from <code>&lt;header&gt;</code>.
+<p>Since <code>&lt;h2&gt;</code> is also inside <code>&lt;header&gt;</code>, it inherits from <code>&lt;header&gt;</code> as well.
 Since the <code>h2</code> is set to <code>2em</code>, then as with <code>h1</code>, we have <code>2em * 16px = 32px</code>.
 Specifically, since <code>header</code> is set to <code>1em</code>, its font size is unaffected with respect to <code>html</code>.
 Therefore, <code>h1</code> and <code>h2</code> are both calculated relative to <code>html</code>.</p>
@@ -424,12 +423,14 @@ However, the <code>&lt;li&gt;</code> element is a child of <code>&lt;ul&gt;</cod
 Since <code>ul</code> is calculated to be <code>32px</code>, then <code>li</code> is <code>1em * 32px = 32px</code>.</p>
 <p>In practice, therefore, we can see how <code>em</code> compounds based on what it inherits from its parent element.
 This makes using <code>rem</code> more predictable.
-If we set the font-size of all elements to <code>1rem</code>, then the font-size for all elements would be <code>16px</code> because <code>1rem * 16px = 16px</code>.
-However, if we only set the <code>html</code> selector to <code>1rem</code>, then the browser uses its default sizes.</p>
+If we set the font-size of all elements to <code>1rem</code>, then each element computes to the root font size
+(<code>16px</code> by default).
+However, if we only set the <code>html</code> selector (or leave it at its default),
+then the browser uses its default sizes for other elements.</p>
 <h3 id="be-sure-to-understand-inheritance"><a class="header" href="#be-sure-to-understand-inheritance">Be sure to understand inheritance.</a></h3>
 <p>Consider the following rules:</p>
 <pre><code>html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 header {
@@ -451,23 +452,24 @@ Even though the <code>header</code> is set to <code>2rem</code>, the <code>h1</c
 So they ignore the inherited value from <code>header</code>.
 That is, <code>h1</code> and <code>h2</code> are calculated with respect to <code>html</code>.</p>
 <ul>
-<li><code>html</code>: <code>1rem * 16px = 16px</code></li>
+<li><code>html</code>: <code>16px</code></li>
 <li><code>h1</code>: <code>1rem * 16px = 16px</code></li>
 <li><code>h2</code>: <code>1.5rem * 16px = 24px</code></li>
 </ul>
 <p>However, if we only use the following two rules in our CSS:</p>
 <pre><code>html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 header {
     font-size: 2rem;
 }
 </code></pre>
-<p>Then both <code>h1</code> and <code>h2</code> would increase by <code>2rem</code> since they are direct children of <code>&lt;header&gt;</code>.</p>
+<p>Then <code>h1</code> and <code>h2</code> would scale relative to <code>header</code>,
+and browser defaults would make them larger than the base size.</p>
 <h2 id="page-sizing"><a class="header" href="#page-sizing">Page Sizing</a></h2>
 <p>Viewport relative lengths are useful when controlling the width of the sections on a page,
-like <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, and like.
+like <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, and similar elements.
 Consider the following HTML snippet:</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;

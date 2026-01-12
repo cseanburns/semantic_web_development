@@ -183,7 +183,7 @@
 Common elements include <code>&lt;h1&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;table&gt;</code>, and many others.
 We also learned that these elements may include <strong>attributes</strong>.
 For example, we can add <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">global attributes</a>, like the <code>class</code> or <code>id</code> attributes, to all tags.
-Furthermore, we learned that some elements, like the <code>&lt;th&gt;</code> tag, may have element specific attributes, like <code>colspan</code>.
+Furthermore, we learned that some elements, like the <code>&lt;th&gt;</code> tag, may have element-specific attributes, like <code>colspan</code>.
 In order to style the HTML, CSS provides a mechanism to focus on specific elements or attributes.
 In CSS, this mechanism is called <a href="https://www.w3.org/TR/selectors-3/#selectors"><strong>selectors</strong></a>.</p>
 <p>There are multiple types of selectors.
@@ -194,11 +194,11 @@ These include:</p>
 <li><a href="https://www.w3.org/TR/selectors-3/#attribute-selectors">Attribute selectors</a></li>
 <li><a href="https://www.w3.org/TR/selectors-3/#class-html">Class selectors</a></li>
 <li><a href="https://www.w3.org/TR/selectors-3/#id-selectors">ID selectors</a></li>
-<li><a href="https://www.w3.org/TR/selectors-3/#pseudo-classes">Pseudo classes</a></li>
-<li><a href="https://www.w3.org/TR/selectors-3/#pseudo-elements">Pseudo elements</a></li>
+<li><a href="https://www.w3.org/TR/selectors-3/#pseudo-classes">Pseudo-classes</a></li>
+<li><a href="https://www.w3.org/TR/selectors-3/#pseudo-elements">Pseudo-elements</a></li>
 <li><a href="https://www.w3.org/TR/selectors-3/#combinators">Combinators</a></li>
 </ul>
-<p>Each of these selectors are discussed below along with examples.
+<p>Each of these selectors is discussed below along with examples.
 For a deeper understanding of each selector type, refer to the linked resources above.</p>
 <p>Also, remember that to use these selectors, we add them to an external stylesheet for the reasons listed in the prior section.
 In my previous HTML discussions, I added the following line to the <code>&lt;head&gt;</code> section of my HTML document that links to my external stylesheet:</p>
@@ -242,8 +242,8 @@ As an example, the CSS <code>p</code> selector matches the HTML <code>&lt;p&gt;<
 The CSS <code>h1</code> selector matches the HTML <code>&lt;h1&gt;</code> element.
 And so forth.</p>
 <p>In the following example, I use three type selectors: <code>html</code>, <code>h1</code>, and <code>p</code>.
-I use the <code>html</code> selector to change the foreground and background color to the entire HTML page,
-since an entire HTML page is enclose within the <code>&lt;html&gt;</code> element.
+I use the <code>html</code> selector to change the foreground and background color for the entire HTML page,
+since an entire HTML page is enclosed within the <code>&lt;html&gt;</code> element.
 I then show how to apply a <a href="https://en.wikipedia.org/wiki/Sans-serif">sans-serif</a> font-family to the <code>&lt;h1&gt;</code> elements,
 and a <a href="https://en.wikipedia.org/wiki/Serif">serif</a> font to the <code>&lt;p&gt;</code> elements in a web document:</p>
 <pre><code>html {
@@ -270,7 +270,7 @@ As an example, let's say I have a web document with the following:</p>
     &lt;p&gt;This is test 3.&lt;/p&gt;
 &lt;/section&gt;
 </code></pre>
-<p>Then the following CSS will bold the font for all three heading elements:</p>
+<p>Then the following CSS will bold the font for all three elements with an <code>id</code> attribute:</p>
 <pre><code>[id] {
     font-weight: bold;
 }
@@ -284,7 +284,7 @@ As an example, let's say I have a web document with the following:</p>
 </li>
 <li><code>[att~=value]</code> : select by attribute where value is a separate word:
 <ul>
-<li>For example: <code>[id~="test"]</code> would match <code>&lt;h1 id="test one"&gt;</code> and <code>&lt;h2 id="test two"&gt;</code> since <code>test</code> is separate in each.</li>
+<li>For example: <code>[class~="test"]</code> would match <code>&lt;h1 class="test one"&gt;</code> and <code>&lt;h2 class="test two"&gt;</code> since <code>test</code> is separate in each.</li>
 </ul>
 </li>
 </ul>
@@ -320,7 +320,7 @@ Consider the following HTML:</p>
 <p>In the above HTML snippet, there can only be one <code>id</code> with a value of <code>news</code>,
 one <code>id</code> with a value of <code>about</code>, and one <code>id</code> with a value of <code>store</code>.
 To apply CSS to those specific IDs, we select by the value of the ID attributes.
-In the example CSS below, I add a black, dotted border that is one pixel thick to the News section,
+In the example CSS below, I add a black, solid bottom border that is one pixel thick to the News section,
 I change the line-height to 1.5 times the element's font-size in the About section, and
 I convert text in the Store section to all upper case:</p>
 <pre><code>#news {
@@ -336,7 +336,7 @@ I convert text in the Store section to all upper case:</p>
 }
 </code></pre>
 <h2 id="combinators"><a class="header" href="#combinators">Combinators</a></h2>
-<p><strong>Combinators</strong>, and the <strong>pseudo classes</strong> and <strong>pseudo elements</strong> discussed in the following section,
+<p><strong>Combinators</strong>, and the <strong>pseudo-classes</strong> and <strong>pseudo-elements</strong> discussed in the following section,
 should be used when you start to gain a grasp of the relationships between HTML elements on a web page.
 Specifically, all elements in an HTML document can be represented in a hierarchical document tree.
 The hierarchy of elements includes descendant elements, child elements, and sibling elements.
@@ -360,15 +360,15 @@ For example, to select the <code>&lt;var&gt;</code> element within the <code>&lt
     font-size: 10pt;
 }
 </code></pre>
-<p>In the above case, the <code>&lt;var&gt;</code> element is a direct descendant of the <code>&lt;p&gt;</code> element.
-However, we may also select a grandchild or later element by using the asterisk.
+<p>In the above case, the <code>&lt;var&gt;</code> element is a child of the <code>&lt;p&gt;</code> element.
+However, we may also select a grandchild or later element by using a space between selectors.
 For example, the following selects all <code>&lt;p&gt;</code> elements within all <code>&lt;section&gt;</code> elements in an HTML page:</p>
-<pre><code>section * p {
+<pre><code>section p {
     font-size: 14pt;
 }
 </code></pre>
 <h3 id="child-combinators"><a class="header" href="#child-combinators">Child combinators</a></h3>
-<p><q>A <strong>Child combinator</strong> describes a childhood relationship between two elements</q> (<a href="https://www.w3.org/TR/selectors-3/#child-combinators">Child combinators</a>).
+<p><q>A <strong>child combinator</strong> describes a parent-child relationship between two elements</q> (<a href="https://www.w3.org/TR/selectors-3/#child-combinators">Child combinators</a>).
 A prime example of a child combinator is the HTML list.
 Consider the following unordered list in HTML, where the <code>&lt;li&gt;</code> element is a child of the <code>&lt;ul&gt;</code> element:</p>
 <pre><code>&lt;ul&gt;
@@ -386,7 +386,7 @@ Consider the following unordered list in HTML, where the <code>&lt;li&gt;</code>
 <p>Note that a child element is also a descendant element, so the descendant syntax (e.g., <code>ul li</code>) would also work.
 The child combinator is simply a more specific type of descendant.</p>
 <h3 id="sibling-combinators"><a class="header" href="#sibling-combinators">Sibling combinators</a></h3>
-<p>Per the W3 documenation, <q>there are two different sibling combinators: the next-sibling combinator and
+<p>Per the W3 documentation, <q>there are two different sibling combinators: the next-sibling combinator and
 subsequent-sibling combinator</q> (<a href="https://www.w3.org/TR/selectors-3/#sibling-combinators">Sibling combinators</a>).</p>
 <p>The <strong>next-sibling combinator</strong> selects elements that immediately follow another element.
 Consider the following HTML, where a <code>&lt;p&gt;</code> element is followed by an <code>&lt;hr&gt;</code> (horizontal rule) element,
@@ -459,8 +459,8 @@ This will trigger a style change when the mouse cursor hovers over the element:<
 }
 </code></pre>
 <p><strong>Pseudo-elements</strong> are methods to <q>create abstractions about the document tree beyond those specified by the document language</q>
-(<a href="https://www.w3.org/TR/selectors-3/#pseudo-elements">Psuedo-elements</a>).
-For example, there is no such element to indicate the first line in a <code>&lt;p&gt;</code> element, but using the <strong>pseudo-class</strong> for <code>first-line</code>,
+(<a href="https://www.w3.org/TR/selectors-3/#pseudo-elements">Pseudo-elements</a>).
+For example, there is no such element to indicate the first line in a <code>&lt;p&gt;</code> element, but using the <strong>pseudo-element</strong> <code>::first-line</code>,
 we can focus on and style the first line of a <code>&lt;p&gt;</code> (or other) element.
 For example, consider the following HTML:</p>
 <pre><code>&lt;p&gt;To be, or not to be, that is the question:&lt;br&gt;
@@ -471,12 +471,12 @@ And by opposing end them. To die&amp;mdash;to sleep,&lt;br&gt;
 No more;&lt;/p&gt;
 </code></pre>
 <p>Since there is a <code>&lt;br&gt;</code> tag at the end of each line, the first line is <q>To be, or not to be, that is the question:</q>.
-Using the <strong>pseudo-element</strong> for <code>first-line</code>, we can style it by, for example, converting it to uppercase:</p>
+Using the <strong>pseudo-element</strong> <code>::first-line</code>, we can style it by, for example, converting it to uppercase:</p>
 <pre><code>p::first-line {
     text-transform: uppercase;
 }
 </code></pre>
-<p>Other <strong>pseudo-classes</strong> that can be used include:</p>
+<p>Other <strong>pseudo-elements</strong> that can be used include:</p>
 <ul>
 <li><code>::first-letter</code></li>
 <li><code>::before</code></li>

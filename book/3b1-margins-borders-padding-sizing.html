@@ -182,7 +182,7 @@
 <p>As you recall, the CSS box model contains <a href="https://www.w3.org/TR/css-box-3/#box-edges">four different properties</a>.</p>
 <ul>
 <li><strong>margin</strong>: the space between the element's border and its surrounding elements, marked by the margin edge</li>
-<li><strong>border</strong>: the boundary between the margin and padding, which can made visual with width, color, and style properties</li>
+<li><strong>border</strong>: the boundary between the margin and padding, which can be made visible with width, color, and style properties</li>
 <li><strong>padding</strong>: the space between the border and content</li>
 <li><strong>content</strong>: the content</li>
 </ul>
@@ -231,7 +231,7 @@ div {
 </code></pre>
 <p>Next, I add the <code>margin</code> property with a value of <code>2em</code> to demonstrate how it adjusts the spacing around the <code>&lt;div&gt;</code> element,
 pushing it away from adjacent elements.
-Since the default value of <code>em</code> is set by the browser to <code>16px</code>,
+Since the browser default font size is <code>16px</code>,
 using <code>2em</code> means the box will be offset from adjacent elements by 32 pixels on all four sides:</p>
 <pre><code>div {
     border: 1px solid black;
@@ -258,14 +258,14 @@ div {
     &lt;body&gt;
         &lt;h1&gt;Heading 1&lt;/h1&gt;
         &lt;div&gt;Hello world&lt;/div&gt;
-        &lt;h2&gt;Heading 1&lt;/h2&gt;
+        &lt;h2&gt;Heading 2&lt;/h2&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
 <h3 id="centering-boxes"><a class="header" href="#centering-boxes">Centering Boxes</a></h3>
 <p>To center a box horizontally, set a <code>width</code> and use <code>margin: auto;</code>.
 This distributes the remaining space equally on both sides and centers the element within its parent container.
-In the following snippet, I set the width of the <code>&lt;div&gt;</code> element to 90% of the window.
+In the following snippet, I set the width of the <code>&lt;div&gt;</code> element to 90% of its parent container.
 Then by setting <code>margin: auto;</code>, the <code>&lt;div&gt;</code> element gets centered in the viewing area.</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
@@ -282,7 +282,7 @@ div {
     &lt;body&gt;
         &lt;h1&gt;Heading 1&lt;/h1&gt;
         &lt;div&gt;Hello world&lt;/div&gt;
-        &lt;h2&gt;Heading 1&lt;/h2&gt;
+        &lt;h2&gt;Heading 2&lt;/h2&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -306,8 +306,9 @@ In the following snippet, I focus on the border's bottom edge by setting only th
 <h2 id="padding"><a class="header" href="#padding">Padding</a></h2>
 <p>The <code>padding</code> property covers the space between the <code>border</code> and the <code>content</code>.
 Note that the effect is different when using relative lengths, like <code>em</code> or <code>rem</code>, and absolute lengths, like <code>px</code>.
-As you recall, the <code>em</code> is relative to the <code>font-size</code> of the parent element and
-<code>rem</code> is relative to the <code>font-size</code> of the <code>&lt;html&gt;</code> root element.
+As you recall, <code>em</code> is relative to the element's computed font size
+(often inherited from its parent), and <code>rem</code> is relative to the <code>font-size</code>
+of the <code>&lt;html&gt;</code> root element.
 Thus, the following three examples result in different box sizes of the <code>&lt;div&gt;</code> element.</p>
 <h3 id="setting-in-pixels"><a class="header" href="#setting-in-pixels">Setting in Pixels</a></h3>
 <p>In the snippet below, the values for the <code>margin</code> and <code>padding</code> properties are set to 10 pixels regardless of the value of the
@@ -317,7 +318,7 @@ Thus, the following three examples result in different box sizes of the <code>&l
 &lt;style&gt; 
 
 html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 div {
@@ -337,7 +338,8 @@ div {
 </code></pre>
 <h3 id="setting-in-em-relative-to-parent-element"><a class="header" href="#setting-in-em-relative-to-parent-element">Setting in <code>em</code> (relative to parent element)</a></h3>
 <p>In the snippet below, the values for the <code>margin</code> and <code>padding</code> properties are set to <code>2em</code>.
-Since the <code>&lt;body&gt;</code> element's <code>font-size</code> is <code>20px</code>, and <code>em</code> is relative to its parent,
+Since the <code>&lt;div&gt;</code> inherits a <code>font-size</code> of <code>20px</code> from <code>&lt;body&gt;</code>,
+and <code>em</code> is relative to the element's computed font size,
 setting <code>margin: 2em;</code> results in <code>2 * 20px = 40px</code>.</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
@@ -364,14 +366,15 @@ div {
 <p>You can test the relationship between the <code>&lt;div&gt;</code> and its parent element <code>&lt;body&gt;</code> by changing the font-size
 for the <code>body</code> selector.</p>
 <h3 id="setting-in-rem-relative-to-root-element"><a class="header" href="#setting-in-rem-relative-to-root-element">Setting in <code>rem</code> (relative to root element)</a></h3>
-<p>In the following snippet, the font-size for the root <code>&lt;html&gt;</code> element is set to the default, which is <code>16px</code> (<code>1rem = 16px</code>).
-Since the <code>margin</code> and <code>padding</code> for the <code>div</code> selector is set to <code>2rem</code> each, then they will each be <code>32px</code> (<code>2rem * 16px = 32px</code>).</p>
+<p>In the following snippet, the font-size for the root <code>&lt;html&gt;</code> element is set to the default, which is <code>16px</code>.
+Since the <code>margin</code> and <code>padding</code> for the <code>div</code> selector are set to <code>2rem</code> each,
+they will each be <code>32px</code> (<code>2rem * 16px = 32px</code>).</p>
 <pre><code>&lt;html&gt;
     &lt;head&gt;
 &lt;style&gt; 
 
 html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 div {
     border: 1px solid black;
@@ -398,7 +401,7 @@ then the size of the text enclosed in the <code>&lt;b&gt;</code> element is calc
 &lt;style&gt; 
 
 html {
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 p {
@@ -471,13 +474,13 @@ h1 {
 &lt;/html&gt;
 </code></pre>
 <h2 id="box-sizing"><a class="header" href="#box-sizing">Box Sizing</a></h2>
-<p>When we set the dimensions of a box in CSS, the dimensions are calculated based on the size of the content
-and not on the dimensions (height, width) of the box's border or padding.
+<p>When we set the dimensions of a box in CSS, the width and height are applied to the content box by default.
+This default is <code>box-sizing: content-box</code>.
 The result is that <q>if you set an element's width to 100 pixels,
 then the element's content box will be 100 pixels wide,
 and the width of any border or padding will be added to the final rendered width,
-making the element wider than 100px</q> (The CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing"><code>box-sizing</code></a> property).</p>
-<p>The <code>border-box</code> property accounts for border and padding.
+making the element wider than 100px</q> (the CSS <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing"><code>box-sizing</code></a> property).</p>
+<p>The <code>border-box</code> value accounts for border and padding.
 In the following example, I nest a <code>&lt;div&gt;</code> within a <code>&lt;div&gt;</code> and add padding around the nested <code>&lt;div&gt;</code>.
 The width is set to <code>100%</code>, which intuitively suggests that the smaller box should fit within 100% of the larger box.
 But by adding padding (<code>10px</code>), the box expands beyond the larger box's border.</p>

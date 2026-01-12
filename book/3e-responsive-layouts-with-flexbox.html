@@ -182,10 +182,10 @@
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
 <p>Responsive design is of fundamental importance to the web.
 Since smartphones were introduced in 2007, smartphone browsers have increasingly become the dominant way to interact with the web.
-As a result of this trend in user behavior, search engines prioritize a smartphone-first web.
-Google, for example, stopped <a href="https://developers.google.com/search/blog/2024/06/mobile-indexing-vlast-final-final.doc?hl=en">indexing sites that are not mobile accessible</a> as of July 2024.
-This means that if your website isn't responsive, i.e., it doesn't collapse into a single column in mobile view,
-then it will eventually not show up in Google searches.</p>
+As a result of this trend in user behavior, search engines prioritize mobile-friendly content.
+Google, for example, uses <a href="https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-first-indexing">mobile-first indexing</a>, which means it primarily uses the mobile version
+of a site for indexing and ranking.
+This means that if your website isn't responsive, it will be harder to rank and harder for users to navigate on small screens.</p>
 <h2 id="common-layouts"><a class="header" href="#common-layouts">Common Layouts</a></h2>
 <p>So far in this work, we have primarily covered different ways to style the content of our web pages.
 However, one of the main purposes of CSS is to style the layout of a page.
@@ -239,12 +239,12 @@ In the following example, the 1-column layout includes an extra column in the th
 </code></pre>
 <p>The MDN Web Docs provides a nice overview of the <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Design_and_accessibility/Common_web_layouts">common layouts in web design</a>.</p>
 <h2 id="responsive-layouts"><a class="header" href="#responsive-layouts">Responsive Layouts</a></h2>
-<p>Layouts with more than one column only work on devices such as tablets, laptops, and desktop machines.
-When viewing on mobile, all layouts should be a 1-column layout.</p>
+<p>Layouts with more than one column only work well on devices such as tablets, laptops, and desktop machines.
+When viewing on mobile, layouts often collapse into a 1-column layout.</p>
 <p>Fortunately, CSS provides the tools to create <strong>responsive</strong> designs;
 i.e., tools needed to collapse multi-column layouts into a single layout.
-The two newest tools include <strong>Flexbox</strong> and <strong>Grid</strong>.
-Both of these tools make it much easier to create complex, multi-row and multi-column, layouts
+Two widely used layout tools include <strong>Flexbox</strong> and <strong>Grid</strong>.
+Both of these tools make it much easier to create complex, multi-row and multi-column layouts
 that also collapse into single column layouts in mobile view.</p>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
 <p>In the next section, we will learn how to use CSS Flexbox to create responsive website designs.

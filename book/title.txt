@@ -2,7 +2,7 @@
 title: Semantic Web Development
 rights: Creative Commons Attribution-NonCommercial-ShareAlike 4.0
 lang: en-US
-date: 2025-04-20
+date: 2026-01-12
 identifier:
   scheme: URN
   text: uuid:23f6b099-390b-4e71-8691-0d2917a75de1
