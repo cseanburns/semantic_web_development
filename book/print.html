@@ -1381,95 +1381,8 @@ Have fun getting the skeleton of your web page/document written.
 Think a lot about the structure of your page.
 You'll want to modify that as you add content, which we'll cover next.
 But it's often helpful to have a starting outline, and the section elements covered here help with that.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="using-vs-code-and-github"><a class="header" href="#using-vs-code-and-github">Using VS Code and GitHub</a></h1>
-<h2 id="introduction-3"><a class="header" href="#introduction-3">Introduction</a></h2>
-<p>Developing a project means managing a project, which includes its source code and its documentation.
-To manage our project, we will use Git and GitHub with the Visual Studio Code (VS Code) editor.
-The process is fairly straightforward, and the steps are clearly outlined in
-<a href="https://code.visualstudio.com/docs/sourcecontrol/intro-to-git">Introduction to Git in VS Code</a>.
-However, since we have already begun our project by creating a folder and an <code>index.html</code> file on our local machine,
-some additional setup guidance is necessary.
-We will use Git entirely through VS Code and not the command line.</p>
-<h2 id="install-git"><a class="header" href="#install-git">Install Git</a></h2>
-<p>Per the VS Code documentation, you need to install <code>git</code> on your computer first.
-To install <code>git</code>, visit the <a href="https://git-scm.com/downloads">Git Downloads</a> page and select your operating system.
-The instructions vary by operating system.
-If you are using Linux, I will assume <code>git</code> is already installed on your system or you know how to install it.
-If you are using Windows, the process should be fairly straightforward for standard <code>.exe</code> files.
-However, if you are using macOS, then you should install <code>brew</code> first.</p>
-<h3 id="install-homebrew-brew-and-git-on-macos"><a class="header" href="#install-homebrew-brew-and-git-on-macos">Install Homebrew (<code>brew</code>) and <code>git</code> on macOS</a></h3>
-<p>To install Homebrew on macOS, visit the <a href="https://brew.sh/">Homebrew</a> page and follow the instructions listed there.
-You will need to open your macOS Terminal.app, then copy and paste the command presented on the Homebrew page:</p>
-<pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-</code></pre>
-<p>And you should be good to go!
-Please read through the documentation to learn more.
-(Always read through the documentation.)</p>
-<p>Now to use Homebrew to install <code>git</code>, run this command in your Terminal.app:</p>
-<pre><code>brew install git
-</code></pre>
-<h3 id="create-github-account"><a class="header" href="#create-github-account">Create GitHub Account</a></h3>
-<p>Once <code>git</code> is installed, visit <a href="https://github.com/">GitHub</a> and create an account if you don't already have one.
-Be sure to use your personal email and not your university or other non-permanent email, since you won't always have those accounts.</p>
-<h2 id="local-and-remote-repositories"><a class="header" href="#local-and-remote-repositories">Local and Remote Repositories</a></h2>
-<p>Before we proceed, you should understand two main concepts:</p>
-<ul>
-<li>Local repository (repo)</li>
-<li>Remote repository (repo)</li>
-</ul>
-<p>The project folder on your personal computer will function as your <strong>local repo</strong>.
-The content in the project folder (your files and directories) will be sent to a GitHub repository.
-This GitHub repository will function as your <strong>remote repo</strong>.
-The main goal is to keep these two repos in sync with each other, such that the work you do in one repo will get sent to the other repo.</p>
-<h3 id="local-to-remote"><a class="header" href="#local-to-remote">Local to Remote</a></h3>
-<p>Most of the time you should be working on your local machine.
-So let's say that you edit your <code>index.html</code> file using VS Code on your personal computer.
-Once you have completed your editing work, you want to do the following things to sync it to your remote repo (i.e., to GitHub):</p>
-<ul>
-<li><code>stage</code> the file: this tells <code>git</code> to take notice of this file</li>
-<li><code>commit</code> the file: this tells <code>git</code> to record the changes in your local repository
-<ul>
-<li><code>commit</code> message: add a descriptive message when committing—this is helpful for version control and collaboration</li>
-</ul>
-</li>
-<li><code>push</code> the file: this updates the remote repository with the committed changes</li>
-</ul>
-<h3 id="remote-to-local"><a class="header" href="#remote-to-local">Remote to Local</a></h3>
-<p>It's possible to edit and create files and directories on your remote repo (i.e., GitHub).
-I don't suggest doing this because it means using GitHub's web text editor.
-Although it's a decent online editor, it's not as powerful as VS Code.
-But if you do edit the remote repo through the browser, then you will want to sync any changes to your local repo.
-Those GitHub edits are already committed on the remote, so in VS Code you only need to <code>pull</code>
-or <strong>Sync Changes</strong> to bring them down to your local repo.</p>
-<h2 id="gitting-started-1"><a class="header" href="#gitting-started-1"><em>Gitting</em> Started</a></h2>
-<p>Now that you understand the basics of syncing repos, we'll proceed to using Git and GitHub with VS Code.
-All Git actions in this course happen through the VS Code Source Control view.</p>
-<p>Again I'm mainly following the steps outlined at <a href="https://code.visualstudio.com/docs/sourcecontrol/intro-to-git">Introduction to Git in VS Code</a>.</p>
-<p>Now that we have <code>git</code> installed on our systems, open VS Code and access the Accounts menu.
-You will want to sign into GitHub in VS Code.</p>
-<p>Since we've already created a local folder to work with, which should have our <code>index.html</code> file, we need to turn that local folder into a local repo.
-We do that by initializing the folder.
-In VS Code, see the instructions at <a href="https://code.visualstudio.com/docs/sourcecontrol/intro-to-git#_initialize-a-repository-in-a-local-folder">Initialize a repository in a local folder</a>.
-In short, the steps are to:</p>
-<ol>
-<li>Open your project folder in VS Code</li>
-<li>Go to the <strong>Source Control</strong> view and select <strong>Initialize Repository</strong></li>
-<li>Add a descriptive <code>commit</code> message and then press <strong>Commit</strong></li>
-<li>Press <strong>Yes</strong> to stage your commit</li>
-<li>Then click <strong>Publish Branch</strong> and sign in to authenticate with GitHub.</li>
-<li>Then select <strong>Publish to GitHub public repository ...</strong>.
-<ul>
-<li>We need this to be public for later work</li>
-</ul>
-</li>
-<li>Open on GitHub to view your uploaded repo!</li>
-</ol>
-<h3 id="remote-sync"><a class="header" href="#remote-sync">Remote Sync</a></h3>
-<p>I highly encourage you to only work in VS Code and not edit files or create directories directly on GitHub.
-But if you do, then from your local machine, you will need to <code>pull</code> or use <strong>Sync Changes</strong> in VS Code
-to sync the commits you made on GitHub to your local repo.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="html-grouping-and-text-level-semantic-elements"><a class="header" href="#html-grouping-and-text-level-semantic-elements">HTML Grouping and Text-Level Semantic Elements</a></h1>
-<h2 id="introduction-4"><a class="header" href="#introduction-4">Introduction</a></h2>
+<h2 id="introduction-3"><a class="header" href="#introduction-3">Introduction</a></h2>
 <p>In this section, we learn about the most frequent HTML element types: grouping elements and text-level or inline semantic elements.
 Most of our content will be marked up using these two categories of elements.</p>
 <p>The grouping elements we cover here include:</p>
@@ -1681,7 +1594,7 @@ These elements affect accessibility and the way content is interpreted by search
 Apply these elements thoughtfully.
 They will help create well-structured, readable, and meaningful web content that enhances both usability and accessibility.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="links-and-attributes"><a class="header" href="#links-and-attributes">Links and Attributes</a></h1>
-<h2 id="introduction-5"><a class="header" href="#introduction-5">Introduction</a></h2>
+<h2 id="introduction-4"><a class="header" href="#introduction-4">Introduction</a></h2>
 <p>The ability for a web page to link to other resources is the defining characteristic of the web.
 According to the HTML specification, there are <a href="https://html.spec.whatwg.org/multipage/links.html#links">three types of HTML links</a>.
 These include:</p>
@@ -1942,7 +1855,7 @@ For example, this tag is used to bring in stylesheets, icons, or other external 
 We use the <code>&lt;a&gt;</code> tag to create hyperlinks, which serve as the defining characteristic of the web.
 Hyperlinks are used to navigate from site to site, page to page, or within a page, such as with internal resource links.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="embedded-content-images-and-multimedia"><a class="header" href="#embedded-content-images-and-multimedia">Embedded Content: Images and Multimedia</a></h1>
-<h2 id="introduction-6"><a class="header" href="#introduction-6">Introduction</a></h2>
+<h2 id="introduction-5"><a class="header" href="#introduction-5">Introduction</a></h2>
 <p>It's no surprise that multimedia content dominates the web and thus it's no surprise that there are multiple HTML elements
 that provide methods for publishing multimedia content.
 In this lesson, we'll cover the following multimedia elements for embedding non-textual content in HTML documents.
@@ -2765,7 +2678,7 @@ because they are important building blocks to more advanced topics like responsi
 And although we will not use any CSS frameworks in this course,
 understanding the essentials here will help with those if you eventually use them.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="colors-and-units-of-measurement"><a class="header" href="#colors-and-units-of-measurement">Colors and Units of Measurement</a></h1>
-<h2 id="introduction-7"><a class="header" href="#introduction-7">Introduction</a></h2>
+<h2 id="introduction-6"><a class="header" href="#introduction-6">Introduction</a></h2>
 <p>Designing a web page begins by controlling color and sizing.
 These base conditions lay the foundation for shaping the user experience.
 It's also where the fun begins.</p>
@@ -3845,7 +3758,7 @@ Keep those visitors in mind, always!</p>
 <p>Finally, focus on the principles:
 readability, legibility, hierarchy, consistency, alignment and balance, contrast, and white space.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="styling-images-lists-and-backgrounds"><a class="header" href="#styling-images-lists-and-backgrounds">Styling Images, Lists, and Backgrounds</a></h1>
-<h2 id="introduction-8"><a class="header" href="#introduction-8">Introduction</a></h2>
+<h2 id="introduction-7"><a class="header" href="#introduction-7">Introduction</a></h2>
 <p>We have discussed how to add <a href="2e-embedded-content.html">images</a> to our web pages.
 Now it's time to learn to style them.
 We will also learn how to style lists, which will include adding images to our lists,
@@ -4549,7 +4462,7 @@ with different favicon sizes, plus an Apple touch icon:</p>
 <p>The <code>rel</code> attribute with the value of <code>apple-touch-icon</code> makes the favicon more accessible for iOS devices
 (because Apple).</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="responsive-layouts-with-flexbox"><a class="header" href="#responsive-layouts-with-flexbox">Responsive Layouts with Flexbox</a></h1>
-<h2 id="introduction-9"><a class="header" href="#introduction-9">Introduction</a></h2>
+<h2 id="introduction-8"><a class="header" href="#introduction-8">Introduction</a></h2>
 <p>Responsive design is of fundamental importance to the web.
 Since smartphones were introduced in 2007, smartphone browsers have increasingly become the dominant way to interact with the web.
 As a result of this trend in user behavior, search engines prioritize mobile-friendly content.
@@ -4632,7 +4545,7 @@ To learn more about CSS Grid, see the following resources:</p>
 <p>CSS has long offered a number of <em>layout modes</em> for designing the layout of documents, text, tables, and positioned elements.
 <a href="https://www.w3.org/TR/css-flexbox-1/">CSS Flexbox layout</a> is a newer layout mode used to create responsive web page designs.
 It works in one dimension at a time: rows <strong>or</strong> columns.</p>
-<h2 id="introduction-10"><a class="header" href="#introduction-10">Introduction</a></h2>
+<h2 id="introduction-9"><a class="header" href="#introduction-9">Introduction</a></h2>
 <p>CSS Flexbox includes the following <strong>properties</strong>:</p>
 <ul>
 <li><a href="https://www.w3.org/TR/css-flexbox-1/#flex-direction-property"><code>flex-direction</code></a> sets the axis of the flex container. Options include:
@@ -5042,7 +4955,7 @@ This is because, by definition, these elements are container elements.</p>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox">Flexbox MDN</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="document-metadata-json-ld-and-schemaorg"><a class="header" href="#document-metadata-json-ld-and-schemaorg">Document Metadata: JSON-LD and Schema.org</a></h1>
-<h2 id="introduction-11"><a class="header" href="#introduction-11">Introduction</a></h2>
+<h2 id="introduction-10"><a class="header" href="#introduction-10">Introduction</a></h2>
 <p>Near the beginning of this work, we learned about the importance of structuring and
 adding metadata to the <code>&lt;head&gt;</code> section of our HTML documents.
 For example, the <code>&lt;head&gt;</code> section should contain a <code>&lt;title&gt;</code> element that accurately describes the content of the document.</p>
@@ -5115,7 +5028,7 @@ One schema to rule them all: How Schema.org models the world of search.
 [doi.org/10.1002/asi.24744](https://doi.org/10.1002/asi.24744)
 -->
 <div style="break-before: page; page-break-before: always;"></div><h1 id="json-basics"><a class="header" href="#json-basics">JSON Basics</a></h1>
-<h2 id="introduction-12"><a class="header" href="#introduction-12">Introduction</a></h2>
+<h2 id="introduction-11"><a class="header" href="#introduction-11">Introduction</a></h2>
 <p>It may be too obvious to say, but computer applications use and exchange data in order to operate.
 For example, an <a href="https://en.wikipedia.org/wiki/Online_public_access_catalog">OPAC (library catalog)</a> contains bibliographic records (data)
 that allow users to search a catalog from a browser to locate information sources.
@@ -5294,7 +5207,7 @@ So be sure to validate your JSON.</p>
 <p>When we begin working with schema.org, you will see how this structured, machine-readable format allows search engines and AI
 to <em>understand</em> what your website is about, even if no human ever reads it.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="schemaorg-and-structured-data"><a class="header" href="#schemaorg-and-structured-data">Schema.org and Structured Data</a></h1>
-<h2 id="introduction-13"><a class="header" href="#introduction-13">Introduction</a></h2>
+<h2 id="introduction-12"><a class="header" href="#introduction-12">Introduction</a></h2>
 <p>Metadata plays a central role in most computer applications.
 There are different data models to structure metadata.
 The data model we will use to add metadata to our pages is called <a href="https://schema.org/">schema.org</a>.</p>
@@ -5445,7 +5358,7 @@ the latter of which is used for human consumption.
 It accomplishes this through the schema.org vocabulary (although other data models exist for different contexts).</p>
 <p>In the next section, we focus on the practical aspects of serializing <code>schema.org</code> as JSON-LD.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="json-ld-syntax-and-integration"><a class="header" href="#json-ld-syntax-and-integration">JSON-LD Syntax and Integration</a></h1>
-<h2 id="introduction-14"><a class="header" href="#introduction-14">Introduction</a></h2>
+<h2 id="introduction-13"><a class="header" href="#introduction-13">Introduction</a></h2>
 <p>Now that we know how to structure data using JSON and use schema.org to conceptualize <code>Things</code>,
 we can begin to learn how to serialize schema.org into JSON-LD.</p>
 <h2 id="step-1-the-script-tag"><a class="header" href="#step-1-the-script-tag">Step 1: The <code>&lt;script&gt;</code> tag</a></h2>
