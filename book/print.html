@@ -988,6 +988,29 @@ On a multi-page website, this styling would only apply to this one page.</p>
 	&lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
+<h2 id="send-indexhtml-to-github-with-vs-code"><a class="header" href="#send-indexhtml-to-github-with-vs-code">Send <code>index.html</code> to GitHub with VS Code</a></h2>
+<p>Before you can push a file to GitHub, you need a repository.
+Create a new repository on GitHub first, then connect your local folder
+to it from VS Code and push your <code>index.html</code> file.</p>
+<ol>
+<li>Go to GitHub and select <strong>New repository</strong>.</li>
+<li>Name it <code>semantic-web-development</code> (or something similarly specific
+to this class).</li>
+<li>Keep the repository empty by leaving <strong>Add a README</strong> unchecked.</li>
+<li>Create the repository and copy the HTTPS URL (it ends in <code>.git</code>).</li>
+</ol>
+<p>Now connect your local folder in VS Code and push your work:</p>
+<ol>
+<li>Open the folder that contains <code>index.html</code> in VS Code.</li>
+<li>Open the Source Control view and select <strong>Initialize Repository</strong>.</li>
+<li>In Source Control, stage <code>index.html</code> and enter a commit message like
+<code>add index.html</code>.</li>
+<li>Select <strong>Commit</strong>.</li>
+<li>Open the Command Palette and run <strong>Git: Add Remote</strong>.</li>
+<li>Name the remote <code>origin</code> and paste the HTTPS URL from GitHub.</li>
+<li>Open the Command Palette again and run <strong>Git: Push</strong> to send the commit.</li>
+</ol>
+<p>If prompted, choose to publish the current branch when VS Code asks.</p>
 <h2 id="conclusion-3"><a class="header" href="#conclusion-3">Conclusion</a></h2>
 <p>In this section, we introduced the basic structure of a web page and
 covered the basics of a web document's metadata section.
