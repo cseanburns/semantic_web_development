@@ -132,7 +132,7 @@ and build responsive websites effectively.
 In the next two chapters, we will explore how to implement these layouts using HTML first and then CSS.
 For now, experiment with Inkscape and create your own prototypes for both desktop and mobile views.
 
-[11_website_layouts]:https://wordpress.com/blog/2024/11/14/website-layout-examples/#creating-a-website-layout-mockup
+[11_website_layouts]:https://wordpress.com/blog/2024/11/14/website-layout-examples/
 [seo_google]:https://developers.google.com/search/docs/crawling-indexing/mobile/mobile-sites-mobile-first-indexing
 [pew_mobile_fact_sheet]:https://www.pewresearch.org/internet/fact-sheet/mobile/
 [uky]:https://www.uky.edu/
