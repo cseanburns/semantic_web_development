@@ -311,7 +311,7 @@ Once we add that to the `<head>` section, we have the following:
 
 ### Create and Save an `index.html`
 
-To begin coding HTML, open your file manager (Finder or Explorer), and create a new folder called:
+To begin coding HTML, open your file manager (e.g., Finder or Explorer), and create a new folder called:
 
 ```
 web_project_2026
@@ -329,30 +329,27 @@ To begin coding, select:
 1. New File and name it exactly: **index.html**
 
 Once the file is opened in a VS Code tab, begin adding your document metadata, as illustrated in the last code block.
-However, for the time being, do not include `<base href="...">` in your code at this point.
+For the time being, do not include `<base href="...">` in your code at this point.
+Once completed, save your file.
 
 ### Send `index.html` to GitHub
 
-Before you can push a file to GitHub, you need a repository.
-Create a new repository on GitHub first, then connect your local folder
-to it from VS Code and push your `index.html` file.
-
-1. Go to GitHub and select **New repository**.
-2. Name it `web_project_2026` (use the same name as the folder on your drive)
-3. Keep the repository empty by leaving **Add a README** unchecked.
-4. Create the repository and copy the HTTPS URL (it ends in `.git`).
-
 Now connect your local folder in VS Code and push your work:
 
-1. Open the folder that contains `index.html` in VS Code.
+1. Be sure you've saved your file.
 2. Open the Source Control view and select **Initialize Repository**.
-3. In Source Control, stage `index.html` and enter a commit message like `add index.html`.
-4. Select **Commit**.
-5. Open the Command Palette and run **Git: Add Remote**.
-6. Name the remote `origin` and paste the HTTPS URL from GitHub.
-7. Open the Command Palette again and run **Git: Push** to send the commit.
+3. In Source Control, stage `index.html` and enter a commit message like `add index.html`, and press **Commit**.
+4. Select **Publish to a public repository** (make sure you select **public**).
+5. Select **View on GitHub** to see your new repo and the file **index.html** there.
 
-If prompted, choose to publish the current branch when VS Code asks.
+### Updating
+
+Now that your repo is setup, whenever you make changes:
+
+1. Save your file.
+2. Add new commit message that describe your changes.
+3. Click commit.
+4. Click **Sync Changes**.
 
 ## Conclusion
 
