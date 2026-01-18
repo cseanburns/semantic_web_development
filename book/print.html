@@ -597,7 +597,7 @@ it helps users easily find what they need while enhancing their overall experien
 <p>Fortunately, there are some common web layout designs, just like there are common building layouts or home layouts.
 This means you do not need to invent anything new and that there is lots to explore
 as you think about the kind of website you want and the kind of content you want to share.
-To get started, review the <a href="https://wordpress.com/blog/2024/11/14/website-layout-examples/#creating-a-website-layout-mockup">11 Website Layout Examples for Every Type of Page</a>.</p>
+To get started, review the <a href="https://wordpress.com/blog/2024/11/14/website-layout-examples/">11 Website Layout Examples for Every Type of Page</a>.</p>
 <p>Although some of the layouts at the above link might seem complicated,
 you can start by considering two common layout structures: Single Column Layout and Two-Column Layout.</p>
 <p>The single-column layout can also be framed as a multiple row layout.
@@ -988,14 +988,30 @@ On a multi-page website, this styling would only apply to this one page.</p>
 	&lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<h2 id="send-indexhtml-to-github-with-vs-code"><a class="header" href="#send-indexhtml-to-github-with-vs-code">Send <code>index.html</code> to GitHub with VS Code</a></h2>
+<h2 id="using-vs-code"><a class="header" href="#using-vs-code">Using VS Code</a></h2>
+<h3 id="create-and-save-an-indexhtml"><a class="header" href="#create-and-save-an-indexhtml">Create and Save an <code>index.html</code></a></h3>
+<p>To begin coding HTML, open your file manager (Finder or Explorer), and create a new folder called:</p>
+<pre><code>web_project_2026
+</code></pre>
+<p>Next, open VS Code (or your editor of choice) and select the new folder:</p>
+<ol>
+<li>Click on Open Folder</li>
+<li>And then select the above project folder</li>
+</ol>
+<p>This folder will be your project folder for the course, and all HTML, CSS, and other files for your website will be placed in this folder.</p>
+<p>To begin coding, select:</p>
+<ol>
+<li>New File and name it exactly: <strong>index.html</strong></li>
+</ol>
+<p>Once the file is opened in a VS Code tab, begin adding your document metadata, as illustrated in the last code block.
+However, for the time being, do not include <code>&lt;base href="..."&gt;</code> in your code at this point.</p>
+<h3 id="send-indexhtml-to-github"><a class="header" href="#send-indexhtml-to-github">Send <code>index.html</code> to GitHub</a></h3>
 <p>Before you can push a file to GitHub, you need a repository.
 Create a new repository on GitHub first, then connect your local folder
 to it from VS Code and push your <code>index.html</code> file.</p>
 <ol>
 <li>Go to GitHub and select <strong>New repository</strong>.</li>
-<li>Name it <code>semantic-web-development</code> (or something similarly specific
-to this class).</li>
+<li>Name it <code>web_project_2026</code> (use the same name as the folder on your drive)</li>
 <li>Keep the repository empty by leaving <strong>Add a README</strong> unchecked.</li>
 <li>Create the repository and copy the HTTPS URL (it ends in <code>.git</code>).</li>
 </ol>
@@ -1003,8 +1019,7 @@ to this class).</li>
 <ol>
 <li>Open the folder that contains <code>index.html</code> in VS Code.</li>
 <li>Open the Source Control view and select <strong>Initialize Repository</strong>.</li>
-<li>In Source Control, stage <code>index.html</code> and enter a commit message like
-<code>add index.html</code>.</li>
+<li>In Source Control, stage <code>index.html</code> and enter a commit message like <code>add index.html</code>.</li>
 <li>Select <strong>Commit</strong>.</li>
 <li>Open the Command Palette and run <strong>Git: Add Remote</strong>.</li>
 <li>Name the remote <code>origin</code> and paste the HTTPS URL from GitHub.</li>
