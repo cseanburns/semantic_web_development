@@ -7,7 +7,8 @@ We can test this using the universal selector `*` in our CSS.
 For example, consider the following HTML, which quotes the first sentence from <cite>Moby-Dick</cite>:
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
     </head>
     <body>
@@ -25,7 +26,8 @@ For example, consider the following HTML, which quotes the first sentence from <
 In the following snippet, I add the universal selector to place a box around all elements in the above web document.
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 <style> 
 * {
