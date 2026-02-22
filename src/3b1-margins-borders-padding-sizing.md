@@ -25,49 +25,51 @@ style boxes using the lessons covered in the prior section on [Colors and Units 
 
 ## Margin
 
-Let's start with some basic HTML that contains only a `<div>` element in the `<body>`:
+Let's start with some basic HTML that contains only a `<main>` element in the `<body>`:
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
     </head>
     <body>
-        <div>
+        <main>
             Building a basic box.
-        </div>
+        </main>
     </body>
 </html>
 ```
 
-First, we'll add a border around the box, in order to highlight the `<div>`'s boundary between its padding and margin:
+First, we'll add a border around the box, in order to highlight the `<main>`'s boundary between its padding and margin:
 
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 <style> 
 
-div {
+main {
     border: 1px solid black;
 }
 
 </style>
     </head>
     <body>
-        <div>
+        <main>
             Building a basic box.
-        </div>
+        </main>
     </body>
 </html>
 ```
 
-Next, I add the `margin` property with a value of `2em` to demonstrate how it adjusts the spacing around the `<div>` element,
+Next, I add the `margin` property with a value of `2em` to demonstrate how it adjusts the spacing around the `<main>` element,
 pushing it away from adjacent elements.
 Since the browser default font size is `16px`,
 using `2em` means the box will be offset from adjacent elements by 32 pixels on all four sides:
 
 ```
-div {
+main {
     border: 1px solid black;
     margin: 2em;
 }
@@ -81,11 +83,12 @@ In the following example, I set the `margin-top` to `2em`, the `margin-right` to
 the `margin-bottom` to `1em`, and the `margin-left` to `4em`.
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 <style> 
 
-div {
+main {
     border: 1px solid black;
     /* top, right, bottom, left */
     margin: 2em 3em 1em 4em;
@@ -95,7 +98,7 @@ div {
     </head>
     <body>
         <h1>Heading 1</h1>
-        <div>Hello world</div>
+        <main>Hello world</main>
         <h2>Heading 2</h2>
     </body>
 </html>
@@ -105,15 +108,16 @@ div {
 
 To center a box horizontally, set a `width` and use `margin: auto;`.
 This distributes the remaining space equally on both sides and centers the element within its parent container.
-In the following snippet, I set the width of the `<div>` element to 90% of its parent container.
-Then by setting `margin: auto;`, the `<div>` element gets centered in the viewing area.
+In the following snippet, I set the width of the `<main>` element to 90% of its parent container.
+Then by setting `margin: auto;`, the `<main>` element gets centered in the viewing area.
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 <style> 
 
-div {
+main {
     border: 1px solid black;
     width: 90%;
     margin: auto;
@@ -123,7 +127,7 @@ div {
     </head>
     <body>
         <h1>Heading 1</h1>
-        <div>Hello world</div>
+        <main>Hello world</main>
         <h2>Heading 2</h2>
     </body>
 </html>
@@ -144,7 +148,7 @@ Some styles, like `groove`, `ridge`, `inset`, and `outset`, create three-dimensi
 In the following snippet, I focus on the border's bottom edge by setting only the bottom's width, style, and color:
 
 ```
-div {
+main {
     border-bottom-width: 10px;
     border-bottom-style: dashed;
     border-bottom-color: hsl(291,100%,50%);
@@ -159,15 +163,16 @@ Note that the effect is different when using relative lengths, like `em` or `rem
 As you recall, `em` is relative to the element's computed font size
 (often inherited from its parent), and `rem` is relative to the `font-size`
 of the `<html>` root element.
-Thus, the following three examples result in different box sizes of the `<div>` element.
+Thus, the following three examples result in different box sizes of the `<main>` element.
 
 ### Setting in Pixels
 
 In the snippet below, the values for the `margin` and `padding` properties are set to 10 pixels regardless of the value of the
-`html` font size or the `<div>`'s parent element.
+`html` font size or the `<main>`'s parent element.
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 <style> 
 
@@ -175,7 +180,7 @@ html {
     font-size: 16px;
 }
 
-div {
+main {
     border: 1px solid black;
     margin: 10px;
     padding: 10px;
@@ -184,9 +189,9 @@ div {
 </style>
     </head>
     <body>
-        <div>
+        <main>
             Building a basic box.
-        </div>
+        </main>
     </body>
 </html>
 ```
@@ -194,19 +199,20 @@ div {
 ### Setting in `em` (relative to parent element)
 
 In the snippet below, the values for the `margin` and `padding` properties are set to `2em`.
-Since the `<div>` inherits a `font-size` of `20px` from `<body>`,
+Since the `<main>` inherits a `font-size` of `20px` from `<body>`,
 and `em` is relative to the element's computed font size,
 setting `margin: 2em;` results in `2 * 20px = 40px`.
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 <style> 
 
 body {
     font-size: 20px;
 }
-div {
+main {
     border: 1px solid black;
     margin: 2em;
     padding: 2em;
@@ -215,31 +221,32 @@ div {
 </style>
     </head>
     <body>
-        <div>
+        <main>
             Building a basic box.
-        </div>
+        </main>
     </body>
 </html>
 ```
 
-You can test the relationship between the `<div>` and its parent element `<body>` by changing the font-size
+You can test the relationship between the `<main>` and its parent element `<body>` by changing the font-size
 for the `body` selector.
 
 ### Setting in `rem` (relative to root element)
 
 In the following snippet, the font-size for the root `<html>` element is set to the default, which is `16px`.
-Since the `margin` and `padding` for the `div` selector are set to `2rem` each,
+Since the `margin` and `padding` for the `main` selector are set to `2rem` each,
 they will each be `32px` (`2rem * 16px = 32px`).
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 <style> 
 
 html {
     font-size: 16px;
 }
-div {
+main {
     border: 1px solid black;
     margin: 2rem;
     padding: 2rem;
@@ -248,9 +255,9 @@ div {
 </style>
     </head>
     <body>
-        <div>
+        <main>
             Building a basic box.
-        </div>
+        </main>
     </body>
 </html>
 ```
@@ -263,7 +270,8 @@ Since the `em` unit is calculated with respect to the parent element, and since 
 then the size of the text enclosed in the `<b>` element is calculated with respect to the `<p>` element.
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 <style> 
 
@@ -298,7 +306,8 @@ For example, increasing `font-size` expands the content area, causing the box to
 In the following code snippet, I have an `<h1>` element with some simple text:
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <body>
         <section>
             <h1>Heading 1</h1>
@@ -311,7 +320,8 @@ Now let's add a border around that.
 This reveals how the element is wrapped in a box:
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 <style>
 
@@ -332,7 +342,8 @@ h1 {
 Increasing the `font-size` enlarges the content, which in turn expands the overall box dimensions.
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 <style>
 
@@ -366,7 +377,8 @@ The width is set to `100%`, which intuitively suggests that the smaller box shou
 But by adding padding (`10px`), the box expands beyond the larger box's border.
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 <style>
 .big, .small {
@@ -397,7 +409,8 @@ In the example below, the padding and border are adjusted to fit within the larg
 That is, the border width and padding, and not simply the content, are taken into account when sizing the box.
 
 ```
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
 <style>
 .big, .small {
