@@ -184,7 +184,8 @@ This includes everything from the root element <code>&lt;html&gt;</code> all the
 block-level elements such as the paragraph tag <code>&lt;p&gt;</code> or inline elements such as the <code>&lt;span&gt;</code> tag.
 We can test this using the universal selector <code>*</code> in our CSS.
 For example, consider the following HTML, which quotes the first sentence from <cite>Moby-Dick</cite>:</p>
-<pre><code>&lt;html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
     &lt;/head&gt;
     &lt;body&gt;
@@ -199,7 +200,8 @@ For example, consider the following HTML, which quotes the first sentence from <
 &lt;/html&gt;
 </code></pre>
 <p>In the following snippet, I add the universal selector to place a box around all elements in the above web document.</p>
-<pre><code>&lt;html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
 &lt;style&gt; 
 * {

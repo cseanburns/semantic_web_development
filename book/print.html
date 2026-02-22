@@ -3065,7 +3065,8 @@ This includes everything from the root element <code>&lt;html&gt;</code> all the
 block-level elements such as the paragraph tag <code>&lt;p&gt;</code> or inline elements such as the <code>&lt;span&gt;</code> tag.
 We can test this using the universal selector <code>*</code> in our CSS.
 For example, consider the following HTML, which quotes the first sentence from <cite>Moby-Dick</cite>:</p>
-<pre><code>&lt;html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
     &lt;/head&gt;
     &lt;body&gt;
@@ -3080,7 +3081,8 @@ For example, consider the following HTML, which quotes the first sentence from <
 &lt;/html&gt;
 </code></pre>
 <p>In the following snippet, I add the universal selector to place a box around all elements in the above web document.</p>
-<pre><code>&lt;html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
 &lt;style&gt; 
 * {
@@ -3149,40 +3151,42 @@ Fig. 1. <a href="https://www.w3.org/TR/css-box-3/#box-model">The CSS Box Model</
 We can use CSS to target any of these sides, or all sides at once, and
 style boxes using the lessons covered in the prior section on <a href="3a2-colors-units-measurements.html">Colors and Units of Measurement</a>.</p>
 <h2 id="margin"><a class="header" href="#margin">Margin</a></h2>
-<p>Let's start with some basic HTML that contains only a <code>&lt;div&gt;</code> element in the <code>&lt;body&gt;</code>:</p>
-<pre><code>&lt;html&gt;
+<p>Let's start with some basic HTML that contains only a <code>&lt;main&gt;</code> element in the <code>&lt;body&gt;</code>:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        &lt;div&gt;
+        &lt;main&gt;
             Building a basic box.
-        &lt;/div&gt;
+        &lt;/main&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<p>First, we'll add a border around the box, in order to highlight the <code>&lt;div&gt;</code>'s boundary between its padding and margin:</p>
-<pre><code>&lt;html&gt;
+<p>First, we'll add a border around the box, in order to highlight the <code>&lt;main&gt;</code>'s boundary between its padding and margin:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
 &lt;style&gt; 
 
-div {
+main {
     border: 1px solid black;
 }
 
 &lt;/style&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        &lt;div&gt;
+        &lt;main&gt;
             Building a basic box.
-        &lt;/div&gt;
+        &lt;/main&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<p>Next, I add the <code>margin</code> property with a value of <code>2em</code> to demonstrate how it adjusts the spacing around the <code>&lt;div&gt;</code> element,
+<p>Next, I add the <code>margin</code> property with a value of <code>2em</code> to demonstrate how it adjusts the spacing around the <code>&lt;main&gt;</code> element,
 pushing it away from adjacent elements.
 Since the browser default font size is <code>16px</code>,
 using <code>2em</code> means the box will be offset from adjacent elements by 32 pixels on all four sides:</p>
-<pre><code>div {
+<pre><code>main {
     border: 1px solid black;
     margin: 2em;
 }
@@ -3192,11 +3196,12 @@ using <code>2em</code> means the box will be offset from adjacent elements by 32
 This shorthand works for the <code>margin</code> and <code>padding</code> properties.
 In the following example, I set the <code>margin-top</code> to <code>2em</code>, the <code>margin-right</code> to <code>3em</code>,
 the <code>margin-bottom</code> to <code>1em</code>, and the <code>margin-left</code> to <code>4em</code>.</p>
-<pre><code>&lt;html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
 &lt;style&gt; 
 
-div {
+main {
     border: 1px solid black;
     /* top, right, bottom, left */
     margin: 2em 3em 1em 4em;
@@ -3206,7 +3211,7 @@ div {
     &lt;/head&gt;
     &lt;body&gt;
         &lt;h1&gt;Heading 1&lt;/h1&gt;
-        &lt;div&gt;Hello world&lt;/div&gt;
+        &lt;main&gt;Hello world&lt;/main&gt;
         &lt;h2&gt;Heading 2&lt;/h2&gt;
     &lt;/body&gt;
 &lt;/html&gt;
@@ -3214,13 +3219,14 @@ div {
 <h3 id="centering-boxes"><a class="header" href="#centering-boxes">Centering Boxes</a></h3>
 <p>To center a box horizontally, set a <code>width</code> and use <code>margin: auto;</code>.
 This distributes the remaining space equally on both sides and centers the element within its parent container.
-In the following snippet, I set the width of the <code>&lt;div&gt;</code> element to 90% of its parent container.
-Then by setting <code>margin: auto;</code>, the <code>&lt;div&gt;</code> element gets centered in the viewing area.</p>
-<pre><code>&lt;html&gt;
+In the following snippet, I set the width of the <code>&lt;main&gt;</code> element to 90% of its parent container.
+Then by setting <code>margin: auto;</code>, the <code>&lt;main&gt;</code> element gets centered in the viewing area.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
 &lt;style&gt; 
 
-div {
+main {
     border: 1px solid black;
     width: 90%;
     margin: auto;
@@ -3230,7 +3236,7 @@ div {
     &lt;/head&gt;
     &lt;body&gt;
         &lt;h1&gt;Heading 1&lt;/h1&gt;
-        &lt;div&gt;Hello world&lt;/div&gt;
+        &lt;main&gt;Hello world&lt;/main&gt;
         &lt;h2&gt;Heading 2&lt;/h2&gt;
     &lt;/body&gt;
 &lt;/html&gt;
@@ -3245,7 +3251,7 @@ There is also a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border
 and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style">different styles</a>, such as <code>solid</code>, <code>dotted</code>, <code>dashed</code>, <code>double</code>, and more.
 Some styles, like <code>groove</code>, <code>ridge</code>, <code>inset</code>, and <code>outset</code>, create three-dimensional effects.
 In the following snippet, I focus on the border's bottom edge by setting only the bottom's width, style, and color:</p>
-<pre><code>div {
+<pre><code>main {
     border-bottom-width: 10px;
     border-bottom-style: dashed;
     border-bottom-color: hsl(291,100%,50%);
@@ -3258,11 +3264,12 @@ Note that the effect is different when using relative lengths, like <code>em</co
 As you recall, <code>em</code> is relative to the element's computed font size
 (often inherited from its parent), and <code>rem</code> is relative to the <code>font-size</code>
 of the <code>&lt;html&gt;</code> root element.
-Thus, the following three examples result in different box sizes of the <code>&lt;div&gt;</code> element.</p>
+Thus, the following three examples result in different box sizes of the <code>&lt;main&gt;</code> element.</p>
 <h3 id="setting-in-pixels"><a class="header" href="#setting-in-pixels">Setting in Pixels</a></h3>
 <p>In the snippet below, the values for the <code>margin</code> and <code>padding</code> properties are set to 10 pixels regardless of the value of the
-<code>html</code> font size or the <code>&lt;div&gt;</code>'s parent element.</p>
-<pre><code>&lt;html&gt;
+<code>html</code> font size or the <code>&lt;main&gt;</code>'s parent element.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
 &lt;style&gt; 
 
@@ -3270,7 +3277,7 @@ html {
     font-size: 16px;
 }
 
-div {
+main {
     border: 1px solid black;
     margin: 10px;
     padding: 10px;
@@ -3279,25 +3286,26 @@ div {
 &lt;/style&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        &lt;div&gt;
+        &lt;main&gt;
             Building a basic box.
-        &lt;/div&gt;
+        &lt;/main&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
 <h3 id="setting-in-em-relative-to-parent-element"><a class="header" href="#setting-in-em-relative-to-parent-element">Setting in <code>em</code> (relative to parent element)</a></h3>
 <p>In the snippet below, the values for the <code>margin</code> and <code>padding</code> properties are set to <code>2em</code>.
-Since the <code>&lt;div&gt;</code> inherits a <code>font-size</code> of <code>20px</code> from <code>&lt;body&gt;</code>,
+Since the <code>&lt;main&gt;</code> inherits a <code>font-size</code> of <code>20px</code> from <code>&lt;body&gt;</code>,
 and <code>em</code> is relative to the element's computed font size,
 setting <code>margin: 2em;</code> results in <code>2 * 20px = 40px</code>.</p>
-<pre><code>&lt;html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
 &lt;style&gt; 
 
 body {
     font-size: 20px;
 }
-div {
+main {
     border: 1px solid black;
     margin: 2em;
     padding: 2em;
@@ -3306,26 +3314,27 @@ div {
 &lt;/style&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        &lt;div&gt;
+        &lt;main&gt;
             Building a basic box.
-        &lt;/div&gt;
+        &lt;/main&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<p>You can test the relationship between the <code>&lt;div&gt;</code> and its parent element <code>&lt;body&gt;</code> by changing the font-size
+<p>You can test the relationship between the <code>&lt;main&gt;</code> and its parent element <code>&lt;body&gt;</code> by changing the font-size
 for the <code>body</code> selector.</p>
 <h3 id="setting-in-rem-relative-to-root-element"><a class="header" href="#setting-in-rem-relative-to-root-element">Setting in <code>rem</code> (relative to root element)</a></h3>
 <p>In the following snippet, the font-size for the root <code>&lt;html&gt;</code> element is set to the default, which is <code>16px</code>.
-Since the <code>margin</code> and <code>padding</code> for the <code>div</code> selector are set to <code>2rem</code> each,
+Since the <code>margin</code> and <code>padding</code> for the <code>main</code> selector are set to <code>2rem</code> each,
 they will each be <code>32px</code> (<code>2rem * 16px = 32px</code>).</p>
-<pre><code>&lt;html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
 &lt;style&gt; 
 
 html {
     font-size: 16px;
 }
-div {
+main {
     border: 1px solid black;
     margin: 2rem;
     padding: 2rem;
@@ -3334,9 +3343,9 @@ div {
 &lt;/style&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        &lt;div&gt;
+        &lt;main&gt;
             Building a basic box.
-        &lt;/div&gt;
+        &lt;/main&gt;
     &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -3345,7 +3354,8 @@ div {
 However, the <code>b</code> selector (for the <code>&lt;b&gt;</code> element in the HTML section) uses <code>em</code> units.
 Since the <code>em</code> unit is calculated with respect to the parent element, and since the parent element in this case is the <code>&lt;p&gt;</code> element,
 then the size of the text enclosed in the <code>&lt;b&gt;</code> element is calculated with respect to the <code>&lt;p&gt;</code> element.</p>
-<pre><code>&lt;html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
 &lt;style&gt; 
 
@@ -3376,7 +3386,8 @@ b {
 <p>We have already discussed the last property: <strong>content</strong>.
 For example, increasing <code>font-size</code> expands the content area, causing the box to grow accordingly.
 In the following code snippet, I have an <code>&lt;h1&gt;</code> element with some simple text:</p>
-<pre><code>&lt;html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;body&gt;
         &lt;section&gt;
             &lt;h1&gt;Heading 1&lt;/h1&gt;
@@ -3386,7 +3397,8 @@ In the following code snippet, I have an <code>&lt;h1&gt;</code> element with so
 </code></pre>
 <p>Now let's add a border around that.
 This reveals how the element is wrapped in a box:</p>
-<pre><code>&lt;html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
 &lt;style&gt;
 
@@ -3404,7 +3416,8 @@ h1 {
 &lt;/html&gt;
 </code></pre>
 <p>Increasing the <code>font-size</code> enlarges the content, which in turn expands the overall box dimensions.</p>
-<pre><code>&lt;html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
 &lt;style&gt;
 
@@ -3433,7 +3446,8 @@ making the element wider than 100px</q> (the CSS <a href="https://developer.mozi
 In the following example, I nest a <code>&lt;div&gt;</code> within a <code>&lt;div&gt;</code> and add padding around the nested <code>&lt;div&gt;</code>.
 The width is set to <code>100%</code>, which intuitively suggests that the smaller box should fit within 100% of the larger box.
 But by adding padding (<code>10px</code>), the box expands beyond the larger box's border.</p>
-<pre><code>&lt;html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
 &lt;style&gt;
 .big, .small {
@@ -3461,7 +3475,8 @@ But by adding padding (<code>10px</code>), the box expands beyond the larger box
 <p>The result becomes more intuitive when adding <code>box-sizing: border-box;</code> to the small <code>&lt;div&gt;</code>.
 In the example below, the padding and border are adjusted to fit within the larger <code>&lt;div&gt;</code>.
 That is, the border width and padding, and not simply the content, are taken into account when sizing the box.</p>
-<pre><code>&lt;html&gt;
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
 &lt;style&gt;
 .big, .small {
