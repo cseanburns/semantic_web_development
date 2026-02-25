@@ -98,8 +98,8 @@ Thus, Windows, macOS, Linux, etc will have different fonts installed on their sy
 
 In the following example, `Arial` is the font we ideally want to use in our web document, but
 if this isn't available, then the browser falls back to the generic `sans-serif` font family.
-For consistency, be sure to include fonts from the same family in this list
-(e.g., all serif, all sans-serif, or all monospace but not a mix).
+For consistency, place similar fallback fonts before the generic family fallback
+(e.g., `Arial, Helvetica, sans-serif`).
 
 ```
 body {
@@ -163,9 +163,10 @@ Which renders in the browser as:
 
 #### HTML and Italics
 
-Note that in HTML, we can use the [`<i>`][i_mdn] or [`<em>`][em_mdn] elements
-to add some kind of emphasis to our text that generally renders it as italicized text.
-It's worthwhile to use these HTML elements when the reason for the emphasis has a semantic purpose.
+Note that in HTML, the [`<em>`][em_mdn] and [`<i>`][i_mdn] elements are semantic.
+Browsers usually render both as italicized text, but they serve different purposes.
+Use `<em>` for stress emphasis that changes sentence meaning, and use `<i>` for alternate voice or terms
+(such as technical terms, foreign words, or taxonomic names) without stress emphasis.
 Also, browsers usually render the `<cite>` HTML element as an italicized font, but
 this should only be used when we are citing the title of a work, like a:
 
@@ -183,7 +184,6 @@ As an example, the following places the title of Dostoevsky's classic work withi
 <p>In <cite>The Brothers Karamazov</cite>, Dostoevsky explores faith and doubt.</p>
 ```
 
-Otherwise, use the `<em>` element to place emphasis that changes the meaning of a sentence.
 [In the following examples][distractify], the `<em>` element, applied selectively, shifts the interpretation of each sentence.
 
 ```
@@ -204,7 +204,7 @@ For example, you may want to use the `<i>` element to highlight technical terms 
 You can also use the `<abbr>` element in conjunction when specifying an abbreviation or an acronym:
 
 ```
-<p>The <abbr title="central processing unit"><i>CPU</i></abbr> if often considered to the brain of the computer.</p>
+<p>The <abbr title="central processing unit"><i>CPU</i></abbr> is often considered the brain of the computer.</p>
 ```
 
 ### Font Weight
@@ -298,7 +298,7 @@ we might want to apply it consistently to one specific element, such as the `<p>
 
 Note that `line-height` doesn't require specifying a measurement, like `px`, `rem`, etc., but it can.
 If it's only a number, then that number is multiplied by the current font-size.
-See more at [CSS line-height Property][line_heigh_w3schols].
+See more at [CSS line-height Property][line_height_w3schools].
 
 We can `center` or `justify` text with the `text-align` property:
 
@@ -435,7 +435,7 @@ I have not vetted all these sources, but some options you may explore for locati
 - [Font Library][font_library]
 - [1001 Fonts][1001_fonts]
 
-## In Practice
+## Practical Font Stack Examples
 
 At the most basic level, we should have something like the following in our `style.css` file.
 If we want to use a serif font, then this is fairly conventional:
@@ -513,7 +513,7 @@ readability, legibility, hierarchy, consistency, alignment and balance, contrast
 [adobe_fonts]:https://fonts.adobe.com/
 [b_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b
 [em_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em
-[distractify]:https://www.w3schools.com/css/css_font_shorthand.asp
+[distractify]:https://www.distractify.com/fyi/2015/04/13/19NMFR/the-19-most-mind-blowing-sentences-in-the-english-language-1197891759
 [font_face_w3]:https://www.w3.org/TR/css-fonts-4/#font-face-rule
 [font_families_w3]:https://www.w3.org/Style/Examples/007/fonts.en.html
 [font_library]:https://fontlibrary.org/
@@ -524,7 +524,7 @@ readability, legibility, hierarchy, consistency, alignment and balance, contrast
 [google_fonts_privacy]:https://developers.google.com/fonts/faq/privacy
 [i_mdn]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i
 [kerning_wiki]:https://en.wikipedia.org/wiki/Kerning
-[line_heigh_w3schols]:https://www.w3schools.com/cssref/pr_dim_line-height.php
+[line_height_w3schools]:https://www.w3schools.com/cssref/pr_dim_line-height.php
 [open_foundry]:https://open-foundry.com/
 [open_source_license_wiki]:https://en.wikipedia.org/wiki/Open-source_license
 [roboto_google_font]:https://fonts.google.com/specimen/Roboto
