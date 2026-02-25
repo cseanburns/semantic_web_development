@@ -194,8 +194,8 @@ it plays a central role in how content is presented across different screen size
 <li>contribute to an intuitive and pleasant user experience</li>
 </ul>
 <h2 id="key-concepts-in-typography"><a class="header" href="#key-concepts-in-typography">Key Concepts in Typography</a></h2>
-<p>Typography consists of several elements that determine how text appears.
-These elements include:</p>
+<p>Typography consists of several characteristics that determine how text appears.
+In CSS, we change these characteristics by specifying the following properties:</p>
 <ul>
 <li><code>font-family</code>: this is the specific typeface or group of typefaces. Major families include: <code>serif</code>, <code>sans-serif</code>, <code>monospace</code></li>
 <li><code>font-style</code>: this includes variations like normal, italic, or oblique</li>
@@ -203,6 +203,9 @@ These elements include:</p>
 <li><code>font-size</code>: this sets the height of characters. It can be set in fixed or relative units, and it alters the content size of its box</li>
 <li><code>letter-spacing</code>: this addresses the spacing between individual characters</li>
 <li><code>line-height</code>: this addresses the spacing between lines of text</li>
+</ul>
+<p>Although the following two are more about positioning of text on a screen, they still impact readability:</p>
+<ul>
 <li><code>text-align</code>: this addresses the horizontal alignment of text and is used to center or justify text</li>
 <li><code>text-indent</code>: this addresses the indentation of text</li>
 </ul>
@@ -230,10 +233,27 @@ The following key principles help achieve that goal:</p>
 The major font families include <code>serif</code>, <code>sans-serif</code>, and <code>monospace</code>, but <a href="https://www.w3.org/Style/Examples/007/fonts.en.html">there are more</a>.
 We select font families based on several criteria:</p>
 <ul>
-<li><strong>Serif fonts</strong>: these are typefaces that have decorative strokes, or <em>serifs</em>, at the ends of letters. Common examples include Times New Roman and Georgia. These kinds of typefaces are commonly used in print and they convey a classic, professional look.</li>
-<li><strong>Sans-serif fonts</strong>: these fonts lack (<em>sans</em>) serifs or decorations. These fonts convey cleaner and more modern designs. Common examples include Arial, Helvetica, and Verdana. They often improve clarity and readability on screens in particular.</li>
-<li><strong>Monospace fonts</strong>: the characters in these fonts take up the same amount of horizontal space. Examples include Courier New and Consolas. These font families are typically used in coding environments or to display code in web documents because they make it easier to align characters and read structured text.</li>
+<li><strong>Serif fonts</strong>: these are typefaces that have decorative strokes, or <em>serifs</em>, at the ends of letters. Common examples include Times New Roman and Georgia. These kinds of typefaces are commonly used in print and they convey a classic, professional look.
+<ul>
+<li>An example of a serif font: <p style="font-family: serif">The Quick Brown Fox Jumps Over The Lazy Dog.</p></li>
 </ul>
+</li>
+<li><strong>Sans-serif fonts</strong>: these fonts lack (<em>sans</em>) serifs or decorations. These fonts convey cleaner and more modern designs. Common examples include Arial, Helvetica, and Verdana. They often improve clarity and readability on screens in particular.
+<ul>
+<li>An example of a sans-serif font: <p style="font-family: sans-serif">The Quick Brown Fox Jumps Over The Lazy Dog.</p></li>
+</ul>
+</li>
+<li><strong>Monospace fonts</strong>: the characters in these fonts take up the same amount of horizontal space. Examples include Courier New and Consolas. These font families are typically used in coding environments or to display code in web documents because they make it easier to align characters and read structured text.
+<ul>
+<li>An example of a monospace font: <p style="font-family: monospace">The Quick Brown Fox Jumps Over The Lazy Dog.</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>For a topical (and weirdly political) read on fonts and accessibility,
+<a href="https://www.nytimes.com/interactive/2025/12/13/us/calibri-font-times-new-roman-state-department.html">read about the controversy</a> about the US State Department's
+decision to revert to Times New Roman (a serif font) instead of the Calibri (a sans-serif font) for all formal documentation.</p>
+</blockquote>
 <h2 id="typography-in-web-development"><a class="header" href="#typography-in-web-development">Typography in Web Development</a></h2>
 <p>Web developers and designers use CSS to control typography across different devices and screen sizes.
 The goal is to always make sure that text is legible and visually appealing.
@@ -248,21 +268,24 @@ you will be able to use these principles to augment content and enhance user exp
 When we declare a <code>font-family</code>, we provide a list of families.
 Browsers select the first available font from the list.
 Therefore, we place the main, desired font at the beginning of the list but
-then provide fallback fonts in case the main font is unavailable in the reader's browser.</p>
+then provide fallback fonts in case the main font is unavailable in the reader's browser.
+<strong>Note:</strong> A font may be unavailable because our operating systems supply the fonts.
+Thus, Windows, macOS, Linux, etc will have different fonts installed on their systems.</p>
 <p>In the following example, <code>Arial</code> is the font we ideally want to use in our web document, but
 if this isn't available, then the browser falls back to the generic <code>sans-serif</code> font family.
-For consistency, be sure to include fonts from the same family in this list
-(e.g., all serif, all sans-serif, or all monospace but not a mix).</p>
+For consistency, place similar fallback fonts before the generic family fallback
+(e.g., <code>Arial, Helvetica, sans-serif</code>).</p>
 <pre><code>body {
     font-family: "Arial", sans-serif;
 }
 </code></pre>
 <h4 id="note-on-examples-below"><a class="header" href="#note-on-examples-below">Note on Examples Below</a></h4>
-<p>In the examples below, I use classes to demonstrate how to implement font and other properties.
-In the first example, I use the class selector <code>.italic-text</code>.
+<p>Sometimes we may want to change a font characteristic in a specific part of our documents.
+In the examples below, I use classes to demonstrate how to implement font changes.
+In the first example, I use the class selector and call it <code>.italic-text</code>.
 This is implemented in HTML with the <code>class</code> attribute.
 For example, if I want to italicize several words in a paragraph in my HTML,
-I could use a <code>&lt;span&gt;</code> element with a <code>class</code> attribute of <code>italic-text</code>:</p>
+I could use a <code>&lt;span&gt;</code> element with a <code>class</code> attribute named <code>italic-text</code>:</p>
 <pre><code>&lt;p&gt;This &lt;span class="italic-text"&gt;text is italicized&lt;/span&gt;.&lt;/p&gt;
 </code></pre>
 <p>This would render as:</p>
@@ -277,14 +300,54 @@ I could use a <code>&lt;span&gt;</code> element with a <code>class</code> attrib
     font-style: oblique;
 }
 </code></pre>
-<p>We can also control the slope of the font by setting a value for degrees (<code>deg</code>):</p>
+<p>A quick note about <em>italic</em> and <em>oblique</em> styles.
+Both font styles render a slant to the font, but the font makers design italic versions of their fonts.
+Oblique fonts are just regular fonts with a slant.
+Thus, you may want to choose an oblique font when a font style doesn't have an italic version, or
+when you want to control the degree of the font's slant.
+For example, we can control the slope of an oblique version of a font by setting a value for degrees (<code>deg</code>):</p>
 <pre><code>.oblique-text {
     font-style: oblique 10deg;
 }
 </code></pre>
-<p>Note that in HTML, we can use the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i"><code>&lt;i&gt;</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em"><code>&lt;em&gt;</code></a> elements
-to add some kind of emphasis to our text that generally renders it as italicized text.
-It's generally worthwhile to use these HTML elements when the reason for the emphasis has a semantic purpose.</p>
+<p>To illustrate, consider the following code:</p>
+<pre><code>&lt;p style="font-style:oblique 20deg"&gt;An oblique style with a 20 degree slant.&lt;/p&gt;
+</code></pre>
+<p>Which renders in the browser as:</p>
+<p style="font-style:oblique 20deg">An oblique style with a 20 degree slant.</p>
+<h4 id="html-and-italics"><a class="header" href="#html-and-italics">HTML and Italics</a></h4>
+<p>Note that in HTML, the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em"><code>&lt;em&gt;</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i"><code>&lt;i&gt;</code></a> elements are semantic.
+Browsers usually render both as italicized text, but they serve different purposes.
+Use <code>&lt;em&gt;</code> for stress emphasis that changes sentence meaning, and use <code>&lt;i&gt;</code> for alternate voice or terms
+(such as technical terms, foreign words, or taxonomic names) without stress emphasis.
+Also, browsers usually render the <code>&lt;cite&gt;</code> HTML element as an italicized font, but
+this should only be used when we are citing the title of a work, like a:</p>
+<ul>
+<li>book</li>
+<li>paper</li>
+<li>film</li>
+<li>song</li>
+<li>play</li>
+<li>painting</li>
+<li>website, etc.</li>
+</ul>
+<p>As an example, the following places the title of Dostoevsky's classic work within the <code>&lt;cite&gt;</code> element:</p>
+<pre><code>&lt;p&gt;In &lt;cite&gt;The Brothers Karamazov&lt;/cite&gt;, Dostoevsky explores faith and doubt.&lt;/p&gt;
+</code></pre>
+<p><a href="https://www.distractify.com/fyi/2015/04/13/19NMFR/the-19-most-mind-blowing-sentences-in-the-english-language-1197891759">In the following examples</a>, the <code>&lt;em&gt;</code> element, applied selectively, shifts the interpretation of each sentence.</p>
+<pre><code>&lt;p&gt;I never said she stole my money.&lt;/p&gt;
+&lt;p&gt;I &lt;em&gt;never&lt;/em&gt; said she stole my money.&lt;/p&gt;
+&lt;p&gt;I never &lt;em&gt;said&lt;/em&gt; she stole my money.&lt;/p&gt;
+&lt;p&gt;I never said &lt;em&gt;she&lt;/em&gt; stole my money.&lt;/p&gt;
+&lt;p&gt;I never said she &lt;em&gt;stole&lt;/em&gt; my money.&lt;/p&gt;
+</code></pre>
+<p>Use the <code>&lt;i&gt;</code> element when you want to offset text from the rest of the text but not to place any special emphasis on it.
+For example, you may want to use the <code>&lt;i&gt;</code> element to highlight technical terms or foreign words:</p>
+<pre><code>&lt;p&gt;&lt;i&gt;Homo sapiens&lt;/i&gt; are one of the dominant life forms on the planet Earth.&lt;/p&gt;
+</code></pre>
+<p>You can also use the <code>&lt;abbr&gt;</code> element in conjunction when specifying an abbreviation or an acronym:</p>
+<pre><code>&lt;p&gt;The &lt;abbr title="central processing unit"&gt;&lt;i&gt;CPU&lt;/i&gt;&lt;/abbr&gt; is often considered the brain of the computer.&lt;/p&gt;
+</code></pre>
 <h3 id="font-weight"><a class="header" href="#font-weight">Font Weight</a></h3>
 <p>We use the <a href="https://www.w3.org/TR/css-fonts-4/#font-weight-prop"><code>font-weight</code></a> property to control the thickness of the font, or its boldness.
 Since font thickness is defined numerically, we can specify a range of weights, from light to heavy.</p>
@@ -300,22 +363,27 @@ Since font thickness is defined numerically, we can specify a range of weights, 
     font-weight: 900; /* Heavy weight */
 }
 </code></pre>
+<h4 id="html-and-bold"><a class="header" href="#html-and-bold">HTML and Bold</a></h4>
 <p>In HTML, we can use the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b"><code>&lt;b&gt;</code></a> or <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong"><code>&lt;strong&gt;</code></a> elements to render text as bold.
-Again, unless there is some semantic reason to do so, use the CSS <code>font-weight</code> property instead.</p>
+For example, we might use the <code>&lt;b&gt;</code> element to identify a label, a keyword, or a product name.
+And we might use the <code>&lt;strong&gt;</code> element to stress importance, such as in the following:</p>
+<pre><code>&lt;p&gt;&lt;strong&gt;Warning&lt;/strong&gt;: Beware of chipmunks.&lt;/p&gt;
+</code></pre>
+<p>Again, unless there is some semantic reason to do so, use the CSS <code>font-weight</code> property instead.</p>
 <h3 id="font-size-and-scaling"><a class="header" href="#font-size-and-scaling">Font Size and Scaling</a></h3>
 <p>It's a good idea to set a base <code>font-size</code> in the <code>html</code> selector, and
 then modify font sizes throughout the document with respect to that.</p>
 <pre><code>html {
-    font-size: 16px;
+    font-size: 100%;
 }
 </code></pre>
 <p>However, we can also implement different font sizes throughout the document:</p>
 <pre><code>.normal-text {
-    font-size: 16px; /* Fixed size */
+    font-size: 100%; /* Uses the browser's default size */
 }
 
 .relative-text {
-    font-size: 1.2em; /* Relative to parent element */
+    font-size: 1.2rem; /* Relative to HTML size */
 }
 
 .responsive-text {
@@ -345,6 +413,9 @@ we might want to apply it consistently to one specific element, such as the <cod
     line-height: 1.5; /* Adjusts line spacing */
 }
 </code></pre>
+<p>Note that <code>line-height</code> doesn't require specifying a measurement, like <code>px</code>, <code>rem</code>, etc., but it can.
+If it's only a number, then that number is multiplied by the current font-size.
+See more at <a href="https://www.w3schools.com/cssref/pr_dim_line-height.php">CSS line-height Property</a>.</p>
 <p>We can <code>center</code> or <code>justify</code> text with the <code>text-align</code> property:</p>
 <pre><code>.centered-text {
     text-align: center;
@@ -466,6 +537,51 @@ I have not vetted all these sources, but some options you may explore for locati
 <li><a href="https://fontlibrary.org/">Font Library</a></li>
 <li><a href="https://www.1001fonts.com/">1001 Fonts</a></li>
 </ul>
+<h2 id="practical-font-stack-examples"><a class="header" href="#practical-font-stack-examples">Practical Font Stack Examples</a></h2>
+<p>At the most basic level, we should have something like the following in our <code>style.css</code> file.
+If we want to use a serif font, then this is fairly conventional:</p>
+<pre><code>html {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 100%;
+}
+</code></pre>
+<p>If we want to use a sans-serif font, then this is conventional for that:</p>
+<pre><code>html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+</code></pre>
+<p>You can apply a monospace font to an entire website, but it's generally better to selectively apply monospace to code output.
+However, this would be a conventional way to apply this family to an entire site:</p>
+<pre><code>html {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 100%;
+}
+</code></pre>
+<h3 id="general-rules"><a class="header" href="#general-rules">General Rules</a></h3>
+<p>Try not to use more than two font families on a site.
+In fact, it's perfectly fine to use just one (like all serif or all sans-serif).
+But if you decide to mix them, one good rule is to use a <code>serif</code> font for body text and a <code>sans-serif</code> font for headings,
+or vice versa.
+In such a case, we could use the following rules for serif for the body text and sans-serif for the headings:</p>
+<pre><code>body {
+    font-family: Georgia, serif;
+}
+
+h1, h2, h3 {
+    font-family: Arial, sans-serif;
+}
+</code></pre>
+<p>Or the reverse:</p>
+<pre><code>body {
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, serif;
+}
+</code></pre>
+<p>If you then add a third font family, then do so selectively, like for code.</p>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
 <p>Typography plays a crucial role in shaping how content is presented, read, and understood.
 Try to select the right font family for your site visitors.
