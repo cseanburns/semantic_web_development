@@ -20,7 +20,7 @@ From the repository root:
 ## Coding Style & Naming Conventions
 - Keep Markdown readable with short lines and blank lines between paragraphs.
 - Use reference-style links and place link definitions at the bottom of each file.
-- Prefer `-` bullets and 4-space indents for nested lists, matching existing chapters.
+- Prefer `*` bullets and 10-space indents for nested lists, matching existing chapters.
 - Filenames use numeric/letter prefixes to preserve ordering; follow the existing pattern when adding new chapters.
 - Image files should be lowercase, descriptive, and referenced from chapter files with relative paths like `images/cover_image_semantic_web_development.png`.
 
